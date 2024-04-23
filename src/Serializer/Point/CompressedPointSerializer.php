@@ -59,17 +59,17 @@ class CompressedPointSerializer implements PointSerializerInterface
 
     /**
      * @param CurveFpInterface $curve
-     * @param string $data - hex serialized compressed point
+     * @param string $string - hex serialized compressed point
      * @return PointInterface
      */
-    public function unserialize(CurveFpInterface $curve, string $data): PointInterface
+    public function unserialize(CurveFpInterface $curve, string $string): PointInterface
     {
-        $prefix = substr($data, 0, 2);
+        $prefix = substr($string, 0, 2);
         if ($prefix !== '03' && $prefix !== '02') {
             throw new \InvalidArgumentException('Invalid data: only compressed keys are supported.');
         }
 
-        $x = gmp_init(substr($data, 2), 16);
+        $x = gmp_init(substr($string, 2), 16);
         $y = $curve->recoverYfromX($prefix === '03', $x);
 
         return $curve->getPoint($x, $y);

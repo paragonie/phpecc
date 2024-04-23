@@ -94,9 +94,9 @@ class DerPrivateKeySerializer implements PrivateKeySerializerInterface
      * @see \Mdanter\Ecc\Serializer\PrivateKey\PrivateKeySerializerInterface::parse()
      * @throws \FG\ASN1\Exception\ParserException
      */
-    public function parse(string $data): PrivateKeyInterface
+    public function parse(string $formattedKey): PrivateKeyInterface
     {
-        $asnObject = ASNObject::fromBinary($data);
+        $asnObject = ASNObject::fromBinary($formattedKey);
 
         if (! ($asnObject instanceof Sequence) || $asnObject->getNumberofChildren() !== 4) {
             throw new \RuntimeException('Invalid data.');

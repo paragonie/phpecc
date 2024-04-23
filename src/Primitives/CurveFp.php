@@ -109,10 +109,10 @@ class CurveFp implements CurveFpInterface
 
     /**
      * @param bool $wasOdd
-     * @param GMP $xCoord
+     * @param GMP $x
      * @return GMP
      */
-    public function recoverYfromX(bool $wasOdd, GMP $xCoord): GMP
+    public function recoverYfromX(bool $wasOdd, GMP $x): GMP
     {
         $math = $this->adapter;
         $prime = $this->getPrime();
@@ -121,8 +121,8 @@ class CurveFp implements CurveFpInterface
             $root = $this->adapter->getNumberTheory()->squareRootModP(
                 $math->add(
                     $math->add(
-                        $this->modAdapter->pow($xCoord, gmp_init(3, 10)),
-                        $math->mul($this->getA(), $xCoord)
+                        $this->modAdapter->pow($x, gmp_init(3, 10)),
+                        $math->mul($this->getA(), $x)
                     ),
                     $this->getB()
                 ),

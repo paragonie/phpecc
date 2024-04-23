@@ -12,6 +12,8 @@ class NumberSize
      * @param GmpMathInterface $adapter
      * @param \GMP             $x
      * @return float
+     *
+     * @psalm-suppress PossiblyUnusedMethod
      */
     public static function getCeiledByteSize(GmpMathInterface $adapter, \GMP $x): float
     {
@@ -23,6 +25,8 @@ class NumberSize
      * @param GmpMathInterface $adapter
      * @param \GMP             $x
      * @return float
+     *
+     * @psalm-suppress PossiblyUnusedMethod
      */
     public static function getFlooredByteSize(GmpMathInterface $adapter, \GMP $x): float
     {
@@ -38,6 +42,8 @@ class NumberSize
      * @return int
      *
      * @link https://www.openssl.org/docs/crypto/BN_num_bytes.html
+     *
+     * @psalm-suppress PossiblyUnusedMethod
      */
     public static function bnNumBytes(GmpMathInterface $adapter, \GMP $x): int
     {

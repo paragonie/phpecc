@@ -127,7 +127,7 @@ class Point implements PointInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Primitives\PointInterface::isInfinity()
+     * @see PointInterface::isInfinity()
      */
     public function isInfinity(): bool
     {
@@ -136,7 +136,7 @@ class Point implements PointInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Primitives\PointInterface::getCurve()
+     * @see PointInterface::getCurve()
      */
     public function getCurve(): CurveFpInterface
     {
@@ -145,7 +145,7 @@ class Point implements PointInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Primitives\PointInterface::getOrder()
+     * @see PointInterface::getOrder()
      */
     public function getOrder(): GMP
     {
@@ -154,7 +154,7 @@ class Point implements PointInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Primitives\PointInterface::getX()
+     * @see PointInterface::getX()
      */
     public function getX(): GMP
     {
@@ -163,7 +163,7 @@ class Point implements PointInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Primitives\PointInterface::getY()
+     * @see PointInterface::getY()
      */
     public function getY(): GMP
     {
@@ -172,7 +172,7 @@ class Point implements PointInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Primitives\PointInterface::add()
+     * @see PointInterface::add()
      * @return self
      */
     public function add(PointInterface $addend): PointInterface
@@ -220,7 +220,7 @@ class Point implements PointInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Primitives\PointInterface::cmp()
+     * @see PointInterface::cmp()
      */
     public function cmp(PointInterface $other): int
     {
@@ -247,7 +247,7 @@ class Point implements PointInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Primitives\PointInterface::equals()
+     * @see PointInterface::equals()
      */
     public function equals(PointInterface $other): bool
     {
@@ -256,9 +256,9 @@ class Point implements PointInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Primitives\PointInterface::mul()
+     * @see PointInterface::mul()
      */
-    public function mul(GMP $n): PointInterface
+    public function mul(GMP $multiplier): PointInterface
     {
         if ($this->isInfinity()) {
             return $this->curve->getInfinity();
@@ -266,10 +266,10 @@ class Point implements PointInterface
 
         $zero = gmp_init(0, 10);
         if ($this->adapter->cmp($this->order, $zero) > 0) {
-            $n = $this->adapter->mod($n, $this->order);
+            $multiplier = $this->adapter->mod($multiplier, $this->order);
         }
 
-        if ($this->adapter->equals($n, $zero)) {
+        if ($this->adapter->equals($multiplier, $zero)) {
             return $this->curve->getInfinity();
         }
 
@@ -280,10 +280,10 @@ class Point implements PointInterface
         ];
 
         $k = $this->curve->getSize();
-        $n = str_pad($this->adapter->baseConvert($this->adapter->toString($n), 10, 2), $k, '0', STR_PAD_LEFT);
+        $multiplier = str_pad($this->adapter->baseConvert($this->adapter->toString($multiplier), 10, 2), $k, '0', STR_PAD_LEFT);
 
         for ($i = 0; $i < $k; $i++) {
-            $j = $n[$i];
+            $j = $multiplier[$i];
 
             $this->cswap($r[0], $r[1], $j ^ 1, $k);
 

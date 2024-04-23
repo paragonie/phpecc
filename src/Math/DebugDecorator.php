@@ -45,6 +45,8 @@ class DebugDecorator implements GmpMathInterface
      * @param  string $func
      * @param  array  $args
      * @return mixed
+     *
+     * @psalm-suppress UnusedReturnValue
      */
     private function call($func, $args)
     {

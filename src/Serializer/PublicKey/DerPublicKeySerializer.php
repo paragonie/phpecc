@@ -76,8 +76,8 @@ class DerPublicKeySerializer implements PublicKeySerializerInterface
      * {@inheritDoc}
      * @see \Mdanter\Ecc\Serializer\PublicKey\PublicKeySerializerInterface::parse()
      */
-    public function parse(string $string): PublicKeyInterface
+    public function parse(string $formattedKey): PublicKeyInterface
     {
-        return $this->parser->parse($string);
+        return $this->parser->parse($formattedKey);
     }
 }

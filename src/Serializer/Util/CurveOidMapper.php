@@ -69,6 +69,7 @@ class CurveOidMapper
 
     /**
      * @return array
+     * @psalm-suppress PossiblyUnusedMethod
      */
     public static function getNames(): array
     {
@@ -106,6 +107,8 @@ class CurveOidMapper
     /**
      * @param ObjectIdentifier $oid
      * @return NamedCurveFp
+     *
+     * @psalm-suppress PossiblyUnusedMethod
      */
     public static function getCurveFromOid(ObjectIdentifier $oid): NamedCurveFp
     {

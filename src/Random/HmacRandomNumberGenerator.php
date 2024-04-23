@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Mdanter\Ecc\Random;
 
+use GMP;
 use Mdanter\Ecc\Crypto\Key\PrivateKeyInterface;
 use Mdanter\Ecc\Math\GmpMathInterface;
 use Mdanter\Ecc\Util\BinaryString;
@@ -26,7 +27,7 @@ class HmacRandomNumberGenerator implements RandomNumberGeneratorInterface
     private $privateKey;
 
     /**
-     * @var \GMP
+     * @var GMP
      */
     private $messageHash;
 
@@ -45,10 +46,10 @@ class HmacRandomNumberGenerator implements RandomNumberGeneratorInterface
      * Hmac constructor.
      * @param GmpMathInterface $math
      * @param PrivateKeyInterface $privateKey
-     * @param \GMP $messageHash - decimal hash of the message (*may* be truncated)
+     * @param GMP $messageHash - decimal hash of the message (*may* be truncated)
      * @param string $algorithm - hashing algorithm
      */
-    public function __construct(GmpMathInterface $math, PrivateKeyInterface $privateKey, \GMP $messageHash, string $algorithm)
+    public function __construct(GmpMathInterface $math, PrivateKeyInterface $privateKey, GMP $messageHash, string $algorithm)
     {
         if (!isset($this->algSize[$algorithm])) {
             throw new \InvalidArgumentException('Unsupported hashing algorithm');
@@ -62,10 +63,10 @@ class HmacRandomNumberGenerator implements RandomNumberGeneratorInterface
 
     /**
      * @param string $bits - binary string of bits
-     * @param \GMP $qlen - length of q in bits
-     * @return \GMP
+     * @param GMP $qlen - length of q in bits
+     * @return GMP
      */
-    public function bits2int(string $bits, \GMP $qlen): \GMP
+    public function bits2int(string $bits, GMP $qlen): GMP
     {
         $vlen = gmp_init(BinaryString::length($bits) * 8, 10);
         $hex = bin2hex($bits);
@@ -79,11 +80,11 @@ class HmacRandomNumberGenerator implements RandomNumberGeneratorInterface
     }
 
     /**
-     * @param \GMP $int
-     * @param \GMP $rlen - rounded octet length
+     * @param GMP $int
+     * @param GMP $rlen - rounded octet length
      * @return string
      */
-    public function int2octets(\GMP $int, \GMP $rlen): string
+    public function int2octets(GMP $int, GMP $rlen): string
     {
         $out = pack("H*", $this->math->decHex(gmp_strval($int, 10)));
         $length = gmp_init(BinaryString::length($out), 10);
@@ -108,12 +109,12 @@ class HmacRandomNumberGenerator implements RandomNumberGeneratorInterface
     }
 
     /**
-     * @param \GMP $q
-     * @return \GMP
+     * @param GMP $max
+     * @return GMP
      */
-    public function generate(\GMP $q): \GMP
+    public function generate(GMP $max): GMP
     {
-        $qlen = gmp_init(NumberSize::bnNumBits($this->math, $q), 10);
+        $qlen = gmp_init(NumberSize::bnNumBits($this->math, $max), 10);
         $rlen = $this->math->rightShift($this->math->add($qlen, gmp_init(7, 10)), 3);
         $hlen = $this->getHashLength($this->algorithm);
         $bx = $this->int2octets($this->privateKey->getSecret(), $rlen) . $this->int2octets($this->messageHash, $rlen);
@@ -139,7 +140,7 @@ class HmacRandomNumberGenerator implements RandomNumberGeneratorInterface
             }
 
             $k = $this->bits2int($t, $qlen);
-            if ($this->math->cmp($k, gmp_init(0, 10)) > 0 && $this->math->cmp($k, $q) < 0) {
+            if ($this->math->cmp($k, gmp_init(0, 10)) > 0 && $this->math->cmp($k, $max) < 0) {
                 return $k;
             }
 

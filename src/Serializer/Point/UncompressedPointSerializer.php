@@ -27,20 +27,20 @@ class UncompressedPointSerializer implements PointSerializerInterface
 
     /**
      * @param CurveFpInterface $curve
-     * @param string           $data
+     * @param string           $string
      * @return PointInterface
      */
-    public function unserialize(CurveFpInterface $curve, string $data): PointInterface
+    public function unserialize(CurveFpInterface $curve, string $string): PointInterface
     {
-        if (BinaryString::substring($data, 0, 2) != '04') {
+        if (BinaryString::substring($string, 0, 2) != '04') {
             throw new \InvalidArgumentException('Invalid data: only uncompressed keys are supported.');
         }
 
-        $data = BinaryString::substring($data, 2);
-        $dataLength = BinaryString::length($data);
+        $string = BinaryString::substring($string, 2);
+        $dataLength = BinaryString::length($string);
 
-        $x = gmp_init(BinaryString::substring($data, 0, $dataLength / 2), 16);
-        $y = gmp_init(BinaryString::substring($data, $dataLength / 2), 16);
+        $x = gmp_init(BinaryString::substring($string, 0, $dataLength / 2), 16);
+        $y = gmp_init(BinaryString::substring($string, $dataLength / 2), 16);
 
         return $curve->getPoint($x, $y);
     }

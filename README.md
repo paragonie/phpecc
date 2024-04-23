@@ -1,6 +1,7 @@
 # Pure PHP Elliptic Curve DSA and DH
 
 [![Build Status](https://github.com/paragonie/phpecc/actions/workflows/test.yml/badge.svg)](https://github.com/paragonie/phpecc/actions)
+[![Type Safety](https://github.com/paragonie/phpecc/actions/workflows/psalm.yml/badge.svg)](https://github.com/paragonie/phpecc/actions)
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/paragonie/phpecc/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/paragonie/phpecc?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/paragonie/phpecc/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/phpecc/phpecc/?branch=master)
