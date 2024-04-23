@@ -1,14 +1,14 @@
 # Pure PHP Elliptic Curve DSA and DH
 
-[![Build Status](https://travis-ci.org/phpecc/phpecc.svg?branch=master)](https://travis-ci.org/phpecc/phpecc)
+[![Build Status](https://github.com/paragonie/phpecc/actions/workflows/test.yml/badge.svg)](https://github.com/paragonie/phpecc/actions)
 
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/phpecc/phpecc/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/phpecc/phpecc?branch=master)
-[![Code Coverage](https://scrutinizer-ci.com/g/phpecc/phpecc/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/phpecc/phpecc/?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/paragonie/phpecc/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/paragonie/phpecc?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/paragonie/phpecc/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/phpecc/phpecc/?branch=master)
 
-[![Latest Stable Version](https://poser.pugx.org/mdanter/ecc/v/stable.png)](https://packagist.org/packages/mdanter/ecc)
-[![Total Downloads](https://poser.pugx.org/mdanter/ecc/downloads.png)](https://packagist.org/packages/mdanter/ecc)
-[![Latest Unstable Version](https://poser.pugx.org/mdanter/ecc/v/unstable.png)](https://packagist.org/packages/mdanter/ecc)
-[![License](https://poser.pugx.org/mdanter/ecc/license.png)](https://packagist.org/packages/mdanter/ecc)
+[![Latest Stable Version](https://poser.pugx.org/paragonie/ecc/v/stable.png)](https://packagist.org/packages/paragonie/ecc)
+[![Total Downloads](https://poser.pugx.org/paragonie/ecc/downloads.png)](https://packagist.org/packages/paragonie/ecc)
+[![Latest Unstable Version](https://poser.pugx.org/paragonie/ecc/v/unstable.png)](https://packagist.org/packages/paragonie/ecc)
+[![License](https://poser.pugx.org/paragonie/ecc/license.png)](https://packagist.org/packages/paragonie/ecc)
 
 ## Notice
 
