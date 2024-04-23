@@ -46,17 +46,17 @@ class NumberTheory
     private $adapter;
 
     /**
-     * @var GMP|resource
+     * @var GMP
      */
     private $zero;
 
     /**
-     * @var GMP|resource
+     * @var GMP
      */
     private $one;
 
     /**
-     * @var GMP|resource
+     * @var GMP
      */
     private $two;
 
@@ -194,7 +194,9 @@ class NumberTheory
     public function squareRootModP(GMP $a, GMP $p): GMP
     {
         $math = $this->adapter;
+        /** @var GMP $four */
         $four = gmp_init(4, 10);
+        /** @var GMP $eight */
         $eight = gmp_init(8, 10);
 
         $modMath = $math->getModularArithmetic($p);

@@ -104,7 +104,7 @@ class Point implements PointInterface
         $this->x          = $x;
         $this->y          = $y;
         $this->order      = $order !== null ? $order : gmp_init(0, 10);
-        $this->infinity   = (bool) $infinity;
+        $this->infinity   = !empty($infinity);
         if (! $infinity && ! $curve->contains($x, $y)) {
             throw new PointNotOnCurveException($x, $y, $curve);
         }
@@ -264,6 +264,7 @@ class Point implements PointInterface
             return $this->curve->getInfinity();
         }
 
+        /** @var GMP $zero */
         $zero = gmp_init(0, 10);
         if ($this->adapter->cmp($this->order, $zero) > 0) {
             $multiplier = $this->adapter->mod($multiplier, $this->order);

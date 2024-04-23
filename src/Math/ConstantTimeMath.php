@@ -6,6 +6,8 @@ namespace Mdanter\Ecc\Math;
 use GMP;
 use Mdanter\Ecc\Exception\NumberTheoryException;
 use Mdanter\Ecc\Util\BinaryString;
+use function gmp_init;
+use function gmp_sign;
 
 /**
  * Class ConstantTimeMath
@@ -70,8 +72,8 @@ class ConstantTimeMath extends GmpMath
          */
         list($left, $right, $length) = $this->normalizeLengths($first, $other);
 
-        $first_sign = \gmp_sign($first);
-        $other_sign = \gmp_sign($other);
+        $first_sign = gmp_sign($first);
+        $other_sign = gmp_sign($other);
         list($gt, $eq) = $this->compareSigns($first_sign, $other_sign);
 
         for ($i = 0; $i < $length; ++$i) {
@@ -88,11 +90,38 @@ class ConstantTimeMath extends GmpMath
     public function inverseMod(GMP $a, GMP $m): GMP
     {
         list($x, $y) = $this->binaryGcd($a, $m);
-        if (!$this->equals($y, \gmp_init(1))) {
+        /** @var GMP $one */
+        $one = gmp_init(1, 10);
+        if (!$this->equals($y, $one)) {
             throw new NumberTheoryException('No inverse exists for these two numbers');
         }
 
         return $x;
+    }
+
+    /**
+     * Iterate over the trailing zeroes in $w (which is either $u or $v) in the Binary GCD.
+     *
+     * @param GMP $w
+     * @param GMP $r
+     * @param GMP $s
+     * @param GMP $x
+     * @param GMP $y
+     * @return GMP[]
+     */
+    protected function binaryGcdTrailingZeroes(GMP $w, GMP $r, GMP $s, GMP $x, GMP $y): array
+    {
+        for ($bits = $this->trailingZeroes($w); $bits > 0; --$bits) {
+            $w = $this->rightShift($w, 1);
+            $swap = (~$this->lsb($r) & ~$this->lsb($s)) & 1;
+
+            $r = $this->select($swap, $r, $this->add($r, $y));
+            $r = $this->rightShift($r, 1);
+
+            $s = $this->select($swap, $s, $this->sub($s, $x));
+            $s = $this->rightShift($s, 1);
+        }
+        return [$w, $r, $s, $x, $y];
     }
 
     /**
@@ -115,36 +144,15 @@ class ConstantTimeMath extends GmpMath
         $u = clone $x;
         $v = clone $y;
 
-        $zero = \gmp_init(0, 10);
-        $a = \gmp_init(1, 10);
-        $b = \gmp_init(0, 10);
-        $c = \gmp_init(0, 10);
-        $d = \gmp_init(1, 10);
+        $zero = gmp_init(0, 10);
+        $a = gmp_init(1, 10);
+        $b = gmp_init(0, 10);
+        $c = gmp_init(0, 10);
+        $d = gmp_init(1, 10);
 
         do {
-            // Iterate over U
-            for ($bits = $this->trailingZeroes($u); $bits > 0; --$bits) {
-                $u = $this->rightShift($u, 1);
-                $swap = (~$this->lsb($a) & ~$this->lsb($b)) & 1;
-
-                $a = $this->select($swap, $a, $this->add($a, $y));
-                $a = $this->rightShift($a, 1);
-
-                $b = $this->select($swap, $b, $this->sub($b, $x));
-                $b = $this->rightShift($b, 1);
-            }
-
-            // Iterate over V
-            for ($bits = $this->trailingZeroes($v); $bits > 0; --$bits) {
-                $v = $this->rightShift($v, 1);
-                $swap = (~$this->lsb($c) & ~$this->lsb($d)) & 1;
-
-                $c = $this->select($swap, $c, $this->add($c, $y));
-                $c = $this->rightShift($c, 1);
-
-                $d = $this->select($swap, $d, $this->sub($d, $x));
-                $d = $this->rightShift($d, 1);
-            }
+            [$u, $a, $b, $x, $y] = $this->binaryGcdTrailingZeroes($u, $a, $b, $x, $y);
+            [$v, $c, $d, $x, $y] = $this->binaryGcdTrailingZeroes($v, $c, $d, $x, $y);
 
             $cmp = $this->cmp($u, $v);
             /*

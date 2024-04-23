@@ -51,6 +51,7 @@ class Signer
         $k = $math->mod($randomK, $generator->getOrder());
         $p1 = $generator->mul($k);
         $r = $p1->getX();
+        /** @var GMP $zero */
         $zero = gmp_init(0, 10);
         if ($math->equals($r, $zero)) {
             throw new \RuntimeException("Error: random number R = 0");
@@ -64,7 +65,9 @@ class Signer
         // Prevent high-order values for S
         if ($this->disallowMalleableSig) {
             $n = $generator->getOrder();
-            $halfOrder = $modMath->div($n, gmp_init(2, 10));
+            /** @var GMP $two */
+            $two = gmp_init(2, 10);
+            $halfOrder = $modMath->div($n, $two);
             if ($math->cmp($s, $halfOrder) > 0) {
                 $s = $math->sub($n, $s);
             }
