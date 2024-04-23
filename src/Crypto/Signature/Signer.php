@@ -20,12 +20,19 @@ class Signer
     private $adapter;
 
     /**
+     * @var bool
+     */
+    private $disallowMalleableSig;
+
+    /**
      *
      * @param GmpMathInterface $adapter
+     * @param bool $disallowMalleableSig
      */
-    public function __construct(GmpMathInterface $adapter)
+    public function __construct(GmpMathInterface $adapter, bool $disallowMalleableSig = false)
     {
         $this->adapter = $adapter;
+        $this->disallowMalleableSig = $disallowMalleableSig;
     }
 
     /**
@@ -53,6 +60,15 @@ class Signer
             throw new \RuntimeException("Error: random number S = 0");
         }
 
+        // Prevent high-order values for S
+        if ($this->disallowMalleableSig) {
+            $n = $generator->getOrder();
+            $halfOrder = $modMath->div($n, gmp_init(2, 10));
+            if ($math->cmp($s, $halfOrder) > 0) {
+                $s = $math->sub($n, $s);
+            }
+        }
+
         return new Signature($r, $s);
     }
 
@@ -76,6 +92,10 @@ class Signer
         }
 
         if ($math->cmp($s, $one) < 0 || $math->cmp($s, $math->sub($n, $one)) > 0) {
+            return false;
+        }
+        $halfOrder = $math->rightShift($n, 1);
+        if ($this->disallowMalleableSig && $math->cmp($s, $halfOrder) > 0) {
             return false;
         }
 
