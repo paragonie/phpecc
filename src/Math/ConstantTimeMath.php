@@ -122,6 +122,7 @@ class ConstantTimeMath extends GmpMath
         $d = \gmp_init(1, 10);
 
         do {
+            // Iterate over U
             for ($bits = $this->trailingZeroes($u); $bits > 0; --$bits) {
                 $u = $this->rightShift($u, 1);
                 $swap = (~$this->lsb($a) & ~$this->lsb($b)) & 1;
@@ -133,6 +134,7 @@ class ConstantTimeMath extends GmpMath
                 $b = $this->rightShift($b, 1);
             }
 
+            // Iterate over V
             for ($bits = $this->trailingZeroes($v); $bits > 0; --$bits) {
                 $v = $this->rightShift($v, 1);
                 $swap = (~$this->lsb($c) & ~$this->lsb($d)) & 1;

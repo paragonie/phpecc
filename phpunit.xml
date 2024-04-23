@@ -14,6 +14,7 @@
       <directory suffix="Test.php">./tests/unit</directory>
     </testsuite>
   </testsuites>
+  <!--
   <logging>
     <log type="coverage-html" target="./tests/output/Coverage/"
       charset="UTF-8" yui="true" highlight="true" />
@@ -25,4 +26,5 @@
       <directory suffix=".php">src/</directory>
     </whitelist>
   </filter>
+  -->
 </phpunit>

@@ -53,14 +53,9 @@ This package is released under the MIT license.
 
 ### Requirements
 
-* PHP 7.0+ or PHP 8.0+
+* PHP 7.1+ or PHP 8.0+
 * composer
 * ext-gmp
-
-Support for older PHP versions:
- * v0.4.x: php ^5.6|<7.2
- * v0.5.x: php ^7.0
- * v1.0.x: php ^7.0|^8.0
 
 ### Installation
 

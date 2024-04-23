@@ -30,6 +30,7 @@ namespace Mdanter\Ecc\Math;
  * @author Matyas Danter
  */
 
+use GMP;
 use Mdanter\Ecc\Exception\NumberTheoryException;
 use Mdanter\Ecc\Exception\SquareRootException;
 
@@ -45,6 +46,21 @@ class NumberTheory
     private $adapter;
 
     /**
+     * @var GMP|resource
+     */
+    private $zero;
+
+    /**
+     * @var GMP|resource
+     */
+    private $one;
+
+    /**
+     * @var GMP|resource
+     */
+    private $two;
+
+    /**
      * @param GmpMathInterface $adapter
      */
     public function __construct(GmpMathInterface $adapter)
@@ -56,17 +72,17 @@ class NumberTheory
     }
 
     /**
-     * @param \GMP[] $poly
-     * @param \GMP[] $polymod
-     * @param \GMP $p
-     * @return \GMP[]
+     * @param GMP[] $poly
+     * @param GMP[] $polymod
+     * @param GMP $p
+     * @return GMP[]
      */
-    public function polynomialReduceMod(array $poly, array $polymod, \GMP $p): array
+    public function polynomialReduceMod(array $poly, array $polymod, GMP $p): array
     {
         $adapter = $this->adapter;
 
         // Only enter if last value is set, implying count > 0
-        if ((($last = end($polymod)) instanceof \GMP) && $adapter->equals($last, $this->one)) {
+        if ((($last = end($polymod)) instanceof GMP) && $adapter->equals($last, $this->one)) {
             $count_polymod = count($polymod);
             while (count($poly) >= $count_polymod) {
                 if (!$adapter->equals(end($poly), $this->zero)) {
@@ -95,13 +111,13 @@ class NumberTheory
     }
 
     /**
-     * @param \GMP[] $m1
-     * @param \GMP[] $m2
-     * @param \GMP[] $polymod
-     * @param \GMP $p
-     * @return \GMP[]
+     * @param GMP[] $m1
+     * @param GMP[] $m2
+     * @param GMP[] $polymod
+     * @param GMP $p
+     * @return GMP[]
      */
-    public function polynomialMultiplyMod(array $m1, array $m2, array $polymod, \GMP $p): array
+    public function polynomialMultiplyMod(array $m1, array $m2, array $polymod, GMP $p): array
     {
         $prod = array();
         $cm1 = count($m1);
@@ -131,13 +147,13 @@ class NumberTheory
     }
 
     /**
-     * @param \GMP[] $base
-     * @param \GMP $exponent
-     * @param \GMP[] $polymod
-     * @param \GMP $p
-     * @return \GMP[]
+     * @param GMP[] $base
+     * @param GMP $exponent
+     * @param GMP[] $polymod
+     * @param GMP $p
+     * @return GMP[]
      */
-    public function polynomialPowMod(array $base, \GMP $exponent, array $polymod, \GMP $p): array
+    public function polynomialPowMod(array $base, GMP $exponent, array $polymod, GMP $p): array
     {
         $adapter = $this->adapter;
 
@@ -171,11 +187,11 @@ class NumberTheory
     }
 
     /**
-     * @param \GMP $a
-     * @param \GMP $p
-     * @return \GMP
+     * @param GMP $a
+     * @param GMP $p
+     * @return GMP
      */
-    public function squareRootModP(\GMP $a, \GMP $p): \GMP
+    public function squareRootModP(GMP $a, GMP $p): GMP
     {
         $math = $this->adapter;
         $four = gmp_init(4, 10);
