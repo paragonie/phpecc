@@ -52,9 +52,9 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
-    - name: Checkout submodules
-      uses: textbook/git-checkout-submodule-action@master
+      uses: actions/checkout@v4
+      with:
+        submodules: recursive
 
     - name: Setup PHP
       uses: shivammathur/setup-php@v2
