@@ -5,7 +5,7 @@ namespace Mdanter\Ecc\Math;
 class MathAdapterFactory
 {
     /**
-     * @var >GmpMathInterface
+     * @var ?GmpMathInterface
      */
     private static $forcedAdapter = null;
 
