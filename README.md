@@ -1,4 +1,4 @@
-## Pure PHP Elliptic Curve DSA and DH
+# Pure PHP Elliptic Curve DSA and DH
 
 [![Build Status](https://travis-ci.org/phpecc/phpecc.svg?branch=master)](https://travis-ci.org/phpecc/phpecc)
 
@@ -9,6 +9,19 @@
 [![Total Downloads](https://poser.pugx.org/mdanter/ecc/downloads.png)](https://packagist.org/packages/mdanter/ecc)
 [![Latest Unstable Version](https://poser.pugx.org/mdanter/ecc/v/unstable.png)](https://packagist.org/packages/mdanter/ecc)
 [![License](https://poser.pugx.org/mdanter/ecc/license.png)](https://packagist.org/packages/mdanter/ecc)
+
+## Notice
+
+This library is a fork from `phpecc/phpecc`, which is itself a fork of `mdanter/ecc`. 
+It should serve as a drop-in replacement for any applications that previously depended
+on either method. 
+
+However, Paragon Initiative Enterprises **CANNOT** guarantee the security of this library
+until we have fully audited its code. This notice will be removed when we believe it to
+be secure.
+
+In the meantime, **DO NOT** submit bug bounty reports to us for this code. They will be
+closed as out of scope. File an Issue here instead!
 
 ### Information
 
@@ -53,7 +66,7 @@ Support for older PHP versions:
 
 You can install this library via Composer :
 
-`composer require mdanter/ecc:^1.0`
+`composer require paragonie/ecc:^1.0`
 
 ### Contribute
 
