@@ -21,9 +21,9 @@ class DebugDecorator implements GmpMathInterface
 
     /**
      * @param GmpMathInterface     $adapter
-     * @param callable|null        $callback
+     * @param ?callable            $callback
      */
-    public function __construct(GmpMathInterface $adapter, callable $callback = null)
+    public function __construct(GmpMathInterface $adapter, ?callable $callback = null)
     {
         $this->adapter = $adapter;
         $this->writer = $callback ?: function ($message) {

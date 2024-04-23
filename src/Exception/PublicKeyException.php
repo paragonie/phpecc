@@ -19,7 +19,7 @@ class PublicKeyException extends \RuntimeException
      */
     private $point;
 
-    public function __construct(GeneratorPoint $G, PointInterface $point, string $message = "", int $code = 0, Throwable $previous = null)
+    public function __construct(GeneratorPoint $G, PointInterface $point, string $message = "", int $code = 0, ?Throwable $previous = null)
     {
         $this->G = $G;
         $this->point = $point;

@@ -104,7 +104,7 @@ class EcDH implements EcDHInterface
      * {@inheritDoc}
      * @see \Mdanter\Ecc\Crypto\EcDH\EcDHInterface::setRecipientKey()
      */
-    public function setRecipientKey(PublicKeyInterface $key = null)
+    public function setRecipientKey(?PublicKeyInterface $key = null)
     {
         $this->recipientKey = $key;
         return $this;

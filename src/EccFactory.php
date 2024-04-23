@@ -33,10 +33,10 @@ class EccFactory
     /**
      * Returns a factory to create NIST Recommended curves and generators.
      *
-     * @param  GmpMathInterface $adapter [optional] Defaults to the return value of EccFactory::getAdapter().
+     * @param  ?GmpMathInterface $adapter [optional] Defaults to the return value of EccFactory::getAdapter().
      * @return NistCurve
      */
-    public static function getNistCurves(GmpMathInterface $adapter = null): NistCurve
+    public static function getNistCurves(?GmpMathInterface $adapter = null): NistCurve
     {
         return new NistCurve($adapter ?: self::getAdapter());
     }
@@ -44,10 +44,10 @@ class EccFactory
     /**
      * Returns a factory to return SECG Recommended curves and generators.
      *
-     * @param  GmpMathInterface $adapter [optional] Defaults to the return value of EccFactory::getAdapter().
+     * @param  ?GmpMathInterface $adapter [optional] Defaults to the return value of EccFactory::getAdapter().
      * @return SecgCurve
      */
-    public static function getSecgCurves(GmpMathInterface $adapter = null): SecgCurve
+    public static function getSecgCurves(?GmpMathInterface $adapter = null): SecgCurve
     {
         return new SecgCurve($adapter ?: self::getAdapter());
     }
@@ -59,19 +59,19 @@ class EccFactory
      * @param  \GMP             $prime
      * @param  \GMP             $a
      * @param  \GMP             $b
-     * @param  GmpMathInterface $adapter [optional] Defaults to the return value of EccFactory::getAdapter().
+     * @param  ?GmpMathInterface $adapter [optional] Defaults to the return value of EccFactory::getAdapter().
      * @return CurveFpInterface
      */
-    public static function createCurve(int $bitSize, \GMP $prime, \GMP $a, \GMP $b, GmpMathInterface $adapter = null): CurveFpInterface
+    public static function createCurve(int $bitSize, \GMP $prime, \GMP $a, \GMP $b, ?GmpMathInterface $adapter = null): CurveFpInterface
     {
         return new CurveFp(new CurveParameters($bitSize, $prime, $a, $b), $adapter ?: self::getAdapter());
     }
 
     /**
-     * @param  GmpMathInterface $adapter [optional] Defaults to the return value of EccFactory::getAdapteR()
+     * @param  ?GmpMathInterface $adapter [optional] Defaults to the return value of EccFactory::getAdapteR()
      * @return Signer
      */
-    public static function getSigner(GmpMathInterface $adapter = null): Signer
+    public static function getSigner(?GmpMathInterface $adapter = null): Signer
     {
         return new Signer($adapter ?: self::getAdapter());
     }

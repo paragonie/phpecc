@@ -34,9 +34,9 @@ class SignHasher implements HasherInterface
     /**
      * SignHasher constructor.
      * @param string $algorithm
-     * @param GmpMathInterface|null $math
+     * @param ?GmpMathInterface $math
      */
-    public function __construct(string $algorithm, GmpMathInterface $math = null)
+    public function __construct(string $algorithm, ?GmpMathInterface $math = null)
     {
         if (!array_key_exists($algorithm, self::$sizeMap)) {
             throw new \InvalidArgumentException("Unsupported hashing algorithm");

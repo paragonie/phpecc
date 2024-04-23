@@ -24,6 +24,7 @@ OTHER DEALINGS IN THE SOFTWARE.
  *************************************************************************/
 namespace Mdanter\Ecc\Primitives;
 
+use GMP;
 use Mdanter\Ecc\Exception\PointRecoveryException;
 use Mdanter\Ecc\Exception\SquareRootException;
 use Mdanter\Ecc\Math\GmpMathInterface;
@@ -83,7 +84,7 @@ class CurveFp implements CurveFpInterface
      * {@inheritDoc}
      * @see \Mdanter\Ecc\Primitives\CurveFpInterface::getPoint()
      */
-    public function getPoint(\GMP $x, \GMP $y, \GMP $order = null): PointInterface
+    public function getPoint(GMP $x, GMP $y, ?GMP $order = null): PointInterface
     {
         return new Point($this->adapter, $this, $x, $y, $order);
     }
@@ -101,17 +102,17 @@ class CurveFp implements CurveFpInterface
      * {@inheritDoc}
      * @see \Mdanter\Ecc\Primitives\CurveFpInterface::getGenerator()
      */
-    public function getGenerator(\GMP $x, \GMP $y, \GMP $order, RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint
+    public function getGenerator(GMP $x, GMP $y, GMP $order, ?RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint
     {
         return new GeneratorPoint($this->adapter, $this, $x, $y, $order, $randomGenerator);
     }
 
     /**
      * @param bool $wasOdd
-     * @param \GMP $xCoord
-     * @return \GMP
+     * @param GMP $xCoord
+     * @return GMP
      */
-    public function recoverYfromX(bool $wasOdd, \GMP $xCoord): \GMP
+    public function recoverYfromX(bool $wasOdd, GMP $xCoord): GMP
     {
         $math = $this->adapter;
         $prime = $this->getPrime();
@@ -141,7 +142,7 @@ class CurveFp implements CurveFpInterface
      * {@inheritDoc}
      * @see \Mdanter\Ecc\Primitives\CurveFpInterface::contains()
      */
-    public function contains(\GMP $x, \GMP $y): bool
+    public function contains(GMP $x, GMP $y): bool
     {
         $math = $this->adapter;
 
@@ -166,7 +167,7 @@ class CurveFp implements CurveFpInterface
      * {@inheritDoc}
      * @see \Mdanter\Ecc\Primitives\CurveFpInterface::getA()
      */
-    public function getA(): \GMP
+    public function getA(): GMP
     {
         return $this->parameters->getA();
     }
@@ -175,7 +176,7 @@ class CurveFp implements CurveFpInterface
      * {@inheritDoc}
      * @see \Mdanter\Ecc\Primitives\CurveFpInterface::getB()
      */
-    public function getB(): \GMP
+    public function getB(): GMP
     {
         return $this->parameters->getB();
     }
@@ -184,7 +185,7 @@ class CurveFp implements CurveFpInterface
      * {@inheritDoc}
      * @see \Mdanter\Ecc\Primitives\CurveFpInterface::getPrime()
      */
-    public function getPrime(): \GMP
+    public function getPrime(): GMP
     {
         return $this->parameters->getPrime();
     }

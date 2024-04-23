@@ -71,10 +71,10 @@ class SecgCurve
     }
 
     /**
-     * @param RandomNumberGeneratorInterface $randomGenerator
+     * @param ?RandomNumberGeneratorInterface $randomGenerator
      * @return GeneratorPoint
      */
-    public function generator112r1(RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint
+    public function generator112r1(?RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint
     {
         $curve = $this->curve112r1();
 
@@ -100,10 +100,10 @@ class SecgCurve
     }
 
     /**
-     * @param RandomNumberGeneratorInterface $randomGenerator
-     * @return \Mdanter\Ecc\Primitives\GeneratorPoint
+     * @param ?RandomNumberGeneratorInterface $randomGenerator
+     * @return GeneratorPoint
      */
-    public function generator192k1(RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint
+    public function generator192k1(?RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint
     {
         $curve = $this->curve192k1();
 
@@ -129,10 +129,10 @@ class SecgCurve
     }
 
     /**
-     * @param RandomNumberGeneratorInterface $randomGenerator
+     * @param ?RandomNumberGeneratorInterface $randomGenerator
      * @return GeneratorPoint
      */
-    public function generator256k1(RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint
+    public function generator256k1(?RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint
     {
         $curve = $this->curve256k1();
 
@@ -158,10 +158,10 @@ class SecgCurve
     }
 
     /**
-     * @param RandomNumberGeneratorInterface $randomGenerator
+     * @param ?RandomNumberGeneratorInterface $randomGenerator
      * @return GeneratorPoint
      */
-    public function generator256r1(RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint
+    public function generator256r1(?RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint
     {
         $curve = $this->curve256r1();
 
@@ -187,10 +187,10 @@ class SecgCurve
     }
 
     /**
-     * @param RandomNumberGeneratorInterface $randomGenerator
+     * @param ?RandomNumberGeneratorInterface $randomGenerator
      * @return GeneratorPoint
      */
-    public function generator384r1(RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint
+    public function generator384r1(?RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint
     {
         $curve = $this->curve384r1();
 

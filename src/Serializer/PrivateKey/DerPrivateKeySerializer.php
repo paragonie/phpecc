@@ -9,6 +9,8 @@ use FG\ASN1\Universal\Integer;
 use FG\ASN1\Universal\BitString;
 use FG\ASN1\Universal\OctetString;
 use Mdanter\Ecc\Crypto\Key\PrivateKeyInterface;
+use Mdanter\Ecc\Curves\NamedCurveFp;
+use Mdanter\Ecc\Exception\UnsupportedCurveException;
 use Mdanter\Ecc\Math\GmpMathInterface;
 use Mdanter\Ecc\Math\MathAdapterFactory;
 use Mdanter\Ecc\Serializer\Util\CurveOidMapper;
@@ -36,11 +38,13 @@ class DerPrivateKeySerializer implements PrivateKeySerializerInterface
     private $pubKeySerializer;
 
     /**
-     * @param GmpMathInterface       $adapter
-     * @param DerPublicKeySerializer $pubKeySerializer
+     * @param ?GmpMathInterface       $adapter
+     * @param ?DerPublicKeySerializer $pubKeySerializer
      */
-    public function __construct(GmpMathInterface $adapter = null, DerPublicKeySerializer $pubKeySerializer = null)
-    {
+    public function __construct(
+        ?GmpMathInterface $adapter = null,
+        ?DerPublicKeySerializer $pubKeySerializer = null
+    ) {
         $this->adapter = $adapter ?: MathAdapterFactory::getAdapter();
         $this->pubKeySerializer = $pubKeySerializer ?: new DerPublicKeySerializer($this->adapter);
     }
@@ -51,10 +55,14 @@ class DerPrivateKeySerializer implements PrivateKeySerializerInterface
      */
     public function serialize(PrivateKeyInterface $key): string
     {
+        $curve = $key->getPoint()->getCurve();
+        if (!($curve instanceof NamedCurveFp)) {
+            throw new UnsupportedCurveException('The curve is not a named curve');
+        }
         $privateKeyInfo = new Sequence(
             new Integer(self::VERSION),
             new OctetString($this->formatKey($key)),
-            new ExplicitlyTaggedObject(0, CurveOidMapper::getCurveOid($key->getPoint()->getCurve())),
+            new ExplicitlyTaggedObject(0, CurveOidMapper::getCurveOid($curve)),
             new ExplicitlyTaggedObject(1, $this->encodePubKey($key))
         );
 

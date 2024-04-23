@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Mdanter\Ecc\Primitives;
 
+use GMP;
 use Mdanter\Ecc\Math\ModularArithmetic;
 use Mdanter\Ecc\Random\RandomNumberGeneratorInterface;
 
@@ -46,19 +47,19 @@ interface CurveFpInterface
     /**
      * Returns the point identified by given coordinates.
      *
-     * @param  \GMP $x
-     * @param  \GMP $y
-     * @param  \GMP $order
+     * @param  GMP  $x
+     * @param  GMP  $y
+     * @param  ?GMP $order
      * @return PointInterface
      */
-    public function getPoint(\GMP $x, \GMP $y, \GMP $order = null): PointInterface;
+    public function getPoint(GMP $x, GMP $y, ?GMP $order = null): PointInterface;
 
     /**
      * @param bool $wasOdd
-     * @param \GMP $x
-     * @return \GMP
+     * @param GMP $x
+     * @return GMP
      */
-    public function recoverYfromX(bool $wasOdd, \GMP $x): \GMP;
+    public function recoverYfromX(bool $wasOdd, GMP $x): GMP;
 
     /**
      * Returns a point representing infinity on the curve.
@@ -69,43 +70,43 @@ interface CurveFpInterface
 
     /**
      *
-     * @param  \GMP $x
-     * @param  \GMP $y
-     * @param  \GMP $order
-     * @param  RandomNumberGeneratorInterface $randomGenerator
+     * @param  GMP $x
+     * @param  GMP $y
+     * @param  GMP $order
+     * @param  ?RandomNumberGeneratorInterface $randomGenerator
      * @return GeneratorPoint
      */
-    public function getGenerator(\GMP $x, \GMP $y, \GMP $order, RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint;
+    public function getGenerator(GMP $x, GMP $y, GMP $order, ?RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint;
 
     /**
      * Checks whether the curve contains the given coordinates.
      *
-     * @param  \GMP $x
-     * @param  \GMP $y
+     * @param  GMP $x
+     * @param  GMP $y
      * @return bool
      */
-    public function contains(\GMP $x, \GMP $y): bool;
+    public function contains(GMP $x, GMP $y): bool;
 
     /**
      * Returns the a parameter of the curve.
      *
-     * @return \GMP
+     * @return GMP
      */
-    public function getA(): \GMP;
+    public function getA(): GMP;
 
     /**
      * Returns the b parameter of the curve.
      *
-     * @return \GMP
+     * @return GMP
      */
-    public function getB(): \GMP;
+    public function getB(): GMP;
 
     /**
      * Returns the prime associated with the curve.
      *
-     * @return \GMP
+     * @return GMP
      */
-    public function getPrime(): \GMP;
+    public function getPrime(): GMP;
 
     /**
      * @return int

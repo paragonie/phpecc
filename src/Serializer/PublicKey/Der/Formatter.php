@@ -25,7 +25,7 @@ class Formatter
      * Formatter constructor.
      * @param PointSerializerInterface|null $pointSerializer
      */
-    public function __construct(PointSerializerInterface $pointSerializer = null)
+    public function __construct(?PointSerializerInterface $pointSerializer = null)
     {
         $this->pointSerializer = $pointSerializer ?: new UncompressedPointSerializer();
     }

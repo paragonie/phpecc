@@ -106,7 +106,7 @@ class PrivateKey implements PrivateKeyInterface
      * {@inheritDoc}
      * @see \Mdanter\Ecc\Crypto\Key\PrivateKeyInterface::createExchange()
      */
-    public function createExchange(PublicKeyInterface $recipient = null): EcDHInterface
+    public function createExchange(?PublicKeyInterface $recipient = null): EcDHInterface
     {
         $ecdh = new EcDH($this->adapter);
         $ecdh

@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Mdanter\Ecc\Primitives;
 
+use GMP;
 use Mdanter\Ecc\Exception\PointException;
 use Mdanter\Ecc\Exception\PointNotOnCurveException;
 use Mdanter\Ecc\Math\GmpMathInterface;
@@ -57,17 +58,17 @@ class Point implements PointInterface
     private $modAdapter;
 
     /**
-     * @var \GMP
+     * @var GMP
      */
     private $x;
 
     /**
-     * @var \GMP
+     * @var GMP
      */
     private $y;
 
     /**
-     * @var \GMP
+     * @var GMP
      */
     private $order;
 
@@ -81,16 +82,22 @@ class Point implements PointInterface
      *
      * @param GmpMathInterface     $adapter
      * @param CurveFpInterface     $curve
-     * @param \GMP                 $x
-     * @param \GMP                 $y
-     * @param \GMP                 $order
+     * @param GMP                 $x
+     * @param GMP                 $y
+     * @param ?GMP                 $order
      * @param bool                 $infinity
      *
      * @throws \RuntimeException    when either the curve does not contain the given coordinates or
      *                                      when order is not null and P(x, y) * order is not equal to infinity.
      */
-    public function __construct(GmpMathInterface $adapter, CurveFpInterface $curve, \GMP $x, \GMP $y, \GMP $order = null, bool $infinity = false)
-    {
+    public function __construct(
+        GmpMathInterface $adapter,
+        CurveFpInterface $curve,
+        GMP $x,
+        GMP $y,
+        ?GMP $order = null,
+        bool $infinity = false
+    ) {
         $this->adapter    = $adapter;
         $this->modAdapter = $curve->getModAdapter();
         $this->curve      = $curve;
@@ -140,7 +147,7 @@ class Point implements PointInterface
      * {@inheritDoc}
      * @see \Mdanter\Ecc\Primitives\PointInterface::getOrder()
      */
-    public function getOrder(): \GMP
+    public function getOrder(): GMP
     {
         return $this->order;
     }
@@ -149,7 +156,7 @@ class Point implements PointInterface
      * {@inheritDoc}
      * @see \Mdanter\Ecc\Primitives\PointInterface::getX()
      */
-    public function getX(): \GMP
+    public function getX(): GMP
     {
         return $this->x;
     }
@@ -158,7 +165,7 @@ class Point implements PointInterface
      * {@inheritDoc}
      * @see \Mdanter\Ecc\Primitives\PointInterface::getY()
      */
-    public function getY(): \GMP
+    public function getY(): GMP
     {
         return $this->y;
     }
@@ -251,7 +258,7 @@ class Point implements PointInterface
      * {@inheritDoc}
      * @see \Mdanter\Ecc\Primitives\PointInterface::mul()
      */
-    public function mul(\GMP $n): PointInterface
+    public function mul(GMP $n): PointInterface
     {
         if ($this->isInfinity()) {
             return $this->curve->getInfinity();
@@ -306,14 +313,14 @@ class Point implements PointInterface
     }
 
     /**
-     * @param bool|\GMP $a
-     * @param bool|\GMP $b
+     * @param bool|GMP $a
+     * @param bool|GMP $b
      * @param int $cond
      * @param int $maskBitSize
      */
     public function cswapValue(& $a, & $b, int $cond, int $maskBitSize)
     {
-        $isGMP = is_object($a) && $a instanceof \GMP;
+        $isGMP = is_object($a) && $a instanceof GMP;
 
         $sa = $isGMP ? $a : gmp_init(intval($a), 10);
         $sb = $isGMP ? $b : gmp_init(intval($b), 10);

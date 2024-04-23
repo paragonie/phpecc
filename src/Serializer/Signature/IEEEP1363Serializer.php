@@ -25,7 +25,7 @@ class IEEEP1363Serializer implements IEEEP1363SerializerInterface
      */
     private $curveFp;
 
-    public function __construct(CurveFp $curveFp = null)
+    public function __construct(?CurveFp $curveFp = null)
     {
         $this->parser = new IEEEP1363\Parser();
         $this->formatter = new IEEEP1363\Formatter();

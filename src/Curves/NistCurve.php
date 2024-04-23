@@ -77,10 +77,10 @@ class NistCurve
     /**
      * Returns an NIST P-192 generator.
      *
-     * @param  RandomNumberGeneratorInterface $randomGenerator
+     * @param  >RandomNumberGeneratorInterface $randomGenerator
      * @return GeneratorPoint
      */
-    public function generator192(RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint
+    public function generator192(?RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint
     {
         $curve = $this->curve192();
         $order = gmp_init('6277101735386680763835789423176059013767194773182842284081', 10);
@@ -109,10 +109,10 @@ class NistCurve
     /**
      * Returns an NIST P-224 generator.
      *
-     * @param  RandomNumberGeneratorInterface $randomGenerator
+     * @param  ?RandomNumberGeneratorInterface $randomGenerator
      * @return GeneratorPoint
      */
-    public function generator224(RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint
+    public function generator224(?RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint
     {
         $curve = $this->curve224();
         $order = gmp_init('26959946667150639794667015087019625940457807714424391721682722368061', 10);
@@ -141,10 +141,10 @@ class NistCurve
     /**
      * Returns an NIST P-256 generator.
      *
-     * @param  RandomNumberGeneratorInterface $randomGenerator
+     * @param  ?RandomNumberGeneratorInterface $randomGenerator
      * @return GeneratorPoint
      */
-    public function generator256(RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint
+    public function generator256(?RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint
     {
         $curve = $this->curve256();
         $order = gmp_init('115792089210356248762697446949407573529996955224135760342422259061068512044369', 10);
@@ -173,10 +173,10 @@ class NistCurve
     /**
      * Returns an NIST P-384 generator.
      *
-     * @param  RandomNumberGeneratorInterface $randomGenerator
+     * @param  ?RandomNumberGeneratorInterface $randomGenerator
      * @return GeneratorPoint
      */
-    public function generator384(RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint
+    public function generator384(?RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint
     {
         $curve = $this->curve384();
         $order = gmp_init('39402006196394479212279040100143613805079739270465446667946905279627659399113263569398956308152294913554433653942643', 10);
@@ -205,10 +205,10 @@ class NistCurve
     /**
      * Returns an NIST P-521 generator.
      *
-     * @param  RandomNumberGeneratorInterface $randomGenerator
+     * @param  ?RandomNumberGeneratorInterface $randomGenerator
      * @return GeneratorPoint
      */
-    public function generator521(RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint
+    public function generator521(?RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint
     {
         $curve = $this->curve521();
         $order = gmp_init('6864797660130609714981900799081393217269435300143305409394463459185543183397655394245057746333217197532963996371363321113864768612440380340372808892707005449', 10);

@@ -40,11 +40,13 @@ class DerPublicKeySerializer implements PublicKeySerializerInterface
     private $parser;
 
     /**
-     * @param GmpMathInterface|null $adapter
-     * @param PointSerializerInterface|null $pointSerializer
+     * @param ?GmpMathInterface $adapter
+     * @param ?PointSerializerInterface $pointSerializer
      */
-    public function __construct(GmpMathInterface $adapter = null, PointSerializerInterface $pointSerializer = null)
-    {
+    public function __construct(
+        ?GmpMathInterface $adapter = null,
+        ?PointSerializerInterface $pointSerializer = null
+    ) {
         $this->adapter = $adapter ?: MathAdapterFactory::getAdapter();
 
         $this->formatter = new Formatter();
