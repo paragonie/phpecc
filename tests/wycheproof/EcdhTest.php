@@ -128,7 +128,7 @@ class EcdhTest extends AbstractTestCase
      */
     public function testEcdh(string $curveName, string $public, string $private, string $shared, array $flags, string $result, string $comment, int $tcId)
     {
-        return $this->doTest($curveName, $public, $private, $shared, $flags, $result, $comment, $tcId);
+        $this->doTest($curveName, $public, $private, $shared, $flags, $result, $comment, $tcId);
     }
 
     public function getSecp224r1Fixtures()
@@ -141,7 +141,7 @@ class EcdhTest extends AbstractTestCase
      */
     public function testSecp224r1Fixtures(string $curveName, string $public, string $private, string $shared, array $flags, string $result, string $comment, int $tcId)
     {
-        return $this->doTest($curveName, $public, $private, $shared, $flags, $result, $comment, $tcId);
+        $this->doTest($curveName, $public, $private, $shared, $flags, $result, $comment, $tcId);
     }
 
     public function getSecp256r1Fixtures()
@@ -154,7 +154,7 @@ class EcdhTest extends AbstractTestCase
      */
     public function testSecp256r1Fixtures(string $curveName, string $public, string $private, string $shared, array $flags, string $result, string $comment, int $tcId)
     {
-        return $this->doTest($curveName, $public, $private, $shared, $flags, $result, $comment, $tcId);
+        $this->doTest($curveName, $public, $private, $shared, $flags, $result, $comment, $tcId);
     }
 
     public function getSecp256k1Fixtures()
@@ -167,7 +167,7 @@ class EcdhTest extends AbstractTestCase
      */
     public function testSecp256k1Fixtures(string $curveName, string $public, string $private, string $shared, array $flags, string $result, string $comment, int $tcId)
     {
-        return $this->doTest($curveName, $public, $private, $shared, $flags, $result, $comment, $tcId);
+        $this->doTest($curveName, $public, $private, $shared, $flags, $result, $comment, $tcId);
     }
 
     public function getSecp384r1Fixtures()
@@ -180,7 +180,7 @@ class EcdhTest extends AbstractTestCase
      */
     public function testSecp384r1Fixtures(string $curveName, string $public, string $private, string $shared, array $flags, string $result, string $comment, int $tcId)
     {
-        return $this->doTest($curveName, $public, $private, $shared, $flags, $result, $comment, $tcId);
+        $this->doTest($curveName, $public, $private, $shared, $flags, $result, $comment, $tcId);
     }
 
     public function getSecp521r1Fixtures()
@@ -193,7 +193,7 @@ class EcdhTest extends AbstractTestCase
      */
     public function testSecp521r1Fixtures(string $curveName, string $public, string $private, string $shared, array $flags, string $result, string $comment, int $tcId)
     {
-        return $this->doTest($curveName, $public, $private, $shared, $flags, $result, $comment, $tcId);
+        $this->doTest($curveName, $public, $private, $shared, $flags, $result, $comment, $tcId);
     }
 
     public function doTest(string $curveName, string $public, string $private, string $shared, array $flags, string $result, string $comment, int $tcId)

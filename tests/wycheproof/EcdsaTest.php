@@ -83,7 +83,7 @@ class EcdsaTest extends AbstractTestCase
      */
     public function testEcdsa(GeneratorPoint $generator, PublicKey $publicKey, HasherInterface $hasher, string $message, string $sigHex, string $result, array $flags, string $tcId, string $comment)
     {
-        return $this->doTest($generator, $publicKey, $hasher, $message, $sigHex, $result, $flags, $tcId, $comment);
+        $this->doTest($generator, $publicKey, $hasher, $message, $sigHex, $result, $flags, $tcId, $comment);
     }
 
     public function getEcdsaSecp224r1Sha224TestVectors(): array
@@ -96,7 +96,7 @@ class EcdsaTest extends AbstractTestCase
      */
     public function testSecp224r1Sha224(GeneratorPoint $generator, PublicKey $publicKey, HasherInterface $hasher, string $message, string $sigHex, string $result, array $flags, string $tcId, string $comment)
     {
-        return $this->doTest($generator, $publicKey, $hasher, $message, $sigHex, $result, $flags, $tcId, $comment);
+        $this->doTest($generator, $publicKey, $hasher, $message, $sigHex, $result, $flags, $tcId, $comment);
     }
 
     public function getEcdsaSecp224r1Sha256TestVectors(): array
@@ -109,7 +109,7 @@ class EcdsaTest extends AbstractTestCase
      */
     public function testSecp224r1Sha256(GeneratorPoint $generator, PublicKey $publicKey, HasherInterface $hasher, string $message, string $sigHex, string $result, array $flags, string $tcId, string $comment)
     {
-        return $this->doTest($generator, $publicKey, $hasher, $message, $sigHex, $result, $flags, $tcId, $comment);
+        $this->doTest($generator, $publicKey, $hasher, $message, $sigHex, $result, $flags, $tcId, $comment);
     }
 
     public function getEcdsaSecp224r1Sha512TestVectors(): array
@@ -122,7 +122,7 @@ class EcdsaTest extends AbstractTestCase
      */
     public function testSecp224r1Sha512(GeneratorPoint $generator, PublicKey $publicKey, HasherInterface $hasher, string $message, string $sigHex, string $result, array $flags, string $tcId, string $comment)
     {
-        return $this->doTest($generator, $publicKey, $hasher, $message, $sigHex, $result, $flags, $tcId, $comment);
+        $this->doTest($generator, $publicKey, $hasher, $message, $sigHex, $result, $flags, $tcId, $comment);
     }
 
     public function getEcdsaSecp256k1Sha256TestVectors(): array
@@ -135,7 +135,7 @@ class EcdsaTest extends AbstractTestCase
      */
     public function testSecp256k1Sha256(GeneratorPoint $generator, PublicKey $publicKey, HasherInterface $hasher, string $message, string $sigHex, string $result, array $flags, string $tcId, string $comment)
     {
-        return $this->doTest($generator, $publicKey, $hasher, $message, $sigHex, $result, $flags, $tcId, $comment);
+        $this->doTest($generator, $publicKey, $hasher, $message, $sigHex, $result, $flags, $tcId, $comment);
     }
 
     public function getEcdsaSecp256k1Sha512TestVectors(): array
@@ -148,7 +148,7 @@ class EcdsaTest extends AbstractTestCase
      */
     public function testSecp256k1Sha512(GeneratorPoint $generator, PublicKey $publicKey, HasherInterface $hasher, string $message, string $sigHex, string $result, array $flags, string $tcId, string $comment)
     {
-        return $this->doTest($generator, $publicKey, $hasher, $message, $sigHex, $result, $flags, $tcId, $comment);
+        $this->doTest($generator, $publicKey, $hasher, $message, $sigHex, $result, $flags, $tcId, $comment);
     }
 
     public function getEcdsaSecp256r1Sha256TestVectors(): array
@@ -160,7 +160,7 @@ class EcdsaTest extends AbstractTestCase
      */
     public function testSecp256r1Sha256(GeneratorPoint $generator, PublicKey $publicKey, HasherInterface $hasher, string $message, string $sigHex, string $result, array $flags, string $tcId, string $comment)
     {
-        return $this->doTest($generator, $publicKey, $hasher, $message, $sigHex, $result, $flags, $tcId, $comment);
+        $this->doTest($generator, $publicKey, $hasher, $message, $sigHex, $result, $flags, $tcId, $comment);
     }
 
     public function getEcdsaSecp256r1Sha512TestVectors(): array
@@ -173,7 +173,7 @@ class EcdsaTest extends AbstractTestCase
      */
     public function testSecp256r1Sha512(GeneratorPoint $generator, PublicKey $publicKey, HasherInterface $hasher, string $message, string $sigHex, string $result, array $flags, string $tcId, string $comment)
     {
-        return $this->doTest($generator, $publicKey, $hasher, $message, $sigHex, $result, $flags, $tcId, $comment);
+        $this->doTest($generator, $publicKey, $hasher, $message, $sigHex, $result, $flags, $tcId, $comment);
     }
 
     public function getEcdsaSecp384r1Sha256TestVectors(): array
@@ -186,7 +186,7 @@ class EcdsaTest extends AbstractTestCase
      */
     public function testSecp384r1Sha256(GeneratorPoint $generator, PublicKey $publicKey, HasherInterface $hasher, string $message, string $sigHex, string $result, array $flags, string $tcId, string $comment)
     {
-        return $this->doTest($generator, $publicKey, $hasher, $message, $sigHex, $result, $flags, $tcId, $comment);
+        $this->doTest($generator, $publicKey, $hasher, $message, $sigHex, $result, $flags, $tcId, $comment);
     }
 
     public function getEcdsaSecp384r1Sha512TestVectors(): array
@@ -199,7 +199,7 @@ class EcdsaTest extends AbstractTestCase
      */
     public function testSecp384r1Sha512(GeneratorPoint $generator, PublicKey $publicKey, HasherInterface $hasher, string $message, string $sigHex, string $result, array $flags, string $tcId, string $comment)
     {
-        return $this->doTest($generator, $publicKey, $hasher, $message, $sigHex, $result, $flags, $tcId, $comment);
+        $this->doTest($generator, $publicKey, $hasher, $message, $sigHex, $result, $flags, $tcId, $comment);
     }
 
     public function getEcdsaSecp521r1Sha512TestVectors(): array
@@ -212,7 +212,7 @@ class EcdsaTest extends AbstractTestCase
      */
     public function testSecp521r1Sha512(GeneratorPoint $generator, PublicKey $publicKey, HasherInterface $hasher, string $message, string $sigHex, string $result, array $flags, string $tcId, string $comment)
     {
-        return $this->doTest($generator, $publicKey, $hasher, $message, $sigHex, $result, $flags, $tcId, $comment);
+        $this->doTest($generator, $publicKey, $hasher, $message, $sigHex, $result, $flags, $tcId, $comment);
     }
 
     protected function doTest(GeneratorPoint $generator, PublicKey $publicKey, HasherInterface $hasher, string $message, string $sigHex, string $result, array $flags, string $tcId, string $comment)
