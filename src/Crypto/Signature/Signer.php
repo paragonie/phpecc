@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Mdanter\Ecc\Crypto\Signature;
 
+use GMP;
 use Mdanter\Ecc\Math\ConstantTimeMath;
 use Mdanter\Ecc\Math\GmpMathInterface;
 use Mdanter\Ecc\Crypto\Key\PrivateKeyInterface;
@@ -37,11 +38,11 @@ class Signer
 
     /**
      * @param PrivateKeyInterface $key
-     * @param \GMP $truncatedHash - hash truncated for use in ECDSA
-     * @param \GMP $randomK
+     * @param GMP $truncatedHash - hash truncated for use in ECDSA
+     * @param GMP $randomK
      * @return SignatureInterface
      */
-    public function sign(PrivateKeyInterface $key, \GMP $truncatedHash, \GMP $randomK): SignatureInterface
+    public function sign(PrivateKeyInterface $key, GMP $truncatedHash, GMP $randomK): SignatureInterface
     {
         $math = new ConstantTimeMath();
         $generator = $key->getPoint();
@@ -75,10 +76,10 @@ class Signer
     /**
      * @param PublicKeyInterface $key
      * @param SignatureInterface $signature
-     * @param \GMP $hash
+     * @param GMP $hash
      * @return bool
      */
-    public function verify(PublicKeyInterface $key, SignatureInterface $signature, \GMP $hash): bool
+    public function verify(PublicKeyInterface $key, SignatureInterface $signature, GMP $hash): bool
     {
         $generator = $key->getGenerator();
         $n = $generator->getOrder();
@@ -86,6 +87,7 @@ class Signer
         $s = $signature->getS();
 
         $math = $this->adapter;
+        /** @var GMP $one */
         $one = gmp_init(1, 10);
         if ($math->cmp($r, $one) < 0 || $math->cmp($r, $math->sub($n, $one)) > 0) {
             return false;
