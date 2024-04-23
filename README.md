@@ -61,7 +61,7 @@ This package is released under the MIT license.
 
 You can install this library via Composer :
 
-`composer require paragonie/ecc:^1.0`
+`composer require paragonie/ecc:^2`
 
 ### Contribute
 
