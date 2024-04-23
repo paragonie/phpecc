@@ -65,9 +65,7 @@ class Signer
         // Prevent high-order values for S
         if ($this->disallowMalleableSig) {
             $n = $generator->getOrder();
-            /** @var GMP $two */
-            $two = gmp_init(2, 10);
-            $halfOrder = $modMath->div($n, $two);
+            $halfOrder = $math->rightShift($n, 1);
             if ($math->cmp($s, $halfOrder) > 0) {
                 $s = $math->sub($n, $s);
             }
