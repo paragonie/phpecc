@@ -1,5 +1,5 @@
 {
-    "name": "mdanter/ecc",
+    "name": "paragonie/ecc",
     "description": "PHP Elliptic Curve Cryptography library",
     "type": "library",
     "homepage": "https://github.com/phpecc/phpecc",
@@ -7,20 +7,26 @@
     "license": "MIT",
     "authors": [
         {
+            "name": "Paragon Initiative Enterprises",
+            "homepage": "https://paragonie.com",
+            "email": "security@paragonie.com",
+            "role": "New Maintainer"
+        },
+        {
             "name": "Matyas Danter",
             "homepage": "http://matejdanter.com/",
-            "role": "Author"
+            "role": "Previous Author"
         },
         {
             "name": "Thibaud Fabre",
             "email": "thibaud@aztech.io",
             "homepage": "http://aztech.io",
-            "role": "Maintainer"
+            "role": "Previous Maintainer"
         },
         {
             "name": "Thomas Kerin",
             "email": "afk11@users.noreply.github.com",
-            "role": "Maintainer"
+            "role": "Previous Maintainer"
         }
     ],
     "require": {
