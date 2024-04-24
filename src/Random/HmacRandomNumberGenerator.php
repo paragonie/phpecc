@@ -8,6 +8,7 @@ use Mdanter\Ecc\Crypto\Key\PrivateKeyInterface;
 use Mdanter\Ecc\Math\GmpMathInterface;
 use Mdanter\Ecc\Util\BinaryString;
 use Mdanter\Ecc\Util\NumberSize;
+use SodiumException;
 
 class HmacRandomNumberGenerator implements RandomNumberGeneratorInterface
 {
@@ -111,6 +112,7 @@ class HmacRandomNumberGenerator implements RandomNumberGeneratorInterface
     /**
      * @param GMP $max
      * @return GMP
+     * @throws SodiumException
      */
     public function generate(GMP $max): GMP
     {
@@ -129,7 +131,7 @@ class HmacRandomNumberGenerator implements RandomNumberGeneratorInterface
         $v = hash_hmac($this->algorithm, $v, $k, true);
 
         $t = '';
-        for (;;) {
+        while (true) {
             $toff = gmp_init(0, 10);
             while ($this->math->cmp($toff, $rlen) < 0) {
                 $v = hash_hmac($this->algorithm, $v, $k, true);
@@ -139,12 +141,17 @@ class HmacRandomNumberGenerator implements RandomNumberGeneratorInterface
                 $toff = gmp_add($toff, $cc);
             }
 
+            // This annotation is for Scrutinizer, which gets confused with ext-gmp:
+            /** @var GMP $k */
             $k = $this->bits2int($t, $qlen);
             if ($this->math->cmp($k, gmp_init(0, 10)) > 0 && $this->math->cmp($k, $max) < 0) {
                 return $k;
             }
 
-            $k = hash_hmac($this->algorithm, $v . "\x00", $k, true);
+            $_k = ($k instanceof GMP)
+                ? sodium_hex2bin(gmp_strval($k, 16))
+                : $k;
+            $k = hash_hmac($this->algorithm, $v . "\x00", $_k, true);
             $v = hash_hmac($this->algorithm, $v, $k, true);
         }
     }
