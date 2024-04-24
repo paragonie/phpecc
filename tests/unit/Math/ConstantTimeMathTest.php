@@ -60,6 +60,21 @@ class ConstantTimeMathTest extends MathTestBase
         $this->assertEquals(-1, $math->cmp($f, $g), "{$f} < {$g}");
     }
 
+    public function testEqualsReturnint()
+    {
+        $math = new ConstantTimeMath();
+        $big    = '01' . bin2hex(random_bytes(16)) . '01';
+        $bigger = '7f' . bin2hex(random_bytes(16)) . '7f';
+        $a = gmp_init($big, 16);
+        $b = gmp_init($bigger, 16);
+
+
+        $this->assertEquals(0, $math->equalsReturnInt($a, $b), "{$a} < {$b} should return 0");
+        $this->assertEquals(1, $math->equalsReturnInt($a, $a), "{$a} == {$a} should return 1");
+        $this->assertEquals(1, $math->equalsReturnInt($b, $b), "{$b} == {$b} should return 1");
+        $this->assertEquals(0, $math->equalsReturnInt($b, $a), "{$b} > {$a} should return 0");
+    }
+
     public function testOrdChr()
     {
         $math = new ConstantTimeMath();
