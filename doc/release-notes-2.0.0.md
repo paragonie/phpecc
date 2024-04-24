@@ -65,7 +65,7 @@ Replace `mdanter/ecc` or `phpecc/phpecc` in your `composer.json` with the follow
 {
   "require": {
     /* ... */
-    "paragonie/phpecc": "^2"
+    "paragonie/ecc": "^2"
     /* ... */
   }
 }
