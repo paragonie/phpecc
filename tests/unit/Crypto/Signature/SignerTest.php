@@ -31,6 +31,9 @@ class SignerTest extends AbstractTestCase
         $k = RandomGeneratorFactory::getRandomGenerator()->generate($n);
 
         $hasher = new SignHasher($hashAlgo, $adapter);
+        $this->assertSame($hashAlgo, $hasher->getAlgorithm());
+        $this->assertSame(32, $hasher->getLengthInBytes());
+
         $hash = $hasher->makeHash('testing', $generator);
         $privateKey = $generator->createPrivateKey();
         $publicKey = $privateKey->getPublicKey();

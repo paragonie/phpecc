@@ -5,6 +5,7 @@ namespace Mdanter\Ecc\Tests\Serializer\Point;
 
 use Mdanter\Ecc\EccFactory;
 use Mdanter\Ecc\Math\GmpMath;
+use Mdanter\Ecc\Math\NumberTheory;
 use Mdanter\Ecc\Serializer\Point\CompressedPointSerializer;
 use Mdanter\Ecc\Tests\AbstractTestCase;
 
@@ -17,6 +18,7 @@ class CompressedPointSerializerTest extends AbstractTestCase
         $data = '01aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa';
         $serializer = new CompressedPointSerializer(EccFactory::getAdapter());
         $serializer->unserialize(EccFactory::getNistCurves()->curve192(), $data);
+        $this->assertInstanceOf(NumberTheory::class, $serializer->getNumberTheory());
     }
 
     public function testSerializesToActualPoint()
