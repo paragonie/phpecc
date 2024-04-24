@@ -144,10 +144,15 @@ class ConstantTimeMath extends GmpMath
         $u = clone $x;
         $v = clone $y;
 
+        /** @var GMP $zero */
         $zero = gmp_init(0, 10);
+        /** @var GMP $a */
         $a = gmp_init(1, 10);
+        /** @var GMP $b */
         $b = gmp_init(0, 10);
+        /** @var GMP $c */
         $c = gmp_init(0, 10);
+        /** @var GMP $d */
         $d = gmp_init(1, 10);
 
         do {

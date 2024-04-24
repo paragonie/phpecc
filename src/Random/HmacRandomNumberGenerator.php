@@ -116,8 +116,11 @@ class HmacRandomNumberGenerator implements RandomNumberGeneratorInterface
      */
     public function generate(GMP $max): GMP
     {
+        /** @var GMP $qlen */
         $qlen = gmp_init(NumberSize::bnNumBits($this->math, $max), 10);
-        $rlen = $this->math->rightShift($this->math->add($qlen, gmp_init(7, 10)), 3);
+        /** @var GMP $seven */
+        $seven = gmp_init(7, 10);
+        $rlen = $this->math->rightShift($this->math->add($qlen, $seven), 3);
         $hlen = $this->getHashLength($this->algorithm);
         $bx = $this->int2octets($this->privateKey->getSecret(), $rlen) . $this->int2octets($this->messageHash, $rlen);
 
@@ -132,6 +135,7 @@ class HmacRandomNumberGenerator implements RandomNumberGeneratorInterface
 
         $t = '';
         while (true) {
+            /** @var GMP $toff */
             $toff = gmp_init(0, 10);
             while ($this->math->cmp($toff, $rlen) < 0) {
                 $v = hash_hmac($this->algorithm, $v, $k, true);

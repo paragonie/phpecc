@@ -66,9 +66,15 @@ class NumberTheory
     public function __construct(GmpMathInterface $adapter)
     {
         $this->adapter = $adapter;
-        $this->zero = gmp_init(0, 10);
-        $this->one = gmp_init(1, 10);
-        $this->two = gmp_init(2, 10);
+        /** @var GMP $zero */
+        $zero = gmp_init(0, 10);
+        $this->zero = $zero;
+        /** @var GMP $one */
+        $one = gmp_init(1, 10);
+        $this->one = $one;
+        /** @var GMP $two */
+        $two = gmp_init(2, 10);
+        $this->two = $two;
     }
 
     /**
@@ -159,7 +165,7 @@ class NumberTheory
 
         if ($adapter->cmp($exponent, $p) < 0) {
             if ($adapter->equals($exponent, $this->zero)) {
-                return $this->one;
+                return [$this->one];
             }
 
             $G = $base;
@@ -194,8 +200,12 @@ class NumberTheory
     public function squareRootModP(GMP $a, GMP $p): GMP
     {
         $math = $this->adapter;
+        /** @var GMP $three */
+        $three = gmp_init(3, 10);
         /** @var GMP $four */
         $four = gmp_init(4, 10);
+        /** @var GMP $five */
+        $five = gmp_init(5, 10);
         /** @var GMP $eight */
         $eight = gmp_init(8, 10);
 
@@ -214,14 +224,14 @@ class NumberTheory
                 throw new SquareRootException("{$math->toString($a)} has no square root modulo {$math->toString($p)}");
             }
 
-            if ($math->equals($math->mod($p, $four), gmp_init(3, 10))) {
+            if ($math->equals($math->mod($p, $four), $three)) {
                 return $modMath->pow($a, $math->div($math->add($p, $this->one), $four));
             }
 
-            if ($math->equals($math->mod($p, $eight), gmp_init(5, 10))) {
+            if ($math->equals($math->mod($p, $eight), $five)) {
                 $d = $modMath->pow($a, $math->div($math->sub($p, $this->one), $four));
                 if ($math->equals($d, $this->one)) {
-                    return $modMath->pow($a, $math->div($math->add($p, gmp_init(3, 10)), $eight));
+                    return $modMath->pow($a, $math->div($math->add($p, $three), $eight));
                 }
 
                 if ($math->equals($d, $math->sub($p, $this->one))) {
@@ -238,7 +248,7 @@ class NumberTheory
                             $math->div(
                                 $math->sub(
                                     $p,
-                                    gmp_init(5, 10)
+                                    $five
                                 ),
                                 $eight
                             )
