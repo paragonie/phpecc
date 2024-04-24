@@ -43,7 +43,9 @@ class CompressedPointSerializer implements PointSerializerInterface
      */
     public function getPrefix(PointInterface $point): string
     {
+        /** @var GMP $two */
         $two = gmp_init(2, 10);
+        /** @var GMP $zero */
         $zero = gmp_init(0, 10);
         if ($this->adapter->equals($this->adapter->mod($point->getY(), $two), $zero)) {
             return '02';
