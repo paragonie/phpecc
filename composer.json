@@ -29,6 +29,9 @@
             "role": "Previous Maintainer"
         }
     ],
+    "replace": {
+        "mdanter/ecc": "*"
+    },
     "require": {
         "php": "^7.1||^8.0",
         "paragonie/sodium_compat": "^1|^2",
