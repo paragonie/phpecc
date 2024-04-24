@@ -6,6 +6,7 @@ namespace Mdanter\Ecc\Primitives;
 use GMP;
 use Mdanter\Ecc\Exception\PointException;
 use Mdanter\Ecc\Exception\PointNotOnCurveException;
+use Mdanter\Ecc\Math\ConstantTimeMath;
 use Mdanter\Ecc\Math\GmpMathInterface;
 use Mdanter\Ecc\Math\ModularArithmetic;
 
@@ -191,7 +192,7 @@ class Point implements PointInterface
             return clone $addend;
         }
 
-        $math = $this->adapter;
+        $math = new ConstantTimeMath();
         $modMath = $this->modAdapter;
 
         if ($math->equals($addend->getX(), $this->x)) {
@@ -234,7 +235,7 @@ class Point implements PointInterface
             return 1;
         }
 
-        $math = $this->adapter;
+        $math = new ConstantTimeMath();
         $equal = ($math->equals($this->x, $other->getX()));
         $equal &= ($math->equals($this->y, $other->getY()));
         $equal &= $this->isInfinity() == $other->isInfinity();
@@ -265,14 +266,15 @@ class Point implements PointInterface
         if ($this->isInfinity()) {
             return $this->curve->getInfinity();
         }
+        $constantTimeAdapter = new ConstantTimeMath();
 
         /** @var GMP $zero */
         $zero = gmp_init(0, 10);
-        if ($this->adapter->cmp($this->order, $zero) > 0) {
-            $multiplier = $this->adapter->mod($multiplier, $this->order);
+        if ($constantTimeAdapter->cmp($this->order, $zero) > 0) {
+            $multiplier = $constantTimeAdapter->mod($multiplier, $this->order);
         }
 
-        if ($this->adapter->equals($multiplier, $zero)) {
+        if ($constantTimeAdapter->equals($multiplier, $zero)) {
             return $this->curve->getInfinity();
         }
 
@@ -283,7 +285,16 @@ class Point implements PointInterface
         ];
 
         $k = $this->curve->getSize();
-        $multiplier = str_pad($this->adapter->baseConvert($this->adapter->toString($multiplier), 10, 2), $k, '0', STR_PAD_LEFT);
+        $multiplier = str_pad(
+            $constantTimeAdapter->baseConvert(
+                $constantTimeAdapter->toString($multiplier),
+                10,
+                2
+            ),
+            $k,
+            '0',
+            STR_PAD_LEFT
+        );
 
         for ($i = 0; $i < $k; $i++) {
             $j = $multiplier[$i];
@@ -363,7 +374,7 @@ class Point implements PointInterface
             return $this->curve->getInfinity();
         }
 
-        $math = $this->adapter;
+        $math = new ConstantTimeMath();
         $modMath = $this->modAdapter;
 
         /** @var GMP $two */
