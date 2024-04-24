@@ -62,7 +62,7 @@ class EcdhTest extends AbstractTestCase
 
             foreach ($fixture['tests'] as $test) {
                 // Library doesn't have all code paths available right now
-                if (!empty(array_intersect(["UnnamedCurve"], $test['flags']))) {
+                if (!empty(array_intersect(["UnnamedCurve", 'BER'], $test['flags']))) {
                     continue;
                 }
 

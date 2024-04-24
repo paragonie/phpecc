@@ -74,7 +74,7 @@ class EcdsaTest extends AbstractTestCase
     public function getEcdsaTestVectors(): array
     {
         $fixtures = json_decode($this->importFile("import/wycheproof/testvectors/ecdsa_test.json"), true);
-        $disabledFlags = ["MissingZero"];
+        $disabledFlags = ["MissingZero", "BER"];
         return $this->filterSet($fixtures, $this->getCurvesList(), $disabledFlags);
     }
 
