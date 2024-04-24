@@ -95,7 +95,9 @@ class CurveFp implements CurveFpInterface
      */
     public function getInfinity(): PointInterface
     {
-        return new Point($this->adapter, $this, gmp_init(0, 10), gmp_init(0, 10), null, true);
+        /** @var GMP $zero */
+        $zero = gmp_init(0, 10);
+        return new Point($this->adapter, $this, clone $zero, clone $zero, null, true);
     }
 
     /**
@@ -117,11 +119,17 @@ class CurveFp implements CurveFpInterface
         $math = $this->adapter;
         $prime = $this->getPrime();
 
+        /** @var GMP $one */
+        $one = gmp_init(1, 10);
+        /** @var GMP $two */
+        $two = gmp_init(2, 10);
+        /** @var GMP $three */
+        $three = gmp_init(3, 10);
         try {
             $root = $this->adapter->getNumberTheory()->squareRootModP(
                 $math->add(
                     $math->add(
-                        $this->modAdapter->pow($x, gmp_init(3, 10)),
+                        $this->modAdapter->pow($x, $three),
                         $math->mul($this->getA(), $x)
                     ),
                     $this->getB()
@@ -132,7 +140,7 @@ class CurveFp implements CurveFpInterface
             throw new PointRecoveryException("Failed to recover y coordinate for point", 0, $e);
         }
 
-        if ($math->equals($math->mod($root, gmp_init(2, 10)), gmp_init(1)) === $wasOdd) {
+        if ($math->equals($math->mod($root, $two), $one) === $wasOdd) {
             return $root;
         } else {
             return $math->sub($prime, $root);
@@ -145,8 +153,10 @@ class CurveFp implements CurveFpInterface
     public function contains(GMP $x, GMP $y): bool
     {
         $math = $this->adapter;
+        /** @var GMP $zero */
+        $zero = gmp_init(0, 10);
 
-        $eq_zero = $math->equals(
+        return $math->equals(
             $this->modAdapter->sub(
                 $math->pow($y, 2),
                 $math->add(
@@ -157,10 +167,8 @@ class CurveFp implements CurveFpInterface
                     $this->getB()
                 )
             ),
-            gmp_init(0, 10)
+            $zero
         );
-
-        return $eq_zero;
     }
 
     /**

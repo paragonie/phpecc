@@ -2,6 +2,7 @@
 
 namespace Mdanter\Ecc\Crypto\Signature;
 
+use GMP;
 use Mdanter\Ecc\EccFactory;
 use Mdanter\Ecc\Math\GmpMathInterface;
 use Mdanter\Ecc\Primitives\GeneratorPoint;
@@ -72,27 +73,30 @@ class SignHasher implements HasherInterface
     }
 
     /**
-     * @param \GMP $hash
+     * @param GMP $hash
      * @param GeneratorPoint $G
-     * @return \GMP
+     * @return GMP
      */
-    public function truncateForECDSA(\GMP $hash, GeneratorPoint $G)
+    public function truncateForECDSA(GMP $hash, GeneratorPoint $G): GMP
     {
         $hashBits = gmp_strval($hash, 2);
         if (BinaryString::length($hashBits) < self::$sizeMap[$this->algorithm] * 8) {
             $hashBits = str_pad($hashBits, self::$sizeMap[$this->algorithm] * 8, '0', STR_PAD_LEFT);
         }
 
-        return gmp_init(BinaryString::substring($hashBits, 0, NumberSize::bnNumBits($this->adapter, $G->getOrder())), 2);
+        /** @var GMP $obj */
+        $obj = gmp_init(BinaryString::substring($hashBits, 0, NumberSize::bnNumBits($this->adapter, $G->getOrder())), 2);
+        return $obj;
     }
 
     /**
      * @param string $data
      * @param GeneratorPoint $G
-     * @return \GMP
+     * @return GMP
      */
-    public function makeHash(string $data, GeneratorPoint $G): \GMP
+    public function makeHash(string $data, GeneratorPoint $G): GMP
     {
+        /** @var GMP $hash */
         $hash = gmp_init($this->makeRawHash($data), 16);
         return $this->truncateForECDSA($hash, $G);
     }

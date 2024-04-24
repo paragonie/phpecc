@@ -98,12 +98,14 @@ class Point implements PointInterface
         ?GMP $order = null,
         bool $infinity = false
     ) {
+        /** @var GMP $zero */
+        $zero = gmp_init(0, 10);
         $this->adapter    = $adapter;
         $this->modAdapter = $curve->getModAdapter();
         $this->curve      = $curve;
         $this->x          = $x;
         $this->y          = $y;
-        $this->order      = $order !== null ? $order : gmp_init(0, 10);
+        $this->order      = $order !== null ? $order : $zero;
         $this->infinity   = !empty($infinity);
         if (! $infinity && ! $curve->contains($x, $y)) {
             throw new PointNotOnCurveException($x, $y, $curve);
@@ -364,17 +366,22 @@ class Point implements PointInterface
         $math = $this->adapter;
         $modMath = $this->modAdapter;
 
+        /** @var GMP $two */
+        $two = gmp_init(2, 10);
+        /** @var GMP $three */
+        $three = gmp_init(3, 10);
+
         $a = $this->curve->getA();
-        $threeX2 = $math->mul(gmp_init(3, 10), $math->pow($this->x, 2));
+        $threeX2 = $math->mul($three, $math->pow($this->x, 2));
 
         $tangent = $modMath->div(
             $math->add($threeX2, $a),
-            $math->mul(gmp_init(2, 10), $this->y)
+            $math->mul($two, $this->y)
         );
 
         $x3 = $modMath->sub(
             $math->pow($tangent, 2),
-            $math->mul(gmp_init(2, 10), $this->x)
+            $math->mul($two, $this->x)
         );
 
         $y3 = $modMath->sub(

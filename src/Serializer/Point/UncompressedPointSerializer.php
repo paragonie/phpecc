@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Mdanter\Ecc\Serializer\Point;
 
+use GMP;
 use Mdanter\Ecc\Primitives\PointInterface;
 use Mdanter\Ecc\Primitives\CurveFpInterface;
 use Mdanter\Ecc\Serializer\Util\CurveOidMapper;
@@ -39,7 +40,9 @@ class UncompressedPointSerializer implements PointSerializerInterface
         $string = BinaryString::substring($string, 2);
         $dataLength = BinaryString::length($string);
 
+        /** @var GMP $x */
         $x = gmp_init(BinaryString::substring($string, 0, $dataLength / 2), 16);
+        /** @var GMP $y */
         $y = gmp_init(BinaryString::substring($string, $dataLength / 2), 16);
 
         return $curve->getPoint($x, $y);

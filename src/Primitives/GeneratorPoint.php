@@ -56,6 +56,7 @@ class GeneratorPoint extends Point
         $math = $this->getAdapter();
 
         $n = $this->getOrder();
+        /** @var GMP $zero */
         $zero = gmp_init(0, 10);
         $curve = $this->getCurve();
 

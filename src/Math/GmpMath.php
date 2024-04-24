@@ -34,7 +34,9 @@ class GmpMath implements GmpMathInterface
      */
     public function mod(GMP $number, GMP $modulus): GMP
     {
-        return gmp_mod($number, $modulus);
+        /** @var GMP $out */
+        $out = gmp_mod($number, $modulus);
+        return $out;
     }
 
     /**
@@ -43,7 +45,9 @@ class GmpMath implements GmpMathInterface
      */
     public function add(GMP $augend, GMP $addend): GMP
     {
-        return gmp_add($augend, $addend);
+        /** @var GMP $out */
+        $out = gmp_add($augend, $addend);
+        return $out;
     }
 
     /**
@@ -52,7 +56,9 @@ class GmpMath implements GmpMathInterface
      */
     public function sub(GMP $minuend, GMP $subtrahend): GMP
     {
-        return gmp_sub($minuend, $subtrahend);
+        /** @var GMP $out */
+        $out = gmp_sub($minuend, $subtrahend);
+        return $out;
     }
 
     /**
@@ -61,7 +67,9 @@ class GmpMath implements GmpMathInterface
      */
     public function mul(GMP $multiplier, GMP $multiplicand): GMP
     {
-        return gmp_mul($multiplier, $multiplicand);
+        /** @var GMP $out */
+        $out = gmp_mul($multiplier, $multiplicand);
+        return $out;
     }
 
     /**
@@ -70,7 +78,9 @@ class GmpMath implements GmpMathInterface
      */
     public function div(GMP $dividend, GMP $divisor): GMP
     {
-        return gmp_div($dividend, $divisor);
+        /** @var GMP $out */
+        $out = gmp_div($dividend, $divisor);
+        return $out;
     }
 
     /**
@@ -79,7 +89,9 @@ class GmpMath implements GmpMathInterface
      */
     public function pow(GMP $base, int $exponent): GMP
     {
-        return gmp_pow($base, $exponent);
+        /** @var GMP $out */
+        $out = gmp_pow($base, $exponent);
+        return $out;
     }
 
     /**
@@ -88,7 +100,9 @@ class GmpMath implements GmpMathInterface
      */
     public function bitwiseAnd(GMP $first, GMP $other): GMP
     {
-        return gmp_and($first, $other);
+        /** @var GMP $out */
+        $out = gmp_and($first, $other);
+        return $out;
     }
 
     /**
@@ -98,7 +112,13 @@ class GmpMath implements GmpMathInterface
     public function rightShift(GMP $number, int $positions): GMP
     {
         // Shift 1 right = div / 2
-        return gmp_div($number, gmp_pow(gmp_init(2, 10), $positions));
+        /** @var GMP $two */
+        $two = gmp_init(2, 10);
+        /** @var GMP $exp */
+        $exp = gmp_pow($two, $positions);
+        /** @var GMP $out */
+        $out = gmp_div($number, $exp);
+        return $out;
     }
 
     /**
@@ -107,7 +127,9 @@ class GmpMath implements GmpMathInterface
      */
     public function bitwiseXor(GMP $first, GMP $other): GMP
     {
-        return gmp_xor($first, $other);
+        /** @var GMP $out */
+        $out = gmp_xor($first, $other);
+        return $out;
     }
 
     /**
@@ -116,8 +138,14 @@ class GmpMath implements GmpMathInterface
      */
     public function leftShift(GMP $number, int $positions): GMP
     {
+        /** @var GMP $two */
+        $two = gmp_init(2, 10);
+        /** @var GMP $exp */
+        $exp = gmp_pow($two, $positions);
         // Shift 1 left = mul by 2
-        return gmp_mul($number, gmp_pow(2, $positions));
+        /** @var GMP $out */
+        $out = gmp_mul($number, $exp);
+        return $out;
     }
 
     /**
@@ -165,11 +193,15 @@ class GmpMath implements GmpMathInterface
      */
     public function powmod(GMP $base, GMP $exponent, GMP $modulus): GMP
     {
-        if ($this->cmp($exponent, gmp_init(0, 10)) < 0) {
+        /** @var GMP $zero */
+        $zero = gmp_init(0, 10);
+        if ($this->cmp($exponent, $zero) < 0) {
             throw new \InvalidArgumentException("Negative exponents (" . $this->toString($exponent) . ") not allowed.");
         }
 
-        return gmp_powm($base, $exponent, $modulus);
+        /** @var GMP $out */
+        $out = gmp_powm($base, $exponent, $modulus);
+        return $out;
     }
 
     /**
@@ -193,7 +225,9 @@ class GmpMath implements GmpMathInterface
      */
     public function nextPrime(GMP $currentPrime): GMP
     {
-        return gmp_nextprime($currentPrime);
+        /** @var GMP $out */
+        $out = gmp_nextprime($currentPrime);
+        return $out;
     }
 
     /**
@@ -202,7 +236,9 @@ class GmpMath implements GmpMathInterface
      */
     public function inverseMod(GMP $a, GMP $m): GMP
     {
-        return gmp_invert($a, $m);
+        /** @var GMP $out */
+        $out = gmp_invert($a, $m);
+        return $out;
     }
 
     /**
@@ -272,6 +308,7 @@ class GmpMath implements GmpMathInterface
      */
     public function stringToInt(string $s): GMP
     {
+        /** @var GMP $result */
         $result = gmp_init(0, 10);
         $sLen = BinaryString::length($s);
 

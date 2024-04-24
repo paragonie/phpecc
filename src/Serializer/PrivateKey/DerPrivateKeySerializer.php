@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Mdanter\Ecc\Serializer\PrivateKey;
 
+use GMP;
 use FG\ASN1\ASNObject;
 use FG\ASN1\Universal\Sequence;
 use FG\ASN1\Universal\Integer;
@@ -110,6 +111,7 @@ class DerPrivateKeySerializer implements PrivateKeySerializerInterface
             throw new \RuntimeException('Invalid data: only version 1 (RFC5915) keys are supported.');
         }
 
+        /** @var GMP $key */
         $key = gmp_init($children[1]->getContent(), 16);
         $oid = $children[2]->getContent()[0];
         $generator = CurveOidMapper::getGeneratorFromOid($oid);

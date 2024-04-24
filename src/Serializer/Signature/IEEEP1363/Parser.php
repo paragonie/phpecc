@@ -1,6 +1,7 @@
 <?php
 namespace Mdanter\Ecc\Serializer\Signature\IEEEP1363;
 
+use GMP;
 use Mdanter\Ecc\Crypto\Signature\Signature;
 use Mdanter\Ecc\Crypto\Signature\SignatureInterface;
 use Mdanter\Ecc\Exception\SignatureDecodeException;
@@ -26,9 +27,10 @@ class Parser
         $r = bin2hex(BinaryString::substring($binary, 0, $piece_len));
         $s = bin2hex(BinaryString::substring($binary, $piece_len, $piece_len));
 
-        return new Signature(
-            gmp_init($r, 16),
-            gmp_init($s, 16)
-        );
+        /** @var GMP $R */
+        $R = gmp_init($r, 16);
+        /** @var GMP $S */
+        $S = gmp_init($s, 16);
+        return new Signature($R, $S);
     }
 }

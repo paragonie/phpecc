@@ -69,8 +69,10 @@ class HmacRandomNumberGenerator implements RandomNumberGeneratorInterface
      */
     public function bits2int(string $bits, GMP $qlen): GMP
     {
+        /** @var GMP $vlen */
         $vlen = gmp_init(BinaryString::length($bits) * 8, 10);
         $hex = bin2hex($bits);
+        /** @var GMP $v */
         $v = gmp_init($hex, 16);
 
         if ($this->math->cmp($vlen, $qlen) > 0) {
@@ -88,6 +90,7 @@ class HmacRandomNumberGenerator implements RandomNumberGeneratorInterface
     public function int2octets(GMP $int, GMP $rlen): string
     {
         $out = pack("H*", $this->math->decHex(gmp_strval($int, 10)));
+        /** @var GMP $length */
         $length = gmp_init(BinaryString::length($out), 10);
         if ($this->math->cmp($length, $rlen) < 0) {
             return str_pad('', (int) $this->math->toString($this->math->sub($rlen, $length)), "\x00") . $out;
@@ -118,8 +121,12 @@ class HmacRandomNumberGenerator implements RandomNumberGeneratorInterface
     {
         /** @var GMP $qlen */
         $qlen = gmp_init(NumberSize::bnNumBits($this->math, $max), 10);
+
+        /** @var GMP $zero */
+        $zero = gmp_init(0, 10);
         /** @var GMP $seven */
         $seven = gmp_init(7, 10);
+
         $rlen = $this->math->rightShift($this->math->add($qlen, $seven), 3);
         $hlen = $this->getHashLength($this->algorithm);
         $bx = $this->int2octets($this->privateKey->getSecret(), $rlen) . $this->int2octets($this->messageHash, $rlen);
@@ -140,15 +147,18 @@ class HmacRandomNumberGenerator implements RandomNumberGeneratorInterface
             while ($this->math->cmp($toff, $rlen) < 0) {
                 $v = hash_hmac($this->algorithm, $v, $k, true);
 
-                $cc = min(BinaryString::length($v), (int) gmp_strval(gmp_sub($rlen, $toff), 10));
+                /** @var GMP $sub */
+                $sub = gmp_sub($rlen, $toff);
+                $cc = min(BinaryString::length($v), (int) gmp_strval($sub, 10));
                 $t .= BinaryString::substring($v, 0, $cc);
+                /** @var GMP $toff */
                 $toff = gmp_add($toff, $cc);
             }
 
             // This annotation is for Scrutinizer, which gets confused with ext-gmp:
             /** @var GMP $k */
             $k = $this->bits2int($t, $qlen);
-            if ($this->math->cmp($k, gmp_init(0, 10)) > 0 && $this->math->cmp($k, $max) < 0) {
+            if ($this->math->cmp($k, $zero) > 0 && $this->math->cmp($k, $max) < 0) {
                 return $k;
             }
 

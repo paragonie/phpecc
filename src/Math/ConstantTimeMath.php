@@ -222,11 +222,12 @@ class ConstantTimeMath extends GmpMath
             $r = $this->ord($right[$i]);
             $out[$i] = $this->chr($r ^ (($l ^ $r) & $mask));
         }
+        /** @var GMP $_a */
+        $_a = gmp_init(bin2hex(implode('', $out)), 16);
+        /** @var GMP $_b */
+        $_b = gmp_init($sign, 10);
         // Re-multiply the sign bit:
-        return $this->mul(
-            gmp_init(bin2hex(implode('', $out)), 16),
-            gmp_init($sign, 10)
-        );
+        return $this->mul($_a, $_b);
     }
 
     /**
@@ -294,7 +295,7 @@ class ConstantTimeMath extends GmpMath
      *
      * @param GMP $a
      * @param GMP $b
-     * @return array<array-key, string|int>
+     * @return array<string|int, string|int>
      */
     public function normalizeLengths(GMP $a, GMP $b): array
     {

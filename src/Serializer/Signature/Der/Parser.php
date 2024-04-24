@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Mdanter\Ecc\Serializer\Signature\Der;
 
+use GMP;
 use FG\ASN1\ASNObject;
 use FG\ASN1\Identifier;
 use FG\ASN1\Universal\Integer;
@@ -39,9 +40,12 @@ class Parser
             throw new SignatureDecodeException('Invalid data.');
         }
 
-        return new Signature(
-            gmp_init($asnObject[0]->getContent(), 10),
-            gmp_init($asnObject[1]->getContent(), 10)
-        );
+        /** @var GMP $r */
+        $r = gmp_init($asnObject[0]->getContent(), 10);
+
+        /** @var GMP $s */
+        $s = gmp_init($asnObject[1]->getContent(), 10);
+
+        return new Signature($r, $s);
     }
 }

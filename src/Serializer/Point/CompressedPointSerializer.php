@@ -3,7 +3,9 @@ declare(strict_types=1);
 
 namespace Mdanter\Ecc\Serializer\Point;
 
+use GMP;
 use Mdanter\Ecc\Math\GmpMathInterface;
+use Mdanter\Ecc\Math\NumberTheory;
 use Mdanter\Ecc\Primitives\CurveFpInterface;
 use Mdanter\Ecc\Primitives\PointInterface;
 use Mdanter\Ecc\Serializer\Util\CurveOidMapper;
@@ -16,9 +18,14 @@ class CompressedPointSerializer implements PointSerializerInterface
     private $adapter;
 
     /**
-     * @var \Mdanter\Ecc\Math\NumberTheory
+     * @var NumberTheory
      */
     private $theory;
+
+    public function getNumberTheory(): NumberTheory
+    {
+        return $this->theory;
+    }
 
     /**
      * CompressedPointSerializer constructor.
@@ -36,7 +43,9 @@ class CompressedPointSerializer implements PointSerializerInterface
      */
     public function getPrefix(PointInterface $point): string
     {
-        if ($this->adapter->equals($this->adapter->mod($point->getY(), gmp_init(2, 10)), gmp_init(0))) {
+        $two = gmp_init(2, 10);
+        $zero = gmp_init(0, 10);
+        if ($this->adapter->equals($this->adapter->mod($point->getY(), $two), $zero)) {
             return '02';
         } else {
             return '03';
@@ -69,9 +78,10 @@ class CompressedPointSerializer implements PointSerializerInterface
             throw new \InvalidArgumentException('Invalid data: only compressed keys are supported.');
         }
 
+        /** @var GMP $x */
         $x = gmp_init(substr($string, 2), 16);
-        $y = $curve->recoverYfromX($prefix === '03', $x);
+        $recoveredY = $curve->recoverYfromX($prefix === '03', $x);
 
-        return $curve->getPoint($x, $y);
+        return $curve->getPoint($x, $recoveredY);
     }
 }
