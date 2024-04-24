@@ -265,7 +265,9 @@ class GmpMath implements GmpMathInterface
             throw new \RuntimeException("x was negative - not yet supported");
         }
 
+        /** @var GMP $two */
         $two = gmp_init(2);
+        /** @var GMP $range */
         $range = gmp_pow($two, $byteSize * 8);
         if (NumberSize::bnNumBits($this, $x) >= NumberSize::bnNumBits($this, $range)) {
             throw new \RuntimeException("Number overflows byte size");
@@ -313,6 +315,7 @@ class GmpMath implements GmpMathInterface
         $sLen = BinaryString::length($s);
 
         for ($c = 0; $c < $sLen; $c ++) {
+            /** @var GMP $result */
             $result = gmp_add(gmp_mul(256, $result), gmp_init(ord($s[$c]), 10));
         }
 
@@ -334,7 +337,9 @@ class GmpMath implements GmpMathInterface
      */
     public function gcd2(GMP $a, GMP $m): GMP
     {
-        while ($this->cmp($a, gmp_init(0)) > 0) {
+        /** @var GMP $zero */
+        $zero = gmp_init(0);
+        while ($this->cmp($a, $zero) > 0) {
             $temp = $a;
             $a = $this->mod($m, $a);
             $m = $temp;
