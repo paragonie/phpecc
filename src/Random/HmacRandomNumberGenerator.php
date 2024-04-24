@@ -148,9 +148,7 @@ class HmacRandomNumberGenerator implements RandomNumberGeneratorInterface
                 return $k;
             }
 
-            $_k = ($k instanceof GMP)
-                ? sodium_hex2bin(gmp_strval($k, 16))
-                : $k;
+            $_k = sodium_hex2bin(gmp_strval($k, 16));
             $k = hash_hmac($this->algorithm, $v . "\x00", $_k, true);
             $v = hash_hmac($this->algorithm, $v, $k, true);
         }
