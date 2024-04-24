@@ -204,10 +204,10 @@ class Point implements PointInterface
         $modMath = $this->modAdapter;
 
         // if (x1 == x2)
+        $return = $this->getDouble();
         if ($math->equals($addend->getX(), $this->x)) {
             // if (y1 == y2) return doubled(), else return pointAtInfinity()
             // Avoids leaking comparison value via branching side-channels
-            $return = $this->getDouble();
             $bit = $math->equalsReturnInt($addend->getY(), $this->y);
             $this->cswap($return, $infinity, $bit ^ 1, $this->curve->getSize());
             return $return;
