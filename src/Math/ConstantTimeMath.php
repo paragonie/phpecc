@@ -84,6 +84,21 @@ class ConstantTimeMath extends GmpMath
     }
 
     /**
+     * Returns 1 if two numbers are equal. Returns 0 otherwise.
+     *
+     * @param GMP $first
+     * @param GMP $other
+     * @return int
+     */
+    public function equalsReturnInt(GMP $first, GMP $other): int
+    {
+        $compared = $this->cmp($first, $other);
+        $gt = $compared & 1;
+        $lt = ($compared >> 1) & 1;
+        return (~$compared & ~$gt & ~$lt) & 1;
+    }
+
+    /**
      * {@inheritDoc}
      * @see GmpMathInterface::inverseMod()
      */

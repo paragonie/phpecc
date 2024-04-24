@@ -59,6 +59,11 @@ class Point implements PointInterface
     private $modAdapter;
 
     /**
+     * @var ConstantTimeMath
+     */
+    private $ctMath;
+
+    /**
      * @var GMP
      */
     private $x;
@@ -103,6 +108,7 @@ class Point implements PointInterface
         $zero = gmp_init(0, 10);
         $this->adapter    = $adapter;
         $this->modAdapter = $curve->getModAdapter();
+        $this->ctMath     = new ConstantTimeMath();
         $this->curve      = $curve;
         $this->x          = $x;
         $this->y          = $y;
@@ -191,16 +197,20 @@ class Point implements PointInterface
         if ($this->isInfinity()) {
             return clone $addend;
         }
+        /** @var Point $infinity */
+        $infinity = $this->curve->getInfinity();
 
-        $math = new ConstantTimeMath();
+        $math = $this->ctMath;
         $modMath = $this->modAdapter;
 
+        // if (x1 == x2)
         if ($math->equals($addend->getX(), $this->x)) {
-            if ($math->equals($addend->getY(), $this->y)) {
-                return $this->getDouble();
-            } else {
-                return $this->curve->getInfinity();
-            }
+            // if (y1 == y2) return doubled(), else return pointAtInfinity()
+            // Avoids leaking comparison value via branching side-channels
+            $return = $this->getDouble();
+            $bit = $math->equalsReturnInt($addend->getY(), $this->y);
+            $this->cswap($return, $infinity, $bit ^ 1, $this->curve->getSize());
+            return $return;
         }
 
         $slope = $modMath->div(
