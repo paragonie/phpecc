@@ -72,7 +72,9 @@ class NistCurve
         /** @var GMP $b */
         $b = gmp_init('64210519e59c80e70fa7e9ab72243049feb8deecc146b9b1', 16);
 
-        $parameters = new CurveParameters(192, $p, gmp_init('-3', 10), $b);
+        /** @var GMP $minusThree */
+        $minusThree = gmp_init('-3', 10);
+        $parameters = new CurveParameters(192, $p, $minusThree, $b);
 
         return new NamedCurveFp(self::NAME_P192, $parameters, $this->adapter);
     }
@@ -108,7 +110,9 @@ class NistCurve
         /** @var GMP $b */
         $b = gmp_init('b4050a850c04b3abf54132565044b0b7d7bfd8ba270b39432355ffb4', 16);
 
-        $parameters = new CurveParameters(224, $p, gmp_init(-3, 10), $b);
+        /** @var GMP $minusThree */
+        $minusThree = gmp_init('-3', 10);
+        $parameters = new CurveParameters(224, $p, $minusThree, $b);
 
         return new NamedCurveFp(self::NAME_P224, $parameters, $this->adapter);
     }
