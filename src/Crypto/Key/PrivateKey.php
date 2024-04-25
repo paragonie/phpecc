@@ -32,6 +32,7 @@ use Mdanter\Ecc\Crypto\EcDH\EcDHInterface;
 use Mdanter\Ecc\Math\GmpMathInterface;
 use Mdanter\Ecc\Primitives\CurveFpInterface;
 use Mdanter\Ecc\Primitives\GeneratorPoint;
+use Mdanter\Ecc\Primitives\OptimizedCurveInterface;
 use Mdanter\Ecc\Primitives\PointInterface;
 
 /**
@@ -72,6 +73,11 @@ class PrivateKey implements PrivateKeyInterface
      */
     public function getPublicKey(): PublicKeyInterface
     {
+        $curve = $this->generator->getCurve();
+        if ($curve instanceof OptimizedCurveInterface) {
+            $optimized = $curve->getOptimizedCurveOps();
+            return new PublicKey($this->adapter, $this->generator, $optimized->scalarMultBase($this->secretMultiplier));
+        }
         return new PublicKey($this->adapter, $this->generator, $this->generator->mul($this->secretMultiplier));
     }
 
