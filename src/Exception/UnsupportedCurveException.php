@@ -46,11 +46,17 @@ class UnsupportedCurveException extends \RuntimeException
 
     public function getCurveName(): string
     {
+        if (is_null($this->curveName)) {
+            return '';
+        }
         return $this->curveName;
     }
 
     public function getOid(): string
     {
+        if (is_null($this->oid)) {
+            return '';
+        }
         return $this->oid;
     }
 }

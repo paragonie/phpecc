@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace Mdanter\Ecc\Curves;
 
-use Mdanter\Ecc\Exception\UnknownCurveException;
 use Mdanter\Ecc\Exception\UnsupportedCurveException;
 use Mdanter\Ecc\Math\GmpMathInterface;
 use Mdanter\Ecc\Math\MathAdapterFactory;

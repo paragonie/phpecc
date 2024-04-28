@@ -26,12 +26,12 @@ trait BarretReductionTrait
         $ctMath = new ConstantTimeMath();
 
         $b = ((gmp_sign($r) >> 1)) & 1;
-        $rPrime = $r + $this->p;
+        $rPrime = gmp_add($r,  $this->p);
         $r = $ctMath->select($b, $rPrime, $r);
 
         // Guaranteed to be reduced after 2 cycles
         for ($i = 0; $i < 2; ++$i) {
-            $rPrime = $r - $this->p;
+            $rPrime = gmp_sub($r, $this->p);
             // $b = 1 if $rPrime > 0, which means subtracting is necessary
             $b = (~(gmp_sign($rPrime) >> 1)) & 1;
             $r = $ctMath->select($b, $rPrime, $r);

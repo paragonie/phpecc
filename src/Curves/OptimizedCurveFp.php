@@ -20,6 +20,9 @@ class OptimizedCurveFp extends NamedCurveFp implements OptimizedCurveInterface
 
     public function getOptimizedCurveOps(): OptimizedCurveOpsInterface
     {
+        if (is_null($this->optimizedOps)) {
+            throw new \TypeError('Optimized ops was not set');
+        }
         return $this->optimizedOps;
     }
 }

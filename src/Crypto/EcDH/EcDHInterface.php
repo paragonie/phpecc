@@ -51,6 +51,7 @@ interface EcDHInterface
      * Sets the sender's key.
      *
      * @param PrivateKeyInterface $key
+     * @return self
      */
     public function setSenderKey(PrivateKeyInterface $key);
 
@@ -58,7 +59,8 @@ interface EcDHInterface
      * Sets the recipient key.
      *
      * @param  PublicKeyInterface $key
-     * @return void
+     * @return self
+     * @psalm-suppress PossiblyUnusedReturnValue
      */
     public function setRecipientKey(PublicKeyInterface $key);
 }
