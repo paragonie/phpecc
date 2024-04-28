@@ -184,9 +184,13 @@ class NistCurve
      * @param  ?RandomNumberGeneratorInterface $randomGenerator
      * @return GeneratorPoint
      */
-    public function generator256(?RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint
+    public function generator256(?RandomNumberGeneratorInterface $randomGenerator = null, bool $optimized = false): GeneratorPoint
     {
-        $curve = $this->curve256();
+        if ($optimized) {
+            $curve = $this->optimizedCurve256();
+        } else {
+            $curve = $this->curve256();
+        }
         /** @var GMP $order */
         $order = gmp_init('115792089210356248762697446949407573529996955224135760342422259061068512044369', 10);
 
@@ -238,9 +242,13 @@ class NistCurve
      * @param  ?RandomNumberGeneratorInterface $randomGenerator
      * @return GeneratorPoint
      */
-    public function generator384(?RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint
+    public function generator384(?RandomNumberGeneratorInterface $randomGenerator = null, bool $optimized = false): GeneratorPoint
     {
-        $curve = $this->curve384();
+        if ($optimized) {
+            $curve = $this->optimizedCurve384();
+        } else {
+            $curve = $this->curve384();
+        }
         /** @var GMP $order */
         $order = gmp_init('39402006196394479212279040100143613805079739270465446667946905279627659399113263569398956308152294913554433653942643', 10);
 

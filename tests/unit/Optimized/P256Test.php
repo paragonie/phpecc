@@ -77,14 +77,6 @@ class P256Test extends AbstractTestCase
         $this->assertGMPSame($g2->x, $dbl->x, 'x differs (g+g vs 2g)');
         $this->assertGMPSame($g2->y, $dbl->y, 'y differs (g+g vs 2g)');
 
-        /*
-        $expectX = gmp_init('0x2e266b2f20e364762d87ade1cf5657d3f10d2d48a235a9aa74b00bf91aeb7e16', 16);
-        $expectY = gmp_init('0x881f89d798da41a6abbcea4c3023a314225f973c2c9672a3e874649cf6a67d8e', 16);
-
-        $this->assertGMPSame($expectX, $dbl->x, 'x differs');
-        $this->assertGMPSame($expectY, $dbl->y, 'y differs');
-        */
-
         $affine = $dbl;
 
         $expectX = gmp_init('0x7cf27b188d034f7e8a52380304b51ac3c08969e277f21b35a60b48fc47669978', 16);

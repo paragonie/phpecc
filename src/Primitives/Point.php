@@ -190,10 +190,6 @@ class Point implements PointInterface
         if (! $this->curve->equals($addend->getCurve())) {
             throw new \RuntimeException("The Elliptic Curves do not match.");
         }
-        if ($this->curve instanceof OptimizedCurveFp) {
-            $ops = $this->curve->getOptimizedCurveOps();
-            return $ops->addPoints($this, $addend);
-        }
 
         if ($addend->isInfinity()) {
             return clone $this;
@@ -389,10 +385,6 @@ class Point implements PointInterface
      */
     public function getDouble(): PointInterface
     {
-        if ($this->curve instanceof OptimizedCurveFp) {
-            $ops = $this->curve->getOptimizedCurveOps();
-            return $ops->doublePoint($this);
-        }
         if ($this->isInfinity()) {
             return $this->curve->getInfinity();
         }

@@ -4,6 +4,7 @@ namespace Mdanter\Ecc\Optimized;
 
 use GMP;
 use Mdanter\Ecc\Curves\CurveFactory;
+use Mdanter\Ecc\Curves\NamedCurveFp;
 use Mdanter\Ecc\Curves\NistCurve;
 use Mdanter\Ecc\Math\ConstantTimeMath;
 use Mdanter\Ecc\Optimized\Common\{BarretReductionTrait, JacobiPoint, ShortWeierstrassTrait, TableTrait};
@@ -49,9 +50,13 @@ class P384 implements OptimizedCurveOpsInterface
     /** @var ConstantTimeMath $ctMath */
     protected $ctMath;
 
+    /** @var NamedCurveFp $curveByName */
+    protected $curveByName;
+
     public function __construct()
     {
         $this->ctMath = new ConstantTimeMath();
+        $this->curveByName = CurveFactory::getCurveByName(NistCurve::NAME_P384);
 
         /** @var GMP $p */
         $p       = gmp_init('0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffeffffffff0000000000000000ffffffff', 16);
@@ -217,7 +222,7 @@ class P384 implements OptimizedCurveOpsInterface
         $q = $this->jacobiToAffine($p);
         return new Point(
             new ConstantTimeMath(),
-            CurveFactory::getCurveByName(NistCurve::NAME_P384),
+            $this->curveByName,
             $q->x,
             $q->y,
             clone $this->order
