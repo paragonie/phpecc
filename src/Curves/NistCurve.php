@@ -5,6 +5,8 @@ namespace Mdanter\Ecc\Curves;
 
 use GMP;
 use Mdanter\Ecc\Math\GmpMathInterface;
+use Mdanter\Ecc\Optimized\P256;
+use Mdanter\Ecc\Optimized\P384;
 use Mdanter\Ecc\Primitives\CurveParameters;
 use Mdanter\Ecc\Primitives\GeneratorPoint;
 use Mdanter\Ecc\Random\RandomNumberGeneratorInterface;
@@ -157,14 +159,38 @@ class NistCurve
     }
 
     /**
+     * Returns an NIST P-256 curve.
+     *
+     * @return NamedCurveFp
+     */
+    public function optimizedCurve256(): NamedCurveFp
+    {
+        /** @var GMP $p */
+        $p = gmp_init('115792089210356248762697446949407573530086143415290314195533631308867097853951', 10);
+        /** @var GMP $b */
+        $b = gmp_init('0x5ac635d8aa3a93e7b3ebbd55769886bc651d06b0cc53b0f63bce3c3e27d2604b', 16);
+
+        /** @var GMP $minusThree */
+        $minusThree = gmp_init(-3, 10);
+        $parameters = new CurveParameters(256, $p, $minusThree, $b);
+
+        return (new OptimizedCurveFp(self::NAME_P256, $parameters, $this->adapter))
+            ->setOptimizedCurveOps(new P256());
+    }
+
+    /**
      * Returns an NIST P-256 generator.
      *
      * @param  ?RandomNumberGeneratorInterface $randomGenerator
      * @return GeneratorPoint
      */
-    public function generator256(?RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint
+    public function generator256(?RandomNumberGeneratorInterface $randomGenerator = null, bool $optimized = false): GeneratorPoint
     {
-        $curve = $this->curve256();
+        if ($optimized) {
+            $curve = $this->optimizedCurve256();
+        } else {
+            $curve = $this->curve256();
+        }
         /** @var GMP $order */
         $order = gmp_init('115792089210356248762697446949407573529996955224135760342422259061068512044369', 10);
 
@@ -195,15 +221,34 @@ class NistCurve
         return new NamedCurveFp(self::NAME_P384, $parameters, $this->adapter);
     }
 
+    public function optimizedCurve384(): NamedCurveFp
+    {
+        /** @var GMP $p */
+        $p = gmp_init('39402006196394479212279040100143613805079739270465446667948293404245721771496870329047266088258938001861606973112319', 10);
+        /** @var GMP $b */
+        $b = gmp_init('0xb3312fa7e23ee7e4988e056be3f82d19181d9c6efe8141120314088f5013875ac656398d8a2ed19d2a85c8edd3ec2aef', 16);
+
+        /** @var GMP $minus3 */
+        $minus3 = gmp_init(-3, 10);
+        $parameters = new CurveParameters(384, $p, $minus3, $b);
+
+        return (new OptimizedCurveFp(self::NAME_P384, $parameters, $this->adapter))
+            ->setOptimizedCurveOps(new P384());
+    }
+
     /**
      * Returns an NIST P-384 generator.
      *
      * @param  ?RandomNumberGeneratorInterface $randomGenerator
      * @return GeneratorPoint
      */
-    public function generator384(?RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint
+    public function generator384(?RandomNumberGeneratorInterface $randomGenerator = null, bool $optimized = false): GeneratorPoint
     {
-        $curve = $this->curve384();
+        if ($optimized) {
+            $curve = $this->optimizedCurve384();
+        } else {
+            $curve = $this->curve384();
+        }
         /** @var GMP $order */
         $order = gmp_init('39402006196394479212279040100143613805079739270465446667946905279627659399113263569398956308152294913554433653942643', 10);
 

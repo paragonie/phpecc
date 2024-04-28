@@ -6,6 +6,7 @@ namespace Mdanter\Ecc\Tests\Crypto\EcDH;
 use Mdanter\Ecc\Crypto\EcDH\EcDH;
 use Mdanter\Ecc\EccFactory;
 use Mdanter\Ecc\Exception\ExchangeException;
+use Mdanter\Ecc\Optimized\P256;
 use Mdanter\Ecc\Serializer\Point\UncompressedPointSerializer;
 use Mdanter\Ecc\Tests\AbstractTestCase;
 
@@ -42,6 +43,27 @@ class EcDHTest extends AbstractTestCase
         // Call twice, covers checking if shared key already created
         $this->assertInstanceOf(\GMP::class, $ecdh->calculateSharedKey());
         $this->assertInstanceOf(\GMP::class, $ecdh->calculateSharedKey());
+    }
+
+    public function testHappyPath()
+    {
+        $adapter = EccFactory::getAdapter();
+        $nistFactory = EccFactory::getNistCurves($adapter);;
+        $p256New = $nistFactory->generator256(null, true);
+
+        // Generate some keys:
+        $aliceScalar = gmp_init(bin2hex(random_bytes(32)), 16);
+        $bobScalar = gmp_init(bin2hex(random_bytes(32)), 16);
+
+        $alicePrivate = $p256New->getPrivateKeyFrom($aliceScalar);
+        $bobPrivate = $p256New->getPrivateKeyFrom($bobScalar);
+        $alicePublic = $alicePrivate->getPublicKey();
+        $bobPublic = $bobPrivate->getPublicKey();
+
+        $a2b = $alicePrivate->createExchange($bobPublic)->calculateSharedKey();
+        $b2a = $bobPrivate->createExchange($alicePublic)->calculateSharedKey();
+
+        $this->assertGMPSame($a2b, $b2a);
     }
 
     public function testChecksCurveMismatch()

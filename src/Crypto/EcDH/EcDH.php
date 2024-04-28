@@ -31,6 +31,7 @@ use Mdanter\Ecc\Crypto\Key\PrivateKeyInterface;
 use Mdanter\Ecc\Crypto\Key\PublicKeyInterface;
 use Mdanter\Ecc\Exception\ExchangeException;
 use Mdanter\Ecc\Math\GmpMathInterface;
+use Mdanter\Ecc\Primitives\OptimizedCurveInterface;
 
 /**
  * This class is the implementation of ECDH.
@@ -130,7 +131,17 @@ class EcDH implements EcDHInterface
         if ($this->secretKey === null) {
             try {
                 // Multiply our secret with recipients public key
-                $point = $this->recipientKey->getPoint()->mul($this->senderKey->getSecret());
+                $curve = $this->recipientKey->getCurve();
+                if ($curve instanceof OptimizedCurveInterface) {
+                    // Use an optimized implementation if one exists:
+                    $optimized = $curve->getOptimizedCurveOps();
+                    $point = $optimized->scalarMult(
+                        $this->senderKey->getSecret(),
+                        $this->recipientKey->getPoint()
+                    );
+                } else {
+                    $point = $this->recipientKey->getPoint()->mul($this->senderKey->getSecret());
+                }
 
                 // Ensure we completed a valid exchange, ensure we can create a
                 // public key instance for the shared secret using our generator.

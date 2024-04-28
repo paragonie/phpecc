@@ -9,6 +9,7 @@ use Mdanter\Ecc\Math\ConstantTimeMath;
 use Mdanter\Ecc\Math\GmpMathInterface;
 use Mdanter\Ecc\Crypto\Key\PrivateKeyInterface;
 use Mdanter\Ecc\Crypto\Key\PublicKeyInterface;
+use Mdanter\Ecc\Primitives\OptimizedCurveInterface;
 use Mdanter\Ecc\Util\BinaryString;
 
 class Signer
@@ -46,18 +47,34 @@ class Signer
     {
         $math = new ConstantTimeMath();
         $generator = $key->getPoint();
+        $curve = $generator->getCurve();
         $modMath = $math->getModularArithmetic($generator->getOrder());
 
         $k = $math->mod($randomK, $generator->getOrder());
-        $p1 = $generator->mul($k);
+        if ($curve instanceof OptimizedCurveInterface) {
+            $optimized = $curve->getOptimizedCurveOps();
+            $p1 = $optimized->scalarMultBase($k);
+        } else {
+            $p1 = $generator->mul($k);
+        }
         $r = $p1->getX();
         /** @var GMP $zero */
         $zero = gmp_init(0, 10);
         if ($math->equals($r, $zero)) {
             throw new \RuntimeException("Error: random number R = 0");
         }
+        if ($curve instanceof OptimizedCurveInterface) {
+            // This will be faster than ConstantTimeMath's
+            $kInv = $optimized->modInverse($k);
+        } else {
+            $kInv = $math->inverseMod($k, $generator->getOrder());
+        }
 
-        $s = $modMath->div($modMath->add($truncatedHash, $math->mul($key->getSecret(), $r)), $k);
+        // S = (d*R + h) / k (mod P) = (d*R + h) * k^-1 (mod P)
+        $s = $modMath->mul(
+            $modMath->add($truncatedHash, $math->mul($key->getSecret(), $r)),
+            $kInv
+        );
         if ($math->equals($s, $zero)) {
             throw new \RuntimeException("Error: random number S = 0");
         }

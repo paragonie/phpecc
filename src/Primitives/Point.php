@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace Mdanter\Ecc\Primitives;
 
 use GMP;
+use Mdanter\Ecc\Curves\OptimizedCurveFp;
 use Mdanter\Ecc\Exception\PointException;
 use Mdanter\Ecc\Exception\PointNotOnCurveException;
 use Mdanter\Ecc\Math\ConstantTimeMath;
