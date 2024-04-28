@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Mdanter\Ecc\Tests;
 
+use GMP;
 use Mdanter\Ecc\Math\ConstantTimeMath;
 use Mdanter\Ecc\Math\GmpMath;
 use Mdanter\Ecc\Math\GmpMathInterface;
@@ -11,11 +12,25 @@ use PHPUnit\Framework\TestCase;
 
 abstract class AbstractTestCase extends TestCase
 {
+    public function assertGMPSame(GMP $a, GMP $b, string $comment = ''): void
+    {
+        $str_a = gmp_strval($a, 16);
+        $str_b = gmp_strval($b, 16);
+        $this->assertSame($str_a, $str_b, $comment);
+    }
+
+    public function assertGMPNotSame(GMP $a, GMP $b, string $comment = ''): void
+    {
+        $str_a = gmp_strval($a, 16);
+        $str_b = gmp_strval($b, 16);
+        $this->assertNotSame($str_a, $str_b, $comment);
+    }
+
     /**
-     * @param array $extra
+     * @param ?array $extra
      * @return array
      */
-    protected function _getAdapters(array $extra = null)
+    protected function _getAdapters(?array $extra = null): array
     {
         if (! defined('PHPUNIT_DEBUG')) {
             define('PHPUNIT_DEBUG', false);

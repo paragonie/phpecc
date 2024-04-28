@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace Mdanter\Ecc\Primitives;
 
 use GMP;
+use Mdanter\Ecc\Curves\OptimizedCurveFp;
 use Mdanter\Ecc\Exception\PointException;
 use Mdanter\Ecc\Exception\PointNotOnCurveException;
 use Mdanter\Ecc\Math\ConstantTimeMath;
@@ -188,6 +189,10 @@ class Point implements PointInterface
     {
         if (! $this->curve->equals($addend->getCurve())) {
             throw new \RuntimeException("The Elliptic Curves do not match.");
+        }
+        if ($this->curve instanceof OptimizedCurveFp) {
+            $ops = $this->curve->getOptimizedCurveOps();
+            return $ops->addPoints($this, $addend);
         }
 
         if ($addend->isInfinity()) {
@@ -384,6 +389,10 @@ class Point implements PointInterface
      */
     public function getDouble(): PointInterface
     {
+        if ($this->curve instanceof OptimizedCurveFp) {
+            $ops = $this->curve->getOptimizedCurveOps();
+            return $ops->doublePoint($this);
+        }
         if ($this->isInfinity()) {
             return $this->curve->getInfinity();
         }
