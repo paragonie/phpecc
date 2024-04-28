@@ -30,7 +30,6 @@ trait BarretReductionTrait
         $r = $ctMath->select($b, $rPrime, $r);
 
         // Guaranteed to be reduced after 2 cycles
-        $tmp = 0;
         for ($i = 0; $i < 2; ++$i) {
             $rPrime = $r - $this->p;
             // $b = 1 if $rPrime > 0, which means subtracting is necessary

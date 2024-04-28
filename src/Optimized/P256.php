@@ -294,33 +294,6 @@ class P256 implements OptimizedCurveOpsInterface
     }
 
     /**
-     * @return JacobiPoint[][]
-     */
-    private function runtimeGeneratorTable(): array
-    {
-        $table = [];
-        $base = new JacobiPoint();
-        /** @var GMP $x */
-        $x = gmp_init('0x6b17d1f2e12c4247f8bce6e563a440f277037d812deb33a0f4a13945d898c296', 16);
-        /** @var GMP $y */
-        $y = gmp_init('0x4fe342e2fe1a7f9b8ee7eb4a7c0f9e162bce33576b315ececbb6406837bf51f5', 16);
-        $base->x = $x;
-        $base->y = $y;
-        $base->z = gmp_init(1, 10);
-
-        for ($i = 0; $i < 64; ++$i) {
-            $table[$i][0] = clone $base;
-            for ($j = 1; $j < 15; ++$j) {
-                $table[$i][$j] = $this->addInternal($base, $table[$i][$j - 1]);
-            }
-            for ($j = 0; $j < 4; ++$j) {
-                $base = $this->doubleInternal($base);
-            }
-        }
-        return $table;
-    }
-
-    /**
      * @param JacobiPoint $q
      * @return JacobiPoint[]
      */
