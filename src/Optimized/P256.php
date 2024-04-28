@@ -164,11 +164,6 @@ class P256 implements OptimizedCurveOpsInterface
         return $this->ctMath->inverseMod($scalar, $this->p);
     }
 
-    public function isOnCurve(PointInterface $point): bool
-    {
-        return true;
-    }
-
     /**
      * @param PointInterface $point
      * @return JacobiPoint

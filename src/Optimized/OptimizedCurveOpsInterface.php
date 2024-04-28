@@ -17,6 +17,4 @@ interface OptimizedCurveOpsInterface
     public function doublePoint(PointInterface $point): PointInterface;
 
     public function modInverse(GMP $scalar): GMP;
-
-    public function isOnCurve(PointInterface $point): bool;
 }
