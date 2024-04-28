@@ -7,12 +7,14 @@ use Mdanter\Ecc\Curves\CurveFactory;
 use Mdanter\Ecc\Curves\NistCurve;
 use Mdanter\Ecc\Math\ConstantTimeMath;
 use Mdanter\Ecc\Optimized\Common\{BarretReductionTrait, JacobiPoint, ShortWeierstrassTrait, TableTrait};
+use Mdanter\Ecc\Optimized\P256\GeneratorTableTrait;
 use Mdanter\Ecc\Primitives\Point;
 use Mdanter\Ecc\Primitives\PointInterface;
 
 class P256 implements OptimizedCurveOpsInterface
 {
     use BarretReductionTrait;
+    use GeneratorTableTrait;
     use ShortWeierstrassTrait;
     use TableTrait;
 
@@ -282,7 +284,7 @@ class P256 implements OptimizedCurveOpsInterface
     /**
      * @return JacobiPoint[][]
      */
-    public function generatorTable(): array
+    private function runtimeGeneratorTable(): array
     {
         $table = [];
         $base = new JacobiPoint();

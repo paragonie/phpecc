@@ -7,12 +7,14 @@ use Mdanter\Ecc\Curves\CurveFactory;
 use Mdanter\Ecc\Curves\NistCurve;
 use Mdanter\Ecc\Math\ConstantTimeMath;
 use Mdanter\Ecc\Optimized\Common\{BarretReductionTrait, JacobiPoint, ShortWeierstrassTrait, TableTrait};
+use Mdanter\Ecc\Optimized\P384\GeneratorTableTrait;
 use Mdanter\Ecc\Primitives\Point;
 use Mdanter\Ecc\Primitives\PointInterface;
 
 class P384 implements OptimizedCurveOpsInterface
 {
     use BarretReductionTrait;
+    use GeneratorTableTrait;
     use ShortWeierstrassTrait;
     use TableTrait;
 
@@ -38,14 +40,11 @@ class P384 implements OptimizedCurveOpsInterface
     protected $order;
 
     /**
-     * @var JacobiPoint[][]
-     */
-    protected static $genTable = [];
-
-    /**
      * @var GMP
      */
     protected $R;
+
+    protected static $genTable;
 
     /** @var ConstantTimeMath $ctMath */
     protected $ctMath;
@@ -277,33 +276,6 @@ class P384 implements OptimizedCurveOpsInterface
         $swap = ((gmp_sign($c) >> 1)) & 1;
         $cPrime = $c + $this->p;
         return $this->ctMath->select($swap, $cPrime, $c);
-    }
-
-    /**
-     * @return JacobiPoint[][]
-     */
-    public function generatorTable(): array
-    {
-        $table = [];
-        $base = new JacobiPoint();
-        /** @var GMP $x */
-        $x = gmp_init('0xaa87ca22be8b05378eb1c71ef320ad746e1d3b628ba79b9859f741e082542a385502f25dbf55296c3a545e3872760ab7', 16);
-        /** @var GMP $y */
-        $y = gmp_init('0x3617de4a96262c6f5d9e98bf9292dc29f8f41dbd289a147ce9da3113b5f0b8c00a60b1ce1d7e819d7a431d7c90ea0e5f', 16);
-        $base->x = $x;
-        $base->y = $y;
-        $base->z = gmp_init(1, 10);
-
-        for ($i = 0; $i < 96; ++$i) {
-            $table[$i][0] = clone $base;
-            for ($j = 1; $j < 15; ++$j) {
-                $table[$i][$j] = $this->addInternal($base, $table[$i][$j - 1]);
-            }
-            for ($j = 0; $j < 4; ++$j) {
-                $base = $this->doubleInternal($base);
-            }
-        }
-        return $table;
     }
 
     /**

@@ -14,6 +14,15 @@ class JacobiPoint
     /** @var GMP $z */
     public $z;
 
+    public static function init(GMP $x, GMP $y, GMP $z): self
+    {
+        $self = new self();
+        $self->x = $x;
+        $self->y = $y;
+        $self->z = $z;
+        return $self;
+    }
+
     public function __debugInfo()
     {
         return [
