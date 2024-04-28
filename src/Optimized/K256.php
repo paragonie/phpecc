@@ -5,21 +5,23 @@ namespace Mdanter\Ecc\Optimized;
 use GMP;
 use Mdanter\Ecc\Curves\CurveFactory;
 use Mdanter\Ecc\Curves\NamedCurveFp;
-use Mdanter\Ecc\Curves\NistCurve;
+use Mdanter\Ecc\Curves\SecgCurve;
 use Mdanter\Ecc\Math\ConstantTimeMath;
-use Mdanter\Ecc\Optimized\Common\{AbstractOptimized,
+use Mdanter\Ecc\Optimized\Common\{
+    AbstractOptimized,
     BarretReductionTrait,
     JacobiPoint,
-    ShortWeierstrassTrait,
-    TableTrait};
-use Mdanter\Ecc\Optimized\P256\GeneratorTableTrait;
+    KoblitzTrait,
+    TableTrait
+};
+use Mdanter\Ecc\Optimized\K256\GeneratorTableTrait;
 use Mdanter\Ecc\Primitives\PointInterface;
 
-class P256 extends AbstractOptimized implements OptimizedCurveOpsInterface
+class K256 extends AbstractOptimized implements OptimizedCurveOpsInterface
 {
     use BarretReductionTrait;
     use GeneratorTableTrait;
-    use ShortWeierstrassTrait;
+    use KoblitzTrait;
     use TableTrait;
 
     /** @var int $N */
@@ -31,7 +33,7 @@ class P256 extends AbstractOptimized implements OptimizedCurveOpsInterface
     /**
      * @var GMP $b
      */
-    protected $b;
+    protected $b3;
 
     /**
      * @var GMP $b
@@ -46,7 +48,7 @@ class P256 extends AbstractOptimized implements OptimizedCurveOpsInterface
     /**
      * @var JacobiPoint[][]
      */
-    protected static $genTable = [];
+    public static $genTable = [];
 
     /**
      * @var GMP
@@ -62,28 +64,34 @@ class P256 extends AbstractOptimized implements OptimizedCurveOpsInterface
     public function __construct()
     {
         $this->ctMath = new ConstantTimeMath();
-        $this->curveByName = CurveFactory::getCurveByName(NistCurve::NAME_P256);
+        $this->curveByName = CurveFactory::getCurveByName(SecgCurve::NAME_SECP_256K1);
 
         /** @var GMP $p */
-        $p       = gmp_init('0xffffffff00000001000000000000000000000000ffffffffffffffffffffffff', 16);
+        $p       = gmp_init('0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFC2F', 16);
         $this->p = $p;
 
         /** @var GMP $order */
-        $order   =  gmp_init('115792089210356248762697446949407573529996955224135760342422259061068512044369', 10);
+        $order   = gmp_init('0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141', 16);
         $this->order = $order;
 
-        /** @var GMP $b */
-        $b       =  gmp_init('0x5ac635d8aa3a93e7b3ebbd55769886bc651d06b0cc53b0f63bce3c3e27d2604b', 16);
-        $this->b = $b;
+        /** @var GMP $b3 */
+        $b3       = gmp_init(21, 10);
+        $this->b3 = $b3;
 
         /** @var GMP $R */
-        $R       = gmp_init('0x100000000fffffffffffffffefffffffefffffffeffffffff0000000000000003', 16);
+        $R       = gmp_init('0x100000000000000000000000000000000000000000000000000000001000003d1', 16);
         $this->R = $R;
 
         if (empty(self::$genTable)) {
             self::$genTable = $this->generatorTable();
         }
     }
+
+    /**
+     * @param GMP $scalar
+     * @param PointInterface $point
+     * @return PointInterface
+     */
     public function scalarMult(GMP $scalar, PointInterface $point): PointInterface
     {
         // Initialize a 256-bit table
@@ -117,6 +125,10 @@ class P256 extends AbstractOptimized implements OptimizedCurveOpsInterface
         return $this->toBasicPoint($p);
     }
 
+    /**
+     * @param GMP $scalar
+     * @return PointInterface
+     */
     public function scalarMultBase(GMP $scalar): PointInterface
     {
         if (empty(self::$genTable)) {
@@ -142,5 +154,4 @@ class P256 extends AbstractOptimized implements OptimizedCurveOpsInterface
         }
         return $this->toBasicPoint($p);
     }
-
 }

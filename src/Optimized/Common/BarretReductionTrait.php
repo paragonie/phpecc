@@ -6,6 +6,7 @@ use GMP;
 use Mdanter\Ecc\Math\ConstantTimeMath;
 
 /**
+ * @property GMP R
  * @property GMP p
  * @property int N
  */

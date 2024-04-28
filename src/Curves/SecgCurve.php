@@ -5,6 +5,7 @@ namespace Mdanter\Ecc\Curves;
 
 use GMP;
 use Mdanter\Ecc\Math\GmpMathInterface;
+use Mdanter\Ecc\Optimized\K256;
 use Mdanter\Ecc\Primitives\CurveParameters;
 use Mdanter\Ecc\Primitives\GeneratorPoint;
 use Mdanter\Ecc\Random\RandomNumberGeneratorInterface;
@@ -145,12 +146,35 @@ class SecgCurve
     }
 
     /**
+     * @return NamedCurveFp
+     */
+    public function optimizedCurve256k1(): NamedCurveFp
+    {
+        /** @var GMP $p */
+        $p = gmp_init('0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFC2F', 16);
+        /** @var GMP $a */
+        $a = gmp_init(0, 10);
+        /** @var GMP $b */
+        $b = gmp_init(7, 10);
+
+        $parameters = new CurveParameters(256, $p, $a, $b);
+
+        return (new OptimizedCurveFp(self::NAME_SECP_256K1, $parameters, $this->adapter))
+            ->setOptimizedCurveOps(new K256());
+    }
+
+    /**
      * @param ?RandomNumberGeneratorInterface $randomGenerator
      * @return GeneratorPoint
      */
-    public function generator256k1(?RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint
+    public function generator256k1(?RandomNumberGeneratorInterface $randomGenerator = null, bool $optimized = false): GeneratorPoint
     {
-        $curve = $this->curve256k1();
+
+        if ($optimized) {
+            $curve = $this->optimizedCurve256k1();
+        } else {
+            $curve = $this->curve256k1();
+        }
 
         /** @var GMP $order */
         $order = gmp_init('0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141', 16);
