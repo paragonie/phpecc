@@ -61,7 +61,7 @@ class P256 implements OptimizedCurveOpsInterface
         $this->p = $p;
 
         /** @var GMP $order */
-        $order   =  gmp_init('0xffffffff00000000ffffffffffffffffbce6faada7179e84f3b9cac2fc632551', 16);
+        $order   =  gmp_init('115792089210356248762697446949407573529996955224135760342422259061068512044369', 10);
         $this->order = $order;
 
         /** @var GMP $b */
@@ -160,10 +160,17 @@ class P256 implements OptimizedCurveOpsInterface
         return $this->toBasicPoint($doubled);
     }
 
+    /**
+     * Computes the reciprocal of the group order
+     *
+     * @param GMP $scalar
+     * @return GMP
+     */
+
     public function modInverse(GMP $scalar): GMP
     {
         // For now, we'll just use ConstantTimeMath.
-        return $this->ctMath->inverseMod($scalar, $this->p);
+        return $this->ctMath->inverseMod($scalar, $this->order);
     }
 
     /**
