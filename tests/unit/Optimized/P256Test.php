@@ -203,15 +203,15 @@ class P256Test extends AbstractTestCase
             ],
             [
                 gmp_init(random_int(1, 100000), 10),
-                gmp_init(bin2hex(random_bytes(15)), 16)
+                gmp_init(bin2hex(random_bytes(31)), 16)
             ],
             [
-                gmp_init('fe' . bin2hex(random_bytes(15)), 16),
-                gmp_init('fe' . bin2hex(random_bytes(15)), 16)
+                gmp_init('fe' . bin2hex(random_bytes(31)), 16),
+                gmp_init('fe' . bin2hex(random_bytes(31)), 16)
             ],
             [
-                gmp_init(bin2hex(random_bytes(16)), 16),
-                gmp_init(bin2hex(random_bytes(16)), 16)
+                gmp_init(bin2hex(random_bytes(32)), 16),
+                gmp_init(bin2hex(random_bytes(32)), 16)
             ],
         ];
     }
@@ -226,7 +226,7 @@ class P256Test extends AbstractTestCase
             ],
             [
                 gmp_init(random_int(1, 100000), 10),
-                gmp_init(bin2hex(random_bytes(15)), 16)
+                gmp_init(bin2hex(random_bytes(31)), 16)
             ],
             [
                 $this->prime - gmp_init(3, 10),
@@ -237,16 +237,16 @@ class P256Test extends AbstractTestCase
                 $this->prime - gmp_init(random_int(1, 100000))
             ],
             [
-                gmp_init('fe' . bin2hex(random_bytes(15)), 16),
-                gmp_init('fe' . bin2hex(random_bytes(15)), 16)
+                gmp_init('fe' . bin2hex(random_bytes(31)), 16),
+                gmp_init('fe' . bin2hex(random_bytes(31)), 16)
             ],
             [
                 $this->prime - gmp_init(random_int(100, 100000)),
                 $this->prime - gmp_init(random_int(100, 100000))
             ],
             [
-                gmp_init(bin2hex(random_bytes(16)), 16),
-                gmp_init(bin2hex(random_bytes(16)), 16)
+                gmp_init(bin2hex(random_bytes(32)), 16),
+                gmp_init(bin2hex(random_bytes(32)), 16)
             ],
         ];
     }
