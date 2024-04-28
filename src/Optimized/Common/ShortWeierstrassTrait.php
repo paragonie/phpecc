@@ -12,7 +12,7 @@ use GMP;
  * @property GMP $p
  *
  * @method JacobiPoint newPoint()
- * @method GMP addElements(GMP $a, GMP $b)
+ * @method GMP addElements(GMP $a, GMP $b, bool $reduce = true)
  * @method GMP mulElements(GMP $a, GMP $b)
  * @method GMP subElements(GMP $a, GMP $b)
  */
