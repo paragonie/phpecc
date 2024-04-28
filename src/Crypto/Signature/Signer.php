@@ -63,12 +63,7 @@ class Signer
         if ($math->equals($r, $zero)) {
             throw new \RuntimeException("Error: random number R = 0");
         }
-        if ($curve instanceof OptimizedCurveInterface) {
-            // This will be faster than ConstantTimeMath's
-            $kInv = $optimized->modInverse($k);
-        } else {
-            $kInv = $math->inverseMod($k, $generator->getOrder());
-        }
+        $kInv = $math->inverseMod($k, $generator->getOrder());
 
         // S = (d*R + h) / k (mod P) = (d*R + h) * k^-1 (mod P)
         $s = $modMath->mul(
