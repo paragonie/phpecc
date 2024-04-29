@@ -2,7 +2,6 @@
 declare(strict_types=1);
 namespace Mdanter\Ecc\Optimized\P256;
 
-use GMP;
 use Mdanter\Ecc\Optimized\Common\JacobiPoint;
 
 trait GeneratorTableTrait
