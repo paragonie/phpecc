@@ -5,15 +5,26 @@ declare(strict_types=1);
 namespace Mdanter\Ecc\Crypto\Signature;
 
 use GMP;
+use Mdanter\Ecc\Curves\CurveFactory;
+use Mdanter\Ecc\Curves\NamedCurveFp;
+use Mdanter\Ecc\Curves\NistCurve;
+use Mdanter\Ecc\Curves\SecgCurve;
 use Mdanter\Ecc\Math\ConstantTimeMath;
 use Mdanter\Ecc\Math\GmpMathInterface;
 use Mdanter\Ecc\Crypto\Key\PrivateKeyInterface;
 use Mdanter\Ecc\Crypto\Key\PublicKeyInterface;
+use Mdanter\Ecc\OpensslFallbackTrait;
+use Mdanter\Ecc\Primitives\CurveFpInterface;
+use Mdanter\Ecc\Primitives\GeneratorPoint;
 use Mdanter\Ecc\Primitives\OptimizedCurveInterface;
+use Mdanter\Ecc\Random\RandomGeneratorFactory;
+use Mdanter\Ecc\Serializer\Signature\DerSignatureSerializer;
 use Mdanter\Ecc\Util\BinaryString;
+use TypeError;
 
 class Signer
 {
+    use OpensslFallbackTrait;
 
     /**
      *
@@ -35,6 +46,66 @@ class Signer
     {
         $this->adapter = $adapter;
         $this->disallowMalleableSig = $disallowMalleableSig;
+    }
+
+    /**
+     * @param CurveFpInterface $curve
+     * @return string
+     */
+    protected function getDefaultHashAlgorithm(CurveFpInterface $curve): string
+    {
+        if ($curve instanceof NamedCurveFp) {
+            switch ($curve->getName()) {
+                case NistCurve::NAME_P256:
+                case SecgCurve::NAME_SECP_256K1:
+                    return 'sha256';
+                case NistCurve::NAME_P384:
+                    return 'sha394';
+                case NistCurve::NAME_P521:
+                    return 'sha512';
+            }
+        }
+        $size = $curve->getSize();
+        if ($size <= 256) {
+            return 'sha256';
+        }
+        if ($size <= 384) {
+            return 'sha384';
+        }
+        return 'sha512';
+    }
+
+    /**
+     * @param PrivateKeyInterface $key
+     * @param string $message
+     * @param string|null $hashAlgo
+     *
+     * @return SignatureInterface
+     */
+    public function signMessage(
+        #[\SensitiveParameter]
+        PrivateKeyInterface $key,
+        #[\SensitiveParameter]
+        string $message,
+        ?string $hashAlgo = null
+    ): SignatureInterface {
+        $generator = $key->getPoint();
+        $curve = $generator->getCurve();
+        if (is_null($hashAlgo)) {
+            $hashAlgo = $this->getDefaultHashAlgorithm($curve);
+        }
+        if ($curve instanceof NamedCurveFp && $curve->shouldUseOpenssl()&& !$this->disableOpenssl) {
+            /* Note: OpenSSL disregards $randomK. */
+            return $curve->signMessage($key, $message, $hashAlgo);
+        }
+        $hasher = new SignHasher($hashAlgo, $this->adapter);
+        $hash = $hasher->makeHash($message, $generator);
+        $rng = RandomGeneratorFactory::getRandomGenerator();
+        return $this->sign(
+            $key,
+            $hash,
+            $rng->generate($generator->getOrder())
+        );
     }
 
     /**
@@ -90,6 +161,36 @@ class Signer
         }
 
         return new Signature($r, $s);
+    }
+
+    /**
+     * @param PublicKeyInterface $key
+     * @param SignatureInterface $sig
+     * @param string $message
+     * @param string|null $hashAlgo
+     * @return bool
+     */
+    public function verifyMessage(
+        PublicKeyInterface $key,
+        SignatureInterface $sig,
+        #[\SensitiveParameter]
+        string $message,
+        ?string $hashAlgo = null
+    ): bool {
+        $generator = $key->getGenerator();
+        $curve = $generator->getCurve();
+        if (is_null($hashAlgo)) {
+            $hashAlgo = $this->getDefaultHashAlgorithm($curve);
+        }
+        if ($curve instanceof NamedCurveFp && $curve->shouldUseOpenssl()) {
+            /* Note: OpenSSL disregards $randomK. */
+            $encoder = new DerSignatureSerializer();
+            $encodedSig = $encoder->serialize($sig);
+            return $curve->verifyMessage($key, $encodedSig, $message, $hashAlgo);
+        }
+        $hasher = new SignHasher($hashAlgo, $this->adapter);
+        $hash = $hasher->makeHash($message, $generator);
+        return $this->verify($key, $sig, $hash);
     }
 
     /**

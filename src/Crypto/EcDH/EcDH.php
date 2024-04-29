@@ -29,8 +29,11 @@ namespace Mdanter\Ecc\Crypto\EcDH;
 
 use Mdanter\Ecc\Crypto\Key\PrivateKeyInterface;
 use Mdanter\Ecc\Crypto\Key\PublicKeyInterface;
+use Mdanter\Ecc\Curves\NamedCurveFp;
 use Mdanter\Ecc\Exception\ExchangeException;
+use Mdanter\Ecc\Exception\OpensslException;
 use Mdanter\Ecc\Math\GmpMathInterface;
+use Mdanter\Ecc\OpensslFallbackTrait;
 use Mdanter\Ecc\Primitives\OptimizedCurveInterface;
 
 /**
@@ -43,6 +46,8 @@ use Mdanter\Ecc\Primitives\OptimizedCurveInterface;
  */
 class EcDH implements EcDHInterface
 {
+    use OpensslFallbackTrait;
+
     /**
      * Adapter used for math calculations
      *
@@ -134,7 +139,14 @@ class EcDH implements EcDHInterface
             try {
                 // Multiply our secret with recipients public key
                 $curve = $this->recipientKey->getCurve();
-                if ($curve instanceof OptimizedCurveInterface) {
+                if ($curve instanceof NamedCurveFp && $curve->shouldUseOpenssl() && !$this->disableOpenssl) {
+                    // Defer to OpenSSL for ECDH computation
+                    try {
+                        $point = $curve->computeSharedSecret($this->senderKey, $this->recipientKey);
+                    } catch (OpensslException $ex) {
+                    }
+                }
+                if (empty($point) && $curve instanceof OptimizedCurveInterface) {
                     // Use an optimized implementation if one exists:
                     $optimized = $curve->getOptimizedCurveOps();
                     $point = $optimized->scalarMult(

@@ -50,6 +50,9 @@
             "Mdanter\\Ecc\\": "src/"
         }
     },
+    "suggest": {
+        "ext-openssl": "(PHP 8.1, OpenSSL 3+) Improved performance, less worries about side-channels"
+    },
     "autoload-dev": {
         "psr-4": {
             "Mdanter\\Ecc\\Tests\\": "tests/unit",

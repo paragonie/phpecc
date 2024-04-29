@@ -3,12 +3,16 @@ declare(strict_types=1);
 
 namespace Mdanter\Ecc\Tests\Crypto\Signature;
 
+use GMP;
+use Mdanter\Ecc\Crypto\Key\PrivateKeyInterface;
+use Mdanter\Ecc\Crypto\Key\PublicKeyInterface;
 use Mdanter\Ecc\Crypto\Signature\Signature;
 use Mdanter\Ecc\Crypto\Signature\Signer;
 use Mdanter\Ecc\Crypto\Signature\SignHasher;
 use Mdanter\Ecc\Curves\CurveFactory;
 use Mdanter\Ecc\EccFactory;
 use Mdanter\Ecc\Math\ConstantTimeMath;
+use Mdanter\Ecc\Math\GmpMathInterface;
 use Mdanter\Ecc\Random\RandomGeneratorFactory;
 use Mdanter\Ecc\Tests\AbstractTestCase;
 
@@ -19,6 +23,56 @@ class SignerTest extends AbstractTestCase
         $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Unsupported hashing algorithm');
         new SignHasher("blahblah");
+    }
+
+    public function basicSignerProvider(): array
+    {
+        $math = new ConstantTimeMath();
+        $generator = CurveFactory::getGeneratorByName('secp256k1');
+        $privateKey = $generator->createPrivateKey();
+        $publicKey = $privateKey->getPublicKey();
+        $signer = new Signer($math);
+        return [
+            [$math, $privateKey, $publicKey, $signer]
+        ];
+    }
+
+    /**
+     * @dataProvider basicSignerProvider
+     */
+    public function testSignMessage(
+        GmpMathInterface $math,
+        PrivateKeyInterface $sk,
+        PublicKeyInterface $pk,
+        Signer $signer
+    ): void {
+        $message = 'Test message 2024-04-27';
+        $signature = $signer->signMessage($sk, $message, 'sha256');
+        $this->assertInstanceOf(Signature::class, $signature);
+        $this->assertTrue($signer->verifyMessage($pk, $signature, $message, 'sha256'));
+    }
+
+    /**
+     * @dataProvider basicSignerProvider
+     */
+    public function testOpensslCompat(
+        GmpMathInterface $math,
+        PrivateKeyInterface $sk,
+        PublicKeyInterface $pk,
+        Signer $signer
+    ): void {
+        $message = 'Test message 2024-04-27';
+        $signature = $signer->signMessage($sk, $message, 'sha256');
+        $this->assertInstanceOf(Signature::class, $signature);
+
+        $signer->disableOpenssl();
+        $signature2 = $signer->signMessage($sk, $message, 'sha256');
+        $this->assertInstanceOf(Signature::class, $signature);
+        $this->assertTrue($signer->verifyMessage($pk, $signature, $message, 'sha256'));
+
+        $signer->enableOpenssl();
+        $this->assertTrue($signer->verifyMessage($pk, $signature2, $message, 'sha256'));
+
     }
 
     public function testMalleableSignatures()
