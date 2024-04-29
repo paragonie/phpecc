@@ -7,6 +7,9 @@ use Mdanter\Ecc\Optimized\Common\JacobiPoint;
 
 trait GeneratorTableTrait
 {
+    /**
+     * @return JacobiPoint[][]
+     */
     public function generatorTable(): array
     {
         return [
