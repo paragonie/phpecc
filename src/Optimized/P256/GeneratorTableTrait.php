@@ -2,11 +2,12 @@
 declare(strict_types=1);
 namespace Mdanter\Ecc\Optimized\P256;
 
+use GMP;
 use Mdanter\Ecc\Optimized\Common\JacobiPoint;
 
 trait GeneratorTableTrait
 {
-    public static function generatorTable()
+    public function generatorTable(): array
     {
         return [
             [
@@ -16,4925 +17,4925 @@ trait GeneratorTableTrait
                     gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x88b13398542d5c8e69a0be9fe51bba8fffab23c970e684814e4b1cf45751336f', 16),
-                    gmp_init('0x4126885e7f786af905338238e5346d5fe77fc46388668bd0fd59be3190d2f5d1', 16),
-                    gmp_init('0x8d761fd160e5bb67afe5854016bb02b6f80baf8d4b7fce3c852842092b408ce3', 16)
+                    gmp_init('0x7cf27b188d034f7e8a52380304b51ac3c08969e277f21b35a60b48fc47669978', 16),
+                    gmp_init('0x7775510db8ed040293d9ac69f7430dbba7dade63ce982299e04b79d227873d1', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x8cf6f359c28335db9598cf594050008ef6d1d4b3f6eb9c56f274bc89996cf794', 16),
-                    gmp_init('0xbab81c492426f90381395727509d18b338185a6563de88ff7222a779807378bd', 16),
-                    gmp_init('0xa627cf275950e7af6c3cac85c689a0ba6c8bee32c9b71350d31e3012fc5246b5', 16)
+                    gmp_init('0x5ecbe4d1a6330a44c8f7ef951d4bf165e6c6b721efada985fb41661bc6e7fd6c', 16),
+                    gmp_init('0x8734640c4998ff7e374b06ce1a64a2ecd82ab036384fb83d9a79b127a27d5032', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x3323341a2fc7e5476fb3b8121b1f067ab6a3b36f8a1ea5e230ce73db7a041e1a', 16),
-                    gmp_init('0xef43e06c37e7483196c416b2158b49cef7c0130d7fb365ed509b237d8f881743', 16),
-                    gmp_init('0x2316121e4aec6626d02254f66732d05510fb4e201e1bb0d7aee69cac7266c74f', 16)
+                    gmp_init('0xe2534a3532d08fbba02dde659ee62bd0031fe2db785596ef509302446b030852', 16),
+                    gmp_init('0xe0f1575a4c633cc719dfee5fda862d764efc96c3f30ee0055c42c23f184ed8c6', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x454413ffe59583f2577a5c615b58e983dce9e599b87a3353dd3163f8beaa3fa', 16),
-                    gmp_init('0xe679d7fa740a306d6b3a191338fa01e154d97b37bba202dcc2859c33db0ff14', 16),
-                    gmp_init('0xa9abe4c490384e13bff0ed5885745fd30094c576916725ddc207334d6c19bbd0', 16)
+                    gmp_init('0x51590b7a515140d2d784c85608668fdfef8c82fd1f5be52421554a0dc3d033ed', 16),
+                    gmp_init('0xe0c17da8904a727d8ae1bf36bf8a79260d012f00d4d80888d1d0bb44fda16da4', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xee0d64f3094bf7e35237a70fc79efbae10a77b6e880050859a220a6bb026d4bc', 16),
-                    gmp_init('0xd6a453af7af58b4f01557276ad1da471cc1271f4ffd194295234c426d6973b0', 16),
-                    gmp_init('0xaff9fbb574fda99c7f92a901a44f1f675c0b14f736335b52efa1716fb7114a05', 16)
+                    gmp_init('0xb01a172a76a4602c92d3242cb897dde3024c740debb215b4c6b0aae93c2291a9', 16),
+                    gmp_init('0xe85c10743237dad56fec0e2dfba703791c00f7701c7e16bdfd7c48538fc77fe2', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x195f8eb0dba7f7bbd509565ac473c73788b2c2531ef2b5a7f3142ebefb11916c', 16),
-                    gmp_init('0x6c59156a09c573d98fa91fd0ab1ec6b3e636afb9cbd31699f7a6677b170898c', 16),
-                    gmp_init('0xf8b271b4c943be439577d13a11e08e4b49abe0477db8c6caf8c7cef865ef9cdf', 16)
+                    gmp_init('0x8e533b6fa0bf7b4625bb30667c01fb607ef9f8b8a80fef5b300628703187b2a3', 16),
+                    gmp_init('0x73eb1dbde03318366d069f83a6f5900053c73633cb041b21c55e1a86c1f400b4', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xb7a7e7ee010d8dcc06362d7cb9d42a4f12f588ca3456d891d0e447cde8b6de01', 16),
-                    gmp_init('0xa8ebc2064b979e866a6c4b37f505f0cd3a3623cc5c0ecba8b1d8d13996d7b5cb', 16),
-                    gmp_init('0x8234a3414b59e92e576596c2576d2517722230efcad264130f80703ec29b5609', 16)
+                    gmp_init('0x62d9779dbee9b0534042742d3ab54cadc1d238980fce97dbb4dd9dc1db6fb393', 16),
+                    gmp_init('0xad5accbd91e9d8244ff15d771167cee0a2ed51f6bbe76a78da540a6a0f09957e', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x5dc84709a5ad18d949b8c43c5c7b6d71797a064d9e29ea53edbcba0e92f40318', 16),
-                    gmp_init('0x4e700d0315c3db962f76f545474ecccbcd689b67b63fc8de34e5165552225181', 16),
-                    gmp_init('0xf9e3ba1793c4acef5e6021988b492f37ac3c3fb9a2c5a1ee62893755ebe0dcd3', 16)
+                    gmp_init('0xea68d7b6fedf0b71878938d51d71f8729e0acb8c2c6df8b3d79e8a4b90949ee0', 16),
+                    gmp_init('0x2a2744c972c9fce787014a964a8ea0c84d714feaa4de823fe85a224a4dd048fa', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xd1d8fe7952b25892a96619523b1f7a001ac735d102b0c322c047a4bbbbfaf268', 16),
-                    gmp_init('0x72a0b65a46ef331a2807e67aa05269c611cc331abb6a9665251a62fd1e3388cd', 16),
-                    gmp_init('0x4aa430201305bfaedd078541a34ec72ada9b5f1d1048b03252e1c129d7020332', 16)
+                    gmp_init('0xcef66d6b2a3a993e591214d1ea223fb545ca6c471c48306e4c36069404c5723f', 16),
+                    gmp_init('0x878662a229aaae906e123cdd9d3b4c10590ded29fe751eeeca34bbaa44af0773', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xfc04f345c4d0fbd2273a40a769ffc5f069a34dce6c5a046b4fcc2fb7b532409', 16),
-                    gmp_init('0xc22fadef3f816779d1ca94f362c42efb0d2a9d0f91f3dcf3834542f4ccc818f', 16),
-                    gmp_init('0x772b97733bb3db366c9e3345ec3b2a95d6980bda480796a4021827c903d08cf1', 16)
+                    gmp_init('0x3ed113b7883b4c590638379db0c21cda16742ed0255048bf433391d374bc21d1', 16),
+                    gmp_init('0x9099209accc4c8a224c843afa4f4c68a090d04da5e9889dae2f8eefce82a3740', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x54f5f96861f908574b8d015bcbf4449f2f4214c11d2627d477d8d2c5b4420f05', 16),
-                    gmp_init('0xe29ffb684164907f1889c580d43eebd5092760105f254c547a7c5e8c61e6fe3b', 16),
-                    gmp_init('0xe3087f5cf66697b27a0dd11c46b15ae9716d714d373702db896ff6c4e7301a20', 16)
+                    gmp_init('0x741dd5bda817d95e4626537320e5d55179983028b2f82c99d500c5ee8624e3c4', 16),
+                    gmp_init('0x770b46a9c385fdc567383554887b1548eeb912c35ba5ca71995ff22cd4481d3', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x4f288b396269d65ed9e8fb73be40d20e7accb39d7f12dab097f1dfac993f423a', 16),
-                    gmp_init('0x3b3450727bc7f2cf879fe621a6cfc4b04848dea94283c73c94dad2e370c3c094', 16),
-                    gmp_init('0x2fd92fcd6fe2e7a4b89c4725c5ad674e5fb9466fd25a095b6b343bdf9e511a61', 16)
+                    gmp_init('0x177c837ae0ac495a61805df2d85ee2fc792e284b65ead58a98e15d9d46072c01', 16),
+                    gmp_init('0x63bb58cd4ebea558a24091adb40f4e7226ee14c3a1fb4df39c43bbe2efc7bfd8', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xcce66bc1de80ff7d11212d3513c827bfbe7a89b064b0c60c0eb0e4aecfc8449b', 16),
-                    gmp_init('0x1c45495cc3d023881647cb1a750b5943b5ffe612a528324bc0b18d2d5188a9dd', 16),
-                    gmp_init('0x458e7715993c3da7f0f75dfa0c99fb229e59de3f823000f4751714dec71cdb5', 16)
+                    gmp_init('0x54e77a001c3862b97a76647f4336df3cf126acbe7a069c5e5709277324d2920b', 16),
+                    gmp_init('0xf599f1bb29f4317542121f8c05a2e7c37171ea77735090081ba7c82f60d0b375', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x8b53cc88d4d402727055374545c8d70c60c0e61746922dee49c2edf08726e430', 16),
-                    gmp_init('0xcefc20d3c1644fa7f5107a6f8d01019b3602d62bac7388e7013405af0f4141ed', 16),
-                    gmp_init('0x80b16391ead61d3b1e51c54028eb1a6d0320d71a5b26e95bca05f347548cf1cf', 16)
-                ),
-            ],
-            [
-                JacobiPoint::init(
-                    gmp_init('0x560c44e762500117756699296c8ec32eebbd27d4936f8d93a3bf81e96d57af3f', 16),
-                    gmp_init('0xed0a0366dff582ea02c9feca790f1d4ed9d2481e2a8cde32d8d15b76e70a4ca8', 16),
-                    gmp_init('0x231b46b7475fcb0fc4dfe62cdc0397d2809406d48a4741cc953fdc71bbecf293', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xe31e53eca6c0773a86ec5119e58c9e5cd34ac64154e393268a5f2bc2e65d3a17', 16),
-                    gmp_init('0x6f431ffcb0389d85220c0b3e049a1b4f0eb652e3c4082b8e81dfebb7f77c87b0', 16),
-                    gmp_init('0xc1810ff38bedbde033dcd6f2bc1d8a05d55d9be2662e0c1e40d66f6b8771f626', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x3073c9e8c596deb46e4689c51360760ec7ef893fbe841dd753cc4cba1c409046', 16),
-                    gmp_init('0x53ef2c65a479eb69f8ba8555deed8c49bcb190ca7b3863f4d9faa40269729148', 16),
-                    gmp_init('0xa15288c59287c514d3cb12debc8961c0f41a5de2c0bf3ca063cbb70069b4ff94', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x4f7e3e359f44c25ded89089e8c24243d0aa54f492bc626f3c90b3122e3f0097b', 16),
-                    gmp_init('0x5db10fdeaaeebb425c5f29685931ac98f137d43c735b903c3030b5aaa520bb93', 16),
-                    gmp_init('0x6a3f733e14abe4b8724b4ed453ad551eea99a27fc6cf8b39e624a6506e3ccb99', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xcc9e910add054dd1ab93aa2a989e4dee30c434642c5a1728d2d01f49607d5132', 16),
-                    gmp_init('0xd8a131aca7c2bfaecaa0854592352561fe27668bd9aacc9bc60330e3df735abd', 16),
-                    gmp_init('0xefc16d53cc157ab636d988a23f759dcd234ebaa66d562c7856420e87b6f5472a', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xf877b76a382192df6449254412fcc905f5240a5817e33bbeda2488f64c9619bc', 16),
-                    gmp_init('0xc827557eee2d2fa6b9867f58ac0448acc0ba16d64b1cf3f493cb70c3e1a7cbca', 16),
-                    gmp_init('0x96a71a9016c9a7165f0a86bd2e939fbbcb8c69e79c246b92466a7cdbeb2d6eb2', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xf3a0e072f7ed54bd34b9a2fdb39ccd087ca6b4a3ae70594e69e89a224a5a5707', 16),
-                    gmp_init('0x21cba462df90cbb51fbbb7a0696b39fdcd0ed161d7b634980c4c678c9c1fd4d9', 16),
-                    gmp_init('0x79c835919170ea4f283b9f203b1c6da87432d2e8978216886e8a7703c3f68394', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xe6b517a90966648be374c0dc0186d6c78afb91793f6499da8e58be93f9b3725', 16),
-                    gmp_init('0x115716b24895d558371888e82772ccf25f8f68ab993d8bee23677693692888c6', 16),
-                    gmp_init('0x218b4d9c2e70865dabf84dde57bf889a6a365db05b007223cac694db10c685ff', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xce38e542b0ad7edfd7f05d84e5d0bda352d85c57fef24fd1bed4f0f31b7ce228', 16),
-                    gmp_init('0x41fc558b4b19f7560de6f79ff0edf9825aef7f1f9d2491c28db9109d26a9a865', 16),
-                    gmp_init('0x5ecaf537773d91799044fa3aa817369fa00dcad940b78149bcbadc12d0a8920', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x445c3c2cc8964425edd01ac77901ad8e488f5078f303ac722045d9e23a8cf1b8', 16),
-                    gmp_init('0x8deeb313616c09eb16425d2a884e47cfaf51441096af60582fe971a1363bbc16', 16),
-                    gmp_init('0xfd26fd8b943eccbccf73273d9814aad7def8070e00cbaeb0e62aeee2090b6b1', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xbf889d8bed9ce71f562eddb1983abff8d8287eddf8a288ae407e2247fd1afd8', 16),
-                    gmp_init('0x767eec8af3ae4fd8e0976b2197beec9083604afb2ff6398041827899d83fee38', 16),
-                    gmp_init('0xde6167cdb2a2c1ae854e4b84c22246347ff514773170ce424ebec4af449fe913', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x1ca81b07bdd723630403c411c93f5cecb09c43d552a03b27603f65292ed03685', 16),
-                    gmp_init('0xda5f428730644ff867a7192db324d915c604891c44eaffff5e7686c72491a5d6', 16),
-                    gmp_init('0xb35241323dea2b27705560f39ecdf2f261fa05ca70b61b8b464e8d9ef4256504', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xf5ef12fcbd2415fc608a4e455d3395fd71c028d59a8fd79bec99120c297d429f', 16),
-                    gmp_init('0xefa4e8f5b80383fed452b9c1e4752b44a6ca53323d7e66df88cd3dd17aaac188', 16),
-                    gmp_init('0x86f78d346dbdd2e3b5c4cbcf3691bd20a3d90e6113161bbb2a964e0c66c3ccbb', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x221973cdd5c58d432700a304f8b6ef18fcf213538933145f3d15d165d5e25b8f', 16),
-                    gmp_init('0xa8d3d37ac45ff53847b7161fc816f69e76d008918eead87bb0f18a0f64f79187', 16),
-                    gmp_init('0x8b1000f572902618e3e3b7bad8b80e81b1efa38f66f3a427875c4e4ba3a7f000', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x23af5e459f84083fe54ff8bb58f9e6b8a7af024321172fa520e3474f39813946', 16),
-                    gmp_init('0x83c10500fd17598bcc61b31485c52e176ca31690300322c91233290dc1db275a', 16),
-                    gmp_init('0xc0f170f04e6f9e9a955a7dd7e5a70bfcf640953bdabbbeb2217f3877b6754558', 16)
+                    gmp_init('0xf0454dc6971abae7adfb378999888265ae03af92de3a0ef163668c63e59b9d5f', 16),
+                    gmp_init('0xb5b93ee3592e2d1f4e6594e51f9643e62a3b21ce75b5fa3f47e59cde0d034f36', 16),
+                    gmp_init('0x1', 16)
                 ),
             ],
             [
                 JacobiPoint::init(
-                    gmp_init('0x304f151a8d40aa8963db2e66ead02e983ed4d0c63d4124bf8589eee7e65f4fa9', 16),
-                    gmp_init('0xbd4c2193e633728bbca339b60beec241c7756eac00be9285368c22881eb60a25', 16),
-                    gmp_init('0xb75abd9490992bb57e618e877d3f834b38580eb2410f630a86181cb69dadbf82', 16)
+                    gmp_init('0x76a94d138a6b41858b821c629836315fcd28392eff6ca038a5eb4787e1277c6e', 16),
+                    gmp_init('0xa985fe61341f260e6cb0a1b5e11e87208599a0040fc78baa0e9ddd724b8c5110', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xdd52f92e30f0fba51995a9f5e58b8b53d93fa0be90acc108865ed2d1cbc5f1c9', 16),
-                    gmp_init('0x115b313d62c17539edee8f7f4fcf3fee25555d734e6ddc429cefce5265bf2581', 16),
-                    gmp_init('0xb2cb7b26d5869dee1cc3f5a32378725c58a2632c9531ad8a8e7d39042cfd1b0f', 16)
+                    gmp_init('0x2377c7d690a242ca6c45074e8ea5beefaa557fd5b68371d9d1475bd52a7ed0e1', 16),
+                    gmp_init('0x47a13fb98413a4393f8d90e9bf901b7e6658a6cdecf46716e7c067b1ddb8d2b2', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x57613d5fcc9079886b0255394c46da86d14123656b468f76b0e959514147525', 16),
-                    gmp_init('0x27e82bf1822385421fa235fb89a5c24b89c5d1b3dd33c84e8371acb2dbd437ba', 16),
-                    gmp_init('0x94ce944fb9f3c1bff13defbfe1af763be6bebcbc5cbc7682f59a9392f08b08b8', 16)
+                    gmp_init('0x9482fb0e492539ec8cce745be070cda11c2e92960a201a61abfb9dc69e4536ca', 16),
+                    gmp_init('0x351d9ca745f157f91a5d638ca7534e63f63d5e295707bfbb1fad863bf58cc1c8', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xd03a683131f52ec212222f6f72356fbe029c54ee5e5a44a052282dec3d3e3c85', 16),
-                    gmp_init('0x2ad1efcd1e51b7cd41d259d9cf73c94ab6f0b0f66d7924a88b03db93e31b3f6a', 16),
-                    gmp_init('0xb0bb838407088bc6127a6c9635631e8e8192999cd449995f169a17bfae1eeca5', 16)
+                    gmp_init('0xa0643fb8fcc14def67a6a5eb1bf8e9125b35edc7338d816aa4110a6b90ee785', 16),
+                    gmp_init('0x553438324a9e7955c520dacda2920e700da10d00e7012ed7bac0d100861f9cc2', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x2a9b169c98b09a42fcb36391e83f7f397dbcf5f5c37742eeb4ee8ae43d3269b9', 16),
-                    gmp_init('0x77c2cd22632ea10c9352d3a59ad578ca10a84ed68d54780f250ca6aa6ac3b620', 16),
-                    gmp_init('0xa37821058c51abe54e2e2d16d91e243d3a7f099a5d902890edfabc4d04c1b37e', 16)
+                    gmp_init('0xb2e1b7c17ae931195b835a5153081eeb63764a1cdbd0633c49b1dae295ecff13', 16),
+                    gmp_init('0xe6c0441313a3ebccf233a1a2aad758c387da1a9817dea2e6a3ba4989b2187d44', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x35b8ef13201f31d3a974bfea3c749f3a9f744be790c90139188bc37cf10669df', 16),
-                    gmp_init('0x17fea3a2429c9e7c21cde073558c5b731b7df2416c7dcff3c45ee33f01299039', 16),
-                    gmp_init('0x675c007e8162a0a9503ba86436be6994b6d2faf257c91598a2e0778220bfa6fa', 16)
+                    gmp_init('0x492003a35c8c3794d24451d361c37440e512fcb2acbac2f4ad24cb7afc635a50', 16),
+                    gmp_init('0x1f1569cfb333b4de4d832ff96bdc79a23c1bc670e0b2e049c9166b28b8188b9a', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xb1213e8110855da5a6cceade3acd18eda6b802381ec6aa0cb73f2bf43073b787', 16),
-                    gmp_init('0x2481ed1707ac8868ba85a7c19a9b91d24b9113f45d6e19dd2687a66c58fa07a7', 16),
-                    gmp_init('0xc6a4cba05145b4dad5c869458020e1bc6c625c1bb3d7bc52b0ef3834e304968f', 16)
+                    gmp_init('0xb433462e7f1b6bc2cb34177dcbc6ee340703e87dfc2309e438bbb334eef87286', 16),
+                    gmp_init('0xa0da54526ed2b5fe383f4e72c1692e6f9dce20806a2cea4b7ac047f6841496d9', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x3bad98c8b9e2b54894f9a0dfbf9e2ab0189927001713e7d6cf199deead0cb432', 16),
-                    gmp_init('0x22f05075364a8107e7f8bc7ce207fcf34eaaab80eb2591fad4ac634290ec803', 16),
-                    gmp_init('0x16843156fa7521d5e890fd0022ec65f6b7ea12ee7ca557755a8e1fcbfb0a2aaf', 16)
+                    gmp_init('0xae3f7dba0bde8b6ad7ce2f8eede4b762c556dea678f859626a9e6235a674c4f6', 16),
+                    gmp_init('0x1c0549fc0a69995a24b8c213249db9a97940500d085f8a5c1ee0553e711f4b53', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x8e00a2b6e0633fd8de9ffe74af22cb0db3247b2f92a06406d017ef79a920f66a', 16),
-                    gmp_init('0xb57394cd2a55258450f1fe44a84d6a83ffd0417762186204633f81d9954e3ca3', 16),
-                    gmp_init('0xf82946fc258c348b8af7e123fa989e1f51ee92d4a0db6ba4c5f4e2ef935f8d37', 16)
+                    gmp_init('0xa47420ce4d3da24cc186e905b5567b19189158875eb0c7601b986b5b19794381', 16),
+                    gmp_init('0x2ebbffdf7be1bfe0e73df93619967afff3a5c08db9f6ac78696ce3a7e2769c52', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x7c3b8283618ce4345da7a55077f50c7cc32772f65ea70553072db58c393626b0', 16),
-                    gmp_init('0x796d7824bdbbd7fccbe7c2051367a508bfc89a41a11e617fd45ba93fb21eeb22', 16),
-                    gmp_init('0x16e19d6fbec749c37a6a9010cc0e369f7f7064e24fd6b3b356216bdb65f1fc95', 16)
+                    gmp_init('0xd677ae721a5d60c9291ff705bf720876916eb1d24497c893551a403f2288ebe0', 16),
+                    gmp_init('0x509497a204ad250672a8ceb0ded3dddf21882ae6ca10aa9d031dac28500c4395', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x11d8009f421c685c73f347ab85f1e7a3f2ecfe5e62e6b772bfae0ecc126b5f3', 16),
-                    gmp_init('0xc8f7305b28d200c664a78f0919a12627ca48898ccaa195174e220789b240f0c7', 16),
-                    gmp_init('0x34efe9e217364f5292040c6e3aa42a3f54bed425bff7fee321e49e77896b5495', 16)
+                    gmp_init('0x5ba7a19b9d091485fecd4012b0da3195b870ac89f5e6f2bec74466489a5185a', 16),
+                    gmp_init('0x30e0d2b5e82c1896e467823e24e3d48e7606220bc905ae001543c88e01de3a4e', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x6d23f62537a0ae4c5e9bacf2e710177004539e93971ba3c5c5dbbfe5e3de0923', 16),
-                    gmp_init('0xbe681b7c1a7da667e0b9080221a177ef40d95df4e8a685dd7b186e2123fd87d2', 16),
-                    gmp_init('0x9a98a0e60ab1a829a42709fb32f6a2d71e31c60b8551504c5520f4c2766b2afa', 16)
+                    gmp_init('0x366018516f5a5a2271f2a56eaa14f436b9c7de5adefd7c62a3b73fb2efdba936', 16),
+                    gmp_init('0x91ec1aacf53ceb78195d35b2e9a028ca4cf24008d15af99d8f3ae9d3626adcb1', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xea121c07ff5930d620b372e40c9e427bfc3e99b924d8865af24c441ff30d292f', 16),
-                    gmp_init('0x9a787fe903adff4771e91cef3ae5e0b43ba42ebf06cda13117fb70e5e9ff39fb', 16),
-                    gmp_init('0xe98327e7a6435b0eebd1dc3e109fcd5b9d02848c0ee00740ba55b64aac56cf70', 16)
+                    gmp_init('0xb29f74c9d0dfe2fd69798d918083e0b79c0efe9aae3a5dfd5aa398b5f99b85fe', 16),
+                    gmp_init('0xa3ce5bc3a6c29785d5d0712e96d7c6d92def63d30bf59e80dba642976da604dc', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x6fe2f61de3aab9a5a97ecf6740be4e3fbcda41b39a38172f05241645458d73b1', 16),
-                    gmp_init('0xc8ab59dba61805aff84775d4a1b848b417942b09339d65c066e2eadb6c9beb5b', 16),
-                    gmp_init('0xd25eb416cab2b66389155f354d54ed8d59f398242c8963a4a9d7f0becfee0a76', 16)
+                    gmp_init('0x78c6be72b982cc60eb36dd90b05f92e7a7dca6c6280cfa08adfa3814eb04054d', 16),
+                    gmp_init('0x491ce81cbbaef8474b4d0c3c5cec23300b6764277e0f8951a729e7a30b0dfa2d', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x16321dbcf7055ee5420d6aabd53d7bc01f589feb5df5c644140be78bc0ad6bb5', 16),
-                    gmp_init('0x84742044df51290e0306b16f2c7a476dbf39c2ef744975f923791fc485fccf7a', 16),
-                    gmp_init('0x72ad6911248a54cfd9f96c06b742e3ade8f82198731a8ec30625ab0da4732045', 16)
-                ),
-            ],
-            [
-                JacobiPoint::init(
-                    gmp_init('0xb993864a01bece05eb1dd6e37bd3cd203ae77a754817843312957ffa5df44ccb', 16),
-                    gmp_init('0xef65cb7253823201c648bf038fbef75bbc6c6d4aeeb60b81f7b5669bab471715', 16),
-                    gmp_init('0x4a1a19ad8ebfe198913c19b348c2d9c77042d3427d315bef37680f18c6919d99', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x896c177fe49e6d3984c2309ea9c19c038d5a3b941a8726a94fd08b491d9026c6', 16),
-                    gmp_init('0xd0b4edee987e79ea4625b7953003585409bd2e78da8b5df52442d03a5de44bb7', 16),
-                    gmp_init('0x506455d0d01a6a865b4621b778ecb18676f21c968a1ca01d06c395329ad4dc93', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x5258861d5557742f4e96717231ad8cd21077520564f7e45c19cb25a8a2a74490', 16),
-                    gmp_init('0x4fbf15498385dfe3f5cafec18afa5a449c43bebe05152c32a8eaae8fbf86f3bc', 16),
-                    gmp_init('0x331fb25e7c493b634dcb053c60da2d87a8d2baa35cde48781a3471377afd6dbc', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xe881081a5a620892024f801e0afc97a560884ea7d0e4857409a9de0d338f891d', 16),
-                    gmp_init('0xd814d2220bde137c2e16a549c41e09a133484da4cea5a34fde62d5ce8e53a399', 16),
-                    gmp_init('0x91e9280d1af2134556640fb093df70c22da8f38ce5cb68ec269d000364d2f3c', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xc83ec0bdc3d487f88850b0ba600ce6dd76cf7b0d8b758eda58ab47d623fa49e6', 16),
-                    gmp_init('0xb10d8c07f71fa741b8b08973d203a8db31ca40dd62dea3d94bb42bdd6009bb19', 16),
-                    gmp_init('0xb02fcda746ed0226822a3c8670808a33b41e8f4134df5197b3cc503f0ef8bbd6', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x831c6e104d746d00a68eecd782c06e7a75c82a1f87a200b9603b993a2fc93267', 16),
-                    gmp_init('0x4bea9a295ec567471fbbfc90fea8eac1a67aa7d68d82eada89a01d68f2fba23', 16),
-                    gmp_init('0xface326561015ebecefbe8aed562fda3c657107d41c81b539dcf9fe3a95dbddc', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x956ac733b740f992f7280b09e0d9aaf684a5c7f49f8884083f9ee785e3c6af3b', 16),
-                    gmp_init('0xcae98c11bb577155e37e0e87b016f545a39f86948b9dbf829c5e8451c921f37c', 16),
-                    gmp_init('0x272a17253d8aa548d48c035674d9aaf1dd9106148c8dd9211db5e68afd729f69', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xd07c4d14e6af9e844ddc77be08b37aae88ef646bea03f6d813cdd533c6ac9790', 16),
-                    gmp_init('0x905af613537c98dd89605ad367d758624e750e07a74f2f60f6479f8fc6b872fd', 16),
-                    gmp_init('0xa282df162670dc9a65d88357336a28e2b5c2609708eb5ad5d4ebd92e79078e34', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xd1158092be6864fcf14f47c869e6687e5f7cb814b0528f3e745302ddec60716b', 16),
-                    gmp_init('0x264cd9f5f00bcf5a2c377c7036a81aada1b8094ef854d45e206e5efd3ca996e6', 16),
-                    gmp_init('0xf6d9c6682cd487f7758ba42792d27d7c331a7ea37543a3162366a1d9a7426348', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xe08d77ed5a42e704f33a0189f2cee3e4a0813dbe53e6ffa12cb85432be37ef50', 16),
-                    gmp_init('0x39cf83f3433564096854219a83ec7577697280485312c460b7b34ee6fc694379', 16),
-                    gmp_init('0x95d83f57599f1813511d1c291ee99f0d3e66417fd34524559655ae281ffcd1b3', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xa2ae49b66ebd4f1377a1e0ea18346e310a4a10310a85410e4a563910aedca4c6', 16),
-                    gmp_init('0xe737c2bb4743efd2d1704d1fd932493c60c7118f0c83d2eb316f2befe0071cd2', 16),
-                    gmp_init('0x5f524fc4fba2a8ec5e1996b4a8b07d0f8726c3623b68d5bf4229548d32fbbe4e', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xbe8327af0c9c9fc64de1b0b250bb57f3008f74c30fc0e0eda5254651cd8e1ca9', 16),
-                    gmp_init('0x6d8df0b00ac5586ad178f0bc392f3ad8e1a7b49e8c681db47a5d68a1605f404b', 16),
-                    gmp_init('0x856db09d6083de1bd2fa943dfc9e0881859f771416d45fbd81083653e7c8d010', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x3c7322f4a75debb8a96a409792bddfeaa1e6cd65c76c73ac974de5a696f78ae0', 16),
-                    gmp_init('0x176f848a2aa40c3637b3ca4104cd212165965266670e362f1e936e0a462dbe26', 16),
-                    gmp_init('0xc887a47775209efafea1b112f76ab4981c3634eccb5a3133126af83c8f6f395f', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xf94a6b3c6a114e12f08ae3f0779c871efc4a825ad373714452b7d4b761a491db', 16),
-                    gmp_init('0x33ae094ce93885807d4ca63c6ee3241351f509b477daade27fa67b0d3bcd9e6', 16),
-                    gmp_init('0x6208f17d1beef5503b5824209d7865a1a6bf7ff503c8488c76ab41c35656f65b', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x62edfbddbc2c9af7543defdb68a6580b63b9a82276ddf016c0a1f0040db05239', 16),
-                    gmp_init('0xc36800c7111f5c022f5da04ebfceb5f1799098df10f234ff5b0428341f903e36', 16),
-                    gmp_init('0x264089b568bfad2399b49f2058348015e3a9ebe60a883a1bd4c014933d707399', 16)
+                    gmp_init('0x99299baa8b91bcf5076cbf03f2482b08576b2b057cd50e962767456e87e030ef', 16),
+                    gmp_init('0x5cc2e3d3333f8e18bf338101a6ceaa7957c12c499f4008444d8e6b7dd8d9aa9a', 16),
+                    gmp_init('0x1', 16)
                 ),
             ],
             [
                 JacobiPoint::init(
-                    gmp_init('0x25c903f80ef17e552200f14d1fccf1d77b976af28d8a1867b65dc445c62d1010', 16),
-                    gmp_init('0xfa0d51734a50184b9de20e3e91be2e4f0714b2a37bb294e5e05af3c46c01fba4', 16),
-                    gmp_init('0x948f980c267d01076be2c02586bd73f75dbe6a0a5d4156ff6eb1af9b6ac804cc', 16)
+                    gmp_init('0x34a2d4a3b009165987ffd1528603ed61190d0b710d6a564c2db2e35f12d0441b', 16),
+                    gmp_init('0xbeaaed6a53a1e3c22bca71046e777fc0e7d766b9deddd81db424e7845e93b146', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xadd8730704bec598f91df918d6653e726e48454501afab137831e594b92379aa', 16),
-                    gmp_init('0xc67de5d9888b88f23f6a5f69fa1e4787b20696cf0b0db3d9051ef92f6da15eb2', 16),
-                    gmp_init('0x19540b92d035fa34c89ac877e874da14ffa8ed8b84694a661d447ce2d0092c33', 16)
+                    gmp_init('0x4c490528be759e4e8897bbd818d459aa416b9ae0b3c5dfc3469cea39f3f98de', 16),
+                    gmp_init('0x30e50b46405cc74fade84c66242a8107471d9d7b4a4605eeebd949434e8d6e96', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x4fe454d0a083bea708228d7f61b269a51b714d1114b4d1a54a264d4fcdd179be', 16),
-                    gmp_init('0x8b703dac41259a0934c2564414c4c668825b603c0c6038fc3c6215e5121606fe', 16),
-                    gmp_init('0x61a15df473d83d0ea5bfa8b71948e3cd42b496796759a47077e5a4c32f1935dc', 16)
+                    gmp_init('0xa98b0a07adc359aa1b58c5ffa95d23ed3abfb7ab74f644a9dce4ae33bda08424', 16),
+                    gmp_init('0x4754c64722499b66e5319e8c8e1d1320752be80ba0df582d361287a0e831800c', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xfb43d0439817eb8dc06b1a64d925d36e0c019bddb35032e7a638cbbe7297b63b', 16),
-                    gmp_init('0x5fa2458e124cea9a5365966daeded62381e5d67d1f551fbe70daec97e58f4833', 16),
-                    gmp_init('0x116050268c9f465b37058c7c9229bce952d68abe5622a0162b134e6074b34498', 16)
+                    gmp_init('0x16949b7287d4f481897299b9eb6fe80ccdc5849ae1d527e280e76bb98e61ca07', 16),
+                    gmp_init('0xe7a4146d770ededebdf997b75b6012094d2d6ac6fedf983aa09c2be7a0420427', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x903e3b925295e7faa04b2b090dd43e63fc66029527b6afc8cafa569eef9a8906', 16),
-                    gmp_init('0x4a75c1b8e89c6f9a84e50017452a9c288081ce924abed24b06c593487b386db9', 16),
-                    gmp_init('0x4242cd12e2ab1a438f5912b2e0ebda3716fa04cc9392641df3f0ea5128666eac', 16)
+                    gmp_init('0xa034f009c88daac5d21b6b78c85a696dd22f918d81bd29b3b52d7e5e883c2d6a', 16),
+                    gmp_init('0xfe1b0036ca899c1fb0cdb8545ceceb06be06035f16267e7cf4336ef2c2c30e72', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x592a6d8f62952749e0b9ed18498958eaba2a664a606350d858d4bb15b0180d50', 16),
-                    gmp_init('0x3251a0a9d5efdb0fdcc86c8a9dadd679c1f419fd7c3e3b2526e447f0533eefa1', 16),
-                    gmp_init('0x67fa4d564a30f2466d504dd762a01dac8014df84ca1aa9e9e765454916d2d38', 16)
+                    gmp_init('0x3fb660a7f0e14da3a8420fe520b265cbb71bdd3c3f3f923b6d61fdb48f6752cd', 16),
+                    gmp_init('0x6545851d4224637c4c2869c4d9577d598bc013bd1100a0c12f12e8c064c6017e', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x38c655364f647469eed1e080b8d451064d0ab1f1908df1bae882b97b28eacd55', 16),
-                    gmp_init('0xe98b48a41aa8dd1df8ea65d245921ed3f2c5b00b9e622d0aaa43640bb719d89a', 16),
-                    gmp_init('0xc0b270e505c3342a79fea25b89b341f37faf743ae4d92b03cd3b5a106a823a7a', 16)
+                    gmp_init('0xb52226ff319d4401a076e2b40962e9a14a096cf82b793e4d716a51dd28be8c78', 16),
+                    gmp_init('0x701ee0c9f539f540ca1b36697e92851a819f7fc8e5b58ff3203367ca51686903', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xa37c168acaf75cff6ef364fb600a174c60a9c71e817db9f3bc8e7f182fc70eef', 16),
-                    gmp_init('0x45a8c5146cce9df7fd89c5bd8dab01a8aed3c61d180291d00a20b912863fca32', 16),
-                    gmp_init('0x6ba6f4b4c129a211941b675ebc195267caf446b5ce2cc96a6447314ef5ddd9f0', 16)
+                    gmp_init('0xb01a67f716475f72886a8f4749b86176281b195ff46f925ae1404a861abe45c0', 16),
+                    gmp_init('0x7c521bbf5a3956e2acd56b13164ef99472fc676341b62c7fc72f0dbe0090106c', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x2d3ea625b0947d853204f5b6761730ca5310817210dd9801bb860dbb873d71cd', 16),
-                    gmp_init('0xc7322f8a275f6d0562e5531c5a5f7919e3f56e29596463d0a511db1853e3b46c', 16),
-                    gmp_init('0x1edae36b7d4c634aed205950515e6859be2828e98cc66d466a01b9d61cfa5da4', 16)
+                    gmp_init('0xa3e38861868e05b3d968ceccfccc4713de4464f87931979b7040fe40a058b5a4', 16),
+                    gmp_init('0xcfd457887df0d12c3848e6b3ae97e68f3cee845bb771a2948f306d90e7113aef', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xcc217caee5c606cfb2ebdd09f96452b835ade6c6a5a90455e20db023f0f14736', 16),
-                    gmp_init('0x265aec95d98982796087a51076a08fab19ac5bae3abe617a71a50c3a34eaa69a', 16),
-                    gmp_init('0x9a4ce0a912dc4985cf3df939df5d4bbdaf5b9a15409d8d48d491d627fe17d031', 16)
+                    gmp_init('0x3acf89aa3770e03b872c1d0e0ec1188637136eedbdbd88217c2d788ebbe0146', 16),
+                    gmp_init('0x1ccedf94c3c6bd27f06762038c11cc48caba4be850a0ae08243d71c1d38a0d8a', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x6c6bfe288e670511bbc37af4d07aa5a93eaa393caff3df678572399a42333317', 16),
-                    gmp_init('0xbf8b96794f5ab5c627a7769d6356c1cdf7714899c782aa3d678494df54ed159f', 16),
-                    gmp_init('0xec00dcb518d2dd4c802d60f85f071405bf1b218d7093f400fa94af2cb171489c', 16)
+                    gmp_init('0x2099544a131fa539333ccab9a221197a82fe36db2dc7dff7a05f5ec904a08314', 16),
+                    gmp_init('0xa5cf3dfd2aa33b1890fba8e5cb9048dfd406e5a736fcfe96e7f8c9c5e7573ccc', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xba622ad3058b47989830ce6bb98168a624332a8edc52986365343c6971ef2c6a', 16),
-                    gmp_init('0x954e3a90164c31cdce744fd8bf1a296d1456b9cfd481d55427b216a805114a9', 16),
-                    gmp_init('0x5368bec000102a64d406d76c100e8fb2e343deefd1e02f3665c55fe4839f20a7', 16)
+                    gmp_init('0x8ac1f41fb4e187e6b7438645c660cb24fc7405cc6e1372f88136da613fa8dc8f', 16),
+                    gmp_init('0x2122b32472d8fce1c1506fac6daf3cdf1db6fb884fbadd731d95f312d9509804', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xd5a358b0d67e4a4cd250ab94b4983d4e8464f2dca2650928844d61c84badfe2', 16),
-                    gmp_init('0x5ae2aa257b0ee4dbe917e80b297a12e2c89ee62b559fd61e5bfb468cfa932b71', 16),
-                    gmp_init('0x21c89fae817ab1e01157ab11b4f10016f47996edba5b641252628bc517882e8a', 16)
+                    gmp_init('0x751d6513acc0ec70308f6e72aadfd39b99e0c3caeeede929502ff94ae9078c18', 16),
+                    gmp_init('0xba9c3ffdca4a415885354baf6a2a2a4ef00948c1cbe05ac7998d6e95cece0d67', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x2b0177cc324fe0b690f1840afb138c5e96dd3a874b6ea0fb2052d3506e9eba02', 16),
-                    gmp_init('0xcb84da36e80900b9f7d05d00b6335ee0261b0bed49edd2856c7cc7122ba1d6f', 16),
-                    gmp_init('0xa3561461ed308184761a688c7ac3dd5d2bcb60549c5297cfdef537909a97adf', 16)
+                    gmp_init('0x7854e90d1144129e46d90525e450a1a702e6b44d101402941fe1767ff462ea0e', 16),
+                    gmp_init('0xd6728e8d1f9513ff4a3004bbf427c03eb7742ea17ef95b203bf725275902544c', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xd32aa307dd7b3c8ac896221f66df724971a142ca888fa84ea4b0bde51fcd5a20', 16),
-                    gmp_init('0x7af716654f311444c0256b79f127c05e4127d9ad9f76c162c8153f756f1d139e', 16),
-                    gmp_init('0xfd277ea79268ce94c5c918b40ef7334f28679df5471a401b50c64fc3d922299d', 16)
-                ),
-            ],
-            [
-                JacobiPoint::init(
-                    gmp_init('0x7842423508111974c9a804ea9843df3041e58cb14147348290e27c7e17301e49', 16),
-                    gmp_init('0xa518dd111cfa01b8f75f7755a93ed98abe7d209b32f507c73c0d958b57e54a15', 16),
-                    gmp_init('0x7c89c4960a88c3e09bfdca34fc258cc70e805f32ed930198d76cda7ef71ec0c', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xd6717d9dc29d7353e6076efe9f1f1061c7f921699cf011f0b0aa6416b334e10d', 16),
-                    gmp_init('0xaabfccc6c18e9af623d1fa724a95ac0f05e66aab1117c65db7c989f385a81b05', 16),
-                    gmp_init('0xcdcf4d64d39ee44ada48d766031a5ef6286da134d96236683d0bbea71fe3abfe', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x7e1986509a4785ac78469ed50bce1af5ed0b265e647dd72d2b6d5e456f8f6ece', 16),
-                    gmp_init('0x2367d516e3346773570151ce60f35fda0610cebd5c5c41f680556f1619b7cb47', 16),
-                    gmp_init('0x2b58b32aee0f28e6d19e2fb2fbf3ce518cae1e87843c8e6fc8741c5da9033d5f', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x9e1ee2a0b6be8e0d6b3a79d9c37ced26ccf239e583b699b75e86a718c6c776db', 16),
-                    gmp_init('0xf6986f9986cb238e589e23f2f413dffc7b1149c6b137f78d49d8d4a7a3c06b49', 16),
-                    gmp_init('0xc0dc6c7ffeeba9e509fdb62c0a1abe13d4c128a584d0b6ba45463e1257b0732', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x3acf35618f1b1719c9504167a539ad11cc24a473a18334ececa174295eeccbf8', 16),
-                    gmp_init('0x35f42130a566b143072639a8ff203cd60fd2882e91d81e415b2667c05f85a96', 16),
-                    gmp_init('0xf15790fa36fcf38e07fe9e0750878c122bf120c205e3e511d8f90605601f2290', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x4b8c4a5916654707f85ac6f33cb8a3883f7f8f270cef176a0ae925a7acafa240', 16),
-                    gmp_init('0x2e8e9bf944f1034cb54aea2c810f015bac74f174e5117408f04b24d4000ac247', 16),
-                    gmp_init('0x5e4a8571cacfd750152205eab258471bbd0e3f40c8b437dc68ee12c4a4ec66ae', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x158ba08c19998ef1b29c6d465d3dd9bd80be71d94eb39e360b99caa6c48ec7f7', 16),
-                    gmp_init('0xa33cce90f72cfd9e7f7becfe98d842c0b21aacadf395da0b01de56d6d73e6b66', 16),
-                    gmp_init('0xfda19afdab30b2c08f7e9ca4ab8a64da00d5f9194643b6d193f4e7d3981e5295', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xecde0ac51a9e9f32091e456ca43154bef6bb86833d3b8df8c6c19d6be77f0087', 16),
-                    gmp_init('0x63e37a2d139633bd55e5b3a72b8c0d8fc278aa5d60a1576259d9ade0b9eae84a', 16),
-                    gmp_init('0x27334295ba76ac1b3567dca4c7e8ef691d7c623980a551fd77d413a5f795bb2b', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xbfc4813df103ffed1068019ba880b081436f07dc6378500bc88cad029c700ec4', 16),
-                    gmp_init('0xe094c8ea39e7f5026be9f00eeb422445a78a268e110e27e9a88acf9fbed66b8e', 16),
-                    gmp_init('0x44afd0cd532b4f45874efb21ecac3f89d56f21a63fb08809bfed390c58a899', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x37bf590a4ad097282ecfbeb48e6261b935627930063134137cf2bafc8e6baea3', 16),
-                    gmp_init('0x69b978a0880a721f691f8e3b8b359c0f4d28ee212ad65c5af8eaa50a7b807374', 16),
-                    gmp_init('0x2621352bc67c2c57d7ea4b03a73f74d1384d0eae99f7c44040bd66503e2bdb05', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x8c9b36cefebb447d72bd5a8b0e116b69f85bf664457278fa8d2acbb86d487da', 16),
-                    gmp_init('0xc69ef3d0b284083a1f9adbfd60db1d61a1797a7f449ef98c76c6f93539980a56', 16),
-                    gmp_init('0x6ebeb955708b5287faf63cb97eb8561756dd6e49b565ba5d48ea306308652c5b', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x171fe9e860a46174f8f207f53518f39d3eb07d9d68f4ad334b09980053a98e74', 16),
-                    gmp_init('0x2f757c9bbdbc3b696303a811076f55f14c573afcbdbd65ced18983b9bc00b2fe', 16),
-                    gmp_init('0xabce334196c190d5a973e4b10e38b30992cb22fbc061a2a9c601d9df22d52b38', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x1b8127ff2b52460d85ebc54513a8e84d26269c816fb7d4b709c4ab212c425cc8', 16),
-                    gmp_init('0x18ba792b5458a0477f7879a87783e50efb247852c2d327e9311fee7e29c59370', 16),
-                    gmp_init('0x2552121753a903ced22ea9ade6093eadbc9cff7ee4482c0d94838778563075a5', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x6d19089856d833c7eaf58316914bf8a0e042cb9ac3705d13a778b2a170a81930', 16),
-                    gmp_init('0xc7123af5fed125b0aa3ea111fa92f15a68647a9aaf8fe2c7a05bab0f0f2bbd5a', 16),
-                    gmp_init('0x18f042fc475a9181326f6a6b7d5640750475436ccb25b5af6ebc1cb637200ff2', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x26149adf14e75252436b57c4d34744763ae894e255580c8acd0f45d689eb9ea7', 16),
-                    gmp_init('0xc7249871a4383cd5357b841bb9d59b7231d318473ea6c56ae0a615247e8759d5', 16),
-                    gmp_init('0x10670ebaaa848b5cfc4f997b1bd7902d8b3d66bfc3585dc8b6eca6a649354fd', 16)
+                    gmp_init('0x5be0f5225c47801117b48308a03a3b36405ee09d17a3db4492cfcd5c9e86d900', 16),
+                    gmp_init('0x83d1d9e6dff2c422d347e3a4e7b5423df921725241b34f5ac4cdd69bf58a5755', 16),
+                    gmp_init('0x1', 16)
                 ),
             ],
             [
                 JacobiPoint::init(
-                    gmp_init('0x2c507c8494163fb294df079ffdf84ea1adf7fbbc8050226f1c4f8a7b6de64ddd', 16),
-                    gmp_init('0x7e54f91ec8ce6ce7afcd7a5950f1391dd095c0cf7e1c9ce25a8e7a0760752df5', 16),
-                    gmp_init('0x980d3383241b8b7837871d0ed09b6af1c9e45d5808a8b2e7afe9a426c266b96b', 16)
+                    gmp_init('0xe716aed2cf069e4d997789672e6d6bd2508676f2f4fd0a64f077e8daa245573f', 16),
+                    gmp_init('0x353663e694fc72ab5912b06687b9a851d13d0df2fa07c9b3505fc26b469218d1', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xeffff86c7f88f01ee42cf793e987f77a62653a08a7d1510d0945908293e01d60', 16),
-                    gmp_init('0xf58c4cb96c873756876eb01d1d21a1dec05b74e7cb4887afa6da8d1b5bb6c034', 16),
-                    gmp_init('0xfa2731a1eb2769a544f388866c56ee2de8c3c235521f39ec8878b8a3647d00b9', 16)
+                    gmp_init('0x5a57c3e3548207ef2f4541cf25b5e81b6b2e5d2fcec451f4b5113c2b357174b3', 16),
+                    gmp_init('0x77c7b303e69224601b1165729f3443328886700134bb92888cf5959383437e3', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x8f932ff0e6c25554c5bd363b14e966a9f0e200f7ef7afc4c816889cc59433b0d', 16),
-                    gmp_init('0xfac345d2235e2a826120ce5f9fd0e4ec4c0a6ec5bea8f0cebfee95315c6d687e', 16),
-                    gmp_init('0xb14c5fb18b4be73bc7a37461b1a19dd0084f20da4e967c0c3fa596a3018f0680', 16)
+                    gmp_init('0xd2bf898d6f507ce864e5558a4c1da22d19ce1ecee329edfb7f987930657008ac', 16),
+                    gmp_init('0x69c0b1cb5a6b77aa3f8195db3fa90c56679ce10ab5ff07988111534a727beb55', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x53eb8b9d351106bd8fb493a2df4e8045c86ef1ed3a804b9764955a5b71daabad', 16),
-                    gmp_init('0xbe5cb51c4e48c817e2da5e6cedce341b35f6160af5202090fbc95824629a8b3c', 16),
-                    gmp_init('0x1a8faa1543c7c4a2f44b975d27e758757b3140e6b07233691d6557fbcadf3407', 16)
+                    gmp_init('0x5ce96505eef7208cd10920adecfb86ad1a87a974797e4fc58937f00facb006ff', 16),
+                    gmp_init('0xd16b6ebd381f5ad5ec56d1f22fde7bc3669d20bebd955c2b818dcda107152613', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x6aace56c1b4a389abac9f751e0989c351b220d52318c2279bcf615e428f71849', 16),
-                    gmp_init('0xc4f1609702508503a27bf04ae9da7c6e3e263834f5a8dab6b7346b212d347337', 16),
-                    gmp_init('0x864d9112952617ba326972b5c705bb725514db4de3ccf8d779355c8afd89196', 16)
+                    gmp_init('0x4d88304ee583ce6087fa57391f3064f8b0e4ddee24203eb7fd0d7ca9782f1580', 16),
+                    gmp_init('0x28a94e709ab0636ce8d6800898fd6518aafca3bd68eb1e110c0fb16d5616edd7', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xead4308ada3cde7bfebd1118cb50520ea942b5919f706e4f70c838c3de075daf', 16),
-                    gmp_init('0x6bf76957ae59e86d5f6d9d2751b03059f440d3a27e436e72fb47822cb88d49bb', 16),
-                    gmp_init('0x53a2d1977341c6d0dce50110c4711fa8f782c83770fe39f368e62c34cdab186a', 16)
+                    gmp_init('0x541c97a5c80be642b28aaa0aa37d9e1676754b6ebb642a20a0c1c454c543d986', 16),
+                    gmp_init('0x54d35662cd2b63254d48455eb64b1447fb3ddc8c61678bd7b0b8f98424b2ea7', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x197d0a351846dde01f7548e8037d989dc7c74b32b27cca062001314b91173218', 16),
-                    gmp_init('0xe4179101a56de13b7e8ad5d8eaa2766952ca284dfd9c239571820ab0dd92a05', 16),
-                    gmp_init('0xaafd155b532d0287af65c7bd275cdeae5b6ad36642a7fa5785adf2beae50d7d4', 16)
+                    gmp_init('0x17c72727c8fc0eeb3267399202e5af9e7156421bea6e26ba5f84c3dae0c38e11', 16),
+                    gmp_init('0x95c5a4f4fe664b3c40602fcce901802e7e539945a60cdae3cd8366bbae90decd', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x3fccbf2dda0f078433d72b1275d70db82515b2f65575e4127a8537a382cb017', 16),
-                    gmp_init('0x87f5d7a2eda0372b935ce232318be31b6367e45139c8c4ebc7f4cc5e641838fa', 16),
-                    gmp_init('0xf85b1f1bf562cc4b0d7cc942c9dd41ab69ab091ad2f9bb1da3ac99d665cbb854', 16)
+                    gmp_init('0x71a5bd27c625ca1b4b2a3a4635b1043363a5b8311d31a91915261b05d0b79fbc', 16),
+                    gmp_init('0xc5bf524d066741ffb39452ca1a02f2efc76b6051ebaa32d0c2e37ccc8f277f6b', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xe4bb99d7816977a6f3fe342eff646d1099f1e59c365c6113a27cb78a719eb786', 16),
-                    gmp_init('0x28ff0668548b6aef107f6de08a321d43bb4a777b4b5b315105a940aa9767a08c', 16),
-                    gmp_init('0xff681d03cabafec54b430e2b0f5d1adcfbb5683502d2b9375ecf1948748d06ba', 16)
+                    gmp_init('0x7e03fdaac47450a88463b1cfc84cb8b3cd4f46a7293541c3d955fd8ae32f36ea', 16),
+                    gmp_init('0xdcf6d5f1201228da668e6b170184af99419e979a4c5009d68acc23fc8a68b8af', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x48ebeeaa39cda70345f0e96f98b56354601f486301455e2b32dc917425dd548e', 16),
-                    gmp_init('0xd52d8f3d09e6e4ec18a8adfd16c31de793d061ce5c22c1ee2ddb9fa4fde6d032', 16),
-                    gmp_init('0xb8b9138d01ac9ddd1ecf724f5d9dd8bec8ad662250b16a7c7a0fe3924870ffdb', 16)
+                    gmp_init('0xed42091a6c5ea880f2017de6157064166c04351af99851530c5e14bfa3d9aeea', 16),
+                    gmp_init('0x340932a238f9d141e0d3092b508982c4954ebdd1e21053921a456364c16e9ae7', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x487d444810a388ced3a646ee728a78e47d1388421e7386c0483920d869c88884', 16),
-                    gmp_init('0x832409739a9fe89e86c060fa2f2e56e786955c0110a2342ee8076fe738eee091', 16),
-                    gmp_init('0x4e187a9cbbf37a3b5d7ea1b6d30672b6128c68bb361c11b956c8b64f1090729', 16)
+                    gmp_init('0x8ce6da684b1bcf0761637ac1dca0b2142615ae8649e18de8d43e52a6d953baa9', 16),
+                    gmp_init('0x3d9f4fb8fa93120be69b3bc90061b56807f3986bb6a9341d78e75c28f52689e5', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x262ca0434715baa73ca29f3dde0aa743f87764e997ee7d948d25033708531e5d', 16),
-                    gmp_init('0xae132185a9f95a86844d8b032385d74f070498570948b424d3781a4a4b849b22', 16),
-                    gmp_init('0x957e97834bc2e282c0b952699b8966132a73d5b625df98503addefa5a3752570', 16)
+                    gmp_init('0x1f4179b924a320c8087e87c9ceb758787835611ce53cad642bf3909a3f490661', 16),
+                    gmp_init('0x82ac86b413a8baa0d9485f70af853ca0b9711411048902172e477122b437b2e2', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xb15457c379c449075a2365d8fbcb71ca3f5a66e35fbfae2d2fda513e4ce67a33', 16),
-                    gmp_init('0xef4ad22fb2d040957ec6ff0b4522c2c68d042c15790e0e5f4d8773bb8850a00c', 16),
-                    gmp_init('0xd959adebf1d3f00e9a28de70b10e32ae7647aaa01349204ab4b80d2ab0cfa571', 16)
+                    gmp_init('0xb570e73040dc054a20a5354975bae2b008b1ba9d9c6ab8f94ab8d853af22a96a', 16),
+                    gmp_init('0xdcd8a2638f71e77f028c3769b5c0cfbda7c9bb7a5855cc9ccb33f661c85d1b00', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xafe7f919b834259270d4a8fb29ffd554deb26621d2efdccbb0f0a3e85d0fb79f', 16),
-                    gmp_init('0x51f431137be46af599c4cb2654a92ed1afcd7830617cdb758a453dfb9af6d74', 16),
-                    gmp_init('0xf13b477ff4497033d313c7dd074f3c1299daeb8c07e75c7bb89559befb5bc6d0', 16)
+                    gmp_init('0xf8a34ad3387c634494567b56a196e517a5a1b3ba7ef715a6495ba2d5e264bd27', 16),
+                    gmp_init('0x69ec8061504674347f6375adfe7d67a50e528e13dbcf1fb0a7f3956ff71ac586', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x8072ea103c6173394b9e7e96f380f7cc14203d1ccf076f98d56b543977252ddf', 16),
-                    gmp_init('0x20542895220b3097005b2bd6d58ed74c892b9d0d72569a97f9d3b60aa48e7500', 16),
-                    gmp_init('0x9c9cb7abdd31e4e5ecb57aec85b3646d91eb03d9a6aee7c7f1ea4a3fcea05de8', 16)
-                ),
-            ],
-            [
-                JacobiPoint::init(
-                    gmp_init('0x205c8e018c27354746b899dc9399c509437a1b383efa6bcd5912a3854549c4c3', 16),
-                    gmp_init('0x2113361556746a15a0be93cc31405e779830666e24347f86b6673dc9348fab7d', 16),
-                    gmp_init('0x42f546ba3c44c69e8cdd3e9b9b56cfc74475082182f4aa5733d4b0a9959bf9c', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x47b36492bfbddb4b2c05fbbf3910224013288ecc61c7284aca5a854ace9c432d', 16),
-                    gmp_init('0xe37797206e95428d4b581adf21e88876a7c2e27124041d58b14b3f937f04cb5b', 16),
-                    gmp_init('0x86cc2eef9c2d06db81103cc241c5280ee527a891a8c5ca7012ec686e92ea5e64', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x95f9c6e876c2ddfffe8f4b63bcf2b04dff586d3bcdc0b0b3e0b50ebf9a34c273', 16),
-                    gmp_init('0x5c5698070af1d35626bce094d5770e76307e42c1ed4213579e500617b484786', 16),
-                    gmp_init('0x11f627ec47875b49aedc8e5c80271d90eae5b5a2d81f54cfca460c8a8ab5ad15', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xc23272e1e43ad0dcfa524b65ba0fd61d811d27e23c01a6e32be038aae4c1c3e', 16),
-                    gmp_init('0xa45cfb694802e0afc058522a03b71d03656f98d249e50dc8a876bd6dd4224f3', 16),
-                    gmp_init('0x1567e99f2709979c44a76fa4cd54e0cd497fafefc88757c2fab453ef021d69fb', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xe0758c331e77722aef0768c7a08ffa9bb8d3f0d07c2ae338f667b8026d786e2b', 16),
-                    gmp_init('0x8a088c49aa1d7eca588c48d0fa063f9d9a54680b9e32d04afe53192df9231b9', 16),
-                    gmp_init('0x9f1aa409273bccd486e74212345a395d6592e44541627974a23eb1f0f5c67e23', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xee54cbbac56c96aacc8645873e43686ebebbae7f86d66ff186bf6d1e91e7d649', 16),
-                    gmp_init('0x23856273296454ce03a9de56c318a936490197cf0342359cc832c3357e40f520', 16),
-                    gmp_init('0x4dcc021d064f425fcc1885b606871fe0c5cfe9eb4405b05f711b5576a23026e2', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x2d2287f000cd0a08c03e696c50d00ac933d315027d5ea4066dcf383b30c2bf45', 16),
-                    gmp_init('0xa9a8d90ba190d117daf6dfb2925f2e32ded261a9b5844f7843a2e8c380312490', 16),
-                    gmp_init('0x526495b756dab97c0e46528bb12942c91c32207ae9812b6cdf9a43d34acce8f', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x4f0e56d06607deb8b1756a7ece30803e3a1470e536d6b16d51fb4578b80d726e', 16),
-                    gmp_init('0x2fd67998a1f9bd695f4bf133a1db8987e173230f48cf7620262da0980319a41', 16),
-                    gmp_init('0x34e854d3dde5422568029b43acf2f291f605ceb2fa8567dccd12f8b135552fd9', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xd74d10af12b7d45a0d40095f26fad767e0b22cf2b855f079760f60e818fd39b6', 16),
-                    gmp_init('0x228e25d567439ac0789aa15fac0c87b07c2fcab16f02c77a1e97a1676bef6191', 16),
-                    gmp_init('0xd1cd9d6423c981604472c1d4861b82152941d0ecaa428f80c923d4d6b96ab7e6', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xd530a08f1f2e4483dc93cfe0cb2bfc92856e56330acbfb7a5acd9e82d4dbb39c', 16),
-                    gmp_init('0x4c2176c65d0bda01f30f96b6492d2464623b705c25e7988453c7eff369010c24', 16),
-                    gmp_init('0x5a4afb8e5bc2e453aec1a5a11f22f1edaf1200ef93bf3a8317fe659fa13df79b', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xe28eedb01bb1e62976c332a860941d44940819e7db686e763181e7e9f7342500', 16),
-                    gmp_init('0x9979e5ae336c3acfea180a3873341e61c9fa0d020f078082224807d800e80497', 16),
-                    gmp_init('0x805d59bd1284bfa2ce3ffed508513efb38de8a7a6600802a82ad64f1490c769c', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xe981bac403975bce1d95a4e5c749f2961fa5060b5512e6c74a7dd0ac279f33ed', 16),
-                    gmp_init('0x40e2a01f47235ad0cd44c2a5477a184d0a7cd2d73bd976d408b37bb1e52dae96', 16),
-                    gmp_init('0xafcf914c714ba7f45640fd7ee4f1adea9bcc24f2786989ffcc238fe0bb5bed0e', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xc7d460f911fe00ce20a5a6f46f9de182ff8880589e7552adf7c4d91aaa00647e', 16),
-                    gmp_init('0x4ef08198dd17e9959847170dfcbccf7e9abce81febd748461f09d90031b7344', 16),
-                    gmp_init('0x883242993b2cd707f3033efd2653f7c89a9c2119d6553837bfad23b0b9eda00', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x98ecb964b202df810f680fed5d21c40d9991d2d6187e24a8e8a2e1cd60fff687', 16),
-                    gmp_init('0x4bafc511a110cbf3c18b70854e72a48199d8f1ef8e20d17bbab86b2264165f49', 16),
-                    gmp_init('0x70c7d39940eccede60751152b8379a89f392b4bc5c180b3602c6a4cdf6c661be', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x2e2bedc6c9c7944ee0169f6de563896f5b4d2ed26d48e99cb0001498c2117ad', 16),
-                    gmp_init('0x3a934537a5876a43994b562d15c2911b7a6749fb2720e31131296cf27474b242', 16),
-                    gmp_init('0xf1bd707d0e6d53c64e19618bf83e4d3484ac3a4784c79a7478a44c2d8b33292e', 16)
+                    gmp_init('0x44d94323cbab943b04a11a3e75c7f20de1270b9641fa80549e40eb94589a7509', 16),
+                    gmp_init('0xb2c5b38008401f0a03423bcd277b93586f93e1fdf14dd126e20a2b9b60437234', 16),
+                    gmp_init('0x1', 16)
                 ),
             ],
             [
                 JacobiPoint::init(
-                    gmp_init('0xeab0f45188a3f33e854345124918098cc8e7d8cf8f4213574c2600b5e2aa40bb', 16),
-                    gmp_init('0xe326a326862a0cf5843cd71d8ce6101b15c0ad7a6813388423527892218bb142', 16),
-                    gmp_init('0x95c542bc9ca57f4d9effd44406d6a6639e88e7f1a97c00793bfac55319fc579b', 16)
+                    gmp_init('0xa018366f4e91e90d8e5c643340e586b4714ab749c9052a0503e8465c6eade3c4', 16),
+                    gmp_init('0xe2bbec1714110b167c6ce578349d8369d5f7284e44614f37f45c42026b26e8d0', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x1395de89d2ec558e9dd0db2f27ca8c1776c725ee9f3d82ab40d37348fb7e0fb7', 16),
-                    gmp_init('0x8e8765921b93f6c32c0a19293babd22ea0b97804367399a54aa960358076476a', 16),
-                    gmp_init('0x178d324337938aea8e97922d35e92744edb798daa64aeb258221212811b07e70', 16)
+                    gmp_init('0xcd7ce65d707da2a69ea25487ea254c45eb7d5adffe1ce3eefebccee647a9112d', 16),
+                    gmp_init('0x85e04a4b4c966f9789b9016aa5ee6708a190aa498bee60a5ffbabe0d3a92b3af', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xbc4089b3d881277c72b9a438696186417a4bcfe429a8e8c4d2412a9e56ddb5e7', 16),
-                    gmp_init('0x11f8ae02b973295388bc1579b44fc45524ae1a24fd3395c3bda197bbb5747a34', 16),
-                    gmp_init('0xd2baa9d93d9444293f35aa73ba82204f716e01d600699ba98a301e7c993ea78d', 16)
+                    gmp_init('0x9cdf1f00b88d896450bd3b5a6d45055c92f398a562ed958d6e1cdeac59e0af06', 16),
+                    gmp_init('0x916d25fed3f2ad664d958bbcdc8d94b0828522dc197ca5468d7a32db6216ade7', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x91f9fbfa8bafbd571f9b40f161055834e5a026f28dbc5394536fc818d3e89cfb', 16),
-                    gmp_init('0x491300e0f963c74bebba3c1600cea6091ef298e9183c44451a0d7098af56583d', 16),
-                    gmp_init('0x637fea525a0f784caa1ba336dde71805c963121c67c5f1a301df5f2abe08c652', 16)
+                    gmp_init('0xf5f0aea099634718e67d4c73705ae59e8af0bc36c998bef6c88ad96c3212f1a', 16),
+                    gmp_init('0xf8a8b2b7c8593c955886aadd4ba16b784f5ed40dde29af7c755d7b1e7712b09a', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xec16137342924f1b8f87deec0ee8124fdb3cb0976f935f464a36f999bdde1b50', 16),
-                    gmp_init('0xdfa0a767413600022a8dabcfd7b6080a0fb86f7132f06b62a3206affe40f0e0f', 16),
-                    gmp_init('0x97eaf1ec727ef9afeacf53131a8f5d33bbc04cbf4f6c1192c5a0cac196eac3af', 16)
+                    gmp_init('0x45bfd9d5d1a663edab6b1b2d0540448338d6170e843ba51981372b939305097e', 16),
+                    gmp_init('0x9d1dc12855afd2bbad88305470ce908683b9d33bfd2c15954ba058e908ddc04', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x33635ce2759aec977d8fbd698f6cdb965382aa944b5e359fdbc9075c05169eac', 16),
-                    gmp_init('0x7832226eee3ce7a0a876e59d0db02dff782cb57a23be8ae648576e41b8aae605', 16),
-                    gmp_init('0xdfa28d3df73791cdf11238bac1c0bf4b2fe7fa6dce7cc3ca1414ca026fd1f533', 16)
+                    gmp_init('0x7784f06cf9bfb4003407fae48fa79a96b0e2d44b1a7f80ef000349acd95bcc47', 16),
+                    gmp_init('0xcca2733ec3edc43a3f8de493b2fee6cef464b5cdd4f6ffb602fbde0180fbb3b4', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x9db7c1dd056bf2f17aecd1d3bb5dc4c0232f594138e7a673a5f7f5b61e759a6f', 16),
-                    gmp_init('0x9623a94ed72941f3a8499232b63196af0d23b2478f075b1277464ebda165888f', 16),
-                    gmp_init('0x8c90022ab3dd95a8d3904d1072aaa9e30eb178983eda3a9dd68900aa8a9758c7', 16)
+                    gmp_init('0xb599ad156476693b671e9f9c02895e6fd1fc23c2dd66aec3cd31f1a0b63bd6df', 16),
+                    gmp_init('0x6979d1dec4fab3324637360b8b23c4166a40c4f691134b458ea1cea38efa09ac', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xc0cb96e288ce81aa8e623d4a2db3d41ddce58d1c220ea1802a4f566102372baf', 16),
-                    gmp_init('0xe2390acb942bb77a4ad51ef372917d0e93d56b0f1d24dcf571ed3724a1ea9737', 16),
-                    gmp_init('0xe465a241acfee0371c3b22b0fde0c8362beddd13bc3b0cb2bb805f0cc6036a9a', 16)
+                    gmp_init('0x471ad0a8d57f5939f15f0d870ae25c9091428bf4e1e6e9172435158cfc4471bb', 16),
+                    gmp_init('0x2234ca62778e8e392a367ab48094d138b0d7e9ff7f23982c454318fa49693a0c', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x155eab22419129d95bedc60790064d1c8d23fd4862825038e9c403fc2e5b9d7a', 16),
-                    gmp_init('0x616e80fb8435a0fb78fe5a487d26cb4f0f71ab811db42b6350e3df953739fd2b', 16),
-                    gmp_init('0xed91ded31fb8110593d3877fdf14ae1a7efbe61541b779e878d8f5a58c51670f', 16)
+                    gmp_init('0xf4dca1f16732ac0e92662b1227e854c11d9a6a35f83bc26daf8613f327142d62', 16),
+                    gmp_init('0x551167e5b4b4cd46d49f381b91abc659bb979acefdcd3d7fac9eccc07a618fc9', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x66a3abc86cd45e163754fea10e1fee5550aba471d8293dfb6315a8f152a442df', 16),
-                    gmp_init('0x3fd2f20d78926d4ab42f26ddc70a3ae2079a311b605caef21cca2ea6e4e34955', 16),
-                    gmp_init('0x53923818085bea3d09b93ee5c8a30b67f77f14dfc0b831e810a29f18d3d6666d', 16)
+                    gmp_init('0x45dc683e625bae7349d201427daf6500b3040ebdf3523741a92c68146c180378', 16),
+                    gmp_init('0xbd0197242631880fc89beaac3e588137d04ced33a08df78642a66ea68e817a27', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xbb8ef7936fd934a3e7cad1c0a3cc03d52d73ee49b429593ad44d6b9ae80cf4a8', 16),
-                    gmp_init('0xbbab9ae906b720b064af633eb6f05bf968df985abd152a3addad78a853681a9a', 16),
-                    gmp_init('0xc3737cbde8d291148690bfd649a9a301941631b65adddb7b47befaee6cf59a62', 16)
+                    gmp_init('0xf07278a0e6e09b66d9c4e240e716bb5a7f15c7dc4f395f821ecb1ff4615fae61', 16),
+                    gmp_init('0x1a681b2b14a71ea5f7d7a0821898f7d42c270715b837eabcf7d0cb74896376f9', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x7db94967f567e10b26dc74f7028a46d75253fff6c54357f6d256f9fb2fb37c6b', 16),
-                    gmp_init('0x37a6c501b8895b4405a470a69e62e9767a8437c69970cb90ea3b24cf197e73fd', 16),
-                    gmp_init('0x6c48c041df5d157950c5d39000fd0dcbd2c6407645c8d35ea5f4c2f776658d23', 16)
+                    gmp_init('0x93e498f09e88d0d67405e146be83337fa2d3e61463d4dfff2e06dae905566022', 16),
+                    gmp_init('0x7d974929d221120d9096e0f3540088f43b27a24bc689e611b1cb31eec7c53f91', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xb075d3e70bee6e35f5382c1cf118e83bcea329c1577ab72bac85a951516941d0', 16),
-                    gmp_init('0xe8994c282a8e7d8f59e6a650e5a7426be2c81c85090b4bfd7e15b284b0f8c49', 16),
-                    gmp_init('0x439a7d86f5f79d75168ac70ac6cb1639d63742edb6f1ee3033e6875d6e5b53f2', 16)
+                    gmp_init('0x1fc52457af0a0db0f143ab533ba858ccbe172ea8ffc68d6a0c4e04152466591f', 16),
+                    gmp_init('0x489c1838089ebc11e9ec76fe5b434e1629f8cac232ec782244efef57396f8cdb', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x4bbb0c02dfe4a7bb8ee8cd1f3707acc2352633c2cf0345e396072760a20c7261', 16),
-                    gmp_init('0x7b849c9fd6e85e8174a03ac9c67db0d92b36fdf5b838ee3bc37f3ef0a2125d90', 16),
-                    gmp_init('0x384ddebca68ad4e12668a5ebaa64e45f51034fe31985766893f8559cb43bfa6c', 16)
+                    gmp_init('0xed9ea11f2d7b0206cc34630510b36f5d1df4170c442d4d0a5ea48f58173b4df8', 16),
+                    gmp_init('0x175d2f8031d029783d0e3d4c3f02b53752acbb37e2ce6a55cf5afd9ce069ce7b', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xd230f0664ba48e14d48e5e83814bf3172d1f23a1fc118a39e4073bc1d8c67b15', 16),
-                    gmp_init('0x7349a4443732fa680b6ed168b374b0bce2ade0a5f7dc8ac0d06a453036d1cfc7', 16),
-                    gmp_init('0x325f8b8811260995e3b671f453e9326d5e4bcce8597c1d7dc00aa451b890c768', 16)
-                ),
-            ],
-            [
-                JacobiPoint::init(
-                    gmp_init('0x9b39dffa87e5679fd56920573050441abcd1d8649c7fa887ca981f170f617d48', 16),
-                    gmp_init('0x8a1dddb758d99f78756bdeaa503b84678d049ad3bf793c581c3157c7c9021c3e', 16),
-                    gmp_init('0x286847f80f0769771c5f89b0c13baeb72674a183ee08abd0c95752720de06ccc', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x969fcfa6c891c222866f5bf095044a75d2473bf80b1426213c10a3e91fdc2cdc', 16),
-                    gmp_init('0xe41a8f4192c8c8e7cd3c5656ec578df93a24f8cbf6657f8cfb2acb881d77df2b', 16),
-                    gmp_init('0x8bf8030709888e9e2465d82d25bb3e3b40a477e0cce387da746f181c2eb977bc', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x99044d94b0ea01f423c5eb9c5ef4ee9c2e553f13f9bde06c4009441d9e338a76', 16),
-                    gmp_init('0x8de5f472d44f4998d7f70f75837b6a6bd0d24fc8082c6565a9086aa920bbac7b', 16),
-                    gmp_init('0x643c3f825cb5e1fe3b43f5a1e6c55d1a401fe537f3d44acb6a43aaeaf582f169', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xea6722bcdaa7317631759c6d0a936187c26939a699223841938487142341ae6c', 16),
-                    gmp_init('0xa87f564d787e148e1087cdf6cc94bca4b1cd6f415e44f76e516bb697664b32f2', 16),
-                    gmp_init('0x95bd52ed4d9c842f8fc8de1e278f7ea2c2a3a1bfdf6a6ec720f91765831cfed4', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xb0278900e0cb87a73aa40fa8fa15a671e828e508b664f96b74f84eb71fafce43', 16),
-                    gmp_init('0x99b2262b8bd73fe2b023dafd7620fd57d7c72413c435b08d40e71ca963d9d742', 16),
-                    gmp_init('0xcf0c304531f1d8169eb648b3bef2eb2d353f011e6aa6a18a778cd35f28ec5f85', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x65ba2244bcbd18534d7daa5fa65a39513212145943b7b54080157d4e0ec7d2b0', 16),
-                    gmp_init('0xb1a6a4b6d3f4f970269bfdacae5c0ee0fbf67c747d27dc03aee294aa38ccc7ae', 16),
-                    gmp_init('0x3f0f8d9e007fcac886c3b967b11a476ced51303a9321a976cc58b37479d1e5ac', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x8223ef1ae16b18ea53530f8cd93aa26bcb3ffee15dcea76c5bd2aa6a94acba0a', 16),
-                    gmp_init('0x88e6aaed433d55769efb48a413aa492092aa14d84cb36a8ad221eaca24b2642e', 16),
-                    gmp_init('0x8efdf5f4a2f1aa2ab3512b623bae8744eb64f3dfb445272c82ab661785ebe7d3', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x94a38844f574a803f990e12fbbc7a01fea617ebebbda0c67f394a5554d1b8880', 16),
-                    gmp_init('0xb9ea767c91ac5212d3efa59fe4c30936e5219e91776b1880d1c9edb2efe9b0cc', 16),
-                    gmp_init('0xcaae496bd3df1e9e36effd9224ba9721bc93f4767ddaa586d11f7bb614875b2e', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x56d53d1c3fb0bd73af2c91116c929bb15c1418978ba1d0e30c872506b32d5c84', 16),
-                    gmp_init('0xbf874ef2eebde4be7e989410a06b405d0fb85fad968475a33b85029e23d1be0c', 16),
-                    gmp_init('0x6342dfcbaf1cb56a5c4c6b4ceba0d5a5483f2305b1d2547fd3abd3a83a612231', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x1d104a2be319647306a32a4392d76e21210c2d665ccd7f5ed48a0273d0101f53', 16),
-                    gmp_init('0x68d3309e17a6acb480e6e5eab0ded891d522f27d1be94cf24a8f12657c678160', 16),
-                    gmp_init('0x37d181862ca7d4dce57f8eb4597f5598d1770c270b02472953edf1a126bd9785', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x40e2b179aa318178274998a62942e427f35b178651d02eac185a505cea886bb9', 16),
-                    gmp_init('0xc13c776dc98360b70095f9cda4d8438c244b588814ede1788745ff6b437fffda', 16),
-                    gmp_init('0x4acff9fb214059bddd180d68ba28c94ae4c1def74876f251f247b422cb3b3bb4', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xca63a44fe35bb110c21e6b4071d65c7f7ab353622108c36810e533c67a9b380a', 16),
-                    gmp_init('0x8b5f624f083a326d2c274eb4b48cbf15cc9b030e73e24c47f904d6ee0f9ecd5e', 16),
-                    gmp_init('0x8a20e77df6e31193f080975ff56f87f4e4aac314d90d55f888e21e1396c5d4af', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xb6e62eae104c497be0d2288b2a462ffdd365137793fef00cb69eb02b7928ea54', 16),
-                    gmp_init('0x274ad07ac8278f5be858521336d283f1d817cbcfeb23eb63497ece9637bf811f', 16),
-                    gmp_init('0x8e4b5e5da2608d6905e0a029dce30ee89306ba6aaf022916b01e090272e9b260', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x3d62ecd5c78e81fdd7be8174f6d9d7f1b37c211ddd70d6ed6c0709018107e68', 16),
-                    gmp_init('0x768a1d4196f1e50c7d8b0d95b595ea4be509a29a858ee0a7a87f900ad3624847', 16),
-                    gmp_init('0x4ebd22a26118062168f7c9d86b40616bae384c14f41c5e26d1368f9341c7ac63', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xd05844c9d7fbfa69992aa093d80648d36bb6773770b29965b36a1619e49b04ac', 16),
-                    gmp_init('0x2bcb26bafc80b2dab8309d8d21bd30de6f3e6076a349cbfd22cba33853ffaf63', 16),
-                    gmp_init('0x357b990fb586a2bb247733a70ee8e27ca62db68e80b97bde8f309c1daa0edae9', 16)
+                    gmp_init('0xfa2501b31a48c5f4fd7f0b5b30ca56d5a291cdb718f96715125d0b8c322a8ebc', 16),
+                    gmp_init('0x71c932b14f85896233851e661a6fa8cbea58e08e6cbc833180d927b5aa8a775b', 16),
+                    gmp_init('0x1', 16)
                 ),
             ],
             [
                 JacobiPoint::init(
-                    gmp_init('0x7619069f9d69bbfb8623967e3bbd69a23ec9b5b531e54b36689058490dc82a8e', 16),
-                    gmp_init('0x939bf2d7cf156e761d24135f0599877754839eaa043490959860d67c18bf6ae5', 16),
-                    gmp_init('0x34689d84479c5527cd6dc61109a6fa3d4fd2d201d96dd5b60c2a37614b236268', 16)
+                    gmp_init('0xec73885141fe54ffef6a0b570cd98d530e431c1aad5fcfe8f7dcecb7d96dff1', 16),
+                    gmp_init('0xd6224f4e87ae875d91acc4ef580652511d5264ce87ed78aa9ec841ac7c7b552c', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x6d949391367b1192e396fc8df548350b6724f5450b125027be35d6ef1f46c421', 16),
-                    gmp_init('0xec86742de0cae77c0c6d6757ce5cd4745c997c7d05e3cfd9998f8ceb891e34b4', 16),
-                    gmp_init('0x9fc246a6314982ddfc265d61c7546db00564349ae7b36efa25b1d756d81db387', 16)
+                    gmp_init('0x477778364e6e1cde059a0e2532c8f0c69ba12b3112fb6dcfb183b5399660b7c9', 16),
+                    gmp_init('0x2dd89d00b8389e317373efb6a7c89e8a5e0604c1f142ebcf5c205fa39918c3df', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x13e6b36c694547774e761c0ccab1d305a963674a4463a85bbf946519a07afd40', 16),
-                    gmp_init('0xe384ac6eb98d1c03f1368c29a9adef151aeb6bedd8ca635c2574910f8123dd2e', 16),
-                    gmp_init('0xe9450f0af021e2ae634bb663b4f59d8fbd26ac05994be3c606b5e258dc110387', 16)
+                    gmp_init('0x96dac3fdc7064a86e992a46a7c42a7b6e94a5c1c64e3183851c324ab088d58e9', 16),
+                    gmp_init('0xcb1faff3ad46c1ad856cc4949382c439685be89b9487e6e380349312aebebc5e', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xf4f05b2132e093352fae42d3564521e8d1b224c33e675cea69392f0550bb4dc4', 16),
-                    gmp_init('0xe4b76760ff85c8f95a0854e0a91cb34b7b1d95af567c2ddd50170fbfcb2ffad7', 16),
-                    gmp_init('0xdb055b2f334fdd0c80aedd9bb2f1da08c8354859bbfb60c5273ab95c154b6d78', 16)
+                    gmp_init('0x353d458d3491b5a8c73d989017e14dd22ec38faf35f45d260fd8013b26d69d8e', 16),
+                    gmp_init('0x9c7d37bf4f5bde243130fde40c040a8a825dfc12fb71a9a8842b9d0020f32b82', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x912754790e5ce37bed6a9432a134b3ed3b04f10cbb5246472393cc84124a8b35', 16),
-                    gmp_init('0x610d0d32b2d5bc74ea90e922ce208ac0a112e73fa4eca7d6dc9e37eb0cb6665c', 16),
-                    gmp_init('0xf2bbd7f8b0b444708a497e85478cbeaf72a7cd25046047b92e6e3a8f8ef6f961', 16)
+                    gmp_init('0xe297b23ceb14f312a105dc378aeb8f811d21d271b947b2c58952ad132db29f92', 16),
+                    gmp_init('0xe1372520f8cb70b4b480dbabb8cd91491223cebb85ed414160f294c8a5e58ddb', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x635338834bf5be866e3eb91ffd99fae1149c036bd98f4ccae4522388af3ff045', 16),
-                    gmp_init('0x63c38269dabef84fb87fb897cdbeeaf864783e698dfd6a125390348e085deb3d', 16),
-                    gmp_init('0x424ade3ca28aa0767f34fe2e4bd729da10b297a3fec9e74813263e737c262462', 16)
+                    gmp_init('0xa737bb3da35a3b5e3171bdb6d33f07e586679fdea1d8de803f4dacc55b5e6a6c', 16),
+                    gmp_init('0xc68f53e01f98ffd22b1e765d8e905f150d4e7d487692ed0ab730c7d69054745d', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x69ffd36b34c1d971f72bf84474fbcaa9996147ac1877d2180f05936ac2ceef6a', 16),
-                    gmp_init('0x4dab4a86f3d320bbca729df7f863ecb5ed78824489c5d75bfd95e876e897d654', 16),
-                    gmp_init('0xc1a0f18965a12125dc770313856945027e72fc2adc91968f15970ca731d7a498', 16)
+                    gmp_init('0x1cd22338fb2b94b66b06bc920d24da97d91ae394d9746bcafd943b7b8ad88c33', 16),
+                    gmp_init('0xfc3acdf838ab48b096c8640ab136bc2713fe51315eca1e49628ea784248fb1b2', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x2c974cddc5ea368892b351d66a7a04695ddcd50bd0b828794632a9f88492360a', 16),
-                    gmp_init('0xbbd22fed9ea702f21ee8b16ece3c90c80774e21d40712c3403d33a37ef59b185', 16),
-                    gmp_init('0x342565db259b6afc6debb6d1becc830c1045c791499b29cf54938c7fdfc91522', 16)
+                    gmp_init('0xddad6bf0172e2240d57180ff0b1ba76e28e6bf035dc617ccaf0d4e79e330c098', 16),
+                    gmp_init('0xb1371e6935a21897530a4736125addafa333bad2db9d1403e5a994d63b67b58', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xae986892a1b79264f4b181c18288c868baf3b7ea3d91781f8050fd6084161b35', 16),
-                    gmp_init('0x981f5a446627bdb204151f50f53675fd7ea9b221768d57da8707ef60c763d24d', 16),
-                    gmp_init('0xc3ec54cbaa387f8a7bab02cc52c75437347041906e97d0388bf1d58c5cd6f98d', 16)
+                    gmp_init('0xf462d7adb9e9fbbfcb1cad30dffb1ee0cdf7e11b0c63a0e0f53ac89c3b26aa73', 16),
+                    gmp_init('0x406a0d1a783453140d53ba4a68733c7a49e8e0a300502cca245eac1778479e73', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x8541dde04c7615e1fc66b56a8fdc560e0f09b781ada13cc1a933174ee84c4ee0', 16),
-                    gmp_init('0xacd4207d46811385b2453426cf4dbe5e894ba664279a4342a3dfda775cf9f00d', 16),
-                    gmp_init('0x80aa1418dee76989789e0c6ef1c210dc2ef1fcdd29447f146cbae5ae4c56a05b', 16)
+                    gmp_init('0x22ad3fee717113b91d6f05da10f6cd6889ef670c852039cdf58bebae5b2e97cc', 16),
+                    gmp_init('0xbce4ec07b05351a2d0a598db6a4dcc1de03640043cb4cd37c2d34ede848b42a0', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xdc37dbb0598e10c727af70f475bc20e351886aa2d29c4c43011b0169466cef88', 16),
-                    gmp_init('0x3921179285fffe180aa9de61d2497c23e3efb3b89353efd4c8c14f3bbbb2f6be', 16),
-                    gmp_init('0x9d2cc0950db14472f288fc4708924f095ab42eb4371aa8fca35a9a260f6c04e3', 16)
+                    gmp_init('0xe0f68925d3f70caf75bdbeb3ca895168af90e9597e6502273ee1e02abcd015e3', 16),
+                    gmp_init('0x8531e310e483aa95362696c7274c77c55b8b5391e2936bbdaa24d42d2157cce', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xbb3fda62df118e16955a7f7155e608238840a1066c0b61f967f4a5ac87691a08', 16),
-                    gmp_init('0xe37987b9d8e956fae25b9ca276c0f5b6911bb6600c3f9be17f9c649ae93e0a7a', 16),
-                    gmp_init('0x19a61b19c3c82f9a0dbc0c4413bcdce596590d1239b997ec042fac6e0e0789d9', 16)
+                    gmp_init('0xf6c5ef5db04ed3ab5364f7c14bcc66e27c8ded40b882a8512082b63685ce7562', 16),
+                    gmp_init('0x4149117a17145d88c5a533360dba511851ed33cad490a6f00747f96b177eddb3', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x79029c1f9215d5fe066ba3f7dcee3280a423ec2d0e2787d29070774804f5f9db', 16),
-                    gmp_init('0xde72224e59d70b7c8c0617c756ba66845232335bc7f8d1fa7fef28e8cec100e0', 16),
-                    gmp_init('0x90a3ca58c3cd9376c2053a56b338cf1ae94798fcdca42c4404c3269b3791bdbf', 16)
+                    gmp_init('0x28e4adc1552bf57fc1d82b312af75a00ea8e76773e1927691e6c43114bb76b12', 16),
+                    gmp_init('0x14d74c4efd9a01b3f4e4b65b6b9ea3f703a0a60f171628ff57e453a7ec4747bd', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x55237112cf46c6b11b41fcb8715b6abe74ade05bcc878063729e73d223bb6fb9', 16),
-                    gmp_init('0x3d269a3ee1badaf4dd04cb5dd4762e802c95c761cb4d05e07814b8faf748c78e', 16),
-                    gmp_init('0x33d231101fa4fe2b0e4b9fd1e38e3141ad8e5d7326a5b1f5d454accddcb360f8', 16)
+                    gmp_init('0xdf30ef720fcfe8d0c78446b476dd149e20d07018ea77661eafae5fba343040c6', 16),
+                    gmp_init('0x18e1aebf6d6dbb4509278a77d903449d43cb0cf4429c03bc2f3560036ca02b72', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xf77ac8ee07c7db12b8901eb775c04681f8591bc87c0d8994ab8c25d7dd1e327', 16),
-                    gmp_init('0xeb1a19c1917f47f94fee0362fd4a41d5b27369f5110a1c816acc0b7460eb0a0b', 16),
-                    gmp_init('0x322b0016927ed6dc87fa34b1add8b4f983829ee4825a495b4320b2e498fa2b5a', 16)
-                ),
-            ],
-            [
-                JacobiPoint::init(
-                    gmp_init('0x3833c0cb9b52edfd67db2a81b5027202e1ff223009e58a2e8f3e36235b7dc8bd', 16),
-                    gmp_init('0x8091a25a4eb478ab8dd2ff155ceeffc7e3c47269160902b78f05d9bc4a98f5cd', 16),
-                    gmp_init('0x9e18fbee52c36b212c76abc7121e193848646136ac6936576e424135a4630121', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xa8b6c2aec965f6f911367c7d6da45d4304b7575bc9345fe2d1cc41be57d2f039', 16),
-                    gmp_init('0xab106b686a6b60717d26d9a10c0e24277a07c91cddfd000da167ffae5219473b', 16),
-                    gmp_init('0x612a436e65bec22b7e3d83924b0ae5e603af40f85920340d7b5982cdf49a0aca', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x77b2d81847ec84138d0711e5dec8189cb3fc7617c3629c0f01ceaaa9e52a8bc0', 16),
-                    gmp_init('0xa7885cdf472a3ab37669e6f8ca18756411b3d59504810ac5aa5f49f5b51dfe10', 16),
-                    gmp_init('0xde8ae5c5d6ff6ed6cdd62a680eef270b070e11e6681729954c5ce46215fdc80b', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xa11f8e16c7f48e780bdcc1b6b30e2fb0cee4ae6af9bddc9a2973ac97e1edff62', 16),
-                    gmp_init('0x97fb25292d7420b3a1d4f39e0c99bd098ec186f6b6bc9ebab257afc1c8d30e38', 16),
-                    gmp_init('0x3feb44d5829a6405c01fe8bc0178f74520c05d60adb9bfb28d0183edbfb821c6', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x744a91681eddad4c19156b4f3076dd0abda365dfa7565a4320b33c1af2c854f', 16),
-                    gmp_init('0x755c88fd264fadac7f5c885538ea736691929cb77cd5c341be26ebd696171780', 16),
-                    gmp_init('0xc0d5af8bb46ef3ba70cbf0ab225fc628707568d42faee78566688146f82b39a4', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x965a321a9b8210000bf16b2f1975b22b8869e6b8e5669248bc6b9ec9b583fa7d', 16),
-                    gmp_init('0x42539219c1f69a5a7fb3e2f8429dbd480c2b401e37569c58f420bfc85860c1fd', 16),
-                    gmp_init('0x6940d48c5afe9bdbfdaedca9ddc16f0e2268ade72fa69c98e5d6936cbf244104', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x915ddb60d412fcb9eed635d3172f28c7e3c36b2a5f49d052aad10aa1ce4e20f2', 16),
-                    gmp_init('0xf789fc1d687278ce97fce8ef89b21c6bef186086712242134be7fb2c7ad40871', 16),
-                    gmp_init('0xdab29296d17e949094cacf9513e300a25984f2561cf7cc6f602d319d3dd77ceb', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x55ddc67bbd53105af240da8e7f26a876bd2bc71cb627395084be413f86214e25', 16),
-                    gmp_init('0xb9d34d6bc103b50d59ec17ad727549173a900bc080b76e87d444b4baa738766b', 16),
-                    gmp_init('0xc8df594698b7b56f449555ae687e824f40d8eba7654f19c23d92446dbdebc3ad', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xa575b07f4a899fc79ab0bf6b68ae240b4780ea9a61f7c9f19a74307cbb49ee1e', 16),
-                    gmp_init('0x1646a6c7f47edbdce9d06cf1fe66a646a06efa7566b60a03710968cc2e806a28', 16),
-                    gmp_init('0x72bb4a98025d9358a6690c4b481af265ef1e8b182d034875a572dee871e2bd58', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xeff27b16103ace6b9d67da35c16c8fac73be6200e5d11d48d8e96d6dfc7f5d4a', 16),
-                    gmp_init('0x2e507e4f75c97d42ace5be36c4301bb0f86ec0720e10889db465cf0001e03330', 16),
-                    gmp_init('0xe8407da51964fd1e05a98425c7ae3c612cf710aebb4127b72333b3ac946da4b0', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x6f4203fd3b7bfc11a50a8be3be195889829a31449f0e06afa4e4201ad291532e', 16),
-                    gmp_init('0x44e6c706d38859c52a686f3dbe7ae6f9a60d6df3d17b0dfdc7f6e254ad9918a5', 16),
-                    gmp_init('0x13d2f145dc08e885dc74c7dafc7e542a45ff6980cbac57a4794e9c106d9aa011', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x31354d3e658f274ddb05e46cd0da1c0c0744f9e12ec01e75f14cd9e4201d2d02', 16),
-                    gmp_init('0x79e4f319d8af9456715a17e7368d73feafa601d7cf25475b8de51ddbffa66092', 16),
-                    gmp_init('0xbf5799e6b6aade0b06524fa02c4283711e8ba76d163e59b0d986e9c3f977ff6c', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xb4d3766e709bf300effc828efbca27227b361cf4fa1227ec9c4c801c37eb6b39', 16),
-                    gmp_init('0xae7044d9dc7c2d941474f84db995ef35696bd5b6f1937434ce9c911173a05a29', 16),
-                    gmp_init('0xdc9e99a83887ae8c06e29806d245fafb375f22467d3d907d4a7a4bec50c101e', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x2caf5eac058bcd628873fd2f967c40b866a457f91aa69179382e621782406f79', 16),
-                    gmp_init('0x341509c6d516243c24b837b01d9649475c72c5d83aeaa70c5e2bd93ebd9b40fe', 16),
-                    gmp_init('0x91b77c76a96f1b457caaaadd3e228357fda13450d139b947274fbc7898c18663', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x670c823a396faf4975d83e44b1e99d932254f1771d1f522eddb305050492d5e4', 16),
-                    gmp_init('0x37017bab13d48efcbd381e77462ba6dc2b439953c46095bc9fddde8edc8c99c', 16),
-                    gmp_init('0x4765689ef1c4f2f45d4164c96b7cc827d993969e5558f00d94f999fe77f5c3ae', 16)
+                    gmp_init('0x85a0ba2794ba805ed271edabb3a097c6369b6886520764628bf5801fe76ff697', 16),
+                    gmp_init('0xadf32e61eac3e24a554790d3dcedaa551de97ffa790a58b9309ed4da52142721', 16),
+                    gmp_init('0x1', 16)
                 ),
             ],
             [
                 JacobiPoint::init(
-                    gmp_init('0x32e07f5c7f3a704db58379ce9ee101911985c7945bf95d83c81b86c24fd9a71c', 16),
-                    gmp_init('0x4830d437ff818365fa6df71a031e77b8eea1c49fe2c872f6f4c26551be89bbdd', 16),
-                    gmp_init('0x724a8db0d7cd3c319415433c2414862719b26ffa7565e9f089dad7e89ef38a8b', 16)
+                    gmp_init('0xf8f5dccf4c6a93d7a4a54daafaa3449aa87a8069875405d43725c5dce392d805', 16),
+                    gmp_init('0xe58176cf66d63054389d3e336461327351f3da64a52143ba026619516cda02fa', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x179de0b630d6da74bf2710fb5bfbc00c22ae40a0bd65bcc94ad843d4b6d8752', 16),
-                    gmp_init('0x9f067f7d756638bc6810c2256aa6b7fab2fb5464e07aa6980a7de920b0a59ae2', 16),
-                    gmp_init('0x1636d8107661a301e556eaea71e2430ba491c88560a0ec170532814fe5e69748', 16)
+                    gmp_init('0xa118b0f24bc45d9c9b317fe248af581ffd42d88478182a90aca7f0b2ac51d8a6', 16),
+                    gmp_init('0x698b53fd0f7e1798df7b25ae09464d6a81922408e376967d8621b55d5c87b030', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x30139de2b29404b97e457b3a1d3b3bfc64fef7e70806efbd1442943678931f4e', 16),
-                    gmp_init('0x47effe3c0cf063d8960f01d712a1f17081bb118a61b8a858872846cc304f9ea6', 16),
-                    gmp_init('0xa8ee56fbf92c4507559276889c75d4d5b16259e739fb0684c88c9dd966df1e43', 16)
+                    gmp_init('0xe12c8e4a865883a94e084ac8946e2d4517110f390207309d19d4b3167fa046f7', 16),
+                    gmp_init('0x7cec04610fd9a2f3433b3ed5393126f6dd0c04e11331193453a55a28a12646ad', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x78d90a39fb8bf5b7303a9944e37c001da0fb7188115b21e684aecc6519813fa6', 16),
-                    gmp_init('0xd8836496d8b0ee7273a407a2042c7e9ae0139fc2c37057abb179873202c67be0', 16),
-                    gmp_init('0xa53555c1b0c265b163ce7a41b6239503a7ffce51e8180cca1731faef91def631', 16)
+                    gmp_init('0xfcc8ca2e4e502d2ede9ec29566d715ea7bd24be788828675fa42e8729cf5250e', 16),
+                    gmp_init('0x30b57bcceef8bd04f6b9880a8b34da5c9046bc05c03b2120602e0fbf730fd4a2', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xac5952f563e15bfe31bbe5ccea3a917d04ac20224db7d1cfe19997f098157de', 16),
-                    gmp_init('0xd1ddd3027e5e72da558abb2dcbd26de6d2dc459fabdc65542e3a55cf7f6ed2da', 16),
-                    gmp_init('0xd30fcefe485a4db37dee2a906961dbf7bb14008f7e7d611e0cc63872f9a2575c', 16)
+                    gmp_init('0x394bd474179692093d08e2efe3d1323648166c57ae22e466b9b127e8c2853c43', 16),
+                    gmp_init('0x2b4d6d52151dc6b9207e3fc2f1d60767d52f6712d90fcf0cb17828cca064469d', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x218839d7be3cad307add2b48f9702ef00c30083e26d346ef4fa883c70484f8d1', 16),
-                    gmp_init('0xb85e5b67f8062b187dd7db58e418ade3933cfaf4858c429aac32c962d5ada566', 16),
-                    gmp_init('0x3c6337610a5c74b0b6419c60098f536b20b888ea79a4b4c61ab3f9a7cdcdd18c', 16)
+                    gmp_init('0x81341ae328b1909526a78cadbc7ed64e1f177e3abc30f12018da08ba74cb5cbf', 16),
+                    gmp_init('0xf2a47728b2deb5f40dd25cfe06cf034980babdc773bc3358461726673e856d6f', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xcfd3dc540ddd49055a9bfce1399ab36b0ebbb2021d2c6e1da2fdf52e20dbe440', 16),
-                    gmp_init('0x4aa6277944ebe7da54d0fa048f571e2be74e87370f91627f4c9ece1ae4aeb8da', 16),
-                    gmp_init('0xc42fa099ed76b8146760af988fccdec69ea7e857354d6bcf2752d282bd26638c', 16)
+                    gmp_init('0xca8538df38de82e9445c6656c59404334ed810396d058961ec2dd739fc722e94', 16),
+                    gmp_init('0x3b27fc42eb9e05c311e73126a1fb9f12f20953a8a48b26a43a0a62df1049a527', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xc6bff5af9e360edce16cfd3675066e3a3907484447a5e5a914aaeb75b14d265c', 16),
-                    gmp_init('0x17c45c2511e832652130b79ecb6e7bafb80e5fe0b024211cc5ae2e0e74164719', 16),
-                    gmp_init('0x3f04ccdfe2902745884d89276837cd50937eb1d2e6c135242a4ec9682f63fd97', 16)
+                    gmp_init('0x24bbe05bfa35ddc0ee9a4b43cf2e4e3af349f675d2af3c3d2318aa0489a95e03', 16),
+                    gmp_init('0xd49405ee090a22cf17182d4dd2760faad40aa52e375aa14987df45ed8d793c4d', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x450ad9df5c7441d76cf2c4797f1e3837ec02adab9c52be5d467d583fd7217f02', 16),
-                    gmp_init('0x49f43f42e7364f47c398d209d0ba8ce92c9553f8dbc79d0e1d5fdf265e7a3ff9', 16),
-                    gmp_init('0x3f445f4f6f7a0d0b0a504256153b50b0d7341e06e320f662fd550a48e19f540', 16)
+                    gmp_init('0x663e1a59f2357b75a1bb74624ca67b3dd31a1fc2f239ff4887174629dcad6309', 16),
+                    gmp_init('0x292fb73b8066a8c3c102c183cb1cf918b907d44402eb52bd53286ba389981f28', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x488d362b74f50ccdf24e31898aaa77d30a53f57d5ef4720b8c1ddf9d81d98fb', 16),
-                    gmp_init('0x70ea4a17f02549704d1d43ca85ab3d8df919901ebfb835a4bf0d44d11e6a684c', 16),
-                    gmp_init('0x8638bc4af4836b83a4e459bf60d9ed36736152e2456954881f7277057423be0', 16)
+                    gmp_init('0x46e22fdc70432f68aaf94227eac9c482f2accb5f8a3edd1370d45a4ded4d335f', 16),
+                    gmp_init('0x1e1f378d8436fbb7d59f4b2940a2aeb39cb893a34c6225eaab8aa54c61bdb9a8', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x56f1cda026f7acd54af752a93a2afe72a69ff601ad3b0a599e0446855f3398e5', 16),
-                    gmp_init('0x8eff3ffdf5cba9deb86cc27aa53884e6fbd2fc0cdc3805b81091c504a05f9eea', 16),
-                    gmp_init('0x9ebc1dcb392fa1018931b1279b2a1e19169087b7f8373f1aea4095e2e20cf70a', 16)
+                    gmp_init('0xa2d9efe73063667096c36c23707beeab3ba1b04d8fc7ff249275b24522c23d03', 16),
+                    gmp_init('0x1cc85228cc841b8f15530436c7101b92ea09a7e95839df45102e4c04f085db74', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x781550c2d08d52f6e2a80daaf7bdc6cda2fc25f4ed3da740b99d0dbf8473e62c', 16),
-                    gmp_init('0xfdf6d0ce2ad2c5fe3a561d05a180180f2381af930999f30e075fe88f2340045c', 16),
-                    gmp_init('0x42b39989aa3896b9b1041eb57bd9d0a46e22a5be39a12f1f771ef7c2f4b67333', 16)
+                    gmp_init('0x86f0d61c0c8a0982eb76c8e73d40e0df6df610b42ae2c020fa22eb9ba08eaf08', 16),
+                    gmp_init('0x3059e9c7572fb0f3104df139995363514a0c650cc021492dd71fbaa13a0c1a2', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x1ec0c5091162b1c112596cc24554a96f4da88d0a5ed3aa18e699b39414808e8d', 16),
-                    gmp_init('0x3730ad1a661ad4922d2e5527a76b52e4b229e6f6efe1e22b35f2708a8b397f11', 16),
-                    gmp_init('0x54545fa0be4f7e67fe935b42e3bc81ca669b3f198400c953138213b11d2a4383', 16)
+                    gmp_init('0x5657e12b48b1a9efe0b910b5273f35d0f662cd519ad9fffb1755f96707d4c6d1', 16),
+                    gmp_init('0x72b5bef4b8dd49f9acfb390f33ae6a0abff9a35a1452c14188303f298106bdec', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x21f50946f49e680015c468e33bb3138c8eb8c8980c8d160bedb61a33e77a9e28', 16),
-                    gmp_init('0x7718ac63696f113ea02fb6d9dd3ad8c2c30448fcdf70c6a44f78f319d6e26d9d', 16),
-                    gmp_init('0x82cbb2c7519a7fadffd949cd8220a2d430043415035c5e6a692c4dbfa3461f8b', 16)
+                    gmp_init('0x5e378784112a2a521a257a892c9ec52759d03d9ae280de5cbfc50fbbf32d296e', 16),
+                    gmp_init('0xa559d906505d0e674fcdeb66d5b8ad3e4c9118ef208fde89491eff584e42294d', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x2f8292e7569d95c801b7b0374ef41847299b85cd4c6e6c5071bf460bb0219c43', 16),
-                    gmp_init('0xaf9f5847ac2e01a8437e29497193ffc2f4462a557cd47c2faa9f1ccf229876fd', 16),
-                    gmp_init('0xeb238d9e390617cfc028518e670d19879406375180861a2b69fd78bd22ef0efb', 16)
-                ),
-            ],
-            [
-                JacobiPoint::init(
-                    gmp_init('0xa81f53cec7f80450a8568ee7e06b01d09a95ad380fc9ed97cf693f3386c34147', 16),
-                    gmp_init('0x1ce7daf699b8fe702e9489cb6e8b57f939e7b09932fb726577dc709e09d125e', 16),
-                    gmp_init('0x84adb08cb6a83b069cf6365b45478a1e3c13adc1027a09d3d75dfbceb98c0eb1', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x1bed98035c1bafae66dccf4604af22c8f1cea606720bb43f129ea1345607a15e', 16),
-                    gmp_init('0x4189bce2913d1a5437cf5dcedcc0791c7ad597a3899b7de833840f304dd4c9ea', 16),
-                    gmp_init('0x2de0fd2b44089562f51a68a7ffe594a7be20f2c699db9ca9a36774acc376f751', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xc4007e0f2cdf8443590ded647d7d818ec3c940215a92857d0898a4566f2b20e0', 16),
-                    gmp_init('0xf60f6ee21c06d7473f8b1df74300d8e2e2bfdf4e333c649a90d9002a8bc1f0b3', 16),
-                    gmp_init('0x4c77d31b90cb3bdc355d20fe8a12e1251f98fef12c8f2c8da1d48ca01d5864c6', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x8be432c64448169a2a3b48d781ddad4ec3dbbddc9f31b9be68720686a89460', 16),
-                    gmp_init('0xf09b2363badd1b837c025bae474501964d2b87105337f6913e1003e849fad134', 16),
-                    gmp_init('0x5abd4749fb7c22831dce5a47e9abe512aa0477c201fb28f02856dc353997b8d7', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x671ba9d644961a07440542ecd38bdc309b8e5ab8083dbc637b98dfe449b4f795', 16),
-                    gmp_init('0x86adfdca66a5d26c71e70e7e43537964de23ef77c9a51fc73cecd0324e7038ba', 16),
-                    gmp_init('0x6b2783cc01b85dd3045f466961fc60653423ecbaf393aa968d0e3458dca338d5', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x3adc8004121dda35d1c6458b3cf8a043761adc614d5883a231deb2bd29e910ac', 16),
-                    gmp_init('0xe979422343b1df7169b554e5e3598bff179ea07bc4fb5e25a7aa120f3390b76c', 16),
-                    gmp_init('0x77b4c750f91720c2b5ef2d6018509170a0ee189782683d0c2df3862007265320', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xcd2e4f3657a11ee3f4eb069c7d7fc2ddaf11e23d0a48090d2721937f7148c7f2', 16),
-                    gmp_init('0x3fa55535be12b8cd8cbc872b2ba39e65a9cf3d5c893b7efa94b8ec7843ae292d', 16),
-                    gmp_init('0x4ae9601952d7b1c438c34c85987c4da9869d9ba799ae00a72bb7809a2f160fb0', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x454eb72cda43340623acd794337bf133623a21b5012d79780ad317b7910fad42', 16),
-                    gmp_init('0x70de0ffb34d2a12f3fbd3fe065021bcb297364cea29aed08a46fd948b8748f9e', 16),
-                    gmp_init('0x5fce2cb0e68e38f015fd30297faf5331548a91409405c8cc81d6d957881eaa7c', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x27fb28f2a36d2e471ee6439d035c9d7daf5d624f6a1abc0bbf4f8fed8e0aae6f', 16),
-                    gmp_init('0x679a1729788a52e0eb7d9745495dd545886aee85339ee9187e617028f43f2662', 16),
-                    gmp_init('0xde9b94dc41c27fed186d666ca7998159804bcafd9097311b5a23530f545ebdba', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x70f7595f3eebb6534e950c2ef5373b3297adf011fbd0ece95523856692d292f1', 16),
-                    gmp_init('0x53db38ed5387d02ec8686f3acc8692108411b3185fbb467299850bd6d95ab36f', 16),
-                    gmp_init('0x90f7a901028a900f69086d841ed3b391ef3d5ccc5019b0610bf1738f7983bec2', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x6004f9b5dcc4f131e92f466fa8db50d861e470ce9c5a5dc3de77f8a0bdd813ce', 16),
-                    gmp_init('0x857037b866fa2d0144401c5b0fc7124b6876205f7cd0517cd49673e474794e2', 16),
-                    gmp_init('0xa558e9ea445aa393c0681721b385e47ba9316560168d3b955f55a47b25d8a87', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x55f058aeeebda32fc2d66ce4bf9b848b5ac03bb08d585e9793b9ff7ea52a73f1', 16),
-                    gmp_init('0x3d67f18f9bb36673948bfd017eeb268951a70d0c26a24994aa26f6ddbc883739', 16),
-                    gmp_init('0x5c1e470411b249844f2931cd348f88ff8a83706ab703bf7463832bb771994a18', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x8f666e1585099f2b6d8fb493e0ca63b2bb0c01ea40bf69cdbae6ec1776435b66', 16),
-                    gmp_init('0xe50d0cc662c31ecb9abe53a2b5c590a4bb6c9fe3a7dc0e032a43500117ede6dd', 16),
-                    gmp_init('0x84dc0f9e8494086ac7ddfd46856ff2815bf3bf76e8012e333144aa52cb41994e', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x72b0e13d036c59c5236b6f5269e36e64b8d87807e4dd4b880f49ddfeebfdbb01', 16),
-                    gmp_init('0x304fcda98a4209758078448641ec9c8b63badcba9ff26f864effcb164b941970', 16),
-                    gmp_init('0x11afa172cab1fd89ef10e639c805c8188fa00d83d039a79c1c5b049ee4df6da4', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x2f94c0f0288aa9ea01bbd70da6d46bb9ffade3720761e7d6d483fe5b35e15433', 16),
-                    gmp_init('0x3d30b77a43c27b78b75dddd2195861f1a5c1326cdb2ed44790de2a320d9b12ae', 16),
-                    gmp_init('0x16a699665f9e62a47aabf77c4968bd304e4c77cfb1aee3459545f1eb9e522d28', 16)
+                    gmp_init('0x5b686215d40ae0010864edc6676d8d2b7a68b4faede3af44f8654dd55933564a', 16),
+                    gmp_init('0x76b5ea69cf3a264552d30c54d19d95de392aee228878869f3b5f04588204ef63', 16),
+                    gmp_init('0x1', 16)
                 ),
             ],
             [
                 JacobiPoint::init(
-                    gmp_init('0x4560c9e388257055775189f1875d93a336552d84ce3aaf9f69d19edc9f3d8456', 16),
-                    gmp_init('0x1ed575397ebcd3404662ed321110eadcf5aba237f021fc3f13e2f35e9f078638', 16),
-                    gmp_init('0x814821d323ddf9b308772c278ad9f4baa0d90b7a8152f48e0b66f629e5608e2a', 16)
+                    gmp_init('0x6d28b6bffd4daf313f85eaad8e4d71b91ca631161f99218f984a23176f922dbd', 16),
+                    gmp_init('0xaf39d905141dd2fa40fbe1a61ccb4a1c4c24e9f0b84da29944abff02a0ef3cff', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xf2b99691fbac359435f074102ba43e267a96b04449ce54b76466dfdbaa34acee', 16),
-                    gmp_init('0x48536994d95249f68839f3ab349c9c0ac7dfad887b85945ebfb88be69a5bdb', 16),
-                    gmp_init('0x1779417d4a4be8268db0df6895c274803380bd34e2bcafa3f43fc8c7f739ae7d', 16)
+                    gmp_init('0xd131e661dd93d815e613947f2d302f2f50ea585cafb752509789404fc4fb240a', 16),
+                    gmp_init('0x34342c8461a95da2e79b4c37f48f4fd47423d4ebcdeacdf422f60e1402501a57', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x75b84ab079a30187c72d9ab13bdefc2c8e38818f31e659596fc548be8afc25c6', 16),
-                    gmp_init('0x5deec66fc0458fd573d5802b6c91557b8bdb39aac749651d6ae88183c74fbe45', 16),
-                    gmp_init('0x91ba83a5fed53c2589b5c5bd4d632f99dcf8e3adde66551d3450f913dd1c8c2c', 16)
+                    gmp_init('0x7cd3157a7fbfe3ddd3df0905fc14467ea153d02ac586c840b590dff99b168b64', 16),
+                    gmp_init('0x9ca08d2117292c6220568e78bcdbfafb13ac4d9b72e02e35856c0d2b5abbb16b', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x7514cc96cb18477d9fa058fe313a7115016201d407e94468c66b53f6b9ae1619', 16),
-                    gmp_init('0xe76f4d42d59e67999f83a6d9cf5af4778cc962cbbbdac8e65ee9f2abdf5c3649', 16),
-                    gmp_init('0xbeef4dea813f873f6dd97ef5a29facf31a2d80d2f226260d4291113478f10ddd', 16)
+                    gmp_init('0xafff5af92c807615712e02810be246a2d0434584477fe2e867e5fdd7b8087dde', 16),
+                    gmp_init('0x659f6ea22cd060c2099a747ee10a2a22aacf175292ddabe7178346acd44eb3a2', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xb4f382aaa1378430ae84c5b882079d3d5a2d99502847bd2a87e6e9f2bfba268a', 16),
-                    gmp_init('0x560b6af186e076ee015afa6a3b5ad257be894a2e46e02c2397d71bbb58db07d2', 16),
-                    gmp_init('0x337589cb224ad64d0ee01de8faa460e871ab1247057a1f4579c833271e9d5f1c', 16)
+                    gmp_init('0xed860bdb5f2df8c456b243199d45356264dc554b09d9aee3b2b1c6fa06ef29e8', 16),
+                    gmp_init('0xb837e74375d5a7fd7c6bf6b340417bb1e7630f5c2d8daa33501a1c49b9b90f8f', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x714d41ea2209894bf2a07f3301f4c64ce10e2861b79142fd56d4d5787a211abc', 16),
-                    gmp_init('0x21b96e5adb0420cc10fab5c2ab99a6af67a920462af374603b8fd80b07c00679', 16),
-                    gmp_init('0x77a4f081194efe94d4fe0ff2c4c88dbdeb6d57429e4245dcb139e521d8957e46', 16)
+                    gmp_init('0x3e65fb3b08594f3a6a65739b8b079177c01974d056f6f88f3d8ef9236dbf52e9', 16),
+                    gmp_init('0xe79bb6600ef807c010bea6890cf95987600d56d126aebb433a52541ec710d348', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xd906c4ac721bff000fb04c85c51919be96a906f5004201a6585b901c2d1df1c9', 16),
-                    gmp_init('0x389ff89a80190c102578f429fe82727a0245555649e2504de39ffc670fccbb96', 16),
-                    gmp_init('0x87c9e8aff8251174ea68187301a61d07ff3bbb6aa03305a2aa3f92d692ece13', 16)
+                    gmp_init('0x6868cc8fd1d21243735e1c2e7e272c9d47dcd03bc1f1cf599df918b3f636e617', 16),
+                    gmp_init('0xeed008a5b91bf9e6b3c5903879313f0a60fe30c8a4384cd71c8ddcf3fcbb3d27', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x1d75d5da2994b16bf67695c7c2c36693566184e4694e5364123af3903b260a07', 16),
-                    gmp_init('0x270cb73bd9cdf16e8be78ec7064deaacb7380ff62a6330ea68bc55d8192798ca', 16),
-                    gmp_init('0x627b05071e2739a8cb2d806621eb069361cc871f2056709cc84759759da5c76f', 16)
+                    gmp_init('0x8437a7cab8f3e67c05b8000a73853a82e89dfdb368bc666999fb69a100371f53', 16),
+                    gmp_init('0x968fd75882812a40735483f43819bb8e10e124fedbfbe259248872d7879cbbab', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x7fc1d3da5165bfe129f957c2ef6c011f7449ec7d25527e3f82c699332ee9fc0d', 16),
-                    gmp_init('0xe02f793d3c49779c50c7a07180972c8b3487894d973f2e1eca3fdaa2c4ba3196', 16),
-                    gmp_init('0x9f13a61fa491020a0d9f7a5c431d22688e245f637c1da4a10b261fd42eb9325c', 16)
+                    gmp_init('0xec03b360eac8fe202c5cb49f10afd318291d2e65ce3a11e2c79da2a6113e2a34', 16),
+                    gmp_init('0x86020ffb60a058437befde21012122728aa8156e65a136b7a42243eeb84566d6', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xdcb97dd792f56bcf3c1cfe4c1b4ce89441138b990b52ef9861c565d1c8ba6540', 16),
-                    gmp_init('0x5c84074a14539c62fe1a05fe0f9cabd383eaa4301a6dda8be7f62c4f69e9feb3', 16),
-                    gmp_init('0xbd804385b94dd9d43cd468e655c66f25fdb5fda6347b5f05ab4cff91fd2a38b1', 16)
+                    gmp_init('0x15f2cf68579ca9d44c7b1de8989eb9e6133a579d37d4dd4f20409a178519526b', 16),
+                    gmp_init('0x21a51e5bd1986a77e46819ddc47d4d7e2669bcf4f324b2ad355e35bb66d83fc1', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x91018fe2c5e5703e8e19ebe4870e6856f00034e728b68f2b7a9b019c2c377803', 16),
-                    gmp_init('0x5504b706699380019354b70a28308375a0d831ed24fec6f65e52b687c0c1a0ae', 16),
-                    gmp_init('0x68881c650501bcebc8dd83753850bf228eea5afe76eba14172cd2f3f4d68a5f1', 16)
+                    gmp_init('0xa79464a39e78b90de6a3035a591056fa101e2cb5484991a25eae0ce5c87c1b18', 16),
+                    gmp_init('0x1361f4e3f72858cc249a57879e9a89f60d98de9c71562821beb585097b94809a', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xda19b65b2186c6009f573eaa2d34e6a27c1d5bad8d12203256589222d3991a9a', 16),
-                    gmp_init('0x66c9c4b2b3cd057d9c865a6375541fa7db2cc156a8057ecb59314e426e90e8c0', 16),
-                    gmp_init('0xe3b69f01f9a7ac58ec99919f068f100554d463d546e4f88cadd4d3b38bcc295d', 16)
+                    gmp_init('0x701a78dd6546551f5f7b88e7e1bda6e1f456b063da3e65bb510cae477159a25', 16),
+                    gmp_init('0x8bd65e64e6b9420019eda0a206beaa8e55fe9158099dce970a843a51fbfcdba3', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x56fc64ff00ce0ead7571929921b17600456c90c3d65e61852989fa920ef7c7b', 16),
-                    gmp_init('0xd8924a17e45d3ce1f99d509b79d44dfe0748ed7623724848410249c4bb7e4966', 16),
-                    gmp_init('0x8236f339436e52808641ed1ce0a8fcc700786837e2bfd4860db0cf792e512c20', 16)
+                    gmp_init('0x544ef280aa8fbcc790e91fb694f30ccc5a9abef829e595f6594e28c6ded10d26', 16),
+                    gmp_init('0x95b91c9dc45ac2ce9d6b1dfe8d8d70d3683d6f976e2c06ae2fc24f7276dafcc2', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x310635a131362885e9ead6148de7680f75264898db2cf635ffb048628f6a2856', 16),
-                    gmp_init('0xd47d873fe94aa1b5701db65e5839241339bd903294b1be55e6e39a9e8ce8e06b', 16),
-                    gmp_init('0x401755a17dc46c8736bf9e748ba3b91d383760bf0b830d16fe55b30a46c5dcd', 16)
+                    gmp_init('0x8c259414e492ea1c778469ac0cdc7f64c4c4acca4b1f3c5a812686c1afc59084', 16),
+                    gmp_init('0x6e162f4d40b152e6916b4f0997ecad5ceb03a88b88f09232c8236db59f30f7c3', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x59c7a4c2fe1f3094cf6e8c9c3a662b1b6ad3a036a02a5e6055132a23e1d4d753', 16),
-                    gmp_init('0x47f3a96ebc96c85cee7ce6db0ef152b632d3452c9d720a489193064bb73d2dc1', 16),
-                    gmp_init('0x450955ca842089dee99ced1cb2f45bd03ac4219ce26c4f0fc34219e20807bb38', 16)
-                ),
-            ],
-            [
-                JacobiPoint::init(
-                    gmp_init('0xd76ab444abf7c430fe6c065ec377a46141eb3d0b792eca8b4da412e6c70cc528', 16),
-                    gmp_init('0xee11a4bde7b6e26250335d4204598fc83d68189edfb5c06b5260fcefc1e5bb58', 16),
-                    gmp_init('0xf261a538d15257ccf8b9668dff6ab5408b8bd213fc19e13e72d59c38bd0dc7f6', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xfcff6bfe069e87a5fc2ed8d36c9f586ed23cf637bb1cf798d49b9eddba2d8a41', 16),
-                    gmp_init('0x2394b5c041dcb1e64691197c82e9a5d7f6fe40bb44e0739c90c1aecf3d1f358c', 16),
-                    gmp_init('0x7cf4dbb8a7f1d4d14b16121804eedce159908d6a589eb9d94580d1a4a7d4a75', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x4bbf46c8e5a1e1c4a653eac2e47b74019b9b229a03fd8832b88ed24fbf330521', 16),
-                    gmp_init('0x240571aa14ca783e68f53eb9b47d62bd9dfb2d85a7f569b0e363e677478d64e7', 16),
-                    gmp_init('0x20f2f1f4e2eee6a948d9b95a773822156b78095ab210c187033ebd182285c205', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x46bba293f5a3b414613b6019fae0aba968bbe7e8845877d0f5cb8e88064907a1', 16),
-                    gmp_init('0x243435add67d8520b9838e7e6dff942dce76b773523c5740e0c96a679e227091', 16),
-                    gmp_init('0x8309b431a4678f74df9477801c00255f522ca8a1789176123fb3451e10fae3ef', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x752d89808f1445cc888a07f368a58c525e6c82bf50b10ad98b5bcccb53b6814', 16),
-                    gmp_init('0xc738f6206e7100f8f6001c23098435884dec16a5ffe63f08ad042c9f86c48412', 16),
-                    gmp_init('0xe2998ad382e1c1bbe5c844609a1d13884ed8e2a06468679f7c22a893640f01f1', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xd55d04bc3386809569522db23e5140b1de88a60962a9d42cd74bb601bc39338f', 16),
-                    gmp_init('0x270aaea650ff122d0115627154f3af35d1d875f10bb0d59898cbc660b810ab98', 16),
-                    gmp_init('0xdaa60d408574fa3b52438d3532105a4038fa66ecf566d328fe1eeae677526b26', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x650d4c1f4b92b6c36bb497a00c06cd592f434664bf708fcc9e91e97fd5a56d9a', 16),
-                    gmp_init('0x4faee5a476ed2dbb30c97e8b61250f88723727f8d7472204a44fb18718b9557f', 16),
-                    gmp_init('0x7087bc34fa4c637afa00a0d8decbcb62854e61a51d026cf95777eb3659094bb4', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x942ff6f1325a9df78e0bc4d5c5db18ed72ff1d37b3b479bb9f0b5d7171906bf4', 16),
-                    gmp_init('0xa1b626a0c3b6561a1ad3b686ba982f55d3b483683d38551bec277609275cc9cd', 16),
-                    gmp_init('0xfb69242ac5f5d2e90922dfea5145a9e7f4e9d08a671e4f020a7533235f54752d', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x9df381b2c7efb506856844c470d74128378d6cec17ba5504add04af280f2c8af', 16),
-                    gmp_init('0xb5587629fd11556ffc7383b756f4003d4d8d8fced721c132747498e1ddeaf39b', 16),
-                    gmp_init('0x683fb32fb2c780cc6a56cd038e2221838114b0a84c1b9708ffeae858515c18cb', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x6d49e027d3f7cc1f6f255ef2d82319011110b0b36f1817c91a4a729078a0419d', 16),
-                    gmp_init('0x25ba95e82df136d60c148be6a85ff9d8c4156ea1060c7aa687ad83d91e97def5', 16),
-                    gmp_init('0x29e437041bf246b2d9710e75c6e20f5fd8734156b0478b83e5115c49b66c8a9', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xa3a6b9470e79e3c25fbd7bf1390aef1f8ce345d491c6bf066115afb3ab3f17c2', 16),
-                    gmp_init('0x34715d51d40c423d23975671d1360adc7570d1ed6a92e27486dc0c693146950c', 16),
-                    gmp_init('0x8a3a20e67992bdace9bd1d92a1f1a994e221894e351177f7ca2cbb2cc3f4d5f6', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x1d1bfc8f12ec1e447c1e1b781ecf8b4d40775e8c6647651a81b4f54af5bc0a14', 16),
-                    gmp_init('0x499d8eac06e55ad4532388799161da0bd28fd52546621ace44398d5fb248c427', 16),
-                    gmp_init('0xf745b66a769f8956db7a069d7e41ce8fdac43f273d41e75e903592378377cef3', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xd3515432b9d1a4af6d78f6347a94398ed149defb684b6bcdf1325400bce601ac', 16),
-                    gmp_init('0x662699858e7b8f99da07b7e000f664d694018329269fab245dc7617c824a1243', 16),
-                    gmp_init('0x13b66fda9fa559aa95e778002b4ea6afc3bf88dbe31d8596fe2fced0664c12c3', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x266e8763dc4c3335a2c096b4bc31460f2f195d38360bace30ac63e282802e297', 16),
-                    gmp_init('0x413ad3a65dbec61667ede8a334bd0f2d647be27ad8769af95571eab53a717f1a', 16),
-                    gmp_init('0xc8bdcef2f15854cc35c64d138699598d3251f3e5a6852b14cae01fc2c162a431', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xdd731db1a7095511569a4fd9c9d227a175e2a9008fe1dd07f9f2b373705ce437', 16),
-                    gmp_init('0xae35d61ccdc99acc03b8372024c42436998f02f619d8168e1665d4f322750f18', 16),
-                    gmp_init('0x81f3f8a8086c1e2f273c802063b50fe4be9b723bcd8ab7ddd5b16ece40500073', 16)
+                    gmp_init('0xe2c26c885f34c6214de53c846b4aff9b57ad3e798d3cad5e249479f8b7ad18e6', 16),
+                    gmp_init('0xb2121b284f48818851ce266ea117ba113bc515ca71981de4adafe51aa554cfad', 16),
+                    gmp_init('0x1', 16)
                 ),
             ],
             [
                 JacobiPoint::init(
-                    gmp_init('0x931f4ae428a4ad81ee0aa89cf5247ce85d4dd696c61b4bb9d4761e57b7fbe', 16),
-                    gmp_init('0x7e88e5e6a142d5c2269f21a158e82ab2c79fcecb26e397b96fd5b9fbcd0a69a5', 16),
-                    gmp_init('0x2626dc2dd5e06cd19de5e6afb6c5dbdd3e41dc1472e7b8ef11eb0662e41c44b', 16)
+                    gmp_init('0x7fe36b40af22af8921656b32262c71da1ab919365c65dfb63a5a9e22185a5943', 16),
+                    gmp_init('0xe697d45825b636249f09f40407dca6f174b3d5867b8af212d50d152c699ca101', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xc0e58b550d1b83cad0e9398a5ac9ee0dfe84f352143fee0c6e61e1f8441d5af6', 16),
-                    gmp_init('0xcceb44a1b482d5c506c9be9bd197b5f356c2e528d01f79e2f2c76f57c95991ae', 16),
-                    gmp_init('0xd2a8df2375ef95a02e14a58cba2630f5b0b44972e6d72d6fbe6cce707d86b022', 16)
+                    gmp_init('0x61779471478643436554caa343adfa5aa1dd10b8a60e47c0336dd1e7c68278c2', 16),
+                    gmp_init('0x4ecee7d5a568791f03bff005c8986473327969992317a1a69d03ecb2efabd2cf', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x43248dfa65ab5e70ef45402ea5e4adf65f04b81f8c43b55a08832a4bca1751a1', 16),
-                    gmp_init('0x1e71e282069cb0962f6781a1ee3ec411808c9a8458aba46187b9415d49a8875f', 16),
-                    gmp_init('0x6a2a703dd6fade37a3e7b43277b50c56abd295c6383a75e2982862334672a710', 16)
+                    gmp_init('0x4b656a405b4e2d7380924e56022f8b808e90e9d2545cf8d976a78091df0922a8', 16),
+                    gmp_init('0xee1ea31d12e7783920d04cc255d8c4d6d473b9e2b9850f694dadcac5999a80bb', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x81fa3274198f188d2e7eaa0583306a57b7cb094cbcb1cc6147b6398bbc6136a1', 16),
-                    gmp_init('0xf3e41def1bfdfd6d1d5f5fca1aefcee53c36bb89d1ec4ba5bf49f983165bc206', 16),
-                    gmp_init('0x358ee2259d39902be8845d98ec296777d389262a71c7f2d34fefa1f4cca7dc7a', 16)
+                    gmp_init('0x521cf0cd89729d1a193d8758abf96019f7221aba0101b56baeab93965a7d9344', 16),
+                    gmp_init('0xd60220dacbf9e9bac583fe0ed386371b7a1341ca5a95fba14529f28196b7064a', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x2cd64845d3a8a520773acb37069b12a91f06a0fc04e6f306bc3500cfa73a7b41', 16),
-                    gmp_init('0x20e4ae2c7d0448c0f853dc937e452918501e091235f5fae94e968fe275a484ef', 16),
-                    gmp_init('0xba68b7edcc0605872cfee46e6e3a8b568cff0dbdd36db7f50051593598db9019', 16)
+                    gmp_init('0x9d78956ebd65e13d93db2be0fb3d8e5ea09e7ca1f6a60c36b504f88869d07e9e', 16),
+                    gmp_init('0xd5149e6ef48ea8cd6542a89c1d3210ce7460a2da3b94c7b2f4dd615ac3d8c8ee', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x634c5bed456c75941d5ce6e57f00b3c65d18b237a8e1f51bd8209cda3df34a3e', 16),
-                    gmp_init('0x289bae793c881ff1d26f9a6a542653bad7aa4a4ef3cbb07dd0125de8b4aff65f', 16),
-                    gmp_init('0x4c9b58c88108870b161ddb774535ffb2eff3a8e04b712485737aaf370e45776f', 16)
+                    gmp_init('0x7c86b3ad8863a8dd4d56c2613639e7067ce5019bb0000e35bb430cf33b281418', 16),
+                    gmp_init('0xd958bacceebefe954c62b97768daa72f82ea7c317bc0861b79dd3eed3117e0ec', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xca00afedce5e57787c9b9001019a8bc9339214fb33b0be29da1d2ba741bb7d3d', 16),
-                    gmp_init('0xd75729f5b241691c4f7d2ccfc00353d344d30fbdffa63c4adf169096a13499ac', 16),
-                    gmp_init('0xd6d763c8c8bf6e756896072b2e82309d004c394922ce4f72e5b3c4b667e70013', 16)
+                    gmp_init('0x4acb1272e1353fa957236846e4db63165741b2adbd394207667750867dc4950f', 16),
+                    gmp_init('0x726cd20fb743cdad8cf298f6cc71e29fdf9e4280b5866ac566c6e44463d8b4df', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xa55067e7fbd744323b8d9d1d3b5f4d4c0882bfd055420a2a449e96d216da7a1b', 16),
-                    gmp_init('0xcd703aeb058c3d46b8712e623ac0641dca73484b6e3b5ac7cc1eb2fe7973e80d', 16),
-                    gmp_init('0xae133f3176fb9a69572cbeb7b1fb4848c338274ac9e3dfd3a0b1b5ef21cb7253', 16)
+                    gmp_init('0x176c11c1328ed07b562fc9efce42700bbd4bbdec1543d1a70b3184a32b3fce8c', 16),
+                    gmp_init('0xd17f8dae934b8a3589592180b7de3b7e5c5d842a5bb51ab16ea68436a3c9f19f', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x1e7e38730beb3441af4a02a6b9a8dfb7f37050b6cf99d06bcaae72c12797bade', 16),
-                    gmp_init('0xd657d0229e5c2677f3c01e99fd30e97c691ce786a1ae7c750dfd2f51ab7aa3f', 16),
-                    gmp_init('0xbeedb5b2a33d5a633f21de36f5e3f024a78a61c48b5a3da534ffb0857082e59b', 16)
+                    gmp_init('0x640c5ebf1a6b17b4234453550c81464a2a667f8af007d816f40c7a7bed7e8cbd', 16),
+                    gmp_init('0xd6ae88fd829cfd2f2ae9c6eb701eab9eba069fb18cff9b0206e2903cbec5a5db', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x671a0d65458edc624936a854182d0ebb96b37829a5e89a3ae8732d15427a1b4a', 16),
-                    gmp_init('0x2b0825f6895b59f54ccccfac2b0bdb95aebb2d2cbdad287622b843616b391d28', 16),
-                    gmp_init('0x3a4467c81c0ecca4fb9b71665e39a4cbe1cb3c910f92f63a614c46a688c8e204', 16)
+                    gmp_init('0x493471abc939487b09d378b7cf26b9d2af42e93b573fe78863ae2b005e57d10d', 16),
+                    gmp_init('0x60d9691165077effe96c54f99a845accbdadd5ec623364ed83259603c6056dbe', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xb5d13be5787d12eb8e03cd68492d6f92195b8008b092fb199d2ec3d7517f3e09', 16),
-                    gmp_init('0xf3c9119fe594576e1f482069f764b72408fd3551cf6a3c491851ac37d67efa0e', 16),
-                    gmp_init('0x99097c3e0899c95fc50cecd88ac9dea8c1e7a8b5262764416321a1008f4b4e15', 16)
+                    gmp_init('0x8bba04b1b4284b32451562c90ddb6b9bf1d26b97975ce3d5f70a04b07e86bddc', 16),
+                    gmp_init('0xc34099c09c208ebf659bf9216699437ac6acfde4f4196e5f5223c5a1e9e349c4', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xe67b7d8934964faa3ec40bdc303d5bc412539caaea03b4d0de9eb6ea3e0f285b', 16),
-                    gmp_init('0x9b40c37e62b490b36a605467db04bec5df13d1bece25cbfece1dad3b4612b5a5', 16),
-                    gmp_init('0x295f3d4bde09f9feb68448623cee7801085da59a84cd18ea7581e6883745fa7e', 16)
+                    gmp_init('0x7085b59c1c09e312fc1c48cf4a13975e482c9028d974a0ef5dd2c18196a081e1', 16),
+                    gmp_init('0x55a062a24931eecb3cc6b741515810a64e9f136375066381914adea64659f1ec', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xb5c5a4d7fc5e94c090a389d1eeabfcd4248b381f139a59d3f3a1f02c80c6f48e', 16),
-                    gmp_init('0x2fe8bb3242df152a89377548aa1b8f3b8793cff6c86f0c44c344e62e60a7950e', 16),
-                    gmp_init('0x12b654bac6916f997cb699fa0868d774a128c621303251677bf448881e241f20', 16)
+                    gmp_init('0x8b0a5744fecd37e210a6943f7c5a5fe41f9909eadec3a258d170e7804257f582', 16),
+                    gmp_init('0x9e57a44ec0d6c739662a15a137e37d4656db46ba7b1607664817fedf37372d4b', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x2bba3e22a47dd310d976367200977bb09f45baf0207d4402135dad65ef9d90c7', 16),
-                    gmp_init('0xf41c39628b194f556ded254442e91eaa87b9f8847a1885752bd8007e9f07d090', 16),
-                    gmp_init('0x81b66cd305be627b0d31ca2fd85299606f04069862866d58d85d5c587db2cd39', 16)
+                    gmp_init('0x526fd9e3e7b79dd1d8ec684abbea778fc52fbe5033f758e6d1d41eca113fb3bb', 16),
+                    gmp_init('0xcb3d9fdbe104383aa0fce55430c0a98f2622644c6800f6008b72d1cf470b5e0e', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x9ef737f80b0da80be29defb212a358e05cb0b3a1cfd9848daea79b047347bcaf', 16),
-                    gmp_init('0x7b5b7ef1ebf9edeb3d83175ec74e8b37a8ecd03d1492771d6dd89e4eae606841', 16),
-                    gmp_init('0xc849753d8654a1be7a21dc3c806cd05a045b8889d40b3fc010855b2be768539d', 16)
-                ),
-            ],
-            [
-                JacobiPoint::init(
-                    gmp_init('0x204840d4474202039d3056c86c05ba5d40acf346c353756a1d09a560533d5a89', 16),
-                    gmp_init('0x21774599a4caafc9334ccc5656090c0e2c54fb7797d32ea8bb3f0efd8a7a99c9', 16),
-                    gmp_init('0xd61e5aec9a633d46c41557f06add0ecc2e59076aa716e8844b291fbd34c40b7f', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x5974d2fc0b36a25c6d3c1ced19a9ff2ee3f5e431ca8d4e493140ca2dfc15e82a', 16),
-                    gmp_init('0x3f77dd13a4d0be025f5542b02233b7064e8a2ed50254dd4c4c78f478f64a0a11', 16),
-                    gmp_init('0x58fa88bceea7964c7a324836b9fd0e16f39495673853d60542cffd3bac63dddf', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x1d859468a7c7ef2ba784454830b1333c9363980a459a6c80df1b71c066f38dfa', 16),
-                    gmp_init('0x436f6561ecff8e64aa38e78d389612489c6f949d4321eeb9f737e74a8abd976d', 16),
-                    gmp_init('0xbcc644592cbaf8363533071753a49b45938ad2d53d66311ca61f6f0f47dd4a47', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xe6422265f799d6c150ecfab23886754b9b5c1d15166ab9252f60f7b0896b1447', 16),
-                    gmp_init('0x356e16ec12e1ffa7bf33ca2ee191c73350a5bf3c2220904b8259f99900637139', 16),
-                    gmp_init('0x13e85a26e3a39330b5dfee7042fd0a483ef0d60e9effb2526f6d361c7025412d', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x813ed37436c41ff1ab12ba47d49218d781c74188767ce61f6d2e3d22ae35b8f9', 16),
-                    gmp_init('0xf1523047b317e27ae29efa35beb68f0608b983570162b8861742894cf7108832', 16),
-                    gmp_init('0xded2291d25c373c90f51c41f67f52e4f65343415c6901c3b21ee19ae17409985', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x2c979b4e161f793a4f0c2177101a5ae140d30c4380304f26887ad0200ebee9c', 16),
-                    gmp_init('0xa25e9b0fa110ea59e0c1f4a020b85c564e27d66c05d1b9648dfadc01417d8794', 16),
-                    gmp_init('0x7dc08bd9be89d3546b0687ec140c0dc5484026f04d2f356af5af71d43092b76e', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xa0bb37eebff8093673fd2b2a15157f2277c95fd8f4da15a3d6c6be2bab69de4f', 16),
-                    gmp_init('0x8d9c6f2ec71a22869ec5eced8a8a8632b76f16c7b4adbbedb2ed6c4124122d2b', 16),
-                    gmp_init('0x9006afa632876aea540ee086b1a336da89fc1e3c9aeafedb9fe3b1d006aaec1e', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xb7dbe6c27e5aed6ed4517ee6d7bcec9f1e12adbe6a5e04bfe388b64ae61dab86', 16),
-                    gmp_init('0xe284930daaa9baf37df18778132850d65cc376b336a65c23169df4c67219b695', 16),
-                    gmp_init('0x39b0b6722e3590b7eac85935acfd0aaf63d08c3a8796e3214619781bc7f70498', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xf52ddce30581e09fd2591a2bd1e0732f0626e383669805c5ac5d7d617370d9a4', 16),
-                    gmp_init('0x19b031d453f00022044ca5b218edb2ede93db3cffe4289d148fd4f321c41c47a', 16),
-                    gmp_init('0xbac5591477c5a3579eeb65854aefd37b5a1ad216c055634100556888a6227b6a', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x2e29c4a1d63c525cd4d9dd6f2c28c34e253b18d95aa0707847c70cb75f9aa84', 16),
-                    gmp_init('0x25ab8bba2f86f0d6126859cabfe5b318b800b7d8cba239dd8e8aa4f502342ae4', 16),
-                    gmp_init('0x24b27edf337db2633b00cae2473a51905a89226375923deea77e87ad3689a25e', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x57f3dadb21cc58afc77794ef56c63f70d5cbc23c75cd34f24a2332578d7a1e87', 16),
-                    gmp_init('0x658ea624f6330e08b0984e3cc855a945d4d3965348dce9e7091e0c0b4a84dc9a', 16),
-                    gmp_init('0x19b9217720ace31ff178c92911d29fe2c5803c6e97dd2cc6f756134cf0e7daf8', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x2db3b3d51129ba19d59a87d38da9bfc3e188599a666de243da6bfdd4ede5d5d', 16),
-                    gmp_init('0x1883e3e1ac365ca3e3d1a4975250f0fac1d943e67748abdca869a00cceda96ac', 16),
-                    gmp_init('0xe5aa117c8ff58774edaa568bf8f44fc9baf49342d4761ccbafa1a6ceb12b6fdd', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x207df6dfc421fde0d01f9ad232d710bbe94a07faf81eeb02be49ee8e0444447a', 16),
-                    gmp_init('0xdf9992ed9c64eb46ef0557d21ad55d3b4cdbcdae25dc31a16fa69e49377ac511', 16),
-                    gmp_init('0x2bef5c20c2714f0d65304eab3811c705443b6c8c4c39f34836dbaa69580734d3', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xcae62c9d6d136e6e10d152299fb9036220e35fd87b13dc235e435006e24a8106', 16),
-                    gmp_init('0xb4dac4b9b2870f622e1ecf3e4deff08b86bb275d30e967257151f1b8801dff89', 16),
-                    gmp_init('0xe9ac91418bfd9bf385ed65b03c60d7cde28564e2825cd0ad5236ba200dc26dd0', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xe87b2df5ad78e41ee32fef326648c8c4f68c8a5f234ec40acd8bf5b3b6e2317d', 16),
-                    gmp_init('0xd6138664aae370e8d275c1d265da526657bf4a7004f6d04e58edce50674ccfc5', 16),
-                    gmp_init('0xc0d3de963ce7f48ce9a8077ec680cce13f31a9e9ef52bc7c2df1ce9bb1522d44', 16)
+                    gmp_init('0xa13ff97c26478971f856f493d9678a6f06e224f2e3c31683f1449f9985e797e', 16),
+                    gmp_init('0xeb1a964b225c83d5917d818e8fa1dc3ff27f6f0a7580c3928327ab9f539d666f', 16),
+                    gmp_init('0x1', 16)
                 ),
             ],
             [
                 JacobiPoint::init(
-                    gmp_init('0x5dfaadd753136d6f5cb99e683b5abff1953160f2ffccb81d32d0a41c24cb975f', 16),
-                    gmp_init('0xef0b2a69b5eb161d0285c131619276ea7096c99cfa8f0c680562f8776bf7a835', 16),
-                    gmp_init('0xb1ff6fbd0526afd648e4af80ff5096fb0cfdd1f34843bbc81abdfb55692ad6ee', 16)
+                    gmp_init('0x6965b6384d7061e685371fe7ff26519e76bba9dda2aea7817aff4fe1fdde3445', 16),
+                    gmp_init('0xd1bcdae39c482511325e496638732dbef47ce6051a5f99d97cc4389e18855113', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x5af872c19f6802ddc2e4b4b632bbb84e8ce7c8ba82ac9e0edccf9fff229bc1b2', 16),
-                    gmp_init('0x686aee9145e07fc5f158732d08316732ee09ff5a8fd500d754df3d8ec7ada8', 16),
-                    gmp_init('0x3fb57ad58d5e17c0b597e42ad3cba1d4b668df415ae1b6c0c62328080376a54b', 16)
+                    gmp_init('0x9ba1e12f974ac9f39ba834fcb184097148526336679189f10375c0c6edee30ee', 16),
+                    gmp_init('0x3d2f132311bea6c277c3eea86a877be62067ebb8c7d4f388a96b83b67b43c5e', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xf7f527f633ef4a74ae1eac8c901cc1c62665c939066b3ffd845f495788fced50', 16),
-                    gmp_init('0x96d7a1667dd9dbc3c548e1bb70a46157545ba2cf6fa0eade4f55389d19ca7317', 16),
-                    gmp_init('0x55a193b57cdf80fa33c190ae1a4856dcc0acb90906b7a44b9f95ce0c1eeb934d', 16)
+                    gmp_init('0xe1cbc51dde75c7da027e7ddbd4091a71b1ef589b36689789f5e40f96888acfc5', 16),
+                    gmp_init('0xec678397cde7daedb312764ffdb9e23ce7d3292beebfba523bc5fed5a249a225', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x90c1fd96b7583b830354917659fb929112a14f89665742016b35da9e8014ecce', 16),
-                    gmp_init('0x6be0a228a8b87ab8d4997395fbc91a78c1748d0c5600a786e08f58a708805941', 16),
-                    gmp_init('0x2c3f27155bfb141e3c73ae6cf1fe1c2a15c3ca340d37852e57134b6101047a0', 16)
+                    gmp_init('0xc90ea1fbe9020055485b544d9567e8635a1658f6d17c5b108afbc67f51c57125', 16),
+                    gmp_init('0x5aca66c710ede6b19667af636e660b1b6a3d07d6de19a69c669a504defb8d94', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xdb7b49ec9aefaceb92831df0b7112fd3a5619081f0599ddbbcf6f42a99bb8db3', 16),
-                    gmp_init('0x7463b2c497cae6f7384f2b8b7ff8b6fa4f1e878eaa00c24f509c5ede4c7ece61', 16),
-                    gmp_init('0x7e4a5f6e3d4808026d89bcb6fc41b7c5229fd3487439c8bb7bec2eadfda02cc6', 16)
+                    gmp_init('0x9c3f267971138aa1731e9d2845a900481d3897e1543c8228758ea53fe107ccc6', 16),
+                    gmp_init('0xdaee0c1b64b51d9c8be375f4bf3e6eca51a8fd4e95f9b186840794cd3dea9152', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x89bfa1d5a33130aefcf9332aaf4591ce57eac67da2217afa4c3530ff98c6015a', 16),
-                    gmp_init('0x82d574f606bf38595ef805d289ca2ae9b184dcc305e175d32f3c11c3d364a91f', 16),
-                    gmp_init('0x466e992c068cb66e24be5f40443f4483b3e3aad24cb89e50e89d1d4159849c68', 16)
+                    gmp_init('0x67a51d096d01cb39aa47106437dc1824d1df6426ed18d43361067df977fc555d', 16),
+                    gmp_init('0xc1095aea14bf7be0e175487a3fa794f24363755443132b3e5d9ac5946c12c1d7', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xcf8adf1870ffef616523764effef26f3d44047f9b393f5ed61a5147937373fd5', 16),
-                    gmp_init('0x34b18763ed29e8b76f095f896bf81b23aeb2f4c720b4da5099edbabd3983bd54', 16),
-                    gmp_init('0x51ccf58fcced66204501a5f218bca9a38f57d77b5bf5c94edff321c28450f06', 16)
+                    gmp_init('0x5c30d9577c6b2d72796fac17b140922b2fa2a034e53c2be421c5eb4395a449e7', 16),
+                    gmp_init('0x8025e3b5b08e1b92164b65f799c592d0b75e4053c3ce790e770ea481ae2677d0', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x72b7dbca4e242b083b73143c3b007b5da110ad398537baf356ba7ff52695abe5', 16),
-                    gmp_init('0x4a2628a144f1365444bd2b16edd6da96a0bfa35fbbfab75cca6bfba7d95a4ea2', 16),
-                    gmp_init('0x8b9a8dac9d52c575d7ae0342009a6dbd183bc08a268e3fae2aad227fb03be8e8', 16)
+                    gmp_init('0xa88b8f77c8962303d3a1bb4a48c105b9cf25089f822df8fc1bf1f2dab3cd7fe', 16),
+                    gmp_init('0x15b63b6905525ac21d4d29d246caa9900c491c0994d7154c6a3bd234f1661fd1', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xc5d359bc9680bc75dd6e238873bf17737060dce2c5d0c4774f87b9ff828ee5aa', 16),
-                    gmp_init('0x1efa72064b5f11d627addec84d5cd47264b4d00a94ec953a11c2aa40c47b0139', 16),
-                    gmp_init('0x46588ca805eb31e28c235b55e3c99eb907dfa684de8a8a421e009ee49cd28078', 16)
+                    gmp_init('0xaa3bbf230c8e9682afe4e2b07ea8d9955379252bffee271cfa558c028b8ceb07', 16),
+                    gmp_init('0xe6320cb09c1ec26844dcb0fe4c9162ec3b71b2bc7ab3f9eb99a8462e9fd83984', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xe3198eb5c44fe55aa09819958e889d3e4bd75d68e72c73863d90fc321dab3619', 16),
-                    gmp_init('0xdfa0ac5339bb2fc24cdf7900ef4d3ac4bf2e74ba9c75bf9cefd29ff595cebfa', 16),
-                    gmp_init('0x7e0776b0f784bb077fa2fa15ea99f0d6627cd327795c4173478bddb9bfb56c62', 16)
+                    gmp_init('0x34233278994634fdbafaf9cb5d606ff27d4a5cc6a003762fc35c99281f9d5429', 16),
+                    gmp_init('0xa3258285f3856a65d34b5dc46e068d4568094c6b36d9d8f0dfda0ad8402e2826', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xa2016a3187ef58957da3d22ecef466c4c9fa3c7bd2a393014dcc44c68ea4ca9e', 16),
-                    gmp_init('0x5655d785017f048d16393b515e426f3ba74dee75e75c3580d64c2418010f099', 16),
-                    gmp_init('0xcde279cfea2ca9ac858487d5732314ba310c3c6e11f84a0b12182202f93e9136', 16)
+                    gmp_init('0xab4a32511333418179e60fc9914001943a36dc3515d65732e40ea55583bfd1f1', 16),
+                    gmp_init('0xea6c64bb036c8668b4eb3bd0412fe057a57d9324279e98cf21139610c8e1c233', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xde8116ce8d82cec64d79d181dba456b5471e8979327f6bec8ab05e262b8759da', 16),
-                    gmp_init('0x7b9d9ca67e574f570de5705e6aaf255ac88063167bab0f9d0698a21b4d2f2143', 16),
-                    gmp_init('0x8903b90942308a6b95485f9949e5d1476e3f7ff41c12b13c7a9fdc1de3ff8b9f', 16)
+                    gmp_init('0xbd58add042642ec76cac5fae0ffae1b1164b7ea9c4a0cd289277d1148a50a1e1', 16),
+                    gmp_init('0x8ad1183e2ea2fbc1c6f41fba2b27ab6bc5c046287663ec57fdf7accb06773780', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x4e52440e054e0c30975622d0588b54bb1cf6601fe4b64d9032f05e83a008d068', 16),
-                    gmp_init('0x8b8ca3b31e9f22f783e07d421eebdb0cdf79eb941aaeb212bbfad1e46ee268fa', 16),
-                    gmp_init('0x655d6122f64d36603644836d7877714c3da9348328b850ecfbcc268083be409e', 16)
+                    gmp_init('0xdba9b259dded5d77f7337f5cd8a5a8105f37668a4eeebb8908406d780b1d6d3f', 16),
+                    gmp_init('0xb3862d3f57535b7b5aca994f4feb871448bd9bc4512bd93cc42e928289cd8133', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xf29e2ef46371f9fc8a9ea162b3cfa3ab0c24579cdaf5f48e0fcb78ba035ac59', 16),
-                    gmp_init('0x83fb187b9dc9ce3a6f0d92ab2d4a87702ae3fbda85b75ca353a17e335daefeb1', 16),
-                    gmp_init('0x3e4b29ec9477fc38f1b10bc0e768ce523ea94732f64f18da4186f441eb9c393d', 16)
+                    gmp_init('0xed3588338031f0a4e53a635b6cbcd9300cd3c187faac904d2c12b388701f3de8', 16),
+                    gmp_init('0x87fe94dc7deeab863fb6cbbf1554b67d98eee3ec1ac407d85f4e485f7266ebe3', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x19f62465fdf452adbc8290af0291ab84d3425107d41a31d5478af4d7715827b1', 16),
-                    gmp_init('0x58927c3e41d0d0eb91854cba0275ce9f897ddb70dd4e7a77e63bfc4a58063022', 16),
-                    gmp_init('0x66a0fdcaddc81972c6a2f4d1d298cb8a124eea934dc40e0b65cc3a79fa6af119', 16)
-                ),
-            ],
-            [
-                JacobiPoint::init(
-                    gmp_init('0xee6bb2b7f313144c2f8d8ef60e021a6ebeb4890eb1c0eb81b4868cd56dcdd2d7', 16),
-                    gmp_init('0x7e48b004604e7f99de8af7b0403b6a3ca0b0687a1fcff66d46a14102f69cd0f4', 16),
-                    gmp_init('0xb3cadb5280dbc0bcdc87311a0ea9c14bba2fbd2434e7229a87315d4736237b28', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x4cf595d795e451844673d88219f4b1c4cd01b978d63bf00b1ac3c2c102b00248', 16),
-                    gmp_init('0x87166114ddc9df74805bd95815ab6028d26c4136667d370d6927b63fafd4e0d4', 16),
-                    gmp_init('0x330aa964495e42ae52f155929b36d0e1c06cf087c250c18220d1bd021390a508', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x908c668a79f9362d3dca2ba65b7252bf7ce0db435c800a8fab87a169084571da', 16),
-                    gmp_init('0x1cdae54b86bf6b64b7eda30f5bb55dd546857145949c60928c7f128c27f69d16', 16),
-                    gmp_init('0x74e781e292cc0eba750775b62640a3a3daa24a492e1ebf5db07e357d230709ee', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xcc1f62343b3931f37157625c56a1cb99a322d8f7a8ba8a432ef39294d2f7c894', 16),
-                    gmp_init('0x48da5cd9849d4ca1d013ac76c443d5f3dd6d8ac4b0a92903a3a237079f5cc44f', 16),
-                    gmp_init('0xe16a3e8a371c94710866a0839e4bc48eebedee2d781b2a7ef39217fd15b37261', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x95ff0dee20f3a637a7648755fbccd5e9e9b35f89f3422a7482bbe677d0c2f7f1', 16),
-                    gmp_init('0xb7b1d2de5e174e29cb76a86511fd1f788bfd05575ca9b9f0986f82b727c2ff73', 16),
-                    gmp_init('0xfa60bcecc4236b043c57095b62cde032f006c9d3dd34a5b7f17243707f4e4ede', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x526cacbec41326f0db1b6f0dfde6eab99c4d0923b1e9fde0e2e82a1ad15abdf8', 16),
-                    gmp_init('0x56c0c9f366acd54f1aa2a21a1b01441bc843b823937955d4e6ae6721cf8a54c8', 16),
-                    gmp_init('0x3c40f9d18aa523c1c66fe8988adf514cb06df2f7fdc23071732bbd8ac13582e4', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xdc19b3d80110b23b980419af3aa61f414b16c542288db1003f5453149c9db96', 16),
-                    gmp_init('0x455b91b469757acd49dd372733579a3d6ffef3de49b01cb79ded2ca70cc83fe9', 16),
-                    gmp_init('0x9352d662a3c09adf1941bbc7c106c01e4b7b1a5598bf2f0882abf85977e370ce', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xcf6804c8d90091ec1f3b1c56afa7466605bfeb6a42b5939851b3c0353ec7b7ba', 16),
-                    gmp_init('0x2a8691c52b0a03be1a092211366a92d095081a74e19e1cb84eeabeb05aa17a96', 16),
-                    gmp_init('0xf85a74b9d9ebfe825c0a8acf934019786e675e0faf35b36f2c5e6cc234d1c1e7', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x4d6759d50777c7eac141504e3a5bb8ad544b48d9434f72fe98c1a357ed7ba974', 16),
-                    gmp_init('0xa89fe7c777ccd331fca30718aa070ce2505eeaec2d76c90b3b09390295a03739', 16),
-                    gmp_init('0x2399b84ec560da5169dcc6fd2174bf89542c2b4ccc9860d08f4d8b9fc364410f', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xb9cbea18f1669779c1e2d2fd1c1d714a2a367e3d392e83627c6b5b54c3b16f1', 16),
-                    gmp_init('0x46630419ec73b88b80c15ee1795851109c2140d14add12a78851e8bb07c6f0a', 16),
-                    gmp_init('0x14ebe9d252ad99852a4d7347348c3275f4a6d5eadbb2e5c6bf47303e4cf81462', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x24d9e9408026a104d54ddc043410405f26acdaf221b163cf47a137c9c0fb1a24', 16),
-                    gmp_init('0x8c472eeed93a07cb8ca1186d1f921cd340af833d9679787a86e74ca93e804dad', 16),
-                    gmp_init('0xb9253b943c1095599f2b55edbb3ce79113d2a10f51e8bb5256546943c84e167b', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xcbc5c23f7d253ac465ba0da12920b352340fd4259f112bd45d9f2d204624572a', 16),
-                    gmp_init('0x567bc370c2439d7038ae307fbf938ce05d91ced32a27f6cfde27708de0d46766', 16),
-                    gmp_init('0x711200d3aa8a82a48d0cef2c3318bb549b74c18e8f015421bb898b3ed96ca217', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x70c83fd36d62b2b18d26e6071b767da1a702fcdbbf564f99921a1c0dced829e', 16),
-                    gmp_init('0xb52bc7a536cf2077b1cc34f0b5ba3080f2ea113001014208950ee9fdb6d50649', 16),
-                    gmp_init('0xa3c97ea89a1fa3bcd1f01acc84cfa095a7ed7fd311a18184198d253901dc54fe', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x3640d59d9819bff787836d45b7e297c4da4116c862ec8a54b901771be4f7adde', 16),
-                    gmp_init('0x5d639cca79add92409660715528520771687f68a07c314e5519ce9505abfaa50', 16),
-                    gmp_init('0x31a043b516b7b7b3ef4984c72c932ae7bf7c428dc6ac7c2f1e1daa5c513ae97e', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xfdc68cedf62322ad911991904c943f062714feca35a057f8ac33d243ebcb598a', 16),
-                    gmp_init('0x84f8feba2ad3c741456406a47c9f9172329ea47f8607c4d9d14755adc1aec72b', 16),
-                    gmp_init('0x82b5db0ca2c43ba9a68543764285c0fddef9863a7f98b2b7a2222bad13be5aa1', 16)
+                    gmp_init('0x1998f4c42e98274507add742b1a3cdfe34fc1d585b0e4b25679a038031fa2a6a', 16),
+                    gmp_init('0x2ebb416d190afa109700f8008b78a1e94c6c02387b7258b5607edb4bc6415142', 16),
+                    gmp_init('0x1', 16)
                 ),
             ],
             [
                 JacobiPoint::init(
-                    gmp_init('0x65d5ebe60a13db55a86f355ffbca86aa4c3184a9ae0d1d5c47032f27de17c5c2', 16),
-                    gmp_init('0x76fc2f4c75878289b209624f61fc7ce6c95340323de675f768364cf46fe27782', 16),
-                    gmp_init('0xec0841cf16aa1480a113461fb910d92e7f9364a1ce09ba96bd176f729bd2f711', 16)
+                    gmp_init('0xfbc341c8c669d7632ca9f0d41bc43dc1efe47b273b95775258fca6c4d9aefbd', 16),
+                    gmp_init('0xbd8022632f360e3fe4014b1d4957d3d3950b069e200a9ff1ed3b6ea9d3e71ca0', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xf1d7b80c07ff75de691551858e43336b15bedf88d57b2575991664d178201f43', 16),
-                    gmp_init('0x355b985b84e889f8c0a9d713353395fd35a2f2ea19bdcc02bf22d5178bfbf5b3', 16),
-                    gmp_init('0xf6470554e170adcd74493c5b19142e53c7ed36d91e1bcc57cf4521b4b15dd3c5', 16)
+                    gmp_init('0x829019319d8f776a2dcb6c352620546c54dbeefa7c1e27f7f3a6db8a73e44b54', 16),
+                    gmp_init('0xe6a26e713ea8fa1d65888d6eac1dd9a09f47a0a1011354846803f5e4fe5fe6ac', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x158db1e162a904d00886edc84bcc253e58b491fa759497c2c49fa250a869d43c', 16),
-                    gmp_init('0x46d7f727058e57bc4f2e209f4489c37ff850948f1a46f5b4a6c36c7a5d2d6ef', 16),
-                    gmp_init('0xb02b18ead6318afa14cca0b3dad0c4594c779492c09f3df627cbdd62c01a67f3', 16)
+                    gmp_init('0xd76d18abc4a87aedb1341c6ffb4fb06dadb3140b8620c1bb8796dffee9434837', 16),
+                    gmp_init('0xf6bc4da32ed96644de0e4214f7ab933290a458e775b7ccc24faa04f9bb215b4c', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x5dabb895dc5e6dc07b4aab64976f42c4b1ec70122625211e74e9178b21a354bd', 16),
-                    gmp_init('0xf2d22991552676035697c4359f95403508cc999d1d640a00fc9c071d5aea2f37', 16),
-                    gmp_init('0x53d9a7492d24f9caad65216bd0b88379557b037d73b9e0032ff5d38af7b3bc2a', 16)
+                    gmp_init('0xc48dbfa12299cf2a444cd57db517ac92b41ca518e198a281a5e743ceea394a20', 16),
+                    gmp_init('0xbc83cba00e1380ba64ff2e411bdbd6cd9440b125991bb5e24a0580dbea77a75b', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xf661a83cff7fc465e050e1d8d079e085af3d5929401c38d087472c3a92e2972', 16),
-                    gmp_init('0xb6ca3fad8b8efccbca67f55af7016f0f072334037dff3a1da23c0c962d55454f', 16),
-                    gmp_init('0xafcd60ca7430111e5ae5e2d0d5a29e3e18ea08e436009f15a0d928d01630c2b0', 16)
+                    gmp_init('0xd5c0c6506167ff604f481d1a1f1753d1c5e21c63ac60fe7d02e89f219c07f222', 16),
+                    gmp_init('0x15a30b860817b8850cde0c77f49f75b9baf3f51a78813a86e2ef691e0c6ffd57', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x2de7d62dcf9a4ef5cc782b2230ffe2c5cfbf969c6ca6bbde85738aade553c26c', 16),
-                    gmp_init('0x73335372a37eb56fe905644484b6d25b80b0ce0a265b0cf73566c4a164a114a1', 16),
-                    gmp_init('0xc63078a8780e268d96d5ef2531c2532ed894c592c6b60689179b56faf4bbc73', 16)
+                    gmp_init('0x1b71b816fcb527914439015b8bce969c2233bc4ff408a8ef5bb8cbe596a178d4', 16),
+                    gmp_init('0x7e659d1da48a8e2cde6ef1c28d738fc0e0e5b6c1f6cc11714a2d7ebbb5507f51', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x5041e4c3da85d3c7688b3ea326db8fae1bf2249c5b2952704efea2eedfd86976', 16),
-                    gmp_init('0xa0a71f6fc887b15128555d40bedb228ece364c960aa0da9014d80d7f2d62e9f7', 16),
-                    gmp_init('0x5b909b636c5ab47505cd2baf0b578001f6d7cb9fe9e221a05b045aa479faa31c', 16)
+                    gmp_init('0x734c364e4a46f62ce549cba66b4c9fe0d39d295a09a1362a4a4716a24e93bfa6', 16),
+                    gmp_init('0x9951503aaa79d049de981e3520c5f48eca13620890297c4fc6fa79998d10774', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x46d1ed3d68589861e3d0e45cf6f8e194f2428f16cd61bc5380e41fa9f7503672', 16),
-                    gmp_init('0xb2e68d0d0fc1e6c7dbd68d29bb156a3d972866f9aca69ae8c6b44a19860be856', 16),
-                    gmp_init('0x3bc20e5ef77c470a27a283d9dc94776b7b3a1c858d5c8eed15bd095f21b83887', 16)
+                    gmp_init('0x987f256d58cff9373be71969fc3a9301e8f9257ae57fdc00cd013f88b049e7cd', 16),
+                    gmp_init('0x8e92695694ec505ce860ebd60007e39e47b4605207aaffdbb7254bbc6efa35d6', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xc2c5bf1f0b4e9c031a9f275406449398a1bbec27a449d64a06eb5e45b1d6733c', 16),
-                    gmp_init('0xbd8ecb3bdb99ff2bc92683d5506e4e0ad562c6f0355bd55558fb121fe5fbd507', 16),
-                    gmp_init('0x69b9ddbb594deb59b90a26980bc5431792c798ba127a51d1e5e358f2c83b2644', 16)
+                    gmp_init('0x79a3d9da07b66a8901175d9d2a9eb1490640291d9a054aecf0eb517f5fa194ae', 16),
+                    gmp_init('0x84e1dbca7254b1b34b3671b858af03d86bd425f32f79bc4d4fc65e9c9fcf634b', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x3a3c312f919fc404a81b92248f144c7fde4d34654f217b331249a8d7cd5b34f2', 16),
-                    gmp_init('0xde106e5a968bd9517b88ce5853eb16ba9ac03297801ac1fd9b167b1d0a3e34eb', 16),
-                    gmp_init('0x8dab3d7cd305f46dfc2fa841292d5a3572cd963fe974e2e390ebd96b25f2f412', 16)
+                    gmp_init('0xa72cb8e993ec35de2f50838a4e371875c41860a21b4b3b74d66ec4e5390ccfa9', 16),
+                    gmp_init('0x91a660e391681a4c7b5b7066fc5d44b9f1a4c6edbdd2bb2822fbe345af0fd4a3', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xed69c19861d4b19ffeabfeaf6853802165f2b52b9f89f2995bb90c5cfa700662', 16),
-                    gmp_init('0x31a4977183c3507865ffaf1dd191d741f5db273990b9fde3635a9b8d84ff5524', 16),
-                    gmp_init('0x3d4c4ba737c1e623e752443e858290588067a244cebb0f8a4f38d6fbad32cec3', 16)
+                    gmp_init('0x3393fd094d5b05828a3e4caadcfc98e05dd0e2e17785b26a6ac9060021e8b7fe', 16),
+                    gmp_init('0x130437bec867beb82eafeaed9c5a668d8e56b30a8a9b94b70c142442023c6821', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x545e57b98db114dd8e2a3050669dd4820c445678f361fdb8dbc7851760a607f3', 16),
-                    gmp_init('0x4d9234aa29ad2b8b38406b25465aea80f71b3872a9cd4370fcb2ac97ebdcb50c', 16),
-                    gmp_init('0x4a335ddcf008686e6129bed942afbe00de29c31c2e7cda490162c2a85ee1ad9f', 16)
+                    gmp_init('0x41db43d818f963fb8507a52f4805eb98e955273186ec58f70a5db33fc75f4ddf', 16),
+                    gmp_init('0x4210da1ad0865781dd2ec30777538b8fd53db5d79f7f2e31285c41fbb53425b3', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x82367b3f175b13d0d2a2e9a958171e44c270b2fc95042149e72a7394cb3a6ac5', 16),
-                    gmp_init('0x253ec54a3d182955b18d9a0de294191c080f04cdb8faff2ef18ee0a17ce5f92f', 16),
-                    gmp_init('0xcaa272ce2dc667bad54043c8c9d2784fb63099fe4d9dfe399f58a75688d5663c', 16)
+                    gmp_init('0xa16b2886134627e15e1b4586ee5b0a52e6a0250af650694ea09579d561528cf6', 16),
+                    gmp_init('0xf40598ae8537ad99913ced79d81150f43493fbc813cc801380b920f9fce93f3b', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x9a8ad7ee1f9301e7145b3e718ea970feab730d3f8b95790da7c48c02e7646afb', 16),
-                    gmp_init('0x99276cf113d9688e6fe84a4bc2f09db5512e18de2fdea4ae2e3d0f382abe6ca8', 16),
-                    gmp_init('0x6fcd30a5fc9a2c856d698d968bdb817a375e90ee351a0f3c39a158a4530e6818', 16)
+                    gmp_init('0xaf7e078e17f3e1d47f9e7be17e4834482e47dd806702f9f8b81dbe564d20d1b2', 16),
+                    gmp_init('0xd8bd0f435b22b2bfa62ddbae81b2497ee6600a25c7a08da47230ae89764cc6b3', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x248196c472688b125599673c8156bb257ee83260c4f19e1788bf22ddcbf10d3', 16),
-                    gmp_init('0x20b437dd5b7336df0e3b27255228e77f1194afd945968f85aecb3f24823f7e92', 16),
-                    gmp_init('0x1708ebd6f5977695bcc14378f90e52b16a7367e6c14b67f1aac771cbf45e27a9', 16)
-                ),
-            ],
-            [
-                JacobiPoint::init(
-                    gmp_init('0x171672a5f204999a2fc92bccf878b2a5cc7727a4083407d152a2ec5c1cab8606', 16),
-                    gmp_init('0x7270bc833fe973e593c830052c87e05afa8975d9a13ef1c7d79bdc1dfc060ce3', 16),
-                    gmp_init('0xa819d14b4a22b04855270f2558404940d5575bbf44c532a25efeeca9eef45be', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xbbe532ab163bea6a838e239029c3ad86e4e3397e13dcd73624d123af25d4f085', 16),
-                    gmp_init('0xc9192f1faf8c634066d6f8476048e5ea775654643301983f33daa42632331423', 16),
-                    gmp_init('0x88baba05691a99149b71f98d9ca69b5c0cd72fe8535bb37e1fcba0e8d725697a', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x97a3a7f043248a9747bfc2d87000c0de14069371f940ddf058afa0335de27b62', 16),
-                    gmp_init('0x1ef3f303a5d3f7a114fada477c1feccf6963957dab2fc0c64203c88045e10746', 16),
-                    gmp_init('0x105dc5a8c56117fd47be37ae51d2123cebe60e3dc68a61808d71d01de0263a9c', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x773e8b4fe99691e816ce0d74879aee141925abda4de8d4ef9669a7875af79afc', 16),
-                    gmp_init('0xe89537a01f07429c8c717fa4c1bc6bb8ac55a987d1150a0258fd57efd24dc00', 16),
-                    gmp_init('0xe2ec6fa8c88e16e634fc2f8e21ff7ecb6c79a779dec9751df1cb2af28c759c84', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x73b2393b02772af380214227fa25cef86191896dbaf7e825c9e8c4761dc34fa5', 16),
-                    gmp_init('0x679ac9bd5ef1b8c99a3fc672cceebf1d1227c3b21dc9586e2e12c308851f08da', 16),
-                    gmp_init('0xab44092c08ad89f990d46fbfcf50fb23c6120423660b94b857b9d061527257e3', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xc84fe39bf60d0ec3e89d0e176f84309d22d340716bfb3d56772008238ffe9ce9', 16),
-                    gmp_init('0x10f1d51208cb20302f881f4a904d59c87cc2aaef0126280e5ec03a72627da681', 16),
-                    gmp_init('0xada197b553d56027ec18374d9fbd6f4da62da8b96b409972b16c35df001cd0cb', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xb9fbfe75dfcd0ae4d9232bd443b064417ac52d0972f658ffacc329e45f985e91', 16),
-                    gmp_init('0xe5d8dfed050ebaaedfe2152f3f26adb895f913ad75dc3b8b93530dde9b454da8', 16),
-                    gmp_init('0xeb64ad6d668e06f37b26b299bd8c7443cfe10163e1039c541e5e5d41b2e56b1b', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xe1cb688c6753480f4a1197a7fbb185ec565d8129fc210e652e2a65e87feae9e', 16),
-                    gmp_init('0xb496b69317e55b1b4e0a87e7decf15f13ca0301696761e2830af0c1a9e9b0ca', 16),
-                    gmp_init('0x4f0040b79707e83d64d23bec6163d4fb81cdabf56f791944cd66f4d026f090cb', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xddf6631b7d33ee15e97109ae289d664d3a5d4207776da74f6c2c7b8dcfb23402', 16),
-                    gmp_init('0x99eaba2b08f33fbcb9f87eaf828ccb2226d77b84d0455f443c87c673dbd59c81', 16),
-                    gmp_init('0xef599d8b67c3a4a76b01b00bf2953df1578ea7257a50fea2521c2b270423f3fd', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xaa4cfe847c28387cdf58eff93e75b11e0092a0acb90cf04ea23c2f8df8bc6a60', 16),
-                    gmp_init('0xe3a50aac9710dc1dc10967ae374f28a2472ee9347fdbea0ee346b9a2b827d0c2', 16),
-                    gmp_init('0xe33f64411aa035510c82b13df85d2d7a79eb134f085061643b461038d8a16060', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xce0d4752b4db7d3db76ca1e16bb7e6dd80402345d6beb2461095958f65df5ee4', 16),
-                    gmp_init('0x25faa5047d5b5cb0318594bc7d3606a93b357ce299a113cb05f053d588708e92', 16),
-                    gmp_init('0x66f5002899c76ef64df18e96016fb21ab6257034790a079b3bb536745a6e5f89', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xec784ec5ce025658b27487d48decb68a0786571df2094a94c23ae3d7282f6c8', 16),
-                    gmp_init('0x9062d27c5d8a7fa0664aa89a38883160c244005d14f4e033341719fb88e209de', 16),
-                    gmp_init('0xb27d995f2ebd38b7c27e66546ef3118b8a73cac62daf40b31ee8d27f498c6f5f', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x7e918d104c4e2d027fdca559c52397784ffcce1ab9bb9ca9ba803e8ff912e008', 16),
-                    gmp_init('0x56354c5e6390c75166eb4ee3e48240c496629569753b862337295103d5c0c1ca', 16),
-                    gmp_init('0xd3569b678cc056d06eda78efd584bba6fa2a98d4807ac56aaf76660e8c7a93bc', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x80f2187a837d0c252bc910a74aa0d213c360d9b3137bccb47c3d294100a5d44c', 16),
-                    gmp_init('0xa4a9eb23edcce45b9df7604b710b7da6e251a1726b4e615f69976585035e58fe', 16),
-                    gmp_init('0x197f6f8c7a15ceb279d5165ffa277732e8567ae55647408e7b1d1f9622cbb376', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xcb84137b7faa6c92595d3966765f0f2dfa37f3774e31a1e1462044d480adedb6', 16),
-                    gmp_init('0x91c02a3e1339d4473cf5ba57807e836b54acc2c9246e926bd51f592bdad6a9fb', 16),
-                    gmp_init('0x887901120b460e87aadf586e1a861dd823054a89dd602d7106754057394183a2', 16)
+                    gmp_init('0xd317ce2018e3474cbf6c89aba95a74f6473cbdc15f0d73583510a66b8c8db2e0', 16),
+                    gmp_init('0xd61a210a9093844b99c2c3e8e3979136caa274d022b860f3a5b34a2b274bc9a9', 16),
+                    gmp_init('0x1', 16)
                 ),
             ],
             [
                 JacobiPoint::init(
-                    gmp_init('0xc6db957126dd60faeb1dcb7024df99215eaf16fd505018c3f5fc2f5889040ac5', 16),
-                    gmp_init('0x334852d72b598b709cb964f77e844217568df1f8835b2cf475920a2ee2e6cb6b', 16),
-                    gmp_init('0x6560bdc98f49e5e6f364b5d04157caaece8620891217203150aca608b1dbd14a', 16)
+                    gmp_init('0x6608c243773c85dcbc666b9ba97323b234a8bfe70a2e3338c6e3197aa3fe67b2', 16),
+                    gmp_init('0xa1a916bec521c168846f640da746e03fc22b159f40c543081923fe5ce5b47a28', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x291a57c26b412f32aa340f73d8a3549be3888ae6400dd9ea04a2f71c442336e1', 16),
-                    gmp_init('0x1f0237ee723d32796f0b061f66e4e61ebcef43b1e34ecd7e5e85ccaffc1c4e4d', 16),
-                    gmp_init('0xc33fe6a3a09b984ff3554ce75e4bdbb553527e70551b20973f961b8b280e68c3', 16)
+                    gmp_init('0x70c1fd6918000aa99979bc856e976e5358bc6e018be062865fc1209b0378bc7f', 16),
+                    gmp_init('0xf7daabc20d5bc522aaedf6f122428543f5a9f32f61e1cb0d6d68171ca6aeb856', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x7ab833119f6a9e5d5eeefe90e165a9a0cf8681cad1d4835ca52f1989dfeabb86', 16),
-                    gmp_init('0xc32f50702e31aac26c23f6994c87ae3ae8d0aa063e531c150f22e6fd8ec58907', 16),
-                    gmp_init('0x514b65abb34af1f614ab0a91117413e9f7dbd69267b3eea5c4f7b3307f6bc4a', 16)
+                    gmp_init('0xf0956ae2a6c5dc23206a98117d5786318496614eeb65312c13e6eaad2bc73e02', 16),
+                    gmp_init('0x433fe6601144e03c76e2058af2839356672d048dbbae94572d2cf6998611219d', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x702f182b35590e666e707127e56fe1835f027535fcf0dc83965194413fdefa0c', 16),
-                    gmp_init('0xe6318cf6725ccc9b86a54b0bc1dcee6c4e75d26cc4a839b384d21606d1630404', 16),
-                    gmp_init('0x33fc0c02bea265a4640c3fce04b3d3277e24d28fe6a6d99f81208d715ac3aac5', 16)
+                    gmp_init('0x30ac8e52250d76b2c0733fdeacec50aafe32c900bfb0192cbc63b9f4e77e03c2', 16),
+                    gmp_init('0xd694b530c099785e69aa6584002e77a06704ba32cd8786dca11914fed1dc3f83', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x8585bdeacb5454849160e6c1a2675927253be082cf066148902bd38f1eb1c118', 16),
-                    gmp_init('0xc27ac740f9bb77dfa163d45837b127ed3f614d471d47a7debedc730536fd6548', 16),
-                    gmp_init('0x5e209bc4e6e339f4aa5bff11634da506303c6932dda2fe382d3c3a16662b4ea6', 16)
+                    gmp_init('0xdb98ebea3ca2a60ca52f249d7cf7283488b281a8387c0f597de22de51c5fe45c', 16),
+                    gmp_init('0xe0c0f30b75bd85a2de15129dd8912c8ce983204faa480e1c44a701c43ef45a22', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x79778ccccd47eb6fdbdf07cfebe17f1de6148ca1aec74b41c9da124dd7edde7', 16),
-                    gmp_init('0x9aafdf7658ce7af22a2c0cb2249ea3af4831d88005e5cc1362d3a72a19bfabb', 16),
-                    gmp_init('0xc39452e5d161f083fb63240741d6cc0b2465e87f541ae18bf1fbbabbc1b27803', 16)
+                    gmp_init('0xb92902a077e8e4c785a855ff7c710084d9f8d7283df687fcba43acb80c6c0bc', 16),
+                    gmp_init('0xddbbd3cdad5f6a8c0d6e697a2d161e2004785ee3d92ed23cd088e9d8baf5dd22', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x18a783d30feb5b33a42647c6e4b935a43e8dcf956c97c3f9b193a0cea3890bb1', 16),
-                    gmp_init('0xe1ae6dc7ef5a62519ace5a2c0c38da219a74da3742fa045c94d858687b953b10', 16),
-                    gmp_init('0x7f5ae94ede9bad3a91f8934b67b5506244ceeef4599e12d7af201258d0702f96', 16)
+                    gmp_init('0xa73c0160adda5f421ba6b3b7d6a51690c4758d5ccaf1ccbaf59e60de2128eac', 16),
+                    gmp_init('0x443fda56044e838ca55cb6dd94f50a7c793759f17755d9ca3859291d64f1180d', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x473f11db7da8006b69f8ef278b92d9dd87a48b6d9511b90bf7a9a38c045283a4', 16),
-                    gmp_init('0xc2e270bc67d5379d0b10c570c6053e949744a6fd50134bd933cbe5fc7e0afe01', 16),
-                    gmp_init('0xa9802915e85019cb1b1439169a339b00edeeae673f81eca4b5d74588c2e9bb23', 16)
+                    gmp_init('0x5bb99589230a0df5ef5a97ae7339621236bba6c05ecdb6af2d86a63c3e689186', 16),
+                    gmp_init('0x189e83e977ed31595724d461a33c413e92643ed05bc1dcc4edfb310d1be3a018', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xf64c21bfdd1ef118770db7e82a058629c461560fe3368f778615097212d2bb5a', 16),
-                    gmp_init('0x4a6c2b3f63f3190f78038eb475f6b271efb35d45f50d7261977f86f28fdebb18', 16),
-                    gmp_init('0x6aab855f48192404820e5beccb83b7d8785c5f4176bc8840fd84ffdbf73286fb', 16)
+                    gmp_init('0x378720c347cb4f2370ed37667a0997249edfe5d21d349618c65a933163ccbc30', 16),
+                    gmp_init('0x8f1bddb9cf72538c93118ac0aaa79b6d16bcf955d1348f846a20327f1315729e', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xe3ab937237bcdd77ffa21a227370dce9fa37e06a50121a4e5b28e372b90cd776', 16),
-                    gmp_init('0x7d07555d466046defae7c9f6a02e8e16834fe9f74dd55c2c0a62ee88dc0d3697', 16),
-                    gmp_init('0x7018ed7df7b0cc97cc2c1b3816accdafe629aa0c4c38a6d9ba2fd35a9e0ff31d', 16)
+                    gmp_init('0xa65a3767559b10fec9dba87327404c399086801c76b5d18d33d38005e9583501', 16),
+                    gmp_init('0xb71ca7025cbd7194e564913cd393e2e0a8c24997dcf28874ad2fa9df73f552df', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x7bc6af7d5ff05e978f272ee67c4b0a6c2d23318de4a9f51675aad8590b22add8', 16),
-                    gmp_init('0xefbafb7ad9ad58202a7816d789b0f1ab6958d3eadec8b3e270588974aef946fe', 16),
-                    gmp_init('0x570554d1d9c1e29cee7eb54cd78352fa17447714daa5acc4fc7ce318a47efae0', 16)
+                    gmp_init('0xfe8fd21db78b1a619d98118c1055a621575fef32f47c2bfaa64a8de543bb1b6b', 16),
+                    gmp_init('0x791e22aec3256e3769e28e95f5ad13c00f14ddcff0abf88997b5d9ba30eaaf93', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xacf585c46474f24f131a227339633bbb06f9c334e6cc7b5b460d788c53305490', 16),
-                    gmp_init('0xe271ceba867521b0ad7e180c0c6d780f0883c40c915279720f15bc836caad9e0', 16),
-                    gmp_init('0xb63f931bfec8f13b11edba23e480f8eae280e4a9bbb5894a941086e034764424', 16)
+                    gmp_init('0xafcf5a6575201206c8c2557c4dd03e4dabdf0902d2c5b43e1ddaa1df0c177775', 16),
+                    gmp_init('0xc19f249e540e3f43d3d10b5cc45df251fae009a7293517d5cc45b4d397bd04da', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x767d15872d0b1d37e717e1a85c0119da81f9d539d6bbdde5c39f8a8d50005ca8', 16),
-                    gmp_init('0x586f44db295a0b3e2c77570776a5529a568de18812826559cc23d8297824ac48', 16),
-                    gmp_init('0x47df24b68aed6549adf1a40604bc40b425592754ed5dd1cdf4e6e34bc6c4026f', 16)
+                    gmp_init('0x2c331fd579fb7e2ee820402278b3dcca47446940916cf87de805599cb44b7cea', 16),
+                    gmp_init('0x20567b1cce061e76fcf3f3d8c3bdd6506192511ff13094077fc2b46ad5d1c9c2', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x7bb0fd35d205780e32b4d2b7b8cd45f9f65b7ca4ae3af34b650227d46de7aec7', 16),
-                    gmp_init('0xa00302b49887fa07fb0bf950295654c48ae91cd32e930d628eb8dd6d6836e63b', 16),
-                    gmp_init('0x4b8e056c4587fe6f82aae96d26dcebbf71acf639adc9ab3c99c200450271ad21', 16)
+                    gmp_init('0xc22f67bd7cc643a26d5c45d51f6ba24ca8dafdb00b195f64b00dd4e0d6789065', 16),
+                    gmp_init('0xc8fb0a3bd1d6e392efe4e67cbee5af859da87b73db5cec2fda5beff2814712d3', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x57ff206d37ad5624d3b72216b66ac0237e0c2be5ffd92618213b088669f0eb5c', 16),
-                    gmp_init('0xd871cc7bb5033d6cbc4224cf544d586e2d8fe29267ec165fd866fa441b9da78e', 16),
-                    gmp_init('0x9c3154244697975bb98b8398fda064a3e5dc9a0ea9e5c346fb9945d5e6591de1', 16)
-                ),
-            ],
-            [
-                JacobiPoint::init(
-                    gmp_init('0xa51710b8f51202bc984a85cc799c4512566b4ce478e8e1295c783cef329c875e', 16),
-                    gmp_init('0xbf75103fa60162f5b89733a25d2cceacb1ad2c44fcf7ceab5419eaf46ce5235d', 16),
-                    gmp_init('0xe695ea8c4f0ca34b96aba34907c9af720df205391a177cfc8d0000106841467b', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x37d55aee69e8d9810273ed1d9b2d9a892ce9f549aaf52987b33c962a6cc07de3', 16),
-                    gmp_init('0xb91c307af10821bc8abbe8080bbea6128d33fe4dec2dfe20a286d166dbdf3815', 16),
-                    gmp_init('0x66d8149adffd7f1de339b6c4e938e4ff0f7acfc75451e31471ece60eaa37530a', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x573b165c1a29a0d24ec8bb0ff2ccef6db311a93a309defbd4ba1aa7165a4ac13', 16),
-                    gmp_init('0x2b23b6f7fc2605d3bc106666b7c14e656bfe544de11d7b4e34b24e12dd0e1524', 16),
-                    gmp_init('0xdd387030132f192fe3eb6ac0b8fff5efe9466637955cbf483c4abef5c0df59c1', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x5c0be487f0c3fa5016525d377c7c7e007f18812fe69b5cb2b10d8c87bac3e6a5', 16),
-                    gmp_init('0x97de0944d6d417dbdf12389d6b6e86438cd80684795ba9d8c1eaf384b8eb0280', 16),
-                    gmp_init('0x97d25e631934997b93dbc87d208aaa54f65379e14ea7acdb6f05baf90e98da29', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xf6e923e7aef22a1a99fddb9fb34cb0345b815fd437bf85522defd080fe88b2d6', 16),
-                    gmp_init('0xc65dd6be90bde195dff6adf074eddc02eda2543a4c673b2aef53fc01781434b1', 16),
-                    gmp_init('0x74f46cb60b671cd059a4e7dda05051834bfb06c2166c0d2ffeba97dee759fcde', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xc2ff475dc31fcb5a9a70b263c7af1bd46ff093c210626b6351b50a1a58369bbf', 16),
-                    gmp_init('0x7859958ac90d1a2d7b248f105fdfbf17ef6eb7ed261388e172eb2a672c1de606', 16),
-                    gmp_init('0x531497e5c1eafd301d8ab9b6864037a43eb5214b114ca1bfa7fcd1d43613c7e', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x6f9cfaa90a0a3b2ef43b5e2a33006f4d689b3dbd32637a001476158895d6e605', 16),
-                    gmp_init('0x9a5987b2ed6869fb9d8662a4c68d939d1890c7cc83c39e8e493e6a91ef81370c', 16),
-                    gmp_init('0xa78885c269086ab8bd5465d4ecdcde61e5aba677d48b3b49670198f08d6c740a', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xdcecc2eb3b9628ac71eed307127687b97dfb934933f2f06c47377052ac4fd58e', 16),
-                    gmp_init('0x58484f09141455d074d0d31fd642cba808532440f7b89c42c916c96c2baab1e3', 16),
-                    gmp_init('0xa55015eaee6480bbde992e2f0d2f77e4159a5f0237ca72bf4d4d3bc35e5b8587', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x7c25400cce9816914daede50baf04945515a07c04ada1d49b9ae64032fd2d86f', 16),
-                    gmp_init('0x7e5d6b2a49274579acd20759be3522ec82970cff9654a9d1749f44d53f835135', 16),
-                    gmp_init('0xdd93337bc5085ca5f6957686a44df5e45862bdc0fbe70120ed3db0ccf70a1851', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x4c8afa6e2e2502b40c80685774cf6913c1130699191bdfa0e3b8a760605b619b', 16),
-                    gmp_init('0xa663fa2be326a23ac8be84341184d758350a78dcaee02b14e442b4addfab962b', 16),
-                    gmp_init('0x1dd4cfd11dcbd2998756d5b17c0394aaa20f36e41f765cb33f052738c3dbc3e1', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xac1002b5c292f212e2ca0de3a9308ed045d8c3ea0f1b9935c2cc7bbae0c13b4c', 16),
-                    gmp_init('0xdcd37878ed273648ab10e134c81a3e2ec3e9cbd25c6af28ef65b096af0c0d2aa', 16),
-                    gmp_init('0x10ff2d88de5e6110996415b6dfb0d0aaa5e50390e617b410ac5a33db284a529a', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xdeb9c866f2f51bd0283ba5ae04e6d0bc1f0c6698099a62ac90ddd22346ec6a25', 16),
-                    gmp_init('0x84df836b52007080ae78fd9028701e2f49b3c79de87c38a575809344496c2f8a', 16),
-                    gmp_init('0xb3e15af5741867bb297c63ee1d027624032a217944f4e4231c232123573b00f9', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xd4fcd3e19ad0d214f9d282c94a5939ac30e3641870fabbd90e2634af4bd7442c', 16),
-                    gmp_init('0x49f03625913cd0878cc129cfff0e470d9fe6123b47fe6dafa98d70c753ee6ab9', 16),
-                    gmp_init('0x8c04c4c0acb412c4f5f325d4e35709d7a114c0900e9aa6aa12949cd066c0fc5e', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x440f9ec3f26cc7ac0d119eaff66ace816519ca2370b4bb4b6b0f65a973af1549', 16),
-                    gmp_init('0xe9b750d16afc88c0f12ad63b1a3fc698d2694d0d96038f5198734e9a56039a55', 16),
-                    gmp_init('0x9167937d5aee9a3d1be1889ed070e98cc1b4e3702f60b43b20fd2b432afc28ba', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xc8b9c56dcf0fb7ff3e598e9647e1edc04f1e525d0185574f9198ed3193a6140f', 16),
-                    gmp_init('0xf00a771b339fbae5ded8b5e8cf861460d569bd4bfd6492e4a492bf4a538b7234', 16),
-                    gmp_init('0x73625e8f5d64704152503a9062f83f752058f4c464d25920f8d0d4e936663351', 16)
+                    gmp_init('0x509bc06c4651a320a348b4c87f844b66dd01649d0a8d9a158f929b378112278c', 16),
+                    gmp_init('0xb4b168c2b72246ec1760f4f17b8f64570f65fe86e735f945ec875c988e178f66', 16),
+                    gmp_init('0x1', 16)
                 ),
             ],
             [
                 JacobiPoint::init(
-                    gmp_init('0x4704048397e00352e0bd33c52dc02e1721f59ebb39a84a8cadf5e3a2c7be5819', 16),
-                    gmp_init('0x8296041a1f45a48ddae9546982966e77cdd47db060858aa6bb0601873635e3c6', 16),
-                    gmp_init('0x36be1702c59c1d539537d83db87b03594e9c152d18fef74a5f6752c12168b483', 16)
+                    gmp_init('0xd8de765227b7873763de93c34d8b561cf73a835fbb8e9c71c2ebaf8017e55104', 16),
+                    gmp_init('0x2fd29465be13f2d15c4c628ad1dcf924c2f73fce1940db1b2a02ef80e52e08cd', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xeba243bc48b53bd416a46ca2d7174ae1e25fa5f14da89211777c92adc9aecb60', 16),
-                    gmp_init('0xbd1152c0e2f0682e7ba60eee43c76e6de35e6222f1c79e5204aa43069d3efb19', 16),
-                    gmp_init('0x6ff5e41daeb372d70faa787aa52bdac935b7fd9f6029faff172735392bf289c8', 16)
+                    gmp_init('0xd03eb26a9a38b79b6020f71756a0a320e9227bab9467b68f06eb9409f722a81b', 16),
+                    gmp_init('0x50c5fcb02c21a3e76ce057045262d4129dff1a286df208f595e25f86d8a85767', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xafde84342bcfb16bcd87dcfa99b6806e97c1ba5db775d17a16352e47a3d8a069', 16),
-                    gmp_init('0xf2e1fc06496f5be4e83298c213365bf7e199c4597bbf9d6d678f85b64d2389f9', 16),
-                    gmp_init('0x937c98773d1de61f6ceb1c3e09068b0a43ee0bdcb6b770197cf01ffd583d8786', 16)
+                    gmp_init('0xe3a5786fbd518e33551dfbeafaddd19187c5472ff4c4284c6939c2c7e987bfd3', 16),
+                    gmp_init('0xf74bad09535840e68477b9ff4ad8210ca3dcf2ecd928e0817ed31b6c8cc23e7d', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xd0cb7c0e66ae8801ae9ca8a21c87e4be553128a77687284e8e12d9db7c75029a', 16),
-                    gmp_init('0x1c4a98046c33edde53cd36c8befd31b7035ce23a18b6c774060dd1f326c332c9', 16),
-                    gmp_init('0xe50a3981b8ac1353f417fe6f89ef30862ef4748ab5ceb73b623c9c93855fb0f5', 16)
+                    gmp_init('0xfe4091010eb8cda72d3ad94e07c7976fff6986d6f1790dd7e834110d03f61c13', 16),
+                    gmp_init('0x81759c1da40403239486faf093b0b79f986fbdb99e1d973c3d3cecdbda0b3ae', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x2c7e641138adaabe3125f2f43f4eb0d43f50d2798059f428a2e76338bf8fd609', 16),
-                    gmp_init('0xd53ae33adad58f8ff7a300284f3b6087c3ca8b783a8ad749eef3e8d4707c2b4f', 16),
-                    gmp_init('0xdeaa2df0c5f41cb231c9a0237d7abd635b96f56fcf68e6fef81f45c1f32011c0', 16)
+                    gmp_init('0x42a97041eca520d411525ffce96e5e480edcb5a7e247a07cb67951d222d5056e', 16),
+                    gmp_init('0xf2fc7f66cf0087066ec36dd26b563b26b64e483d6e9fd1fd48414dc8b0f7db11', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xe6397df4318ab8d87fdd3a7f78c9aab2b2480f55d09c2d16f29bc13b80483ba', 16),
-                    gmp_init('0xe529c60a4faa5eb263fba4c6a71512b000ec6dcf123a14c1aed62b9584db7501', 16),
-                    gmp_init('0x57bc0ce881d50db428e635e118ca470ec54ee1b1b4f4e922d9391efe1c00e287', 16)
+                    gmp_init('0x5873b9f32aa7b78d28a7cebe93fc4323ca300c28d0d9e4b67bca829e0a94a6b1', 16),
+                    gmp_init('0x17a7dbf4ed5e2eb5f4e0379cc39bb95a1f5054889ffb3df052bf9f98de524c9d', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x774ba201f6976189b1a557b115b04075e78a41aa18b24b282aab407b472e450a', 16),
-                    gmp_init('0x9318285ad2ac918d75d5202c60e7da8450a39d0be7c26bd58ac6cf7c9cc189ab', 16),
-                    gmp_init('0xda480529dfe3e6275f11562923edf8a9ae2f2b29772353a73a0f2c7afc051eaa', 16)
+                    gmp_init('0xd6ca71b1c27964cfe232c2ed65379d66fb899f02dcb3956c6745f91d3dafd3b', 16),
+                    gmp_init('0xa85130b38fde293d9fe494a02707de58a02248abee88771ad6adf1421a6fe6e8', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xf47b7cec69feb4f8f2606ca589fbf35984b3be7296b29a6cd98c0d796cb7b212', 16),
-                    gmp_init('0xa633441d0763273d7ce7f2560ae0b95d9f5d07b692762db7b1ef17dde0c0d551', 16),
-                    gmp_init('0x9dcd9cf1d87826390bed5196747d4b944efa60be05493c101f7b9f1958cb23af', 16)
+                    gmp_init('0xc90e300839dd58951e80957063154403cb4e6644c774364813d00c248fa8ee41', 16),
+                    gmp_init('0x62f504176d19e73c9c0710c6538403625045534717accd6e47a63667c3d7c1ae', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xbc5a53605456ba81e30425749857f1255f3d89f56a7847503ef9140cec7b7bc3', 16),
-                    gmp_init('0xd0d6efeae6a4b8ba4804e77260a002afa374b174b0bafb121b27db2857f36e95', 16),
-                    gmp_init('0x642f71edc105e5c446bef75cf35daa745ab027d78efab0bf001fe0a312c6ccbb', 16)
+                    gmp_init('0x5edca7ad865a3d97d4c22df9c431fb469646960cfa20d4df6bf9c7ff1131f8b', 16),
+                    gmp_init('0x9e58881e48e886bc01c9d71b5f0271be33525005f0e89d490ecf0b19ba6f779f', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x29e97d2703ec1c243daffe88db8da0d3920eda50f02d52aea6f4b932b9efe075', 16),
-                    gmp_init('0x25b4beb4f30eb66ba90a955717b6c642cf5dc56a8b4c16a1162c195c24884741', 16),
-                    gmp_init('0xb92c618bd8be5d3d24ec4523cfb0a4a1da6abfdb314beb87551c97192a11cf82', 16)
+                    gmp_init('0x73cfdacbef8c6a4cac9356eb5857c526aea569b7160376b3b379f9608dc703cc', 16),
+                    gmp_init('0x4f80f3584201e6d2394dfcdf253517ed78ef3b9a43e85885a65e18594e1e5c55', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x9c4e584012e231ae2474244c3c512ff50cb06cfa7f802d50d1a3abdb331373f6', 16),
-                    gmp_init('0xc4dea460f17a89ad987fe392f176517d654ffaf213147eb014a76553891eb717', 16),
-                    gmp_init('0x8477b4995370d2a341d0c6b689848536986492986f08044db6db6154c67a3cb0', 16)
+                    gmp_init('0x5a13c0560bc7a0a4121b45a33b771c114974f325e77d1a319c8f9f41eb597e4d', 16),
+                    gmp_init('0xc9e73c13890f97ff51fd18a0f22d73ce7bde87ab59136664af7e4869e41856e0', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x7b54e6649d6700eb14db27de46ee1fe5add887e5d1e5e96416e92bad9089a0a4', 16),
-                    gmp_init('0xed1bde2f18b9de918808261410ad95592d6de9079e74100636090aff3ed19924', 16),
-                    gmp_init('0x58823b44a08803981e1c40cce556e29ea08a16c7921a4e8d5a1e4527591410cb', 16)
+                    gmp_init('0xb6ee9f71ab3f761cb21c60ae448fb2ea57e23b198e1539baf790b4efa70216ca', 16),
+                    gmp_init('0x5594644173e90b46c820b826a8e9f4bb76eed96a290f9f0b24865ba1c5759234', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xfa9fe2a700c8a64334cca85c5473b9c25204f6cff160f0fddd438607a1cb5c5e', 16),
-                    gmp_init('0x29cf637d1fb1c64745f89d422a7f0eeba2b91a9107b7fd944fe5cb16c546d66f', 16),
-                    gmp_init('0x5ee02f77690dafd49369b5f0fcdd4c4fa0a5e9cfcf92a355d7e1a79f41a40ffe', 16)
+                    gmp_init('0x96b25656017b6e7543144e1a680f272ea2bbd34597e95935daa789614260faf0', 16),
+                    gmp_init('0xdcf8a6a001b37cac00ad8e5733bf99e1890bbf98707d4f5ac0e42520e366d412', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x9e8d2f4a7c142273544b21fa02adb5e80c2f0cac7e19d9e5e998cb6be7bc3f89', 16),
-                    gmp_init('0x3295ebe0e2574f65922f09e89f66f73fb2b3524f2d5e555e164edc01a43fcf61', 16),
-                    gmp_init('0x211817d65c424727a30fd007d88da16ccc64fc9a5d863ff3d90493601ad1676a', 16)
+                    gmp_init('0x8f51c431527fd5de455322bb63570df159b20724d6db1a818d9140f3d7f07578', 16),
+                    gmp_init('0xfb97b65f1e044468912a4f8d105dade4044cd7048083be29500400f045e9298b', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xbd37fef3cd7811613dc4912a9fe4112edc53dad4a4b7a2e00702b91ce8d65da9', 16),
-                    gmp_init('0x78065d1ac2855e5f715b247d44141f70d47d119d72cb7241c0d89b359a5acea0', 16),
-                    gmp_init('0x9da9f92ac0a7be87ab10d2799feafdcc9f89d459337d78a9f30a6aa192c352ce', 16)
-                ),
-            ],
-            [
-                JacobiPoint::init(
-                    gmp_init('0xf3524d1d9933f27c7ce8dae5740feca310691954111ee9b77655d8672c8f0f95', 16),
-                    gmp_init('0xe30807b04d2902484ad04548f1de9010fc81f1933f57fb7745ab0f73531ec1f', 16),
-                    gmp_init('0x5427f1cff1e16ca65adaad9d119cd62903adf14aaf4f29fa7ed9622fc195a466', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x6b2ab32b39ecb724ced4a101780fae62e500c5535211810bab5eb1b36cf18f8', 16),
-                    gmp_init('0x21022b0105daf18758018b206afe80bf0dd99f04d1bdfbca12c7ea34268e42ae', 16),
-                    gmp_init('0x48d7b4b9461a7ab60622529afe6e0c0bfbac3b0f9237c27227fab2876e179c61', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xd5ebcf197eae2a5acc6e7c4bdfbe8cfbb5761196e2b7dae6da4dd90de8745f33', 16),
-                    gmp_init('0x3e73cdcbeb46046db6056e1cd78cec889a6c9adfed38d06a1ef435b778ac8b7f', 16),
-                    gmp_init('0xe82be9cdb711e0aa545ca4bb307d9cb91b665bb3176d3ca0fd3eecbd7c2311c5', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x4fad41068396f9bdff4b728227e87734a2ff0ca3f6cfb05e41108804197c8a5e', 16),
-                    gmp_init('0x4159eff6f62a0ed92ab53a23348cbef8b0d0491608590393d39b6659946658f2', 16),
-                    gmp_init('0xa5213f510834dcb9b787a4a44f4e636fef582cc994a21a2de54c9e94a33deeac', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xf381ab01e75b3a429801629bc2ace87338cce5c8a25cbcb487c7f2fefb2096e', 16),
-                    gmp_init('0xe78f0e5d43c4094f58d2aee01fdc00d25eaf9a462f7abd27c0cfccff22d9879c', 16),
-                    gmp_init('0xff4f9fa81e3b97bf93d6beaba0215827ac3b77a16271766a32feace3d5f168d4', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x94fa638a144542fd8e86f6ad3348aa027c6be6e0616049b0b789e8a090a36ab', 16),
-                    gmp_init('0xd05c31d0357bb8208bc8c82dd55e3f568dc28d45c2976cc8a608b12a4a67a455', 16),
-                    gmp_init('0x7252ac26cc79d40dbf393432b76dedff824c607e5a8c8c009b231f2f803cfd61', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xbd24d20f1d77661cdf6f8a8ca5586d2897e13ca2afd1d4df585cefaa5cb99518', 16),
-                    gmp_init('0x3e6a5a2ed893eb7c7fa8640f66c2858b90d8a2018b2751c4dc07f4ad41743197', 16),
-                    gmp_init('0x687b51258108fd7237c6035ceac9cff01ea68d5e29e57ccb435b8ad7b691f405', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x5a36a075db4436f84443af06e912f84dd8948f623923d2ea0ce43583862af8ff', 16),
-                    gmp_init('0x57a53db8f76b9d2867b71964447d246ddee4d4235f4c9c7fd6726a95fead9251', 16),
-                    gmp_init('0x1ef58cfa605a11be4fb8c708ede7bb514ec445d6c2008bd0f9894b032ec494c6', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x49bf435142787c4fdcc03fc7fa1a73473610645326a243861c9a3b4b9f7b202c', 16),
-                    gmp_init('0x92db84f46e58890385c06de2dafd4641265fd0480446fabd8566cd82fd7da2b5', 16),
-                    gmp_init('0x91da00d452f3e0a2c59414bcafc3ebc536de7fe7e4d7d710472c7801c0ed0e46', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x10c6e5d6b781b69f23045c3cc0b82ce90f784bfcdbfcb56ef0ae9c30d18d1325', 16),
-                    gmp_init('0x11aa6a6e993b930c94d53cc141d2cc0806c9391ee5e553016b8ed3cc01de4987', 16),
-                    gmp_init('0xdef23c155a4b1d0e5a240c6dbc9c81f89cfa77d9663ac5c0632938fa47f73b7a', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x3191362ea1b00b62392f9ef06379615fa890b148e63d73f27c41377b84dad3d', 16),
-                    gmp_init('0x13b77f1b2c5ab89a9e99a2bbeaf4a3b4e9732d2f4d5aca19641ef91e5a630e5e', 16),
-                    gmp_init('0x7719826389ed3ae5645dbf181953b51ab5eca1051f0f7e581e20f6273a7fa51b', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xaea2af3b78cfa69c4e1ac7ae5271813cd095a6994f02f0a55d71b398a2465dc3', 16),
-                    gmp_init('0xa8d0b4baca4d2f19d82e9f815b108a9d80774f024bd1bdf2f8a1f74599867116', 16),
-                    gmp_init('0xeeece49cbf7f0aaa24c6b888ab34fdb0faf8a7fd17939790be2668a8beab86fc', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xaa39ab7f354c03fb226e40454888526561120ee09d8d90366ecbd094e08db17e', 16),
-                    gmp_init('0x5fff4addba228055e700eb08e5083a17c7dbfeac008a5638ba9b91a336ce4342', 16),
-                    gmp_init('0x304e959cbfa96c1c0183ca5aa281e7d27bfa01ea67f3928ef82512614bf0d626', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xb467e0f2754bfc78e5073d1a7e2c257eb0eeabf15be2e99703332e3cbec64881', 16),
-                    gmp_init('0x9f963bc9adb3ff3138e93f34dae442c72e7cd4d3a7272370830d53f4d84bc83', 16),
-                    gmp_init('0xdd858a0bb581e9182c53430863f221a7d44f533054012eafd2f4ba2c619f1060', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x59d4886e9f3fe58316605f8e69aeaf10333a6c3558309e097b7faf1f2ef03205', 16),
-                    gmp_init('0xd94ef37571466a56514ceff82020fc16934557146ef4ee57e6fa736efe5ec16f', 16),
-                    gmp_init('0x74b2605e130fc36e72a1a8d910ae040bec4b6c3d6a6c655e79e53fdb4f501e05', 16)
+                    gmp_init('0xb971910c41cde2426f12b2b387771a3ca6350eae9c043c7a49a1be4aad13276', 16),
+                    gmp_init('0xac28486ef006eefbd4e2e45b3bf6811f593d79298270fae3b338f3420a84dadb', 16),
+                    gmp_init('0x1', 16)
                 ),
             ],
             [
                 JacobiPoint::init(
-                    gmp_init('0x417ef678ac0748ade25b671f6e88fb12184034ac82de19e98ad2c2975aa879c2', 16),
-                    gmp_init('0x929619b0cc594b011fa11509b7c35a48107cbd7770f56b018efefb8c285e3f53', 16),
-                    gmp_init('0xff316913a88f90528bd8bcb8edbc890bf1d89b67824825c9b00612d270ef462', 16)
+                    gmp_init('0x54ccc9415026d73f20a845b72a58e5b18bd27f198542a0beeea6bc92071e5c83', 16),
+                    gmp_init('0x1c433f45b45145323a8f8715dad2bf22929e0bcc5d8ee496cfd08ef7140916a1', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x6bb41817fe1bd57d3ebcc6ca945d6ab2ad12256a2c55bc05162f6a0ba4185924', 16),
-                    gmp_init('0x6722a904779ae3cf2c21f73bc31b2b2ec2e75c4784a55a7e746b596eee14cab2', 16),
-                    gmp_init('0x3b1d49b33bf7b406afb8f561a46eb650d6e442ec7cd15b2d15bfbd39523188b9', 16)
+                    gmp_init('0x29e34b1bed8aa8149d841014dcfbe83383fd5b1e946f64b2831bb80c01287c25', 16),
+                    gmp_init('0xea4397df95eeb3a3c1417cdfccd96b25cf3a198b6e15a4391d23ad1d75a7e46e', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xeb6ef5509b2826fa1e15394d0364aeb06f0332a5b9483e90851d8a78eecb72d0', 16),
-                    gmp_init('0xacdb3a8621f575a20726bf3b3165b52153d4d7ad1b0e172be6aba7ee2458e6c6', 16),
-                    gmp_init('0x6ff6d4920bbb5348853cc7f5c88269a9a377508c1215e2a9ee134f70b0ac43fa', 16)
+                    gmp_init('0x87582edcb73eff9539c22c692dccd9f22f2f422cc47467394c5e3622af76167c', 16),
+                    gmp_init('0x75b94350ad64a7bfde102c3c37236a888028f0677197be86c6fbb616f4d7ff6', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xf5edf2de03c47e02dbfec3a03bd6cccb347b23ecebee81d4b9fdc6a42c7b562c', 16),
-                    gmp_init('0xe5a49b8b1d80c4be2bea59c79df6f9839b57714abc1b3f29c2ad70493bf03513', 16),
-                    gmp_init('0x505ef7adb35c55334fea0c2f1ac422838d122e7b908896fd9140fa50405fe9dd', 16)
+                    gmp_init('0xd2a076367c5ba19eea5b5f1d3c001919876f31533ab62409f3d5be3a53a3a383', 16),
+                    gmp_init('0x79aa09b893b7fcc06643a0f5bb9dce305981aeff3f598bce65f2abb22e7e0640', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xd6c7357ea19025f023a87258e7677864acec147348b0e8792ced3c19096637b1', 16),
-                    gmp_init('0xc10c01f0f2a9606666b69899ddd96dd68826fe885839b42193f30874d1acf2c4', 16),
-                    gmp_init('0x93c74ae1245e5c30e56b0302c7687592caa68c5d753f82e59c2fb6bb29bbd17f', 16)
+                    gmp_init('0x4a107aca1f2736db1c25b7363566f11e33f657394b821fb046723ee874de6611', 16),
+                    gmp_init('0x809b26510063ef3934ce64e8f700052e075d547a5c2132ac0358ebee58a805fe', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x4841e6f7f5e24bd4eb30dde929a8009c4a97e7bf400a2264d144604b51dfd889', 16),
-                    gmp_init('0x76cbac4532029ab3929a6e8056e140ce42f1f08ead241f317fc5f632b94e7659', 16),
-                    gmp_init('0xc177dc10299053221cbe2990dc806c3530617d1bccf50685dd5f5fe3deb09df3', 16)
+                    gmp_init('0x206084c4fe23394c13309d38e8962018a25280129dec7b0ce7381d983bd73a10', 16),
+                    gmp_init('0x6133a0f86da016970c08a9672ceb8393f5c315c424ecc0034912d18dd8d2f229', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x5e16e41cd2402759d144f4ff93175edbf7e0c043d6d78a328121fc4ad4cb5b81', 16),
-                    gmp_init('0xc3ca8ab71ceff97e7a01ac2d088e0ac54dee953221a3a68e0fe5b902dfde4809', 16),
-                    gmp_init('0x6bdc547cd740f33c9b71e94157dfd4e63f0509d41ef13dccf5faa316ab8d5868', 16)
+                    gmp_init('0xfd402eb372aadfc9654a0e0d49bf49f6e983fd1d30a8d846fcba4ed06dcfecb0', 16),
+                    gmp_init('0xd6b34030dda63a22e9a626389baba86b1a4b4c24bde65e7910593f3deda08de8', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xd72f1a362c4e1f33c23a27e99d099f264fd87da5e6c9b37572dfe0a9f714243f', 16),
-                    gmp_init('0xbd4011638fef31534e9835cda9f576b43682be7c8c6d9e84389c89dfd73a5233', 16),
-                    gmp_init('0x6bf989707e61ef1ff3137da2e23dfb40e92c6d2ff9dc3ea014d4895ad9a4a9e5', 16)
+                    gmp_init('0xc56dd686b0fd846a66dceb631977d5bad505671ae1abb34a7748532d4fa43529', 16),
+                    gmp_init('0xf2acaa85f3f1b263555d2c60a76b8c11619e467816fb7eee59ededacf9a521f6', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xf8fe44e6cc6b754c41976d2d4ce87b8d64295cc266599d59e321188ed262792', 16),
-                    gmp_init('0x8dae7bf3209b1e03837231bce2b12ecdcd850094f425a0cc1e5a748c2ed5ccff', 16),
-                    gmp_init('0xb0db06840c5707c94e8434edfd65b6613281a8b848c26b3683a24b7de1947df', 16)
+                    gmp_init('0x467bb346461875155dfb8e07fec9d0a07fae3d22195d966e5b4dd60f554659ed', 16),
+                    gmp_init('0xd01effd05aa978e8a1f2cd586db82cd3701bc10dcd013e009b207d0b2800cf83', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xca61d0714d7e2de6b2853e4206d6c82a45e9a655bf5e5d30f09b7129cc7a9c30', 16),
-                    gmp_init('0xc0e88059bde3cae128aac2c1e72ff374f4a5066de99245304100de26cc3c6d93', 16),
-                    gmp_init('0x301322855a0a8601de5f1ebddd1f1c5e946158daf50bc09f37cbf38bbfe37428', 16)
+                    gmp_init('0xa217ac1f2a3f0f18d32e184d6f066d54a251b7f48713fd2021478fe34e0592fc', 16),
+                    gmp_init('0x237ff4ee54584a0f9e644eb36c550d68e860753a3e69abf3c080635e0efb307b', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x1531c06740252d42359101a78328009517aa2cc4e4be72b4e774a47fe6403f75', 16),
-                    gmp_init('0xc00ffce8d435e6cb5b1497e7dac00d104ce6aa68647529c2e40916664da2978', 16),
-                    gmp_init('0xa05c4ec1fbf33efca226546d237f0d39eb63af059770b38308e58ecf7c881097', 16)
+                    gmp_init('0xcf66b98f8cddc0e46c879b630e9ec7e56914d6c339885a5fee64984adc97e515', 16),
+                    gmp_init('0xa70717b904461211c25b41034ec6a7b33f07458d990033a958214ea806c8a51', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x35cf5c1e524f10e6bb7db3b6efb9c2b8248850701af2e5725c02e45dbac63f96', 16),
-                    gmp_init('0x60fb9ecfbcb014be8250fedee02327e8eaa89b9f20352717b0bdb7aa4814f98a', 16),
-                    gmp_init('0xcb78613b242ea346ad9bdb39afe92daaa83703a6b25301c65d25b6781d3b314f', 16)
+                    gmp_init('0xb1c35b7e83dc78c252aa94eeb7ea8e3d57cf59e4820a93da0a86af7404e21b27', 16),
+                    gmp_init('0xa622031ff4e87d1bfcd952a9563ffdb4924bb475b7c4b4f5f410a29f634ac059', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x8d0baa923f49fc21cdd2d9a15dc2ad6cca467f2686d3cc10005d5c2d1ac4c4eb', 16),
-                    gmp_init('0x5b9d08cb244bd89667f9546c12ee17ad41d23646e52a18ca307ce02cf0904a8b', 16),
-                    gmp_init('0xc72fdc7b1f4d783f7c22f1ecf94470ecbd64f007079455edac9e7c47d98e9950', 16)
+                    gmp_init('0x3d9252c60fbfaa34751c8953ad48677086402a669aafa0dd3ba52a10186154e5', 16),
+                    gmp_init('0x3d0d01dcd2fa9d7fc4493342896b4cf3aea1fb7d7c7dd70777fc93f69603a8a2', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xb0efa646e473b1fab49aad5dd507ac31a148876b87ce565154cba96baa90866b', 16),
-                    gmp_init('0x6a0d2147ab112e4272f87ada924bf2b581428340bb8fe2f470008a4406028af4', 16),
-                    gmp_init('0xca5e31a7267da764d5800b5291e6ee1ae3f069d739b57e3c0d3245b95a11011f', 16)
+                    gmp_init('0xa07cc3af9dc3571c7d05dacf9afe3fa3629cc4d8054c9997e8280185114a280d', 16),
+                    gmp_init('0xc714b8a61a49c636dc228dc77dd726901015f9d7dbf4fedd0fad4b744a44a6', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x2431f7513dcdeceb0e1c5788bdf6445b3cb656012996ffa688c9cd8ac9a7bd04', 16),
-                    gmp_init('0x93be6a3c7ceda85fd66d806cc1a1df6f450b89f31a6e754a5055df599aedb8f1', 16),
-                    gmp_init('0xd128d78055963eac0ce707116460ab3a1ad0727e710f55364a5952211e93451a', 16)
-                ),
-            ],
-            [
-                JacobiPoint::init(
-                    gmp_init('0xf1627ace7bdb692d57c53501b30e895d631f579c55dac61bb15bae14edbd7e55', 16),
-                    gmp_init('0x8975230976972ab34c9b6a286fb383e0162dcd57edaaea32afd88399a07face7', 16),
-                    gmp_init('0x7dd5f3758526f86e69f36b685bd8eec2ff8f6173cf30df920aad55b6752de3c0', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x21acd08359c3232f046018909bb91381847c027b87d0023f3b6d2a2deac69ef6', 16),
-                    gmp_init('0xbdbabcb3140b00e572a8293a9b2050c1b29692bb23fdf5d80221574ff08dfe47', 16),
-                    gmp_init('0x7618970e7556eae9e1b1fbfeb7d2bb71f3e0c71a4cb35d980730b0d864ed6a09', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x48c0d1cfa3deed37baffe7370a70a4228be19a39e4f39675de9c839cec9c7642', 16),
-                    gmp_init('0x54b1425bbdb514307a9fd9fc69d4af24ec8aeb27fcd6f1cec36fe23ea75deabe', 16),
-                    gmp_init('0xc9b7f3e5e5ef156d75ae803a72ce63b8fccb044b6a6fa10eccb5f64a190bd1b7', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xf8466da040f6909a36fe73d1632c9babe0c72eb09bbc3b24e7e7e3cf38a3b4f8', 16),
-                    gmp_init('0x4787419cb0e98cd0047b26566fa7fbb54acb76a45e587299df58755f952f4eda', 16),
-                    gmp_init('0x7c3f265913c92ba4b546a8d5788b1f7cd99dc03660a400d72b105f833a17fa29', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x1d7ebd1908434f78285fb1bc3c4a5468dcaae35900a57f3912322848ac038473', 16),
-                    gmp_init('0x4cc37a0ba63f092951bf07b62d657c7166276d87dce93eade9b5f2c829baf4ed', 16),
-                    gmp_init('0xb4c2c35e9e67bf473b5a0d5c86d06b80ba62418c65d28f6d1740b31292c9af64', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x114621c354c85f17184a99eaaddac8267725cda5e1a91d44014a2efb2bf8e84d', 16),
-                    gmp_init('0xeb9aaa9a486520371e2d1455e13256021fa579ed73f5815d39a2e1471ae1abc8', 16),
-                    gmp_init('0xfe1d97ba41ef895dddc5fc5ed221122adec9e99070396c14a29c65a1bb254ad3', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x83b8e792cd8317afecb372d99da9cd059c5689042efd71145307376e02d054ee', 16),
-                    gmp_init('0x1896e691178c6985185a22e3aad63b9328b4ba0d6e87ea3bb1e9a1a503bbfd70', 16),
-                    gmp_init('0x34a005a26aef540b1eb1328dedc7c08770b3806b69f493490c13a6b1637a6760', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x5d03c034721f2d5b8872f1ac7f8a906c39ba3b66d351908f59042e84822eaa08', 16),
-                    gmp_init('0xe4d7ba2fe987abade8b11589296c9dafbd29669913a05844009341f44093e0d7', 16),
-                    gmp_init('0x928978aabdadde45dba5f6fcf4690c4a6163fb048760c8c213bac41ba766dceb', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x47da5efd6b59bae33731b561734a9881378bed460fac5ce74e18a82cdf4b1904', 16),
-                    gmp_init('0x5d009a86e00c555620e24db0cb9ebc8e669e292dcb60997dda074964a657d808', 16),
-                    gmp_init('0xc3b741ab673110aefefbf1bd9257e99221bb480fcbb558e0b717205af52814a6', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xd7d4ac219468b431f65e810acc4c4ebbc89ea8b307e16bc80f3dda1cd0b93ff', 16),
-                    gmp_init('0x70eaafbb627477379da5a8ed75808931bf7da8c045f15049a9875ad255648435', 16),
-                    gmp_init('0xea948a723a26b810c2aba2432efe28d4958706deecbcaab308d738e1474b2ac3', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x2d7575d9daabced5552bfe71ab5a1432d00528813730a733dab0a5d7bf3213b7', 16),
-                    gmp_init('0xbcb1f6ee93db047099bf81a44d818bb3bb8c3e8b2c843a7e25458da2fc273cbb', 16),
-                    gmp_init('0xbd8cbeb7393076de9c5494283a23b90e32b91c06fd42b332aee32b1e7280e351', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xcfa856ef5b03609a2df10587a962abd4b44185fc227b46ce8415fd28d0f393d1', 16),
-                    gmp_init('0x562a2eac347336ebed9e1a9d59f6e889fdccfd6bc4222a1b4cd21c5374917843', 16),
-                    gmp_init('0xcd653660237dca93e8c8f61520de7417240ee32b192c1f7ca19c47ac4d4591ab', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xce305862b15f40b8991dbe2d8033fa04f01eccbe7a961a14f28f080b4084d8dc', 16),
-                    gmp_init('0x443b6a658234f0a3511b98ab2b2d306f6f34d8873112ba7570afac61ba477c61', 16),
-                    gmp_init('0xe27e7038f71b457d6a53b8bee38284dfb16e23667cb8ea2d786b8f9c64324146', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x80cdc0c18061fee185e8e4fb02184c051bbaab7fde497f617b833122f283ce97', 16),
-                    gmp_init('0xa252498fa6389ea61f1c8972144dd998b6d733bbf2d0c8a49f6db70e1ed04aa', 16),
-                    gmp_init('0xfa1a8b9bbe123681969ce7ba38265a4d3c43d0e87804ee72187417f2d79bfc92', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x8802148bcb84281d3e9123424911a0a374805989fcef89207f7c9e396564dd96', 16),
-                    gmp_init('0xbda6d4ce0ddfb6bb11f9b3468c91a24e2454c6222ed3b3467b93f0c58ac26bd1', 16),
-                    gmp_init('0x1bde57061a763047225329613a787fe1efe0e6b92c8e6d0ca6ccad44510ca042', 16)
+                    gmp_init('0x2bbe38b26889769c760eb5b48f4a968ce510600ef28a5ca3d3b63b62aa4a8daa', 16),
+                    gmp_init('0xf85707f600d3b36f5e2cfef91f9608509902b3a4e3eb6e7d7e08774e9236e49b', 16),
+                    gmp_init('0x1', 16)
                 ),
             ],
             [
                 JacobiPoint::init(
-                    gmp_init('0x2f68988223843a98bebf16f7a95f9d8f441b4f6686eef68ff8b890ca48ba561e', 16),
-                    gmp_init('0xdc126581534947f1c310bda678aa2a5ea5ea12b4b87f29cadfcfcb9ca1b46c96', 16),
-                    gmp_init('0x9234541e268c8605034f251d859cc04673f772026d0a4ea0f6afd2b5339da29', 16)
+                    gmp_init('0xc5440c597814a47d9f6cc7d1513d7f38e40cd02e32847f01c30fb77122d32936', 16),
+                    gmp_init('0xd27ee9ba383e1fa72edc1e1d23ecf4acd8a6d28631e41e5d9a42fa3747cabfd4', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xdea8ce33a5c2ec3c64c5d6199da8cec0207c7b423b5f39b3b916e6853efab7a4', 16),
-                    gmp_init('0x7b5e386fdc6bfbfb75210b9f80fa18b5d73b6c061075edf637d16cc540c39fa0', 16),
-                    gmp_init('0xe852f8f1db953920016aa5f68a48d282033a0b7b1dab3c30dcd4359fb85bffba', 16)
+                    gmp_init('0xd07e95892daa15afff3e42d52f5bab12f165803dfbd492c0cbe1a18d2c2e32b9', 16),
+                    gmp_init('0x774e4d6506724528731f0769f893ef4e23ed98f15228e81e5e78ad6a2c1a4f5c', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xada6b5bb4a41cbfa6c853476588da0c4ebe14d05f69202853787a9497f902ecd', 16),
-                    gmp_init('0xb27b521653728e825f6e68e78cc683c69b508660060f70aff5079cd124e79bfa', 16),
-                    gmp_init('0xf751d6abfc2c598282afee1fe00861ec7e7e06ba512dd8d0e9a6c0b092088e20', 16)
+                    gmp_init('0x3e4d03c45cdfa79b7500e0479b9cfe0a7c1d96f374ee4bdd7d8501ec7989a8e1', 16),
+                    gmp_init('0x12f744d0815a6475aac117cad7caa719ffaf18d5f3bd674098791388441c240a', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xef7d9c2509eec509a162f49c0b66e48aa704ca0a3c52c45c8f4a1fce52e5ed3a', 16),
-                    gmp_init('0xca5bb31540cacda202820be15fad7f92233a81732f27f2b79c03aa2f01e90d5', 16),
-                    gmp_init('0xefc592ab0a6f97d4184e9862ec8ffe276dbf7c731f3e40fe14300ee214a6effc', 16)
+                    gmp_init('0x437f6e07b86fd8fc3a06ae0295829d324275a149e19d957c7601aeeef79f7b91', 16),
+                    gmp_init('0x5fe8d37ca889f13abf38b8289b15d63c589a77119139683364b6ace375270033', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xffed68b1ff547a1d189a445f82055b0fb3e77e601dc8794f5049df76fcddc06a', 16),
-                    gmp_init('0xd06fa7046ce0db95b149279772e8ee27f0267baefb9db31c1b82f7648f3a33fb', 16),
-                    gmp_init('0xb9a615a5cfb2503211a985d6416f17223bfbf738ff3b8936f845fb715ecff116', 16)
+                    gmp_init('0x1b68449b3d610359a9a249e94485e9fd8c26c7286b7c73f6939a8d0d9bb7902', 16),
+                    gmp_init('0xe59063a1e9379c3e0bf198e5c36d1581fceb260471836682cd7f44b1e03ee653', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x37e0a64a5398d82cab9c29bc296e2fa20a3a7babeddbd57a2df498a82e1e9d5b', 16),
-                    gmp_init('0x4a157c91a1e4d6eee4fe03d5b63825b0b9faaf81039c6c82a88b6bcd8a57c59f', 16),
-                    gmp_init('0xc3a1f644cb638f537d6f74fc7b2c25be18681265678ece72e5c3709763a6d464', 16)
+                    gmp_init('0xd2ea9fb217fd7e77534665997d06e4635533528adc6cfcbd360cdeed45046203', 16),
+                    gmp_init('0x16ad23b09f909a705b06420824500d4415dff2d56a34c3f58599f27a3e8ea623', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xf824fd54ad97db3e14e45f0d85a06a7da33eb1cac7078e927e1f93d0d61f4a22', 16),
-                    gmp_init('0x9aacc8a2653268cc32a02a2178bb537844e9ea1f52d5d326cf76df5dc70b41fd', 16),
-                    gmp_init('0x1bfadd417fe03713e10b939cb3ffd4150c708b5d8f1637838f903808e964e999', 16)
+                    gmp_init('0x952c3cb1accc9ca2335955a7c3ab3a4cf04b356c1999d6bbc29b56d4c371d9fe', 16),
+                    gmp_init('0x59b98546f7d62f06a7df9136f6ece5d0664464f11808c75ed76ce6d24189a13f', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x6e9de692cd5674c5486992b62c024be2f3908b885b9e2d75bd531c9d1d166c4c', 16),
-                    gmp_init('0xc225e1b3916c1758bd5761101d03848585cb9a666fa6af39980cd340796f105e', 16),
-                    gmp_init('0xd69e1fd82fc7bf326a777f845aa835243671448b4a2e7ce76e4c9b02a5df2dcd', 16)
+                    gmp_init('0xcecdff7a5cab844f79ca1e2a6483ee28b80a7c8a3447db8fa969ecfec51cd9c7', 16),
+                    gmp_init('0x9323e54d2286800892af68819c7d0f6b0d09d06b645e5a3feb76eac729389632', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x91e940fc6abb9ab005ceb98f99f7317bf39f80e2c8a5a81bc5bc0839618a30a1', 16),
-                    gmp_init('0xe7bb191216db5f99e3bb89f3fd44d3044bfeb7864d65b6571d4c429dbdcba446', 16),
-                    gmp_init('0x7a84d38cb653b5bc9efa38a282656148c19678f14f888e979481a2493676ade1', 16)
+                    gmp_init('0xdfcb4ee15b166eac858980450b97cde51551ee775264e57c847ffc768bc2c885', 16),
+                    gmp_init('0x536a2395550613a153c4fc26c82c0f411c7738947babe97575d4a6431345d92e', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xf14242c10e5a22a381604555f145423c8cfeda1f4acdb2407b59fc6827cbae5f', 16),
-                    gmp_init('0x69d6d1935ca5508e3c8b95123eb9c685b38333eedb7617c45b4fa93fb41cd36a', 16),
-                    gmp_init('0xafa5cc4e09b5f42363bf97feafd265765c97a2cef724830d693787da36e24f8b', 16)
+                    gmp_init('0x5885cff254b123485b409eb88958224e803e0089bac61d1e0b2a89eda94f574e', 16),
+                    gmp_init('0x83216e65a72bf298b5a3b70f2ee0cade884a4c6bb7fa01c9ae6cf88e4efeafef', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x4a1fdeb73de21e08435a0429efce924025349ea31e898f1ea97968e78184fe7', 16),
-                    gmp_init('0xff8fc011ba3b968c1c89a570e877188984b68e88e581b66629e87e341f48c4b7', 16),
-                    gmp_init('0xd5cb74954f45eae12308efe170f895f09c1c51421c2c720531dfcd6b5a1ffe10', 16)
+                    gmp_init('0x157966c09be6500c8a87af3a047c97bbdb8cce2d84d79438738b852bf510208e', 16),
+                    gmp_init('0x40446d5ab712264eabdff7b7bb8cbe07008fc64432da43dfd60eee250d207357', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x2617641e53cf408928b59a3d864a990b23a9a62dd0591bab2c4261a46c06ee7a', 16),
-                    gmp_init('0x8631c55e9e468877656e1e3e62b8e1d015935522b9af797cf0621f36c354dd37', 16),
-                    gmp_init('0x3c6151b83a0e7ab1196ba325a1f8c50ce59df2ef122a80549c2015b03e404548', 16)
+                    gmp_init('0x1a002f610f90a08417d17453e33bc476d23b7438180af23381b3c5d60776090', 16),
+                    gmp_init('0x30922da21fee7aa1963f415207a9b3e893d90b768a2bef87f82c98a82445e13a', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xcc34e8843b7f7a4fb8915a780f2fc71d0906fc4fb624f7e8cb81f5d5fe6870e7', 16),
-                    gmp_init('0xab2cdee65602cccfeca9b85bb161abe6ca7bd193f80ec36ce23538404bb5021e', 16),
-                    gmp_init('0xb9d982ad59655e04a9bacb257cca2d2da959a2a848e4261d0835946e03d827f3', 16)
+                    gmp_init('0xc6b21e3c4b1e990ad6e1a8ff813f6e23e4924ad3b4852ea81c9fccbe8b96fe13', 16),
+                    gmp_init('0x335bcdd8c3334d48e54b781e34eb28a2ff65509179e6d2d6a006b96af7bb1417', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xd7d87e7a2673b215b5fed983b55003d38e2760e535c02a74bdac6402f984b8be', 16),
-                    gmp_init('0x773ece8cbc6eb480e505d731d0d806134733b3e3a6e67b5d57f97832b0ea8037', 16),
-                    gmp_init('0x3f6c044b5eba06ac6bba2cd4421073a0b6e4801e19c80df81c710c80f5a87ba7', 16)
+                    gmp_init('0x8d01c86339dec70595076388b655fbc246bd73bc9820a03e35790805fa8c8fa4', 16),
+                    gmp_init('0x9fd55dddfa2fdca0b0b494b461a8dbd6789eb1a45eb7eed010d61edcc6dbde83', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xf57895c97156b15d3406c01063fb3a5f3d9df355bf8979bfaf549a79e3234ebb', 16),
-                    gmp_init('0xc14ff9dad6754d001ad3e1ed0adfe0609f6edfdeee319e3dcb94e0d7439e63af', 16),
-                    gmp_init('0xaab04635306c3075c9ff8056f362a7a89475ae0b2c67de0d043c64c1202b2517', 16)
-                ),
-            ],
-            [
-                JacobiPoint::init(
-                    gmp_init('0x7b7083900a14e26bd9c23c7417abdd39b7951c161f33cc58669020343639f911', 16),
-                    gmp_init('0xdf284826774900cbbe4249f3dc68c39c7d368fe713539cca46ca976f5b9e4895', 16),
-                    gmp_init('0xc1b1501e53cbe2834e371a68ca8cfb4218420ef5a9f1759b51887242152b5e80', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x2aade9e58266da8be46b8db97569d40cbaed254d851a4fbaac382ae6fbc2818c', 16),
-                    gmp_init('0x9477be10d74b9f243e15e43a8bf3c4ed9e16567b5faca89156e14d1b29f100ed', 16),
-                    gmp_init('0x1186f9472cfa2f481670611b5e87642796efe68b484e22857cc418ba126ef661', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x8db5dbc2875378ebd79dba8c284090d7c7430127384ddfbddecb45284f09ee1f', 16),
-                    gmp_init('0x66ee90da35e88aecefed8977bfa2a3b8f05740b3fb0bbba85aa71b1019aa027', 16),
-                    gmp_init('0xe2c0af1f66eec00e0d1570d35649fd3567f4492b1d33ea36006ccec4f543bbb9', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x7a757f2b0166736c3577fc239682c215792e30e91500b2964cf69b7eb1079685', 16),
-                    gmp_init('0xb5a397b1e5c0778e1f5827597f4d0a2adbd066580b1bd7428622c0e970d9e006', 16),
-                    gmp_init('0x9dd6e82a74a8313f79784fa85975d27739ab0edfb87909dd56a389d36c67e6aa', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x34d333097bd62440e9b2decd2a6d79fdb1b393b124df3903ac8ce61fbf24f7d8', 16),
-                    gmp_init('0xddc116d5e2dab38b8a4c9e8d06e4dda225ebac14d461853e131dde9fd37abaaf', 16),
-                    gmp_init('0x938b1d9e886fae8da017535f68642659ed17e58138dca0692de1c7391efc1ff2', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x2875461cb4a03c4125a7d95ac68a70f40529eafe19ba78375c851313dde22fc5', 16),
-                    gmp_init('0x70ed850a9d45eded941450926f3deb11be09de9dcbd21a39cf991275e75e5de3', 16),
-                    gmp_init('0xf2fcfe2afe6c3245d39471d285b1b03d79386f9b8712111f33e4f924291b06cd', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x461bcd93cdba71eebaa9ac9e3774a50bf5423faf2432847c141c739f3781babc', 16),
-                    gmp_init('0x47de611308653eabd63a10c049b661551b9f5117451d569417c5c97491712ac0', 16),
-                    gmp_init('0xa00ad18088bf6b7f720b4912477f3b3e5e198e0d347c2e3f371df19c312c1cee', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x99f82f467a4877c958598e3f9f4341f6fc4b4ecbf8da1d25df1f05258dc5f9d6', 16),
-                    gmp_init('0x418f39f3454a69c7c1261ccc4a3dea8c299949b5e2bb9bb9f9126ff8fbbc58c7', 16),
-                    gmp_init('0x27f92742f95e4e7dfad98b8e41610f171b6a5cc64b043aea54486c11db9576e5', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xc6ae22ec2c3286400110f2dbc882408c75abd0c67e5172310f1dbb4f241a7b0c', 16),
-                    gmp_init('0xcdb9f9ff74a86c35b6d53a9ee18fa1d60a40da227e403355af532215624d0cbd', 16),
-                    gmp_init('0x330410b8cdd79f6dbcfb84ff30b61935fcd1a99a89f2b69f653bb8818c2b4908', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xc9f78bd211b35ad48cbeff89925acaef328d7a3d47a14b170108a48f5905deab', 16),
-                    gmp_init('0x834581f03bf5848019f3aadfc24c73f9aaff39e28da157dc8d71af71155b71d4', 16),
-                    gmp_init('0xc850850d46df51006d9e4e47c2e332eb84f9da338c4158bfbe70795607de551c', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xbca31d163be69e25172cc23181e781623ad010ab72e45645f6130ea054604a40', 16),
-                    gmp_init('0xc0b92ebd833f1b762f2e6dba8b87695e096125394e184549e1416f149935fcdd', 16),
-                    gmp_init('0xaf6110869440dab8ccd1a7b03810b15fa3a4e5c43366676104df6af053090bc2', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x219e33c0f1bedf6a45296b9b33fc76656c021f3743252dc0bb860baba1b5749f', 16),
-                    gmp_init('0xb85588ab33bfb8a39ab65cdaab7fb0bb2c56d5299ceae1da391d354400627aaf', 16),
-                    gmp_init('0x1935a45d28b744940bb774f93aedc68bd13801ac53468a552ed046982d413863', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x5fc5697d346f5e940e70a4f085712968fadd96469c48dc6655eb3447aa790a6a', 16),
-                    gmp_init('0xb90a7fa35782160b5f9ee25b34fe1c0d8478ac6693138d36b8fca39d10a04d8', 16),
-                    gmp_init('0x45148986dccfe11c9f7fbed61325f8171a7c1eb660e649d13e7e8b5119659011', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xbcae481f6a4e99136a77c756b6273be1228e34562f26e2f9a5b90a38a73cbedc', 16),
-                    gmp_init('0xda1b163e98464e55d69be89adefb0b4902ce91b5d7fb9c8696e80442b9b5a69a', 16),
-                    gmp_init('0xe208c697d5e67a4c3f7720a130abbac286e72a6ea74c5ef684f6e94c0b857393', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xa4c0304a050696ed1766bc735c11f4928e8b4de92d90e63525bac997629358a3', 16),
-                    gmp_init('0x13e14958107fb3bb38de4471b61e101e91874689c37ebbf495aaf5d0015a818b', 16),
-                    gmp_init('0xcd6ebf613b0e47ab49025ac6fdb2cbf4b7aa76dc94fa854650ee0f1ed537efc8', 16)
+                    gmp_init('0xa231e4c478c7296f0b4bca9d539522d997a7b36d977fa4c7c365819ac3936565', 16),
+                    gmp_init('0x80e0c98bec7fbe91c0d94ec68803cf942ba56e0096f154268ae56a0635ec5f19', 16),
+                    gmp_init('0x1', 16)
                 ),
             ],
             [
                 JacobiPoint::init(
-                    gmp_init('0x2e934ee2f484eec3a0353f823ce399f537f6a85b296df589672cf8a68bd84466', 16),
-                    gmp_init('0x46172c671b0f6e97e364778c4d7e67a5681514b0c7643eff6c80d39040007c37', 16),
-                    gmp_init('0x4339028ce76ab41a8baf32d1ac7ca6b8a22988fd92a475b49754e9d6862b391d', 16)
+                    gmp_init('0x241c567a4227f1c506c79b97a6badca61c37101cb8971583bf9f4172b066fd48', 16),
+                    gmp_init('0x40a62d93d4302d4b9363817c043203a48ea87138aea366057f7d2c6792857b08', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xd68568fd0c1cfc475cbc3ca9e846dccae034076bf4e189c4ce7926ba80ac081a', 16),
-                    gmp_init('0x8a4b65c7efc17985223e159709cf06c07c27107905f633fe9d8c110a4f2986b4', 16),
-                    gmp_init('0x8eab81d34e48e759ceea57924343644acc85349de4c8e9305ca894efef079534', 16)
+                    gmp_init('0x4ea220c78bed1c8d609077a9243b173ca518b52ea200446642ae5b50783dfb7c', 16),
+                    gmp_init('0xc644dd2f1ec88d3a27417d9d954c829828c2a2b452324480e5d9e6e88415e13e', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x6e00785d8075178b290363876ccd361eba0111409b64387ef719e6f180a32697', 16),
-                    gmp_init('0x913cb49a621a1a7010c413025bbcfd8edee16b9adfb0ca159989800ac1a06178', 16),
-                    gmp_init('0x2d9afc99113ebdb3696e884315eb6965869ccea797de0aa536660faf32157283', 16)
+                    gmp_init('0xde2fd23b826978e9cba0d3c4ab327218dcec3ac242b4c82a861f7db90df9591d', 16),
+                    gmp_init('0x400d71133b6243f305ecb7ec84b92ebbda9a8a1f88c036a4b4e1973d0457ad84', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xc12362e51cda5c3a70ffb27caa9715b68d20fdbccbe2f18519aaaccb8493264', 16),
-                    gmp_init('0x1e708323d8104355824500062aa3f63fc97935eb9fb074580bdd3c7e5a213234', 16),
-                    gmp_init('0xd95bc7d82693193b0a2a206383f954a16f652789ada0bda5f34e2b86305096a2', 16)
+                    gmp_init('0x9c8651ced75ae94eeb27e145f21c1935558dd9397551ce0d0f02e89487d70d2e', 16),
+                    gmp_init('0x9532e363ad04e53e3bb36e293a2454c8f3ed01a82d75cf129cd3da9320f35d28', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x91f098b910b750b18f09bfd03d3c03b6833f453a833e7613f53771699cc61dec', 16),
-                    gmp_init('0x91e38e20a6dd83628a2fd8ccfc9337daa460878fd5cdc6b7eb610d786ed8bc62', 16),
-                    gmp_init('0x3ff8aefc30924b8e2f5eb91393de1b6b074216a30e570674dd2749ecf5586ff8', 16)
+                    gmp_init('0x8df889b0304ccbdd993948b024e11340f02f3af938fbc3772ea8254af562282c', 16),
+                    gmp_init('0x74525b673205ceed6c741e63188af35e247f7044cef9bb157256abd961d195cd', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x613281abd63f6f5acd0205d1ff0aa006050f98e1314572a2a2e845fb00e3fbcc', 16),
-                    gmp_init('0xcd3d8812152cb634d84fe120c2f9157e4c69e4e27652162d556cb68e8901db5', 16),
-                    gmp_init('0x6f21223b5f397a513f735820131a102b5c98981737eefe14bdfd7005e5842338', 16)
+                    gmp_init('0x211a671daacf935d439d86dca7a03fbbb2b21c2e5edd208c9ae50a7e3da4a543', 16),
+                    gmp_init('0xf46d47a89bfef4a0436d68dca868838a37810c54418a6cf7532117bb36b69c0b', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xd12a2b33b1e3d7eff482e1a1549d5427c13ca223352d01ccb24360d0a99f19f6', 16),
-                    gmp_init('0xeccebcb91dfce783e9d465162cdb85c482a59e13a89ac9d8610c5dc8b2982fe0', 16),
-                    gmp_init('0xe38e8398d2c0c35565990216a28863171298d8c6b6d0410ce15c33ca24608315', 16)
+                    gmp_init('0xa0fd758cd98b80f8001fb80cf152f245078864cdcc2c0da6f9d528950dddb2dd', 16),
+                    gmp_init('0x53e5d835c13368d5f8691fd313b08f311c8ce96f89409a7c7fd94ff873ede6b2', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xbaddd594db81b7aa005f5a301cd96ad9a36b15d45c02e61471ee21ff5fe389e', 16),
-                    gmp_init('0xf888b57d3ef7dd2298bcd85b51b2930bd8a6f75855d929423f62b6daf9b613af', 16),
-                    gmp_init('0x59ae8188fd1771ead1a8601155b2323de6cbe62f1862c5e3fd7e4370606fa380', 16)
+                    gmp_init('0x298a401a6ee92414a708fbc0a52e5a71e93e7ca26bc0ec3617a4f678c5d62af3', 16),
+                    gmp_init('0x18f9a3aa04fe0466e40985ffc80c90df4866e6b9604ed6ef94763ef0af0a3d96', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x6410d2be611d57bca4d089df72046e76d6bbe19f9e27bf3cea46696a9d41b056', 16),
-                    gmp_init('0x9d224d4be74dbe7dc445e7c28c7c7409ecb80b23235bab02d219da04c70f8259', 16),
-                    gmp_init('0xbd1a0f199c8689de0c2e1a6c1726e9dd300b3413b32f57af08f818f21a95fa32', 16)
+                    gmp_init('0x3170c58472d1a0f67de59267946335d84e22ffafa13415c2e08cbaa04f542e36', 16),
+                    gmp_init('0xb2083612fc3a7fe237515093feb9773d006f75695999be1bc6c475aef63288b5', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x8deba44c8bdb8f393fbb36b178ccdb0c94ebc5769bbfc3035e107d3832460fdd', 16),
-                    gmp_init('0x262c1eacff166613d2c458cfb80bd6229b5e22b13a9fec96814ed71b8dc9d0d2', 16),
-                    gmp_init('0xcb3ff458c29b8895bb241e38550648aa10ccbd5038fe9023879790f49feaa6b0', 16)
+                    gmp_init('0x5b099db0c70b101c32b2db74238391dcc002060fa12bad98e94c733ab6025d6b', 16),
+                    gmp_init('0x9f529e2e79a81012ade148d1f5f01656b5d4ecd04852eeb422502ca7f82fc98d', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xe1bb26eae03ae5352ec09d62b08d7921b0c47a4c68dbf9ec46f230a1326b3c26', 16),
-                    gmp_init('0xaedbc38e6401191d3035fad27a186c6768e5ecdbecffaa5e23f2363ba8dda281', 16),
-                    gmp_init('0x96562a4b4451daa7df03109005726c6a485d8e6f4aee2275a75aa43c4c031f13', 16)
+                    gmp_init('0x92fab0a90a2d3e029db481694f063fe5d8dda8070892d54c799b23a5dc7548e9', 16),
+                    gmp_init('0x55e7b4680cb246bcf431714e0c2679ffc8a0dc68ef2d08488c712cd04917758f', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xaf3e0d81d0a67b71e312f4d0d8599160cbb9911faab4f7e03da06b0786d4b1f2', 16),
-                    gmp_init('0xbe2b115917e9674812e75f210f04844dab55f9b8aafaeec31ecba5c0f09b182', 16),
-                    gmp_init('0x286bdd8444b8a8fcdff4786db8396c9978cec29a0b41cfa0eea7317f6471a682', 16)
+                    gmp_init('0x60ea8cdd9a9cd83d643976f1021e038033d2e0ad04572cd6dcb5d5b2e7795486', 16),
+                    gmp_init('0x262967e6f092d4b0ead5790fd0685f4b475534ed19cd709307d5cc267caf96a1', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x605f00ce18ae839c4747ba8a4c7e4cef3509f7e120d75800f4bbce1dd9cef6f4', 16),
-                    gmp_init('0x2decbbfb754f6e634c5f3ca3018ba9bc58f0c044333e2192589e6b998b8e435', 16),
-                    gmp_init('0x4d0b30c12cfcf94382aaef08bbcd0ad170270d60ba939f2a69877df01076fcb2', 16)
+                    gmp_init('0x91b065be180355179d0be11b192c8712c4df67d326411622e0d8050b9498f7f8', 16),
+                    gmp_init('0x35b6f77fb671620ff9ff3490017e264df2c7b425789639e3c740d9e3f23195b', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xfb6db8a0a6559d3a1d37407e974e4b1fee9702b559807194a698947ff01f12f', 16),
-                    gmp_init('0x7e6f5bd12964685716b2d627789c399c65741953093ce8b9973908a2baf14049', 16),
-                    gmp_init('0x61972412fc132ab56a847982fb85fbe425ad8241ffd6c5d40035bbad6ff0266b', 16)
+                    gmp_init('0x1228c7e6bc4d4a41f408b832247dc145ddd013e96749285924f9181974eed127', 16),
+                    gmp_init('0x61044d3dde684ebe492b6cb25f9a6b0490f8cdcb12f0f7036a01cc351a1da910', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x472933691634b2ddbace94ecdef2c6014b4008b5ecdbb7e55c3a5c7d8b4330a', 16),
-                    gmp_init('0x5edcd68bf5528c98e6a08199d80dba3f5b64d924b8fd23bc32e5c2e6ecf55241', 16),
-                    gmp_init('0x4bcfb7b9c9d3d93e51ad2d17982d4e4d3e0950fb80e89724f571c21e15c9b9c7', 16)
-                ),
-            ],
-            [
-                JacobiPoint::init(
-                    gmp_init('0x87535db34b4b4e1d87962450f2f88e72bb3195a7d39c520f961e39f3b340ab6', 16),
-                    gmp_init('0x9e9e4e98f0e4d60f405d08a8bf96001db5df9ce82905a03a84f417ae3b752e92', 16),
-                    gmp_init('0xd38109408861ceabca0e26f2b8607b316e612116460cae8a3485c006e62443f3', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x20056c107133c326a2d2183b31676080356a3aa639c282f157a22580081af155', 16),
-                    gmp_init('0x2b8945d3e4e12f19ef935ebba328912818aa88d5653d1920d93739dfa471d95', 16),
-                    gmp_init('0x3cb1e72d28cd2fca0b4a211e054207a9863169e1e1c34cd45a0e4ba35c6225b7', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xd56e744989212f5a5dadf37cd229598033444f0638f169dd50acde4b955a6310', 16),
-                    gmp_init('0xbde9fd5913b5a9c742d2ed97211d9b84d43795407d1def579d9344fa8a50ab07', 16),
-                    gmp_init('0xb49d97853f48a008da30b40e9b299b867364890c2246da39f26b934db580f2b3', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x8646c6107976b7aee30c72216925666a7eb2e38e92c69fcf7a8e48d815530758', 16),
-                    gmp_init('0xfe7b207b83f74300989e558759605e72bac18d68c5485f2d36cd74e04c222adf', 16),
-                    gmp_init('0x5b7b3a37c6f84297a53624987b6c8354844008fec2256ddf9471a98516a46ec5', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x9dd61160c5d16e1aaee4903704418339b82a0272da04a7eafd22d3b60cb8ec5c', 16),
-                    gmp_init('0xcaa3be673b63488f50f937cc9c9637cb85d68cdea2be97d0bb2503579addab35', 16),
-                    gmp_init('0x9b15ed62b287dde4dcdf0b97091061042adfeb7cfc5649ae1cf9e7851b33cc87', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x1bb7181b82ddc840e1cdd905d4b17100dc6a2279aa83764d8bc43c7717d9e762', 16),
-                    gmp_init('0x9b529a2bb458e1dbb27cbb0c2a8317e72f99f25fba5e38f7b1e26873fad449ac', 16),
-                    gmp_init('0x1047d79c2cb836fc0f3d29ceb871fd01ef512bcbbc107f1424b7b0e8f4d56aaf', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xf46f07b70c07134377b2cf028a388aeae568bc17621af6dc11f25efe228cd689', 16),
-                    gmp_init('0x92ed6db99c2ec0da7b38bfe18cede643a077976d353db80374ceffc4779ada88', 16),
-                    gmp_init('0xef59ee5ad61bc109554c6d89c27021952da91fe9348ae2bf8cbc01b6665c01c0', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xb341990d10f3b799311e3aab78ed1b0636e7ae7c107281010e615a08d469bc45', 16),
-                    gmp_init('0x66066021c7cdf74de67972944732eb2778e83ee1fe9fd3e6ac07b7f83e88dcca', 16),
-                    gmp_init('0x4668728395d94f375a742dfac7f66bb66aeb03520d6bb1b1e5ae7bc3519887bf', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x68f2d0e74a0438ce2302f5c7d11c8951815a994b84c1bf5ce72b81d1f0000df', 16),
-                    gmp_init('0xa497df7e4d3d70f619fc3f20e2a558af7b7519ff0e24e3c1ca4aac36859fcb12', 16),
-                    gmp_init('0x42c202a6b58e7f71f0f98a9777881d59a77e497b2dcc9329e94b48960e9bf856', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xa7c0fa59af4c4959f621306f622e29ba07c52b9e6ebb894aa0774680daea8bcd', 16),
-                    gmp_init('0x7c830f47d9848476c0133ae9f0a186786276b5e69ac37da53c7983c687243475', 16),
-                    gmp_init('0x36016b1138f2b86a60ef408e9384a43c386223988a6723b3a0832e4be06eb3eb', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x171e6c7a8dffe61699ce33b203c3ae6f0738c49850fda049d7674f0fefced4fd', 16),
-                    gmp_init('0xf47bfe281f331a1f9799814e8b062a474664c38bc95369fc9eabfffd257b7a75', 16),
-                    gmp_init('0x947ec1c825ec72ecbb8b3c627cc286a69f91f30f56091f68ea85b7e4ab5b9d44', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xdfd75b5d3c292200f4fde886953f2bd50e6d83be1dd43060a5a29048348eb7f6', 16),
-                    gmp_init('0x8f5f11246d9a960bf30a35ec4388cd268830b3d9aeaf3359f54dbb1c50665679', 16),
-                    gmp_init('0x9a79533750993cbd865870652e3a9ebe0cd819133e6a5c2a1775592a441759c4', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x684d7ea954011a2c9df440e01e940a537f3a52bf46af9bb8ab8002799be26e5e', 16),
-                    gmp_init('0xa7174af385780525bd4c2f24afa823ca5410f15a2d4bb4186220680cfb56b7bf', 16),
-                    gmp_init('0x64bf1c1e051bafd0ef8c8118cc20a3347ae0bfb2250057bc92d7460d2ee0d88e', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x553fae838dee17a707b82c5c373e04093dfe44de5358e9f0786c9a0ec4733424', 16),
-                    gmp_init('0x95423800441b4c632f938e252a0600985cb89674d03b7cb0f98cf3bcccb098dc', 16),
-                    gmp_init('0x60e27af84b0fff1ae959bb58c9a052aefc5db4e7cd2dc1c3a1c8b7d5e0d264cf', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xaf80ccc40add79558af9e9575a21d3b52aff63afef5baeaed9797db4f910540e', 16),
-                    gmp_init('0x3aa827709f553862bdab7630adc5128e5115151fa9cf53965577508e496ca40e', 16),
-                    gmp_init('0xc7ddea1930ad74e128f008d52ad2bc16416fcdf39e1b0cad93ceb3d87c9f94ab', 16)
+                    gmp_init('0x8e4a1f4ccac9cb3a9c390697489ab9923ecdc737a9c4d14b51dcbee24060e322', 16),
+                    gmp_init('0x4936b75eb328d7752fb05ed2406e7bc4fb00a98d954fbfe04e2183cd904619d7', 16),
+                    gmp_init('0x1', 16)
                 ),
             ],
             [
                 JacobiPoint::init(
-                    gmp_init('0x4c3aaf6c6c00704e96eda89461d63fd2c97ee1e6786fc785e6afac7aa92f9b1', 16),
-                    gmp_init('0x14f1edaeb8e9c8d4797d164a3946c7ff50a7c8cd59139a4dbce354e6e4df09c3', 16),
-                    gmp_init('0x80119ced9a5ce83c4e31f8de1a38f89d5f9ff9f637dca86d116a4217f83e55d2', 16)
+                    gmp_init('0xfa822bc2811aaa58492592e326e25de29493baaad651f7e90e75cb48e14db63', 16),
+                    gmp_init('0xbff44ae8f5dba80d6f4ad4bcb3df188b34b1a65050fe82f5e41124545f462ee7', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xe70ee0b4b177d3fe727ecbd353c8a1f7df421872e6e25cc569e0059874d4370c', 16),
-                    gmp_init('0x1417b3c4765e1e773165b595603867b3af4a3d3d1f1ae9c404cee3edc205f947', 16),
-                    gmp_init('0xbf403ed22ed26a82a4ab40bcc03504f0456950c5748580409dd415cae09aac25', 16)
+                    gmp_init('0x31a8747df8dc746e4c13d030696080153fe448a57324591794a16baa05f57b5', 16),
+                    gmp_init('0x883a2c64fda8d58660e8aa6c1e387a321431c18c42b8def21827ee579c0343fd', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x8b0715ed2e7408dd4aeb92e29a27fffcf45f63c2b4865036c13fdd9ecb78f126', 16),
-                    gmp_init('0x877e5356508c6390778271ce9678b99018181d65ec6a18b77eaa35218b8e109c', 16),
-                    gmp_init('0xc78a43c82907f2eb90211dacc29e00337bc3f882dcb10eda7ea313057eba4581', 16)
+                    gmp_init('0x85b2c064ff912f5ce596645e7bea4bc8dbef3a12b228ebf5752c453f7db3cdec', 16),
+                    gmp_init('0xf64b278f39d1153663c7fa2d2fcc6d00dc980b34e64cf8e08f4d08204a03f81f', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x9261cf69d51d0b3d1c423be72f0b1f99bcbd7cc5487d0faa82bce088dc57f027', 16),
-                    gmp_init('0xdccbcf39482cf7ff6b54d5581949829174e5b1890b4783a480547de484cd35f3', 16),
-                    gmp_init('0x37ac1034ffebe835fe528fe560401fb79b9c886b27f7c8c334e2f49a97dc8976', 16)
+                    gmp_init('0xa7163c2b9b973c17f9571975c0d5934a4eccac6096513cca015e2e65580b2322', 16),
+                    gmp_init('0x308a9a797af31fa563389991545a6b7ab841a4f4e09952d73933b2232197ffe9', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x6099e226ec2be03c9af02f55da1d7ff86c1acb06adea94019fd656ddf4d8594a', 16),
-                    gmp_init('0x9125874f1d823acaf2a910006556fdccba781b8bf6da4a64b607ca9ff011e6f1', 16),
-                    gmp_init('0x930705b485835fca801870fb842c17255fe5ea60ad7a042881f287b5093c77e1', 16)
+                    gmp_init('0x110b0376c40214677851fbacec16f29c24daff63e584d673288a5ae48607b030', 16),
+                    gmp_init('0x84432b85318ee6734c6eb89f8461c70c87be1556fb298749f43aa112b3617c3a', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xe6353a4a4e5f2df4d757c88023ab2e830b4881550a339addc551d7864af1d3f2', 16),
-                    gmp_init('0xb58f329a294181e9601eeb144238950ead5e751d7ccc00715911b05943d4db5e', 16),
-                    gmp_init('0xb2609d2f49bf07bd027cab87bee45a1fefd55a6088d12fa7aeb5e50139dca10b', 16)
+                    gmp_init('0x3c714524875d4eede22a0772517690aca18159998ef9afb99afbd3916a334020', 16),
+                    gmp_init('0x7f090565771aaf5c4889e729ff7f3d8c152fcaafe7938c2c6102a85cba701655', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xf2cf781f0081a9d915df7e1c6fb0b9da83b90cb4f2213a5cf527d489dd5efbc0', 16),
-                    gmp_init('0x9f090488ca4cf0fd837244b3e3b9f091732ba94a1efc5dfbe130fd833bfefc22', 16),
-                    gmp_init('0x4cc7707a211cb7886cc00d60f36b2e8eeffd4e1c302af9509c7e0b0f8eb225d0', 16)
+                    gmp_init('0x18784e449f6471d714f6e1242b1caaf83295f2538bbbed4e54edd81c75a76f08', 16),
+                    gmp_init('0x8d76ed7f4a1e1ae71777a8fdac71e671fc9d74a7a60a25320b39605d6b824993', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x290120a28ba49f3f57b385a850a0727e4d834a9c20abb4df79709c594e039a61', 16),
-                    gmp_init('0x4876c8db3c91c37b5fe5d5d1dfaf3a09bf29c7b72741ffcfd0f127bdf90c1f80', 16),
-                    gmp_init('0x69c090da6891fdd504c1658af0fdd68564d64dd4f74310dacfdbde52a4a905f', 16)
+                    gmp_init('0x1bffab8c03ab8279811b3923ef4b991f02a50c382db2670c6cb04a6a5c42a280', 16),
+                    gmp_init('0x2982b620ceb1d098332ac758529f1aaa982a369aa9d24fb6c9c742364ddb9261', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x388339f3c31d687ec3975a944f02caae36432bb1f53226a72c0676df78a9ad71', 16),
-                    gmp_init('0x85526ef9cb33595045041be9be7eadfcff182b52d6c82224cf09b973a98aec19', 16),
-                    gmp_init('0x89b5c36191e2ff291fbb4bece336cff4e960bf35548eedc42d608ee634f44749', 16)
+                    gmp_init('0x58a2f9e07d05e6b9aef56dd7703a037d9c3365748c0cb03ece8e33c9fa6fad81', 16),
+                    gmp_init('0x6ab64c5ac5560e0c1b682f8717fa6bd798bb2d32d300b825400615e3b109594', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xff71339ff4433fe3ddfb4ab8a53cf0a0c1d1f0f372d149c146a32ad41d60399a', 16),
-                    gmp_init('0xaf996735c692d468adc3f757da884007f35592e207cd3f47a5e680405e3701a7', 16),
-                    gmp_init('0x9f6578e63036e8ef633a4a3245660515d968939f12383c36644d29fe7c608b59', 16)
+                    gmp_init('0xd9a822ba07b6bc2afb88219241f2d6c59e5cb1d7b595f7fff0ebcb0ed3444c74', 16),
+                    gmp_init('0x48e4749ecb370ecb0e7b8740ff7b504f2d6abbd72aef8a785f9ed1afc2338891', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x446a22d8499fbc06711311553b268ad7cea48757b5c6078f36e9efbdd7aa3a94', 16),
-                    gmp_init('0xe575690fbb913d853c1c34ca0cc0b04fa7350a79ed672fbc2a7bfe8f88f9361b', 16),
-                    gmp_init('0x6b3a7d5b37530b1fd33da577e0de33c9d4d1fd9cc36ea2dc31be1a45f1b859cf', 16)
+                    gmp_init('0x1ef020dcce7ebba240ee6dbb278f676fea8a99cec10cc13afb22f11f9eb52583', 16),
+                    gmp_init('0x594476b25a7a14b0097f6c0f4b9695306ac300f97012d4cb55b278197a3f17ae', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x3512895ddc774bb560f60f16ce5c6b268ad6e01f851a58183a8a8053c4949966', 16),
-                    gmp_init('0x8c5f28938a1b15c3f9f9e9d0f88a4724486eb12a5d0f18e8b8108f5df31af53', 16),
-                    gmp_init('0xf556123fb9d97a848d23ba58785cbf36bbd08b722afe7dc02599c53588c3fbd3', 16)
+                    gmp_init('0x66aa4fd12add747a9d76b8258b28b28c18b0c59b8ac074b7e788e04ab021a9be', 16),
+                    gmp_init('0x10c65e609047474cca94f6c567e1dc3f9d64422d106aa10888b5a3ac03a15a99', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x6c62c0fc8c075c352b186cb0e2597bf3e9bb453776c9db695d0951bf6f82bd07', 16),
-                    gmp_init('0xa0cf112415335116a0efa400b65a7c3c3304fe2f049ad5d3828ba033d1c43b1b', 16),
-                    gmp_init('0x7a71506da4c2f2429246cfd9f7183a4a4e01abe5af33d885dde5b25404bd9f4e', 16)
+                    gmp_init('0x4e4a8163c1d6a21395dd144cfabfa32c4f39b5246fb56643b5c23ec1f0a1958f', 16),
+                    gmp_init('0x2574a45b79e8c8d1033f4a3ee29c6fa84004085fb2c43d66a43b3f5148636f8a', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xc86f7e862cd8eb7ecc59c342775050e000958ac320e5feb9586e29cfb28cb562', 16),
-                    gmp_init('0x595b8a9e6e4db7d2f6eb5ce0796a38e4ee03987ad2857224a8e93220b711adf0', 16),
-                    gmp_init('0x2b3e555a56c9cae119cb0f70f0f3b798b35cbdfabb301c9d52e7f71fe5b0ef4f', 16)
+                    gmp_init('0xe31d414bc13ea8427c2b1a4ebb312cc8d10a694ea5ff8400ef0f43b30a7338bf', 16),
+                    gmp_init('0xf8ab200a672a9e53a87559754bf051fc35cee4f5d7185bc0d23c40b0f878f170', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xb69aeead32c27bd2cb266cd15936973fcb7c64640baf20d9009b6efe60b195e9', 16),
-                    gmp_init('0xb46b13247550e63d15f59918a2c61e1edad602f51ba7996abac4c8282d7a4ed3', 16),
-                    gmp_init('0x2c9750b2c88179cf63aaf4c4c0bd8a72796a0e5c490119d25cfdd521fc5e87f8', 16)
-                ),
-            ],
-            [
-                JacobiPoint::init(
-                    gmp_init('0x7922a1ad7eff40514115efe1c650ab78efbb76d185ae3862c07f78d97072d04a', 16),
-                    gmp_init('0x6ae7e2977fc9ac91b6fcad2072807653fe1054350a505c38b61e8e7852d3a83c', 16),
-                    gmp_init('0xa0e242da24dddd13180eb11af464459a4bd6b2c575029379a21f052600775abe', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x1365519b2768dea5c51b17c82d08f52b263e36891f7b76b953e0d354ba4366e3', 16),
-                    gmp_init('0xff0a707dca8e733f36e7c8a969bbc7126fc920ec6040b16ac44b1df172eb9ba4', 16),
-                    gmp_init('0x55a107bf0fb1190bd875fef7a9e49f5ac5ae40b921b8b125671c60021d1e44e5', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x56acb469178fe18f93d91c8ec83a8d1fc849613c8a7e1e779eef58c18195e64e', 16),
-                    gmp_init('0xd7399e14dc073b8fe24c3589843bc7ef2863504c3647d4b0b76cc450a597b255', 16),
-                    gmp_init('0x1c7c407fc571bb5f0e8cc7cc0bb8c91db3233ad27bec34016cf88997fc222934', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xa75884279eca9395826207fae92b2207ea4a5b596be2840b357d3984bab9b23', 16),
-                    gmp_init('0xcb0b75e5a2975863e84ba0165889235242bfc50cb3336f3c7de2bcc3871e5b1', 16),
-                    gmp_init('0xe526b7eb639a62c72ed3dd50021788dc8b7184961c04c8e62aed3eab232390f0', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x45ae73ab4f366e5900f060781e60456c6fd4b9060222882d88ed95a345721f75', 16),
-                    gmp_init('0xd672cf97be6d7679f2eb0756bef022e32abe0509f216a9ce1dc3fa65bbe349ce', 16),
-                    gmp_init('0x35e7e0d3b82c8caaa4a7ada861170831a5df213ae1bf85a8a4e09ffc1b95b8bd', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x2bdc4fd2411388f3859f532387ce646e67399a284dce85d4d15a3eaa5f086f6f', 16),
-                    gmp_init('0x202a61163e733e41ee91422add487cd09be3cec4c56c8eff360cb037f94c1912', 16),
-                    gmp_init('0xe4ab356f62c9ea62a5cda1de460ba265b9a28035b342b00a0421db91827a529f', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x8c29c7f4005f0320a1b721082bff35f19cdc7a2b89389b70e112ab48f6e54714', 16),
-                    gmp_init('0x8fd9c876dee0717f9c4a84428f64bc87f1dd80373de9b417c04c3da035e8c15e', 16),
-                    gmp_init('0xef05f9433b881b21ff1bb3a0819bac866b87c4887def43dfcaa75c53aefdf5fd', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x46e892e1bfd26469366089bce01a2840fe5e73d90269e2798a9e6d1b26ae0e2d', 16),
-                    gmp_init('0x47e4b7081a993e0ba8a9531fb73161ef829313565d83db72be5a8da39f97af6a', 16),
-                    gmp_init('0x577effba3365c881427f13ccb2012680950310531c44dc3e0ecd144e6ab77478', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x5d810cc4e93b7bc149f82b78891388a79e90fc66cd80d9e99a92797ce60d8560', 16),
-                    gmp_init('0x25cd8f0dd0504dd01c13bfaeb040fef39607b56b5fce7b085e7dd0a5d7fa57a1', 16),
-                    gmp_init('0xa0a2424010bd0c0fb7ed42d4e9761d4b14a1732648ede8d4711121137476d830', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x1935ead9b0f387f59a6c86d54dd99acfa7a110eedca2c13251875c636f07049b', 16),
-                    gmp_init('0x47c3e27109ac5426b4177b311b51caf027fd55c452679cff8fdd779953d71750', 16),
-                    gmp_init('0x5ed8d9cee54595baf633de73585d8d348d588384b9784572583ebdbcc0babaec', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xfcc33d6d9695caeddffe454592381ded190b7333662fb91d48e66a2b1ff8936f', 16),
-                    gmp_init('0x1ada094711607c11915995e50df9f4a99cf6870b1a45d758681b3e7e0e794219', 16),
-                    gmp_init('0x224bda437b301e05fc959361d6d3df1346a548b0d6a2eeae1c5315464c4079fa', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xf822a64badb0137549ae8886501357e87c2a6f7284070986ef2b7802ddb4a2b3', 16),
-                    gmp_init('0x96786203e5fbc14fd27ba7112412b29d6d33718cd6e24e2d148474f66a96abab', 16),
-                    gmp_init('0x40798bc48e55692e55e47e2339f3b1ae944e77c4add97920fec4e643acd59fb', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x174ce09a43a3369fc7b9300a74c3c6dcdfe0c561acbb6a3e1c08bb56cc8630cf', 16),
-                    gmp_init('0x6ba59208eff33cbfe472e483f543c26e52785742e5752dc2fbf945df058eeeff', 16),
-                    gmp_init('0x441fcb66afb4f73bfa92f5ba6dcc7f1cc54d2617a886bc0fa2f04fd2ab5b1a9a', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x29edc70b44276f8bf105902bf1eed9376544224d94f1c21be4de80cc8d03a6de', 16),
-                    gmp_init('0xe3f33e0212d3dda654e80b07a291d9302678038eb3abde2fb3b3f98216cf058b', 16),
-                    gmp_init('0xb0a3b30db618810df778e5242903d0259538a8c5bc9de53653b34f3d61e8a4c4', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x5b85e970ca1425d19a436625902fa86bf84bae9316a68d6f802a19b78e57dd6c', 16),
-                    gmp_init('0x8756b4494c7f9479396b908c61c589c580434926bc30945eff73280ea2113534', 16),
-                    gmp_init('0x751cab9f92191c984821e9ea35aa7a3e4c5d914b8af2ff867292531e721c6369', 16)
+                    gmp_init('0xf6966a16add61104e3327e0ed594519e281798261c6bdb0ee8275a8464935db5', 16),
+                    gmp_init('0xba0de307a9031db2c1a5ee572c3c755e2d7453a34401bf013a34836c1d166838', 16),
+                    gmp_init('0x1', 16)
                 ),
             ],
             [
                 JacobiPoint::init(
-                    gmp_init('0x57fa95a0ca4c66cdbf920eb7505989bbdd46a4f172f5fa9987274107151e03f4', 16),
-                    gmp_init('0x1fe4f0b3226992f8f9b4110d63675eebe8b7a72daa4f23347c20f5e73cb836b9', 16),
-                    gmp_init('0xa27b578872f705dc670b1c1e4a18b4c78a42a029bd715944104e298b97baba68', 16)
+                    gmp_init('0x54bc18d7a99899547ddc6988d7ee1b3f2b481ab443da43ff68f41305b76a6987', 16),
+                    gmp_init('0x4b2c8c1211e6eaf37391b851ba73e2fd52eb8ed4bb73b119fe457cd05b9aae49', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x126a8ca0dd509b93759c5e97b4092574128ec04843451ac3ffae91fadff95a5f', 16),
-                    gmp_init('0x4a2ca5735961a7e2631bda73f245259c77eb8f0c421b8f22d54115059dc7b07f', 16),
-                    gmp_init('0xd3cadbfa0913a9b8603d6df0d7085996c0f182735ba06f17f8c224ec8c922cdb', 16)
+                    gmp_init('0x1f380071781dff16f33d8173a6fb4d96ba770f18355cca4cb2a64c6196260250', 16),
+                    gmp_init('0xb1521ec4ba6c681da33705176ca2cf621b8567660590d693b1519b2e6b011955', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x8f336c5683019e80b9b9bdc757872645e1ffcf3d0112a7a0122c7baf5cd59f6d', 16),
-                    gmp_init('0x9e2d9806fc8e4523602320426ebad3398e1122e06682745080aea99df3b39151', 16),
-                    gmp_init('0x875e78d0ae62a911fd1c3cb3a39665ed366c9f55b26e5ff05076adc124e8d55e', 16)
+                    gmp_init('0xbafbbcf680c1c52aa863502262b1271b788785464876750038bf47f5fd1fd820', 16),
+                    gmp_init('0x1487997c9db4dd812ce7bf5ac89bc0fde81c34a1231fcad6eaedad521bf074f0', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xc47e502eccbd3af4ab6d62930cfb80955a59bb8aa3fd55fc4fa68e855b6ddea4', 16),
-                    gmp_init('0xd1181c2946d3abf1613b56bca6c072f07cf810cc0befb5cfff0e61e26fc98ed9', 16),
-                    gmp_init('0x48f2bf5e791ab3d96f8010c199869201b682a0dbc662668e4c3b70effe1f9c7e', 16)
+                    gmp_init('0x99eba192aadb019f41e0be2b789273a058e6ea55222034f3ea6d95d177ae84da', 16),
+                    gmp_init('0xfc4dc4cde1efbfd9f4f806644530184db630d866d7108d108da39dbe02155cac', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xdfbb13cf8790c9adb356d2e28f49636c31cbf55dfd894a7c1fefcd949a202736', 16),
-                    gmp_init('0x595ac2c61c677fc0ffaad8fa1aba49b76d91857f445ca90dac902e54f9462b5', 16),
-                    gmp_init('0x343bd4095defe66a52c054b6ea8ce2f968cc634f2161bfa89f7b7a0b2f6d3f37', 16)
+                    gmp_init('0x9b1938f7103389fe2a3c3bfc75c220ec24e79f2d0986e0d0e917081294299b7e', 16),
+                    gmp_init('0xfb12aa6ef17102833140e98e1caa3ec90acde851f86b8232c57b2857447b84de', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x77479e641a4b421ae2ddf31c134a614544bdee7e063cff716f42f43462779f54', 16),
-                    gmp_init('0x4d9bf7bb8c10598d9567f3e59a12200df905a0455eb030f4a21163bf08e3cf7b', 16),
-                    gmp_init('0xc57a9ebf2a54036865cd5493b5ccc9a3581f99d9d8b102c823e2b5e3eef9580c', 16)
+                    gmp_init('0x19b738fc965208dce81ef0ea907bf3d8b46c5f5f8fa42e6eca3a26ba0409ca06', 16),
+                    gmp_init('0x6faad12c8f69664be02610b7e55a7acf7cb418df147531e7023530a35741156d', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x714ce1842f3ee667b8b316b7544794f3836505926e4641a7598408740d9e703c', 16),
-                    gmp_init('0xa512f535647fab067c7851735ea74b832cace094ff91346647080e7312d38de3', 16),
-                    gmp_init('0x2639ddf9e4aa8c42feb108a11eae4348ebddc9336525b4a37545d001f0b5bc08', 16)
+                    gmp_init('0xa6771985cc0175907c381fdc06761b2cb71d35a2c4a53da0fd410740d10cc4c4', 16),
+                    gmp_init('0x85506185f750dd98f29bd6601e5d9c3dbc745773a6ff3094c20f3b237c976570', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x3266af40392245e09eaed280315873c9699628dd863484164550c1793daac1e', 16),
-                    gmp_init('0x5b1496453b8998c87d197c3de28e4b257747d891085cc8ecca87ce81536c234b', 16),
-                    gmp_init('0x1f3852f2655f43db5d91259007491a31558b5be97e61a7a60f751a9741bf0303', 16)
+                    gmp_init('0x6d50856433968435fc5945ce21621e089d4e993b7604a5fa896bf7c7f7f96003', 16),
+                    gmp_init('0xccf57357e968c6e7c6bc5d8aa2c7eef9d6c0d6dc8263a0d90271ccaaac7e969c', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xd06bae49a19987e595e32e03313bee6b4bbc1951d7de5780ca214cfb095f14bc', 16),
-                    gmp_init('0xc284aa023d74eadde4b08ed7b03e835d3f26569b5325c5c19a05a8697741eb29', 16),
-                    gmp_init('0xc76c23e863fcd3cd833edb8208e13040a93633bb94ad605927296e0b7622668d', 16)
+                    gmp_init('0x88b7ed536b0eafc109e8af784b774eca455bcb21253ca7715410802d54242a28', 16),
+                    gmp_init('0x22b053206245345e47fbf9dd3587bd934e366a1c8f83e347fb9681ec794ed8ce', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xb0952fedfe344c0fce5c5a81c53bc77e938ea3d80232708db9f7062876cfc2fe', 16),
-                    gmp_init('0x80cfd826facae68ab9cb6b59d757de5a7bf744bb48d43a88978350d0a0b4bac8', 16),
-                    gmp_init('0x4b18b024e859c3f8f02819152ce69dbcf5941bd90a339846a1af46663176e4d6', 16)
+                    gmp_init('0x3c7716e62ccc6873e4432457540e80d981903d7ce982ea1a80c3376ae718be8d', 16),
+                    gmp_init('0x5a32ea941fcad1bfdb110b6c00dbcaeba59e60c87a45fecb49ba01cc4164d021', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xffcac366cabc55c4f9a23e6810990ba91e4a0236f857590ca082109011b47b55', 16),
-                    gmp_init('0x47879267ca42c7b8681a1b4e321c1af58659a7970a9288184b8a4f88138558a0', 16),
-                    gmp_init('0x983ed996b571eaabad4adc6e0d6184c49f85b1873b3843be55844beab6f10aaa', 16)
+                    gmp_init('0x37114012a86b3d2052d72b0225e875751671d2b3e71daf8016144ec9bc1a94c', 16),
+                    gmp_init('0x4d1d693d51dd7390ef8c21a54ad05335c8518c362ac424838c0c0b6cefc2073c', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xf3c5bc2e93992c58a0fead534bc64397acc6be167e310022070bf59692dea1d3', 16),
-                    gmp_init('0x1e872c98e76721c4ace9b73cfa1aac83d36dda9555853d3b9c524d9c08f85dd5', 16),
-                    gmp_init('0x76f3aa2f1c69ef91690f9fb336d52482ab9e68189a623885cc62caeb8cfd1b8b', 16)
+                    gmp_init('0xdae897c18d42e1a11c57c7ccdf9d70e013d2b7e10192292f37876c952cb163ff', 16),
+                    gmp_init('0x5f4c0f44a1b406a46322b3cf21d9789b8f0d25be5f08faef1c8bea7d89379690', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x1e7f795081eae40ee4bbf73e89c49a9de34cf953be5cbd6ccec32690af1235f3', 16),
-                    gmp_init('0x25dad78951b20f132de8e15aa97b153f78677a044c1a38cae9f23a0ddb0ad272', 16),
-                    gmp_init('0xfa630d516604e99a645e60124c62a0fdddddb09e4739accd9f2e2ee2c6526b3e', 16)
+                    gmp_init('0xcc98214c8984293e34b5a32e84ea2cc350980779ee9bed36efbd1e09877f88ba', 16),
+                    gmp_init('0x4ebb4e8e525afa9114c4a64677d63abeff60e7eef354c4e0a462efc87885278', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xc1ad7d07d757fc0122adeb4df196071bf83c935e0a0f1dff64b1ca547a92931e', 16),
-                    gmp_init('0x35594e3d2d377033d49d9f2da6a9de812b04dcbfb67a66e0623bb1b1965b3217', 16),
-                    gmp_init('0xc3f12c36e2e0edb980daa69bccdcd7b2b765492356b71da0ecc2361f89a31c55', 16)
+                    gmp_init('0xf8a801d390b6698163089fea4ff8ef3ef4c671631a8e1e037048622fdf2da37c', 16),
+                    gmp_init('0xad9434c776bc6367abc626c8f5a7bfa1898c6f78d44e0522a4c6789b77a8615', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xf83a08f24ff85bb55fe76a83520364e8804f7998dd50fa279e14598733f793dc', 16),
-                    gmp_init('0x81037de95a623e3b8d0d59ecdf595ca585ce3724a0f1d1602617200fa83d6fe5', 16),
-                    gmp_init('0xce8c9e579ff7e62b8f34a8b6caed08b1203f5dcebe9b533bb3e9408a1e143654', 16)
-                ),
-            ],
-            [
-                JacobiPoint::init(
-                    gmp_init('0xd1fedbbcf73b1e4af59f0f13d2c976d68c21b57424d0a6d5ad1209b94068041c', 16),
-                    gmp_init('0xd3ed133f4283bf500a819cd983d1c201e3dc65ac7d1e49da212481f79fd9c2a6', 16),
-                    gmp_init('0x78f1f586e6a1b132c6da40358505b096f332ec96d647ff084182b925a31e86d3', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xda8fa4a7573de6e79430f2b4ad43367fddbc191241a4fee80c2a14147cc9222f', 16),
-                    gmp_init('0x6e9c5782594dfd70e3becfc66f9b935514c696730447e93f27a5164fc950c774', 16),
-                    gmp_init('0x60bed1fd8c9d750765004772a686562d07deac236f69c26effb6366e240dbd7c', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xf4524a8493b4c58d6ca999d5ecdb012a6ce209c6d5a3992315415ae426f9c1cd', 16),
-                    gmp_init('0x2712bf26f8ed204f9f1aab7020dbe3cb374b38c20d765202ea323b939292b1a3', 16),
-                    gmp_init('0x17373076d44b4b4a00d9e5f57cae3283192a1a153440441a283efdcf1ed23e38', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x5bc0b8a8707a81f6118e556d4ed3b7431c0419c808f9dcd0f715bf1a68dd4529', 16),
-                    gmp_init('0xab9fc80928bc6edc3ed0da159f791578aa112efe0e7ce80bac8fc9d3c59e5d9', 16),
-                    gmp_init('0x85d64f09ba78b0311f90c9d768c24fcb11e6fe82fc7aea4d0df45c11b895146c', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x106a5e0b8b59a476491b8453871797dea49fc2d06f2f4b91ae87d5ca306933f9', 16),
-                    gmp_init('0x1142cb6d98afa26cdf312e181e5dbe32fe1f66d434ee94d2ebc7196caf9f9ff0', 16),
-                    gmp_init('0xd757fa6a29859ae8b7d0f03f23aaa42096c0e09031180d2356c0f2d2533120fd', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xfbaf5af982e1a25dc209dcd228965ca2c4b8c106038e87229a3bbd8f49712140', 16),
-                    gmp_init('0xb1986459044601e28e0b6e85e51365f61e41655d1136bf2bf4cbf1b758617e4d', 16),
-                    gmp_init('0x951e0f82199953b4d27d1b87bd36e41f353ae36e4738a05e45f2e641c3fc4e1c', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x54f75d6dae8817b6492f557d1e1c5783b1ae8c4ee2da35e49d5a7249d14664e0', 16),
-                    gmp_init('0x8fd8e30f9c8038d992752ae5b7ccd82e3cd93ee2cbe04689148bcdd948eeafd0', 16),
-                    gmp_init('0xddcc477bff393cbbde551e1a579e32e6d53ae542f209cac84d9168496ce1c0e8', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x417b753e04f16d60340aec913d80a92679faf0b62ae00ac4c2f5ebc79c208213', 16),
-                    gmp_init('0xda934bd580de8e7cdb1bc58a45d81ddba3a144b059f8c199422cd90de8ae7e58', 16),
-                    gmp_init('0xf548ba91c947a13c5e07e2d2597abecd245a299a5ed42330f05a2dff18f8547', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x411375fa80144b87f15a45ee65827df99b2637156d932bc703ef67eb099676b7', 16),
-                    gmp_init('0x7888fbd610d60f2d76b5d1908f84b9351f604afe136021a32d069efd9e575e0', 16),
-                    gmp_init('0x4d88e62229ab313d29d3ee13553b89a5ad1a0eb30b17987f4faa044c64e2cb63', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x31a2f37321b395f2d6125af7daad31a6644178efc179bb4682baed2b477cc59e', 16),
-                    gmp_init('0xa0679a27a62d13f6b0c334482a3c606440dec5a79bcb7f926e60abccc22eca58', 16),
-                    gmp_init('0x34ec04f0a8f5ee891a47567fc3ffc37cf5413a4cfd102e430a025e62ba706b32', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x432745ef2fe1d61b1e682feb5810dbdeac5478c60707c945a016de59cce9d974', 16),
-                    gmp_init('0x78cc6ec179d8b7f42e00c87f0b17eb1d946e2e2c33c468dc1fd074f7c4cbef39', 16),
-                    gmp_init('0xe8176b0c47b5ca8710b7a294e32cbc8ea1f9f7689f82f6b94794866c0654b622', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x38ca233f28889b86170a4fc4a718565983ef552c9da0c5fd28b00149ede60ba8', 16),
-                    gmp_init('0x98c1eb07dfe3ef10f4edf0984206fe1a8a280304529eaac41c9921f270c0acd6', 16),
-                    gmp_init('0x5d2cf1806333fd0aa6df4ea3a871a5266110b79b143585fd2cbeab1627087698', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xea0856629ccfabe680a9721d0d91d18fde6946111df84dc4d3e051b17c66ce5e', 16),
-                    gmp_init('0x3f84497ea6aef069a25a822051a6f31901e53fe8c98181983e1e222b9cd827d1', 16),
-                    gmp_init('0xb73d4952b4f6f0959f9e6850cd17d5ea985717d1f90fa0a0d635f90dff7b74e8', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x3cb995172f78a8545e777bd71eb5117ac6976cd30b0e7914221c92467e7c71c1', 16),
-                    gmp_init('0x41b1aef95dfd29bc2fac48b8413b4afebe64ccb17fa45b87cd588f26ca0814e6', 16),
-                    gmp_init('0xa6bb6e051f081f7dc43a6ce18ff19937dc65c83448006a24174c672a9bfbc3fb', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x30906142a785b8acc17f420cf0bf14ef43f234dbcdbc2292663ce8bc10213b3e', 16),
-                    gmp_init('0x3cb1edad85c2600be94a695430440a066a5e48aaeb4d14a507bb4747c1fb5a77', 16),
-                    gmp_init('0xbc7efba34151242eef6a33ecf30e2cb6808822ff7c07e9d1b37dbd59322d79c2', 16)
+                    gmp_init('0xad3ae029a42a10f9814e5e0290f5bf8751ac8629b640c7f1573194dfd70187c', 16),
+                    gmp_init('0x2af040d4758846e3785c55f05fabb33dd034fb081662a0f67dffcf4b3fc775a7', 16),
+                    gmp_init('0x1', 16)
                 ),
             ],
             [
                 JacobiPoint::init(
-                    gmp_init('0x63a9a5dbb038ce2565d510c8de8bc6d0317020689d2105496fe06ca02ba4abdb', 16),
-                    gmp_init('0x2da96870535a65e4328a87a1b287648c6ccec45af35af8d653ddd02b8d188e34', 16),
-                    gmp_init('0x52bb836a35b89b292dec67eae34761c2ed47fbe5236e057c1513b7a4759690fc', 16)
+                    gmp_init('0x1d35c9699761e3f285f248239267756f5194b85279f96b7c60aafad170aae231', 16),
+                    gmp_init('0xc7226cb62df608231d660ab622ebf810edf58aa4729a66f15867063accd6ac71', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x3b73cc20f06a6503b7fc8e274693ca39e581c07c245b5b1d2a7854c52407047c', 16),
-                    gmp_init('0xfce6215aaeada2eca0af4c1d18da507e8d21e4149ec1261e8112ae227a2b7a8e', 16),
-                    gmp_init('0x289a22996fb54d55de6dbd33e14cbbd1b9b6cae46e2fdf1a8cc6f390a2dc13b4', 16)
+                    gmp_init('0x6f2b065a7800cdd89910e1c2a6397ab4d9c9823c2b473903501a327426432d92', 16),
+                    gmp_init('0xacfeb77e5e7a2e4eb1472cf700826c5093bf02de33dbecb6d2d1c4963e17c9f', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x3d47c3b9c43e2dde088dc35f082e9cde6d649a459dc4e23f9aef71f8173cd34b', 16),
-                    gmp_init('0x3ce0ed7f27ee3b86bccaccbe777c10149e9edd6c41029fc49be3ff361241c4b5', 16),
-                    gmp_init('0xdee1f2154c266900bfcee555074e30650105170603fe6d772861017434876133', 16)
+                    gmp_init('0xdf3d4047a6d2234ce2cebb45d60d803023ad869fc32b8193ce0d3fe18cfa3fac', 16),
+                    gmp_init('0x48fa6f5229fd40db24aa21f29c0f9dbfafd63ce496882975f4626d938fc7d419', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x4cb56ed64b4f7059e77c845766d336f1cd1cd51f5dd949a1e8509968ff6933e9', 16),
-                    gmp_init('0xc5ad3ac8c4ac941e19e041d00ca2229dd265691006caeddf2d134ef3d3b6cb06', 16),
-                    gmp_init('0xb529c53e309ab8cfa4b41ba64d5e5fd033b4d14f5e4f5343a63ed6623a748cd3', 16)
+                    gmp_init('0x870ac12ba3dd777468991da7fdadd0af2f3352569662876be3065e088a6edbf5', 16),
+                    gmp_init('0x7543728b999a76998de7efd769d05a67d03c64022e5f297e1906d2dcf02f8ce3', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x15cabead113cca2ff55eb02ea1b0b2dc4b8f386f21e2d8d2e44465fded188e97', 16),
-                    gmp_init('0x9002d8fbe6c4bd0e64cc0be1b7bbdca231698dc76aa03a9cbf58d1d707ff8f43', 16),
-                    gmp_init('0xb18fbabac22e305a64271a760afce4a23d2b27910bba486de80a5047bb08927d', 16)
+                    gmp_init('0xdbb2af6ab1f96144ea1e6c4ca311f822cb0a69404accdcbbaed925ae1f1322d4', 16),
+                    gmp_init('0xebae75b92f13561aa1b60d1ed6433f9d9a9fc9787b7e3a5faa492b4f4a8c5311', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x5fcba9577d06dd713250e5541cc7e48e5060e8b7afaf1ca51fcc2519d85a08ae', 16),
-                    gmp_init('0x95d6ec2896ca92b5984794ee6b83c00143b7fcdb4eb9c258f773c2635fb946e6', 16),
-                    gmp_init('0x7675202e98272d93b7cdfde9b19c91312795c48f0edf50716c01afc9b6165429', 16)
+                    gmp_init('0x17b29fd1b522213409b667aa14226d09f3adf06c6252d45be8a58ada373a6b7a', 16),
+                    gmp_init('0x15fb4490352f3d4ee9924e663efefbd239d03897d388cbae0c1482074844ebac', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xbdcd7548b32abfa8c28b2654c4a44c5c281f71cdaa1a9b63c4718e7b953c6ac', 16),
-                    gmp_init('0x1dae49722f7eab216146d9de9fc0def2aec9f96c1a0774d7582bf0866857affc', 16),
-                    gmp_init('0x1557ce5512200fd52fd78866b47382960ae8b9c0a024e682274c7322073e95b5', 16)
+                    gmp_init('0x1dba7b597f261fd4cafa8a267f9b5f0bc4c1c93e2df2e8f2f069a33ca1138f7b', 16),
+                    gmp_init('0x6aaf7d3e5de7efc63ae19006bb8007f58136e6b7998232c0dc82d8c7a39bf268', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xe5fbb2259037f0bfb675233a68b4647360116e2f2e21c0979571a41ffd7d36da', 16),
-                    gmp_init('0x7aa3783182a9fa0dc71f5aba26a86f473403e807a6be70cbfa069a9de5eec9f4', 16),
-                    gmp_init('0x217655eb0f428543a6aefe2ea6abcd827e437017d3d7d6f6dcbaf34b7a13c6fc', 16)
+                    gmp_init('0xdbec13e6da0d5592a0bf5fef8034db346a9e8c749fdbf0f07aa6e46350c06af3', 16),
+                    gmp_init('0xf859978fd619e5f8c0e57348b745e4d442243a3264edb6647caf0f7cb6d243ed', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x4bed4333802224ac7d60889eff862ba00833d196ac0a2cad24b6a5043a3527c6', 16),
-                    gmp_init('0x3b030aab199a58cad9b3a0eb0862b7bb56f5963fd96c0ac74e54319187bbcd49', 16),
-                    gmp_init('0x38ff04bb4098769c2bd9dcb97ed255e0a1bfe1ce83fa09ebd31408297c0d0344', 16)
+                    gmp_init('0x348a2e442626919d31bbe82d5f5305c6ec9d429a9b64df288da87770179a70af', 16),
+                    gmp_init('0xa1b9fa79f55a3e808c747bce00230105b2a7c2c5b7e13e5aca84861487b66e82', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xc619e1c5b5f5f8bc7b2a14e3df90e0db8a94f16e2508a60909988be1c7d95517', 16),
-                    gmp_init('0xa29e9f3576270ac9725fcb159e5b33cb6763b9d737e6a5344cbf4c394d7e7514', 16),
-                    gmp_init('0x61454bad68a47105bb9c05e2304fb7603c20e09971c349ca728d965e0811aec6', 16)
+                    gmp_init('0x2820910fb5e0ff1288d9640515697bfb8f8e3c46c59e494659476eb82cf4b3eb', 16),
+                    gmp_init('0x94d9c37635a1a28da8dec339ec825a12c0f9bd31a62b982abda69d20c1d6df4c', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x6d19530d9459e021c6781fa9c9c6a39e1a20043ae51443910b9e99142069e275', 16),
-                    gmp_init('0xaf3e722603780bfc4fa7ad4a6f6ca5ef61a5f43df52c64efa84070c34daf22b', 16),
-                    gmp_init('0xf52597ccfaf9583219c8b1df6c6e2f342584f2ca095437af12a9ac3d3a70d30d', 16)
+                    gmp_init('0x3a4ec851999c9e1ca86a4fbf931adf5f36e926a4fd9b9eefc7476d76c4d3a201', 16),
+                    gmp_init('0xc99a2ef82f6262de69e03c11a4774a8b27d31e5af73cd55bdd8596f768635f89', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xda1f42d923df668ab12d4f3fb2e399e1c38489c36fabdc27b56d06a1e4bfc5ae', 16),
-                    gmp_init('0xf255ec5834b720a37aecde01c04b7162bb11f109b3d3380b94ab82862e5742af', 16),
-                    gmp_init('0x9f9698124e2518c940fedb84ee42253da25452582d2ef31d5f93866b0e8ea8ab', 16)
+                    gmp_init('0x148cf7fd16f0a1adba6d73897768feda0254295c49227f9ffbcbd75eec3bacf9', 16),
+                    gmp_init('0xfff2799def47dcc378aa8117e505b36c2abf4481c576dd9baddd8aed8d143036', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x785fb622ff4576b409d8961ba3838d7cba206e1a5a394790a608acebf3b0e3dc', 16),
-                    gmp_init('0xa353260db0f9e86ae2882ea8b2d072fb4f90541633b8b2f8d12d2ea018df3b45', 16),
-                    gmp_init('0xbe08016dc0a6cc56f98074545c3437b7c6019981c2d070d564f8fed4fcf46ee8', 16)
+                    gmp_init('0xb1ba52d88334d45784e935d62ff1f60be15da68840dc1f981efae72fdc978567', 16),
+                    gmp_init('0xa46baec7a86943a77c5f7cf713dbb78fd9a46cb0bafcd40a77fa482a362dc291', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x371f33c3221b34f8280b35d03d85a58d5c4ca0811382878818de2f21f3f9134a', 16),
-                    gmp_init('0xa6a606c1b416e1ef6e3032ca57b24b6a106eb4c0766058ec8458bec6622c626a', 16),
-                    gmp_init('0x76db57a3316c700fc5a57176252813fd1fe4cce20c2ae9d3099685eb931898fe', 16)
+                    gmp_init('0xf2c392ba6ec31de1a7650860a2d365c5da88b77c165c55b9df392c1f5c5d5653', 16),
+                    gmp_init('0x5b7396ae40589537b3010946e5903d655cd94a9f671b864093152947af189f45', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x391323355f38bbe37b3222dd9b21c945304f1132f74211c88b5d257d1ec3056e', 16),
-                    gmp_init('0xa68b29e21c3db7aff467b6ed239c240226b3d549048da989144a21e8f8e6184c', 16),
-                    gmp_init('0x19ba06ea95868f2372c54ec4944b9a8a9725759f3fd90185ab470731284a43e3', 16)
-                ),
-            ],
-            [
-                JacobiPoint::init(
-                    gmp_init('0xd33c5187a6f68081f02cb454aa2baa548bf182df6fdfc0985a7177e5e70c3e0b', 16),
-                    gmp_init('0x98637fc41a4c41275ef9048973d90f1e10de0117fd21b53aa1ca5b5feccce39e', 16),
-                    gmp_init('0x136ef08515b03c69b10c9bc246b23ea1ce07daec3179d48c013f33f699ce7201', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xae57addba2bcc47aca49a5a83bb4eb3d3998a58a09e63bc16ec668175d97059', 16),
-                    gmp_init('0x7be1c6791db1cc3cfb10e745d09580e78b226e59bef58a7d57c7cdb0c7ae2cb5', 16),
-                    gmp_init('0xd927e19a72edd91eb1082f9e9c7381e3e949f3cd59e74dc203b2b7b7e35ef57c', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x1d44baffba8c722b4916b1d168a0e3fbd2c474bb267f49d0ff7c52f2d5fb6359', 16),
-                    gmp_init('0x6787732f6483dd4e67a0ea15f67be49ca6d5f3e4cc61d97e03ccbd96f2e2ef9', 16),
-                    gmp_init('0x56f9be113668ce9dcfa4a9d276b139d1c7187c027890a8f9d01e739fcabf0d9e', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x916e77cc5396ca44d203919a57490bb9bd97d61da207aa2249bd677d7a6f1459', 16),
-                    gmp_init('0x5d23f7b199e911161f3702bba293c0faa2db40551f120798cf36097974123835', 16),
-                    gmp_init('0xfa466ceab3641d587849f31cef33fe5f15836467a140931bad8194574bfeb83', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x33ecfbefc1ec783db1d67ea6f46fe74ce8fc89b3ca6ba68233c529dbea97d7c0', 16),
-                    gmp_init('0xa35f8d4f6adabd45e92b825c4562bb4aa044a80b047bc377db5272089794eb52', 16),
-                    gmp_init('0xfa29a69893ca61ad611cfd362769cb4d4adeba4cbf5317660baa382fc24c54c0', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x8ac1e47cc3f7809b6d58b40b4abc66d0e6e4886d40b461dff39eb5dcaf855043', 16),
-                    gmp_init('0x1e324fcb08d0859c482fc969522d11aedce22f0b4403689bec11f4cc0ca11ea5', 16),
-                    gmp_init('0xb58abaf143b98b05cf550af298a320bed5b5427c2f743598474cc06957b39cfe', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x63839a8d5fa30b79470208e31d430ee3b27379138771e7bdd5db034382356580', 16),
-                    gmp_init('0xd9229623dcb48c2d72abd1d35653af4e926c337f0e8538eca3ce3792abab6166', 16),
-                    gmp_init('0x22fa3b250a110bb5786b20158e91ec3e5f69c349bc51ebbfc87abd020825d42d', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x2c75cd805fcdb93f2f79c28281f91c5dcde28627e533f533630005370dbc54df', 16),
-                    gmp_init('0xfb80494c90c43c90e280db29131b2ff2a5aacdd4378d87a32345624e5c09c192', 16),
-                    gmp_init('0x2dc11d48bcff039d9815196495d2b27b67f247c0e6b4a0751e356768af967d70', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x62b8d7f2c6acf888b4d66c6c86c2337a979e4180efe8c9e4f12eef2e2e06f6d1', 16),
-                    gmp_init('0x3d01cfa5f28b64bde6c0e0b3b0b222b2ca2f7cf124c5973ccc318996b709a619', 16),
-                    gmp_init('0xc0a65cc40013eca19ee4b6a41a4a2e26c73ba5675a6ba19de250fb48b7163ac0', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x32f9b5a31ffd2cd916bee0f39e013e905d9de23aafbfabb367e9894f4b9b969', 16),
-                    gmp_init('0xa4104720a186a77adc0a996526a1fdd1c95db263ab37aaf951f58afe42462702', 16),
-                    gmp_init('0xc992a594732408ab05cd258fbc7014fa822f0267cc688151edc334ab99c94e52', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xee869295046a335a11cf6e1e211a1b4eaf6d8f3ca23eeb5c944407519829ca25', 16),
-                    gmp_init('0xcabd218e55f0704bc12c2299600f3c54a076d0559e71f5c94aafcdf728478e41', 16),
-                    gmp_init('0xb81450af466a4b09c3145455007fc51d3dc1e375f0f8b98f45f14f9c2e9e8ad1', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x9833eb48d611d149c06ce555f094d047388702d895719e6bb14961a2a2eecc6c', 16),
-                    gmp_init('0x25c63883f7dc769f22be57fe1c2572d1308206ccba54fded90bcefdf89385dba', 16),
-                    gmp_init('0x1832a92ea7d26e0178de4900cdbaa7cece771aad04565d2c0d31252b68de2850', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x26db4eaefc934a90ab361b9ac66f09887e91887be0d2437b30e7dede23f2bb15', 16),
-                    gmp_init('0x9a5a0ccdfa0a5de674a10d612200098ac9281c438ab433df51e92f0d49218f21', 16),
-                    gmp_init('0x89ab0d529a21c80797e1c93efd78288c79bf8dba1ef14b501bad29c4bbb28266', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xcdeb53b095681e257604960a141fde9ef6de6425aaf5b70306ab54660d0427c0', 16),
-                    gmp_init('0xcbbf85e9b489be3d29cd77c091c4d96c8e7e1fecb6da0c5710be9baeb48c8446', 16),
-                    gmp_init('0xf70af95eebb30d8aa4e4eaff8afe95ba08faa11760f914a3662c618de63ab498', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xd1bb0564c2f03907c966ab06e3e29365b9e88611aa4c19cf3bdb8ebac4b2e27d', 16),
-                    gmp_init('0xdfb0af2bf464f61d4b993057348ca0279d36982b3979470141330c0a876679ad', 16),
-                    gmp_init('0x727c3554337375080b4b8019cf820eca80e9b65d1521ca9f093fdbd5b70bd101', 16)
+                    gmp_init('0xae6eb3d8ef2aafd2718b7b969612c2f19414c77c175f043d228eea512350da1', 16),
+                    gmp_init('0x99cdee9fb6006cae2dd034f7fc4189b566d468f0ed43da4bc73e09f370a14bc3', 16),
+                    gmp_init('0x1', 16)
                 ),
             ],
             [
                 JacobiPoint::init(
-                    gmp_init('0x59b011e0b4bcba0d5a8ca7952eb5326b7f6e262b5724ce1e0574b3f6f751ae11', 16),
-                    gmp_init('0xe89679c7d58d1c42a461c25000f4bce1d470a121bb0218631bad65f0d8c189c5', 16),
-                    gmp_init('0x80c4c6ffaea60aa00dd90879ee867d659a0a21d5e9d8f6784362819b81755293', 16)
+                    gmp_init('0x55d9a959844b5aef388ff0f7aa02f29acbf5ca9aa567e0e65572aea8750e4f5f', 16),
+                    gmp_init('0x69cb7f9aa5dad203766d574fbcc8ec524c9810c633ad1b15c858eb76bca97db0', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x24965723196e0e1300e51eb9ede6d723a8a00655f34cfd9b1d502d2ff3108621', 16),
-                    gmp_init('0x49b270757e645ae054ec5cc5500b59984a32f7f131d05bbe3411ec78e8df0d6e', 16),
-                    gmp_init('0x724213a4ee490c9a9bda721f6e1a2f8fb9579ab5ef9624d97a94f5b909a60bfd', 16)
+                    gmp_init('0x8c76689ba78a166138f9434c2f72e662f517323e3f09b5d30758cb4d57c6f8fb', 16),
+                    gmp_init('0xcd3172990a409d3a288489b0c63d6dcdf0b11fc3136bc05f7dc5b39a9bcf2306', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x2030cfaf82228803a48ece27f3a9d483afa6e410314e473b1bc06c9f711fb6f4', 16),
-                    gmp_init('0x2757aaaf4c32128580b94f1e0faf0aec1fcf100a38ef19b8adbf5ab7909fb538', 16),
-                    gmp_init('0x9fe685d5aa70d258b4638da4b6f6b9bafc0770b2a2651f16340199acc460f872', 16)
+                    gmp_init('0x4b0043ebe46f3e11794d86838faed480c176eb064607fcfbc06a9887feb142e9', 16),
+                    gmp_init('0x173ccf23a30dac1adb17884636222d870f23290f3a12588804b2c52d62c68552', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xe73391d4911c4f6d2cb7eaa1e8614bf704c90e3675e4aeccb04a507656579502', 16),
-                    gmp_init('0x710bb14e86a59e80ac9515b6d839f3337f27e162dab7c2d5fc287eb26d202778', 16),
-                    gmp_init('0xb519b66d3d41ca16e779ff6c312d35b278e1bc04611c58941586e1fb2e905937', 16)
+                    gmp_init('0x3fb5909a93dfe46af0c6a4169281bf8746543768ce5e12441ee45f92ed69f1d5', 16),
+                    gmp_init('0x549991ac0be8809f704a4e3a3bdf775425d35688fd0562b013d4fefe99a56cc5', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x591f3ec31fe9a2a9ea82e2b86597c6819dcedb197e8ad56f407c999e66f3df68', 16),
-                    gmp_init('0xc11f5ccac1ea789b983c902763c3533bb0bb06436908a531cb3c12285ad3f782', 16),
-                    gmp_init('0x466c44d0f1df05071b3013bb2af0201ef3f2fe90fd2acbb9118b4f7ae6c3c03e', 16)
+                    gmp_init('0x79ead27992ad6fc232728dcbb73463c513d7a5f734ff6481f6dd4ae717f1aa96', 16),
+                    gmp_init('0xa95de9cffbaadabf1a6e439356256542de84d71111b3955a80ba71ce4b0a3fb7', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x535bc80cd021ff3b83fbc292b35538a2cf7411525bd97ef87eab25809beca2f7', 16),
-                    gmp_init('0x22e6051c9ea1ef2e48ca93787bbe7d50edff71d4ddfd82ef24b135e355ab13f2', 16),
-                    gmp_init('0xec7921bde2858fc6e259062057f8831385ef7148d6378dde1c6f69ecc7a0c8d9', 16)
+                    gmp_init('0xf01dee116a3e4a414da377c3236dc07445210457612d580666c3eb2f1637a274', 16),
+                    gmp_init('0x24cfadbc9af48bf342615f231e1d01cae6923f6ecf94c497743fd470839d3465', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x994b9dcd4000f367ea89c3f6e070b35565f90706d2fd71b4397967e3756406d8', 16),
-                    gmp_init('0x64ed26542826e104c24594f9dd8ffada7837c427623bd4a394dd2c3f4849a5cd', 16),
-                    gmp_init('0x2b59077c5f6fd2b92fe1165b8ec901583b6eba4e65181fe302e6e72f09d6f55f', 16)
+                    gmp_init('0x318e0050f24da1ceb5279e3631ad743f8ee0aa059c77f8adc805ca72f93a9ae6', 16),
+                    gmp_init('0x2792ee1119ce9299f4d17ca51e504bd094536fdbaed3a8ee184b5694dc447d79', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xb8ed73e0e6e87d5b00ee08e4c08844b5410975751f9927837754271783b76100', 16),
-                    gmp_init('0xe21d90f88cb4174a5b4814ba5b8b2392272dc3500dc53416fdec565d9c9f7c56', 16),
-                    gmp_init('0x7f6af7fd772f85fb8233989bdae1a39e932ee472cbfa07a4fc2d8039ff6e040e', 16)
+                    gmp_init('0xc34ace1ce5dd90408ae227e16feaf2537feabb0cbeed3e03506f1270bde7bc7f', 16),
+                    gmp_init('0xe1ef3b3a009857e2e623b8be80166f12d6554299bd55a442aeb63980697806c4', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x7dfc15918d7f3278494ae7d41c01068a1d09b8abead62acc3bab0642d3fc611c', 16),
-                    gmp_init('0xe3781ccd2afcb8fd894c3e92ff715113df0261bad33c179aec8bd6a3efa4db3', 16),
-                    gmp_init('0xfd9e247e356b46354684fb3384150ec42b42e8adda977c5bf504582816e0e000', 16)
+                    gmp_init('0x6bbc5471d2f1e43bb88032f490c0a4b495ff8a1aa3501495137945b4dd30585a', 16),
+                    gmp_init('0x467b189b0c1529f04a9ee2b15f2226be09f0428102f9ead96af97eef348b05f3', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x1c282c9124fa5b5d8ca803ecff66c6bbd65f54914b9475250610737bfaeda2a1', 16),
-                    gmp_init('0x62bba44efb8b50bdf0fea14fff3d3ff385d6ca790afd57be05fc9d5747c0c368', 16),
-                    gmp_init('0xc46e71139aee2d3990b393c5b41d87e10f0b2098c771815cb48fa20211171d3f', 16)
+                    gmp_init('0x9b4645c389dbfe9f00fbbdb9e100b796bf9f5c2298a21ba75e8371f56afd841', 16),
+                    gmp_init('0xc0d370e6fb9944a30d51d52781161d80e158b7ec83fb5a87a99c9a5edca8547a', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x684b99b19cc1d1f2ef6cc88e26f59fcb1eb2b600e071f427ed481aad512bfdc6', 16),
-                    gmp_init('0xc90c25428ee89a6d9ecf185c0d1caf3a766514ccb04b6b45fa7a9424504c8c3', 16),
-                    gmp_init('0x792ff4f50024ad2a5a5550a9fe00f12bf78b436899f4ca738253854cc716f466', 16)
+                    gmp_init('0x940148c610c1fd1189b51a90f7760d78a647c001738775352624f808c0136275', 16),
+                    gmp_init('0x6967f95f1367a4f77aa24c4ab505d6695d4b3ae5604e1a425d63a1115997aa47', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x36edf45dca13dc3b281690d7a21a0bb6409f1882c9f0995cfdbde11bd18d968b', 16),
-                    gmp_init('0xf1aa8b25f991238404502c450697c807da4e20f24b10d0e6ef9533d1145dbd4b', 16),
-                    gmp_init('0xc1625314ff918f30df5fec8ee6159f5b15668558ac9de9a43c50c1f09cc724bd', 16)
+                    gmp_init('0x11c6b94ff7180c69c3b5ad54cd3b6d7fd6446f4c549604564d8a0e970f154768', 16),
+                    gmp_init('0xa84afe0696a2d9ebd71027bdff70036062085b9673d6cb8e0a98238928f3c0e4', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x4396a9d54d5df64f4eec39f84274c27dd612220f759c8139ca38334533bd1cf2', 16),
-                    gmp_init('0xc5e34f520b81f35eea33c1f4cbef9bf8c6e5921ff4f3b9351362e466fbfe00c1', 16),
-                    gmp_init('0x608570d6ab88a2ba9cc058184a56ffa00868df13e42081ae45c35291b8269fe0', 16)
+                    gmp_init('0xc41833926039b49c91b56c928da5f98e864d230be511a7bdc3a13dd39f0fe850', 16),
+                    gmp_init('0x3537fec9c8d40f7aeb8095d426afd558065a7ec9e01a0af01358f446bd38666d', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xc000a6adf7c15a8e5899c20831a959d7537e2450b4f05fc962444c39cd31baf2', 16),
-                    gmp_init('0x521dcab525eb3ce0d51bb9dcb51886284da1e54b59d3b20423003f1e28377add', 16),
-                    gmp_init('0x1f55a9ae4917f52e7577fccfc2d9f6ef73236fd370f07fbec0957aaebfee0c6b', 16)
+                    gmp_init('0x4bc2cd77649dd764a9b0ef3b1b65592acedbebc89ae27b3f4fea097ba99de8df', 16),
+                    gmp_init('0xbb1fc03a547a1fbe112b9429eaaf87ec450902d2e1633703d0c1f3cca78f3a', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xf34d61d517da8dba3acd2fc0aeeafc3cee2579a88e64c20ba313b0078aa18fde', 16),
-                    gmp_init('0x31546c7cb43433d331f28c35a514d941926f1b94e8c565295abd3a4fb37249e6', 16),
-                    gmp_init('0x74f0dcbbfb4f0cac1b0f74f19efff791090ad4b6cd50239b498682400ae3779c', 16)
-                ),
-            ],
-            [
-                JacobiPoint::init(
-                    gmp_init('0xee7129d1a8add19fee2e8d6fc7746c6a728f334def1feb5d664de5d5938964eb', 16),
-                    gmp_init('0x1000368b04dc120252d86c9dcafd341d473b80f5258664eaae7b59101a6f84a1', 16),
-                    gmp_init('0xf41629171c6a97901a95c9a0ac07fc08e72d2ac289822bbc5311104f7770d828', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xf0f2e7c9a21bdf9d858d6c3d72710545b85e9af5960ca9ee09e8efd3561b9958', 16),
-                    gmp_init('0xc42b620cf736d96f1ea5b2dfd81749affd9388c887db84e153b4211b44647043', 16),
-                    gmp_init('0x7239ad0897f84a6408455f258d5a0be7655a655e517bc2aac3e764e291f82f16', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x2466bd488c91edb0fade287a3ea1bfa01d42aa7203619f59de28fb22a2e01f15', 16),
-                    gmp_init('0x2429f6ea512c6c04322f47d2aa806fcb2bfa6e3082984016aa24aa9195bf2c69', 16),
-                    gmp_init('0x91e5e985b2e3450ff322da136eb970e0756e11efdfba981f2426df1c388925c0', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xdb155f1698f9b936b7edf61493698409190c104689241150608566bb5792a2d8', 16),
-                    gmp_init('0xfa44fb38adfbbef8e34ac3d16ae3e5a56070704e2463384313e751be4c5a9bf9', 16),
-                    gmp_init('0x2b6c31efb6640d149064961f345ce0efeea287c4f3da67a8f1955b72645f5771', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x2fa37957844ee487a3a6650229c76c3d9d5c3cbbbb25cfbce82e707116a68b36', 16),
-                    gmp_init('0x4c73ec14bfcc913a6c1bdc283a426861026c41b43452961204c4ddef59a26f9a', 16),
-                    gmp_init('0xead637b7fc3c9f728874bbaf5510a52a4cdea84aa9d69ec9ab703340cb25969b', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x78befa97dee92866146a05540a03d5fa365afc0151b0f318506dcc5f3583eda8', 16),
-                    gmp_init('0xee9bff01b7e11da16941415487018d8ed2ffbb445378c756a796bfab802378af', 16),
-                    gmp_init('0x84248e08e7bb8abbf0fd379c280f58c105ecd2174bb4b70642449f38e5d4f2ad', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xd28c8c561777ab7f19a426a428993efa7acd87a7e6ab71d30834b6ebd4a5b503', 16),
-                    gmp_init('0x51af2f8c72c0dfb24ac22c85031ce1c71c31a996fdf043eb743eab3b68e177ce', 16),
-                    gmp_init('0x76e52433307bf175fa3f3e7072f89d30342ccd19ee480624cc0b7d534def23a9', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x7d84bbf2e14045e800a0f9c98ad20d46b5bab70bf373bef434f9b40ebce52889', 16),
-                    gmp_init('0xf9aa0fac4f50aec3e58982f65af29750eebbbb623194b7f8d1e23ccb23448569', 16),
-                    gmp_init('0x949c6ad3b48025a332577eb20f71d832b8daa29a46f14bef3dfd2796fe68dcd4', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xe24c21bef26b51d87dbe7588355b33b88f9ce682965261122855202272c26b65', 16),
-                    gmp_init('0x18248c85b6d14547cd16ccde5cd68dfd9a235b3a14e78128c9bad629fb9a122b', 16),
-                    gmp_init('0x9d3734bec8a25c64bf9e3176e83bf6e2de38f2a6e232759152bb560e43a08fe7', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x628a690a9ffbdc0fc66f479c0c4cac2e6ea7c8a0e755e54b2ed0f00b2e07491b', 16),
-                    gmp_init('0x50d1645a88089ecc6652fa0b38f920b8a92d96c0bb705ee8febfb84eb826c9d4', 16),
-                    gmp_init('0x55755376a59e6c4e777b867e7550565c0e08f10e88af950ded043b4a04850bc3', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x6ccda391db63fc66a71ef0ef0e8fe3b0f8ab9894ea722d112e998d31262fb985', 16),
-                    gmp_init('0xffc0a8a0238fbed5fdf33800852c97fe9ef9c2413d03c784accec723e1e8bf8', 16),
-                    gmp_init('0x44b6427f0cbfc622c9be3f168b9b7784294b5350309d9c2c6ba7ab2485e0c28b', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x68e98a9395b7e8d79d07fa690ade64a86787c74cbbd8828f16f4ca68c4ac3ddd', 16),
-                    gmp_init('0x677d89ee8c5bdac035024e549595b366c4f3c608e9b80b958f1faa28988f6046', 16),
-                    gmp_init('0x7041bbb84d45120d2f814cf8ee019755fb6828641f07749ab6d12a54682cae9e', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x3f9e8ad05e6504851757985e863729074af43e5f6329c5a38795e4fc2a614d32', 16),
-                    gmp_init('0x8e8ca165b84705353e80bae4d12606b407f3cfcd76a7b47d084ccd215f8a8ccb', 16),
-                    gmp_init('0xc91a4e91cf1e0b17956f7e1fc6e315603cc70d4b414cdcbe4840ad11f95e23fd', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x873ec7e1f848ccbfa4196cc6951dfcc5e0854f759031bc4e55a895edc2618bcb', 16),
-                    gmp_init('0x1a8ae96aec83286208ada406127d911058beda9b4d8ccb6cc07e7778a08d2c78', 16),
-                    gmp_init('0xd9a2ef51c2ec76c112a728ae03245c647e1f335f5f804c9e8cebdfb3eb33cb3d', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x7ff748ee87ec5c8948b25b9f9960133a0508fd22f9a7831be7e37466bea1f332', 16),
-                    gmp_init('0x9342fa7cfd09b43508ae4cc06efcedaa5a1460d8a7ab3edda20df9411cd092d3', 16),
-                    gmp_init('0x4fc4acbfece375d291b377c6b6a50e3d2d972fd7b35c1d7fe74a4a449a95c042', 16)
+                    gmp_init('0x2baba3f627c67d70e0c14001af96f546c0b04dddf051ba6ecfe4413774937fbe', 16),
+                    gmp_init('0x77e5c765b2208b88d783b0cd924eabc9ec2dc4b190ac81109390e557573a1df4', 16),
+                    gmp_init('0x1', 16)
                 ),
             ],
             [
                 JacobiPoint::init(
-                    gmp_init('0x3456b83f97743f803af6c72e54955d5b89a3b2b03f09667d800a1add4c07ec23', 16),
-                    gmp_init('0x91f99dc0291389968c2abccbcf2cb33096790703eea70475ff66a9b9cd994ed9', 16),
-                    gmp_init('0xeb6c58a8814c2b2f655cc16259500fa0afdcae659bbe2658ce8414b54c12c0cf', 16)
+                    gmp_init('0x6e29f959be28c47fae5abca185755c08346924376f5412c1d4d3d2de4351964c', 16),
+                    gmp_init('0x34565d9f500f32f65052ec6cc184246def640c527a0bfb63118824bd563fd88f', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xda049041be701191ec16fae16aceb53295fb4f6414a15685b1ed368d297b2c3a', 16),
-                    gmp_init('0xd2039a57ea5b1f8660a05f666756d30f5c1a6ded125d1eeb3345bba94c9e4c31', 16),
-                    gmp_init('0x26d90345635b4d594e0807188666d4ada844e20499da7db3e1c89e1537008be5', 16)
+                    gmp_init('0x8efa0f79b5909a0b10cfa381496e68943b09f0776ed90cad61e0f0efe5e84da4', 16),
+                    gmp_init('0x242418e7934cd6139fa46f1c5daafd1479957c4897816035fde19f42596969d3', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x3f684f0fea0531aa9dc08763c1d385517f82fe7a7d5ac669fb8467a8adc49ba3', 16),
-                    gmp_init('0x63eac045574d3c88c75c76c8ec694ad098da660bd50b9924c8a4783dfdbc985c', 16),
-                    gmp_init('0xb12629a30b34f5cfc30aa41e064b8e78d4adb84070dfa238b54d062216e6f892', 16)
+                    gmp_init('0xd691d4a978970f6edd8288decbb740ed41232da85bc5400d3f9501038c0e49cc', 16),
+                    gmp_init('0x7a79e7874b78f397f7fbbdb5763e0c52ac5be1d02ad043f2dd0bb4c1d00f4152', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xfaa177f5dd57441eb70fa2ce8afcf8ae5c7e4d6df7bc418b6a99531b5b60d7b1', 16),
-                    gmp_init('0xd3cc0810f3289d5dcaacd1e078b351f46c3705d57722191f633bfb0c28425cc3', 16),
-                    gmp_init('0xf98b0fb0af74d4c06d091c7ce08eb54933be7baff5d1d66e74516b19e3786b12', 16)
+                    gmp_init('0xd0d4af73cb8fdb30b9d6d6d0f360db2f1f8973e31eb3f3974acaf2c0023ac4ce', 16),
+                    gmp_init('0xed90f8c8f15d7ddcbbe9ccee3e52953061850b1c863aae77e3df0360a47dd6b9', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x46a517887f6226a60386006dfab6f57c1736a1afce7c1cd78d4f9bbbcede2900', 16),
-                    gmp_init('0xe54c6f8032ba3e19634e773059f9beeabbc28088ca3fb381d36697b9d893e029', 16),
-                    gmp_init('0xbc32ea7c0f38597bbb138d99374c8a20aefbc8782073f3c31712be2fc0afc3e7', 16)
+                    gmp_init('0x2a5d6846a2e0d7c5dee5b7df7a7bbc49deb1352a4530f58f3d876b9f2b9b930a', 16),
+                    gmp_init('0xdc3d7c096876476de5ccf03903c4ab58ea5b73435e27168586ff345f3b2caeca', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xffe02e5bdf2d376b7bf501a2ff961553dc363ce0524901b1ec691a91a3064f18', 16),
-                    gmp_init('0x50596014b094ca2884b917d4f362d22be78a154eff8aa47b2ab35092d6979cc3', 16),
-                    gmp_init('0x151d4d45553b37e955d31ba3cb0d5c6cd6b91d1aa0d0bbedf1048274ff874f3f', 16)
+                    gmp_init('0x8b277f8ce445915bfd851c4d332b75e3165cb495470922f00bc6e130b886719a', 16),
+                    gmp_init('0xcf44d77b164543bc6e4b52ee69ec913955213780cea31a3d078b30fe6ed37c38', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xdc9e8352390fc8827ec3766f33f2616bfe49b9ad1e71496fe7368a5833d523c6', 16),
-                    gmp_init('0x754276588390e09415a7c7ec216b52e76215d2f6e7f90d3620c2ed532a1e03af', 16),
-                    gmp_init('0xff8c85bfd33afd2ddb211ce67e06e160f6d7af964b7715a0baed7710cd30715b', 16)
+                    gmp_init('0x8764496a389bb5262f0431412e275df87679d056741db59afa7dcbd2816959ef', 16),
+                    gmp_init('0x599b69d61d002ffd9e0b412796ed961f2856ad4172f9e3f1660311cbe0cd5010', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xb095156f54809acdebb79e07dd90a9730147a5b38a3c6a8cd05944e6ef06faf3', 16),
-                    gmp_init('0x3a2cae2ed7a7dee010f60a27644cba4794a3c932c412d191baeebdc3987acf1d', 16),
-                    gmp_init('0x508cfb3d16ab71a221983c0962d9727b6dcd4c177cf535c830409e69212c333d', 16)
+                    gmp_init('0x829b8dd0ed5452e8a6d6f71b65b85f9038d1d60251256eace399da6192397d42', 16),
+                    gmp_init('0xd300ec543fccf46d99e73c8a896241af5c5adc4263ad1a5d91b71631e3df5612', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x2bf1f034eeb9f6ef6f2eb9071b3f8be98075d78fd81e34b0c986dd3ad6fe454b', 16),
-                    gmp_init('0x56f852f6ebfee869b2a146e0c1a52776b1764a2cecb14a61a07131397060c856', 16),
-                    gmp_init('0x2550a2107eb2de43125f8f603b49b70a0d98d49c375a9a9a1ceaf3b606789db4', 16)
+                    gmp_init('0x94d393bc812471b133de3fac17adb8cab0bb506a871c75b9639409ce3aef0f84', 16),
+                    gmp_init('0x5a826ab4eb4b63f21e1cbc386b239a07dd3f402650acf12a85ae61b9378ba7c1', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xd120a8b155129256418f588e99b2e635cda8d32e8fa60d5c3ac647ba8aebc562', 16),
-                    gmp_init('0xc77989a640a58243d836902a13f61b3dc4245cf1b8ed781c7d085777fef25e11', 16),
-                    gmp_init('0xe3530705f6ec7bdc6b7e131c689b7cc222a082ece554832e5885f41bb305e166', 16)
+                    gmp_init('0xe925a006c6f2a3482ea231dcce55180f72a1b40690a1cf86eadecf09028cdcb4', 16),
+                    gmp_init('0xe402787fad4569964dd045436194510d8ead37dd62073759bb9619760589af3a', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x7a9fd36d856bb9aa01b7712622566e5513f21b0107c9480441c62a690221529b', 16),
-                    gmp_init('0x4bbf7bf574d79232de78051be127ac262e1ac95c33416a692c567604719461e6', 16),
-                    gmp_init('0x824cacebeb651ec42906e482d9e3f3e602ebaf4feab2542fcc7154188a555a6e', 16)
+                    gmp_init('0x4a72b5a0889e4e2dd17509702d34bd2ee2dbd126564aa3b4ed455784effed1b7', 16),
+                    gmp_init('0x3531e6ea4a1d20e2c8c33fc047c8ea9685e64b8ec74d9845b5f29fd89601dc5f', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xe813694fbe9176efbd8dcb0db02f3228e26a91a046b60c7a8fdc1d56f798c103', 16),
-                    gmp_init('0xb4ac3547f190b12fbb1b1a2992c6aabf5298085b47eec521d6146c8d8e8f73a7', 16),
-                    gmp_init('0x27e0a644978ca3564e3e5c36f98aa04ccc015658e8860187a271cc46985fe10e', 16)
+                    gmp_init('0x88ef3688969b1509ec01db905a3615f7cfcf8a096442a045368f5340ea0046bf', 16),
+                    gmp_init('0xe4204ddf22f356b9df93deea7a4b46fc8ae2d212f193196cebe6ad23bfa86f2e', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xb1979de7b632bb31e1e977dbd1194a7ad626265cfb1a76a8f66984fd3861faba', 16),
-                    gmp_init('0x538fb4e90aece67feb716efc19b97aa051efb6eaa1602c596905ced9900e8c98', 16),
-                    gmp_init('0x533469f08ef5072dc2f3c42112a49a02cb296eafd8a29db74f4c0a2ea8aa1ec6', 16)
+                    gmp_init('0xd7f01cfc5a371e15a78666f2fade79009141dc41d8d9186a02043f25d0467317', 16),
+                    gmp_init('0x888dbbd987726c26ec7361406c15ef5728a01743697fbd895cb957d5cf7d014e', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x87f85e2b96219886ba05fb8a55eb84ac37329152681f289f1a6f96606f4829a0', 16),
-                    gmp_init('0x9699ba1283974e6d963d23eeab0c6422ce39f6e564d4ffbdd7b23a57b6024f02', 16),
-                    gmp_init('0xb9b7c11370be2ea1ae8ef0502847a8aaa32011558975c2e579b4d355b252350f', 16)
+                    gmp_init('0xdbfe86d71283894f072db42a73b408f285d6390acdf4c55033be1811b6799f9a', 16),
+                    gmp_init('0x445b3c7d17c68718a558a73fbf3e51fc7faef77d234e71f850de611dc79dc6e9', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xd8d24b8bd9a6cb7f51b919066818689c8b148ca03fccfc805745ee36585aae15', 16),
-                    gmp_init('0x6b17112da1ffe0fac7c3a0af52e340011c1e083c9f350c04605315f64c593635', 16),
-                    gmp_init('0x42b464f5699250e2df58e6193b6fda97a2b97264e7cb7a41f797c960cec12b6b', 16)
-                ),
-            ],
-            [
-                JacobiPoint::init(
-                    gmp_init('0xbc2839d8ad52b03d45ce18e5ff22626176650bbda9c85e5c4c8797590f98304f', 16),
-                    gmp_init('0xeba3a207516feabb229d6b74227eca8d9bed1cf4d26fa0d9f2dcb7c4650baccd', 16),
-                    gmp_init('0x3330b5fdb715d08fbc343450eed3403ca79e80bd25fca20a0a5c14a7b623c42f', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x76c97bd783429ca8d5cb589cde45e9d758419be5e58aa82c2eaf7370d8a62fd0', 16),
-                    gmp_init('0x57643f4b125fd414995714bd999692c59cbe3532b7a3cf3dd5509def95f424', 16),
-                    gmp_init('0xc2115fc4f9ee28bd80d68ff86f0c1397cc167d10085f5e90b33629ff399611cc', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x211ac81f2453a2940c92c39972da7943119de6c04e6a8bc2a6fbaf0048d91448', 16),
-                    gmp_init('0x2a1304aa6c93fde7a3728d2fe28fb68247bd07ca2abd33c27dbb91db8129bd4', 16),
-                    gmp_init('0xaf9f197f411d511f482860458ed1932588c53320ada3662156bfb911b3faa536', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x8cebd5e1b00f1ed8ab54782d434928d1c7393fd1727dde626407bce63433343d', 16),
-                    gmp_init('0x6b8d64985053270131d6095b05653d011e658ec13ebcd7df09522616fdb8523f', 16),
-                    gmp_init('0xa889df2c784a36fd7f2fa73780b7db520d4caafdbd27431eeb65aef859357616', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x5cffa73fdf45156fb467ad48b7efba3d5689dda34c490eff6893a0370bae110f', 16),
-                    gmp_init('0x504c9ac8c7bf41d3f3cbbbac097d8200cc6fa1ae3a99f8c1db40b8c390affba9', 16),
-                    gmp_init('0x8426625fea217ffd50a3bdb8edcceb0633a64e253b8c3dd18c0f6a46f0732679', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xa754e6fde702cf0bd680c11d5190e8bf74f030af376b1ccce6a2fa8b9f39dc2', 16),
-                    gmp_init('0x15aae4b1eef760086841d4a727d9ae6953950e69f4e9532726832940eb89f7d2', 16),
-                    gmp_init('0xe0c9eb1f66e052925bf9e619de7059dd35be45844ba10dccd892f3375f09b780', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xc5fac3d1ddad0f543bde33556923b24af6226d8676a6cb46995b2827a2b619b', 16),
-                    gmp_init('0xf9b743b264c7c76527135c1c805df7d70eff6f24e324f0d8de5a790ecacb947c', 16),
-                    gmp_init('0xbd72d70488cb6203b610b3d8583453a3ea71267d74faa8274d5d62d2148187bb', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x9b205ae65ef155b0575a27789d079873ac695b66c6dee522a1a3bd57cee19991', 16),
-                    gmp_init('0xcfb308601ca03cc93e8e4e44c806035978e1040bf7f4006a0cb1bdf43c3f9e8e', 16),
-                    gmp_init('0x8061252e582cd32535e5f0e726f44437b561a6b15ddce76ae5ac6ec575e10f04', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xeac54eff9a1ca130ede18ef6f80c6041a0a1807c62425d425a463634027da944', 16),
-                    gmp_init('0xd6b94fc3ab7357d03414030652b6f28395bd6f70dae9629e731ac89947db93e8', 16),
-                    gmp_init('0xa83a813c27ae7c3602ac417aab4c6c157a99a51e2d924f11f00b9ade524a5cec', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xcfe126f37e17086a6204c6e9e71f57d106db16622f329a0daad5d603b77094f7', 16),
-                    gmp_init('0x9c34313fa43f75e7d5a27c1645401d61b711d3f125d05e21a872ec83a749763', 16),
-                    gmp_init('0x7a9b622fe369fa55ddc53b012011cc01ffde45fd51ad3544b5cb33eacafa0bb8', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xdc73e90cbcb268955114a56e45d89de2f354c0c0ce350a0212dd3b57dea2d19', 16),
-                    gmp_init('0xb6b8aaa045f834235e2cdd95251ce1e2267472caab1726a6ab89b5e5290fecaa', 16),
-                    gmp_init('0x65520a1815d3059e4459ab75a027ecf7fcd5e850580cc3591bd8ec040cfffab8', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x45e171e60db0771f8cb49107a9a2379675c9185efa888923d8c7d52ff3790b5', 16),
-                    gmp_init('0x6b5b3caa8b0ad7df19429e7e9ec47bdd1bdcb5c3ac45b734c12057f72c38d19b', 16),
-                    gmp_init('0x5bb1207a0f9e34b588d94b631ae1ce9b50deef9cc9349d5a2e8cb364f9368bae', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x34e673533675b314e48b2532bd96a2687217efa8cc84911c7530af7b944008fb', 16),
-                    gmp_init('0xef757a75ee134b33a552366cd2b4ec4ded5518fe4c7a12c1ec6fc28406ecf136', 16),
-                    gmp_init('0xb7f89cdf42c4356cb1b994cc268746682baf817b2ea56eaf8fcd9df599d31a59', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x71a92fefd0664a1884ffe3273265644fd0aa6add4061c32db6c4e53bdaf155b1', 16),
-                    gmp_init('0x783e68891172ec92f869fb562a46dfc00054ce094f10019f9f60f85cb600f212', 16),
-                    gmp_init('0xfaea664bbb446ede306eb86e58c9570fadf5c802b0472be1b110b421e378ec6f', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x8d55038756efa4d8a716dcdf851146e70bc28b440421ce37a59a3f0a0f51f58', 16),
-                    gmp_init('0xdae29295a74dc8e33ed2ea335152630a91de31050c50ea4976409361ac5395c2', 16),
-                    gmp_init('0xd0ef259eccae91cc8cc1c305eae2409f929f3084deaed0f74d941c208e465e29', 16)
+                    gmp_init('0x7e50a0b9f77c371bbe80bf9d91e31206e4fbb9b7c774087c3bd7590a7dea02c1', 16),
+                    gmp_init('0xc3405d3c4e0fe29c616c6f1ddb8b95177423934f158e1b2833c946dfed45c201', 16),
+                    gmp_init('0x1', 16)
                 ),
             ],
             [
                 JacobiPoint::init(
-                    gmp_init('0xf348889bacaa13d4bc7a185508f1a881f8c0999f74f70b5ada1cc31dad599fb6', 16),
-                    gmp_init('0x3fe318b5d17f31aee2a8e31ddb6634d4be9d3b0e16e00e305c8531ab54c335a7', 16),
-                    gmp_init('0x5f4c8d8a84af5e346148b399120e37c4cce4beac00d70cb51fe32087b8470ddb', 16)
+                    gmp_init('0xff046a9eb2bfeed9c00f2ef0796f458ec141c259a845631128a7d4110cb71280', 16),
+                    gmp_init('0x432f55acc0953a170a01eddbdd4cfcc9012b6e6ebd28487a7ec3271f5ec33919', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x449d95c52bf497548104ceba5cbf9db7454ffc4ff9a465d85d4436c843d926bc', 16),
-                    gmp_init('0xd4da82701279c28b6a77dda8e7859491068e761fcfc84bec59d158df8b715eb6', 16),
-                    gmp_init('0xee7c53709ef0a102c0718998bf689492d7b384d881b35b3d890dd682687d4022', 16)
+                    gmp_init('0x5890c0f334ddc2b08fabbccc41287df4011745f856de35acb2bd41c7b0b3da07', 16),
+                    gmp_init('0xcc9eac788b1d9c045e4604fa4f79272655a279ce3e2a8166623d0ae88d3813e0', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x48b3727c0fd9c34a1f66804679bcade0139df3c644f180e632ac28a6dde35084', 16),
-                    gmp_init('0xaeef50f3a43ce2247e0f77d5cd7ef34c124aa15ffed019d8783af5b3fd3e8c55', 16),
-                    gmp_init('0x15d7eac0b969d2cf0dbadfb4c8505a2048541bb5dad6629f45ae015c505eef40', 16)
+                    gmp_init('0xf717c45d14d3dcd31a95bc1f5312231fef2b1865ab6a77e25f2782aa33ca3ce3', 16),
+                    gmp_init('0x422c40768c99512dca9b54ed0aadee55af53e2bddc176df06894ccdb50ed88e9', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xf18a55819e991b8def43313dd9a250cedb9fe398554408ba74b005d1c39cb23f', 16),
-                    gmp_init('0x59f54b9753bde1b6de2147afd193c33aa746cd40c9d9ee1eec55e3d17d426a8', 16),
-                    gmp_init('0xc1648fb60ba2f711a8a7f943ff71d513642796a1843f0ae18ed9a2eccafb23d', 16)
+                    gmp_init('0x6eec95670d54650cc14b66dd02436893ffdc67942d666817fdc73e83bf780c2c', 16),
+                    gmp_init('0x14bb5350997732c2fc281de065ea010579ab66153a07ff89089ec1a1edbfcd32', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x60e894e50a940147231f400a54cc41e796acfd7c7b82905d4a0682a215cd0c88', 16),
-                    gmp_init('0xe1d36473f9993c7e0b1bc70bb9ac1965ad8f47cd89ae8e00eb4efeb566357fe6', 16),
-                    gmp_init('0x64bdd2c0eab0e3e1e155188efeb9136ac5566a9f6d99d064dc6915df5886b7d', 16)
+                    gmp_init('0x60e269b4f3370b20c2feb5627f91b32c738e097502a9bd9ac368430d5b28cd88', 16),
+                    gmp_init('0xfe00175a6579f0a9609211889728df7602456138c6c846b0e29ba8a42be2066c', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xd75a36b0152bb4c441688c2a78e23a6b8a43200dcac70755e775fbf4448112b6', 16),
-                    gmp_init('0xef84702fafff8cdeeb581471e2cf0b4279b512077af447bd61ac9059354ba450', 16),
-                    gmp_init('0x4deef165e598a0baed0eb9aeb2aa836d096c0471d8a3b9f50b8ea3cc671944a2', 16)
+                    gmp_init('0x2209938b8c24ad5601e037acd13e8aca06d74f465c3813b80de04e8ff43fae7a', 16),
+                    gmp_init('0x9bf8e087b32b55a528002f3a42008c8c53b8e6af17afd946866f6aa1c7e52306', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xf73b1dec5733710415289ee0d21b8b069a29cdb37a84a835031b094fefb74874', 16),
-                    gmp_init('0xf6bf082e3332fa7124cad0ee2c5e3f19ad2245864069aaa88f6012f464d0e05d', 16),
-                    gmp_init('0x84f8cf6dc4b4f097dffdcaded7921a158ce6af75ae840d01b805b5accaded95d', 16)
+                    gmp_init('0x799297a1e67399490aa5ba05fcb46855964bdd1704d0536b153b1932861cc594', 16),
+                    gmp_init('0x132ff18cd523c9b0e1069118789fe50127da86ae0bac6e909e9110920f8d309e', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xfafa365fe2115cafb79d1b01103a815709a4e85f37c98957b9b963b9c74203dd', 16),
-                    gmp_init('0x323720b8595fda984f89624f2c00664d6c6ef8328eded225a15da6fb1c046cc2', 16),
-                    gmp_init('0xdbb93a43d3c3bef4b5d6051e5d65d179fee9c86b805c1f7774c79b7eed364832', 16)
+                    gmp_init('0xa0e2410cd09c01a1b79470f6ad3da82908f69591eeb51bd853d6d6e9019fc555', 16),
+                    gmp_init('0x1e29648c71bfded42ac3b57ba5b2fe898bbaf19f6b667930cf340818c1ac6d8d', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xa287a6593741eab39d8857cdb217af8e6d19a8d8e8c08872749047af14449f89', 16),
-                    gmp_init('0x888ef74e9f4a8f061e83f1687a7602a1c0a5eb6466fbe34bd6e32a546f66ab2f', 16),
-                    gmp_init('0x44cafe3d81599b5aab30b324dcdb42515338d445503d03d86e24b2b3a3f0be33', 16)
+                    gmp_init('0x2d9be94efe42807079ee0eeb5501241dd8d190adc77e1b16dc8c47a2572d0aba', 16),
+                    gmp_init('0xa9708db5e9e898a2295ef934b619d91bbad1c67988b710e6f8f731fb31fa0876', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x3e4b03c1b1d299fe4e1da1880a63d8908e4e6a8a59d2e2b9b534ad5769f903b8', 16),
-                    gmp_init('0xd09906dcacfc375c0111022dc2b4288e735a9dc3034e8a4abe6a6a09a5663081', 16),
-                    gmp_init('0x83fd77b551cdf4385837de4cd2ed9e24bcb1994d8f6f43301470e66fd9a00076', 16)
+                    gmp_init('0xc7ff399f359f33adccc8b4d00c53d2da01e8d05eeb9c3d7454bd04ac01a9645c', 16),
+                    gmp_init('0x4dddeb8f46852216672efcbb7da1ea092a82a5219723665a119c0cdd46b6edf0', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x966272ff2079834c95c0b21bfbcf873ff7a762370d3ce84f2f4c95797a0b4b5d', 16),
-                    gmp_init('0xf03fd3afa08a7712132dac86e8839df97019a5cc9d905e9d12d7907743980954', 16),
-                    gmp_init('0x88b4d697b72b5b39caf7ee6d3cae441a51a0fa00809ac0485fa8e7932ef74615', 16)
+                    gmp_init('0x2127039ec882421660cbc6531492c243cfa62ede506d1e31e0c07b48355e8732', 16),
+                    gmp_init('0x85219c6f23ae35aa0194b9dbbb7f0a5cd693f3f3bad7bd68d59235f460cacc07', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x7ccf8d4ad0f3bddba4c1e8f66deef91d4262f25bf1a3ca91f1f4de85dec5696a', 16),
-                    gmp_init('0xdbae2acee317cfc9bf57e928b9d07bcb4472da53b64080dfb21493daa91f2c91', 16),
-                    gmp_init('0xcc8fdd64b1975fe7a700b3e0907b1bff77f92ba6644408fc8895e4ce7651d761', 16)
+                    gmp_init('0xd659b87f2a2ad4017e1b44c540379e31e6bcb55c30a0adbc6f15b01492205e77', 16),
+                    gmp_init('0x845d83f4f6e49e35fde13c935acb728776a0b2eb631cd452e15820b5b448991d', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x438d2b7184c48e06bb06de9fba8107aae32e73127fd1b47fa7b718bb8311aff8', 16),
-                    gmp_init('0xe27d443ee13ecdfcfa39552a0eae10d16822b604261950657275f24afc38a7d9', 16),
-                    gmp_init('0x64a07130814f7d4493e7d765f04cfe3b6033fd58146c403cc14df8acfe754e1a', 16)
+                    gmp_init('0xfab5b54b2bd8e0eb97ad0f5aba02b42b9e1ae3e6771a53226091340cf2083347', 16),
+                    gmp_init('0x5758d116186d41503c87aaf2260a3eafc05e37a616a69afa9ccc9cd83d38fd2f', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x921b00136165056e3f0bd87e9a71f6b7de4cb6c58ecb973d59939e7e473f8abc', 16),
-                    gmp_init('0x86164c42d6353134a603ba563da3dfb60e863bd30db7561fc0c29811690514ca', 16),
-                    gmp_init('0xe6b3c1d1b2bda4e307f5bcab3a5de1bda6060dc938c1f651ee832da5527e2b1b', 16)
+                    gmp_init('0x91fa0534bf36fd471f067857de8521d0a49cd1b2e4b1fb8fb4e7eb431114cc35', 16),
+                    gmp_init('0x358d02069a62fe2620dd5a3ce0f981dc12688ceeccbfa6845638b951bc92cb28', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xf9695a355e73b22732f2a7eef1da3e8f2ebfabf2dd7c28f3e0a27d358591cd27', 16),
-                    gmp_init('0xc99202a85c15a37674ef5f759488b3c4b37a8788dde71628efbb76a60367b654', 16),
-                    gmp_init('0x4c2a27f8cb7586a7518d5c953dc3cb52c10ca24c2756d3dd11ceb08efb8209b9', 16)
-                ),
-            ],
-            [
-                JacobiPoint::init(
-                    gmp_init('0x769a098e71cec60bcae3a254fe2e8701a915a0bf74f9e063958c0ada23182700', 16),
-                    gmp_init('0x816f0b67d9cc10a4474b5ee7b8226feb52e7db6a24600eca4c7f1362af00324a', 16),
-                    gmp_init('0x75373c5bab729a11c9eee8e08c617e09700f65f03df1c9880337b63cc39b3747', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xfd32db6e252e7d12102fb2baebc7e48be2fcf89b1835f70420e3d798282f64aa', 16),
-                    gmp_init('0x4253741a73cd12b434198201d5a6d9ca5d29dbd85401953f781cfc19ac3c90f8', 16),
-                    gmp_init('0xfb3e771d5b90d7070619f8ef04999bce12c9aa6e1f107f671bbc174ca23a1623', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xf2cb5370fa40d3d14bc7917c8286c4d89dcb89a186bcb4ec029bc9a86b289037', 16),
-                    gmp_init('0x3532088b1b6c7e387b44e0bce5e1ad9197ac5c54f679b7f74bfc527bf7acbc15', 16),
-                    gmp_init('0x17f974dc85515e6a017c76b682a97120a895b13ef64283df1f212b19ca4533c2', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x5aa87d6220a355423630a8071d3ce6c464c5c26ec80922e2bc576e7d8281b082', 16),
-                    gmp_init('0x3bbaafb819c4378ccdb88569182b7b9822b07c896790e0920b4af70255b20f6', 16),
-                    gmp_init('0x705b2bd388b87e0fc8e194a89a4c63ab69aa0e50306beae38259ecc7307ff931', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xba8f5abc9d0354ca562171348c0e0b1b18b931afe565f2ef91271064efce8674', 16),
-                    gmp_init('0x6d0b219a1bb54aa4171c0122a9cdbb52d9fed4849a0f991690e9a81fe523c700', 16),
-                    gmp_init('0x7a50f93a41d0c853f4104598cb5558d4f97460e8b8f93e5aa2a816b5c98f3aec', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x826d3187f9eb8c4b4eaca13d8f566495ced260486b8cb10a68de9bd49ff01273', 16),
-                    gmp_init('0xe3273804ba399635c040ed3d348fc9ecd631f17b6ebe5d222f3b16b141a76726', 16),
-                    gmp_init('0x82f9c29a58bfea3dc4bff2f8b74baa4df9463db0d1e2577f397b3bcbf94421c8', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xbf8d145180fd2768bdc2e83d8223d1264438cfdb9b17f942725e581d2c4aad37', 16),
-                    gmp_init('0x66c1d94f73bf547a1bf6f625e9349ce1d3b3144665a075306748461e1371de61', 16),
-                    gmp_init('0x7cb3d5fb74edf7c81d8f45676a0eb65bb07a5824d4b40886572bf0090704b282', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xae2a33cb4dec6abf864c8bda9806bb7830d924f0516763c36bd237e3deb91358', 16),
-                    gmp_init('0x2c5647a81c43866547f2317d5aaf0e5dc784cdf03eb81e0d0ed8874fb6c044ae', 16),
-                    gmp_init('0x6dc3536bc7de931506ab5b08cbf3a67fdfefa2ce5cd117ea54a6a1e90fde8a30', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xd37f945cef3b92f5a3233793d6f740043eefa612efdab3a83083e29fa5dd70cd', 16),
-                    gmp_init('0x5f3096dd04de858b4ac1530df393b63baa7b2ed0b8dc227397e5337c6784c5c0', 16),
-                    gmp_init('0x647432616563f3bd78e03c880f8017ff5229266598dc02c1b283c39d351399bd', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x945d3d369184711d6c0c485e0ffdb6645dd8057e7855d4cc1682e6fc8430c938', 16),
-                    gmp_init('0xbd50c68bda446600455e3a5c13f9020011722e34078558a07ed5a4b6d7987a63', 16),
-                    gmp_init('0x49f1b331edd1f8c29f788770fb8471212298c4e3fc2be4d63a714f7b516b746d', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x1870a1f5d375c0a38506104c73fc71c4991f0cac8bc84e987b8c94d9f68e60bc', 16),
-                    gmp_init('0x785307487750d39854ad3a44f1a95fb0d44e1b6939beee810a176231aa6ed36c', 16),
-                    gmp_init('0xa825dc346d87dddc52909f8a13e667cd3b0a211f29704ce415d2da5f3e9716af', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x8f44631b8f69c4eed746725112d09ab2f91afb9a3a5176ebf07d9d96d402a633', 16),
-                    gmp_init('0x5cd4318a308d4ea3302dd7ca0f37f590dc888c39283609ea87ffa3f369af459b', 16),
-                    gmp_init('0x33000aa40a944f8fdd9cea160d8ba1d72a84cd82d4888c0681f9e2e58a870dc2', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x813ac6d24d2592d0620bf8a831f2294741ef7a4a1ca1d879d389d6938e8b412f', 16),
-                    gmp_init('0x282b3717b4e2c0ed76dbbbe7c2a142574509ba51f5f880de23f7c90b61795728', 16),
-                    gmp_init('0x579390ea21b79ab9172a5196ea347ada87db68c4a2f35feebd31c49973085630', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x898e5d55ae8e7beb1615596f1b6258beb775af600ee6f2e8f928c36488c36620', 16),
-                    gmp_init('0x1b51fd2c96037d73cf20a23648b7ce99b9244da212d18b0c4d16cfad05ac8907', 16),
-                    gmp_init('0x27f784a784e7227e182bd8dadc84ed118b35d829a44e4be7d5e3135e5c121ea1', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xd634a37c8c96693b2b74728c3cb11141aa2e5a691a6cb895015f6782e50afea6', 16),
-                    gmp_init('0x97d5456c3369e40fe9fa62e6cf5e604edda8c1083f063e5463f9cd858efde98b', 16),
-                    gmp_init('0x9797319a13e1662ca3af4d1526407ee1100712747633a6804bac31305593e67c', 16)
+                    gmp_init('0x685d275727971fca579096770b7ea56ff3842e4718f4dab73f672614ff572554', 16),
+                    gmp_init('0xa82f89c220ab45fc06e39c8041e0377cc58aaa2ac0f4cca4b71af6d0a0979e03', 16),
+                    gmp_init('0x1', 16)
                 ),
             ],
             [
                 JacobiPoint::init(
-                    gmp_init('0x280c62577b82a3025bb98431916b9da494a7b3cf6ddae31fc1affd92ec1894b0', 16),
-                    gmp_init('0x1bc85ee1ea9fae518123d39ed602c6ff59cea14be992653ef5b96831104216f8', 16),
-                    gmp_init('0x231bcb9b9e3e21f2d5dc8956fadc9e9e4d4cb6dc24a68005a5ac5799acb3cbdb', 16)
+                    gmp_init('0xe486c7dffeabb058c1f9aa2349ee7eff8b2c7e63cf570cc5c7d0b24cc5852e50', 16),
+                    gmp_init('0x51fd75ed5606a12e9ee88a5c9f51e05a694463d63392ebd866ba3cadaecf107d', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x440ac4dd5b7788000cf61a98d038c550be6e060ad09a66c613a83871ea3cfa57', 16),
-                    gmp_init('0xc614737a131fe9885f324abb15d821b40282a46cd4fd136447c6bfc7c921fc57', 16),
-                    gmp_init('0x43dfedf4a220456f31c3edd97bd4228465ef072d7aae8286a03f6be3073b7e54', 16)
+                    gmp_init('0x69a16e245a5fcb8821ff1441906276e963ad9e86c339d0ea74502ca378692e20', 16),
+                    gmp_init('0xa7c968cd891afc0106f01e9a4cddba10113d28620f7da894996e69a9b3116c8f', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x1c57a3f8366a30c0d581909a3ae53fd1e29b4f17d06f1c976715146a341ea955', 16),
-                    gmp_init('0x76cdcccf7b4804347d7df34cc396b9e5bbef16896eca8f015de8ddf05794ccfc', 16),
-                    gmp_init('0x4ad916f22a936dcf29d59cd566c66ef908753a67dc1eb065856eb9c9beaba04c', 16)
+                    gmp_init('0x4acf44bb8e2ffb7c964105cc66ae0415142c86735b00b1dac66aa6455c881907', 16),
+                    gmp_init('0xad99a8fe0ffd587b3544285ad10a545799352b2f7cd84b252926b456f63cdafc', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xa69e91d5e8df4f46ae01d903e3b4cd4a35870479944fececcac3b1e2a962f1dd', 16),
-                    gmp_init('0xb26558f345a3eac74b97ff72c869c3151076a28365e26f41cd298bbcad43959f', 16),
-                    gmp_init('0x835bc791c9fa20318c24c04b797fe7db9eab881095701f03cd4d614f143f4833', 16)
+                    gmp_init('0xdcad8b2a7eefb2c721190e12fa0e745a7a39f95bc79b0d1747bde79706bc8d71', 16),
+                    gmp_init('0x8bf1287ab91faf9b2211993ce07c0fa32726c4077b717b56470cfe2ea297fcf2', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x737c31784e95f9a78655d0df794a7403ed13a68dc1baa23d0aa5ed55b9ef90f2', 16),
-                    gmp_init('0xa537b1ff0fee81fd25339cef31319c2285573ad4e6b1827db3c3579017a651d', 16),
-                    gmp_init('0x8b3faf0151fcfeadebda2b303a104565380e6fe419313a22649c5c4af2f405fb', 16)
+                    gmp_init('0x4ddf22834188a649dd7aa292c8234eec34ffa562b601a2aa82bae0697439383f', 16),
+                    gmp_init('0xe71c627b0d91883d74abae97d38c0c6b3dd5d045131f8269632fa81823d52337', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x6ba58920b71e0970932953078593619c205303ca6d6eac5ba165cff101f72f87', 16),
-                    gmp_init('0xd980cafb5ed803dba993c52faeff1ef22ade54305d69c5519c5ddbc5417fd4a9', 16),
-                    gmp_init('0x7707076f5be7e76eb8a4709f3e3cf96b159e173b0f0bb11857d1aa5893c8c13b', 16)
+                    gmp_init('0x89be840a1731eb21f3f78331882eba59ef4c1ad601c829f81f6b16a30ef15db0', 16),
+                    gmp_init('0x70ec8c193cb32816f4c5644675e9016c53b9df77ca29a81f791d68c71d0b8200', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x8e40135004be1f5368405a32ca580df4eca038aa6c48e64bb8a63eb74b163f03', 16),
-                    gmp_init('0x1566d0766d72561a2b6e35a413f55fc8898da1038f16487b172f2a4368acd09e', 16),
-                    gmp_init('0x8a6a6feef08484508db4fbaff20cb8ab5bff8e91f91b1fdd440f94be084c8763', 16)
+                    gmp_init('0x58b065791379879e1334e9e0797bf39ba5353afcf865df8f26dc88155822b4f4', 16),
+                    gmp_init('0x55a98aa4145a2c37027ca55f0262836c1ca4a076fc4e52596607a8210c60fbca', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xac8a5cb5507ab5b9070ea44a68b40f9bfc50d23f0fa6b5d8282531e73e830bbf', 16),
-                    gmp_init('0x79c87bf1050c3f08c2b917fa4af7117e44907a0528b72e8bab8ed1346ae25ec', 16),
-                    gmp_init('0x7ae88c97dbe58bb0b7bc9438c84a9cfc8938cbba09ca5a10e52114da2ba90c9', 16)
+                    gmp_init('0xd9f8b3771d318bc54dca9848228c57c413fea55aad0e2f87d7273629aa99ad56', 16),
+                    gmp_init('0x7aad641f0d22377c6551557fb70a4a3995de59a31f63cb4d4e919385f5c61b9', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xa881d7cd42e5681a510b1c02f74d9fcd4999333b733c0fc13025434dc64a5d26', 16),
-                    gmp_init('0xc95ba6c5cb8a029671818b05224ded18e1e162cf7d55156e2ee6de0b8bb256ce', 16),
-                    gmp_init('0x87b80513e0fca771b72e942fa8355c5fd47ef5f310840cbda62cf712c2cc4bb6', 16)
+                    gmp_init('0xa345e058a64b3529763a441c23381f358a3173cd74b4ded14b2bd10c34fe39b0', 16),
+                    gmp_init('0x7c6dd5a6d5caa70f91f0855b28f9d949ce8c6a75ab369df53709480babaf79dc', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xcaeaa6453a754344c503f1eced2048e826b4be2e72a3629748d254254806e2c2', 16),
-                    gmp_init('0x6fd75a8fbbb4e90c144cf8622af2816133214e963040ea95c99bc6909e434687', 16),
-                    gmp_init('0xf0005722b70e6c38bb79e5a99e4333eb5fa50e4cdafe00da16d6349567aa2a73', 16)
+                    gmp_init('0x4e218f3b641dec95513a7190e5207a865199c8df557e0d709dde20720523a7e8', 16),
+                    gmp_init('0x65120ac1efdafa5d445a159d2bc658f9ab9fa70fcc821c50edaa0ed47090db7b', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xd96f229d1e3ec6b4bbfa6134943b9247042f9464e95683e857dee62389520ecb', 16),
-                    gmp_init('0xf67ce2fa91fb007f399ddf24b25c20d43a3be3338af1ffee1df1289b7bc1793', 16),
-                    gmp_init('0xd0099e869434f934532328c7e9147a6e4a4c6df17aff988900cdefdb6593b19c', 16)
+                    gmp_init('0x3a10bf830190a2c8201acb8746d6ccb6afd0bb9fe43adee13fbe07b9926695fb', 16),
+                    gmp_init('0xb5d585b3ec1a271576203848688a65c5f28fea6c43d45288755c72b2a4eb7e47', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x2b8aab8fa3076059467b4f23f4a28f3aa5ad4b52e8a02711bf27f46e9e5a4859', 16),
-                    gmp_init('0xa3caf5c3aa59f73c45458b9a8c77d23d257116da2dbcf89fd2c2beba4be9479a', 16),
-                    gmp_init('0xdb3173b370c1241d6a7c6224bc4314a90c3d42ceb53c28e09e3d3f418e87ab00', 16)
+                    gmp_init('0xadbba24f50e000a2fed9b396fbba71cf5cd8982354afe75bd3df8e1b4354f993', 16),
+                    gmp_init('0x7c112ba338a4d9afd3628f1206ac8f2d5c756a550b61eb2625b83ac1a2af4773', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x6820e599438de76b5dc1e883c2cbd1340aa42ffe698306bf607ff510005b2016', 16),
-                    gmp_init('0x34d3f35f70ed31c44f4f75200b4738626c6eb679c0b1fc388fc4fde43bff628d', 16),
-                    gmp_init('0xc33b8c1c13a82ddac6ee7be9120f52b8d7023984f83e0e541f41f565f7c3a69e', 16)
+                    gmp_init('0x12fbddfac9010433ca5cf5ac30912876a7b0960a60584596241a8e967d2c8614', 16),
+                    gmp_init('0xa5ff20d29027806833fd91428cd2cfb54d4258239c19f495f077bc1d58b0b174', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x2afe9192c378e6cc25b8d0c7a0ac96a43a17b1e25daaf65994a0a975c3b6f518', 16),
-                    gmp_init('0xe2472897cabfa21c1b7894697eb6ce487bbb9d41890d0ad57e16320b58d8917c', 16),
-                    gmp_init('0x37bc538765d887d371bd90f5e122b041606d521a90233c0ca32b9f0a6676665f', 16)
+                    gmp_init('0x7c8039bee6f3994c1f455e000cdb9fe0d77460ea61c45079d48a96f55c19970d', 16),
+                    gmp_init('0xbea167d2487ed35599fa1ce5569edebb3afbe1730e033715c25775979ac55427', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xadd20ff5fbbe1fe696947ec4cae0242693ee4bd3ff92dfa5f15d4af2d68979a2', 16),
-                    gmp_init('0xadd1c034eda063d9de8c9a36237cbb6918eaadcbb7d51511207198c09c49971b', 16),
-                    gmp_init('0x59844246324778b6afe5b1ce374e3fe724dd85a1a379da094e7b9dde0eddb21e', 16)
-                ),
-            ],
-            [
-                JacobiPoint::init(
-                    gmp_init('0xa907e4ed39e60f4f7dc8e472d3bab748361f9b99da1b60c092011f7e1f1dda1a', 16),
-                    gmp_init('0x9b9e3f870293b3df10cca5695477e3f3ac83ab4e117f7ba06518529a432891c7', 16),
-                    gmp_init('0xde874f3bae1c8e2ffcbf82a644735f66ff9f3e34f6a90050b2a0b0b6f17bd0bd', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x9572615c4fe30c49c140ca6834e0744d72d21fb15dbe2db626a4cd6b4fc83a4a', 16),
-                    gmp_init('0xe855847aef3bd161da590a7719c4d796bb76064e19e8310d2e99c9449d24473f', 16),
-                    gmp_init('0xf084476df3c931cd177da88a9176e81e5dc42c618a184e23282e21a5ab092cdf', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x73575a8cdb77deff3289d6b8ed1f6e8e680bba3d99c3a46cc79b48cf686777b9', 16),
-                    gmp_init('0x43ef012fb3bed747857b4793113403a41cdbe351920f83ed2c6879ee7d659a6d', 16),
-                    gmp_init('0x1072e6fad5dab6aa5f135252b18377784f73a5faeb33919dd80bd3d1b013fe0c', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x8f6a77a91db3eff0c0e9fde8952fc1c7328fe2dde42f8445546a7031b870462b', 16),
-                    gmp_init('0x4229c64beacb18f9bcad620fc73947774c5664bc289549b4b754b1ae0c60100f', 16),
-                    gmp_init('0x33455788bed71bfac19e74e9cbc86025fee86ff1f49e0e9f0c1374c2432e75ca', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xf0931563e955997fdc929f1e8bb84d2ddc13599ad0d8a5cafc295ae1f850d9a8', 16),
-                    gmp_init('0x9d560735a41af2386f038eff994fa29720feccea89e72b078a4d2c337aae7502', 16),
-                    gmp_init('0xbdf6dd7e6e6f62ce99386edb3b76b66bfd2b93a428ee4a93ad5a2198cb5f1b26', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x89b4d4c566c655d404856cb052b03e957b2a88ddd1ea123bb34c17f98c9cadae', 16),
-                    gmp_init('0x1fbb474bb6717bf1312cd5e03eacea2502ac60a784bb3bc4e72af92fc2260378', 16),
-                    gmp_init('0xc82bd9cd57ab66460e8597169a5c4141bd444ebe61ca4f466e2ecd5246b2298e', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x5d1760420ae150a22364a44330e690153dd93753bb684f98701c0accd0c1de7', 16),
-                    gmp_init('0x62593b6d63daf1aabdd716f2d77887320f5657a39b236d94383aa69d44413028', 16),
-                    gmp_init('0x9323cacd889c113383572944c5ccd657a60657242f5d45cce7a384622bbf1c38', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xc1b0d308ca494389d8e9b5eb86770f6663160b8e38c758d6a9c387cb70afd3e8', 16),
-                    gmp_init('0x5f91482fac03b70715eca1038c6e82eaf36aa5cb6dd3c93f78e5617e5b446cf0', 16),
-                    gmp_init('0xbb7ca11ca1e26bbcc8fc40c9edeba3fd8d93a74eff344df7199e2e1fbfc8b850', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x11c5484646234fbe40db0380adfb8c6f47e0605b733c5bee20a8b8fde755b771', 16),
-                    gmp_init('0xe246c0231cd92e4eed3eac4c3580c8f193f6d077f09cfe135b537dfc732d44e5', 16),
-                    gmp_init('0x7bf291f1b541e50f7a5b4c5ce70cad6382f7d774b3ba79455598c69bc8d6a1c2', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x9ff7a48551d54f79c9fae963862a50b1cb8506c39b548cecb26b5dd3252b7f74', 16),
-                    gmp_init('0xc35d2b6a43fce6960294cdfd1cac19524d3d4094193e6fca685500f324db904f', 16),
-                    gmp_init('0xda7ddef46dcf74de6652b89c16fa590a60126a5164b54c150720da3ff5d2631b', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x9e8a0ddb250dfe1f98f83ec18909befe31d8f46032539608e8b98e78c8762042', 16),
-                    gmp_init('0xe37a75c6dc71b8262d630b50f23b0566cb00999b204800efcbdedc58d8799c9d', 16),
-                    gmp_init('0x1ebc798eec99e6ec48f595a0ed8389a00bb35a053cf47be004f91651ca1354c8', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x242e47353b1ce760ca45a3829d4252634e87f6e4e9ec401b9cbb840e6475b814', 16),
-                    gmp_init('0x14a04d485712a43e830f8821151c8dec3e5728b30cd863a7610009d6b1522a53', 16),
-                    gmp_init('0x4e7f1c69889a47c17fc420bc9e118c203a791aee3fa316e708942732c6693d73', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xd924482c0e02a90e06c185c40d455a62b0c41e58206df9012fe8e8b2f3784a', 16),
-                    gmp_init('0xd463f82962ddaea6e73d1be0a79306ade4d0bcb25c55d86a1066665fb379df0e', 16),
-                    gmp_init('0x973c69b65ed2877099a7e9229d1702872a734bec1ef9e9ae3427a0524ff2a63c', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xa72406f11027f9b2140637b6e81a6763236c9f3d3ae683027d0aa95c9cc402b3', 16),
-                    gmp_init('0x4667f354a35e7d194732ce63bb621cc88d10ebf74a0f6d2e76458d41d531a5e6', 16),
-                    gmp_init('0xb959942360031e4ed66f9c658f67ca486159806a40a22964a22603eceeaa4306', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xd0387f20b9795635ed372cb3208a6db7c687cfb426aef77ed3cdbfe4c953597e', 16),
-                    gmp_init('0x855af2238dd8d41b931fe35728ab534270a7a887b5a59c765c48af0aa4123831', 16),
-                    gmp_init('0x8eb66e0545f543342280b622610321f1bc7a0406295a1e0699975be731075ea', 16)
+                    gmp_init('0x8bece859a2b978777b8ae3a1faf99a3005d0794ca05afc8653f764302d9aeeaf', 16),
+                    gmp_init('0x35f933c4c50651fcfbb8910b0effc368bb22038f6f8980f755a0da3c85f9eb5e', 16),
+                    gmp_init('0x1', 16)
                 ),
             ],
             [
                 JacobiPoint::init(
-                    gmp_init('0x493ab4829f51458bec3659f4d3f450fa57e1696e05bd194740e4bb8da42b6171', 16),
-                    gmp_init('0xde9cbf01155ec28ffea69e55f8a9eae753852429a17d75bdc47f8df74e4a980a', 16),
-                    gmp_init('0x8a22b1756730677f37ef7e678da1b8834ce71f8a5e5188dd800c918368406150', 16)
+                    gmp_init('0xf41d7f4bb5e50430cfe08cf8b5e2ee0ab63b9998a43d1fc584b6b8ec2b519178', 16),
+                    gmp_init('0xe6a669bebd9af8d6f1046de3faa82347ab49acc36919e1f9a7a1665dca6a3551', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xfc754fb97ee413b10a95ab25182e1596f33f920df260171195e169a20be5da5', 16),
-                    gmp_init('0x392991d6c85206feeedaa9964850410fcd71c5c3f020c4dd88a04af0573a0592', 16),
-                    gmp_init('0x9b1d2c32ab7482cb56262045996feea668bef628a4145dd90a4014b15b26f5bf', 16)
+                    gmp_init('0x3b2369ff19ddd591f85bc3da3881ec450d80e91bd6616f3d2a937e108f089b4b', 16),
+                    gmp_init('0x5df102ecb29a762c2d22213dd27d78763970e7b02723e7c1f065556f67f00f4f', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x74d6c9c896c37104952250170496ec76f18a7319319bf62cf38a650cd71d2946', 16),
-                    gmp_init('0x34f25bfe7f37fcd40c4d3901c9dc59a99dafd43492d2ec135ab00d53db0a04e3', 16),
-                    gmp_init('0x38d3c9f6e06c860064c4e57230d0ce6bf8f8e3b6e9472d274418e53dc35f69e5', 16)
+                    gmp_init('0xd65f827ed62d4e7f3332d691d62d3e611be82ce1bb61fc8b1a71313e1e3501d9', 16),
+                    gmp_init('0xf24b60fcf09a90fe537b7ca5166b87fc61c13aad5d730be1ab9446c6eb55759e', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xd4708ac0d8b42a772972b0a7db87130077f3a15de25900365be30a0c64287487', 16),
-                    gmp_init('0xfa8cd11448cc23cedb8b0184175c2b0377cbf2001c65891f0a71c65e5c5eaaeb', 16),
-                    gmp_init('0xf02a43d2b3decb12ccb22b7c3fadd0792f3ada04344dc254c2d26d2d15103bd6', 16)
+                    gmp_init('0xeca3eef00455b406c7661093249bff8f997cd06e999c1020bb180bc7b8352aa1', 16),
+                    gmp_init('0x9e6bc281e78c25b8f6b863f37ca79007a8359b399b78ed2385f3ad39ecc12ea3', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x5573a30dfd72998a6ca67d41bc8146e887ab2f6ebe03022a94f3c63eafd6bdb4', 16),
-                    gmp_init('0xc60167d86fa518f75a3c0db740d82e2210b3fb297846945b6e3b0c67340702e0', 16),
-                    gmp_init('0xc95a3e6609844646ac7c4cc3e78575d65768bf49a31b1f40c03c69c8748c614c', 16)
+                    gmp_init('0x55a9b5b6deb05c385ee6c8b5782cc0ade7994df35fe2ea12cb62fe240f2ed84e', 16),
+                    gmp_init('0xc4f22196ac9f19ab29174d190ed7f43ae8ffb4d712a0d8f0579dc550546495a3', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x26a786049c341bc038fcefcbd5f16d26e8b9ba43225be3290da69e6c1cf3f4a1', 16),
-                    gmp_init('0xd0a96b5beb4303c9ea8dbead4ad83b3da7c221314c14b2a26824edb0e25b5930', 16),
-                    gmp_init('0x7910f340e0ba9773e1f045605a095a6cea3bc1d9c961078dce6c2803bbdc0b2d', 16)
+                    gmp_init('0xf91386ebe69ef8cf41bb5a14a5e51ca1c20e8839a7615c7ed6d4d26b5e4c47d4', 16),
+                    gmp_init('0xf43574316fed3b26606f08dd4849f9c45b8e120559b73b3f37d18a490e9cdd72', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x57a3c4b3f9cd658eb1a7cca94f028b7914db4f8ac04461959750b720a8962b94', 16),
-                    gmp_init('0x104ecf8a2cafcc5fefbfb5e95025083a27c4cc64d988c1c295f7cd457b74116b', 16),
-                    gmp_init('0xd5725de955bc66ee9737d07ebe946cde0892482d3d4d2062689b0645d5268cde', 16)
+                    gmp_init('0x79de576dc7db71da1f7ed60a62548bc49fde1eb648bc00b29bd2cf87075495a2', 16),
+                    gmp_init('0x3b2d3d0e6b186a02785e6dae47dc79c68314f5096493a746802c8c6aaaec6fb8', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x72bcb109d147dbbcd27de5eae0a68a33b97753af37252577cf905d5ffac9fb60', 16),
-                    gmp_init('0xeb2b06332a3b4cd7713fb5e9d37d832de1f400f29ef3e49919ca5abeb0f68fb7', 16),
-                    gmp_init('0x4de58e5ddea199d1ea7887a16720614a1dbfb6d8d3d02906349610c051edc177', 16)
+                    gmp_init('0x5c97699d44b7daffcba214b7fb45ea98468f41ce1b0dad7bfd94a8b61a93d03f', 16),
+                    gmp_init('0x4737a353a4cb0fb1238ff9a6ca28f2ec20680f327453615967499ca90e6f2ba7', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x8dd8cb54373b5ebba8fa51dc16674e867672d83096f1f1b339ecb056d3baede2', 16),
-                    gmp_init('0x8efca57ed37fa37c9f9661f5ab2b1a1a68f4d7fed1bd8afdaafb5cc830bd2787', 16),
-                    gmp_init('0x8025ae613be9a3d6f5b1c3f44eb5daefbc21aa036b63b5714db5d80c4693c4b2', 16)
+                    gmp_init('0x8fe04e32162404b6e264b3695957e55524c3ff903511964ceee92acc82d1e7bb', 16),
+                    gmp_init('0x3987db5022f6358fe5d6cea57a8db34e5b9164646f046a8cda759ad0da62e84f', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xb1b761085695e9c3bc5762553dcde201414a5b52836ed9c3bc3d589e5e6f6e0b', 16),
-                    gmp_init('0x7de6a8087369384b78f5291b254c2e2d2abba2df51445fe5a7b29e433cce0af9', 16),
-                    gmp_init('0xd6d84a124bd8cc402610575672c45e25d30824568ce21b4f029f09d1617d1be6', 16)
+                    gmp_init('0xd5b806ea4c696e07cd6783471bd61bfc7a08f60a51a9ad2c53009ee20ca9e67a', 16),
+                    gmp_init('0xd4d0be409375e77132f37c90d9e4c348aac0b16b6e428e6f784a6f319b05f005', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x454883c53a2879c4bb2e7519cbb3383df98844d5f24e733569b170fbb2c6838c', 16),
-                    gmp_init('0xae9de91b7adb47c185a5ff3e12eeb776e1ea77ade07c9676bb5135933cc995cd', 16),
-                    gmp_init('0x3e73960a876fe12b7c4056700fc0a4bda104f3d4083a8fbd2ee7ab73446eca48', 16)
+                    gmp_init('0x3af4990957edf8f150a94a6368d224e24efcd577e48085c2101a4aec69f7c360', 16),
+                    gmp_init('0xd1706030d3b1d91d531f86482e733c3348554dd62760895cd39dc2aa687d7a7b', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xedc0f25e6c2178bc23bd217611da573dc5e0e5decc21df881d2872d1234dc7b4', 16),
-                    gmp_init('0x3cfa4def49a3a484aeede1bd6fc042d8505a91c089ec1dd5bd3fb0ae26ce0622', 16),
-                    gmp_init('0x93aad9eabbd518e345b7f51209e203e027e5e3a43361a1ca57f99057bbadc15e', 16)
+                    gmp_init('0x12d805c8ae7f1af3ccb1033c5c15b2971515a21178ff09f31c72aa59df7f547f', 16),
+                    gmp_init('0xa431415979654ed138036615a3b8898b8657a4c14ff1c6d01a31bd8ed1e68394', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x72ae39ba93cf4430819c9932df4f8a6258ac4b5523d6495ad0180fad480b423f', 16),
-                    gmp_init('0xbf64133c0204b408da1fef674211041afb0d726e429f70acf46ecae073fa25dd', 16),
-                    gmp_init('0xeb3369c607ea01ba5bc19081a4eb69067122dab9e8d97c3a5bf7d56755d0dd07', 16)
+                    gmp_init('0x31a7e05c623c8076c1a582f3fe227c4e213d06221263d3b539a523ae770373be', 16),
+                    gmp_init('0xc23d2ef3f8d1de67021b0aae3423db1e8ce82b9951a254308ed78790e90950a8', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x7df64d1afbee6730aec1e90f920c8e615ef0b86fb4fb02eb4a9acec1ba0accf5', 16),
-                    gmp_init('0x63eb1149641d3928713c626bea67b13639f5e1eee3c033463686310e93a1a749', 16),
-                    gmp_init('0x6418926f7ff4506fcb563415b0e767fc3eabafa816a5bf76face609e68081fb6', 16)
+                    gmp_init('0xd0c2ab52f8cf7ae02f8f451d94774ee2c82bc56a88cbc44b9ea22681c57e51d5', 16),
+                    gmp_init('0x9ea4f0cd1f306929806cff053c53272403891da1c8fd0909188896aec0b1efa0', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x21f0e57bdfc611280f8a946013babec17ecb22f9ad29cdf7a2862718f9d4e8d0', 16),
-                    gmp_init('0x18655462bc4d352fe287506d7a216589be52a3d2f59bc0842837b806b3c839a1', 16),
-                    gmp_init('0x511c5d9a6de62890239c28d55ca4cb4bbf191dac6be1aefd2d4beb1c54268e92', 16)
-                ),
-            ],
-            [
-                JacobiPoint::init(
-                    gmp_init('0x618eb9cbd74611b9ab3a6772799032bba154931901bfd1e2cb88b48ed5a645c0', 16),
-                    gmp_init('0x798326d87133a9cc4d2d8ac7b983d5cc5b13ef3edca740cd91058b07f07dcbf0', 16),
-                    gmp_init('0x833de5068fb90221b8bd829143ae0092b06eb96edba3f2685363eaaa22b1c6a7', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x1aa42cc1207a22bc1e3bb927f4c81b7c90978cbcc881408b73557b4276b4637d', 16),
-                    gmp_init('0xab4ef30044efb15b1d9ca5c1637cec992822e301b4868d5b6547789a5451972', 16),
-                    gmp_init('0xe23b813ac1ec3491baba367a230bed0440b2256c8881b840044c2da1a30ea813', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xdf88083fa4d583b830d9aa02cf529865307053e41fe4f9b40331b182ce1ccae8', 16),
-                    gmp_init('0x61b01a79f21327fa5a3695ccf1625d08d5e0d5560d60ca59c7fb3c91eda344e8', 16),
-                    gmp_init('0xe6ad6fe8c60296a92ebbf446bdcaaa247bf4c9e641076394a5ec5aa08dc76d0a', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x5ba10ecd80b52c859d62c8c5e9cb4eb398075cbfef5471428ebe5734fd3bb071', 16),
-                    gmp_init('0x817f0b31c596fd9ba6b0a030dea22924d58c2ac267306fb73ae1dafb0140e6d5', 16),
-                    gmp_init('0x5ce04844837ba1a49ad204e379c8e57a672e1567b82b75dc1713d2136def6df9', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xe16e4ac6a73c0e6a477d0fe530ce5ae3ebe8a735c461281187315c73e0ee6c1d', 16),
-                    gmp_init('0x374d5389584cb796a6219bb4b94b39ca6163fd1e43732dfb704fc64a870dfa6', 16),
-                    gmp_init('0x24861299d87fa24546a2d1f9075005fbe291736d4635d133956405deead9e423', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xfe055070594267ee9f63c5920690df80c5aeb2597268411cbe1e674756661997', 16),
-                    gmp_init('0x4c6feeef843fb2d07355e80271d0b2b8b8e24792a2d3984134f0bc98afa278ab', 16),
-                    gmp_init('0xfc684b056b59d2adc93a642e5ddbe93cbaf8f431c2d9f46ba659f1a7efcde5a6', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x5b16567e030c460fb3d9cf7b59d7da5cd7d854e7ec1d85c93b162088d40bde99', 16),
-                    gmp_init('0xd5844a7aafeb0b881d3dc49b104adfb8bf339bda3c832ef3e3a8290e3f6fc673', 16),
-                    gmp_init('0x7120e507925023a508bd4da82f01d41af86f2f7f4a416552eca274b29a0f6905', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x1181c9963112a7763defc71b3a465d77aea33e67d57f618b5ede6d0e8cc0b9ce', 16),
-                    gmp_init('0x6a40208094b8552776070d721ce0e530bf51d93e334ad2380c73f899aa56f279', 16),
-                    gmp_init('0x8c926fa396719ac5122b95273c0a40c1dabc7dfde25173535ecef57b83464eec', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xe1c1422f1a115f67bdec74bf30748400ab24398aa1322563c6bf2ac8673ec7', 16),
-                    gmp_init('0xd5304616612ecfa3d8d8e550d8c3220919f84295f5dc4da5a18b25e824d1705b', 16),
-                    gmp_init('0x42421ea537a107af70a4379489617c80aa13992ed12ed5421ab9c9c21c22b4ed', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x3002a4a65e72bf149ab0285148d58d9756be5b262b2b5730a23dc7fff3542e4e', 16),
-                    gmp_init('0xac4051bfd4480c3eb1fa495e71760624598b34808690c6de4e18020691b1dae8', 16),
-                    gmp_init('0x2655edfbf34457d02a74924369c91d5d197d551a98f75a9b18886277d5aab2a1', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x76374bfbd38a73e115dcf2b2fa53f15bc48fbd29c78bb2b6902f13efd992cdb4', 16),
-                    gmp_init('0xea7f2b2364658f36bff5d56bd26757e335a80a6b1528033363c86e804c25e149', 16),
-                    gmp_init('0x89e78751d193482e58810e9d54e36a85a92188950cba784fe51d9dcce06df39c', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x1a9929834321c5e1f2d847f05f4abec4514603f2f9a830b3a45361456e0d3750', 16),
-                    gmp_init('0xf90a6de5d90bbff9f26d4392c16f34cb9e1562e58bdd0e71ba7897366b4cd067', 16),
-                    gmp_init('0x7bb8fccf5c5188e6136d31754f1ec4796147088c44a4dbbef3ede6ffc3c49955', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x80a73500f04ff93579fe967bef7cbd6903649c9e2d21919af89cb62a17480b5d', 16),
-                    gmp_init('0xdc31729bdfdf3e98b4266978cd0ee46b4929a02f3fa109e7330c485f035529fa', 16),
-                    gmp_init('0x9bcbf2693521e1e324d95c2c0682586c756bb9cdfb6a1efc9f474943c5f175e3', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x60c157350a27db75b8d43cacc4aff49a2fe2597eef75a35ccf2bfd3f32500438', 16),
-                    gmp_init('0x810bb4feb9e49250ef69c005134c8648702fc17bb355814aeb8987a74fc86d7d', 16),
-                    gmp_init('0xb5a4226414f7dbda13b2a3d8802d28276e020caa69e16b1b68993af4e21f386f', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xa1c592ca90adeed578b39d385e06df17e7d65f4630a2a81707d8f6693178dfc8', 16),
-                    gmp_init('0xbf1f9fd1d6ae6142404b942b0ad8ef68ff25242cd5c7fd5e8d38cd618a648a25', 16),
-                    gmp_init('0x94addfc837b457942eb656037140155becf67ca94ee41f73847d1413fdfc0a1f', 16)
+                    gmp_init('0x740a66481356d23ed15513462dd98458a33a9fbff13e24bdb42610edcb923b45', 16),
+                    gmp_init('0x7f6d048c25cd523f2f4e4788a75606cfa897993907c8480ba8c13e3851ecaa5f', 16),
+                    gmp_init('0x1', 16)
                 ),
             ],
             [
                 JacobiPoint::init(
-                    gmp_init('0xc762a9c8ae1b2f7434ff8da70fe105e0d4f188594989f193de0dbdbf5f60cb9a', 16),
-                    gmp_init('0x1eddaf51836859e1369f1ae8d9ab02e4123b6f151d9b796e297a38fa5613d9bc', 16),
-                    gmp_init('0xcb433ab3f67815707e398dc7910cc4ec6ea115360060fc73c35b53dce02e2c72', 16)
+                    gmp_init('0x4a5b506612a677a657880b3a18a2e902e9a521b074ca0141a84aa9397512218e', 16),
+                    gmp_init('0xeb13461ceac089f1c42604fbe1627d40626db15419e26d9d0beada7a4c4f3840', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x49db3dd17a3284fd06b1197890890600f6a6d7d219bd4969b603f9214a285d1c', 16),
-                    gmp_init('0x458dfe87d0f838f311b652a8737db8ae930dfc27d97af888882951fce505dc3b', 16),
-                    gmp_init('0x2175549f32eddba86d2a062507602c65b504468b4fb006aeba713e698806dd6', 16)
+                    gmp_init('0xcc8fe9ecccdaf543521473143eb337c5da74be4d8455b67c1b68edccbf8d5842', 16),
+                    gmp_init('0xc2a5d01cd9f2fc3f75cec6140b91fb775df1592d458677c8567e1ac9487100c7', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x95f112d0039b81f37acbebe38a2f97b3a7543ee3c561918d36984da4dc88eb00', 16),
-                    gmp_init('0x889c4999af4b37b85aab55822cc57915e59c3a8e7c518360da394f6677f78168', 16),
-                    gmp_init('0x9f3c00119f778d48370f5bfd85b3eca7813439fa3913d93b8c7a343dfb0bc021', 16)
+                    gmp_init('0x1064063233318ba085292ab99728a9e3bbb9026bc697339152ef40e2518473fd', 16),
+                    gmp_init('0x9c6832823b8ba2d8c8e7829e6585883ccfbe190d0c21d039afa6162e785cf805', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x5f27b546ad438bd772de55e5e79b4c5ac0f1076a8f6b21664bb919f19a366deb', 16),
-                    gmp_init('0x20a1f7919532c25e9f9e7168d3bafdb2a461c1754b21f6f078dca80bdc250c59', 16),
-                    gmp_init('0xc7c8c32355f904c74a9e864e30312529e6a83377bc1c779347bb06071245c871', 16)
+                    gmp_init('0x11c881390823d8ce8006b50f37e8626171b0b96cbc1184de23f389be0c37da54', 16),
+                    gmp_init('0x82f5ca516726bda3a42aaf13caf61ae4b3e32b21384d2adf567c651408ee3df5', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x28bf861e54cdb18b395350cbd334c46471663d8782e92e0000804eefd50af596', 16),
-                    gmp_init('0xdad52e2b0d83bc392033b693253438368487d46a0be870232c98dc22b4a99128', 16),
-                    gmp_init('0xf54d429dfc4d327e075e575380b3e8752d369e51daec2b980db2145bd678b9f9', 16)
+                    gmp_init('0x38c8ad8ff05f27bf5eda410d54083f212b423ed2eda238dd3567eec8653f30f3', 16),
+                    gmp_init('0x83c2617876dcb116f3909654ddbd641f6583fa982959df37a060e749ebe9217b', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xa8788433e25011d497b97fe3fb076a31cb0f9e4cc3164c92314d6cc17edd274b', 16),
-                    gmp_init('0xfeaaf54b4d05625d64e45f12efcb0d8536562d042cee4e225e2fca38c2aa56b8', 16),
-                    gmp_init('0x2b2036f4e43d50d186397aad8c7bfda1e68a8490dfcc8bf5024fb88619643b8', 16)
+                    gmp_init('0x3f789c12505a876c23a5d12e930f5e51280398b6e32d8d7762b66e34fd7046cc', 16),
+                    gmp_init('0xd0d9f1b3a291a6e564c974dd964e47a26320de848e0b3fd61487856590683e4d', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xfaa9658311ca46a1eb2bb7f3f32bcf19b3dca39d727139ce30309c75cc209f2f', 16),
-                    gmp_init('0x5f2b453cc3ee59604e7561b2ec565a4eff9376c21f1ac2b891e5d357413def76', 16),
-                    gmp_init('0x82c241089c8c44473e2e69bd42eb01e95c128c5aa106f52c9705e3416ce5d98a', 16)
+                    gmp_init('0x6fcb8cbce860bb095858fbe3fd35184277a9a2a38f920cbf543e6911b6ef1584', 16),
+                    gmp_init('0xa8f1a83d8b721d76d54c0823ac30459d5992f6d6928a4325c3c9f7c21d3110f2', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xb11e1cd45b6b882bbe2a2479861ee23f0163ba50ecd589ad47718117bd7c8234', 16),
-                    gmp_init('0x8ae9ebf0e5578ee218e13124a22400a99304b68f3c1edd9a9188b1fe842012', 16),
-                    gmp_init('0xe44396ada41dbd0b3f63fc44d1c99d5ce61125a0a1343d5cf8edef8a56829f0a', 16)
+                    gmp_init('0x9c7a4efa52a32680676e37e7fc8b8d71cb4cb3a72a5c98ea355c95a1fd698f73', 16),
+                    gmp_init('0xa2c4a71ab2150c7b16c424c1d0ade69b94b07cd5ea879e7c122443bd120cf142', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x80e818955cae16bc7d3f1b41e95edd9c79fb7f68139eef4232a1199ee8364d42', 16),
-                    gmp_init('0x3d652e07e6d1f44b010ec82f6f3cfcd506190ba8d30bed8aa0a42a36b903b7c', 16),
-                    gmp_init('0x77feda3d3644d44132321b5f866f161338b9c7ab32b98811bc0fdd065969a51e', 16)
+                    gmp_init('0x7811d0b93f76e2bd73515c90de45b0ee50d71d346764078ce8f51340462255ef', 16),
+                    gmp_init('0x99bb76370bb5ac7a54c02e9401b85132f51ed0513ad43768a58bef9b1be3252e', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x1d4a5d4d617e8518b6974d7248b7f6ae670e730874687990aa1e431bf8860329', 16),
-                    gmp_init('0xb46a587bf65a37e9252fc1d7d7cbab717132c828e5e638687a3ec350d4b33614', 16),
-                    gmp_init('0xa721910fa35949ae6d39a79db73a16f098b46879c9de65e1554e31e04f341fc', 16)
+                    gmp_init('0xbaf532bfbec94d7d3798d6c6e4cb1ecfb998a3f0afb9323a1bf6578b3517b889', 16),
+                    gmp_init('0xe7bcc2a44e4a22d0f1b51983b721939dfef1d3823e27338ffa19fe6749fdca6c', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x807d94ab61fb3832c1de362e555bf04407e6f8fccfdbb2bae564f5e58d12b461', 16),
-                    gmp_init('0xcfa0834d9619a7a52745891bd049cca13522a8646e2ff8b71ee03fc234132b20', 16),
-                    gmp_init('0x25079b7a9b4e2068e9de97fbc29f5b65333b42c39fd1999b208a6748c1b9f0db', 16)
+                    gmp_init('0xc3583d944a8b50ce0c7b729d5f816f2a9eed0823a3fa865093e110f1353d2ea7', 16),
+                    gmp_init('0x53967ac09391e90f5964627ef89fcccdd6c925a6515f1c432b183e9e0b667bbd', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x82b0d308d9bc86db044b5388d78ba631d18d40f05ef6e26b8a4312d3aaa5e0b0', 16),
-                    gmp_init('0x2526289ed17e71b1f46e066a927a70ea74d4ab38983650a2e2f30c8969fcb093', 16),
-                    gmp_init('0xd5b089bc47c1e627bbafa336a2116b3077483fa7f97b57a2e197b55b7efdf333', 16)
+                    gmp_init('0x280a27d97ef8d60346e877e467a90e1a4f6c1826b9d71d5fdf0b36a7a032c75', 16),
+                    gmp_init('0x8ca3591d1507693c41351993ed79a6addc7171891f30fd676c3043cb76c0f2b1', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xafec46ba2650d6e64aec42015bed46e335cc4e454e3e52a37ff56b2124fe2eba', 16),
-                    gmp_init('0x66a5242e73afd1735031aa372881facc946eb038cf278a94319e80610d8a772c', 16),
-                    gmp_init('0xc7bbd9e10acc511aa103dfc10c44106bffbd7195c692f8ba41b01fd782136565', 16)
+                    gmp_init('0xd591cf283cdee501f3a0f018bb7ad00d53f213a6628401658eddf0e0502e3099', 16),
+                    gmp_init('0x87ebe5cfc478e6e44e51330d350bc5825cf2eff88b116fd633bc2765455ac5af', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x27f7339e394b00c63db2ec289c847a812e7c11d6f873e3e4b8174d6e0cdb626e', 16),
-                    gmp_init('0x10aca52aa5bbf48935f16a0cde741aad6fb2120831aaeec1a4bf3fa5ed8fbf07', 16),
-                    gmp_init('0x6d9a9bbb5f4f9b9c947bd6dee4b53e990b40fba497a5709f0bd4d1bceb233a47', 16)
+                    gmp_init('0x86192922e83c5bc0829800f8315da4d5dc75980f62e2fba9c03562bd884a85e9', 16),
+                    gmp_init('0x9a468a0e4b1b52df9f84e2c1fa2cbd6872eb2277193e431f34b026a6cf94138b', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xb9068f1730f3eb6e378a273a489726e4da1ef27789bf46f792e12827fb3392df', 16),
-                    gmp_init('0xfd4b758e9faf77126dd679a658269f2487d2005bd59b00740966a1ccf2cd40a4', 16),
-                    gmp_init('0x964d56182b715d0475b9911597182ed4dfc3b9a454c09928959a5be752b62232', 16)
-                ),
-            ],
-            [
-                JacobiPoint::init(
-                    gmp_init('0xa0a9130ada4284055578c0997c2bd278cf7431be9c463640afa2195db08b50fb', 16),
-                    gmp_init('0x82e0e5f755ec8f43fdb24bcd0a6b0d42b4efa51fe360db1b692d02b26e04199e', 16),
-                    gmp_init('0x9fd33972ffadea022a4c4ed6f72f8c9737884242e943286b43c454ad4ebf5d34', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x78d8ac7fe5b0ecce505dbc2dd9fa6248d7960ac880f9cdbc6c42fb3e03eb0fdd', 16),
-                    gmp_init('0x76b15f530a978d37f1cb204e8f124ebafeffeebb1082567a09ace7568229b541', 16),
-                    gmp_init('0xe60851a31b1e4e75786a0df722a59dfcd3c856938532ed9d1f3037f736300ed3', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xa056d822819ed1666bb047e71d22e3c21b2c86e8c91c0b4b2014d1112120dc5d', 16),
-                    gmp_init('0x7f030e34d924c841dc32afaa01aa24997286460ff1b99c0db89d51fc4a7b7f3b', 16),
-                    gmp_init('0x1e4b8f7528787c4f7eccb2b5564ad748b7d437787e62d98d3026c71911f45854', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x4b00d4a5d99da39a606a81c866b46fed9de19bb05a93a68bd803f366d8097759', 16),
-                    gmp_init('0x267c4c1120997cdc9d458e6d5072da4831ac6c59862a7db12f30f44fac07b670', 16),
-                    gmp_init('0xffa6958b07e8b9921a2dd1af166e178ce41eb1e86ec377c43b34fe9645b0ab0d', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xe0722efb92f9d9cf15ae75264af6aeefb712aba0587a6bfacadf572549b3dbe8', 16),
-                    gmp_init('0x74c75b5b5452044b15851f97c5381a0a39a053f4ed3f3d336afac757bf700c2e', 16),
-                    gmp_init('0x4188c58994d2bae890d142f2260fdf28e5e74d77030f49c015010e88fe8dcf9c', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x5632f1100a0be522e3b6c4d355f3559d3bd4acc1b4120ea6260f2579a7aa55e3', 16),
-                    gmp_init('0x69e399e825a1580deed121242ed3bfb50b10d0e8771f327155b48d7750102c1a', 16),
-                    gmp_init('0xd0bef617b370ec44a8ab720b10e94ac7167be806873a06505fe9346aedc84211', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x6c0005af146aedbb0865799e9d1664e5557205aa68d6ff3f1d19e4fd19aa4c78', 16),
-                    gmp_init('0x282ee4f0d8df8d7c2acd2fa9aef908a534f021a68e3178bc477dbb4ed2b66c73', 16),
-                    gmp_init('0x7e09db1caf30205bfbd01965f719fe3ff6a9d9678149956d420c07c44e180608', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x65dc3247a8720ca0b9a16f74a00529b707cca22b841eb3d1a327715bbef5be28', 16),
-                    gmp_init('0xd09134253ee2b56943af5d2b4fc53eb6ba13de473e3ab9f0063ad79fc10d77c4', 16),
-                    gmp_init('0x914b0313d86f07c8927757a01009eaf5a9f4d1b95bcce864084b924f63d27275', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x9806285c2c97edd9e29e5c195a52ee01424f3a6e076bbe340590b495af26d4aa', 16),
-                    gmp_init('0xe2759ee2c4e946657a42659791d910a3d2bb1b1357672edd5094e15159f8a8a', 16),
-                    gmp_init('0x65b9f4ca64e3fb0ac7d05855ecafd296d582ddf4fe6e4c85b104245f213700e7', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x48268a93985eb3acb83bc7215c187857f7194fff1981ee8a65babb3bbbb7e5f0', 16),
-                    gmp_init('0xe3b68971c4e9e5198dadefd49195907953fa2c3754fda81927965eb32f8a1d65', 16),
-                    gmp_init('0x70d28dfda227278dfe8e3d2df489a4404d4c7290ff0563cc8dd5e9d5ed0c08c8', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x5d163464fda5b40851765ac6b7f2d50dead3af1e89cb8e04f2d66a853f6caffc', 16),
-                    gmp_init('0xd94008d7c979b84451382ebb0a376430d3cbf47f727518c13aed4fa7f2fef8e3', 16),
-                    gmp_init('0x5aab3070367e1d03c019ce03dca654c98ced247a550bd9f102db097c411ab65', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xdca2e347282152d7ca03c4d724f2160db349c1d7e9f3f48baeae21e8aeba424d', 16),
-                    gmp_init('0xd97f0cc5fe10d9c155015588335e85c69673669a61eccf092b00caeab0be1b1e', 16),
-                    gmp_init('0x2628262b42679592af45901c9f888b6747bd2132ff314e6c94f84083c10df1a1', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x1429777a5f34c2fba432c3b4850056ec223cee8af46350e80c9879e3d230d56f', 16),
-                    gmp_init('0xc60b6022089a8c26bcccedb3504ee91699714a886232234d12367290f75783af', 16),
-                    gmp_init('0x15640b8f00f929eb6c136755063dfd88e85b98f7abccb952d62c2a19815afa76', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xf52f8908f53e65724c877802f86d7f2f877e05e517d75abaf68388868d00a1e4', 16),
-                    gmp_init('0x6410a59c9329b46d70409f8e95c370eb637f4d791f7c4725df70fd2d06204c2a', 16),
-                    gmp_init('0x8ff17179c43afc76f9b667e7850bd426a0c3e932358d0db8f67bfeb3e4436cc1', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x4cf8926505ff4a1b1602db976445837bef649fd02ebf4426cabdb3051ba45608', 16),
-                    gmp_init('0xcfa08e507ac8674e8535d745c88e398e702b86169b5c598824df61e1b6055046', 16),
-                    gmp_init('0x7434482f53a80440c3e2031c354a796c406d6ae5410ca44a2353f3eac982f873', 16)
+                    gmp_init('0xa0aa0d612f3235c4c01241e1a4f9e8714a435eb5a414e6b12b26564632a940a5', 16),
+                    gmp_init('0x22340eba76f7642819b34cf9a0181f3e6c691cdda7d1bf9393f882a68b950422', 16),
+                    gmp_init('0x1', 16)
                 ),
             ],
             [
                 JacobiPoint::init(
-                    gmp_init('0xad553488fe76937a9f30173d675e590607f43f3e67706040bbf060998b069c85', 16),
-                    gmp_init('0x533d887a348d252f08690e2d16f543aa6a3891da4d6ef59488a4d85edef9c7b7', 16),
-                    gmp_init('0xf16e598a0b294823909cd24a147a18cb71ceafad3d8c330c937186f1d574fce1', 16)
+                    gmp_init('0x2eb3910bde2ab995012c29df8bbe0f5032c3b2574328e5f76628d837008e2df0', 16),
+                    gmp_init('0x3f29c02337474b3a77d37d348da4999f9540d120ecf65f490910cc4ed274eaae', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x52e616759ab3bfab3181fe63130097dac676dd1b149b7ae681f584f776dc008d', 16),
-                    gmp_init('0x3e164e477ff1c32f5e4a8707471c28048262160fedeb4aae313922948014636f', 16),
-                    gmp_init('0x6fbd403206c750d10ff2898523e3e83df6a7713517b713f8344d236d7505c1db', 16)
+                    gmp_init('0xd32e851a25c965c2fba2f5bdf8f0482610ec719690525db1fe39d9aca1dc428e', 16),
+                    gmp_init('0x6bec05a1fcc5d64e45cc6d22a98a834031f58d904694f768b551d5b501cfe158', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x7031bc3ad7a369ec58997b4e01936c0675b73e7cf606f0c127f566c3b8153f4d', 16),
-                    gmp_init('0x66d30852b1c152fd0c378e577cff9ec87866411830149176afab96accea54621', 16),
-                    gmp_init('0xa73b5a1769060094dbf579c21c48dcd104d7c14ccfb544386fb623dfbb05e5b8', 16)
+                    gmp_init('0xf6e9db88e64c7ce22aabd16a780900f0a21426e21b190a39bf02b84b682867f0', 16),
+                    gmp_init('0x53ca790b7ad2ab7481d93b76e8c0d5b127041ba5f970b623475b3af10f1861ea', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xb4c78b85e4a88d25801c4b59eae1c84b24badc1a7d61fc39f4cddb9fc2d2ee8b', 16),
-                    gmp_init('0x1c1be835570086e9f91deaad7824a8492f42c1bbc6aa2ecec1c01200f484a99e', 16),
-                    gmp_init('0xc0cc682fbdf857c78880f7f240d8c27f90814c5af2a162a0d8e488be232a03c1', 16)
+                    gmp_init('0xe644041c2ed2cff4f54d0746449c0331c681312779800dbf71fc28e6e42f662d', 16),
+                    gmp_init('0xbc79ffb9de665acf4ba0050d00c7b4d052e1678f917fd7c06711c11d66e6d591', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xcf90963ebdd914ddde6874182123a73cd0f37e4c0d5b39a7cd85ea0afeaa0d53', 16),
-                    gmp_init('0xbf1109ce29f7441f894b5211847c7da85cf12b5c7506dac6db305e50a93ea3ac', 16),
-                    gmp_init('0x88b935d00e2d2a516a939ef8ea1954914f8233e2ca4fd5ce9f813bdab28efd66', 16)
+                    gmp_init('0xfd1ddb38760e449d785c15b9b6199a5ef06d5378a34539409add0438f20d6102', 16),
+                    gmp_init('0xcb54b8739050638aedaa1f1f7883b700163e191211513983da0a6491ae003b7c', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x56268bd4848332b96139c8828c2bf2b394afe1ea2a75d7feca07014afdbd9745', 16),
-                    gmp_init('0xac593d6f6c53b8fdfa4c61ad0ba0664d02bc7a9732e76b934d1c19ddd5256582', 16),
-                    gmp_init('0xa9b91e12af9bb2cefb666ce1f0a16d0279b7e647b4a1cb0a01499a2657c978c5', 16)
+                    gmp_init('0xbb14b0b942c15ac6974719da5058f18d77b825cffa6774c660621d9f7e801ae2', 16),
+                    gmp_init('0x96ae967f4513a67487483ce636bac7de795e4fbb668561438b0de51e5c1dc5f1', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x857ff9f134d68bc6fe8879590ea39834389bbdaebd6a32181af9b8a6fff12c1f', 16),
-                    gmp_init('0xe533a2253d5f66e4112103b924c77f24156170d8dacf9dcfcd522f99d1df589', 16),
-                    gmp_init('0xf4aa8425223eaf34b2af16053ef60244de856c4cd1a3b3b01051375d8d152d91', 16)
+                    gmp_init('0x61a273c22599901d9fe4a73e65ee698fef6d940902dc15b6f3f7341dc2c77cb7', 16),
+                    gmp_init('0x5bbacd334d3ad3d3f4ea219f5eeb0cc9c5c5ad9a70ae1f74854611f81ddb25ed', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xfde48868d6e76e956be138a40a9ed135e9adba96d81b937611c3e138d2b5a74d', 16),
-                    gmp_init('0x55c3b6a5bd8c93655c2c1a35e34c668d92203bc9bd83fbb10068f957a4dcfd21', 16),
-                    gmp_init('0x1b215fca5edcc75b8f61bcf87a7d4d2e10e85842ef890cb16dbc6971679690f8', 16)
+                    gmp_init('0xa626c3f311cb5315b59f52272ca6064b4c287dfb6f6e6aaddd030872b7314c65', 16),
+                    gmp_init('0xbb882a6b990ec04cd949b781e9efc624ee365bd68035523ab6607db5a63f1919', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x742f597208f53ebd500b8d933c23e14955045a78e1410a3aefcc07689e8eeeb5', 16),
-                    gmp_init('0xfdf8ed4f8d196ab843f2a3259c0349dc4e5e4ebd1c2117aab20806b6d0e98a2c', 16),
-                    gmp_init('0xe41fa673d1c4439178fa1c47e57ca48b528b084dd0352172618db8fdca1c3409', 16)
+                    gmp_init('0xcd2e8e65ef7601b64cb02c98229d04b55e173a38e30f292db998d56e377d8976', 16),
+                    gmp_init('0xf58ead362342a31ffc31ce8f2d46ff68f60ede0f35428c0511696f41c867bc22', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x2b3e50fd635dd95aabc68d928fe761c92347ca61e8fa2a23f5f30c57982feef6', 16),
-                    gmp_init('0xa1bba75ecfa811025767a320434c720d3a305a1f3c209cc2d73986d86f058ceb', 16),
-                    gmp_init('0xb831d6a8b429f1b772a1cb669da526fd13a30e34fac3749fcd5c29937251e8dd', 16)
+                    gmp_init('0x45af3cdde409657d16d066739a778615af13ce53415b8d3eece636d0b24e5799', 16),
+                    gmp_init('0xa4988caf8a60d7a73b941c0c7496f37c1e0867d2e800dd10924a679bf98c446f', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x3b2f126d9fc1f59143657203866eae00942b46bdc492dac1f4ee6206f752ce09', 16),
-                    gmp_init('0xb145ece101504c66bcac1cdf0d879f29801a4be95e51cf36cc19610ec749ba3f', 16),
-                    gmp_init('0xd903a7dbe727b555765107d8c56dff592e92872c6fe874790f5403ddd205694e', 16)
+                    gmp_init('0x9bd61f9c38223efb40225ea8a4304c259a9b07eaa3cf1b86609b306c2c67c998', 16),
+                    gmp_init('0x77b20409916c6f5c5c8f2096969450fa927d9c1e90424b18c340af9c28199514', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xf81211eaa399ce3132aa03db897a4ee668c1c3c1fae4e785264e408452a5a7e8', 16),
-                    gmp_init('0xecb0879d54725ec7406b1b4078a4450d2c74cfdd31b0e100d9a8792494fcb0ae', 16),
-                    gmp_init('0xb7abb68dddb38c95ea06ef61e776f61a04bbaac7db1af3c994baeaa3750c7efd', 16)
+                    gmp_init('0x50c2845be4dc506f2673a399356dfaab886df7cdd3beb5341e56f33244c73526', 16),
+                    gmp_init('0xad81723489b95f70a6a8d73b5fd47d25d87e018a680d49e2a744f4de53d49ab9', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xb33680bbbba41a5b51f2d568edf4a3dcaa060d1e3760defd11457d3b629f6e25', 16),
-                    gmp_init('0x2a4f2a125719501c960942099ea8486aff7a115e3007013e104403a577a62394', 16),
-                    gmp_init('0xb5b18c54bb72156be9b1fd5db49ec13d90b634933ee86b175e755493c259ce22', 16)
+                    gmp_init('0x7afaeb4f7970777512ae27a41117a016b4cd7a97701e22766a45e17beaafa568', 16),
+                    gmp_init('0xc6efe61933fbd27d895d14135041365a972e694329d390233ed53a2f81c1f2df', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xedbea9194ecad4aea24f69cd9c0e00c20b64a558a23841f03674dde37c5eaebf', 16),
-                    gmp_init('0xf8cd69f27181cef6bffd2f88c33cb515491d1dec74d9ca829e76aa009d8910c6', 16),
-                    gmp_init('0xb7dcd59107cb929c599d410eb0de3df963f802e9f5e163af1f12e576c44487b7', 16)
+                    gmp_init('0xc402240c35341fe59606dc354dfb1fe3d0c0108d3434b8d5cd9a87b3cc16c2f', 16),
+                    gmp_init('0x61684deb17df16105df2a69a71d1d7604e33958f7033b3c9c4694cfc55d78e18', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x7e3be280e7fb38ce56a566442f2f4b175402327666acbd8724a3c1f9a9e94d0', 16),
-                    gmp_init('0x7d1bcff69162df4c7df729ecbb3a516eb930bc8e0f4d74987924e66e39a61bed', 16),
-                    gmp_init('0xc70d71ecdbcc76ff7c392d7590f413e58ba6cd58e0c56b9e558506ad581096fb', 16)
-                ),
-            ],
-            [
-                JacobiPoint::init(
-                    gmp_init('0xb1bf00bec2f89c6077987661de0b4c0a8d247e4bf17edc922dedfb6af2ca3dc6', 16),
-                    gmp_init('0xaaef31ec793517b9ac23298f67bccd1d42729396f9b981da099623463f196539', 16),
-                    gmp_init('0x86feb92b6480ca333698dbc13355473c725cbcfdc29e410d083abd65dd434613', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xd0b1247aa554c9ac52d19fdf565cb8a7018f3d364bb453af20753de9d8d1436b', 16),
-                    gmp_init('0x7ad271f671022598e6613309ccc2cfed3197f71bee41e7556bfe1d1fa64e02d6', 16),
-                    gmp_init('0x89ed04204acc9ba6ffda64f419a209b83ba3b27a6f30cf465b4cd771fdb09bd9', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x1945c0ea17c845d278cea2ccd5eef3ee1e78ef291db051809e09fb91d97276f7', 16),
-                    gmp_init('0x4be90643c65416d83acefffa964bc6330d670f46647a55ff8ccf75587468f20e', 16),
-                    gmp_init('0xf3c78f21af0a5637bb86d8094a82fb771c0d0e5827bc5c8c3a8b1cb7b73d56d6', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xa951e03bf97756c4f36ac2de5767526baf6961b911f711ad8e6c6a8f22765d1e', 16),
-                    gmp_init('0x8eeb173b6b075335b126a1e0d352e3b6c7bf658b6197f282cc7be785d124910b', 16),
-                    gmp_init('0xc6d6b1e767c1ae75cad8804621be5c680bb0f638b6c94ceff0e90ffc00e78b13', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x1e7647bd9739150e1615f45247cd95f3772ee6a630f54afa3ee9ae4f39be1961', 16),
-                    gmp_init('0x7648ecb12e64b6822a06e5c02c21208ff46bcdd9047a1a668a7bdda2343d3441', 16),
-                    gmp_init('0x4d82514ee262eabde062d696224e177d184fa7d040c66240a0a6f0d95aeb791e', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x116072f9fba56d946932fcead240c35271d73d2c283f7a88bacc93f9de27cc99', 16),
-                    gmp_init('0xc2d5d9ba29dbd4f6f2029f9dea4a6f0fc9e58def85cd7eacdb3b451ad578c822', 16),
-                    gmp_init('0xd6926dc5e14b8bfc7eaf9307a2ee977a7dad3275ecf8375bfe46a86e2213a5d9', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x36eaaac27a740bd2fd9689f21097a15fb519ac887f16ef24201d6a3d33f27e74', 16),
-                    gmp_init('0x9a3d01c5196776f29da4c95711e5de59368f3a7ee53ac8b0673d998625aeaff4', 16),
-                    gmp_init('0xd659a496af30a51dd06dd2165fc49b009cb9c1471ec9fc300b82a569c5d594e4', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x87b2062d2f96c1c1d494aeb031d5e5b18e2751cd9fe16bf68dfe8e0922c425c2', 16),
-                    gmp_init('0xc315f54a0a7981caec944660448923920d5fcfede1c998b0ad4e86d21fee30b8', 16),
-                    gmp_init('0xa2961734a2326ed070a91d0266c86e853ebb5daadc7207764713755cd21f1132', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x255e2f5c94e63d165dcce0b5df24a3abbbea1a127de7b843daeec1256c0487b5', 16),
-                    gmp_init('0x64aacc769a0041381dcbc3732a4813a8122f6e1c8f4c9748f1ce469e9b2c7ec9', 16),
-                    gmp_init('0x4a29894cdbee70e75adc991e0f35697b8ae5b31c760c51323cdd44e972725015', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x7e3699da7106289f5fe8da3bd4d59e17fd42056cf568a08925a21706b8bfe56b', 16),
-                    gmp_init('0x937186b28a239e5a15ef8cf85e1a6314ffeda1bbc480f097e9942bba279191b', 16),
-                    gmp_init('0x979daeb65bab67572d62c5343c94916759938cda281d1a327862c5990154c289', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x8b2ebc75f5e2340964416724fe1c3e6d908e6611a9e15ebe903d2940ac2e1360', 16),
-                    gmp_init('0xd59be4614c00047de0f11a5a0e77b504f9ae5fd6cde268a97d1d1ab703e877a7', 16),
-                    gmp_init('0x3cab50f318d5715a4cc41042cd8c575132ed3f3acec23ce1ad379d36e217d7dc', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x325146ade6e77860bb9bf56c44a13d2c0464f786810c32a9d44ca718b902d1a8', 16),
-                    gmp_init('0x3d02e79f5999b57c9345b1428edcda5072e03cff63615102fa2ab40be5911d31', 16),
-                    gmp_init('0xecd6c921b2b24aca1dd669690f59b2bdacdd86989b7880b4c84e865b65930a5e', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xbe57ac73e43d8ca11a8a4d31799fc211b2908b03a829cf05c56b502b9cd54576', 16),
-                    gmp_init('0x91cc363b8bbb15a49fa4432aa3010fa77b87a165fe9ac4216025fc6f7e55f135', 16),
-                    gmp_init('0x759af6b0392ac088a12f7ce4c50c28d23240474bc1d98292ab74b0484f652710', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xce380e4706400a1a236ffcc011625bd9def25c51e65e879c27e3b6db2c66f2a5', 16),
-                    gmp_init('0x7c6ff7ca4c1c9e3cd2dc39e6a3367cf3d5fc966818a6e8687311a2c7f07d055b', 16),
-                    gmp_init('0x4e9c6b820078ef1929029060a68048330dd32ff87837ba4a5a38f1d3bd7a925', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xc81b92841f7fb8837fc169ec9c8d143c33b7df5927a27f66fef05a8cced12fdd', 16),
-                    gmp_init('0xcb93a0a84f3e8ca329c46ce4787bc903964d4ff330914a045299d620f8861d5b', 16),
-                    gmp_init('0xfa05aea426b42de8e444b0537d43edd9a2155062da366008208b233222d162ee', 16)
+                    gmp_init('0xd9a002227e2412f9061d94c1496b0c3b483e629cad1e98a8b7e703e50e59ddeb', 16),
+                    gmp_init('0x975eb2f93b7a022c43c60f8a436705818562a8bcab5f18ce5f393ff80f0af5a4', 16),
+                    gmp_init('0x1', 16)
                 ),
             ],
             [
                 JacobiPoint::init(
-                    gmp_init('0x12dbeb96c6dd91b897cf5651c4a9f69f2f8fdb9a34b327ebc3f338edfbffecbf', 16),
-                    gmp_init('0xf66f3bbeedaa8213c4e8dcc3afc3ab11ed7c9638cfe6222ae2274365b59c79fb', 16),
-                    gmp_init('0xc3ec2291bb0e123b0e94daedfaccd0a2b197b6a433b372738821f0439e217a0', 16)
+                    gmp_init('0x7ef2ee3c5c792a0c0fef6335224d9428a7d2c98f6743333ec739a5ea3ecca7e0', 16),
+                    gmp_init('0xafb6862730acc011a4f67f51d5e609db81b21450dfbd3d20302b22dd552ac094', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x9c7a77dd2cc63cbd49aaff170aa965758b9423a64c191829d59e063fcc26a887', 16),
-                    gmp_init('0xddcc36b839633f523694bc06ec1ab232f3bc952580f3c9d9373d511bd89b83ec', 16),
-                    gmp_init('0xfc8b5179b330a02d896f3437c85398655fe139713af429332bfc6da3b50a11c2', 16)
+                    gmp_init('0x646472486e68db193539def6986c76b5e880be50c09223c6db02c92ab896d0f', 16),
+                    gmp_init('0xf1f4ee22fe7063bbf2b3f5cef9047cfedb1b895dc63b4f9090d74508a4f528ea', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xbb109379999dc1c8afb2e23b84cbc83701357391a77150368bceebc5702011ef', 16),
-                    gmp_init('0x2e21c81a7d409fa8de5903bbe720dbad8f69b45b8fa484f650813d730ae5ba1f', 16),
-                    gmp_init('0x2778e174ca928d4884decda86a891e594ebf6cc3f8aeb68ae13fae26b2b944ab', 16)
+                    gmp_init('0x3704572716887acd7624a576c9d9c641cae4cac611807a4172f3583da33f0ffa', 16),
+                    gmp_init('0x5c6408c61a71e74f841bb4bb8895ff4c57ba3eb7aa8bf2fc5fed3fc660fa35ac', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x35dd8774c4cc02736dcd3d76988f53c3be577a402c4b43f59132a2440dda408f', 16),
-                    gmp_init('0x952d69887fc71bae778297af90fb6495f19d5f1d75a20699ff3e319d3a40d3b0', 16),
-                    gmp_init('0xf7f77b4a327b177619e7d8f271d625cd12596e273c02fb7dfbd6bf01df3d4730', 16)
+                    gmp_init('0xd42e1f15292fc712ea713544ff03fd17beb467e384d570b699c584da8d5825e', 16),
+                    gmp_init('0xadda2b0a21f69acb2c1f17a55a85ca7e0c4cb2ec4b4340cbed1808977a8946b3', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x98ce3a78b17d2c24b0b4fdbf7fc41c0b246903f472dccd61c49343d5ddc81e11', 16),
-                    gmp_init('0x700d9ebb551a75ecd3ad0553262f97217379e33c389b809f0d9c3671c8d7b4ba', 16),
-                    gmp_init('0xd69703e447537750124b65dceb4fc9d86f5e2596c2202a3ff00e90c1bd4a2bd9', 16)
+                    gmp_init('0xc2a979e54298db722d1eaa42c08bb697f6c64dc6814a00953c6f986532603513', 16),
+                    gmp_init('0xef9dd74a1e6eb5c854278081935bce7e8cc666df4815144995755b2c3c3505b9', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x7b538e23a529bf2a666a2435bf3c4758b4e786e27d53779fe167f803279e3e72', 16),
-                    gmp_init('0xfa00b4b06e5ffad5a56f3375bec60eccdd0843f09ac641f7ba69aba95577e281', 16),
-                    gmp_init('0x21330a3167c34960d8ea39e240eab20a55daca237fb9df212d1f14e7c7171192', 16)
+                    gmp_init('0xae67ecd7d603693a3fb48be1f115d6874307ad9549cf786fdfb7dbf315fc7295', 16),
+                    gmp_init('0xd23cd2aea5faa6d2072b94b84a82d9c1fc3019722c2aee3404ff9c5efa4f5b62', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xa5ccf14acc05dadd1a48afb82fb2f8e1eaea85ad88a22d3dfc5aa7fd624cee30', 16),
-                    gmp_init('0x6d4b2119377e0f55a29542f755b44aafe009e16a9541a924896c9eea18b3e263', 16),
-                    gmp_init('0xa876cc8d3c47aa816aa5796b19c0ec98a6e263d2cfe6cba8443ff29918ecf5b5', 16)
+                    gmp_init('0xc9f4186ab1fc59e1172bb15cdb17afb9681f97716c302e01e646ffb1d9fdee3e', 16),
+                    gmp_init('0x9420a7f3cb3a3410df73142b883214344e1531c7b58df4f51e66cc5cced22e7', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x776e70c15130cf35c9e096607b80f8be50ebb75bb9ad2c96f79b65ebd080644d', 16),
-                    gmp_init('0x62abf71993778c7c0dd50afc1c48e466497817de3e8e12f7166ba8e5712f4672', 16),
-                    gmp_init('0x5e380f4b922d433310392bcef6450ca822041ddd94a601ccedbb9f30f99fdf5', 16)
+                    gmp_init('0x44dc4d9e945c7db20e19d0c28f9ae7518c3b0da6f68440e7f9c18a469ad780b2', 16),
+                    gmp_init('0xdbeb918745c2f9c9f8fd19dc683f5f95b47775e1c2cec39d91437413ab93b11e', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x995687391f70d80808361d72e4819fbd966b6776839edaf9a127f0d958ba274c', 16),
-                    gmp_init('0x62c8896a11599b98379758fb1749475630ccdba977b8200b6096b00fb1bb00db', 16),
-                    gmp_init('0xacf8c3546e77074cd0e9aa1c77e3c3d4ec0fe44562cca85c92848718dea761fd', 16)
+                    gmp_init('0x27dcf55b80480256b08a0024f83bb6a4a9da3f7b8756cffaf0cb3e674814f217', 16),
+                    gmp_init('0xbe18f54f548d5dee0bc8bab094a02a380a4e8fab191fc3bf14c94b588cf2ed4c', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xe1a1dc6a8d5dd011da4f59dec15cca5e93e75fa976920deb304b8cfa46bd558b', 16),
-                    gmp_init('0x8d6277146f7432102f5b5a4af989390e5a49c25a52d9862f3c999f8024cdd0c4', 16),
-                    gmp_init('0xa5d9b54a9bc1758436e8bfda9b010f76af35fcf51d6b8fdb49ff97678e5d5b52', 16)
+                    gmp_init('0x88a467996ff7321bac8c9bd589d5cf2e64e639f9657dd5e0362527575748e77f', 16),
+                    gmp_init('0x13bb751380982f1d0b2703ce8ea583a75f7287ff80c02ec5b7cbb84fbe6da255', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xb2e821c7bebd7fab63a2dd2d11896fcd397cca27608875f5869037ebe5c9545b', 16),
-                    gmp_init('0xffaad4f316426a30a720ea7c58b465eb452159c10cea6f87db2f06b3d4b49dc1', 16),
-                    gmp_init('0x7441d6540088b1baa6bb2d1cc44495068c34ff369efc748176062bdc2aeffa87', 16)
+                    gmp_init('0x3b8b0203b256ea4b9c8d24ac33959187313ce5b9b84cfd4a75a2a4fd5b9e310c', 16),
+                    gmp_init('0x91117c4eb033615bd6176e377c4117a6a8ff804b82b3058399416605ad19fc9b', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xb3886343e96e967b7cd6c754ef68247b6cb0aba25f1b6ed5375aeba1cfa2e5be', 16),
-                    gmp_init('0xa17ffe1e4fc471e99b4bb999fc47f034d68bdb56d8219e9bb2c09f1fa3676dd0', 16),
-                    gmp_init('0xd1330bcfc8a0e245f98ead3e3816ce4ab7f76eb604040cca8633c59a51f25654', 16)
+                    gmp_init('0x89cb789f517f1ff2c6e95c0a52d798d114bf635521c7ad1cbc65da82a6bc3ae1', 16),
+                    gmp_init('0xa3a9f5d8efc0f55fdf6d7ebf5b94658cb6fd080bbfb07dd097c3234e607ff499', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xdaa84b62a66854fbc1cbbb462d0c6fb22c200235deac6e71c472440e77423897', 16),
-                    gmp_init('0x87260d5b3d93b0f9c18f81df3eafe5c46b9109e23ff5628eb940d9305ac89645', 16),
-                    gmp_init('0x9fbfb7f56d759c745bde82c6010e79f4a35805b09c781f205c9407752e5d0219', 16)
+                    gmp_init('0xa5e7398c5bcc103a105c2406f914c3372a4ff1e8c7f3c15f8f1e1e2ba7615b36', 16),
+                    gmp_init('0x1f3ff58dc974e4ce46438def2a15f8c547ffc19370b613c04d982e3949136d80', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x943b491b06df31cac16116336119084dc6cc7a7ba579c175c768c7eb05c85a31', 16),
-                    gmp_init('0x140517a33ba50b6f00ddcdbd182b0e275f441c3a87dd97cd7321b67d7405d3b0', 16),
-                    gmp_init('0x97f70aa867bf438ed3a5bdf25bf4c5705af673bae691e020bec240c451f8647e', 16)
+                    gmp_init('0x869cc5794942b544fe08d7bcb9e9cff57b4f1b46873cc23d40423ade3c0ff1c1', 16),
+                    gmp_init('0xc4c2ef2e96bdb88fab2317c57747f0c6e8ae4078a44f6597ba20e3931d28539b', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x275a3c725cdf8e14c6225c884eb633a2ffe64baf12c55bb0066a0bbc6d5f855d', 16),
-                    gmp_init('0x5b09938d032ef6b1eb3400a9a59a6b74881e9d9e9b46b4ceb443c6cc97b61875', 16),
-                    gmp_init('0xd97858baf32f5702620efc4449e7ed34426b978223a3e3ebfe81326d3a0bad47', 16)
-                ),
-            ],
-            [
-                JacobiPoint::init(
-                    gmp_init('0x4a6ca92fe5c5a42b97019a499678e531e1ca5e2a4ce39d88127e6bd82c4082e1', 16),
-                    gmp_init('0xe9c47132bec756a7518052d761a857c1c16defa6d5102ae0bd84ae068f01cb87', 16),
-                    gmp_init('0xf4903ba3bb4b56ec795250c07873b5a23ea007f0ba26c8f6c56091a01c237f3f', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x1037701e902140d2b51c0ce34966ef62cf97b2f246c5202ddc5b04312325fba3', 16),
-                    gmp_init('0xa84554bfb44ac0a5433dd199963181707210e53dd7508c702a0d4bdfa3e580bd', 16),
-                    gmp_init('0x544f5616f97109fbde5a116aa7f37dad9c32527c8fdd7f7d57cb449571b8c67d', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xf3c7072e87920c66d95065baf657d1aeab4712467a32eb4403b64e45606507a9', 16),
-                    gmp_init('0x9d4f2b0c82d0913d71aaf156607ae13a2e4808355b37667d59bb7303274ff382', 16),
-                    gmp_init('0x5a2b2f1767bdd82656b584ff1c6997c7fbf8ceb0ad23142d5f933616f852e490', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xf47eb9989a95996a64ab631931658d5ccaf1f31297d086431eed03d52f4ea889', 16),
-                    gmp_init('0x8b85c810ca1cfe72951e10f1e008b55db75e292ffce0e4aa428fecf914f2590', 16),
-                    gmp_init('0x36bff827fe9873106b4d3715f61437a0f8ddcc8577e6710ab4c5125ccdeff2ea', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xdeb42489c812b43168c445fef3a1303810c9fec63cdbea29330691e9d58c8d1f', 16),
-                    gmp_init('0xca4840a5028f919ed35123cb5803366b55abed9d78338f458a8eece1f883cb16', 16),
-                    gmp_init('0x30ea6265f982a55ab167bed86af8edd44ca6c36f6a48bb861c98f4800403bbf', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x35ac9ea1a50c5470003e8b1d5cc1745fc21de3f749fc9d8c98c06044edeec4e1', 16),
-                    gmp_init('0x1daa8ca9d4b74b129115aa8762af47f69ac734a617b46d58c2d5b8a7f5c995c3', 16),
-                    gmp_init('0xd43dc6918f76a93ec82654d03eb81eb1aee164ad9dae6d5010d0eaf0bacd2cd4', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xd247b66305dfd5c979c56b9e0b81d09a73f78da3371479cce70a8073e503fb05', 16),
-                    gmp_init('0xdd04d40130468de396513828edb55653d3acec3e18f39946ad04d07524df7c95', 16),
-                    gmp_init('0x57e216d0d314f3e497b47e281a47a426e12c273076e24a7af1a8293c2955bb70', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x2b9c4975e4ce5a283814b17998a2d970393ea365daaaf18c5ba2b592a8025855', 16),
-                    gmp_init('0xea0551148f5472156988af2ed46d90a1c43f120a04f9c6eff78039f2df9dc45e', 16),
-                    gmp_init('0xe0e19e05ebdbb1ec96a42a95410fec35f9cfce17ddc95e46c3ba85d2a7fff24c', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xf44625cd49a9769cb550dd36fb6038f4d2d2d10929b18a920ff16da19dff721e', 16),
-                    gmp_init('0x56d786a5f5166f0ca0f4214c6d9402f80483164d67da2f8fc5330649a1781d51', 16),
-                    gmp_init('0xfdef8506771d9b42169f096e7486dc1960858b168a0c41ab6adc26729a0e3c23', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xf4c485b6f404ef8b7b122fe6bdb582eef3d00ffbec08d042562c962d645ceadb', 16),
-                    gmp_init('0x41ee147e5592f88d6b42da27c1b0eaa36098a49272e3e6e0c724d0485115f86b', 16),
-                    gmp_init('0x43a0fff6a5f7b0f08dcab2e03df1696111018bc0f9b6632297ec8e63fb435566', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x2c6c2f69910848704fca41c21e433f75550fff11925de206cd7dc103535887f5', 16),
-                    gmp_init('0xd948753c2abcb30077ca0cf001a1acedfccc997e01d43e7292986c588626ef61', 16),
-                    gmp_init('0x8d65e5a6c16bb80380fe6539fa2b0399ad30ecc3d2054cfcac1fe320adef04b9', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x3e52ab902eccf9bdfc5c0cfc31b98e1033d8e79fbb958f0540137730394b36fa', 16),
-                    gmp_init('0xa3a5b73bfe75f56684901f3df3bc763591f668a110438c64a1b8ed2c03714bc4', 16),
-                    gmp_init('0xdef960b94634ea2ca8b2293482b3c5fe890df6484b662b9413a958b48a7601c0', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x7b7f26348c59df7a71a7f5daef1ed93c912f3273ec95d6d5cdd9da31724d2789', 16),
-                    gmp_init('0x79b036875a4c35b28dafcc9a73aae864f9765fa10d9b19b25a18c8d6713a1f8e', 16),
-                    gmp_init('0x13b44922ebf6103a1823b3bef50e4c6822ab2ef64075d790a7cf0c8568741feb', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x44a588e251f5559eda15fcef8c650ba5a09060fe4181014f4854a6ed75ff7197', 16),
-                    gmp_init('0x5595e32aaa5624467f358ae2d941ee6ec78da15352034729ac6019bb9ea04b3b', 16),
-                    gmp_init('0x66cdaa8d65cbae802ecc4e329747b837eca6dfc0fea15a1a81e52088c5ab8268', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x1c6a74981402572c48250df371ea51bad7af409613de1156be177d2c8d85cc69', 16),
-                    gmp_init('0x75d3dcc84d30656c0aa240114310b4f353bbb1f1084bccf25a3a2a5968a678ff', 16),
-                    gmp_init('0xb44eb8047e5d0bc527c140081c603fa7f4705ee83a4ec8488f2bc90b9386c970', 16)
+                    gmp_init('0xaad218355ac9532bdee0443ff4eb61fa47732e1ac8b87159bb7b0432ed3e10db', 16),
+                    gmp_init('0x793b1eeebaf82e3b3a7dde28fd5f8b4a72032772b31cba2763535abd6fa05fb3', 16),
+                    gmp_init('0x1', 16)
                 ),
             ],
             [
                 JacobiPoint::init(
-                    gmp_init('0x58a9a2cb627ae6af182ae08d105be0686ffc6b3e75852b5d891836a012958859', 16),
-                    gmp_init('0xaa8e76096e143b01ef57dda284ce3880c439af886a2f96c269a2721f14098c4e', 16),
-                    gmp_init('0x74e5b2ac04328532a263260409caf51d0e3b81b95cf1cc8a2b45daa41498ec0b', 16)
+                    gmp_init('0xe51416421640aeb57802554eb5fa77aa9cb53529975e04a6701f090ec49e853', 16),
+                    gmp_init('0xcf331cea65905469278eb4a53a91030df568394190c9ee36336e3d1376405cb2', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x49dc6d0cbeb1007f3d6c72f0dd325176e41c5db3147d39903d77ab3b10b4a9b0', 16),
-                    gmp_init('0x12faf753e782d561f1d5909747c4926205ab0a38afc1ea96bf35607954947d50', 16),
-                    gmp_init('0xf1460b6a26fb52697466a5dd7d59b1579d5c2f967a91fda6cc7279ea3f652654', 16)
+                    gmp_init('0x8525d0b3ef76314283d8640f8db563d543e17e0a2710f1a2bf7fbadb5ab7aa65', 16),
+                    gmp_init('0xe63a7e111f91fd606cc431c1e676976d0dfccc1923f092af9be830fdde8648c', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xcb36203cea39df0528597d52506e01477c8b99ce91024a585907933ee3a15518', 16),
-                    gmp_init('0x75ad39e6a6225113856dd928fe19a30e592b7e18cf51b1617d36ec7a1ed2f978', 16),
-                    gmp_init('0x6628db234af3903c60fc22b52cc3aea2657692d9e14ea4c5825f4b8f1bcbb56f', 16)
+                    gmp_init('0x977ba06765cacf25de8ed25f64c0c6771bd3d92295f80f46c4a23f1c1dc6afad', 16),
+                    gmp_init('0x1bc3bc43aedb8fa28833faa0d081d9992f75a1241dda1a154d62cdc51d7faa09', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x4ba7da75ee03947652c9781f9f742e41c9be42462a69ce0439841c42e3fb2d5', 16),
-                    gmp_init('0xad223fdbd9f680d2bd839b6f901d39c917b08c5090143e98adede2b7fd34a1d7', 16),
-                    gmp_init('0x6bfc7d4018f4531533935d73411689cff154f02a5a37a79f0787af2b414bf05d', 16)
+                    gmp_init('0x1b3e00b320971112b39e7d7665bc22d4d8432893c3d8180f29dd16ed044c1b21', 16),
+                    gmp_init('0x9b442543faf3e2d2f11325d9c0df76844fff41a9f0b6a9e98de24014b7f594c7', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xad2877ff9a1de454a4ddfafe744917401aa5215fc39a4f6d5611ea08ec4e8b16', 16),
-                    gmp_init('0xe3cf4ba2292e3f4ea0f83dc4784662da3e2a02abefd690a9cc86105937d501e1', 16),
-                    gmp_init('0x66ece2387fc5b61a06565d0a9d815711caf8ee62f5084332056bb62bf001a574', 16)
+                    gmp_init('0x3bc328612a123abe4c3cb60771fffacc10220fd02f8eab7865f745d7dd81983b', 16),
+                    gmp_init('0xa6b5826ded0c8a20250b305caaf00a7f4334885a8fbb848dbd99f28511a637b6', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x700aae1ca6586a4b3c642cda12d4dc2d547ad408dd7181aa769befc205b096cf', 16),
-                    gmp_init('0x1143f29bd9736ff082703da2bbf5f357bda9c549c8d201965e407400082b1177', 16),
-                    gmp_init('0xd5aa7b6d68905416a993278f0d77cc24af638a6d43411f5df118c5e76f159e88', 16)
+                    gmp_init('0x2a3759b87c0c6228171864fbfa379a1e5e453919505c7294f30b43ae18cbd32', 16),
+                    gmp_init('0xa88356cc1f9f211f1ea5d75b001e1e1e6419a83a7c8df6d0c327f4e1a6cf9ec4', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x873380348d4d8241ef2b04946fa2f74da9955852bff201e802a1c2fa3b96893c', 16),
-                    gmp_init('0xcf8778e8e8b6bc3395ae306cb1ff672ddde9cad48169532d91b5fcf81cb92567', 16),
-                    gmp_init('0xf4015a2c8e3438fafd90f33d97d4aa74563dd3495229ebe672fad2bfb8314788', 16)
+                    gmp_init('0x67cba4e8e9ec04ac51baefe1caf96c21ca8cacb7441f806175f76c1ff7c8537b', 16),
+                    gmp_init('0x5b65ededea1c8984a1e1c61f2fb1cc047bdf043ed0403f6e1ceb5057385726da', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xde940e77466272339cc83295893768a59e6f2cd9424f7e27ec62eb6c7ce01d03', 16),
-                    gmp_init('0x2a97d1bb63313040069b3ecadd374e5d21000cbc50f48a91f1572b9cacd19574', 16),
-                    gmp_init('0x92b6f52573ef7c0d7d3f29ebe716fee31523c7e8a1ee61efe21d4db2f9ae95ca', 16)
+                    gmp_init('0x778468f5252b48e4899db93959f2e87626ddc475bbfa75b7c828bbee5ab90065', 16),
+                    gmp_init('0x43341ab10eb39ca06f65136a7f01e2e927bbcaef00acdaafc8f76aa2f2d79ff1', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x951ca6331046adc896851a76660d32535ce5439e1cf3df3ef71e16a98a349475', 16),
-                    gmp_init('0xdba09e19107140af618dbd0b6a70b15bed8dee7be860b09a631a0ed8ce5165b6', 16),
-                    gmp_init('0xbfe1a9deb25940145c680fd1561690566c3524e29f50cc17e24c115aae3124e1', 16)
+                    gmp_init('0xc5958ea6d57499931a073d686468f3922af9e9c8ab546539368228ce4b6a1226', 16),
+                    gmp_init('0xa031a882f70f7dd7ecbe19719d45bd8296876dbeba2108b91c100688c66961d4', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x9f0493f52de6777794a5982e5d88ae7e5551fe690fabc2f48cffb6c047eec6aa', 16),
-                    gmp_init('0x8facc8212c93a28b3f5acb0885a4d296da48dc16129efb59c47cb87a66ab478d', 16),
-                    gmp_init('0xf0c887054177aca5138cc5b3e4e66e550a1abb0304d3fb3899ef4921a407c633', 16)
+                    gmp_init('0xdec3480f5d68a92edf310940fa30d6040848c9c516ed80d26a9c32597e189f07', 16),
+                    gmp_init('0x7332d2e4f241e886436ed448431a7960ed5f41f8cf2193e81be2ef80b18ca938', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x5d4265cfc390e8afd5e29760b638c23db2e703d552a7314c02a8c291436b8dd', 16),
-                    gmp_init('0xa88a238678d0c8aa106a8fe027ba111aa20e3f12d0619772ca28b77dae4d710f', 16),
-                    gmp_init('0x2add3ed536c4a85b4c3c72dc15fc890e4c555fd627264c0fac66499d3fb2fd0b', 16)
+                    gmp_init('0x83f07bf82e425ca7c1fcc0c3c74a5fa025c75b8c683c5417e4de3f85b3713a52', 16),
+                    gmp_init('0xf2ec4f10a25b8bb9049794c912c7d3cfcab5b760e1fb45d2a111273f9fb0ffb6', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xbd233bdd42dc6465f264505a6bed10b4d57c9cd2c7e7e83a2339c0422535efd4', 16),
-                    gmp_init('0x38fd5fbc86a67d4c93a8b8cf3e1512d9b9c3fd7e76cd76786c4dfcb425546dde', 16),
-                    gmp_init('0x2f28be0fd05231bac5a3e306a492e602b8c95fee8454281704d939a8a9adc95d', 16)
+                    gmp_init('0x439f864eb2f0852899fa24688e7aeb3727a76bcfb6baee4c627cf469e42f35fd', 16),
+                    gmp_init('0xf56850929086dccc7f3af4671cb58401efa584fc6ea729153865a5b530c62d57', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xeef2632ba4ed21d5b9ae97dec5ad1923dfee3abb0434ab0255365725da1593d6', 16),
-                    gmp_init('0xcc2850aec972243c3bb6d7cf4d0dfcc6fc7e97b4a65ee79136289bd15770eb59', 16),
-                    gmp_init('0xecb26b54eea94859efec18a83f30c78900a6dc6b4b5d8ec35b130117503664f7', 16)
+                    gmp_init('0x938dba4f9b5a42d4e6f680686eae0076d855d8d200c265539ad9a09121ba21b0', 16),
+                    gmp_init('0x48afc0a89af756566e9aadbdd136b90bcbf1bbee3f2b697c374d995e4d5b4325', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x7918e7a21e6ab928a789513ed015f1c7402651f2ac81e0bedc4a3e4856997020', 16),
-                    gmp_init('0xb921a6c409951ee26bfa28f9a9169d7bb66629b1cb9eb2b53eb6b4e89f0f225f', 16),
-                    gmp_init('0x26f8f1722761cc14a6fdcb2ca4260a7f616fb159296a0c69a440300f04b6de06', 16)
+                    gmp_init('0x613483aed9ed08b7e70b585390c06d34a7bf278fafd65aa7e792984f403482fe', 16),
+                    gmp_init('0xedd7bb3007929c3b3e6f5f2b4585ad862bc644b0cabb61a555dc8a6d37d1055d', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x6533e3c01a3b66d2fd110c43eca4dca7829258e72fea8212d8d4ca08d4222e0a', 16),
-                    gmp_init('0x8119eb24cb4b1eb24426056a561dcb408204c6ba4b8d4127efde4f18eb7283fe', 16),
-                    gmp_init('0xa39b3f319219852fe9684f22e42f98f49fc73474d1d7489873bebc50d629c608', 16)
-                ),
-            ],
-            [
-                JacobiPoint::init(
-                    gmp_init('0xae3d63904e54ad260bcececda385ee6620c35bb507c99178c07a734098268e64', 16),
-                    gmp_init('0xbde712062a80f1e2f17c9054540af57cd2fda4ab97a4cfe846cb8e73e7d463c8', 16),
-                    gmp_init('0xb9631a681d76729dbe207fb88ed270f07b7f28bab28fb56e23a04af0d21c4186', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x367df2310271aff98c1ea4d59c9d007c7f38d4ed6cab66e01fc7577fac1de897', 16),
-                    gmp_init('0x7fc990bb061160733f948d9a3ca2f86925fdf2ac3d50332f7802116be6f485f5', 16),
-                    gmp_init('0x5cd4c29769659cdc6ffc34a5b78dce8f11abd6e797b21ccef538edfe64b98078', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x924c1f2a0c6772ee9ea35cd5daae9c572bb59aafd250933664bcf6ce18cd1910', 16),
-                    gmp_init('0x60b502b97ad681af7d8f964f954fa91982a1333fd02293be9589ae82f81b0164', 16),
-                    gmp_init('0x2c33b9d09c3fa8ae73de4da9602fd118fde3eea4c91050b6b3029e129cfbc7ad', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x9f2a6d056435117740148448c8dfa248b7432a5bf7d726aacfa09f420dc23434', 16),
-                    gmp_init('0xe63bf94c82ef533b00174162d8061f7aed89767f85810bcaea3b0b347bc37532', 16),
-                    gmp_init('0x1df2d2936ba8eb6c4a053a73970d61610816456a03443c9cc4c5fb0ec3225b2c', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x8fc49a5fa1c5e6cee6cabd7c92768a159c10e8f2cde9067b1ce92a2e8415e065', 16),
-                    gmp_init('0xe695239b7d93af052dba1ad1f8bc069537bb225394fc243d7d7b42a032ca2eef', 16),
-                    gmp_init('0x35e37f06397742a9cb5f431972387e760125b088d87569297063472b01471dbd', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xb11f3d2aaca12240551b103a5f52843bdf9a0f3227cfb957ed8805794631cf73', 16),
-                    gmp_init('0x98eb555c23e1e2306cbf4947a9b8e23599622bb2255c7f93612ac822f628a05a', 16),
-                    gmp_init('0xe07260612a3729eb8644bda8da5a255e205a7895fd3570a440de62b0f8bbaad1', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x9da8f09aa1f444c442677b54e9f23d436c744a3f6b63432df6f382e4b55221ab', 16),
-                    gmp_init('0x58cb7b857d0824b92e73292e73ce534e9e56dff8ac2063e8b0b843ef75085ad9', 16),
-                    gmp_init('0x492377f3c7b6294ee136f5a162bdeb1a0e0118b23770015a8000848b1b867c5a', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x106bffc32c945eede4843e17897eeb672f5e7334bb3c29c3242f07872b5be271', 16),
-                    gmp_init('0x6faf7d04d8bf1ff86d0f61917baad22c97aea561b2ca64047afdb0840b991431', 16),
-                    gmp_init('0x7056feacabac0bcd5cb01f4dd8da4e200211bfa534086c5d8887a9053c108eb2', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xea600166c595907de513f2abc5a37cf6a4a5d0af86ecb0e511c259fe8d816eb1', 16),
-                    gmp_init('0xd477357871ccb0684db9a77cc742ab97604ffb7935aa384424d31133934787fd', 16),
-                    gmp_init('0xc21dafe3cc3b5f1b468d2fee75044110085859497846a71341087bca65ffe19e', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xfc8fcab830f0dd792a579ae6f8f3852e5d5dc62c2d2a776d278a3a9a66459050', 16),
-                    gmp_init('0x98bea0a56139b05391f872919170f85364501ae5dd051e5216b15472cdda6621', 16),
-                    gmp_init('0xc3c5f842340f15a2bb2408120a5db3c8ec319b98ff274345cd0b2a5c526476f0', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xf358ff87fcaaf353b62daa0907ea142db26677fe8ede3dae50dc67376d81d12c', 16),
-                    gmp_init('0xec3d5d95d0ef80e131886bddbe6a814e4a8de2c7b846d9c3e904edaa92e2941a', 16),
-                    gmp_init('0xe7edef74ca7fcfe256b663f2d5e900f0c5b9981fed910b268e11ab34c3d54efe', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xe3167deedcd3a51ec61ed68316f80e477e8055ba4e6748231fe3e00fb4f22644', 16),
-                    gmp_init('0xa8c400f3c39eb7941582802718b4dca5bc980c7d8ec8af7a1fab81aa76240bcd', 16),
-                    gmp_init('0x6ee396116468d0359d9e5d38383b92ccb51cee575037df7efa681f99548efaae', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xa46b53addca4d640accf703604961a2453c4d54ccaed0ba6fd8730f31c9c0bb9', 16),
-                    gmp_init('0x61c55a20baf66649ad049adc84c1526925f83b338fbf5d6e789a79afae94c245', 16),
-                    gmp_init('0x429220324af920b81e592f31dd0d782b850233acae3da4680c46d901d58c7a73', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xc5643f3d130674f26e4a56dba4ecb6b53a96092b1e850bbd6a98f31c32521992', 16),
-                    gmp_init('0xeaa5ef83475a878872d7c4ffcc93ab73c7c1e8b130572e391856bdeeb3cf317b', 16),
-                    gmp_init('0xfd063e559801e02b154b3b7a44747165b872ec8922c5830fd7ec617a451b28ad', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x55ab3f82064b9ad811f6ea7443365112ebfd5a00dbaadae05439c4b7cc05a5e2', 16),
-                    gmp_init('0x35db6bea2e0bc81adea0cc1f462b736f5b3a74060380fa7823070daad44e15d', 16),
-                    gmp_init('0x5cdf254fa2f23f7065448e638c0e2f4ea6e368e0c5735b5efa05d8c4a78ef3f3', 16)
+                    gmp_init('0x7efa89b76ca031e73a81daacf3b49779cfaec64f5fe76bcfb53e49a63f2b24f1', 16),
+                    gmp_init('0xa99ff3ec61f4aeff78ced222fc16ab211dbadf3ac554a455d65dc5d4af8e4b83', 16),
+                    gmp_init('0x1', 16)
                 ),
             ],
             [
                 JacobiPoint::init(
-                    gmp_init('0xaa88ddd8a356ad175a03b5e09b23ce235a60f0b1f543f447a8721a383e6a55d9', 16),
-                    gmp_init('0x1b082694ea928049a4aeb742eb01f9b6584e5f7d027fd88fe3998ff06805287', 16),
-                    gmp_init('0x17ce0894fa733a444538116b8fdc9dc1b0b8167b1dff6ba8739cb1612f46034f', 16)
+                    gmp_init('0x224a02299eecc99a0634a786f116445779c3bb5b5501d267f0699bf9e2f2b734', 16),
+                    gmp_init('0xfa41a8d29b6d22b4149a08ad871d7fff07b704b673c7afd0840f585491ec7fdf', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x6fea1067de0e541ab6eb587ad36ea86e936e04999ad46f9f9b0c0a6c56afbf', 16),
-                    gmp_init('0x11092bdd01dc5ceb2ad6ffe233338e5ece10a3843bda6c72f121ea5d9fc498fb', 16),
-                    gmp_init('0xc3c43b38bb33b70a22238b03dfc1d196b521f437101f3bec32fe7e79ed498689', 16)
+                    gmp_init('0xafd35b35bea5bda1760f78b8af6b2261e310d10e196e11dea8df3dae1991e607', 16),
+                    gmp_init('0x3555f48e204e99496d8ee266b81ec93bab7d9872155af415e0b73bc4308126f', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x85a5fec90bb9e7ecff808a27b44f30a1b539c934c6e347972ca69e76ffe42403', 16),
-                    gmp_init('0xf7a6602c879b513115b9ccb96625290efdc1d1eec0d82eb12e3ae73902d0d7b3', 16),
-                    gmp_init('0xf23ea37bf999814e200a64e371226434f719aa97bf1943fd3a1bb152380ca3e', 16)
+                    gmp_init('0xe63502ee153cec59fcdadfa688b6f24078368280c2a4707ac9e92f475d254033', 16),
+                    gmp_init('0xa7c5837b1f621e11ad74e80f0709ce482c915a0c4bfcf3607e8aa88968f05e3f', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xe48a94019ffbf1f1e4ea0188b09b003a6b4ba056840df7af755197ad4af6356d', 16),
-                    gmp_init('0x88b71ca53cb6e945d3ca87b6c9aeeaa0a0043194630397ba42c30be71b36c7a', 16),
-                    gmp_init('0x8edb921e2f38f321c107e9d628227b0bc6cd506effcdb0ca18c23676843b81d4', 16)
+                    gmp_init('0xe5ceac4035eb4955a0c7cc97b56175d505174da42f93e68f7e16cc51f0b9a00a', 16),
+                    gmp_init('0x660cb9301fcd56b9854a459c3396d1e48ceddb7586fe794f157ff80e67984a57', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x68df19db343abbc057f3da239f757f8f17fd0d4d814e63922d918fd737c7420a', 16),
-                    gmp_init('0x35e6b7684f47d18eac2473f09ff92aae13e23ca2eaca9c26dd2591ec23b406dc', 16),
-                    gmp_init('0x343cdaa82021417bdaa73a56905c863714d6b278aba9ac2f5cb1509a685231d4', 16)
+                    gmp_init('0x5648dec272eb968712ab45c533f000e2b1fd631dcb982cca2b9609afe1e08f33', 16),
+                    gmp_init('0x95fddc70708f7043f478f5c64d77a2693e72bbf2e011795126eed9ac4269f1c9', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x33ca2be5f07be710d3a83bb29171c5c7c7ae6cbdffa9f63ac5d8008f3b600a7', 16),
-                    gmp_init('0x3af242fd8ca08bca1ba9dfa23cdf5b1fed2338d7392a014db38484589defaf2', 16),
-                    gmp_init('0x36136d144a658822f6b83d5bf78a81fc87797a76139c7e669e3444d1d73c7460', 16)
+                    gmp_init('0xa643c538afc5667b3e774b6d5268d6931f0ea68ba3187b918daa3455e8a5c546', 16),
+                    gmp_init('0xa8d602ea4377db0e460033011cfd35194893db480dc64a7beb1e337cd3fff857', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x7ec10a3c36137f5de2d5aafa5533bc093e2e11d68a0da83c0488999de678da05', 16),
-                    gmp_init('0xe2c599b0a058fcfaa946ba8a32bb5656bb91f82acc48a1167ecfcfa9b908147c', 16),
-                    gmp_init('0xe4c494ee5147f7e389dcc1b8e5bfad4fc0e382e718d79c902b3466b40b7c9e6e', 16)
+                    gmp_init('0x1941c19f3380ed2695152f8ecbec8f03c5ba57757e3e8aa4e3b8200bfab98c43', 16),
+                    gmp_init('0x8e66b834595db2b6e2b6db2a48fb8c53d8f62d3db8df56398fa210da22abe217', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x68b50732ff021bbd87e1ca57527c74516b4debe5f85ff02cefb35a9af5142d11', 16),
-                    gmp_init('0x11c5d541e02c6235a71945cefc32b8c9048a6db491301b04eb4ad291e4bedba8', 16),
-                    gmp_init('0xda5fcf51dffe1c152820aa110e16350e4cc22456b696158d65fb76ed389a65b', 16)
+                    gmp_init('0xe415c462be679028ec64fd2a2b75f9c944995a27d329c764f556db22343750b', 16),
+                    gmp_init('0xc3056e7177f984e227bca21077f8cddc6ef691a45ff7ec06a6097c15becd56cc', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x126e34470ebdf9687320ce3276afb26a46504a18e66cbad09ae667d62afacb80', 16),
-                    gmp_init('0xff8b4d1ea10e43a6351060a96521f31b364e93990352952a24dcdb6632421914', 16),
-                    gmp_init('0x4671957210c79200de50bd5caac5a89b9c49edecd75d02672360d71e8f9677d8', 16)
+                    gmp_init('0xfc586431d10b4bd67fa73bde364d8a0bd73321b9f79c0189e6670d1042d8c2f4', 16),
+                    gmp_init('0x99fade52ce8ad9564a33c279e6bdb4ab29e2cb05ebc338b40118c88ffcfd274a', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x733cbb9d63712171934f7182c9c58eff4ae5a1933614db94ea34fca611faced7', 16),
-                    gmp_init('0x1475e2f0b03f8fe6b5803761b0f48674f4f8745f4fdaf529b98c0a70e8944bfc', 16),
-                    gmp_init('0x71cf505ee71977beb6145c390fa03cbe4536c9f20a1be0a89c9430192c923106', 16)
+                    gmp_init('0x956d85ac3fca3e4f3a3b61f117d48acda172f111c50c5f41830ce044e750b852', 16),
+                    gmp_init('0x371a37ccf6deedf98911e9cd3b8293a72dcb5b21adc5c7465f09724600eb56d7', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x3cbe46111eabfe0c13654f1fab696fc749f1b2a52dc43f417743158d42216c1b', 16),
-                    gmp_init('0x7f54c1f311c85c2d4343717aa0641d928f39c960f9acb985c5fe9a1f100d86fc', 16),
-                    gmp_init('0x79615b0c37676bfa66da7e42ab32c489144e006db6dd3f8026853d746df41bc9', 16)
+                    gmp_init('0xee993ba6b0c4f1dea9bfbacf9af2d6c207e0bce70549a42d12b077f1d1ff0f18', 16),
+                    gmp_init('0xd87fd4d94578db2c1f6c5d58ce85bcfeb435c80df70f2cb18013876ca50782ad', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xcbf351feaa609f4d4467d9aaf41ed9d3ea33b294642c7c62400c7f05f644f579', 16),
-                    gmp_init('0xcbc58a39a7e57dd658a1eb4a47058e6e27ebfed94b3140eaa265a95ae40cbcb5', 16),
-                    gmp_init('0xb8982c956b73c29d735b1ecfd5e5b57ca7b44a8436ecac6b2d0bd02b21b9b395', 16)
+                    gmp_init('0xd9bdb44b1b3520a36148a999fe559bf5e4066263414b9d7ad77107b51f2ca098', 16),
+                    gmp_init('0x552624fda1dd30cde5e5518457563f010de0c9740ee3ab327406bbd75abca6b7', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xf16692b89e23a22e3c9b10161e19ae46673f7e6055f70138e38f09ed76705518', 16),
-                    gmp_init('0xb5203ee79895b5406f239f9de739b1b58e410c3de8bb2b5f8a6cbf17d97bd274', 16),
-                    gmp_init('0x5d8c9db05e86bd74557233d4c4e790a7eaf03ca04325b49e17e3ab187eec0c29', 16)
+                    gmp_init('0xba49517aae9fe2428da0dc41a52f31fbe5a8889e05628cc9e47a7f754fdde3fc', 16),
+                    gmp_init('0xa88fb6e1ca9455950b4ee4376013359adfde1c81e3292caaa3efd232efcb7d01', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x58e4fa148e0cc6a1d3b3b0e6f342b2452d0886494aaeb3bef44cc9f62d35dd2d', 16),
-                    gmp_init('0x7143836e1326e2488bf628e329d13ad170af1c05774f411235197e2a5139f29b', 16),
-                    gmp_init('0xce173f7e906f3553ff4d996052213e26105b8aff34ff129d29a36b3b5748cea1', 16)
+                    gmp_init('0x6d354193d97a95b878a0d632207686b5c365429884f435b7dc9d02357a6fe7cc', 16),
+                    gmp_init('0x6f5d4e0da08835283f44255459cdb5685249918f8b53468cc41afb5feebdbcde', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xed2e7684d2fba4ad7d7bc954b87aed79555c3aec93c420d9aca146ec07c2ed86', 16),
-                    gmp_init('0x3d45e83abf7899632fb65289b3d768e86c423226d3967435a08a13dc27b5ad14', 16),
-                    gmp_init('0x98e3c6922e7a8033b4790585f61fdf36d4c237ec3810dbc2b2fa1d4bfa188272', 16)
-                ),
-            ],
-            [
-                JacobiPoint::init(
-                    gmp_init('0x17eb6c27cee1b70d499eb2cc41191972a1e87383660a59cc2aaa705698fb54a1', 16),
-                    gmp_init('0x48453d390b60894433884248d09b8490afbf7adf91ec763de1faa4eb4a74035b', 16),
-                    gmp_init('0xd873a69efb44a54dd5a9ea8ee66eca46616ac57abeae7a5c718cfa9ba03d9009', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x4bd4b9e7fb08dfc2ac0564368bf0d995b81fb5fa6bf034c3f2e166e691f3839e', 16),
-                    gmp_init('0x824a3cd8e6ae73c9eba0ca030425a9a78332e729cd10bad37c5a863b741b0e1a', 16),
-                    gmp_init('0x149a717a79b5372bb181e944f6a52ed57e7006ebce610123485440dfdf06f578', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xf97e6ffd3e2551ffc9b03b7c34b406cbc28b18084ce0a0760280f2f88c719b5', 16),
-                    gmp_init('0x458d11edf2b2e603bffe643e244709e0cddcb7af4e85ed39eb70d8bc20dd9a7c', 16),
-                    gmp_init('0xc567018891fafaa26314a4ab46881989a1a98249d26c5115dc47734d7eece6dd', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xb714dd85f24c98f193bd298648007f0270e5e3264a2d5894f2787925b626e4dd', 16),
-                    gmp_init('0xadd2dc472d844cedb573838bd0271a378c99c3f15b61792fd899b5b14127bccd', 16),
-                    gmp_init('0x3d433078c867fba8b288ee4f724da594fba5ee86b3ec57889e029c464af59d77', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xd43ff466d74abd82c71e9c510cff2f4c580db291d3f8c893ec46fc135652f0bc', 16),
-                    gmp_init('0x55839f8c5693f06352afa574b7b5ba04add9f1f0df1610aa695aaad4d9f8c5c4', 16),
-                    gmp_init('0x459d31b61a7ce9d07fb2ebeac25c732ebd0ebdd51b867289a54f19cecd4708fc', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xace2c4ac6e95462f79385ec169aee04a2e5c729d298244b6d19836a0e73f645b', 16),
-                    gmp_init('0x767f7951b60185ce28b5b6f16cae306cf7c621cf9fcc70c36cda3af66cc79e5', 16),
-                    gmp_init('0x6b47a6a82657ea30fe3e54434a47976c15658ba55789d8a14cade652561e6258', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x97fbcfacba7af9a0755f2442fac0c6adb517aa3abc165fc8412ce28aea6d1a39', 16),
-                    gmp_init('0x3b9d8285d227bfb20b0e2fa4c12b52649577532a182a54bd239345be2a05ffd2', 16),
-                    gmp_init('0x513c6740d9897132b36af7ca06e1b3144211d8f96dff27f6956ec62c4b0d5a3e', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x27edc619171983d84b22a4f9f0c4e14a397463ca39d1c838ba73cd67884b3f83', 16),
-                    gmp_init('0x9ab9fc2b48997a80d467031072ca701d9472ba32bd338a3aefbddbc224a5c775', 16),
-                    gmp_init('0x1946b046a040a272eb8160167b12d66dc91fba7b0e4a41397260bf8c782b661f', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xc9826a3a5c315a9e311899a42b0fcc61ae00ecfcea5afad3da5b2b00b40a3205', 16),
-                    gmp_init('0xf053f1bd02cc9316082dcba655cd7dabf4f3549b71b845935d39696ed2b3e5d5', 16),
-                    gmp_init('0xb61bc4c5beda1c7c8ce5981735a117e2a64a074b38cb69af1bfb9b9e5bf99945', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x1d493c1faca854301c89d0e4dce80c2d243d245ce9a3767fa80d66183c64f427', 16),
-                    gmp_init('0xdac193208d1fb4f4e655e257452bfccab906d3c86b53557600cc83b918364cb6', 16),
-                    gmp_init('0xab3b9f9fad72608a10c19f6c77eb211c9910f0e1b0f08d522f39289687f6f9c0', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xc0a8daff1be88cc34341fa7f86559ba7a44bab099ce8bdcba804e89d6a8abb99', 16),
-                    gmp_init('0xf9a31df187fed567de8aa1277889378249690d804a0e232683774bf4f4ba5dc0', 16),
-                    gmp_init('0x9cc23436f667f40a6f611bdf0c4745f91543b7ac7becf41b4eb2eda737a4a4c4', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xafaef01d7451a990cbf4a580ba3c635a1b6899b4bce134c688a54ba834133729', 16),
-                    gmp_init('0xe56e3fbe7c2bd9d506693c9ff564aacd6f2ca0fc9b447b719d6e9ad82289aaad', 16),
-                    gmp_init('0xa3c04d39597f9ce5a1484c4749e23205a1f4b59cd1a4cd7a9c3e55316e8ea156', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x2a875a9f66a6c9344a16efd7058bcf53bd2435d8a306ff5210ef71b064764ddb', 16),
-                    gmp_init('0x65833f066cddf33c5bb11d194877a8aa7fc1765d1dd6602e450e2191d1ee79b7', 16),
-                    gmp_init('0xc46ebb02776b1ad2861d9c6fbe7b9491c3a31f9e4885392c9a4bcd1b45b83e47', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xc8d757eb82fe837272828b1c8aef9ec13236a7c898adf8d3319e447a137317c3', 16),
-                    gmp_init('0xb5d1bce74561e9a940912d7e96ea84c37297e0cf79c1737de51ddbc99f86b3e4', 16),
-                    gmp_init('0xd22a9f32a9d8feefea176ee6e2c6ca0032c3213a04555001b2fc9ed7b9fc737b', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x6136214914616dbca796a29eea315462e1d172d8111c8385a521c717478ddd3a', 16),
-                    gmp_init('0xe5031bc85d64938e580498e03b0798724acf0e2da662ecd672ca787458868c17', 16),
-                    gmp_init('0x27ff3fd9abbffa90c60d4fe65981a2624670e38753bcd7c7540034336a50fb2a', 16)
+                    gmp_init('0xd3398f17422af1ba4de2cf82737612b54a64c1f84dd2017378892a2f7d14da68', 16),
+                    gmp_init('0xa34ad4d4d1fd3d60eb7252d1e8a2b020afc7a7922d41453a3f07631b55a90e3d', 16),
+                    gmp_init('0x1', 16)
                 ),
             ],
             [
                 JacobiPoint::init(
-                    gmp_init('0x4a39968a5cab3d9670752fac141a1ad8cf501da2e5a44aa064ed0b8b9a92725e', 16),
-                    gmp_init('0xa384e51c8e178beee477ed9ab1cbc3abf7bb5c54ac4ddc29ade6193a93f9fddf', 16),
-                    gmp_init('0x4021c3611aa914b12b3ee75ba76877465d91b9f00e0dea10de0aaed38842c410', 16)
+                    gmp_init('0x4a89a61457374b4ccdb5d111b56493fe167d5ee4d1041ce2ea6065ad7789b84d', 16),
+                    gmp_init('0x45b04e87ed480d5c08c2ea979fe677e6a72e280634711999ef9b7d7f018e3ea8', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xfa0eca54e7cba8770a167c5ab7df895afa1dfd4962221ebda71256889922f89b', 16),
-                    gmp_init('0xa692c2936e49b7896dfdd4185c01d615aa9a2bed1e79559de6ef27039f8c43c3', 16),
-                    gmp_init('0xa1952dcedf89d74ec5abf34be4a4656835979459e3f7fb7029aa87ef54c6dcc7', 16)
+                    gmp_init('0x55b66e6dc586296f8aa4bba0ae54ddc73bdbbc488e7cdb0820049d0364e11f7e', 16),
+                    gmp_init('0x9043a91f1dd1419bc386cc04cca223ebccfe610621b594f904bddc671c77d076', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x3bd07cbff240146193e2dbd5658b1a74d61d8416d293bb63c1b0707a30a309d5', 16),
-                    gmp_init('0x6f3808234352b773dd0b0b539b41bd8bdb7dc4e1391d3efc6dcbc607a175be17', 16),
-                    gmp_init('0xb4d006d425b7be0a7fce642a66ab9992854b974163f6b8249d0bfc55fd055b04', 16)
+                    gmp_init('0xcc9f9648a870ef92a2a9b30e781377c9834c5ebe073275936e76b23742e14c34', 16),
+                    gmp_init('0x829bff2cb5f8c96f43116633dbe689db299917f1828c7e058892157a94be556b', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xbe10080428e1d372444c7e733dcbdcb2582d99fdd60d084950eee9437a0f4d28', 16),
-                    gmp_init('0xd0c716e01c008ca7fab2828a18cae574eb33396d2a09f747fd22a5c27c485981', 16),
-                    gmp_init('0xfec668bf2ace3be389970ce6a23c1ad17d7d20a77416211f07299b5118e71677', 16)
+                    gmp_init('0xdb3ebc91cdcb79a8ab1d0013a1821a0b06614d6a97448f012046400ecc4bb506', 16),
+                    gmp_init('0xa95a64538a676683af1a685e85539258b21826f5e8f7d202cbdd181f49b3e60a', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xe240d73644a3b101f7a1f8ffb7a2012745d9dff26fa4e88a75b7023fde742bdd', 16),
-                    gmp_init('0x764f7edee657c21142b0a841b82953ffae9efb05780c5324edc58240733cfff9', 16),
-                    gmp_init('0xbe758d80e80418df32d92412435d4f670962860dd12719e2fa136322b98ebfd5', 16)
+                    gmp_init('0x5c618da1faad041af4f58c1d0ad98a758d4286c82de5e74e87de6c8595de4837', 16),
+                    gmp_init('0x4c719117bcf3a19d88b80e3849fd9671ecd36649642278cac0b8583b634a7dee', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x486705a6eb4c62d2634129f5e22c1351fdca9abc3f0f171d2f9fea9068df41e2', 16),
-                    gmp_init('0x41c463a9931ecd437b46343e5eac5612d5de5294700b4eca6857bd7894133214', 16),
-                    gmp_init('0x27498e2904c7a243d165bcb4c121f62c0aaab3ee9ad3b8f612e7ce8ee8848548', 16)
+                    gmp_init('0x22bdcb12aae2c57f67de7cee87eec09af08dd2bb64e18d8cb6ca448b40dc67c0', 16),
+                    gmp_init('0x53ef0c95ab3e7dd1b9987a8f0d909c4775fcbf3b3b89c7748a9a5c843b0e7ddb', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x51c39b1abbf8539fe01caac8cd3f9f4e5f4643fab68ba727de8c5edf2623b67e', 16),
-                    gmp_init('0xc0e8aa097f7ba1c78a0a474e6c203060405b9cb7eee4544a06e72d490cd09687', 16),
-                    gmp_init('0xa4a73ba07fa900544c6ce03d51df2da07b9fd8c9171cec2f95235849e69bdd14', 16)
+                    gmp_init('0xab8a886a915a06a2e585e2dde671c11ef2cae15a368a6c0c2589342656635396', 16),
+                    gmp_init('0xe773cf7c7da843195668ff8248bcd5abb9360583f7d2d6ad7e38fa6a3fc92c23', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xe46bf4854da55c7519445c5b2c6cde3ec4b37cad805fa35fa28d2505cf2e4f3a', 16),
-                    gmp_init('0x3ae87e59dea46df8ea267c62e6e84a56f374ea13df5bc0eb1cf2895647df5c6d', 16),
-                    gmp_init('0xf8cd9503c6de41f168d9045d3e14ed6c4ff83e2b0593a51a5f5022d8a4bdbcec', 16)
+                    gmp_init('0xded37dd152738517b92174e3aa64a3bfddfa9e91c66ab7024f5c2279ade5d1b1', 16),
+                    gmp_init('0xb14e3c5a84e78c402b3caab3824544b8f43b076d5912844881cc777712c778bb', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x91ac781dd6d22d52738ba9a5ce553fceecacf53b0a7c3c52c7458be8186522c9', 16),
-                    gmp_init('0x85976bd052c56a04112b5b044ec7fb29d8eafaf5a959423b528c4d282a3c200f', 16),
-                    gmp_init('0xefbd4d9fc785bdb87673064270533673f161f975189408653d233fa00c7f27fa', 16)
+                    gmp_init('0x62b7c8514241838cdec664b8b695604aa9e890866d069a35ac243e5881df49c3', 16),
+                    gmp_init('0xa71ed62152ae0335594896ae8d4922db8fb53b61387cb5509be3680ff6341c21', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x1c79c1b75d9ccb2d897184a7cd2d7c8b73d40c42932d80c642ddde5278eb268f', 16),
-                    gmp_init('0xd16840b679a06de0e489afd92d48d779688591464a1c373f7e053a7fe0946424', 16),
-                    gmp_init('0x223465e989bf8fd9f6bba72c3edb7ac9e204dbfa413696ab37a3068cebf4dcd6', 16)
+                    gmp_init('0x66cba1d92cd4a26d93db846167f0e9604107e653812f738a14aed835cb801e98', 16),
+                    gmp_init('0xfd5ef5e6e6fbf96666d9066ac3917211d6ade86959a30e4a5250d590dedaa27d', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x39fb15f5bb0636ff9338b0dc31f85528d4f20ff00e73295fc348599d68b5e934', 16),
-                    gmp_init('0x6ea9c137aea0f868b77073a346d80b18c35dc25cf168c63355d46d56fa094bef', 16),
-                    gmp_init('0x24501041e5f3b42283091ca6f5c1161eb83d108e71716448feb46cd1b7f886de', 16)
+                    gmp_init('0x4897bdbfa45c89c5f9751f0869dfc9791b59f5de949f002f3af146e2e44f47d0', 16),
+                    gmp_init('0xe77dc20f7afc138c34e8eca9417b093f526da001a8f0119581e501aace1320bf', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xf3d598f5241f678b8a613fdcba5f7e1e1cdd68770f7cb0e0e3cbf408e69dcaef', 16),
-                    gmp_init('0x6f630868522d353fe8d78da766e4594b8fb826a4a6b6aa8ece003c47b1b4c9fb', 16),
-                    gmp_init('0x5fdf933ba344999863c6b5bc3c888faee542e69b3faaea3a298944327eb47b02', 16)
+                    gmp_init('0x520dcd49abd6d7a3b9e33fe845fa5f29cebb8dff96c18e27fa41e92588e11179', 16),
+                    gmp_init('0x360604d1b132f797a20562961f6a57794175a50fda6be47a38f2b5ed1f6a40db', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x42843f98b76de0a7779c0521b7a0c6f57d4096dfaa7724ec2080998e0575a861', 16),
-                    gmp_init('0xfd2a5ec7dab8598aa176835ccb8fd3a4ebdf9d42dfeb839364a31b59289c90', 16),
-                    gmp_init('0x9861dbeaa75b50b528193cf12c0574b7832c85ad50a4069268bf4394a83b39fe', 16)
+                    gmp_init('0xeb1cfcb556486576c451e07bda722f2ecbfa318df6190786e61bce9b71581bd3', 16),
+                    gmp_init('0xfd47ce7571f94d205044005ebe4d6e3cb39cf319c5bd1a645bce8d985cd98a09', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x2b9ff8c5fbc6e2de170da67e1a93f58ee145e64b1427e095737ff0442c139219', 16),
-                    gmp_init('0xd9a6441906e5d8bde6017904d121b3f0c3e498220f97420a633b456c3b600414', 16),
-                    gmp_init('0x1ec14e545ea9b68eafb545216b844ac5d57dc63037b3363510c834f632e632bb', 16)
+                    gmp_init('0x6b087369f3feef1cd5d0927a529d94a4322c52732fa98ed72781cec811281711', 16),
+                    gmp_init('0xca9dd09cc5bf86d6fcc732c222b78cdf1327be68971fa79d04bcd9b5108ec5d1', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xbf623de556ecf8391cbe3cb97673c1013cd1d5bc9fc2ca3506c8a631b0f0ab8f', 16),
-                    gmp_init('0x5c76bb32d237965d2d160ba8967a5f4d839975eb45ef716292442b047dc86f70', 16),
-                    gmp_init('0x409185a91f1bbfef02554e1e4d6858c58a0c1f0e8e4ae3bce4b208aaf09046cb', 16)
-                ),
-            ],
-            [
-                JacobiPoint::init(
-                    gmp_init('0x1d3aacff4ac09e29655404d1bb620fca5166ea726242613f6362b945205d17e1', 16),
-                    gmp_init('0x29ea9d02860c6e311d4cd188bcf43c3b81c27bc927ef7e506efa2407b4c9d821', 16),
-                    gmp_init('0xb5b4860c9e3737f2657140deddb0a61e56f6ab6193a3efe659a4301e0f0e9aef', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x2abb0a9853534d2838c3cbd6e4d0bbbd6c3249306e4c94c3f1ffe20a1b28515b', 16),
-                    gmp_init('0xf13895c60cd41fe46b4fce11d3697c672c1c388934c530dd01cdb1653116917e', 16),
-                    gmp_init('0x746628c1cc313bfed7087e54c08aeb532436525da4183ec39761f145a0cf77ec', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x995932634b7f179d03c54a3e6e1dd49bb3db5e4f62f55c34ce26ccebff70ef87', 16),
-                    gmp_init('0x5abd3f6ac11561da803930f997cf4af6666742c9782eae3d45e6987aa50812ca', 16),
-                    gmp_init('0x5c35ac7a82d2707a4dfe351f2e75ff9e07c74daad76b909365621e263e836790', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x681f6d3611654448d08f77b976019870ef0e3de5c2fecf2d66d2209db69f23f0', 16),
-                    gmp_init('0x49fa510f49b19811336a967cc2f82f84b896e7594f27ddf71e1105f08056e96c', 16),
-                    gmp_init('0xb3ec2bab40dbe7d840e17308f403d6e26105eabc485b7bf3d8b2ca6108d006ec', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x68375290d14410ce36f4963e0bfd0aa368f4080642169030b1a136ba74b73348', 16),
-                    gmp_init('0xbb76fea47f09af78391d6b3cc43469aa7daac0663939f8fa36f2a715548251bd', 16),
-                    gmp_init('0x5b8dfd8469e012ceeec1a16e7dcbe8182d45e519022375d1f278884715cbc70e', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x3e50b2435712492290ef962e965f824e95110f43f0ea81853fba66c41a2fe903', 16),
-                    gmp_init('0xaaef09b90688aad3edcbbf8ffa4e8050b4341624eabc5070d7022c4d946c7e09', 16),
-                    gmp_init('0x58936bb9df6023b2af56aa3f319ef73d4d8d1b3bce62323810c6af1fd8fc3456', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x6202ea50eec1a9443777f6f95915a51eb0383d72925a99f0843ef0e6e7575b0a', 16),
-                    gmp_init('0xe7011342daa1ba7f93f6673268d170374dc5415363cea435ea6c4f9e99a70d9', 16),
-                    gmp_init('0x75e08aabaf4770c5da5d6e218e07d225c6977866be4e14ebcf4aee6639a7d271', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x9c30196df4c780a5d5c14c221ab5f47f44b87d5611f0e126c7d16e9548d9287b', 16),
-                    gmp_init('0x65630d0708e6f78b0d73392f2de3c67d6d611b37809801ec887dad190d94f78d', 16),
-                    gmp_init('0xfeb8371906c62472d949404698d4ed1572acc62b5359cff37450c2f55d6b4100', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x2934898f32dd151fdcb07e943c262aaacc281e3a9ee65216b9d74e96939352be', 16),
-                    gmp_init('0x856478e47cf79aa9c6d5b1700f5587878bf885b7d7c40d367637b8fef28373f1', 16),
-                    gmp_init('0xd493fdac09dd76139ae385c51a58606875c61606dd0b86aabc1103dbe1519823', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xd296e5b43b056341b8a4208c91db53064d7f79b17dbcf3d8351a06f9cfacb80a', 16),
-                    gmp_init('0x16e86f5ba501e3b770ea6789d8434e851b54d55edeb3fa9cffb222bf42ae2374', 16),
-                    gmp_init('0xbd41ac199641a8810595d981f60ebf741fa5eeeee7796a4a318460d0386b3c00', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xdadedfd567eb9025727874b4d05a54480ddf70b115cd8dba9cf099a807508633', 16),
-                    gmp_init('0xb5d3ec31ad24a03e0c729ffcef38b363415c066583c942e4a93a836dd4040644', 16),
-                    gmp_init('0x8dd2dd48200f523c0f1151b6909cae69d8469ff3b2b913d614bd0641a579e8c7', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x21b639afd6c2b6137c89be26a681ce0b9f2d07b423eb42818818ff4f7a81513c', 16),
-                    gmp_init('0x895a8fffc6ab1aeea408daaacb47c9b444822546024db92aae6fcb803d76cf0c', 16),
-                    gmp_init('0xb36a4c22207c16a9eed186e4bc518e39efa32e18491695aaff11879b7ef0a900', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x5bfe89864d57cd971a1c2cd1f1725fbf149f3469c4373104b2d7ceb0c61a52a8', 16),
-                    gmp_init('0x70180d85271a4095d7fef610c8a36fee7d792f882e6bbcaf7ff42018813192aa', 16),
-                    gmp_init('0xeacc09a7240c10bb91b48a4207add33b7e5716792d3cd6b37c566328c1ebd70b', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x36265fcaa8e67a92125e1471355b479cc9a0e8b8071c1f980f6206e3809f3f94', 16),
-                    gmp_init('0xffda6d95f5e4ca80d1255f4d038f0ac34ded5a447723c896b3c69d27447dbe9d', 16),
-                    gmp_init('0x1ff199abd2226006e9de8767e90bd1c26759caf8c9a21fe2d1ebc37775a998f3', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x9577bc4194165f36f76feb10ac6d65e55d87e8de6adc4a18318d78ec4655c3d5', 16),
-                    gmp_init('0x1c061a86e652b5e003a186c9ba8e510c48c3c94d81edf63f34af2f0b984c27d7', 16),
-                    gmp_init('0x9212474eba14bfefa541495a7fc2339b0b63740fc55cbf225f35e87f3598453a', 16)
+                    gmp_init('0xa1fd8bbbe48e1e09c0d54ac2e72576a018b82e417b4c818f90122bdb673a3111', 16),
+                    gmp_init('0xad215d8a34a308569bd77e07bc0916c0c7ec4945bfd51169b887e650b8c704ef', 16),
+                    gmp_init('0x1', 16)
                 ),
             ],
             [
                 JacobiPoint::init(
-                    gmp_init('0xc519b33f84ee52a5dad3a917a8f0d97ca58a0cea04ab860f4ac223aaff05c20c', 16),
-                    gmp_init('0x6ce7ff2466abab56ec20b054a6f96d8fa11dda4b5b50be320fd045d0fb0e0f8c', 16),
-                    gmp_init('0xdfd1809eda09f7d03694836a3406c2bde1ced49a198746a1b67119adacc8f5db', 16)
+                    gmp_init('0xe5e892363a31885cedc2f995f36d1f90ba82337d0b1fc80d3438c84a72bd05a0', 16),
+                    gmp_init('0x77439de4da1b87d21301eb01e79b5c3eca73995b9cd099aec936de2be1a69f5d', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x4a0dcf06d525c1fec669f4d40f1ff8cd857ca5e1b57b831f3fa1b6c2e50da819', 16),
-                    gmp_init('0xd24d5e836a8b789fab4517fee0627e66aa7af2d94f7809bb7e28e82ec2e660a', 16),
-                    gmp_init('0x9f8d9ee03a2d3b5a87a46f84ebfd16e17e649d5c7da15bc5717c73082da875f9', 16)
+                    gmp_init('0xc827ed763ffec8d144d95fecd3177c78fe6784fa0f696a510c665cf973b4df41', 16),
+                    gmp_init('0x1e4c4475f2da5ed560e17d7b66ef3cd3bfe9a6106c0047b32e5b6a2380f91f4a', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x2e9fd888ba4749128e337b7aedbbdb4935909351a9acac4241b58e7a916a03e0', 16),
-                    gmp_init('0x672b24357e83ed19e3cd4772153ee4ca5125dbe2e15dc4b8d1a284d85df3acb', 16),
-                    gmp_init('0xada94f204d504c33a1ccca6a5bfbde69f6015f1758244a453b73fe04a26773f1', 16)
+                    gmp_init('0x5d2393df9435ccf5d1018611642cf1d8357d712952a24b514f09528101467d6b', 16),
+                    gmp_init('0xe66e63f263fd0f7d7acbd85b2d5af46d72a707a7510473a807c673c6b1bc5458', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x5060e55a21d5e1f4ef17a10f98672012ae5dbdb2b8b923a8e558936679928655', 16),
-                    gmp_init('0xbd3dc79b022a182af30518881cf2ccf047f16f701d85e41e5851bdc86fe558ea', 16),
-                    gmp_init('0xfa2ee109faf5d32cadada8110eeaff8c3539f227c9a93b78eb1a9c294d0892c', 16)
+                    gmp_init('0xb511001491b7465725ed93eeb3c1587d8998961b956e7dc2405904b346340d60', 16),
+                    gmp_init('0x9c3981f431fe4c4672ab899ef769f9788fb582b11859479168cd6178653ecaa6', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xb63624e51ccc9fe55ddef2ff295d0fa3c875fd7bbc79fe8a08a03b6811d3bb20', 16),
-                    gmp_init('0x93da91f16db6b26f6a7e41e8ebfa7594ea97ef4cc6c4f060f1942ed0afb4292a', 16),
-                    gmp_init('0x236a3e0c46355c51e0ec14acb2cc6a41087c911962f4897d6dce4b93b0c41851', 16)
+                    gmp_init('0x453657a53aab893f3adcfb2bd2ff873fecf93a9cf242e590f0b1e93c9d159f7a', 16),
+                    gmp_init('0xbfb5aeff88023dc5da2ef0913a01c7286f949bd4e81dda5d99c22b708a02fb78', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xa0b1f96d6a95824fba70b1dada58cf077883d6a9004a1f06a284a52d2694f14c', 16),
-                    gmp_init('0x4b98ba271062b3e8ddbcc9007f69701e5be9fbef6c554d3df4c3cb42a00f7b19', 16),
-                    gmp_init('0x9fbb71bbc695b08a80e2d4ed0a6dbbd2cb4287f379850e21eb08eae99fe24d', 16)
+                    gmp_init('0x27a0c221b72432f0ffc3dda2e480e645a32f06e363cdcde9973276c64cfb1a94', 16),
+                    gmp_init('0xc3f6ab3eb3a0a792f2f2ef8dc1821e9d91e3b03d78674297ab98f8c2d4098584', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x11a8e019e296199f420af4d2e4ca51cf623ea74713c6e8f8263362eda2d7021', 16),
-                    gmp_init('0x7ad2b544fd43411d88b88cd70b6caee94d26b9eab9794bbfe356e019d322c37b', 16),
-                    gmp_init('0xecc85524ee0da6e79cc82515adc4f5b517b718f749c2f875b937beb5d2bea400', 16)
+                    gmp_init('0x435b54cb07b04c464d14adeaa13d73e7bc052853a723909331ededf3d46cb42a', 16),
+                    gmp_init('0xd726c031e4718a1a49f4a54cc1e0585d5edc4c79433949a6b7e24deddaf72dd0', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x3cc9ac925f6360b7ad1ba4a46de1bc865283e2b4fcb1d73598fd7b31471a390', 16),
-                    gmp_init('0x52fa8da62e8e32cfccec4158c665d5dec66556a78587f17e73f0718d0a50a950', 16),
-                    gmp_init('0x5fda4d17ca9d1bbe6265ff2034fccabf2fcfefab0eb46dbcba9dbab3a403d416', 16)
+                    gmp_init('0x60aacaeec40e84091cb2f03148e4774ec12883ed0e4c688fc193d479678e27d3', 16),
+                    gmp_init('0x9677dffcc5def66dda54f7c803de04ee46d400783a680f4bff7c610228c4d2de', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x6dedb5c79731db32f5ef3f691922d86256cc093665e6c45d5dfb8c4faebfcefc', 16),
-                    gmp_init('0x62f0ab8ef52c1159c25460fa59283cfa4d04f577eacb55556466b2c446256ea8', 16),
-                    gmp_init('0xe847bfe1ba9fbc8eae65ee8b359a7ca6ce5eccf2fec60d4f0d830659396fe0fc', 16)
+                    gmp_init('0x1805b819e14edd7e19fbc47c4e13da0e89cf813e5b65d57ba97d941b1d2fc263', 16),
+                    gmp_init('0x101f6428094381715858daa86bcb31489c8c1af8e551ecaf266470b4f0870ec7', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x9849e4edecd90cd8dfd053b42cc5fbe1e55ef2726d0c7fd615fdd5239c435ea3', 16),
-                    gmp_init('0x30ce7d0bb569607d32404f7e008a1ceb29ad72ed6bc95669e672027f0be4d050', 16),
-                    gmp_init('0xd42335285a499651f53227fac1971d5c26deebb9b4d6e14c5440d1388498f900', 16)
+                    gmp_init('0x79481a2aab0f1180612c78017b1c51e36319c47b85cae6cfcc326b493d9eb773', 16),
+                    gmp_init('0xdc61463f8555e09dc6d9625e70f28a4b8cbd8693297f950b37d96c11c1162620', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x635c5e1320f38e7fc071c43d481d624438e455af89f2b97ee8082bff0a2f8633', 16),
-                    gmp_init('0x280174d8119ba3007fe0f9ac9a837084dfcc7e6afb7e53eda781fdf9fb0b3f6b', 16),
-                    gmp_init('0x52e0eafea7a6e4f4da756850544d1de4e813dfc83406b55e8ce7be27eac27957', 16)
+                    gmp_init('0xc73aaf4366d3194f40617a8a2a775f45f41e2081427fa1b39a2b1b70c076d1df', 16),
+                    gmp_init('0x9201ec69eccf916ef9ce01be3bbcdcfef75b57a51d893720d279d516e5ad6605', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x949de70bd473f5787ec367609c8f0a3d311f10e37d410de5d1bcbd16a475b092', 16),
-                    gmp_init('0xdd9a7f356e21eb99efb4ca55e3c82985a5445e7fc597b280b97283ff90f32357', 16),
-                    gmp_init('0xe1cae78846ea63312fc04f7e6b4ef8da96e861ffe2b68e883897e31b3d00858b', 16)
+                    gmp_init('0xe6ac0ad271bae59b5a861535e82bcc353fb37fc78e50f376af71acdeb0028fe6', 16),
+                    gmp_init('0x53fbe5579ea7cf608b6999aeefed3475c5ef07bc43191afe6a51064068570fb1', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xce5c9e0d8c5c8e0112d14c62482d8c34c68ad5072b84ab99bb62b879f8afc57c', 16),
-                    gmp_init('0x7a7fb6605838c86fca18408cc827fcad64354569e0452c34b342d38ceb78c36f', 16),
-                    gmp_init('0xf34ff126650f5dcba2966edd46a2e9ed9ad88072a464b4dcf91d6785148ed5d', 16)
+                    gmp_init('0xe3ddee8f7d5c36d277189b6af61d52c1bc8a2738c17eac07d3683f7985a745c7', 16),
+                    gmp_init('0x487199d391932b871be51b86aa7bd8f47c28c2f17bd027b1a39f0940778efcc2', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x9006158fb1bfa5a3ce1edcc0a6138df391a9aaa134fb0b7c1d5c06198d6a1fb0', 16),
-                    gmp_init('0x67de01266b69980a0c76c1c7e22249bf935cfd1703955df8b85d3e5c842c4a55', 16),
-                    gmp_init('0x931719de0431e3c34c4db4708820eabf3108c975ec52af940b2c8b28bc6dd762', 16)
+                    gmp_init('0x2fa496cc907cae20c0aeda8052ac58b069bab975255a517b526f51dbd2943e92', 16),
+                    gmp_init('0xe7be908162a448873f6c08acb28b6433b1507f3e1d1bf694d5264339738a13b6', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x20fd55bbc2e3cc478171f4800f8024cba642f55a6470b293dd5f3a7260661725', 16),
-                    gmp_init('0x38a60ce469dd6bb3909310aa3fbac5b1506825e64e9e289ed2b2e49798a745e1', 16),
-                    gmp_init('0x7b9c4ce3e15763ea92025db568230d95446e278bf8fbef311b01146e5fd7d081', 16)
-                ),
-            ],
-            [
-                JacobiPoint::init(
-                    gmp_init('0x8a7def1026fc843cdf910a4f05bbeb20972ffa6bc1926abca1796eac25b4d328', 16),
-                    gmp_init('0x7353136983420bebe5c419b8deb8c0023e2979a2d8c712ed6f5ad9ef41690f2f', 16),
-                    gmp_init('0x3f71a6f8f0cf645e6c84731b5520ea07edf47ebe6042581d064238e2c0f87c3a', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xc9599cd32585810b246c5cd81331bb90eb9f2917e204c1e2e2e6739f075c4888', 16),
-                    gmp_init('0xd2f993d9002426f54b029657c6a956d9a083667eac937e3ff32fc42d1c95c082', 16),
-                    gmp_init('0x8f496e9ad55f1f4035440b3e668552b997c5f8685d4255cd729f4f005798b97a', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x3b7c4884e483db87568711ed6301d8503efd21e5523830683e2ca724ed1bc042', 16),
-                    gmp_init('0xa9eb6f0f01dc93845c3d6782677c7d31eea18e1df66f5483cfde41c1548581da', 16),
-                    gmp_init('0x939e5a8af9f9291d54c138fb5ae77593d421ce5c571cac64711db668b5cc587d', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xd0e2d0cae66a66af2d5762859e1bcaaf9b8d74c9b736029c9f0bff52376636c2', 16),
-                    gmp_init('0xd3c5868e2a4a939c4f6c6c364f720fd77b2fb939056d5f771aeefbc293d49f6', 16),
-                    gmp_init('0x7001db3435e658cb20d9e865d401e1e11e02662f99fdd6c8d13d724dac5d1790', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x15bbdb3ca580181d1438ffc2b87e82a32db0b7fd4c4bc2695dc314a6a43752bf', 16),
-                    gmp_init('0x9072b7814e1b4350cd7ea294a6827dd136a9abf73b3dcd14cdacfe0fe31bd4b6', 16),
-                    gmp_init('0xec1c1739bc7bade39796bac93c5a75b94118f88eca417ba5ce769562b045248e', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xe27d29868eda75e47e296fd5db5457c059700f910553ad6316854acd6109c02e', 16),
-                    gmp_init('0x2bfc2df5ea054c9d84bb38b5527c3964fb51a907f2d963f393bf2ee149b45b5', 16),
-                    gmp_init('0x405a16ade26ef7186396a8a40ff763fd3d506f9ace2b6a1faa05cfff80454f07', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xee426e3a1686894a1c8526970838a7e41b7a72dd858e404ac6302c1982e6f910', 16),
-                    gmp_init('0x8753aafce3cce85cc726b248780ff7f7a1575ff7eded821fd47cb00c81c936f1', 16),
-                    gmp_init('0x5c38e0483c477238ba88a7c9788379100b598754381a795e8a1ba5dbfa558ebe', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x32116533e5b1ba7fdeebc135c7c24befc9394f65d85058c0eaff3a1788e1fbcd', 16),
-                    gmp_init('0x9ef7aebdbb7df5c9144ab866d4fea8a70ddefc203bac6194e549346905254795', 16),
-                    gmp_init('0x22e3e1c7e217adbe24da80fef0f03cb6098acbd36da12636badde359c5025f45', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x71f2949cc7fa710e015c74dda474d892e3b87259a1b08f00e77c0f61394a013a', 16),
-                    gmp_init('0xea22c4755b9e36762a599bfabb7442c1af5e90336b199b8dac86cbd746d477eb', 16),
-                    gmp_init('0x66dd5c6ed25e51c2ecfb98315ced558e908e9cb45f5d5f90113323da65d23124', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xc7a06fcc367b51c4532798259f8de94dbecaae58a1faaaf11cb14347ed9108cd', 16),
-                    gmp_init('0x76b52c12aef138b1ba52d1114b69a5517c8ee6bd12a0f4027a3b60644871700c', 16),
-                    gmp_init('0x8573255df37eeb5a92683cf8574b1d59dac67d4c0a64b2e60ae036e1a4c13649', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xe200c47ef8787fc0918d03ce7247f1ad8c662ad681eeb3f5ca31e1d906cc1303', 16),
-                    gmp_init('0xff2333cd971f0e6e4912b7e05d7c96ce8d86f6d4a57304bf8da7e95eea09a0d', 16),
-                    gmp_init('0x5dc066619fa6bdbbee7c9ce7bbc8776895b93a99945bdb901b9471519f97c6b2', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x3b8b3c3cb387e529c36b6738a4d5b7ebd5b848e58dd5456133256974f37f5c89', 16),
-                    gmp_init('0x9da9f9146149b8059ea5c2a188525439581318a9fde4e693f7ba5f22caf25b06', 16),
-                    gmp_init('0xcae6bf6ce62b3728af5c5e06f292a93e18ba0cdff45975087c441252e750b3d', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x37d9213e2172b296d114e941818cc7d978d4e460635b16d40e3e43df6670de86', 16),
-                    gmp_init('0xb25a6662a5962ea8413385b95ffa293c703ee8058587e03576acddbdd229d080', 16),
-                    gmp_init('0x680de006ff4ba17b2da12223313147ff2c3e9b5e95e076ac6d97d5d963a78a9f', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0x2dc09f72bb6862214ba229e9928525c917b13405aace2a1d7f83f5a19c7817ef', 16),
-                    gmp_init('0xcf9df8cad1013ae595beff7ebac1682b15b3b22d213e53074939a9c7688ce89f', 16),
-                    gmp_init('0x8278c0532e94114e52e88aafedcebce9632d9bb1e45eedf93b22138943678296', 16)
-                ),
-                JacobiPoint::init(
-                    gmp_init('0xb8c0769661b806088677a98783503122ba45e98f6b6d3009b85d077840c56208', 16),
-                    gmp_init('0x3cfaad80634de830a7b3e87f6c15e6b249586ad275ed7d5ae7433af2331244db', 16),
-                    gmp_init('0x9d5bdf758dd113733bcee8064758608bdad5953347fe738bd8b660b6d25f45e7', 16)
+                    gmp_init('0x45c78ddc2035f1e5af68aa1186c0a1d540144156fc3a3587f4c733e84d4170b3', 16),
+                    gmp_init('0x11af9946238d5c0cb0e1a9d144fb3a512cb046606420cc7316efa3ed511faa1d', 16),
+                    gmp_init('0x1', 16)
                 ),
             ],
             [
                 JacobiPoint::init(
-                    gmp_init('0x9d3742cbc13021f841cfd81d20f68bdf47b78ac74eb742ba6620c494c692589a', 16),
-                    gmp_init('0xc096e369327bd3d1f006ce09bbdbfe31a052189e8269c4783d2151872bf84dbc', 16),
-                    gmp_init('0xcbba0daaea3c34e6b63fbccafe965bee3adf1b82316b581e1d739aec915b23b', 16)
+                    gmp_init('0xe4107e431e221f5071e7474104fa90a45312f0c21fb084de21579992fab5c2cf', 16),
+                    gmp_init('0x1e5f11e6cf701c9a3948c668741c2b323c7892dcff7b2410d028403f2b955c2b', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xc85a5da13c4cb8ddb3afe3719b5781ac05ce1a33118a6025fedfd99a98edcd79', 16),
-                    gmp_init('0x4b33b89966ea849c6e2855dd0158f44240a924b7bc0b0fc6327efee96beb558c', 16),
-                    gmp_init('0xda2ccd59a537fdcb4a18b0f119dee49406378a44a3048b9980b26ca304f2ca3a', 16)
+                    gmp_init('0x2d5295db41e6f839a757f11164d63319a0654d2666872435510f99b4549e7a36', 16),
+                    gmp_init('0xf98acf28068072323af16cac763b38c6ea7b44f99730ba3bddb68195ce32eb67', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x7505826c05be28dd97a8a56517f6fe5075114b39e7fe570db78afe33f9046eda', 16),
-                    gmp_init('0xcf8c8fd54620c9d53357128f595e30f6a6f1a4d74e1c05ff2639b0026c28435', 16),
-                    gmp_init('0x62824083b620f09b7fab260d2d489b956556f15927fedce0e7009d83492a34d6', 16)
+                    gmp_init('0x85df9a65ee179f7daacf9701debc1142766b7b2b911c3d485bb5b63c09b67b7e', 16),
+                    gmp_init('0xa6b4b7aa39af6308bb6b7d5eff0e297386fa949d1fbc6ea588b3869e830a36e3', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xb3188c80f04a340945e7ed1903fbd3a5be2f972236b827b2df342b9c9488c399', 16),
-                    gmp_init('0xc68733b9e44f4d4381e61becc3d3117308b947285885876da4d41364349b48c0', 16),
-                    gmp_init('0x66a9735663ff8526f93a0b6b347a6212bcaf02ab1994d6eae4f3d777b1e2c95e', 16)
+                    gmp_init('0x3877152e0bbff37eff26ec4601bffcda32242bc07eb98697cfed817743a29747', 16),
+                    gmp_init('0xcc70a7f9014bc61abe16116cb99d37309fbd1f6ecffee641ba573e25f24d4637', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xc4c0ed898a069236de5169f7ea76f7e2290b289f2234b6d07052ff4777d2ec', 16),
-                    gmp_init('0x6fd050c5af474270b5ff688149d7c284f657fbefaea409b5bac5e6ee2cecd27f', 16),
-                    gmp_init('0x919053207ed6fe8ebaf540b130d00af09fb0464e803a834d9a31b18af78e737a', 16)
+                    gmp_init('0x23c493fe7f9fcd08a8d8a1865c2d292885d3166704a1d6e4127cfde60b3510d3', 16),
+                    gmp_init('0xadf456a9e43414230c275d9e4effe6d8f799e35e26b9dbd713462ec43ae89a47', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xca569dca69d3e922ae9443fb746a5ef10b35887c42ff343f7db960dcff5092b0', 16),
-                    gmp_init('0x9b4c35d289c6187aca8ecf45ea512b1df5aa1c4ac14e195c95c8f8e7f7aed94d', 16),
-                    gmp_init('0xba64d0c6c19faed55b7888ce1c252bb47edd97370275146b2b11373ae46e6b08', 16)
+                    gmp_init('0xb8dc9073c673523c08d114540d125257c86b3488933e6f3c006a447c3b80ab86', 16),
+                    gmp_init('0xec7787216fd41e684b5dc67e84141863ca4d4599db3ce9e02f61194f048b4d6a', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x4e83ea14af0410bf68a5e3229f7e7db678da0f395cd57a889bbc8f4ded4341f3', 16),
-                    gmp_init('0xc383038c3cdc90dc56e58ad482b566bc732b9622c64d947f84954a3f653eea77', 16),
-                    gmp_init('0xda316d4090f6c91c90f7b1176f328be7b727d9032ce094b68c868694b3d80d48', 16)
+                    gmp_init('0x94406d0b314dd0edde5993ebaaf235ddac36eb6c64227c39acc691808b49a71f', 16),
+                    gmp_init('0x61aae77e864df179cd207c90906fe897d0e27261ca63cf94471c1944d0b249a9', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xcfe754065e98ea986faaef1c862eb029bde319bac7a4017089a4ef7fa3397ac7', 16),
-                    gmp_init('0xfaf8137f7fd7c8d8b2158fb3d5a86223a0190862b6bd52334137413cf869c46a', 16),
-                    gmp_init('0x81463f8c6e223de5e75e41a6e849d2b693a0aa942c121c6fc5bccb58110bccb5', 16)
+                    gmp_init('0x437a6a6e40d04569a67834270a8e16495e3bffbd135ea79f59469a0606bba654', 16),
+                    gmp_init('0xc2911e15587f2492ab24825ff34dc5a014a7c3761938d4103755406037a7c0f3', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xed1a9c7ca8f97819cf0875ddd4f09dab65bc067a18ab2d8bedad632b42d5a687', 16),
-                    gmp_init('0x8f6643c6b15d54d9b6442a0163b968c8fb2bc264923d79e24bba1b588ea67e1', 16),
-                    gmp_init('0x15f051e70783818d33fa5063908fc328638872ae8ca10f09ef1663d663c6b090', 16)
+                    gmp_init('0x3c2ebf43de886c14337136df5bee8d3877f10972e8c6873fe5cde33c60e50c32', 16),
+                    gmp_init('0xa703d9a6c5e8399c6525b93d202e28e7be2d08c39ae8c9989e2f8917ca93c124', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x55e19955bf58a49f42ff5635fd14d77ef1349cb13cc476376f0933aebe7ff4d2', 16),
-                    gmp_init('0x8cda3dbd6370f0a6b784ffc65dcc5d32304ce93f2a1b457d92922d6b4157e688', 16),
-                    gmp_init('0xe6226b1abfca694ec43d9a64e5b774589aa07518bafce23dd9c4bbaa7b386c55', 16)
+                    gmp_init('0xa6cd740bab120fa05ac96720bce3bc619ce5a7a96e9e45c805bc04662647394e', 16),
+                    gmp_init('0xb9fc0fe7c1b0fb9f4ff66a2d4a663c77b59355675ccf55f0c66b62b3f119695a', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x9660ee10270f2b7f9472ee83f02d7b6c1cf87f3b22fb51a298fa85f37eddefc7', 16),
-                    gmp_init('0xcf28fe75f907168260e9c70b5c0a6a5be1bd72aad3044f044888b6d977e34de8', 16),
-                    gmp_init('0x4f15664f898c82220509edcd80dbfbd03f7ffff0890cb6fdcba8ae938eba681b', 16)
+                    gmp_init('0x987536d727940eb9f391e5b89ec55f1299651bf35c6049907083d9dec3a2355a', 16),
+                    gmp_init('0x12f19ad674f1117243e0b1c149e57b48b85f6c7c683adccdf0c75c4c1bd05276', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x47e1829b36024c85a8ad1289b2f5d3966c526fd9a2fe1556c1a3bab99cda48cc', 16),
-                    gmp_init('0x98dc04a247d9d622ba4187c7e61d4b09b5ec1e99084c951089893b8ce085fd48', 16),
-                    gmp_init('0x2bb6cb4f8acbeadcf68778d8b5c34ab59c029c786dbe93e89f364fa7789a820c', 16)
+                    gmp_init('0xc2e65b9dc8bbc43ccb94cd05cfed4c53ddd80153cdc93b3291f23fe06eb8394c', 16),
+                    gmp_init('0x36cb9b541bdf3dc223948c9d2f4697243fedf8318dbd49246cad3e4383f6c688', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x1a300ec1813f4a2a67dbfa32f892a434ea0760b6d28f071ea6fdd33f84fa38d', 16),
-                    gmp_init('0x359225eaac310874827dbbf1d0920213b831664cc05241f16fff18b7f66046fb', 16),
-                    gmp_init('0xe23bdb220d21b36596d5e0e05b78f4e80f913e38734ce7f55b4f533b903ef70', 16)
+                    gmp_init('0xd515ac409a4c4468f19d38b17ef2ddddd1f86dcf71a8f8a6b0f0547c52f3ec22', 16),
+                    gmp_init('0x51c0481422449b2e1ea5e4840052bd464cd57df0031b806eca1462eb25a2863b', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x6cd6e43409e6d0bb4bccd58dbb83e97382351347c54a63a5e1c840dc1b891ba7', 16),
-                    gmp_init('0x10195dfc9fe3f3035f2b554f3e580568a02fe20115bc5d8a810904c5dba653ff', 16),
-                    gmp_init('0xaec37614b0c2290a4596ab9412293ddf0ce221c3677a31b44fe85d3b40486672', 16)
+                    gmp_init('0xcc99e1f3854d32145e63491acca09e20aea9ff28380169ff3fd1e77f6e5942d2', 16),
+                    gmp_init('0x31e28f89d9a5a4f4d976c9d49e0031b5357b613529cf9112b3e040022a099464', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xea9c12638ecf981ea3def022fd997b11f2af164b7f3de08ad7cbfa1b04a11231', 16),
-                    gmp_init('0x1d1a8185b12e131ed1c12242cd53eb27cba22450efbbcc7b616f2de0573a216b', 16),
-                    gmp_init('0x88557af8fcda0236a997592e8163b041aec15a2f84a7fb85b0b7f863b254d0f8', 16)
+                    gmp_init('0x70b9d4985e5b0bae2453cc38b61cf3ddec99e6dabe6093fa59a1e9a5971c857', 16),
+                    gmp_init('0xed80461bff4b625086b810ae46373cfb33a83da1ec5461aaff9cb63dcac8dfc1', 16),
+                    gmp_init('0x1', 16)
                 ),
             ],
             [
                 JacobiPoint::init(
-                    gmp_init('0xa6ad3522291ed5c912181e94d0bb67b1027b733a8490670222bc370cd97db5ff', 16),
-                    gmp_init('0xb1838583459d2f3e2177b92a10480011a58d404ee85357fee0156c56dfb6cce', 16),
-                    gmp_init('0xf237ccbcaa497935113c566104e8e6a82fdedd6afddcd770d7132731613ad63d', 16)
+                    gmp_init('0x447d739beedb5e67fb982fd588c6766efc35ff7dc297eac357c84fc9d789bd85', 16),
+                    gmp_init('0x2d4825ab834131eee12e9d953a4aaff73d349b95a7fae5000c7e33c972e25b32', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x493e0864407344d0dc2329f61fa916784e3ecec73c044ce58cc3773cbc229730', 16),
-                    gmp_init('0x28f953119b34ae7bdd46905b7cfb6e5b78faf81916ef241c65805b673e307296', 16),
-                    gmp_init('0xea13e0e05c07850bd2590d42f815b8a92b7320b9f63c74539c1f0f004a4c2f15', 16)
+                    gmp_init('0xa263919b4945a1d447501f2a3c0804c3802f779ea7f6803aeb0421211a6b665e', 16),
+                    gmp_init('0x873200bd2aed20fc2e9d3c9de60d60c5ac3f83df4c00efe29ee4040030bcdcfb', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xd8a83a989f8118c1a4478fb63249313e56e6611334807a6e598a4efae1aad032', 16),
-                    gmp_init('0x4957224a6a29620195336e6f319ca1fc61c363ccc53afef2ad945c3ad729b1ec', 16),
-                    gmp_init('0x39a7ed35ff435cb9f2255be781ab87e76053f9a25df3e791cca220cf372ba6d4', 16)
+                    gmp_init('0xf8b6533e03ca017f58b14df965def4f6ddfad856082632c273e1998edea6db68', 16),
+                    gmp_init('0xc30f4ef5ec4454862f046dda50aa3ec66bbd70dd9c5ca0ed69bd25b0ae760da9', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x4d7525af7e3b76088268e8e63a91465ea23a3eee68333ee54ec1b6458a0e1b71', 16),
-                    gmp_init('0x5bcca2275464087f53d93535078dd6768bd93c9861a0ab479f22d43024cd0485', 16),
-                    gmp_init('0xa280894518507c180bc0bcd0c5463eca7b4f42f31eebd27a9742ba9531e07721', 16)
+                    gmp_init('0x2890d721e57e196118e63add579547f0acad16e63be0aea8f6f1d3ac4d771f0c', 16),
+                    gmp_init('0x69b5b8159ddc032aaf77e1d1416752ec7dc0e7f77ef540690a5728ecb5890d78', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xb09116c47b916009c509f5e2162397ac32201854b700c401c31c14973e1cc401', 16),
-                    gmp_init('0xbe27c70983f417912fbf14026034f8767166adc3eb0a476b26fdaf83a1ef63c4', 16),
-                    gmp_init('0x2f219c72912f0abc7e0769ca20900469537dfab4ed4daed6333dabd720db9f05', 16)
+                    gmp_init('0xf35289d35582847c548ef18729edfb755f0173072cf8727c66d5d4ebf924e753', 16),
+                    gmp_init('0x75c1781ec5ec13fb93df08a1b50e1bd8c562fc57292d0f04aa45b5c2eb13a20c', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x75cc379c0e2b6250376c27978cdb0f9334d9c2ed1763f69d2056783d9c8fa099', 16),
-                    gmp_init('0xecdec5f2c460f427a0e9960a57de6e1415f105e2573adb54ec830ed3e4bbd49', 16),
-                    gmp_init('0x1b314b22282e061585e7125b09c8be6cfb3276dce7dbaff120a9126239a2a1eb', 16)
+                    gmp_init('0x929f5cfaec5be4805430c3c0595033cb946d1bf2af7a9da4f8b6930d2670213a', 16),
+                    gmp_init('0x29cd3692293320c6c5ac64bb51e390451b383964f7f20170a53059c5cd486f14', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x6959ddf1619810366d976194049c8172294b0c6889f703264f3c642269b07602', 16),
-                    gmp_init('0xaa6674a539de7e0d0223ed41262ddafd8893ff59904234d67f7adc0757942441', 16),
-                    gmp_init('0x81ec371a7315f17b67168b03a4e4cc35d66f651fdf3c039fccb7955410337837', 16)
+                    gmp_init('0xcfd06b74da4417164834185fb6734e01af141fffd6df23d72395cb673018017e', 16),
+                    gmp_init('0xb647b7a9b72ba9138103b39587da7950003030786b779777a0ae7be4ce0dff50', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x273a5e229e38f023c47bb9df5376498e4d550259ee75822cb4f5f70e673c78b9', 16),
-                    gmp_init('0xfce6745ff85ff6c0dad16bd062a0f9d221ddcb60686c4f2bcb12675b0a999e92', 16),
-                    gmp_init('0x63045c9a836c70df4497b26e58ef80babc9b126cb917b19307c5ac1f4b4c39e4', 16)
+                    gmp_init('0x7b8b8867dd4d9c6f81690628033de305d4e3ff5e71da17814f5822efac7e9e44', 16),
+                    gmp_init('0x8bc6273e511680b42246073c7dd5adb564057e6dbbd723650767022aa8cd12c3', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x957fd0406f40f21986447b42feb10c26c1d0a662ad00445deb0fb4f18a058f52', 16),
-                    gmp_init('0xb862bc6cb4066662d0accb06c66527720a7e784ac75827531462ad17edea56fd', 16),
-                    gmp_init('0x8968f23593655023d8cab178aa0418f52755137357248e212872176d3ebce635', 16)
+                    gmp_init('0x755e74c4ad5dcd11512d6d08f15dbe981089288329a247b04c81905792db860', 16),
+                    gmp_init('0xfe16afa753ad9e4dd249b2d823815bc2b2937464cfc2777a7d6600dba0d09849', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xd5376d781047cd31b6999c9be24741ef4309211cb9d0f6ff6cab0d26cba2a732', 16),
-                    gmp_init('0x5b60ddae29596421126590c05ffaf42f8fb2f2e5b353dbe37c2b8b201f4a3cc1', 16),
-                    gmp_init('0x173c69066bc03f9c498817632cea8512d85ef5e40d0d6aebf04ff721e782d483', 16)
+                    gmp_init('0x823c8de5a5e97dbe7bbf9038d79bff6b585e6c58dd17aeb9c6327e20cc2f3082', 16),
+                    gmp_init('0x61fba612a1e936cd17edce97abbfe885cdf006775a45964cac1b42a9958bd76c', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x3a995da29819f0fd270fc4862e3c8832a80ff1716d028598af7ac5469e0a9407', 16),
-                    gmp_init('0x4ccae07f80dc6b876e9fda8062e4640e9f022e84a59d4348ede7013b15d121e3', 16),
-                    gmp_init('0x9bf12757de2ea88c2101cd7ed36b70a980ae39dd9a94574c2372e0fcbb474578', 16)
+                    gmp_init('0x88fba84cc372c96968a10c0d7eb0bbdedd2ca2a496da12c3a9ef6955ea26ba6b', 16),
+                    gmp_init('0x512aef649d39be0fd266da45b514788d484a9e28e00cfdce80414781e44972f8', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xe928fc00db9abaf43f867675164ae7db0cd470bcc0cab7cb4b79a2e2766b5152', 16),
-                    gmp_init('0xd943c33b4199d90100657d385339322be47134f314ad52e844688ac5bf2b3ec7', 16),
-                    gmp_init('0x607e0067bd1db1a0513d0ed7a69ce3d7f20adfd51ac335dc8e8aaf7e6e02e4dc', 16)
+                    gmp_init('0x5f0c3cabe40ede902faea8e759acd21cf8a00249e4d1558eee143c1f0f870d2', 16),
+                    gmp_init('0x34b55d934f6d2c56bce7a5998ab1ac23c2f725737aeb5f8a5f537c956e60e8cc', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0x7bd0a19ff0b1ff05f6816183ad1474fbf11b1a97c30124354195ad54ac430d1d', 16),
-                    gmp_init('0xedcaf461e53ccbd0db4cfaac00ac5599d11f360d867a5f5cd11a975739b9dede', 16),
-                    gmp_init('0xd8779cd4039c5671b083457b2d2ec37af4b716381a77c3488f381df659877c14', 16)
+                    gmp_init('0xe1a0accbec055beb8e50f6e7555c6f2c1a1ea5d41739b17e39c48a4294720cab', 16),
+                    gmp_init('0xe07968fb7e98c8541836f83077eebcbf084a2a71d080254ea6d453f574b185c9', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xad8045b6070bc11bbedb63d391be489c6766629a459f4aef2bd64599ae9346bc', 16),
-                    gmp_init('0xe1cdbe5db6039b888da698f9c84edc7bfaf0d86cb33ac01fad9f127cbfd6a8b3', 16),
-                    gmp_init('0xe66bf9120d23aff49ce43bff310bdf05590f890920cedea207d63357993aea8d', 16)
+                    gmp_init('0x9211ea4a827801d81fd65b91abef80708101deba1f12354d3a5357fbc1f6b0ba', 16),
+                    gmp_init('0xe7e91892e2152ab3c74ba7e95899cd444ee478b7af28bbb2d91415f9a2b8e349', 16),
+                    gmp_init('0x1', 16)
                 ),
                 JacobiPoint::init(
-                    gmp_init('0xdb965e046765947990f728ab2f103f781378904a0d0e5d862a30de7df38db573', 16),
-                    gmp_init('0xa848108d14689e9c45739f281d9e992335d2f8c33836edaa33d395507995c810', 16),
-                    gmp_init('0x88d76c8daec8e42bea61c67812dc4a042ac9887f432b67a689fe814c4b5bd5ab', 16)
+                    gmp_init('0xae93b86e6a73c7e50db358931e7e6a0249bfb7e46b11bb62a828fdfec26c42a', 16),
+                    gmp_init('0x7028f6dd14787e13a942e3edc1e20b37278a39eef5aadb6491063343b9f808ca', 16),
+                    gmp_init('0x1', 16)
+                ),
+            ],
+            [
+                JacobiPoint::init(
+                    gmp_init('0x9022e314949ccf3e8937542b8cdec18ea2f8d5618688ce241ebd8bac137de736', 16),
+                    gmp_init('0x2fae5e4f2904a39466d0bb045226ce087f49366c44ea7657f4ef5c0844c42ecc', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xa77663f5fcdf189cc2731f7801b1133ee130a96964396297872e52cf757a603c', 16),
+                    gmp_init('0x4e139cbdaddafc58dae982fa5476a35a8ab86c568cbace48d91745804ca8e468', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x6e5872e3076fe945fb0f2d3f1af7857af73f35183273c05191706cb8d09b01f5', 16),
+                    gmp_init('0x4213c02ec8d7717180cc1d4af3bef0ebc13179d4e09a85a7c30758d9abcd5fde', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x1a7098d2db889a1112911d2965f2870ea93d696bf79b5582e83e2130461dffe4', 16),
+                    gmp_init('0x39d474f5ee8b69fae5a42c936f76f32768682783de26b553f3ba5eed161315da', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x292220b1a5da3f504afd1e344c17df827bd155fb2e6168c2b539b747efe45b1f', 16),
+                    gmp_init('0xe316a0532bf175aee37c795ffae98d7ff7c344304cdd41045fe40b8b534bb026', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x7da5f99d3d6c3e86cd6cb74ab4e765c563b807e9a10215090493d0686db76ed9', 16),
+                    gmp_init('0xda269ac028102f19e529dd1342c75643191cbb6b8c72013180f1cf939752c9f4', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x3644e14807a44f0ac3224f8721093a340e8040654b166de43e850662a3abd540', 16),
+                    gmp_init('0xec5a9150dbc2797611c285309fa1e29300177ceda66fa14de1c6fe1cd55da631', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xffd92260ea330bb7ac43ff1f15417fe91a078f4b263234f284100f6f2472c9ae', 16),
+                    gmp_init('0xcf4b93b0ba2111475999633225711e5f263d2e9c868b8a34a0cec1d866d03ae4', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xedfe7dae17fcd838e55b38f4993bb4824c920a5ac687ede31a2fd21e89142ccb', 16),
+                    gmp_init('0xc88692122e0daf2161855d2b4f55beb81da442b69d51142ebb951d31ac593d75', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x34a8fa8c48884176237d162a581b7c63a8239331db50a97fcd2c725d04dfb784', 16),
+                    gmp_init('0x51d8381001dfdf52cf3ec31a3fe1e53c2e73fc51a1eebd57213b4be5247d5003', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x5311968b4059a69598714026bcea0de8e7f7475cdee27000f3da71c64a41b208', 16),
+                    gmp_init('0xb78d732b3dc22978a6c6581e33b3da113b3c1dc02436877f691e1f9e048e4b69', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xa826e880bc8555ba968dbd4d1d0d26fadf180f578c520280b544b022450cc54e', 16),
+                    gmp_init('0xaaf394288cbfa120d8c52f2ee5ec51a25cb680fac4c8ded7a463b4d6ccf176da', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xf65dd1f22ffba594f7a22bf6f560e1d5af46e6ec7c7033bcb3d01b5c495daae7', 16),
+                    gmp_init('0x9d71b820ce1b66e820e6fe637cfc4cd0eb06180f9eacd9b28d4e5a99c2556738', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x8dc1f3f37aa789d31a9a309315a28fd7126e7f99f8781c270862c0c4bf4b3ea', 16),
+                    gmp_init('0xb1e8b4ae7aff7442164c269569d32f93920564232cae4286c2c42a8650c5e9b8', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xa6670e7edccae248b41bf480aaa807c60afaa80472069a11abefc15e3afcf1ee', 16),
+                    gmp_init('0xa7fd14c93a51c2f3a395f72f4957ac131ef39891c93cf38a378870abe0c67fc8', 16),
+                    gmp_init('0x1', 16)
+                ),
+            ],
+            [
+                JacobiPoint::init(
+                    gmp_init('0x73baff0419eda72389386cf2b5156deddc34c10619515eb5741145c144cd3397', 16),
+                    gmp_init('0x1e97de634977ac5f6a00d1e8c18f825e779ef92cf826134941ef2a139adcb8e4', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x6fb5456391ba430536ca35ada0f4871e140b55dc318d93bcacc1fd7cdfd83618', 16),
+                    gmp_init('0xf663d87766c6b8a3ed3b68c52109daba2f1e6499aae5d33e3f39f5cb02430626', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x45f8330c33e60a18344388de44bed04e3e10246156d312977eb0f952161fb913', 16),
+                    gmp_init('0xc212cf6dbfd6906ef80e8076d8ba7760f06d0879f6fc337370d4817c0c15c3bc', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xd554ded0b2862113a145c7ebdf98e4b942d91e70b46ef479357bdb041cbd9a71', 16),
+                    gmp_init('0x74b8f94b6c36708eff0f7ad45ac393145f29fea9a7a61c99a43a4a8b3c8cc32e', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x5544dc49acd7bdab65f5a01c8bcd5991965d4be1f3edd7c75aef9691ee393654', 16),
+                    gmp_init('0xed3e85895087fd4ac04c05b5b8935192241efe9703d58e7323610bbf8f53206f', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x44130b2ce9e1013554e17c99d42eb14f44ce7343e662a7a0e8b93f55bab5593a', 16),
+                    gmp_init('0x49197fc77907224f31ca51215b0580a1776d1bdecdce2e3fe3a5763dbf5b8e89', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x2757b790619ee7734b3d2ed55ae2f695741dbac025fa9e5513f3599428a15dfd', 16),
+                    gmp_init('0xdf46d2d554c2b12e5cc975213cd5500d1768978a3ca7156dfc8e840cf042c341', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xb889d78bcf05f1c763c4e454296251719f61776622130485de82817f3be28c8a', 16),
+                    gmp_init('0xbabb0b07fa511b9b182be4a975c700eadff631e5782fb8c33037fe51eafdf89e', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xe872437de50e2bc8d98421ccc1143ccd148cada5d3ad4984efedf426bf840a5b', 16),
+                    gmp_init('0xf984bc8912729616593bc91f66248bf5ac3a346cf9396464b84e58551377e86a', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xd8117a991a354ec2e090d2df5125fd3d9bf259ae601fad6dc95cdd857968488b', 16),
+                    gmp_init('0xe4ebb986182aeab0d19e6a01b6eff51401533aae5c02d245b6eed915801a3b', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xc56cdcaba4d775c0392ef6d5e6f3334a9261fc50a1781e3d4956a9b8b36afd6a', 16),
+                    gmp_init('0xd16056e2f386b070cd2edeb17f594ef566f483b2568cc723e6086beef3f87c26', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x94054f36a1b6bc146ca2519f3a756b62b14f6191e97c17af44b05f8625e92803', 16),
+                    gmp_init('0xb848d8f95e4c4c074b0d80d7ddae8fc99e6e5d1fe37f86aa0e1e9a9b3786f08d', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xd3d6e6738f3ff2869cfd28583e48abb123941334419c0c131dad980d2cfd2cd0', 16),
+                    gmp_init('0xff448f5fcd159b68536da8ff737de59b001fa568c2f6f8f14c579c77794ae2dc', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xf99a41f785fee4d8b84db4183907019377dd55ea7721089dcd7aeec0bacba6e6', 16),
+                    gmp_init('0xfb3296aef4c8145ba37757c917f8be49ec328c8928e4b570de6e6d673d26512a', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x88f9778856e45c07b03132d72237d40656508d6a3a09ab7a09588855dab7a64c', 16),
+                    gmp_init('0x4a745cdd46b55c7434531af257969e5836c30092216d2673a05e98e11575f103', 16),
+                    gmp_init('0x1', 16)
+                ),
+            ],
+            [
+                JacobiPoint::init(
+                    gmp_init('0x9cf646b91a4c25bbc974446c2976fb982683bec78b098cb30e2e5fb31fa4e33c', 16),
+                    gmp_init('0x37b0624dc1f65a891e408e258b821f319e205827ebc1603219c45e060e0d4563', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xfe251903a452329835917f8d5547844f6cae5469245e15f58c496939c224ef48', 16),
+                    gmp_init('0x4fac9cac97ca9be0d836b9405a1b36a0455aaaa1c321e408ae6960a05136dfa7', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x83cb43de151b64999d7a653827764e0f4c566749fe5caf63e98b618cc6bf1e67', 16),
+                    gmp_init('0xbce28ca24b98f6f8efb1806e624418f82874422cbdd1169ea27ee8b3099acc97', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xcc411e541368f9f2e2c3b6c3f6131016cec29f6bbdd3e7a5bccf5cb64d405a74', 16),
+                    gmp_init('0xfecb812fac774584571527fc350186d0be4fc2009f16fb0d645be6b618d1bddb', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x3ff3b3e560ceb08c03340fc15e25022484e8628701d53dd8230ad748dc0f057e', 16),
+                    gmp_init('0x7f17ad6f3bb6578f6f7fd17057867843a010236ec47017622d41f7daa817965e', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x84d6e7f91e9d174f80dc73f390d4654fd64fed987e38c62b74d4780e769ebf5d', 16),
+                    gmp_init('0x555f4e86e407c4de4f7033de50ad159b14a9f3aa8a268f2bb0586f1662cc379', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x6e9edb2dd8ffd83fdda19de173d6af996367a8f2d422bcb515114b40325e69f1', 16),
+                    gmp_init('0xc0822216ceff954eab3556ab65f3bff61c727454799f281b720e17e3402b7e9b', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x8c6c923cf1a4351cca356ef3efc35de10898022a45c4a1b196282910aee1337b', 16),
+                    gmp_init('0xa1256fc84d40ff6a5efbb2319eaa8e84845362c1c6ddfa2acb451d5cd9c84abe', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x5ee280e804c41c4befabc19de6ec2d32f0876894eb5ff820bf252f66a288f038', 16),
+                    gmp_init('0xbcd969f94677e39284c0586fecc9eec011d7833a98e6c6f41c5aab86b6f1ee6e', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x6a2ae3e9c7cd7eb04521668b55dde95399a2d8e1e5c4a7a139d6c50353e90f60', 16),
+                    gmp_init('0x4bf6b287c0264e856faf20a6219efe23f3d4d34082a6f7e64e349b189a948322', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xe1f0166e05c205736dfe365d91fe288c2c34304f2f70a86aa0bf3256c0c708c8', 16),
+                    gmp_init('0xe647653e916c3b520444632be8a33016fb655f22efb5a00ae718d73b3896ed38', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x4ab0c75e4cc5f45bb0e4f5640b7225888c3e4465e863c51318c8936f8c320512', 16),
+                    gmp_init('0xb04daa0234ae0af7e8948891d80d8c0951c3714292fda61a33743af64f0a792a', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x28089687abf6345c7f121ab42979c7badd58bd80100e7d5d7e0f09ca476edefb', 16),
+                    gmp_init('0x5d071cf33d3b3191a67e19ebd90541c44dd31b07be0392122ef457229d1b0ae0', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x1f637ef68fa6072822824b73d2e6d3e9ed79ea8130092a10b923dc396304c13f', 16),
+                    gmp_init('0x8fe2c91f76bdae23dfdbdf045d762e0a7d98288cbbbb3438a69ec6ed13b60200', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xeb15b0de281904cb70585e852425edab7b9ed3075a4c269dd12d99bcf344897a', 16),
+                    gmp_init('0x96cdd169c2660710898aaf8cd732f85814698b2f97d0b82ad9de83ce5bfe7ee', 16),
+                    gmp_init('0x1', 16)
+                ),
+            ],
+            [
+                JacobiPoint::init(
+                    gmp_init('0xf81f5be38b8ca534e8a5c7938d18df9e0d238966f74e1a6b826fadc0523b716d', 16),
+                    gmp_init('0xdc7f49329c1f06df1d56d29d380e0328660758503a878330464002f512632401', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x7459e772c29c4c3f158ea76280d631820e4e1a713bd0572546e0c52790789539', 16),
+                    gmp_init('0x892bc7f5183444eaec7e8e858a2ec1a9383af5e04f7db3913cdf5a471439d97f', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xa6008450fb1286385af6ec35c16d490a3b41278951a5521584c5685039d19d8a', 16),
+                    gmp_init('0x7b4b79c067a37c72c8f6d45e7be9ca84f0fe008fa726573dfd95dbb3590d2c4f', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x2e1c7c383d7f8492c604c9f87d2efd3f345e4fd95b8881c4f4727e8c8ef2dfe7', 16),
+                    gmp_init('0xc629dc2b09f0be266d9f4529ff7ea8f1c2d747d667b0c5bd3f85cca2c55e5f2a', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xde5382b1967df354c64c09798feb0e1c59e38cea5c44de7226987b39496cac9f', 16),
+                    gmp_init('0x9c47b678b69c918562c3b00991cf9f2bc2e3e29473d841157ce082fdafa473d3', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x74dfabecc5345e5340cb0798638b5965e2ed30366d621c903b4c7c0831bf35a9', 16),
+                    gmp_init('0x48341b4c8956a77069281e79c517ce993f5fa126c564848d3615b07b36a268e1', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xa7227b0807f2a9085344b99d51194ec8400020516a25ff3e7cb2963786807a23', 16),
+                    gmp_init('0xf5507525d45d39e845da847920a075abe7bf8157b728cdc91c471983d4115894', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x8c86799b36e7d519e63138a90228dc28022fc19d8429b019acebe833f2f21873', 16),
+                    gmp_init('0x5c0c2c12a5a3e85d61ce9fe475a272d15dbf4306e861f0ec8905b7d7e5159140', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xcd2b2e8d42344596465abe73a3661d39005cab5fa1a8f35e5a797fc2044d14c0', 16),
+                    gmp_init('0xf13012df9b0870a24d505eeddac0f671fddb6f0cb9accecea560acf222496315', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x183950fddd7be0a112de04490cd9ba82eaafc3e392c6cdc9a94a60e30f18a7ab', 16),
+                    gmp_init('0xaa8cbec079204cc381cda4cb3f77a930cc6e77e9d46108bd6ae5ddf8560b4b74', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x11b2e84c8f0df7eb4cefbc9b83df9dd8f25c655aff228f6966f4eb12399a1566', 16),
+                    gmp_init('0x6103769dbca23175d042d698797405cc824b55840cd8096859a4b3c05c56bb73', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x675107e17bc4604da088cf12640a72f1f6bc238850e7187f5fd577fab0f2928c', 16),
+                    gmp_init('0x6034e0018ea3f8d35d664043d781f304b26711d18b1145738740be4015174f14', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xfb6d19295f2ba070759da0a3ef99148531286a0fe245c6f87d09eb28dba6f34a', 16),
+                    gmp_init('0xf29b2d29d7bf46dd9e388fd4c4a791b9ecfcfa2dc9685b1f9b5f3c822bcf0452', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xe42b60f34a9e51b9ddb77e96f0b512ac26dc449c991c9eb348fcc264147c34d0', 16),
+                    gmp_init('0xff0cc44f2cd6f0ddbe07cb0c7eb81c57bdf8bf104fc3c2f06de84bd897a87eb0', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xff429fcc103c13c10aaf67650d906651a690109827e4db5074ca2d2a0a435427', 16),
+                    gmp_init('0x2addf9668a4ecdb094d409c856186876205bee534a3a0da28e50450d39853824', 16),
+                    gmp_init('0x1', 16)
+                ),
+            ],
+            [
+                JacobiPoint::init(
+                    gmp_init('0x85685474d77e08482397f463e53cde1d022eca56c3915c978ed9c7e787354b7a', 16),
+                    gmp_init('0x20b50eb50bf587b6eebc913b2a6f728706a891dc1fd6fdbd8954402bd16e04c6', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x80ecab9f02b4cc6c691ec77b5af1694c45faf0843c5344c1186c5ae0464345e7', 16),
+                    gmp_init('0xf424148aca6d55c6fb5fc8f83e19fc8432e500ca5bccdbb497a3de52e042e3ef', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x617344c752b23e6549e9d2092fcc92dea713a215f677137eaf6cc7fa7b26165d', 16),
+                    gmp_init('0xe9901617a437835a49b7d10bd18220b29899ac16e37171a4c49bfdcb86b2a286', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xe15d0f2321cecf4433f1c0b1843eff4f5d139a212f6bc03d2540306574362bd4', 16),
+                    gmp_init('0x9a84cbe2707ec22ec1bfe039308be32623ed4bf8a4468269be6accdaafb46fb8', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xf8ac03ee55fb6a22da04c1da9e40fc2e9018f7a6e101bad1021bf76650442770', 16),
+                    gmp_init('0x5a358e65599d1e8ea436c751b34e6d17a97602bf95041d023a2864f11b00c82d', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xc1e3e83f22961a15baa9060c6a031abaa43dbffe2aaf9dcc363877731efffe4', 16),
+                    gmp_init('0x59190df64dd74b5de869f22aaf60d21692f7db6b5625b6535ccb48da896a7824', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x8a731fb525bc95c66c6cbcbe30cc8ea60c73f8d0aabf77b8fbe06d86f65460de', 16),
+                    gmp_init('0x585855c5e2ab63198f52954bffb04dc435867e3c52508ee3e9859a1dff8dc207', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xe7a38889ddb5553d58f94187dc6d34dc5b4273b92840cc66d376b93b369f9c65', 16),
+                    gmp_init('0x5437b5bab121917208e37b26192145bd58a22b94187d1ab73b1be4e0aca7ee5c', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xa20b606132a8f224bf0a6ba02cd7967f3cf90a7835ed524e642abadfb51634a5', 16),
+                    gmp_init('0x9c43ce9f697db99dad3d5fe8373b315bc674757e3cd45edf26c13795f226afad', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x551b5b794a2170c6768e49cb4db9703344a87d89f414dc7e2b5994fa8d201492', 16),
+                    gmp_init('0x20f3f82a01775b759ddf271ea3b6eef5035435f704d353e018b42675f7985f33', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x16f1f93f125670991438ec34fc5cc0ab58b2635603aa97070432244b3ba54a8', 16),
+                    gmp_init('0x8bcd341158951576f29b11be49ce658d93af27546a3b4e6ed7c61fa664f2889', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x987f1f01103eb89241d3e1d802596f512f63f5b9a8e3abb37ae08ae3f41f840a', 16),
+                    gmp_init('0xec349554991f2bc8f39b5e4f13ab094537d27be14f7e0570c5c8e8768861028', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xe61586670bd034788c08fd67cccec31fe2581d0aa02845fddeee493ce7c16d94', 16),
+                    gmp_init('0x65ca03ae9e7124be8c5b2b93f4b6f0ee4e65cd1e47a443bbfb4ed19ab14810ab', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x4343dbbf1a2c2be471c56935cd7f05c2899ecd810d6783e9da2481e77083cb30', 16),
+                    gmp_init('0xc0152534a259144554e1aac1696809be0fd47df55831c8eccc757ffddeeb4ada', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xdcd37f0b38d56a26555a08a216c85347f4cd907e2871cd0bcd6dca6653ce728d', 16),
+                    gmp_init('0x6574dbd77cda4c1872c37b62b3c6d6f3caacd346d29dabeb8d7d136997cacbcb', 16),
+                    gmp_init('0x1', 16)
+                ),
+            ],
+            [
+                JacobiPoint::init(
+                    gmp_init('0x1136b759c12b3b11b319e52d6bf9597d9e3607554615622addc6dc1b12378c16', 16),
+                    gmp_init('0x7dec0fcf45168fdd09f0abc60fe9ecb29614aa28e751cce379f59bd0b3488127', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x11f1f5738159984d086f8c11b6445072d95c410a18d0145fd0e6dafff34d3977', 16),
+                    gmp_init('0xab98c1b579c0b985cb829f87d3a748c7937e953f3dc6820614bc90ea00154b71', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x53893eb71cdd4336cc4ad13793faad48f40f467d713db134970e6d827b299740', 16),
+                    gmp_init('0x27728a7e9485fbd83841ce28ea75dc8dd8a132ef21fde8cd51ea6f1b3fff7509', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x934c89b9aa1cdc489b8018b75e7d2586953b9a779a2e613fbe840ca84d6a6a96', 16),
+                    gmp_init('0x856af4ffbccaf40a4516d6d6b31b2e9d107d2df0e2e4ca9febef148533d838ed', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xdd64e9dd754cda2757e376baf1fae5604e1e27707bf03bc130b3c956738000fc', 16),
+                    gmp_init('0x432193eb0c2932c96df89e3e19ca79ffbe45d022b91e48f8bfaa1c50ddf4ac12', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xd1bd257b592c69435aa3227fb295f467df7150b8829ed224fce56020573aa9b8', 16),
+                    gmp_init('0x177cc0cc4bc60526d0b4922e396a0e4175ce33d784cf7342c16568492b51d81b', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xff9845a87effd516f2c69c60e4a91b21d883d03c8551c055ef82151733878c4a', 16),
+                    gmp_init('0x835b9af4a4e2428f8fd8a48edff5e8ddf1f33746b65cfebc6ba6847d7488df68', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x4d00885c9a9df2158f5832665cda09c3a8030f018d3a3511febf5ea4acc506c8', 16),
+                    gmp_init('0x3f853c3a9671c7f214c0474409fe88a145d17acaa56ce133d4fa660e1835aa2c', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x954e13e8bb91609ce8767a30845293de5faeb6a15baf86fc8ca9b88140f51524', 16),
+                    gmp_init('0xecc8363ff92a4041d93c6243479ecbcfa9eea431141e7cbde9fdb3d945e30a69', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x2d428c6f64278eaf5bbfcb81caf299943e0c430de7ed9b79340229009cbdf013', 16),
+                    gmp_init('0x9c1ade723716641b573a0646beec01e3193ba01db2d8924476c7ce8de6ac77ff', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xb2217ef6fa41fb93dfcd50c5c1d80497412953c36930d9e31f798d53c4f77287', 16),
+                    gmp_init('0xfb5153e0ce7cf3a2b5dfbcf88d38c843d709dc739c5e93cb97a04a7724e7b5da', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x7af6ddec6d18ab02d12c12e9f5efb870b3f11bdef5fdc6334f7b2324cfa9ab07', 16),
+                    gmp_init('0x304e6e352e694813ddc63eecddd915eb32f5b43e1c99acc955ed240b4999f264', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x3c3950b17b79bdad122c6eae915d5c351f973baa9aa781718af5396c85c723e9', 16),
+                    gmp_init('0xb99b7362209110dbb494bb7ea186a8b0b01dacb57c4906ae5e38775f76834763', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x1ef57b1ffb961331096868e27350eb3d252c3490039dd8baacaee11dba958f2b', 16),
+                    gmp_init('0xd45b7980d1a9e4410eee47f99ecabd308598f8bdfaede84943b9e0339d9c13f0', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x803c7a2ccf961cdad1ded2f844baa944d59dcd190725d62a3717d6e23c18abeb', 16),
+                    gmp_init('0x83fb5040a796e9286b1acf169c4b4409ed7c443c2a6721cd6a439bf0e29bfa78', 16),
+                    gmp_init('0x1', 16)
+                ),
+            ],
+            [
+                JacobiPoint::init(
+                    gmp_init('0xd2bf28ba7c2a51a90f573a82589f18e07e50ab01786df709c762ef1943e832a', 16),
+                    gmp_init('0xcac3f4313bd00ac7087a10a94b4e7ed27ec9db96055144648263af15b20d37c', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x84feedc3620ebad8fbe9218bf89db7610b63f06c8f9b6856fe43bd70a38305bd', 16),
+                    gmp_init('0xf199bbd5a9c7c1654a3f5b5c17da39482568e12ddb32c53bfff41ff86073bba9', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x34e5e85eb967f82cfd9bcc35b7d9531b1cf8c6c365ffcdf361eac4bc112c9666', 16),
+                    gmp_init('0xc0ce68313221a36b82846575ccbc46330f47ed63c1e3a526b5a1853c992a3666', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x5d890886cb475bd421501871dfd7fdeb3c399f34f03e03f0582554a2a1faaf83', 16),
+                    gmp_init('0x970938bd84a2f69a46b14def6cb0616d755b7179214633d2498413ff2ce31fba', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x727362cc59f4d863a6c493ef0919e1545941720025d92665c1652be351209502', 16),
+                    gmp_init('0x17b0f4229babab589f100b8c2ce91d20a18d37f9bb2760bbc677d1d3d7042b0d', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xb5afd1574fd7a9042ef73d190a70593b2065a28c35a2d166c5fa15ba3f891521', 16),
+                    gmp_init('0x7955a0ac880179cb71c573a608e6388fbdd4f9934e541d61aace31c0f0d1acf2', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xa0c3f260054a6cec973a14c4bb49eee9f947daba8271d368455e7928a447f959', 16),
+                    gmp_init('0x508c73090e4b2c4f382f8c10cb628208b1b5540258d272c9b039d248968b671f', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xa6e1c5814699e69cf5d74845410e16291bc3cafc1640d35e0604c5b8bdff8874', 16),
+                    gmp_init('0xc25ae34dfa827e624b1e0a9ef5a2efdb789999f3812b2141885d8ef93076daf', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x7e81b231f795ca7a40cb433be415fd0410761be13ce4de23021f9f025b37e1d3', 16),
+                    gmp_init('0xf3855a1b0e9bed13125e896cee6c7c4e4ec84bf2b1c2e0e03f5fca264155681a', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x67e3d9a5c6f539c6923729be3dac09e26002de365f76d2a944ed88dfeaf0a062', 16),
+                    gmp_init('0xad17fe9d1670dd21c604bcefb6abe481d54a03d5ca72746e392cb84a785188cf', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x8035e21c7d8026d84a36d8e6db0f2abddcdf29246f5b3e6dc497715f56c051a0', 16),
+                    gmp_init('0xb8810a44b7a2bef375dbe6837bdd318b3e7dc63098b6235601ebb2fb2d0dd12', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x9fbf99b277da3d933935ab93e753a748f11fee4341da301bb60914e6301ef90b', 16),
+                    gmp_init('0x806a00260128ca94b259a27cc432519e4973193c0a90c38403f839472c9df49f', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x196908dfd618a53306baf0010204fcecafe5aef589651963ce00c309ff12c69e', 16),
+                    gmp_init('0x3f65bf6b2f916e040bee1deadd21054eb6b2e3371ffb886b8d3319041d114831', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x18845229180712b0f19d2afe08b90c48d0260c1d29be35e3d6d940287ca2eb91', 16),
+                    gmp_init('0xd535a17d0f51d9cab122be6c54ed1a9f0fdf00a69598d38c6a917d4a0f091533', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xdb77fceb8961a2af46e6e1d210ad0f3577b530cf797a78c7e498e01fcb89c5ed', 16),
+                    gmp_init('0x7fd1dc3871cee5ceecf339be4c99ad411f16c7ab68899afa59ff1c7eed25b46e', 16),
+                    gmp_init('0x1', 16)
+                ),
+            ],
+            [
+                JacobiPoint::init(
+                    gmp_init('0x8a535f566ec73617f5622df4373713269e4c35874afdf43aaee9c75df7f82f2a', 16),
+                    gmp_init('0x455c08468b08bd737e02819085a92bfcde533864c8c7669c5f9a0ac223094b7', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x4eafa17a88814d84d36e2c6048bdfa175799c8f19419149be8b043c401cd7f36', 16),
+                    gmp_init('0xa47974d851ec201fee45531527efc47b5036a58cad4543d2c778c64a0b2d1c43', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x86eac93dddeb882dc2a223236c24b4bce0fe2459051541ddfb14f217ab348fa0', 16),
+                    gmp_init('0x948f3853cbbc4d8d5a436f9e8d6f46716c26d96351cfee8a4ee380954da51cee', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xc6122fc44fbfdb25cda9e496cdf1c58971dc987a8febc765cc319d54b96214fb', 16),
+                    gmp_init('0xea205bec8343ac419031c9868877f91f08a6e48c1e271f8a3702bd8fb7adfff7', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x8bf09ebaf9fb3aae3f5e7d784859f407948ce77e87e5e1037af41ffc99222c03', 16),
+                    gmp_init('0x509cbaafe2e27a733b48b1dbe7e5ba309c9ec0e1de20e1d4a145f742ea72bb54', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x8b4fcebe1f52629e85b6220ea2d65d248be074267f1462b71686977a8d215bfd', 16),
+                    gmp_init('0x1f3307a9a822157ef96fb1cada9254fff9d502d09d21add606eaf00a475ec26b', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xe85e2dcbb7e70fc619130bada2f3735b5e1c470475c48280b453a2c1d1ae9300', 16),
+                    gmp_init('0x451aafa6d51ce0bfc7ba7b5b823c2707deb7e185df8c31bb72a0dfdd1546e25e', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xb6d94022c181213724b4042c13019fda6f4fffddee86b987e97be9ed0e9d6b84', 16),
+                    gmp_init('0x93ff3f41629287238634478884d77ad3c23273eaec4f382ae1bcaa0fbca7cb21', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x3f5fb0f228c92f82a3f027da1ba7dbf6836f4a80ceb2152f2525d55605260cb8', 16),
+                    gmp_init('0xc55834dada4999870e38de15366783f2fa3e8751fc5ec33272fb4b441852c964', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xc453bfc7281cf5c4d92ffc6aad7e567ee0d54ada7c4c386aec11fc70323ba10e', 16),
+                    gmp_init('0xe6fa24418b36635d2df5245c3fe776ca67adb73ebb9e9ba2f2c263a396ee110a', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x33685622b18d999657aed074b4da002b9f9698a9cc3092ea4aa44442da1cd60f', 16),
+                    gmp_init('0xd42f509ef1247cd9ba858c00dea7af175fef5a4cbc50b8b24bf737650fd57d67', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x4c302e77f4602e9d8622f79df3c7d730657fe995ddbb2e9d6b96e60ec43e4011', 16),
+                    gmp_init('0x776bc24768d62940c335017a576b95798349cd4299a3fe76991210b65c5d5b0b', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x4813eb5c08f00080f7d0f9d8960979d95b2c88833999222af053b6ebb7576342', 16),
+                    gmp_init('0x43fd4233a4240f66016848e33524aca2dc67d506a904f64c155eb97376316', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x871257a6d8fcb31c3754cc46fe2bb9083173b811bb7f88c67b65e413a304e88c', 16),
+                    gmp_init('0x10c8e34819baff2a2856cdf59cb86527cee324d7b43c076c31b8b859f97623c5', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x80c3f1f9a5ae997af1322dbbae386e56ba41f74edc1111c09f67171dff69b2be', 16),
+                    gmp_init('0xa932140a009de852980e2765b1d5a9bf14b74b35cb7a8bf8904b97c4102d2f5', 16),
+                    gmp_init('0x1', 16)
+                ),
+            ],
+            [
+                JacobiPoint::init(
+                    gmp_init('0xad6090dfdcb41a019af7cd273da8a366b7a3030e99e53d5e9c837f4fe476c81d', 16),
+                    gmp_init('0x77b5d1dd48f4c91eaccd75c2cc5bd8a8393fdc364f3048df818abc84ee6705dd', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x7e4573da81bc84dc2626f6ca66f6a11f227f1d7586bd4cb5ad180dc0caed764b', 16),
+                    gmp_init('0x8cbbeffd96069f25f1bb9fc93651b20b2fedf3c7d11e7fb49c83115f17c2f2f7', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xd90b45bb71ad697ca2adaa533b09863c4ac3240623cb59900a24737ce2725490', 16),
+                    gmp_init('0x3326928ec1bb350f09d8b5687378cbd80cdc07bff3c466ccb0f84f84afeb1299', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xaf13583cbf65021f7977aac8fc30c25f1a9c655f50187a3db5252b56c3f0e03e', 16),
+                    gmp_init('0xf8fe31f81a9b57b3dbf60be46d83d6f8ca20edffa3e1dc84bb2f5bfc575ccb22', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xac25921731213fc7ac05393afa1f06befb02d84cf86babf0a76b3a657e933668', 16),
+                    gmp_init('0x6c79a03870dba8ba850ec13eebd8ed7c6f864189c69e1e7a16e77f6732776fb5', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xd32a0d2c402577af9cd9c99c12311dafc3677bfd6dc6cee6560b276cb62ca483', 16),
+                    gmp_init('0xd17d4ad78a74b3073a262470597d0d96d4c582b760d3d174959a5ddfa435b18', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x7bc3374ae979f3a887320fbda7b431bf86842ac3abea996d9a617c12128de7e3', 16),
+                    gmp_init('0xb431f02460854e5de00c77ae6e4bacbd55f2db39b4c0ccf067a0b32eae6e5e29', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xda2535f6cda744d628e91651abe7add0b2a3a6939881b969142fbc118fc3fcb9', 16),
+                    gmp_init('0xe756083c27486df224454c68510dcdd3ed8df5246a0960d978086193902a869f', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xbf9c149453ae02b268bc872fc341119329cf10daf6d89a5b4acb2323835e057d', 16),
+                    gmp_init('0x92acb89f25f23be0f385313f05c7a542440b9e181c5c479b6f564b282da20fea', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xaf9b693139850548231f27aa78a00b5a64f93343e10c9845f427a5acd29d4728', 16),
+                    gmp_init('0x6ba7497f4ef2827662da43171b28c66231c02fa3f0ffc37d8f765c8f40f23d2c', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x55bf0839b5784f8a96e97da35adf014ef2705d6443b3d9e5d2acd7c2021d6584', 16),
+                    gmp_init('0x3d980733e4b61ccf27acbf6ba8bc7dcf089e14202ae5a5a80d564f428ed744ea', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x4e99a32a4e4acee86691f0403b6503812adf34fb31fa1ab6389f54f13282e42e', 16),
+                    gmp_init('0x430039527356c74e8d3f09f2eb7485d1dd899a3675916797229b297ff15da3fc', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xfcf24e1653378d519f2ae14e7815d4872a45ee6e4be573d0dd69df6e41068c5e', 16),
+                    gmp_init('0x186bb0e5336fffe35c675e21b592e7aee9176a4b2814855b761f453f27c19d75', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xdca86cf66d2c78e9ded0d075b4488f3b54988a09e08b511ff3082d81974671f', 16),
+                    gmp_init('0x56750dc1225020e00be305243be34a80a4980aabf46b6d4b73c17c649aec3a03', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x7bc280d02f5167eca1fdb65343d91f2f843451aa4849d1008b7d95f0620da860', 16),
+                    gmp_init('0xb33f6d77bbbd31e5e2626bfa705ee6e0f2e19a2fdcc1632ebe29104107aac76d', 16),
+                    gmp_init('0x1', 16)
+                ),
+            ],
+            [
+                JacobiPoint::init(
+                    gmp_init('0xb6e06c516305bbc4e466557075b929fcde1adf89f510a848a52f2c3693c4a205', 16),
+                    gmp_init('0xbdb4277c21b323f5c5e1f126e79ed73b63f99419a82a9f87537f4d865db36d05', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xa61727a4f5f8ddbfe55703a07bee1e8daf3674c6d797eb1329f315f9fcdcfc44', 16),
+                    gmp_init('0x3fd9e4f9b02696ade692d5a2bbae158c1b9010462f080f393b82a7f0ef3d60e', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xed9e43f84241c4e6b395d5d6fdfbd68771ad4b388d9e4d692f821f6f9e27907', 16),
+                    gmp_init('0xb5af874aff6b2347f5bc0fd8eb120e0ce9151cfeb8ba1905f13f4f506e78c4fb', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x27708f23e8bdb74f8c89f34b7cbf6a9e324a7181c96b10c893fa154a553faea4', 16),
+                    gmp_init('0x575f186149caa4a4300225d66cc2c973fc6d68b3d1965bd1b21ade75d0802d2f', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x57a7e410076d8f7dc55268db48fee1f92e2a860e5caf07ce36d0572535b38f54', 16),
+                    gmp_init('0xfd7f0f03c8ecad24194c8a23bc82dd21dfd76e39a907eba75fa781e6245f2809', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x2ed8369aae243bf757dd0cd934b55a4fcfc99d57b30c8656a8c081b7a0f69001', 16),
+                    gmp_init('0x8d916d516a90f28af38a5dbab4fdd7de9e3959c55a9244f9616ca32a2dba519e', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x24799ae2f3ef5dbef52d9b258cca5cf3347a7249d25c497946febbf9a7a79593', 16),
+                    gmp_init('0x9436b5262ec87b7b32c3d1a9d363e3009994361f9beb1398d6388d75d0920d55', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x7cee417faa66dc6109bfe97cab77ae6cb0844aecb2da65107fb5bf4597445fb2', 16),
+                    gmp_init('0x3040efebe1e5b9f596d871e7f9cf0bb3a667e8569ed0e31f4fffcd61a8223a26', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xf15017c6884c7026ed3111cb080d5d60456cd3afbd0b650660216eb50bf5abdc', 16),
+                    gmp_init('0xdea7ef1c2c5f02a8ecd8341e3fc5e232cbdc675c27b85584b75de2b8adef85b7', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x9c85a7df8eb3edd81da49d4efdc216685f9ab4e94444bcb137e96dc1176701f6', 16),
+                    gmp_init('0xe2625f6813bb92b4b00356dfecdfc66aaf7a7b000bc3f2ec4d817802f1bb52d2', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xe196e20f89b4beaa6e0f831f7512dfcc8978e6dc4ec141e869f252b1fe78e9b1', 16),
+                    gmp_init('0xa5d66d85f81a85a62a6408be76b2ed9a908d0112beed35f44417561fca77eed7', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x9be2a2f68fad9f2205dfd1ed91c998fa1c66e06d8f71f05c2f2ff3673c5e24db', 16),
+                    gmp_init('0x1362fa0b6e4f8c15a6cff1c3289590855960afcd16762b6a9fc9c9155e4795e', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x7779f5de6c1b0302f397fcd71539ed14d609e525618ac3d576ee33e57b1cb64b', 16),
+                    gmp_init('0x9a8423f474c3ebeadfab134a7a2e3fae2a829423caa9533d8e18d1cbaba3aab', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x338fdda9d0f38cc83e1397278149a0c57f78e95026917ba063cac4af02e34dd9', 16),
+                    gmp_init('0x8f8fa4f59f5972c203385e79e65ecd331054cde1654a9d2751f7c7ea954d31ac', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x8605b94be423a2f11e5f6d9aaeb28ce8dfa0618c2019a6f53ed8587691d1b492', 16),
+                    gmp_init('0xa8e561287de75758f3ef6e0c2143d1a8ee23526d481e925c571d77bf78ac6598', 16),
+                    gmp_init('0x1', 16)
+                ),
+            ],
+            [
+                JacobiPoint::init(
+                    gmp_init('0x45a511c97f608bf76dbc4189d991ece618c452b1b42a627f3cd5f4e4a9aa52df', 16),
+                    gmp_init('0x73be0ec773ea9b6d3fe3337fcb625ad25a919b27d22955ce7b52bd12125ec16c', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x4cd2a0bab6ace28a2bf7ca0444ab1b75020688b6b3a0e5f213cc521bf003e44a', 16),
+                    gmp_init('0x6adf08c371d224056d1310756218d126bde2e7d1c97ea5d64993eca97b19c38d', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xb57ac4fe72b93438ef40f1217cd4c7b95c7170db6f7fb1f656753efae75bc7f', 16),
+                    gmp_init('0xceedbf8277a9f3b5f28c34cfa57e94fab1f96c0e4049fc6204f172dd0972e9a9', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x7451fe377b24776b323357a021c84544edc4e459a0829db27ad039a2f521ba40', 16),
+                    gmp_init('0x16396435fcc70940d69002198464eade36b09eb9985d5439d0a61cd3e518dcf9', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x1178b3fb6e4bd148cf4682d9ca1cae99354557b05a5a8142137433cf833125ff', 16),
+                    gmp_init('0xdfd697ea9babd95b382de637ea310ed10dc8adcd08e54d1be80f9709d8486abd', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xc31f323d127261f91589068f2acf1870008cb862fae8019282155e1da2152bdf', 16),
+                    gmp_init('0x2689dd48abbe75809ec96dfd936414f1bfc9c1be1030637dedc121b6ccd2022d', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x8ac7a0826f94e907f8a83b7e8d2756938444d685b48ce44f3b3695ccf662d955', 16),
+                    gmp_init('0xc80f40920f33231cc9d7e5234cb59ad9e3f481c5bd6c138dbc6a2dbe646b3dae', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x58fdc0dfe5dcaa324a33a3bb84ef35ee9d08bab256a19046c47a8cbab3f4576', 16),
+                    gmp_init('0x90ee3b9e9ea9e0e7c3df9b4606b8871e1e801392607577593a45e3e1a0110e9e', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xc0f48b2859ddf2111ab7fa8700569e02cc1ab7ce0d3465cb7cd879ade88803e5', 16),
+                    gmp_init('0x3d4326b6f883ca369c9a64727e60d7d3932e4e070b828edba6932202876619ee', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x8d03e705c0bc475a881e580ce503ba506101a11756076ed3a2e1d75449e23fe9', 16),
+                    gmp_init('0x6fa65113c3ff4a09db7c876cfb9453c56601f1086eb5b6339d3c68a567b4d038', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x2ce8700f0351766da019c8e10ff7b8c0e2b48a32216539afa96d67099e1f515c', 16),
+                    gmp_init('0x73879f4f3b5ec4a7bacb2f42f7ef5d2ca7a9dcd3e2c3d52c95193649852eed6e', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xa9c1e53ec28889ba152c3a612fecd63f5ef01ba2fc2e5f0043d95a53eaa99aa', 16),
+                    gmp_init('0xd731b36622fd601af161d8990a6b8fd17ea6d315a2b8c8f7aa396b087e003bde', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xfac44261dcb7c109145e1bb0fd7cca1d807200682cacea2445aa3775e4dcf274', 16),
+                    gmp_init('0x9713fdc61566a8a87cc723d5d4ee97bd732027c6274594b163698600f12f0472', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x9fb68ebe1b8a3c0b187025ddf8e690a84435de4e901f72dd2410978c33dbfec6', 16),
+                    gmp_init('0xcdc87fcbb7891dc91feca8ef55d4709ac715ac677de203833a92902ec95d4948', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xf891e6165b403e0046591e43a199281368373ebd409adc682b5e4b6abdc39d21', 16),
+                    gmp_init('0x129f53b12bbdfced18aeb8a8e2dbc43b73a97ec4f5460254d5908e17c5ca579f', 16),
+                    gmp_init('0x1', 16)
+                ),
+            ],
+            [
+                JacobiPoint::init(
+                    gmp_init('0x20e118564880c79cb927e3501cf2a53f030b86e3cecac60728cf1ab99076f57b', 16),
+                    gmp_init('0xff67b352ac437ef731bdc3e3fb6de9979fe0dc9b40e1b71e8583bedbada7afe6', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x4eed0b4dfbb5c3073fefe10d9289d72b62df6c0f0ba0405b9e849544d4c20855', 16),
+                    gmp_init('0xace0fb288a56693a1941d3287fc115c81136ccd32d34fe3f4c087a3f8bdffd1f', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xffca2a5bb86606ce8f7c7fd903061a21940a51ac64a84a5c849e3aed4b661da4', 16),
+                    gmp_init('0xce1cb0e32b71cdc8a53cc9a148f46c8c478f87ade5687f6f8984835eaf9b8a5a', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x42e0437c7aca84f70a45b1168ed12d20feb99f12e6a12de783d637e60524722b', 16),
+                    gmp_init('0x2de1da0901d920eebafd84ccc9b4ea3edbea2a6daf54265a766939c81fea76c6', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xff209cedffc116ab636535150dad354a4e2b0671b636be583cac1e139c8cfd22', 16),
+                    gmp_init('0xad79f397469d0f7e207d41d24ccff1c80d4f4b92c9684b942389b14e93bc5535', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xb30ddefbc268d8659025f8240670dfde0e411d07935382a4c4ad7478ecdc9426', 16),
+                    gmp_init('0x7dbf4fd5c014c1534ab3871bc983d48b5b93309caec0238ff33e104b29c7275e', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x33d5f02d0b079ba958604080d33b4b156d9e6ec87017f77ce807e5858f4e983e', 16),
+                    gmp_init('0x1eb5a76d39c478473c3d61655bba1eb7a71aa9259630c956d70db8791ea37a9', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x70d96ccc51afb00c499ea8fc2ef48c949a7cbf2445cc228c6f24fc37bcec904', 16),
+                    gmp_init('0x9b915ef5ff0abc21fc61582d55f0e97753bdec7b34681bacf62f4db2a3ab316f', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x8f1bd23da6261690a9e974d9adbb5e65d0e3116c9705a1bcb695a79f61e52a73', 16),
+                    gmp_init('0x4c7a8f6393ada8b8b8769e430743eade590502e64b1850a857da1451ebea8f2e', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x7a8222ef9e8bb71190f30cff81cf63f0422a103d58fb12cab99a48999b3ac988', 16),
+                    gmp_init('0xd24a183e19ea8e1a0e7bff3acdbd84f2881ff21f1a2115573030280dc665b755', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x963bc9fef7b637f3ee6298b7dad880aec4a0760529f3ef5a5842fec2fd2bc078', 16),
+                    gmp_init('0x7ed3383fcd1e762280a3e5092980a4f1c5ec0428f443a3c27ddb231f5afb8657', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xe9a4d09a8dc935ec8b8bcd87e4a8d86cd1ae0c830c4719f5fa281f3fa8a4d326', 16),
+                    gmp_init('0x89b4e59ec839f9c05edd81c41e336f77618eff0672aac13fe6a8c7887d9ddab1', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x89fe6dad861da844e631addcb7c8bc4974805654d88fd93a6871e76eafb608ad', 16),
+                    gmp_init('0x2898278231f4e8fc87b57dffb725df39aea9d513e0f0a87b601406e7864d4dad', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xeb150e2e8d4e7c3e5ecdab57b08bdb173c72e26a6e9500fce4f5f21825b6e7fa', 16),
+                    gmp_init('0xef367c87de05b875f2006d1494c959d6d2013cd9c6155901f7135ca79c00dd1f', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xc348047f3bd79759510d7ac4e1166984df2fda6ea2232a0b0718981b19ae4a29', 16),
+                    gmp_init('0x584781f2056a1c5613da8dd20e0dae9a8422e99f0549aebf34959ac4ceb09235', 16),
+                    gmp_init('0x1', 16)
+                ),
+            ],
+            [
+                JacobiPoint::init(
+                    gmp_init('0x5c9cc4f8723a027b0318ec7fdfd7dac93fdd478e694fd54add1452e899273a8f', 16),
+                    gmp_init('0x84efe07a1dfed259a827589d3708af964f003675a11acab5addaca695ce80d6e', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xe3ea757deb82767a824a072e4c20a4b8bd467275c0f80d40f2e4327bcfc91de', 16),
+                    gmp_init('0x13f2bf92ffae215623f2abf6056aaab3bfaf0850149c5383145e8c5df582f54c', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x5ac8e192bbdfd85c5be2403952007431d0604fcef55536f38c8c98544883e382', 16),
+                    gmp_init('0xfcb7e5004c7a8c8039c8fff2f0963976de76eca13d4d9d2e51373d9bddfeaadc', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x9a6cabe1f8c78b4f154a04034f63c34af6bada2932f50e57c5f483aaa556ed7a', 16),
+                    gmp_init('0xed9f5029fad500451de544fb7d555740feb87eafd12207162521483ea054a72e', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x99dc0698b79121182d515d44e0d67362c6eb65432e48094ebca43077ef01a3e8', 16),
+                    gmp_init('0x67c69cdd23b982bc697ac71171d80044b7a67034d7f8f294528645fe40f61114', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x9cd44dc242811d04a5ddb4e150cb2609b9c96bd28139b2bce73b8ec1fc74d145', 16),
+                    gmp_init('0x86adcadafc464e33045ad0badd8443a33339b8fbfe816e5d5c6c406240d456f7', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xabe2f3618e04061644024357cfcfb9f37724d883e8764dc3383f7b004cd535ab', 16),
+                    gmp_init('0x4f02d64cb755b293de0dbf2b202df7957fde7a18c3ac8dd990711b34517b9c1a', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xed19a56a1b59cf5cd880f08099a2e4dcf318de811d6a8871bcc2887a735a8087', 16),
+                    gmp_init('0xcfbe683e6c3b56b630254512ab54afe1a98cfd5aae96da46e56ca0873a9fe557', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x227cd0d78c39e72137c6fb1f77e6099e4518dba599e6e4e0db4b66b36909970c', 16),
+                    gmp_init('0x2225e771c819391d87d6c8741cff5defa210ec3f7eb99ec4285a4ae31f809727', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x7318f2cc7ac20e1aaa73845640c50eafa68a7f0cdf05d32abc64dbab7e6325f2', 16),
+                    gmp_init('0x65746b8246e7281c0d2b1bd53182a7702ff956ece9fd3f10726271efb0013899', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x363146820aedc5b6827ee930a8cd053b7a41022f7d44ff77cd9adfc989e65b59', 16),
+                    gmp_init('0x1d87db62178972928e8278f920227fc1c143c903b5c5b6e9c80a164269b4c2cf', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x4a247bce25c45963a8b9841059328be683befeeffa594c92bbcd5a4df85fa6cc', 16),
+                    gmp_init('0x8b4487f1d473b4f30c92b3080f221cdd2cd38dc8ef4d646753337b0f8e2bc2d7', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xf65ed6b6686b18a3e74a68ce189d1fec5b6c5dc7f19e9faf017b158bcd4c2506', 16),
+                    gmp_init('0xd6d0bc68328baae85255dc2fd376e7bd4128efc34cd6542bcc52dc253913dfac', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x87d600fd202009c17de4bd6144abc201eada9af5476a97e159544a87aece4a11', 16),
+                    gmp_init('0xf2d9fac94931e5e58dd72d4431473f9e5cabb39652a3bc0dd019658f9a4d4876', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x66a0defa11f6135729dd9c276fabdba8ff97c5a66424975781e4f9753b47a80b', 16),
+                    gmp_init('0x3e24aa6de37aca41cad8df2561aef474c230a428526edd200f7195f8ff795e8b', 16),
+                    gmp_init('0x1', 16)
+                ),
+            ],
+            [
+                JacobiPoint::init(
+                    gmp_init('0xbaffd4ebf8a8b5ab46ac18444f3dcde3351a3a75556c6c4ae7dd9ab328523eb3', 16),
+                    gmp_init('0xfa93dc5dbc95e83003a8eb3795ac09c24511ccfbf48b6ee1978300cd5acf387', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xcafb6c8657874a09751a418ae4eb8eeee9817b137d07f1eeae03ad0f9d2157ff', 16),
+                    gmp_init('0x2adafb1ed5c5c67a01a1cbb99ab4e2e09c6ab445913b9e0e16cec08173ce8988', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x91b44522441c89ed7778b51236563fb71afac0c166c2e13ad0099b4ef4737641', 16),
+                    gmp_init('0x3f4463bd37fda9762c13235ab02fb428c9d7dc666e077d03f2512b29e101bbe0', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x894890b2fad37ccb9a879a27cf8ea9a337d28a48a4bf795c4700eb8ce51b2cf9', 16),
+                    gmp_init('0xd46800ff7c5b301188a0abfdfd48e438498e7116a3bc2ecb0d187ac835979d3b', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x296d135de82db07aa37ea6c7c8689165743eff76538fefb9c6a2bab826dd01df', 16),
+                    gmp_init('0x14054edd92e145e42b87129776c777cadffaf618e5e66f604950d320aa3a0dc8', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x9b46d393ab8e7935b7c5e38255f2bdc5d15f33ed2466a2df427abb1ccfe63974', 16),
+                    gmp_init('0xf3ccefe1918b71a20554f01e26b9c5d6bf7eed5ff5415950abedd0a2fcfb2502', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x4b0942f391367a318f13c2f1f19e4a9654ffe1242191b2c8c67e6f06d650f5dd', 16),
+                    gmp_init('0x7432aaa6366cabc0e055c1015613c25f023c6782e4e73a62c2ea5bcc7aeddc6d', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x463d8e29e481aacda1697678f8b8c55ba26e2a1e94139936bcff60267e460d62', 16),
+                    gmp_init('0x400f734b7ae2a66ef1fd6c6724f852968f9eac14da469b0a226650888c11217f', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x36377a62fecc11a833edb8fc4d2e4af188862b435655b147a375e8f04e4a96f', 16),
+                    gmp_init('0xa1de191d354fdf838d930c557854626384098c21430913268bafb7e051e08cdb', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x65ed3e3318fca1ff1dc6ac386974adfb7b75ff75817d1ee6289d10a1d758ddca', 16),
+                    gmp_init('0xa0af48f26663b83e53e5b3e2c50170dbad540a47e750380055c81f702574bbab', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xa1041af730f5e162bcbbed5709d83251c621e89eb269e62a141fd3e1679b5a59', 16),
+                    gmp_init('0xad42176aa8f58b19422650d873bc2afbfb30690e1eac66d9d8d2b4022c5514a3', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xdbbd8f0c432db2ac8366893255833b9eab6187b010f996c885f694280f703588', 16),
+                    gmp_init('0x1dfa800172bdf452b5faf53dcfe82b729fb66f2b251d8a2866dc602dae9e6efc', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xda2167ad0b1e564703371ad0f9e92007d8893170cc85758deae8db06cddd597b', 16),
+                    gmp_init('0xa21992b62546ed361ff6700ea798ebf6cdde2a52144f9f462681727e3de7fa04', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xbbc1dfe363857973cefd61b7ed7b5c6390cfce38b355f32067a40ad1d98b4cd9', 16),
+                    gmp_init('0x2fbe210034c2e5c897e6ebc2a186bc8d4d091e6872f5b00230f0ab4a081c5f2a', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x1c3fdbc237f6c678bc863b872164f29df4ee23dc26bf29c09934a222b3f7dbb0', 16),
+                    gmp_init('0x39260f1037929813f0aea5394a4b18d41f0646380020f8add64cbdc972e16d32', 16),
+                    gmp_init('0x1', 16)
+                ),
+            ],
+            [
+                JacobiPoint::init(
+                    gmp_init('0x6ad2a098fced766ed22a34d257e4c96479f0b1a76db3c5f835208d8ba111101', 16),
+                    gmp_init('0x2d5b8b1c58f85e3559a4c01bb9eb62a0de429d82b70e89aec1a7ba9d5fb37ef4', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xf657e9015f9855a5eb9acb6ebfe5941a08fe3cda3b36a5dc2b1f0bd0f65bb830', 16),
+                    gmp_init('0x8077a8bb3bcaac496dc83cd25da0e7ffc2abba9cf2c8e35ac3b9a74d87b193fb', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xf1a2ca556c3bcd7204f78bd66bd8d475bbae4f184531ee4376fc3847702bef6f', 16),
+                    gmp_init('0xb39b59af0488313edf455417dc020168b0b47ea81fd52b4011b2d1fd8f6c1ca3', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xe46eabc9f8e2f20cf0ef002c94979625855719520ec5a6e7db47ffceeb3fa150', 16),
+                    gmp_init('0x2532cfc894c18963adb002810c09fc3a50f68cc24c227e4bb934894c4a0b139f', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xe924ad49fe3b8030ee1901658ebf1851e6c4f2c824d613e0806028fca0455367', 16),
+                    gmp_init('0xfcc97d979a143ed5752085393d6fbb6f52da31aa4fa6752b5fd18cf828257e92', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x38136959c7525f69dfcb04e096395097a0acb88e2294af94e0f0bcea876ab854', 16),
+                    gmp_init('0x20136ac6a0b1841139e0257cfac06a9e5aa59636de810fe6f615b5aadfef276b', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xf49d9c7dc5f7026fa00b935105fb22f68dd4aa5d4dd1f9e2e91f093942f8f1e7', 16),
+                    gmp_init('0xf5585d4203e3acae6ae5d3b3b994f67901b0013c4e4d7a8392228ab1914d9972', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x107a4485aa07fe2e14bb5af4516750f0e06a970759acdc147724967e5833c4be', 16),
+                    gmp_init('0x6ea22142b8e4d7cd813794ec48e680074d3a4fc91d760c4a6566ec48c87c80dc', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x28b04d03e46a9d48b0e3c355755189e65c4cd4417e9827a77b3a9677fb219a79', 16),
+                    gmp_init('0xf658da9e5a14cf1459cfe572183e206b86166ccf86004be5f8bf7cd9102dbe24', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x8618e592d6036fe6fb9a11d7d914d22285fe50c9767fd95c59e7401ea3b1c126', 16),
+                    gmp_init('0x3211a2188797809ec3318ec138256e9b1b3c5b73377e9aec789204cb07684433', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x3f4766be7cc1fe93d6850392886aefb54c16ba6511460ad8b2822d9c57774af9', 16),
+                    gmp_init('0xcc810dd6a7331cba3ab178906e6e5f511ca94cfdf9b7326ff7cd7f64dd4de990', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x9b9692b014d724fc935ee6a977b1486ea178aeddef98026ee9d749fa0c2c179f', 16),
+                    gmp_init('0x4c935caf2fa8d161bf262ae1e166e909b246c044118849d260a1c2357614fcb3', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xe3249e02c0f8ee791f2adab41d6f361721ceb7fac84d598e78419f1e48e57705', 16),
+                    gmp_init('0xa666658701369507dcb778c1f2486b5a501945d716738422094b19e838caec0c', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xc9dcdeb8f6b27a1ac7c45723d596a802a6067cf27df32bddd4dc6cd7adbd5d6a', 16),
+                    gmp_init('0xc6a1767dd5f26757c1335f1607345b223e54815436800fb5e53282ab633f2165', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xa689580bdfb7961cbdf9e7693dfbb4e917e202510587f8d2c78bceafb25b93ac', 16),
+                    gmp_init('0x4657ca94b4f0783eaa7f2f015f059ff2fcf1f817d9c4fd3aea3d1c4d6f589aab', 16),
+                    gmp_init('0x1', 16)
+                ),
+            ],
+            [
+                JacobiPoint::init(
+                    gmp_init('0xa6d39677a78492762736ff8344315fc596439591a3c6b94a6cf20ffb313728be', 16),
+                    gmp_init('0x674f84749b0b881666b8babd2d27ecdf824a920c2284059bf2bab833c357f5f4', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x3f06dcd2ce62e80d4a661caa2d2a108675f3b0caaeeadd251583948c5974bb08', 16),
+                    gmp_init('0x8bc2550ce1922db985807be931d9b2e831606905e88f53e89655da995083c99', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x7ef66d7c5dedb0dafc8ece7be26cf352406fdc6a1cc8d3cc054b569cf15d864', 16),
+                    gmp_init('0x2db3325db89de6a506d40c5221fd505e9f470e3b1cce4a8b54625427740907fe', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xec61ff29918a1d05e0c05b31527e97b7eb3228b94bdc794c1c101b8fd5c7c27c', 16),
+                    gmp_init('0x2fa1d3dc1b257a1d0960f82c7759298fe3c46c47690233dadf01167d9ddfe51', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x82df4e5fc06dc46014f3a72f75f28c0bb283cb952ce5416ac695143c17c7c05e', 16),
+                    gmp_init('0xe4e188c98c96420a275216211217cbd1cf15d946842db300b9613d02d8fff26b', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x5bb18bcdff79176169a3fb20e7d116d1c54f84d4c1b00e1ac23e42e21d7dd05c', 16),
+                    gmp_init('0x42ad92172dea4874f81b6dd5d7f5821595187587a4d2a41656c549f2cb96a309', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x261efc9bc12b0c6a7d9e5b8d38e47a621324c22f8fee949d80ae1d41540368b0', 16),
+                    gmp_init('0x8a9d2adbe386fce9fdc8852cd64fff797e340be1e39b5d3013ad2559bdeb011f', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x9a79bfbfe71e347f4d6c6698316797e2f5ac2a3900f5abf0c409332de46e2050', 16),
+                    gmp_init('0xe98b4de6d316e200b6f671f3b224efa9ca94faccb6dfde317a3f4781926250d2', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x6d48dfd77a2c279149aa7e59d9e7692df30b335f56e8ca4af1033e9515eb8034', 16),
+                    gmp_init('0x3cb47245165dd12f3d5e79649e054763080210ea2a3e8961e873087a5ab0ce30', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x1f3fa7c10b9878cf552f2572bdf5a5ba0e867737aa8d3616856ef847d4598089', 16),
+                    gmp_init('0x7c27c1d9db7b9e55c7cae5b3f6cd1d1e1de1b2e886e5a500ed4b37c59825d989', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x93a5c01e7bb98923a49123fb4fc54e6f65f0a5630c8db13eb5143dfc540535c8', 16),
+                    gmp_init('0x2d440e904980c2f4c16a84358e15a5c166a16204935bedffc49574083d59b844', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xfb9198671b7ebb21d2a4b4298373d40071e2c88697a4800e50ae677014bfc0d8', 16),
+                    gmp_init('0x17fc6939a5ff362b041e4e90fe1e9d2807e90760d5c244b5775250f36a805701', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x3fb0b929161272bbb35da0e017d67031e54704996bb0f652a261a5669e2047ba', 16),
+                    gmp_init('0x9d467ae68217df94ca72621c99666dc86c420ae7717009d357fecd4eddb24158', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xc8817e631bfdb29c5686db122ec8ad7f871e4ed9d99444eea9b77255b15d3ac8', 16),
+                    gmp_init('0xd157cc02d749cfd4c293c342158697c4f5107bfe96dd8358bf2c496232b9a312', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xdab09439e08e83d5d0763ba9de33e4381c3186beafbb723a00bdbdbae2df71c1', 16),
+                    gmp_init('0x763cbc1e544e1cef385ae86f20d20b3d6e96330ca4b44e3bb873484124c3a1e3', 16),
+                    gmp_init('0x1', 16)
+                ),
+            ],
+            [
+                JacobiPoint::init(
+                    gmp_init('0xac25da80089cf4e033d4db5710ff5936fd683b4d0dab013e6eef62ff4514c6fd', 16),
+                    gmp_init('0xebc69d985cb44c7b883da9312a1b338c810983e8243bf37a60b5397705830541', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xb467cd65660c13b84aec42b5296bc037c1e6b5ea71a0d289b456511069962f3c', 16),
+                    gmp_init('0xdc91b9bc4d36ffeabb3f5d2a011664ac3cb212df6cbda472f75584cb22877596', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xeea7e66c49ba3c8bb4d748671e165547e631e4dc5427ad6081941c7e32fd0e3d', 16),
+                    gmp_init('0x83fed45b9f88926128843f27be9b7d985acbada23019e3cc10411f68d91d5868', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x92f9a6f93fa37761979280de26da6cde08533abeef2160f4919b1597b43c7e8d', 16),
+                    gmp_init('0xbf618d715147afe8ed41d3a6f5e542df7309284ecea312897746055552bf1285', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x9a3de2d3e93e21bdbad194b35403c67b7ddffe6c44408e5d119f14f26ccb63b3', 16),
+                    gmp_init('0x2f809b90611112c8809f2736ee813c4c49c01d9fef58226001c532977df93fcf', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x3cc4767a0677248665fbb469f6e48d447db4ba1f065935fbb5cd34f827d3c9ff', 16),
+                    gmp_init('0x557c538d8cd381ad94f22765e37b7edf772241168378473a3016c53cc5aa7383', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xa7c382f4b53b92db05100d30123fadaf34896f70ba7f6d8be4eca34dd63f1117', 16),
+                    gmp_init('0x1b91e5116761bf880459f777705dcfb5ae4eb76ed3c4a68cc1220c5e1934cb9a', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x5ce4fd836044baf3a1623065bce83b11fd7516a5b209d887d79a7081afaefc6a', 16),
+                    gmp_init('0x61042108aa50f3681e31bc1ea832c7144abfbd4ab9e4acce38606dfbbf9db9a6', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x555aa998cd86121387143bfc83a6f497e8231fd91838e3e850bc81c5a6774a96', 16),
+                    gmp_init('0xb0532868d207bc6999d441e71350bbb89a0d5d4bc8e26fa69d40972d86db0e34', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xd3e5fc623ebde5383057718fb12db4eebbc69e0d4ff63d759bbd7fa90e22477d', 16),
+                    gmp_init('0x7b9cf2b9ddf57fceeee497a64cd139a3e62d7eccd5fd57d78191f5c6da5f613d', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x1a42f5b348a7ad7b58cd78f8d77c36916572b921124121232f7eef3af7dac7d', 16),
+                    gmp_init('0x957a9c38552077813497f954b8bf9216172af29328cea96b27894a318195e46e', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x84b8cbaf6945c266dbacec2a8cf6eca671cd9ede1d889c4eb3868678b914b225', 16),
+                    gmp_init('0x40a6eee647c236ff34d5ac01c492104dce62a2bebc8f14aca0a42d0d04b5ea85', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x4b47f537eb05ce3d3a5b09ef1b45d3a3134deed5143071d3e02ba1d4202afc36', 16),
+                    gmp_init('0xf2fc450399c85f0c2dcb06fa0e8df573345acbe9b25fbda34e89f76a6f8133ff', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x53cafae5df3d6bb0c1a61ba35d6178b64f37060f7513ef504bb15c4a67551756', 16),
+                    gmp_init('0x1b39e92ffe9f693ad3718a7b00221a281446972c93ffad4b52377138a941e0fe', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x6b3dec9cc524e8ced56516f536ae418f7915a1dfcb8bad86aabf2e3c77d17f68', 16),
+                    gmp_init('0xb8653937fdefd9ef050981b416cd5d4747f2a96aa6dccb68cfae7a20c9232402', 16),
+                    gmp_init('0x1', 16)
+                ),
+            ],
+            [
+                JacobiPoint::init(
+                    gmp_init('0x285250edc3bcfcd9027bba12176d343a26035672d5b4a81155d4e37a2fd20bae', 16),
+                    gmp_init('0x7866c086f4ad7ea83f7284ad1046c1716e9b1a2cf1eff323f9de455a54e0ab97', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xdbc091d89944b44eb651d0cc325161c03840e563817c6662f0f2efdb220ca9a7', 16),
+                    gmp_init('0x92d80eaae8567952d57926d1e4aa5fc6367309fe96192c84d20588316c8e76b', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xf1e3c56545d5a75c5836fa12fc78baf65d2ef616abb75196cc8876aba636a50b', 16),
+                    gmp_init('0x12b8847a6e1efce76c736a67f6a5f3136b7fa576d22d7a6edf77914eab3128b6', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x9018baa11e938f23b322489c6ee06d88ad3a6dd5f518e8d7d6be4fd07ef7d72d', 16),
+                    gmp_init('0xc9c382d871f9c6c9e8c147f743bf00b74eb56d8002736aeb1267044fc036ce68', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x584d729c81e134a76d87cdabfa9b228cf45c1b6b5d34f3b2517f13214e583340', 16),
+                    gmp_init('0x2fdd80a4560d80abcd307c593030affa8f1770a66494c07072f6e5e974fb24b9', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xa77f7298d5478dde28a8842dde8ad36c86c0e6eeb2ad008b08e24680b5182e0f', 16),
+                    gmp_init('0xfa48a69c911b4fcb0f1e64bbca515f6a3368ac6e2475b42ca2b37f28c4b82d57', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xbaaeae00c837df7d1e2e028dc2383c453c572df0b5eb817392c83ede0235809b', 16),
+                    gmp_init('0x325788833f324b80b4a2307bcb49f299835c3c42a1d2e7e5cd61d8a5c154fd62', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xedd513bbfef3fb2463336038135004a3dd2f1e9bff60a8a607596c1f536ba602', 16),
+                    gmp_init('0x257b598c3bb3f7a97c592ca290f0188b61854d442da5dcac3b8086f945dbf993', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x6c7e46360c2131a65139efa4394b8b906cf59df0a5ed016f60042c40d612268', 16),
+                    gmp_init('0xcb6ad55df72dd8cd747fc75ce2f453ca238d8a5a782e7098bcb4b601260166a0', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x7efd4f7497f886cb8a5950d20f3e933aec2227152243bda38c38d2fa8a4b89b6', 16),
+                    gmp_init('0x1874de017416a66f4e0990488b16813b2004f637c692e8df6f90f9762499522c', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x64131deabd6643e5bc2ecc7b711a36db89e20caa2c0e2a3bd43a35b812fbdc8', 16),
+                    gmp_init('0x882c7fac32d67028f2b380d934957598603ae268b1fb020a5d3ff309a9f99380', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xc0043b2547ab787dd7b0d40606b76f3432480a1ad7b6db4bf4b795195e411ddf', 16),
+                    gmp_init('0xbb75a0a9297157da435ffcdd3f79d614eb9fdace24c28f2afd7cd7e02d2d212', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x366bb7acc275c2378a16416fe19b6400443821cc59689b0675eb00064bac9f32', 16),
+                    gmp_init('0x7d107b708785af064f0783ab8d61cfc01fdce50c07f0268a42f0e5cfbc85d47d', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xbfee7cb9ea3b7bed169d47d406c94c46b2a424b9ff5f946f1426640292892c6d', 16),
+                    gmp_init('0x403eaa5228613cac26de1d1626ee1537805488897f61a685bd8ff6b896f7daad', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xb767db257cc73c006b27d0e39bbe32ecb98c55c37b3b562303cb525286dd27eb', 16),
+                    gmp_init('0xdc1308c3261229cb5ceacb816b99d85b64b700b448600ed415521a47cf65dac4', 16),
+                    gmp_init('0x1', 16)
+                ),
+            ],
+            [
+                JacobiPoint::init(
+                    gmp_init('0xc472c1062ed0366f818debc07ef8890e1fc5147dd0dc267c171f3a2a3e07e4f1', 16),
+                    gmp_init('0x41820e01945f70e96432ab5a84d667d885f3b7b1e22b5d8a571c683d86b0daa9', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x454e27cbfa01cbe542cddf6fba29971ef8c49096987f88efc0512999fa863437', 16),
+                    gmp_init('0x134a4b214cf01e9e9e7e5f8f2f81017c6b8d88d5c651b986179b00e551a6bbe6', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x86f88f399545e3d685e1b7a4b8ecc31eb39d6554613f053f4369534aa2f8acb1', 16),
+                    gmp_init('0x2ccfdd69a68238d6b37c978fb591b1214eea62bee916527114b042d105098a19', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xecfef25fbc3698c06226d5629c51fffb94130623c2c03173828179c8084a599', 16),
+                    gmp_init('0x8132b98bf295f2c0b2471c839f9a7982ee9d57df992f62b23dcb4c13d520e922', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xa2a3be1fc9948e747df7669660d9f9a0e1c6a33c3dd35602d88377b6fcadab66', 16),
+                    gmp_init('0xa93bd8e6b524be6706507ed74d235ee1fb2de8a53480ad25ef4a12484c1aeb12', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x4366cd148fd0c312cc8936952b904bbf896dec1320eb0a985cb709dee63e9e1d', 16),
+                    gmp_init('0x2ba2ad81e31075c1e86995697bb39803fbe7cc19e0df40456a57ed87db364bf4', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x354e7ced56e78db9367e124677c080be82fbc777be2d8097b89d2213207c25bf', 16),
+                    gmp_init('0x629d62e9bb994070e6ebd824a5cfe5585fd756cb05a0aa215123a3995a864211', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xf11f5d1ddcbbe3469ec2c0fecc2f9b18075969944b3b7edb644630ba41330c21', 16),
+                    gmp_init('0xd20045d6570278c2b3e3750f788716610caf2cbd5792771554e06c7749ee7ae0', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xc751c9aaf5de805b79b5cf720c099f498b80a78586c4bd2e4a7d82e075e1dad8', 16),
+                    gmp_init('0xcb986437fc799de2beb4c1fd6dc9a4ffe6f8970a3a0a8c02d136b3612e4afc8b', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x22fb2ecf815e26814b887223fe0b3fd9fad4302c3e7bc9e196f264d366f70126', 16),
+                    gmp_init('0x5c41f017985133401d3e2d7fda5dc66e2a4413c312b6e56803f991f610b811c', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xaee9cc41b9d1d02178ab5286b50f9ca80cf657d697aaa757d3121b21099d9ba2', 16),
+                    gmp_init('0xb72cf302db52a36f7be97bfb00c6b1f5312e68e26a17490e78d60483bed2ad58', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xe6c92b5a52d770dfe13ee8c1c102a021adc53adf247962ebe38d54e8feda2a97', 16),
+                    gmp_init('0xe280e93cd72417962752676cc984e02a0e74911c82171670403f3e7fc8f8a8df', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xd0d3f46a7912ec56bff60af2b1ff0cefb0da8ff0ff391a463ff0824894d208d', 16),
+                    gmp_init('0xdc371b80ae1f7169b0474da65f909ff0b213c0d1a71ddabfd62f53f79d45d1b1', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x6c21a0c6d87027973d483896be3ffbe52ad9381ab187cdd2cd3240ac19c24451', 16),
+                    gmp_init('0x15e1e64e69b11a88343a31d7ef641eeca04be5eaaaecceecfa43dfe9236f3116', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x778d146b44137535f47cd8387e5441e1cb36c3737c071145c6e822c819cfd890', 16),
+                    gmp_init('0x3c85ba133b011af72a52718d9786cd3796ca45488ed20acac9a87fa7d6f057f2', 16),
+                    gmp_init('0x1', 16)
+                ),
+            ],
+            [
+                JacobiPoint::init(
+                    gmp_init('0x55d5398d1666432b557582c99ad534580101fb06a050e62c320f09c3839bb85f', 16),
+                    gmp_init('0x576e229049ff8e2d059c6a9e8ebaa72ad90d6a7f1833d9e1f7f631184fed936f', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x419a4f03ae7617ccfd23639585d56f8d28b1eb93fff3c118f642e95b4f491155', 16),
+                    gmp_init('0x237c2d343a6e835b2e334b1484804545c7ab4a22074c68894b91ba6ad489bbc7', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x1bb46408814f888b7858058dddc0a7a39f01c1e6f7b910d1c07e2b9212ea285a', 16),
+                    gmp_init('0x8a3016bfafae1125a40fd9b892b4a4fc1e52a34b992fa94edc0c8a79907dc702', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xa2157eb3dadf2828372304ad31abf75ec3e61dae0b35d0fcc0841ba9e49e8f34', 16),
+                    gmp_init('0x817697da70df31d0fb42577ccfbe5a2064bbba35b187f4e1a8e983289eebef3', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x4bc4e70e02fa14ee0973e2678627a548c88d076b8297f0145012900d539785a', 16),
+                    gmp_init('0x5729f224b8cb4cc3a5f5a1cf3f3dfb4f877017727a3275c353990475ca62e3bb', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xb76f40233e918ce57e54f059669a910e4c3758a2b96ee4b24e9c6714b80f772a', 16),
+                    gmp_init('0x5197211a7aed93c9618f274ceb0999856ba24196b16ae252b481d7c72eeff74', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xd3e492fdc1f88173587739e1b7df0876d136189aa3d5a6a3112d4bb1e114cfb5', 16),
+                    gmp_init('0x3604a70a73f8c48b1fee2676bf15fea39c88f06e46754eefbceb9aa5697f7045', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xdc386db7f409d9e0fb28652a88c376d227fce62d1df14515d4eb281c2d5c502e', 16),
+                    gmp_init('0x526c6376cf20188ae7e69c459d7ad72b372c3db3cc760b7b23b47a257bfc1e4f', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xbebfc255862842538a4e52310fcdc1791dad1b3f64d4b7871a2674bbac55ddff', 16),
+                    gmp_init('0x850de265c09604ce8a3a11c4b776576c3cca822d650baa706d4db0ca3ea2f303', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xef938fba5e02418a0a8da901c55d8f9181ec6eedb69003fde49e72f50e08ef14', 16),
+                    gmp_init('0x824400400839f5da0dab07948e47b80e6f667f2a4fcd01b884d5ffb0cac193c7', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x36e984dc73d20d602fb2931d160784715da3543a21d9224e91af41e4c99ead51', 16),
+                    gmp_init('0x1437714721bf485f4bfbdfc9ace32b203babbec1704280afc6fb9d426e0e5e3e', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x2ee47b1e63b15d114c9af29039895a092c0cb5078f86a05b68119a550bdeb2cb', 16),
+                    gmp_init('0x6ed220b6c3014a344efd69719dd7c79b23b9d3b2811f174953ed9c7e453ad96d', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x91b6750043f604aef315147954d793af785e24816776464d7a8b77bb23093df0', 16),
+                    gmp_init('0x7fedb1e5824a00d477c7ada96e21c5d933685f8f9caf67f5cde8c37d2cc9f14', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x2530f0d5fd4f42a58f231ca3c63afeb70a071eb5c5296ea61688a672861140a8', 16),
+                    gmp_init('0xadcbe6a85cb4c684bb07d89392cff66340cb6d19bef1b4d571ea3723a918d4bc', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xc5d9c3c7a1c4883e7c497e1a03602fac5b3493028a9b3848a2367b86fb7b8dc4', 16),
+                    gmp_init('0x3e59b9e25cfdb79e5808c38605c50af3d0d8f72fd1fd4936ed64978d1b2df0ea', 16),
+                    gmp_init('0x1', 16)
+                ),
+            ],
+            [
+                JacobiPoint::init(
+                    gmp_init('0x884286463ca0872694febab24bfc3383cc268940efec85ecc62dbc9c32513926', 16),
+                    gmp_init('0xf778429c01c2dd5a69660db365d81207ce0eb122ebdbc15a0ee4282aafb8a54d', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x789bbeb0199b2c38b48c9ad4808a2e9f0f3d27b94cd4417f005791ea7c2ae635', 16),
+                    gmp_init('0x14357e6199189bc68680b79f62f1217a7fef5a9c2ca1550fb781dfecbfe96db6', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x3bad9d36f76f0819d5a5fd168ccf6f4ad7f1b49e647f7da4ed2bac196520f1f1', 16),
+                    gmp_init('0x49f99de33e24e659bcd9fa7d9dec0e80499981a24eb672586a1970725698df4d', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x87c1d99c5ead72de2cbc4a513a0a9bbd5156b3fd89b84639b1f11f16f529b1cc', 16),
+                    gmp_init('0x7e1654c6985d0bcdb8617a6ca55ef683bb0d0eb2c5b275e3cf26978dd5a94d6c', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xa6b3a4b1adb0c46d67a7df53d124118ba6ec16dbefa783df0b1e44a8b185ae66', 16),
+                    gmp_init('0xcb6e8d7638896231361a91cd969e8d8bcbf0a5df5b248dd7beb553f8bfbf21b', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x1ec07b834f2a5ee0550651821d38468f5dc7fc279d6f25a3201391bc2fa4e24f', 16),
+                    gmp_init('0x83fc544920187511f73485cf787edc58eccd3c9377755dfc318910fd4d270725', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x1f848f5a6c9114a4e227e3a7d87f10c1f61060c17ff3f1c2a9684ce4ec630e3a', 16),
+                    gmp_init('0xa028552ccd06f9638629c83d1a9da4264ba3926bfe359724aeed9ff686ca610a', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x2800043ada0982e22ddb6c3ddc7f43d53719a8b66bb19be6f0f679f10b79847d', 16),
+                    gmp_init('0xf99174667e82909b6c0796584a4dc3ba87058dbb8513ae9fe5b0083908d9eda', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xcfd1e54be949c3588b1a2677c6ca2eb211b9557645b44e154dfef3cdc41bcd10', 16),
+                    gmp_init('0xf4e31f5f600958bb9c5751bd5b052fafacd9915d08553965ac015eb9aa62e732', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xe3ab7e11a14ff415cf9be92a49ec4b568e079636bf00e32016c8dcddf4af9b61', 16),
+                    gmp_init('0x5d946bfa1e316edd91fd72e6c5750431d03db05cf3efc38fdbc29b8d92e40c9f', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x4b3e730c046c9e5512c795e3e771291b90e4bf5e2a870e724fa61d92228da5fb', 16),
+                    gmp_init('0x8c40964da23660e9e80cba07b8e0b48c65a3a11c9c23472bbff0a638bc169e48', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x496ca72c0a9f844c754324eab9dfd896736ed099f5f128c93bbeb943d64c5c17', 16),
+                    gmp_init('0xb619b92668fece3d11129ac79f4e5e562578f2a97237ff73d9672e3ccb0e98a6', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xafe915df74438fe71d54b8a54b42d8f737e9cca3589aec5db8e91a589f894780', 16),
+                    gmp_init('0x3caec3408d204686a94b4342333f2e36909e8be73ac0af452f969553d511d444', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xf064d13b5447a158e160bcf6d078be95410beaacf463fca19298988ac2cae99d', 16),
+                    gmp_init('0x91295b62fafb0e0c7b090c25bd2ddc8d2228c721f2335bf7c66e8f8ed4682815', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xc05482810ffac855866a3a36d35c9e7c0a632dd6981c8aff5a31fcbd182fa6e', 16),
+                    gmp_init('0x2f9cd2cad0f1f533d1aa8b89465d602bf5e664584b76d01f6ebcfeab661cd145', 16),
+                    gmp_init('0x1', 16)
+                ),
+            ],
+            [
+                JacobiPoint::init(
+                    gmp_init('0xb4958c4e21de21d47fb60c55edb925559eaa8520a5ed115e3e0b5d5ad4441fbb', 16),
+                    gmp_init('0xfcd6e7bf996640efe5c041fbc38cb7e12db9f6132d4638414c7e3c9f4add7118', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xa41e9e9ed5876481e77ceb19f84df2582cdd704dbc1a71c7fc4da1176bd00b59', 16),
+                    gmp_init('0x50dc31723b30f2b6da4e1ed1efc739b85cd253563dd4359fe8dd28cdcf2e6f15', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xb3a43f5e7b20444d232ea0b64606684b878cedb730d70c4a5aed684c371f07f1', 16),
+                    gmp_init('0x34c64f5b248fd6b84183227369975ee7ec7877a0cdcb0ecc53cd22f4e01dfda5', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xc02a0f2e94cc35ac2c5f09a87d6886df32a6d94ebf58e793ab0c96ef401403f9', 16),
+                    gmp_init('0x8ebaa8a18e491aae0f716d457c5cd473abb913066000adb521f59639a7ed80b0', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x452e9869a46be14ac2662ffd84c008b148e1b4690ddc9b44ff7c97a46b559d49', 16),
+                    gmp_init('0x8c5e8a8f195f80d0f5c0057b6761ee525982856c3b1ee425747c6046da0d6ba7', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x9f170a79d27219b8276c8d6312b7d65f6af2b72d39c2b06ffee1fa912975566a', 16),
+                    gmp_init('0x54a6aa2de8864a0cc799b0077d4e8578a0a6a793f5db695f5a576c88ecf3e6d8', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x19a7f5d48c6d62bb51cde0dc3ac474ee8bb24f4256829e60537a67eb53ce94da', 16),
+                    gmp_init('0xa2504ba7a93075c32f6a51d44200a2e8fb625306ae25eb03730447163025e7bb', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xb8d550a10d9265571a765de14913e26b9a6c22e3eca47658a69173875f7a8d33', 16),
+                    gmp_init('0xded908e0ed161c307d1790c97073e188541c3aaf586f670d1777b77bfec3abee', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xbdaf5b020a4f34dc011eb0b2b5fc6fa417ee18afb5e15b9bb9696cc6d47dc697', 16),
+                    gmp_init('0x3cec0c6cbdfa836c8cf575e47b57aa0855122e7885b7a477b911cbe786a479e2', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x39fee9fd2d62767570090e18f245626b9ac1b330802aa4d80f0f0ded60106d8d', 16),
+                    gmp_init('0xa4ed4a25730ad5b3414f1238a7434b81c5f7e608422bbc8fba2715cc8fac1771', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x265dbae95f39d15dab84b7fe84ce70db8aef7c9f43e106202a00b91b6ce05e10', 16),
+                    gmp_init('0x58df63d09a3037adf3b3ce8b56cb5dcb0663f3933d64c67fff7f018b171324f4', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x14be9987b11d148038809b87c78cf13a3a45062dae0e6f28e7efd2361161bab2', 16),
+                    gmp_init('0xb1009f268e95f8454af646e95e96cd34060c9ff44e4bb74b6bae9a3e4700a3f1', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xc43e083f17e6639689f749d53a5668669ec8303db636d7cded15bc55b3fe5938', 16),
+                    gmp_init('0x54c6029239fbcc5835090303abc4402eab623071624407477679756ed83732f3', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xdb85215d2e0e93cd59cad484d81501d991a6a55184a5c130b05a78ab6a03780b', 16),
+                    gmp_init('0x2511cd6b26fd9a07f9bdb3a11d663c6ddf8f56684dd531bfeaf21f928e7c4786', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x7868f1700a3f848665ac50da77b266ba2bcf0fd306b44180c31c70f79dd52975', 16),
+                    gmp_init('0xe89097cf31217ee1113fa1c6db11276c68f6f9eca69690443016ed503c626fac', 16),
+                    gmp_init('0x1', 16)
+                ),
+            ],
+            [
+                JacobiPoint::init(
+                    gmp_init('0xd0e0919688e932b64134bf13b346027cd8a7fd0b7d761d04ac24e6436e12e1df', 16),
+                    gmp_init('0x69c9a59fe7d1452b4eb60b691dbf867544cc4bd9846b8df6a6544db9fd28fbe', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x49c696ad84a3a2cc66d8c6be3c064abe8f7137ddf287be11e27b29cc18dac2d8', 16),
+                    gmp_init('0xfb7cbedae854b6df578962c7088dde4b4d0fec2acfc3e019ba5cf21de3a6aee8', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xb517a454a13308eb398a7dacbfc1fa8509c10140a96e3e02bb0d8510084aa098', 16),
+                    gmp_init('0xa3d877d0c1f879a60ea3e2fb0f26fa3a4d48b54692447fd6004b59f4540efbf', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xe7fe1a77506aebc71c42027371d3ac4795f5bbf94bf153888eb8b6730050f080', 16),
+                    gmp_init('0x6a87c46d10e65daf1de51e7893cb5838f8edfb37676496a848c989da99e9e32b', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xf8ec14384b5166f67bc22712d8f3e387cc26d27ce093643d6d95acaa4744bfa1', 16),
+                    gmp_init('0x761134b2113fb9a632368fb269d60f610a637ac5c3900060c6924e6332b65f6d', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xa019b49ab61c68029b684beed1b4bc5eb71b993348271ef1c11746e5260aaff5', 16),
+                    gmp_init('0x5cf47cc5d82a6289ad17385454f78688c2226b31f87a019395c6dd62d5027088', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x320cff78db7bfae794e74ead21d4f2e64be6b1f00f8d99f2f62c3be93227a4bb', 16),
+                    gmp_init('0xaf9fe8d4072a8692ab7796a254ff62996047237409e2f970581cc906b0f3d2d4', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x9e02fb86b5061741069f16f419b123085a47fd7bfa47b09505ec3921fa72672f', 16),
+                    gmp_init('0xd622305feea9f183265ab8ce550b0c1e11741a026ed5c3deb24f5d49f4b7502d', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xc08de7c6a7aed8517edddccb543426a206cf35e0a95a7373b5b5a5e5c2ca683', 16),
+                    gmp_init('0xddb76d855ea16e19b7c8299cdfce0e79c3c8d7b7e0ea68c692406db57db5f259', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x2a32684a8423a6dba2cd693b4230f6cbf9a1355d00bc321fb8cdb44097bbedd0', 16),
+                    gmp_init('0x28bf4a6ae88b127980007dc929d2b089be4a953740265c9d73aec28625cddf15', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xd1f8c76ad0c47c3d18e6f7a44ce4390995b652faf4fdd7861c67acf8252ae5cd', 16),
+                    gmp_init('0x74d45dc66120e802ac7997b01f61203239bae8156989f4fc7eb97bc3fe6d2dda', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x4e2e5a2a0e8219ddec85ea796fdb9b69f1e91751624d3c8e0b8b20b43b7950fc', 16),
+                    gmp_init('0xf8575fca385c8a95c621ed2d3e97d04b3da949dbd9403f582608fd2a727056d2', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xa6cb83693f3890c093e33ec6267620d8c96d65cd67dffe5ab790066aabdc603f', 16),
+                    gmp_init('0xd823c8e461f3cafc8f2d9bda4c510b72fb1ec16a4c661735cace03e0c96befcc', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xf6e4088bf8cda64216cb34dced59c1be4a57d6b825de9f4209e7e0b414a892d0', 16),
+                    gmp_init('0x8a6df7d6de277701b4d764d9952dd7ef4cdc6f6760267775f6a08ec6a60300a', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x8a6c9c91ea6c332136bec97152424ef0bf5b3598b570db4a29e3a612e2c374b0', 16),
+                    gmp_init('0xe4bc7f4f65cdffaf79a7885dc90132a0461534f4340f4d583bf7cf8db78c08bd', 16),
+                    gmp_init('0x1', 16)
+                ),
+            ],
+            [
+                JacobiPoint::init(
+                    gmp_init('0x68f6b8542783dfeeeb5b06e70ce08ffefd75f3fa01876bd86a703f10e895df07', 16),
+                    gmp_init('0xcbe1feba92e40ce6fbc8044dfda45028cf5293d2f310bf7f90c76f8a78712655', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xe1b40c548c1c0d5ff3cf09cd0e55e541666623f172e992589d10531d80c15fc7', 16),
+                    gmp_init('0x1ea8aaac3f384ff9f47d811207f4708f00924520de9bb62417ca84682a318024', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x3bdfca7181668f4de996e6412418a776713b08d6f94c2308e418fa233aa89692', 16),
+                    gmp_init('0xa721f68565167b849426151aeda5333c7dc0c6345e2ef1393dbdb431a510308', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x963e315dba2a02df4201bba7bc72a37ef1e49c2570989e56a25b597e831eba7e', 16),
+                    gmp_init('0x5c02ba13c84a3935a2a3cb7c52167e11869d0ae5c0d5f13c3dfa4b328e7c79c0', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xaca8ac95b752105635328552518d9e4fb2393658f89aae4d079b2342c37ea1d7', 16),
+                    gmp_init('0x7f12c567dd75cc2094304c4b92872189e1edbfdc413935e9ddefb1049ba973a2', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x79cc32165d5941a28c0821207c82521e163c1b41b3d25d4402d58a93ed8d3763', 16),
+                    gmp_init('0x9cf893e8073053d027cc1d59942ffc3eadabc17581d3626b36aab0f0bc5f6bfc', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xfa904704db667c0e206c21af98d85311a37d669690597fbf5db2781cd3245b7f', 16),
+                    gmp_init('0x1a1c8c3674a836a42d6fa3ed40f1c189cb9eecd2624f1d47ef833df14ddf6bef', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x6fa2d990059943937be369478640da20b3e960fd626f217c6c38ba21348560a9', 16),
+                    gmp_init('0x9eba0cc3915ac7e83754a352a6985c3afe39cdabc551c5eeb9609377bae52757', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x1d431aab91f57d8cd672b8e1d2fa92a818491483ff15439ab61f78fd77f0953a', 16),
+                    gmp_init('0x8d667c3bf19121ebc530c83ce15fae0f48e29a908707e7c17c59d769d68f260', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xb7bdfaa7fc579c888275247200d57597e6e4c087b13db4a8590da9836039279a', 16),
+                    gmp_init('0x1d2fa9f7c76fd5d14bd23c461e4585f6a7e6e36988bafc31dbbd0aab42152ae1', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x6deeea0d5a3e1137dda4b35b2e31c60ff32beab333a3ea705a31171365227c70', 16),
+                    gmp_init('0xcbb93f0fc7443e400014cbafef6acc84287aec1e569083dbad6da3810369b9b7', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x9504e87a52e6a5108bd75f71b68ba4b707e015ce6891e8cd69b6093ae31413a4', 16),
+                    gmp_init('0xb6071d8fe3047cbf66bc455d63c7f186261f8470d70dd9c35a297af9df51c38a', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x28135c10635578d8d4ac9d2bb1fa9dca579b2b83a5564a4ffb5fd5e88421b54d', 16),
+                    gmp_init('0x9ed84abe3851be1506fa9d74107f8c15ef0494cc91e310d8adccf09b8ee5d868', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xcb7b973aa8bf19f04a29a5793ec0794873a39f9f9b8197585f4b8c276064184e', 16),
+                    gmp_init('0x349aef9136dd9245d5fa500fda87860a1599ec23c2586640a21a6aa9735bf117', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x339a057620b1077bd6c3cc5a09ffb5687996a812ace24a9a917e5591e8e4ac10', 16),
+                    gmp_init('0xca985fbedd6a947f43854df78acf553e5039e788f41cc66ef76da8644d1312a0', 16),
+                    gmp_init('0x1', 16)
+                ),
+            ],
+            [
+                JacobiPoint::init(
+                    gmp_init('0x7f9460a23d474b66c3b41d1793b353d6646bd35404739e0dd34dab1767ea1f34', 16),
+                    gmp_init('0xd0d516778fb0618769f1f2bf8f076661c6ff815124e34ffc58bec2cacd9063ec', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x2292b0887db3c979f796a57e0321efc800d59722771bc762e45a0052b8c5bdb', 16),
+                    gmp_init('0x10b668847507e38270cf0501cf4185f634c8f01116662d894bcfe7b5207256f2', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xdb43e7f84c329e022a60e3646ae0a2a2de44235b14f77aa0dc5b74c9bdfc0a9d', 16),
+                    gmp_init('0xb0168da2be36b591b8a56c814cef9fa48839047356d2f054f0b1093a9e9ad713', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xf6a16b6054bf7ac1e01efce48208425eeaf7deb95dae05a07bcffb0d1840a484', 16),
+                    gmp_init('0x716c92116b36d29159cf3e324c399409acdc817c6fe7ae3587dc4e6e638f9111', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xe9af3081ee0d21aeb8515e9121fa78980f8f07ce35643a8930bcb1774283808d', 16),
+                    gmp_init('0xa976c8489c47126085af26550fef4971976b925115136d19966c2f8e39b39d33', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x3affa9b5cb5e8730995b8a7f7abce4bba45d77fd9b76f4961495c285ffcd7198', 16),
+                    gmp_init('0x2d4d554f8eac633d75c98089bf7859cd10a58f03876b2f02029f302430eb6635', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x6eb733632c806980703ac9383bf883590f41395a4e6f8a0a2692f42cad8426df', 16),
+                    gmp_init('0x96c56ec117307a9a030e4b2cecc08e8d9252e97c83fe1b833ff759ee200b4267', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x948f395d3e8454456a3efdd5ad2652c1bc7c0ed17ff78b361617acdcdbc10ba4', 16),
+                    gmp_init('0x98ba0006d11ae9b572a41300a1b5a9ef5a63d297ffd0987c1a6b40ca6da2be0f', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xd3979d5e079d5f45e1741b91f8b4d0e68b7e87be761033dbf7d16d7c1a16453d', 16),
+                    gmp_init('0xc55f9335d799adb9a4d092575372456917ddf6628a6961a4f3cbb83167b6d737', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x5c11fba94fb7606a406d776727e416973c9b5fd6837e27b17c533b16225a4e3d', 16),
+                    gmp_init('0x26a6c35de3216a9c19eb94d54cab3ccb14b271f8c9958360c52df5ef6569163d', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x54c3929ce5b8c2342c383b88c1aefc12f65a9b4627b5202ccea199a5ed326504', 16),
+                    gmp_init('0x4696302560ea16d0c489aa284914ab4447a53d9e608a67268bf011fa7ec9e107', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xeb9c78a6cf98b900fdb8f62b67116cbf99b84da4ff66ebc4293be10f4bebf743', 16),
+                    gmp_init('0x42e03d6cc97964a075fb6e9d80f3bbd385a7af8e430fde3bf768a159f142e6e7', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x3744e9b28666d6c5b84e8e83c19659c87328158b0c0d21353044f576bb5ecce7', 16),
+                    gmp_init('0x9546e0f8d99047aa0e0e6956eb29ec3c28e8b5f052a6f839201321416a247721', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x371da99fc11424160d29f157b4c415970ce5984677788ef9209343292da66409', 16),
+                    gmp_init('0xe697cc8d4bbc143565dbb44552523bf83bf17374e766df8143fc5230d298657f', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x11343e17e3656d53324cd0a41ef3f2de14068f639442535150c928de45fef996', 16),
+                    gmp_init('0x4a9e8480deba8eeeb04ddf9306273765d0ce4d65a086f18e40150ae75792aded', 16),
+                    gmp_init('0x1', 16)
+                ),
+            ],
+            [
+                JacobiPoint::init(
+                    gmp_init('0x9c39cb60a33d563d2958f49f1b6ee94582f2d7a846967f0dcec9b4d78e6d8483', 16),
+                    gmp_init('0xf097bf1ee493e51003d196b7bca16546bbade52f3dbe436894b3356f6b2c50fb', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xcbc809ae94d7802f33e8a4eb3b323ed141067a6336fe96a71363784b6c7f27bf', 16),
+                    gmp_init('0xbd9cbb0e18115c85d7aaceb5dfdcdb0507ad4dd8903daa9aecc69d63caa30fa6', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x18f37acc90eadad7443768f724013083606d0429674b4df3f55c31f847a14dda', 16),
+                    gmp_init('0x2f944bbaaa092c26d7bbffecee1bcd0b77d8f7c78a8536cbe22fcdc325ac8364', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x8bfbee24c6e5261837151ef349506cf4822c3c1cb43b223bbe5cc18760a81cad', 16),
+                    gmp_init('0xd75127caa3409b590cfd289fe71be1518d9fc8ecacfd23766986b9515ff0013e', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x5413358c281e79da4ec5ffee4772736b98ea18588e0932fb5674e8e8cc7d59be', 16),
+                    gmp_init('0x680fd4de969cb024e7c48fd20164515a53e25b15c900b3672d7ea1f6e4f80590', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xb1c1b0327ffec73feb5c7e72fd64cacdc769ced171b57ddc22849804f58b08e', 16),
+                    gmp_init('0x6e8fb87a8d35412795a16812870a6a7c0d8beb6cf7b955aa0f1c83acf5023ab2', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x4e2fd12691b194f05dcfc1a3c1b85280bed773963a457ea58eb80c9f876051a8', 16),
+                    gmp_init('0x122abbdbf5f4fbb2371b35a1508a31bcebb8baa592c4fe2e6afec74fe9cc9005', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xb8181bc6badbe124c07879421041e8f176b07b2bd63afc5cc21115782fb33b93', 16),
+                    gmp_init('0xbb012f5118cce7cadeef104be967dd75f9acc5b14bf627dc911a5e167a54ead6', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x2de758d4beff1b592004f56813c08fa0a275f0f76625f5fe367ca8fa56a80e09', 16),
+                    gmp_init('0xdd9acf3177d8ee67d7c032b0265e64a07a1adc6695dad6c99d62edf5436a1cd3', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x7838321620db08b90ed9922d448a6990ef1e169eb30aa255f24498daa2720307', 16),
+                    gmp_init('0xa2821b13a3192358b51f0760f456ede9f3f68f9e7f9acdad82a85bd18db7cfd7', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xf597a0acdc1d4a5728c5a173c6ee12a4568bba2cdf5b564ec25035b2fa3628ac', 16),
+                    gmp_init('0xdb9168e332bd4557bb1bb7289622cc0772ecf91d412106e7ea0310d6cd3550f', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x69c0a197952bd5d941901dda1c9671cb4f1e86b7e98fac908efdb312b83b6500', 16),
+                    gmp_init('0x24f0d0df9fe8c1166c43d425cc76f2fe0afea3ab84c8cc8efdfc2c9d3846b42', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xaa222a86d6f44fb908a1071821be40f3c42a5457d53a285678d683d4ab75d6c3', 16),
+                    gmp_init('0x56378793001a8e76ce448a25aee2df426071fc94b5a8c8f613265a4e644cb028', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x6f27aa1bfebab9675c7073426c00051a9dda5bc91ea695d5f130159794ce1a37', 16),
+                    gmp_init('0x90dbb8e8337893c0ef2fafb59f0a0fc897321e5b3092268c72f75ea0d1f12afb', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x8568b26bcd9715b756f0c64392f35e2e9e01b91773f3c5037fa85739235790c9', 16),
+                    gmp_init('0xd3f2261a584dd2ade9078e0ae4363ce80145e5f8fb85479fdd3f553826b1f5ac', 16),
+                    gmp_init('0x1', 16)
+                ),
+            ],
+            [
+                JacobiPoint::init(
+                    gmp_init('0x3d9285261122993897566e7430181e25e2fd65f1b1b173747dda97c55c38d4e4', 16),
+                    gmp_init('0xd32ca0a5d468eab53ff057035c2869eacc0ab138197abc7f6faaef00c0ccf0d3', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x5551c1b53b0878eae3fedcfbd314c30f0d23b7fe32845dc2d9de4a8bd4904297', 16),
+                    gmp_init('0x2faaf850def03ffa2dc6f85e00e65a5cf2be7383db6967a6ddbdec1a85153809', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x3b180e372b902fc3f7c159a25e76dff891c81b6519be4e4ed07232580dd7718a', 16),
+                    gmp_init('0xf2b6b117f36b58aafaa4bc9d2905211e58491156702d14d0726626299afd82db', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x6a9cb41f4e7d95cd6bf7491e6ef96a09274b136a6beb56c9b1488fe58e2058c2', 16),
+                    gmp_init('0xedd93d45ec97a96602b907a608a21208050886aa9aa7f367ea95ab2bc86b1495', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xf352ff0391d69c9f45ef4f4098a83eb2134ec4b274e467d5fa81a51193d3653d', 16),
+                    gmp_init('0x4472626ccb6c5ebd020bd73dfda6d5055c1995f972c582d079e6678c8a44f28e', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xe46ae49aac77cfbb8eabd472366f4340911cde8a1d8392df78d15204d94b75a2', 16),
+                    gmp_init('0x9aa6ebebe5f5335e845017effe90f85b816766c987d4a6f44799fd908a81c0d6', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x670ee471034d8c230afb45cdbf793ca1f15cf6c2240e0154d661df1aed4478da', 16),
+                    gmp_init('0x5ca0c7425ba022ca2546605b138750e81cc3b8160ff24770628ffe4ff4f563f0', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xdab5fc7fe5706d90b6ac29ed3f203add378c76b944d45159245cdfd17a53cbf5', 16),
+                    gmp_init('0x97f6cc216d0557b45039598fd8b4919787b15173c166c997bf8c1d4b3052fb1a', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x96f2e354349d9bdbefbbfa30acec6fa93cfeb38828d6b35bac4e290443dbd581', 16),
+                    gmp_init('0x9fcd80885d526cf4fe5d8e3960dbaf435a18f1d504f5d454d9a4ffee8f59952', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xd981830a1604c171176180985e55afb73860883eee9cd10741275b1ac38b82c2', 16),
+                    gmp_init('0x2422711875e196b11978d1d254bf33c0e0271f012581e9faaffd9ddbef8cc058', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xc4946e517e8399ac8041820b14609a35e72cf0cf2fbd706a1eb34324a4e9c2fc', 16),
+                    gmp_init('0x74890120b1858a4ce99a0f68f47b8237e48bf38ed14623123434763766398ce8', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x2b1c7861cb06bb47f7cad9cbc69708a33c738b2daf49ce28cd6584ce8a0471', 16),
+                    gmp_init('0xed035874ebf5b517c0e8304c4823441639be7c26e7c2a835bd2d39266390366f', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x1653b64da9be33dbfa48c8c578094d8fb6ac3ab0c8808e8f5cb9173e84960b03', 16),
+                    gmp_init('0xa583708169e5d5609f4b2bd83e95a8948b38e0e4a1b564e7f806a54eb0f73c69', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xa069c9743a7cf65c90a76efd37a5d13a5d1e99d5eb79ec9ab9713128037aed26', 16),
+                    gmp_init('0xbfa8bd1f061877d8d8190f9e0e972deb502ffe99db84fb9e49757a5afd297cdc', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x51076dd7ed2f153f500c679ca685cbf4979bb7f290c72df2c5577e31bb63640e', 16),
+                    gmp_init('0xb397274a2d6ddf76aebe650172e0fda6c8bea4e9e720ef021f69728782e4476c', 16),
+                    gmp_init('0x1', 16)
+                ),
+            ],
+            [
+                JacobiPoint::init(
+                    gmp_init('0xf50b99b7468810b73a5a7dcf08bd17915c08966a2ecc1e07606304b1a44e8de3', 16),
+                    gmp_init('0xe2b5061e55f18f0c8789973a2dedcebbe975f18d21721e854a3f3ba6db7f3588', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x2a148954227198c9b09c743020a46e97d83321fba27ad800a9103a2d60dc749c', 16),
+                    gmp_init('0xaa215a188974e422ea3c2440a37608c4bef92dcdc39b6f01f2e1f28ff0fa3cf2', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x598d7f61a5505770645f30e25139430481d2999182816fa7dddc6b6b82accf8b', 16),
+                    gmp_init('0x9f3121f74f8f2609546c5162b273ebcad2289a8f353540b91b84673c0f6cb808', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xa5a4878f4cc4453cc7a3ec58a642c871ebb7d208e87bdcc1e0cc372dd962abc', 16),
+                    gmp_init('0xf7148b2288b0dc574d72b14df29030175832a64c8e50a9fae85daabc9e2cc3fa', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x715a2012f49f4c4d64fd2091541c581013c4ef1b056c9cea9fb39a5464aa7b3e', 16),
+                    gmp_init('0x5922b3b1aa606c0a1f79288f8a913b62421bc588a88b47d0d9a33944bc7d081d', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xf8093ca11ac87d03aa74356789578652cb07adef81b3e0d685c3fa7018ae2298', 16),
+                    gmp_init('0x32074f216ef49c10b16129ec307e9cf3e4509a0f6db6006f06c36192d35c93b0', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x49ec8c5e6aa9b125c409ce897fb87876c71ccb101687ace4d1bdb697620db220', 16),
+                    gmp_init('0x99a97d4fe5ea629b3da9cc34865f5429842c3073e53b9cce99b8aca0677338c2', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xf5e3efcb5a92f1b320feb9fbdd6c93fcceceaf38ed9768e793925b40128aa5cd', 16),
+                    gmp_init('0x76cfa2899bf3de054e51e2dfeb07bd2b84e0a6f4b110cec9ab2799c7ceaa0fb4', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x1f8fb70d4850b4483e6f190e05e07b7a2f4f14a7d90a656851ebca315e771268', 16),
+                    gmp_init('0xf53e7adb461ba2bf12c2ed74726192a14e1d3c311c92b3ab1afd3010c909c8dd', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xdf8b2be9c62045acb1c320078c03d084800f385ade168ff2a2c15b625a3ba4ee', 16),
+                    gmp_init('0xd8835d9003cfd523d1955020049f17ebd0a8a06c08d307e740ead285431a9955', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xb8d5c71a6497f61fdd5d142ba678732cd606792f742dab1a55ec0f2b28d9819e', 16),
+                    gmp_init('0x1cd14ef132137f823b6ee4359b63dc79e2f49f1361d45c3cdc78be8ea9138ac4', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x30128814f6ac04876595ffc144469d8253b60aa6bd66c3e91ae9a5558c3b3d61', 16),
+                    gmp_init('0x5d57c66104d3c4ec12c4c890b81f7e14ac30f673875adc53772b5e6c8f2dbb38', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x2265b5ac65baae3ddd63eb61c880d8c4ecb34351456004906a93dbe660bca3f3', 16),
+                    gmp_init('0x97a198bf5cacfe0f61a313a3b10964983c80a612d2393d5a25829c6c517409ff', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x64d0c4f5a46437fa24af7e03f4371ba5fc7af0c38c1cb896e79c12b6916e8a30', 16),
+                    gmp_init('0x86654d5973b6abe36d03198de496a8c57cfcf2050f1fdce5d81d912650bfeb69', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xaf381cd10358492521fd8a9f5fc9abcb599899459975dcd0372d23ff45bac36e', 16),
+                    gmp_init('0x681a087fb7df0fbdc9457f22951a2648589b82f1ef4d4a90ff3d887ab1b119a9', 16),
+                    gmp_init('0x1', 16)
+                ),
+            ],
+            [
+                JacobiPoint::init(
+                    gmp_init('0x42531823ff5ed0b0d77f4880da0b0e07400f246c3cdaa859e1994056037cfb4', 16),
+                    gmp_init('0xc90e8bccfae00f7e628ca4d0c8661faceea3e4f534ec5dd400b7325ed8775d23', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xb0d7a6dbed426d40dbaa6c128d47df6637385a1378241662fd6e1483e66b5a8b', 16),
+                    gmp_init('0xf652634815abf316fd1c0d687ef4a316239b77371572068bf6c4fb12cc550ae3', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x27557aa0e30bca48b1f5e308e8c0e4bde6409ec8e6a52af7784f673546c34577', 16),
+                    gmp_init('0x8399c75846105b3b77c8d75a49fd34f318a2ca7374c4380badfeb9b80416193c', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x40bf36bdea2de0a4542cb5c539a534c68723275964aa5eb9c1a74b282375988', 16),
+                    gmp_init('0xe8b5b2b681dad75337d16867767ee3c5977abe33ae04f7f080d2a3d4793301cb', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x8e687817d25873648e50783bf561d7decf6c2e50ea95b301ee58fdb6a401f4d3', 16),
+                    gmp_init('0x989cab886e2c9bfa62f809a0506d3cae900b96f12ea1912890281e944294d86b', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xae3648928593bc5da2f5127ccee442f3496df469a485672bed413aa6d4d4ee9c', 16),
+                    gmp_init('0xba85f10c8713f5adb736b39d4b8d57b7ed5bcc4a2d7f35e7cd0acccef9a54fff', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x98a41746253e5cf6d1036803ca67dbee205359fc40effe2dc5963de26d2aa8e6', 16),
+                    gmp_init('0x579ac6947e3463d6b11542f5a2f5cec9e30217faab7ed21969740bed606cf75b', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x3754e99f0786e2e13d70139bfcd5ce698be44e3392eb68e10e789e3ff0cdb59d', 16),
+                    gmp_init('0x24c2f87496addcbe012f3c27206480db61019b6f632734f04239c0ffeb6a8499', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xe1685442230540fd92216e443e21a9461800abb08c61eecd7ca2cc8f752c2d31', 16),
+                    gmp_init('0x700855c928e72142fb2e642d02bc9343e76192bf89983941cb8836824a50fec', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x675b60bcb5e1e7c43e6f9f583214cef0672e0841205789fb49e9c05cf9e01d27', 16),
+                    gmp_init('0x77108626b5227b4de011b62a9cb6c72cb563ddde73f08822a02ed91c5c80bca3', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xbfa6314b09d513ea1ca2a2e5338951a53cad83d2e50bcfaf4a33bae373a7cdad', 16),
+                    gmp_init('0xb452e8194c802c782a5f85bbb1eed1a7261190f8c84047a1c5f88930295cb953', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xc93c33ccf68ce434314124ebc2bc75e2cc82e7626d76ad40c1d5c120b853417b', 16),
+                    gmp_init('0x6f042c8b50622bd720f2c2e2f575ddf3cfe2f63a9d1e1c7d29e94d9b0f7f0362', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xe687082d0a961cd3ecf0975e6dd98e200c6dc74dea6518d8edbcc8500ade0fb7', 16),
+                    gmp_init('0x2135a448684c95555e5f0e5321d1a72117c1e85ef88c22599179e0f31d4d6ece', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x13025fad6c16b0bb04261e46af00a271f7bdf0d378b5c67495526ee5adeb22dc', 16),
+                    gmp_init('0x6eeb1b119c216b635ca9df2d3ec4a2bea60aa874a2ae76d2b54046ce8388aa81', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x7ab16ef862a9a9e94bfc28d795074975f3beda08aa827ac9c83cb5f0ce432daf', 16),
+                    gmp_init('0x584e0e0a97c328b1a359183e28dba7c5c7e9ce3ae74fdb013117588aa71bdc48', 16),
+                    gmp_init('0x1', 16)
+                ),
+            ],
+            [
+                JacobiPoint::init(
+                    gmp_init('0x9bbf06dad9ab5905e05471ce16d5222c89c2caa39f26267ac0747129885fbd44', 16),
+                    gmp_init('0x1bcc7fa84de120a36755daf30a6f47e8c0d4bddc15036ed2a3447dfa7a1d3e88', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xf8ef49b4bbedf4164adaab192fbfb78c90599d29a4c5181f3ce59840d8490005', 16),
+                    gmp_init('0x979e67a7ee97216402bbd77665a4b73a58f2128837deee671a462e83bd62afde', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x646ff7f65b3b5bd3429cfb2ae7500ee922758bbae7860be08b7ae792b4a7b506', 16),
+                    gmp_init('0xbc112a9d064a18a55a61e331804a8fe8492dfc4fc08e6995c979c1252b36f946', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xbe63ab41d2c743f01b3a9b22d66d9101fe44d4fc2e04eba7eddeea19f87b338b', 16),
+                    gmp_init('0x1f125f145e22f4758d3021bbb90b353b7053cb7e45930daf9d212f2591b00a85', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x7cc0547aa617d39a9d0c1000b27e507ebe60ea2783385a80154b71c9c103b553', 16),
+                    gmp_init('0x7b329ebd2328045abdd728cb39fc94c400185a0aac228b7d5799cba3cd45a526', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x1516534b9efe26dee62280c7ebc5fd4a6beb2ffe723b53109890459558583600', 16),
+                    gmp_init('0x60e343b6a7ce88eab0e74299ecaa5c592bab43c9e74e0c0908428e0cc3a0131b', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x946851990bc1db4e0563ed536daee15468da2bdaacf01b81ac2ef45419e717a4', 16),
+                    gmp_init('0xca5c78420dc591a8b3b8d0e6b2667dc057999590f70acd9ca75f0fd1b526dea3', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xfc1d6f42b05d00e6aeda82df286eb6e2578042f6caebe72144342466113bd81e', 16),
+                    gmp_init('0x6d2cdf43ac02382a93d74bd97fd76ce63976b531546dc8dc41e3d4415d7ee1ea', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xe1b98f1be7e0e8fab1258f8ea452d1f5dff8b37ef12b327bdf82c36f08362735', 16),
+                    gmp_init('0xca83e9ad9a976a0b7e05b49a83bb2ba27e19ee33df74090af96138c9cecb11b7', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xc65b97ea03f9316becab66324c6e71cb711c812896e4022d620a694fd0c3b70', 16),
+                    gmp_init('0x10d89e893681fc2753842a68d37b860c78b02d429450be089c1245dde69e081', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x3536f25c8fd607ef6d08a06bd967962d56a58de7301440083b40bbd839046346', 16),
+                    gmp_init('0x1e271fe17de3509e73ba16a1a529e1c39e6c3d1ea2d9b3e29401062bcc14fea6', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xcd518f0c66805279e27388b02d1ed1a41b200bdfe2961065343779a00efea3f0', 16),
+                    gmp_init('0x764705d02013d1e4d1103e38c05df536c63a31962831ebcd1f27741670e9cc9', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xdf50246be23d4de690151f34b7f8c3c1029b51fbd40ef530fff83ed6847f6f8', 16),
+                    gmp_init('0x2107047f29daf1ca2b232c4fbc2174ab4c6e166689df3449b4cca8a6bb1633a6', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x609907f31ab90dbacdc6e0c09f4fbd126d45b8604229f9efe4c445c10d3be344', 16),
+                    gmp_init('0x273a561a693cdf6b3c3ce2c80a98a2dcd8f618e7c36cc0e5f28b06ac098459f0', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xca9dd5d44cf53398f69de3b336529330ad69a7a48cf4bb15185ceaedfd4f1b81', 16),
+                    gmp_init('0x6e4b988651be2c56402471fb44467b3e66c9760bfaada10f8cc62cae42b7c8bd', 16),
+                    gmp_init('0x1', 16)
+                ),
+            ],
+            [
+                JacobiPoint::init(
+                    gmp_init('0xb12fadf52943dfa54943fccb3b7893e796357686c10319e31ead3233444c0448', 16),
+                    gmp_init('0x2e2459599b0f4ace96f8f6677b2a6a71d05e70332fc4df296575e76b369de57', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x6054b2225e75b6a4be2df29f6cea3b793bf2d82d8d98b36858627e5e8b47e27b', 16),
+                    gmp_init('0x6e7106f3b190d8edb0760cd1f574e0f81d789cf5afad1987001829e764ae4b62', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x48388e34f1c5056843255dda91d8fb3e67ea3399c80d8418f536c45464e9151f', 16),
+                    gmp_init('0xb0ec63abf4e44e9e6a25339315482bcc99b1411153de83101bee49edcd7a9434', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x1ee7fc202708cfeb0c2bf930bf33a68ad086d4ce99a11e38d93ca698eb99805', 16),
+                    gmp_init('0x9655cef01b024882124be02ef3455711811836ea35be799b09fd5f4e10eeccaf', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xde8e6447ae1453da5e65df81050109c9593a0073ca0b2419d7dfb4a58e5b833d', 16),
+                    gmp_init('0x5e1463c150913d8e332288cbd6de265987e03132901c6c9f0fcc19aa14c5cc7', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x16cf2eee40a0ee4ced279a2fdd4b0e94a403a59c9330e24754205712bf6f44e', 16),
+                    gmp_init('0xb8e9cf624ea7d5a8b52e38390dce53bdafcf53e490868b9b53225c3f611603a8', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xb18b12d0a4ec7e9e8e555b4e4e58f385b267473eb871317b3e2593eac1f7df48', 16),
+                    gmp_init('0xff531922a359fb445cec426bc5acc33b3c83f7e483d1e55991b3d590e846b546', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x77b20a912e6b23135066e911891524bc4efe3560e3e92350b52dec8f375f2b54', 16),
+                    gmp_init('0xa3dc291825cea3f7f7b10bfcdd038a72df623da1e850e0f1caa801fcd6cc67ff', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x5f51ad71c8dc9433c7c1caa4c728694402cdd89845211e0df253adc699c9fd24', 16),
+                    gmp_init('0x2bbbef11df7e714a0cd305fbcc2e4d038721f6244624a9969c3bae886d2ffd3a', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xc1e164748d9c4ecb9f79cfa01eb3a0f69f02f864cb7c7cd3ea6a3d9c467b9766', 16),
+                    gmp_init('0x104e006a2e19ba8b46a9a2e228ca25c46254dcb278d2fb650ffd437efd6e8f30', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xfdf340d937301ebbfa5822ee4346d8556f3dc933eee3bdb7e3c4063fd7cec42e', 16),
+                    gmp_init('0xa3e59a63968cc6e1d70c1fe738cad2c4456e6abf50de30c838f634b7cdb6908b', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x510869f66298a7cf0cd84489c68f7b4bd1d983ea87c3ea8fe51cdf4fed6741cb', 16),
+                    gmp_init('0xcee1ab93a5b40cc2ba412433bba63ce930380a05e0a5c27857252b046fc4ac9d', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0xe3caebc8b9ea5d79ec6452917b7dc983f9e8a13a96072415fc189454e1dc4fe8', 16),
+                    gmp_init('0x97f093d27bf05928d22035cb8b01f97651300365a14f86a116b60b721307b403', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x6e83c3a6b43fdcd300e419e6f78dcae11455ea638f8ff5da5c0c0e3df00d264c', 16),
+                    gmp_init('0xcd3da4cf0228e56cb257110a49af64125bc0dbf6915fe8498e70f5a400603714', 16),
+                    gmp_init('0x1', 16)
+                ),
+                JacobiPoint::init(
+                    gmp_init('0x3312db942a865b89af41a5ce58fa00339902e0c0a9f9b846414d65d3c119eff', 16),
+                    gmp_init('0x6e3eda646b3724df104eea317809e86f0aec59db5f515585fe95a3a9f8b1b950', 16),
+                    gmp_init('0x1', 16)
                 ),
             ],
         ];
