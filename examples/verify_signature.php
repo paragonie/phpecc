@@ -12,7 +12,7 @@ use Mdanter\Ecc\Serializer\Signature\DerSignatureSerializer;
 # Same parameters as creating_signature.php
 
 $adapter = EccFactory::getAdapter();
-$generator = EccFactory::getNistCurves()->generator384();
+$generator = EccFactory::getNistCurves()->generator256(null, true);
 $algorithm = 'sha256';
 $sigData = base64_decode('MEQCIHK+HXgq0AjeKfmdI9l4uGBL0keIiZiQOCEyij25B/X/AiAQs++18Vhb0Q9tqWjzWUNTAMLEzUKF0XzKyHQ028/q4Q==');
 $document = 'I am writing today...';

@@ -24,6 +24,12 @@ be secure.
 In the meantime, **DO NOT** submit bug bounty reports to us for this code. They will be
 closed as out of scope. File an Issue here instead!
 
+### This Library Implements Low-Level Elliptic Curve Cryptography
+
+If you just need Diffie-Hellman or ECDSA, you should install [EasyECC](https://github.com/paragonie/easy-ecc/)
+instead of working with this library directly. EasyECC was designed to use PHPECC 
+in a secure-by-default manner.
+
 ### Information
 
 This library is a rewrite/update of Matyas Danter's ECC library. All credit goes to him.
