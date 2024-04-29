@@ -14,7 +14,7 @@ use Mdanter\Ecc\Util\NumberSize;
 // which a verifier must be aware of.
 
 $adapter = EccFactory::getAdapter();
-$generator = EccFactory::getNistCurves()->generator384();
+$generator = EccFactory::getNistCurves()->generator256(null, true);
 $useDerandomizedSignatures = true;
 
 $derPub = new DerPublicKeySerializer();

@@ -7,7 +7,7 @@ use Mdanter\Ecc\Serializer\PrivateKey\PemPrivateKeySerializer;
 use Mdanter\Ecc\Serializer\PrivateKey\DerPrivateKeySerializer;
 
 $adapter = EccFactory::getAdapter();
-$generator = EccFactory::getNistCurves()->generator384();
+$generator = EccFactory::getNistCurves()->generator256(null, true);
 $private = $generator->createPrivateKey();
 
 $derSerializer = new DerPrivateKeySerializer($adapter);

@@ -2,13 +2,14 @@
 declare(strict_types=1);
 namespace Mdanter\Ecc\Optimized\P521;
 
-use GMP;
 use Mdanter\Ecc\Optimized\Common\JacobiPoint;
 
 trait GeneratorTableTrait
 {
-
-    public function generatorTable()
+    /**
+     * @return JacobiPoint[][]
+     */
+    public function generatorTable(): array
     {
         return [
             [

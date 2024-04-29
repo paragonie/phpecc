@@ -13,7 +13,7 @@ use Mdanter\Ecc\Serializer\Signature\DerSignatureSerializer;
 // which a verifier must be aware of.
 
 $adapter = EccFactory::getAdapter();
-$generator = EccFactory::getNistCurves()->generator384();
+$generator = EccFactory::getNistCurves()->generator256(null, true);
 $useDerandomizedSignatures = true;
 $algorithm = 'sha256';
 
@@ -27,7 +27,7 @@ $document = 'I am writing today...';
 $hasher = new SignHasher($algorithm, $adapter);
 $hash = $hasher->makeHash($document, $generator);
 
-# Derandomized signatures are not necessary, but is avoids
+# Derandomized signatures are not necessary, but it avoids
 # the risk of a low entropy RNG, causing accidental reuse
 # of a k value for a different message, which leaks the
 # private key.
