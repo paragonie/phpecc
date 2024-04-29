@@ -26,8 +26,12 @@ trait ShortWeierstrassTrait
      * @param JacobiPoint $p2
      * @return JacobiPoint
      */
-    public function addInternal(JacobiPoint $p1, JacobiPoint $p2): JacobiPoint
-    {
+    public function addInternal(
+        #[\SensitiveParameter]
+        JacobiPoint $p1,
+        #[\SensitiveParameter]
+        JacobiPoint $p2
+    ): JacobiPoint {
         $X1 = $p1->x;
         $Y1 = $p1->y;
         $Z1 = $p1->z;
@@ -143,8 +147,10 @@ trait ShortWeierstrassTrait
      * @param JacobiPoint $p
      * @return JacobiPoint
      */
-    public function doubleInternal(JacobiPoint $p): JacobiPoint
-    {
+    public function doubleInternal(
+        #[\SensitiveParameter]
+        JacobiPoint $p
+    ): JacobiPoint {
         $X = $p->x;
         $Y = $p->y;
         $Z = $p->z;

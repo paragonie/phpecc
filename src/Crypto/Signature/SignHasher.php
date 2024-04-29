@@ -77,8 +77,12 @@ class SignHasher implements HasherInterface
      * @param GeneratorPoint $G
      * @return GMP
      */
-    public function truncateForECDSA(GMP $hash, GeneratorPoint $G): GMP
-    {
+    public function truncateForECDSA(
+        #[\SensitiveParameter]
+        GMP $hash,
+        #[\SensitiveParameter]
+        GeneratorPoint $G
+    ): GMP {
         $hashBits = gmp_strval($hash, 2);
         if (BinaryString::length($hashBits) < self::$sizeMap[$this->algorithm] * 8) {
             $hashBits = str_pad($hashBits, self::$sizeMap[$this->algorithm] * 8, '0', STR_PAD_LEFT);
@@ -94,8 +98,12 @@ class SignHasher implements HasherInterface
      * @param GeneratorPoint $G
      * @return GMP
      */
-    public function makeHash(string $data, GeneratorPoint $G): GMP
-    {
+    public function makeHash(
+        #[\SensitiveParameter]
+        string $data,
+        #[\SensitiveParameter]
+        GeneratorPoint $G
+    ): GMP {
         /** @var GMP $hash */
         $hash = gmp_init($this->makeRawHash($data), 16);
         return $this->truncateForECDSA($hash, $G);

@@ -8,13 +8,32 @@ use Mdanter\Ecc\Primitives\PointInterface;
 
 interface OptimizedCurveOpsInterface
 {
-    public function scalarMult(GMP $scalar, PointInterface $point): PointInterface;
+    public function scalarMult(
+        #[\SensitiveParameter]
+        GMP $scalar,
+        #[\SensitiveParameter]
+        PointInterface $point
+    ): PointInterface;
 
-    public function scalarMultBase(GMP $scalar): PointInterface;
+    public function scalarMultBase(
+        #[\SensitiveParameter]
+        GMP $scalar
+    ): PointInterface;
 
-    public function addPoints(PointInterface $a, PointInterface $b): PointInterface;
+    public function addPoints(
+        #[\SensitiveParameter]
+        PointInterface $a,
+        #[\SensitiveParameter]
+        PointInterface $b
+    ): PointInterface;
 
-    public function doublePoint(PointInterface $point): PointInterface;
+    public function doublePoint(
+        #[\SensitiveParameter]
+        PointInterface $point
+    ): PointInterface;
 
-    public function modInverse(GMP $scalar): GMP;
+    public function modInverse(
+        #[\SensitiveParameter]
+        GMP $scalar
+    ): GMP;
 }

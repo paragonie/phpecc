@@ -115,8 +115,10 @@ class EcDH implements EcDHInterface
      * {@inheritDoc}
      * @see \Mdanter\Ecc\Crypto\EcDH\EcDHInterface::setSenderKey()
      */
-    public function setSenderKey(PrivateKeyInterface $key)
-    {
+    public function setSenderKey(
+        #[\SensitiveParameter]
+        PrivateKeyInterface $key
+    ) {
         $this->senderKey = $key;
         return $this;
     }

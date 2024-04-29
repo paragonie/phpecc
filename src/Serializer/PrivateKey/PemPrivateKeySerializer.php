@@ -29,8 +29,10 @@ class PemPrivateKeySerializer implements PrivateKeySerializerInterface
      * {@inheritDoc}
      * @see \Mdanter\Ecc\Serializer\PrivateKey\PrivateKeySerializerInterface::serialize()
      */
-    public function serialize(PrivateKeyInterface $key): string
-    {
+    public function serialize(
+        #[\SensitiveParameter]
+        PrivateKeyInterface $key
+    ): string {
         $privateKeyInfo = $this->derSerializer->serialize($key);
 
         $content  = '-----BEGIN EC PRIVATE KEY-----'.PHP_EOL;
@@ -44,8 +46,10 @@ class PemPrivateKeySerializer implements PrivateKeySerializerInterface
      * {@inheritDoc}
      * @see \Mdanter\Ecc\Serializer\PrivateKey\PrivateKeySerializerInterface::parse()
      */
-    public function parse(string $formattedKey): PrivateKeyInterface
-    {
+    public function parse(
+        #[\SensitiveParameter]
+        string $formattedKey
+    ): PrivateKeyInterface {
         $formattedKey = str_replace('-----BEGIN EC PRIVATE KEY-----', '', $formattedKey);
         $formattedKey = str_replace('-----END EC PRIVATE KEY-----', '', $formattedKey);
 

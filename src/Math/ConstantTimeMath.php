@@ -44,8 +44,12 @@ class ConstantTimeMath extends GmpMath
      * @param int $other_sign
      * @return int[]
      */
-    public function compareSigns(int $first_sign, int $other_sign): array
-    {
+    public function compareSigns(
+        #[\SensitiveParameter]
+        int $first_sign,
+        #[\SensitiveParameter]
+        int $other_sign
+    ): array {
         // Coerce to positive (-1, 0, 1) -> (0, 1, 2)
         ++$first_sign;
         ++$other_sign;
@@ -63,8 +67,12 @@ class ConstantTimeMath extends GmpMath
      *              0 if $first === $other
      *              1 if $first > $other
      */
-    public function cmp(GMP $first, GMP $other): int
-    {
+    public function cmp(
+        #[\SensitiveParameter]
+        GMP $first,
+        #[\SensitiveParameter]
+        GMP $other
+    ): int {
         /**
          * @var string $left
          * @var string $right
@@ -90,8 +98,12 @@ class ConstantTimeMath extends GmpMath
      * @param GMP $other
      * @return int
      */
-    public function equalsReturnInt(GMP $first, GMP $other): int
-    {
+    public function equalsReturnInt(
+        #[\SensitiveParameter]
+        GMP $first,
+        #[\SensitiveParameter]
+        GMP $other
+    ): int {
         $compared = $this->cmp($first, $other);
         $gt = $compared & 1;
         $lt = ($compared >> 1) & 1;
@@ -102,8 +114,12 @@ class ConstantTimeMath extends GmpMath
      * {@inheritDoc}
      * @see GmpMathInterface::inverseMod()
      */
-    public function inverseMod(GMP $a, GMP $m): GMP
-    {
+    public function inverseMod(
+        #[\SensitiveParameter]
+        GMP $a,
+        #[\SensitiveParameter]
+        GMP $m
+    ): GMP {
         list($x, $y) = $this->binaryGcd($a, $m);
         /** @var GMP $one */
         $one = gmp_init(1, 10);
@@ -124,8 +140,18 @@ class ConstantTimeMath extends GmpMath
      * @param GMP $y
      * @return GMP[]
      */
-    protected function binaryGcdTrailingZeroes(GMP $w, GMP $r, GMP $s, GMP $x, GMP $y): array
-    {
+    protected function binaryGcdTrailingZeroes(
+        #[\SensitiveParameter]
+        GMP $w,
+        #[\SensitiveParameter]
+        GMP $r,
+        #[\SensitiveParameter]
+        GMP $s,
+        #[\SensitiveParameter]
+        GMP $x,
+        #[\SensitiveParameter]
+        GMP $y
+    ): array {
         for ($bits = $this->trailingZeroes($w); $bits > 0; --$bits) {
             $w = $this->rightShift($w, 1);
             $swap = (~$this->lsb($r) & ~$this->lsb($s)) & 1;
@@ -148,8 +174,12 @@ class ConstantTimeMath extends GmpMath
      * @param GMP $Y
      * @return GMP[] ($gcd, $inverse)
      */
-    public function binaryGcd(GMP $X, GMP $Y): array
-    {
+    public function binaryGcd(
+        #[\SensitiveParameter]
+        GMP $X,
+        #[\SensitiveParameter]
+        GMP $Y
+    ): array {
         // Don't mutate the input parameters
         $x = clone $X;
         $y = clone $Y;
@@ -210,8 +240,14 @@ class ConstantTimeMath extends GmpMath
      * @param GMP $b
      * @return GMP
      */
-    public function select(int $bit, GMP $a, GMP $b): GMP
-    {
+    public function select(
+        #[\SensitiveParameter]
+        int $bit,
+        #[\SensitiveParameter]
+        GMP $a,
+        #[\SensitiveParameter]
+        GMP $b
+    ): GMP {
         // Handle the sign bits (for multiplying later)
         $a_sign = gmp_sign($a);
         $b_sign = gmp_sign($b);
@@ -256,8 +292,10 @@ class ConstantTimeMath extends GmpMath
      *
      * @psalm-suppress UnusedVariable (False positive; https://github.com/vimeo/psalm/issues/6145)
      */
-    public function trailingZeroes(GMP $num): int
-    {
+    public function trailingZeroes(
+        #[\SensitiveParameter]
+        GMP $num
+    ): int {
         $trailing = 0;
         $b = 0;
         $found = 0;
@@ -277,8 +315,10 @@ class ConstantTimeMath extends GmpMath
      * @param GMP $num
      * @return int
      */
-    public function lsb(GMP $num): int
-    {
+    public function lsb(
+        #[\SensitiveParameter]
+        GMP $num
+    ): int {
         return gmp_intval($num) & 1;
     }
 
@@ -288,8 +328,10 @@ class ConstantTimeMath extends GmpMath
      * @param string $chr
      * @return int
      */
-    public function ord(string $chr): int
-    {
+    public function ord(
+        #[\SensitiveParameter]
+        string $chr
+    ): int {
         return (int) unpack('C', $chr)[1];
     }
 
@@ -300,8 +342,10 @@ class ConstantTimeMath extends GmpMath
      * @param int $c
      * @return string
      */
-    public function chr(int $c): string
-    {
+    public function chr(
+        #[\SensitiveParameter]
+        int $c
+    ): string {
         return pack('C', $c);
     }
 
@@ -312,8 +356,12 @@ class ConstantTimeMath extends GmpMath
      * @param GMP $b
      * @return array<string|int, string|int>
      */
-    public function normalizeLengths(GMP $a, GMP $b): array
-    {
+    public function normalizeLengths(
+        #[\SensitiveParameter]
+        GMP $a,
+        #[\SensitiveParameter]
+        GMP $b
+    ): array {
         $a_hex = gmp_strval(gmp_abs($a), 16);
         $b_hex = gmp_strval(gmp_abs($b), 16);
         $length = max(BinaryString::length($a_hex), BinaryString::length($b_hex));

@@ -46,8 +46,11 @@ class NumberSize
      *
      * @psalm-suppress PossiblyUnusedMethod
      */
-    public static function bnNumBytes(GmpMathInterface $adapter, GMP $x): int
-    {
+    public static function bnNumBytes(
+        GmpMathInterface $adapter,
+        #[\SensitiveParameter]
+        GMP $x
+    ): int {
         // https://github.com/luvit/openssl/blob/master/openssl/crypto/bn/bn.h#L402
         return (int) floor((self::bnNumBits($adapter, $x) + 7) / 8);
     }
@@ -61,8 +64,11 @@ class NumberSize
      *
      * @link https://www.openssl.org/docs/crypto/BN_num_bytes.html
      */
-    public static function bnNumBits(GmpMathInterface $adapter, GMP $x): int
-    {
+    public static function bnNumBits(
+        GmpMathInterface $adapter,
+        #[\SensitiveParameter]
+        GMP $x
+    ): int {
         /** @var GMP $zero */
         $zero = gmp_init(0, 10);
         if ($adapter->equals($x, $zero)) {

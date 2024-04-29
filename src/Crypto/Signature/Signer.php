@@ -43,8 +43,14 @@ class Signer
      * @param GMP $randomK
      * @return SignatureInterface
      */
-    public function sign(PrivateKeyInterface $key, GMP $truncatedHash, GMP $randomK): SignatureInterface
-    {
+    public function sign(
+        #[\SensitiveParameter]
+        PrivateKeyInterface $key,
+        #[\SensitiveParameter]
+        GMP $truncatedHash,
+        #[\SensitiveParameter]
+        GMP $randomK
+    ): SignatureInterface {
         $math = new ConstantTimeMath();
         $generator = $key->getPoint();
         $curve = $generator->getCurve();

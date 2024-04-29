@@ -16,8 +16,12 @@ trait TableTrait
      * @param int $windowValue
      * @return JacobiPoint
      */
-    protected function tableSelect(array $table, int $windowValue): JacobiPoint
-    {
+    protected function tableSelect(
+        #[\SensitiveParameter]
+        array $table,
+        #[\SensitiveParameter]
+        int $windowValue
+    ): JacobiPoint {
         $point = $this->newPoint();
         $shift = (PHP_INT_SIZE << 3) - 1;
         for ($i = 1; $i < 16; ++$i) {
@@ -27,8 +31,14 @@ trait TableTrait
         return $point;
     }
 
-    protected function selectPoint(int $cond, JacobiPoint $p, JacobiPoint $q): JacobiPoint
-    {
+    protected function selectPoint(
+        #[\SensitiveParameter]
+        int $cond,
+        #[\SensitiveParameter]
+        JacobiPoint $p,
+        #[\SensitiveParameter]
+        JacobiPoint $q
+    ): JacobiPoint {
         $r = new JacobiPoint();
         $r->x = $this->ctMath->select($cond, $p->x, $q->x);
         $r->y = $this->ctMath->select($cond, $p->y, $q->y);

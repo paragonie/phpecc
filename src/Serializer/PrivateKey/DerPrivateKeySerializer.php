@@ -54,8 +54,10 @@ class DerPrivateKeySerializer implements PrivateKeySerializerInterface
      * {@inheritDoc}
      * @see \Mdanter\Ecc\Serializer\PrivateKey\PrivateKeySerializerInterface::serialize()
      */
-    public function serialize(PrivateKeyInterface $key): string
-    {
+    public function serialize(
+        #[\SensitiveParameter]
+        PrivateKeyInterface $key
+    ): string {
         $curve = $key->getPoint()->getCurve();
         if (!($curve instanceof NamedCurveFp)) {
             throw new UnsupportedCurveException('The curve is not a named curve');
@@ -74,8 +76,10 @@ class DerPrivateKeySerializer implements PrivateKeySerializerInterface
      * @param PrivateKeyInterface $key
      * @return BitString
      */
-    private function encodePubKey(PrivateKeyInterface $key): BitString
-    {
+    private function encodePubKey(
+        #[\SensitiveParameter]
+        PrivateKeyInterface $key
+    ): BitString {
         return new BitString(
             $this->pubKeySerializer->getUncompressedKey($key->getPublicKey())
         );
@@ -85,8 +89,10 @@ class DerPrivateKeySerializer implements PrivateKeySerializerInterface
      * @param PrivateKeyInterface $key
      * @return string
      */
-    private function formatKey(PrivateKeyInterface $key): string
-    {
+    private function formatKey(
+        #[\SensitiveParameter]
+        PrivateKeyInterface $key
+    ): string {
         return gmp_strval($key->getSecret(), 16);
     }
 
@@ -95,7 +101,10 @@ class DerPrivateKeySerializer implements PrivateKeySerializerInterface
      * @see \Mdanter\Ecc\Serializer\PrivateKey\PrivateKeySerializerInterface::parse()
      * @throws \FG\ASN1\Exception\ParserException
      */
-    public function parse(string $formattedKey): PrivateKeyInterface
+    public function parse(
+        #[\SensitiveParameter]
+        string $formattedKey
+    ): PrivateKeyInterface
     {
         $asnObject = ASNObject::fromBinary($formattedKey);
 

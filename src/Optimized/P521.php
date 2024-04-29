@@ -117,8 +117,10 @@ class P521 extends AbstractOptimized implements OptimizedCurveOpsInterface
         return $this->toBasicPoint($p);
     }
 
-    public function scalarMultBase(GMP $scalar): PointInterface
-    {
+    public function scalarMultBase(
+        #[\SensitiveParameter]
+        GMP $scalar
+    ): PointInterface {
         if (empty(self::$genTable)) {
             self::$genTable = $this->generatorTable();
         }

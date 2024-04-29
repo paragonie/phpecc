@@ -18,8 +18,10 @@ trait BarretReductionTrait
      * @param GMP $product
      * @return GMP
      */
-    protected function barrettReduce(GMP $product): GMP
-    {
+    protected function barrettReduce(
+        #[\SensitiveParameter]
+        GMP $product
+    ): GMP {
         $n2 = static::$N << 1;
         $t2 = (($product * $this->R) >> $n2) * $this->p;
         $r = $product - $t2;

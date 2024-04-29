@@ -83,8 +83,12 @@ class P384 extends AbstractOptimized implements OptimizedCurveOpsInterface
         }
     }
 
-    public function scalarMult(GMP $scalar, PointInterface $point): PointInterface
-    {
+    public function scalarMult(
+        #[\SensitiveParameter]
+        GMP $scalar,
+        #[\SensitiveParameter]
+        PointInterface $point
+    ): PointInterface {
         // Initialize a 256-bit table
         $q = $this->projectPoint($point);
         $table = $this->makeTable($q);
@@ -116,8 +120,10 @@ class P384 extends AbstractOptimized implements OptimizedCurveOpsInterface
         return $this->toBasicPoint($p);
     }
 
-    public function scalarMultBase(GMP $scalar): PointInterface
-    {
+    public function scalarMultBase(
+        #[\SensitiveParameter]
+        GMP $scalar
+    ): PointInterface {
         if (empty(self::$genTable)) {
             self::$genTable = $this->generatorTable();
         }

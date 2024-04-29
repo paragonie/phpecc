@@ -53,7 +53,10 @@ interface EcDHInterface
      * @param PrivateKeyInterface $key
      * @return self
      */
-    public function setSenderKey(PrivateKeyInterface $key);
+    public function setSenderKey(
+        #[\SensitiveParameter]
+        PrivateKeyInterface $key
+    );
 
     /**
      * Sets the recipient key.

@@ -12,12 +12,18 @@ interface PrivateKeySerializerInterface
      * @param  PrivateKeyInterface $key
      * @return string
      */
-    public function serialize(PrivateKeyInterface $key): string;
+    public function serialize(
+        #[\SensitiveParameter]
+        PrivateKeyInterface $key
+    ): string;
 
     /**
      *
      * @param  string $formattedKey
      * @return PrivateKeyInterface
      */
-    public function parse(string $formattedKey): PrivateKeyInterface;
+    public function parse(
+        #[\SensitiveParameter]
+        string $formattedKey
+    ): PrivateKeyInterface;
 }

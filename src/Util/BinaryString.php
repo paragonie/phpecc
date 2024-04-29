@@ -11,8 +11,10 @@ class BinaryString
      * @param string $str
      * @return int
      */
-    public static function length(string $str): int
-    {
+    public static function length(
+        #[\SensitiveParameter]
+        string $str
+    ): int {
         // Premature optimization: cache the function_exists() result
         static $exists = null;
         if ($exists === null) {
@@ -31,11 +33,15 @@ class BinaryString
      *
      * @param string $str
      * @param int $start
-     * @param int $length (optional)
+     * @param ?int $length (optional)
      * @return string
      */
-    public static function substring(string $str, int $start = 0, int $length = null): string
-    {
+    public static function substring(
+        #[\SensitiveParameter]
+        string $str,
+        int $start = 0,
+        int $length = null
+    ): string {
         // Premature optimization: cache the function_exists() result
         static $exists = null;
         if ($exists === null) {
@@ -59,8 +65,12 @@ class BinaryString
      *
      * @return bool
      */
-    public static function constantTimeCompare(string $knownString, string $userString): bool
-    {
+    public static function constantTimeCompare(
+        #[\SensitiveParameter]
+        string $knownString,
+        #[\SensitiveParameter]
+        string $userString
+    ): bool {
         return hash_equals($knownString, $userString);
     }
 }

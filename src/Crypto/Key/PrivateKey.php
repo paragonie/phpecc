@@ -27,6 +27,7 @@ namespace Mdanter\Ecc\Crypto\Key;
  * ***********************************************************************
  */
 
+use GMP;
 use Mdanter\Ecc\Crypto\EcDH\EcDH;
 use Mdanter\Ecc\Crypto\EcDH\EcDHInterface;
 use Mdanter\Ecc\Math\GmpMathInterface;
@@ -46,7 +47,7 @@ class PrivateKey implements PrivateKeyInterface
     private $generator;
 
     /**
-     * @var \GMP
+     * @var GMP
      */
     private $secretMultiplier;
 
@@ -58,10 +59,14 @@ class PrivateKey implements PrivateKeyInterface
     /**
      * @param GmpMathInterface $adapter
      * @param GeneratorPoint $generator
-     * @param \GMP $secretMultiplier
+     * @param GMP $secretMultiplier
      */
-    public function __construct(GmpMathInterface $adapter, GeneratorPoint $generator, \GMP $secretMultiplier)
-    {
+    public function __construct(
+        GmpMathInterface $adapter,
+        GeneratorPoint $generator,
+        #[\SensitiveParameter]
+        GMP $secretMultiplier
+    ) {
         $this->adapter = $adapter;
         $this->generator = $generator;
         $this->secretMultiplier = $secretMultiplier;
@@ -103,7 +108,7 @@ class PrivateKey implements PrivateKeyInterface
      * {@inheritDoc}
      * @see \Mdanter\Ecc\Crypto\Key\PrivateKeyInterface::getSecret()
      */
-    public function getSecret(): \GMP
+    public function getSecret(): GMP
     {
         return $this->secretMultiplier;
     }

@@ -14,8 +14,14 @@ class JacobiPoint
     /** @var GMP $z */
     public $z;
 
-    public static function init(GMP $x, GMP $y, GMP $z): self
-    {
+    public static function init(
+        #[\SensitiveParameter]
+        GMP $x,
+        #[\SensitiveParameter]
+        GMP $y,
+        #[\SensitiveParameter]
+        GMP $z
+    ): self {
         $self = new self();
         $self->x = $x;
         $self->y = $y;

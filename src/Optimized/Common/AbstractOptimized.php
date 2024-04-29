@@ -18,16 +18,28 @@ abstract class AbstractOptimized
 {
     use BarretReductionTrait;
 
-    abstract public function addInternal(JacobiPoint $p1, JacobiPoint $p2): JacobiPoint;
-    abstract public function doubleInternal(JacobiPoint $p): JacobiPoint;
+    abstract public function addInternal(
+        #[\SensitiveParameter]
+        JacobiPoint $p1,
+        #[\SensitiveParameter]
+        JacobiPoint $p2
+    ): JacobiPoint;
+    abstract public function doubleInternal(
+        #[\SensitiveParameter]
+        JacobiPoint $p
+    ): JacobiPoint;
 
     /**
      * @param PointInterface $a
      * @param PointInterface $b
      * @return PointInterface
      */
-    public function addPoints(PointInterface $a, PointInterface $b): PointInterface
-    {
+    public function addPoints(
+        #[\SensitiveParameter]
+        PointInterface $a,
+        #[\SensitiveParameter]
+        PointInterface $b
+    ): PointInterface {
         $jA = $this->projectPoint($a);
         $jB = $this->projectPoint($b);
         $jC = $this->addInternal($jA, $jB);
@@ -38,8 +50,10 @@ abstract class AbstractOptimized
      * @param PointInterface $point
      * @return PointInterface
      */
-    public function doublePoint(PointInterface $point): PointInterface
-    {
+    public function doublePoint(
+        #[\SensitiveParameter]
+        PointInterface $point
+    ): PointInterface {
         $projected = $this->projectPoint($point);
         $doubled = $this->doubleInternal($projected);
         return $this->toBasicPoint($doubled);
@@ -51,8 +65,10 @@ abstract class AbstractOptimized
      * @param GMP $scalar
      * @return GMP
      */
-    public function modInverse(GMP $scalar): GMP
-    {
+    public function modInverse(
+        #[\SensitiveParameter]
+        GMP $scalar
+    ): GMP {
         // For now, we'll just use ConstantTimeMath.
         return $this->ctMath->inverseMod($scalar, $this->order);
     }
@@ -61,8 +77,10 @@ abstract class AbstractOptimized
      * @param PointInterface $point
      * @return JacobiPoint
      */
-    public function projectPoint(PointInterface $point): JacobiPoint
-    {
+    public function projectPoint(
+        #[\SensitiveParameter]
+        PointInterface $point
+    ): JacobiPoint {
         $ret = new JacobiPoint();
         $ret->x = clone $point->getX();
         $ret->y = clone $point->getY();
@@ -84,8 +102,10 @@ abstract class AbstractOptimized
         return $ret;
     }
 
-    public function jacobiToAffine(JacobiPoint $p): JacobiPoint
-    {
+    public function jacobiToAffine(
+        #[\SensitiveParameter]
+        JacobiPoint $p
+    ): JacobiPoint {
         $q = clone $p;
         $zInv = $this->ctMath->inverseMod($q->z, $this->p);
         $q->x = $this->mulElements($zInv, $q->x);
@@ -100,8 +120,10 @@ abstract class AbstractOptimized
      * @param JacobiPoint $p
      * @return Point
      */
-    public function toBasicPoint(JacobiPoint $p): Point
-    {
+    public function toBasicPoint(
+        #[\SensitiveParameter]
+        JacobiPoint $p
+    ): Point {
         $q = $this->jacobiToAffine($p);
         return new Point(
             new ConstantTimeMath(),
@@ -120,8 +142,14 @@ abstract class AbstractOptimized
      * @param bool $reduce
      * @return GMP
      */
-    public function addElements(GMP $a, GMP $b, bool $reduce = true): GMP
-    {
+    public function addElements(
+        #[\SensitiveParameter]
+        GMP $a,
+        #[\SensitiveParameter]
+        GMP $b,
+        #[\SensitiveParameter]
+        bool $reduce = true
+    ): GMP {
         /** @var GMP $r */
         $r = gmp_add($a, $b);
         if (!$reduce) {
@@ -152,8 +180,12 @@ abstract class AbstractOptimized
      * @param GMP $b
      * @return GMP
      */
-    public function mulElements(GMP $a, GMP $b): GMP
-    {
+    public function mulElements(
+        #[\SensitiveParameter]
+        GMP $a,
+        #[\SensitiveParameter]
+        GMP $b
+    ): GMP {
         return $this->barrettReduce(gmp_mul($a, $b));
     }
 
@@ -164,8 +196,12 @@ abstract class AbstractOptimized
      * @param GMP $b
      * @return GMP
      */
-    public function subElements(GMP $a, GMP $b): GMP
-    {
+    public function subElements(
+        #[\SensitiveParameter]
+        GMP $a,
+        #[\SensitiveParameter]
+        GMP $b
+    ): GMP {
         $c = gmp_sub($a,  $b);
         $swap = ((gmp_sign($c) >> 1)) & 1;
         $cPrime = $c + $this->p;
@@ -176,8 +212,10 @@ abstract class AbstractOptimized
      * @param JacobiPoint $q
      * @return JacobiPoint[]
      */
-    public function makeTable(JacobiPoint $q): array
-    {
+    public function makeTable(
+        #[\SensitiveParameter]
+        JacobiPoint $q
+    ): array {
         $table = [clone $q];
         for ($i = 1; $i < 15; $i += 2) {
             $table[$i] = $this->doubleInternal($table[$i >> 1]);
