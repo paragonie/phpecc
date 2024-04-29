@@ -7,6 +7,7 @@ use GMP;
 use Mdanter\Ecc\Math\GmpMathInterface;
 use Mdanter\Ecc\Optimized\P256;
 use Mdanter\Ecc\Optimized\P384;
+use Mdanter\Ecc\Optimized\P521;
 use Mdanter\Ecc\Primitives\CurveParameters;
 use Mdanter\Ecc\Primitives\GeneratorPoint;
 use Mdanter\Ecc\Random\RandomNumberGeneratorInterface;
@@ -240,6 +241,7 @@ class NistCurve
      * Returns an NIST P-384 generator.
      *
      * @param  ?RandomNumberGeneratorInterface $randomGenerator
+     * @param bool $optimized
      * @return GeneratorPoint
      */
     public function generator384(?RandomNumberGeneratorInterface $randomGenerator = null, bool $optimized = false): GeneratorPoint
@@ -280,14 +282,40 @@ class NistCurve
     }
 
     /**
+     * Returns an NIST P-521 curve.
+     *
+     * @return NamedCurveFp
+     */
+    public function optimizedCurve521(): NamedCurveFp
+    {
+        /** @var GMP $p */
+        $p = gmp_init('6864797660130609714981900799081393217269435300143305409394463459185543183397656052122559640661454554977296311391480858037121987999716643812574028291115057151', 10);
+        /** @var GMP $b */
+        $b = gmp_init('0x051953eb9618e1c9a1f929a21a0b68540eea2da725b99b315f3b8b489918ef109e156193951ec7e937b1652c0bd3bb1bf073573df883d2c34f1ef451fd46b503f00', 16);
+
+        /** @var GMP $minusThree */
+        $minusThree = gmp_init(-3, 10);
+        $parameters = new CurveParameters(521, $p, $minusThree, $b);
+
+        return (new OptimizedCurveFp(self::NAME_P521, $parameters, $this->adapter))
+            ->setOptimizedCurveOps(new P521());
+    }
+
+    /**
      * Returns an NIST P-521 generator.
      *
      * @param  ?RandomNumberGeneratorInterface $randomGenerator
+     * @param bool $optimized
      * @return GeneratorPoint
      */
-    public function generator521(?RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint
+    public function generator521(?RandomNumberGeneratorInterface $randomGenerator = null, bool $optimized = false): GeneratorPoint
     {
-        $curve = $this->curve521();
+
+        if ($optimized) {
+            $curve = $this->optimizedCurve521();
+        } else {
+            $curve = $this->curve521();
+        }
         /** @var GMP $order */
         $order = gmp_init('6864797660130609714981900799081393217269435300143305409394463459185543183397655394245057746333217197532963996371363321113864768612440380340372808892707005449', 10);
 
