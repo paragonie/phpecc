@@ -5,6 +5,7 @@ namespace Mdanter\Ecc\Tests\Serializer\Signature;
 
 use Mdanter\Ecc\Crypto\Signature\Signature;
 use Mdanter\Ecc\Curves\NistCurve;
+use Mdanter\Ecc\Exception\SignatureDecodeException;
 use Mdanter\Ecc\Math\GmpMath;
 use Mdanter\Ecc\Random\RandomGeneratorFactory;
 use Mdanter\Ecc\Serializer\Signature\IEEEP1363Serializer;
@@ -24,6 +25,23 @@ class IEEEP1363SerializerTest extends AbstractTestCase
         $this->assertEquals($expected, $serialized);
     }
 
+    public function testAnnoyingCase()
+    {
+        $math = new GmpMath();
+        $serializer = new IEEEP1363Serializer();
+        $r = gmp_init('1932963615327194226947803865417518951831126771529414298593380679901691417964');
+        $s = gmp_init('1932963615327194226947803865417518951831126771529414298593380679901691417964');
+        var_dump(gmp_strval($r, 16), gmp_strval($s, 16));
+
+        $signature = new Signature($r, $s);
+
+        $serialized = $serializer->serialize($signature, 256);
+        $parsed = $serializer->parse($serialized);
+
+        $this->assertTrue($math->equals($signature->getR(), $parsed->getR()));
+        $this->assertTrue($math->equals($signature->getS(), $parsed->getS()));
+    }
+
     public function testIsConsistent()
     {
         $math = new GmpMath();
@@ -36,7 +54,7 @@ class IEEEP1363SerializerTest extends AbstractTestCase
         $s = $rbg->generate($max);
         $signature = new Signature($r, $s);
 
-        $serialized = $serializer->serialize($signature);
+        $serialized = $serializer->serialize($signature, $i);
         $parsed = $serializer->parse($serialized);
 
         $this->assertTrue($math->equals($signature->getR(), $parsed->getR()));
