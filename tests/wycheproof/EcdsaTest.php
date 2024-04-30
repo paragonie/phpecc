@@ -74,7 +74,7 @@ class EcdsaTest extends AbstractTestCase
     public function getEcdsaTestVectors(): array
     {
         $fixtures = json_decode($this->importFile("import/wycheproof/testvectors/ecdsa_test.json"), true);
-        $disabledFlags = ["MissingZero", "BER"];
+        $disabledFlags = ["MissingZero"];
         return $this->filterSet($fixtures, $this->getCurvesList(), $disabledFlags);
     }
 
@@ -261,9 +261,6 @@ class EcdsaTest extends AbstractTestCase
         $verified = false;
         $error = false;
         $signer = new Signer($generator->getAdapter());
-        if (in_array('BER', $flags)) {
-            $this->markTestSkipped('BER testing is temporarily disabled');
-        }
 
         try {
             $sigSer = new DerSignatureSerializer();
