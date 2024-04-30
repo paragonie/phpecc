@@ -30,7 +30,7 @@
         }
     ],
     "replace": {
-        "mdanter/ecc": "*"
+        "mdanter/ecc": "<2"
     },
     "require": {
         "php": "^7.1||^8.0",
