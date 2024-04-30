@@ -9,6 +9,8 @@ use Mdanter\Ecc\Primitives\CurveParameters;
 
 class NamedCurveFp extends CurveFp
 {
+    use OpensslTrait;
+
     /**
      * @var string
      */
