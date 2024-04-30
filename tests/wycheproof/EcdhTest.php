@@ -196,6 +196,44 @@ class EcdhTest extends AbstractTestCase
         $this->doTest($curveName, $public, $private, $shared, $flags, $result, $comment, $tcId);
     }
 
+    public function getBrainpoolP256R1Fixtures(): array
+    {
+        return $this->getSpecificFixtures("brainpoolP256r1");
+    }
+    /**
+     * @dataProvider getBrainpoolP256R1Fixtures
+     */
+    public function testBrainpoolP256R1(string $curveName, string $public, string $private, string $shared, array $flags, string $result, string $comment, int $tcId)
+    {
+        return $this->doTest($curveName, $public, $private, $shared, $flags, $result, $comment, $tcId);
+    }
+
+    public function getBrainpoolP384R1Fixtures(): array
+    {
+        return $this->getSpecificFixtures("brainpoolP384r1");
+    }
+
+    /**
+     * @dataProvider getBrainpoolP384R1Fixtures
+     */
+    public function testBrainpoolP384R1(string $curveName, string $public, string $private, string $shared, array $flags, string $result, string $comment, int $tcId)
+    {
+        return $this->doTest($curveName, $public, $private, $shared, $flags, $result, $comment, $tcId);
+    }
+
+    public function getBrainpoolP512R1Fixtures(): array
+    {
+        return $this->getSpecificFixtures("brainpoolP512r1");
+    }
+
+    /**
+     * @dataProvider getBrainpoolP512R1Fixtures
+     */
+    public function testBrainpoolP512R1(string $curveName, string $public, string $private, string $shared, array $flags, string $result, string $comment, int $tcId)
+    {
+        return $this->doTest($curveName, $public, $private, $shared, $flags, $result, $comment, $tcId);
+    }
+
     public function doTest(string $curveName, string $public, string $private, string $shared, array $flags, string $result, string $comment, int $tcId)
     {
         $generator = CurveFactory::getGeneratorByName($curveName);
