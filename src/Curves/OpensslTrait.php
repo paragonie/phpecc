@@ -58,7 +58,7 @@ trait OpensslTrait
             return false;
         }
         // @link https://www.openssl.org/docs/man1.1.1/man3/OPENSSL_VERSION_NUMBER.html
-        if (OPENSSL_VERSION_NUMBER < 0x3_00_00_00_0) {
+        if (OPENSSL_VERSION_NUMBER < 0x30000000) {
             /* ECDH was not available before PHP 8.1 */
             return false;
         }
