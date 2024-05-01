@@ -4,7 +4,9 @@ declare(strict_types=1);
 namespace Mdanter\Ecc\Tests;
 
 use Mdanter\Ecc\Crypto\Signature\Signer;
+use Mdanter\Ecc\Curves\NistCurve;
 use Mdanter\Ecc\EccFactory;
+use Mdanter\Ecc\Exception\InsecureCurveException;
 use Mdanter\Ecc\Primitives\CurveFp;
 use Mdanter\Ecc\Tests\AbstractTestCase;
 
@@ -19,6 +21,19 @@ class EccFactoryTest extends AbstractTestCase
         $b = gmp_init(hash('sha512', 'testing'), 16);
         $created = EccFactory::createCurve(512, $p, $a, $b);
         $this->assertInstanceOf(CurveFp::class, $created);
+    }
+
+    public function testsNoInscureCurvesByDefaultNIST(): void
+    {
+        $this->expectExceptionMessage('P-192 is not a secure elliptic curve');
+        $this->expectException(InsecureCurveException::class);
+        EccFactory::getNistCurves()->curve192();
+    }
+    public function testsNoInscureCurvesByDefaultSecg(): void
+    {
+        $this->expectExceptionMessage('secp112r1 is not a secure elliptic curve');
+        $this->expectException(InsecureCurveException::class);
+        EccFactory::getSecgCurves()->curve112r1();
     }
 
     public function testGetSigner(): void
