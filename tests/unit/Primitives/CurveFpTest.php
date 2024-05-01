@@ -32,7 +32,7 @@ class CurveFpTest extends AbstractTestCase
         $this->assertTrue($infinityPoint->isInfinity());
 
         // Check equality tests
-        $differentCurve = EccFactory::getNistCurves()->curve192();
+        $differentCurve = EccFactory::getNistCurves($adapter, true)->curve192();
         $this->assertEquals(1, $curve->cmp($differentCurve));
         $this->assertEquals(0, $curve->cmp($curve));
         $this->assertFalse($curve->equals($differentCurve));

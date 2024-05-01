@@ -12,7 +12,7 @@ class NamedCurveFpTest extends AbstractTestCase
 {
     public function testInstance()
     {
-        $curve = EccFactory::getNistCurves()->curve384();
+        $curve = EccFactory::getNistCurves(null, true)->curve384();
         $this->assertInstanceOf(NamedCurveFp::class, $curve);
         ;
         $this->assertEquals(NistCurve::NAME_P384, $curve->getName());

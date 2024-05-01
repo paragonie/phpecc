@@ -6,6 +6,8 @@ namespace Mdanter\Ecc;
 use Mdanter\Ecc\Crypto\Signature\Signer;
 use Mdanter\Ecc\Curves\NistCurve;
 use Mdanter\Ecc\Curves\SecgCurve;
+use Mdanter\Ecc\Curves\SecureNistCurve;
+use Mdanter\Ecc\Curves\SecureSecgCurve;
 use Mdanter\Ecc\Math\GmpMathInterface;
 use Mdanter\Ecc\Math\MathAdapterFactory;
 use Mdanter\Ecc\Primitives\CurveFp;
@@ -36,20 +38,27 @@ class EccFactory
      * @param  ?GmpMathInterface $adapter [optional] Defaults to the return value of EccFactory::getAdapter().
      * @return NistCurve
      */
-    public static function getNistCurves(?GmpMathInterface $adapter = null): NistCurve
+    public static function getNistCurves(?GmpMathInterface $adapter = null, bool $allowInsecure = false): NistCurve
     {
-        return new NistCurve($adapter ?: self::getAdapter());
+        if ($allowInsecure) {
+            return new NistCurve($adapter ?: self::getAdapter());
+        }
+        return new SecureNistCurve($adapter ?: self::getAdapter());
     }
 
     /**
      * Returns a factory to return SECG Recommended curves and generators.
      *
      * @param  ?GmpMathInterface $adapter [optional] Defaults to the return value of EccFactory::getAdapter().
+     * @param  bool $allowInsecure [optional] Allow insecure curves? (default: false)
      * @return SecgCurve
      */
-    public static function getSecgCurves(?GmpMathInterface $adapter = null): SecgCurve
+    public static function getSecgCurves(?GmpMathInterface $adapter = null, bool $allowInsecure = false): SecgCurve
     {
-        return new SecgCurve($adapter ?: self::getAdapter());
+        if ($allowInsecure) {
+            return new SecgCurve($adapter ?: self::getAdapter());
+        }
+        return new SecureSecgCurve($adapter ?: self::getAdapter());
     }
 
     /**

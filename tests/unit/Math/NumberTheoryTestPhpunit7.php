@@ -23,7 +23,7 @@ abstract class NumberTheoryTestPhpunit7 extends AbstractTestCase
         if (! file_exists($file_sqrt)) {
             $this->fail('Square root input data not found');
         }
-        $this->generator = EccFactory::getSecgCurves()->generator256k1();
+        $this->generator = EccFactory::getSecgCurves(null, true)->generator256k1();
         $this->compression_data = json_decode(file_get_contents($file_comp));
 
         $this->sqrt_data = json_decode(file_get_contents($file_sqrt));

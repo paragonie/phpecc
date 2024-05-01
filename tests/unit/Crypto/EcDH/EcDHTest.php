@@ -72,7 +72,7 @@ class EcDHTest extends AbstractTestCase
         $p1 = EccFactory::getNistCurves()->generator521()->getPrivateKeyFrom($g521Priv);
 
         $g192Pub = "0468e3642493c4e433a741c78ab67ee607d94925c506e9554d43de2d1c71493334c681cf4683aee863d90e9732745d5bc7";
-        $g192 = EccFactory::getNistCurves()->generator192();
+        $g192 = EccFactory::getNistCurves(null, true)->generator192();
 
         $p2 = (new UncompressedPointSerializer())->unserialize($g192->getCurve(), $g192Pub);
         $pubkey = $g192->getPublicKeyFrom($p2->getX(), $p2->getY());

@@ -22,7 +22,7 @@ class InteropTest extends AbstractTestCase
      */
     public function testP256Interop(GmpMathInterface $adapter)
     {
-        $nistFactory = EccFactory::getNistCurves($adapter);
+        $nistFactory = EccFactory::getNistCurves($adapter, true);
         $signer = new Signer($adapter);
 
         $p256Old = $nistFactory->generator256(null, false);
@@ -65,7 +65,7 @@ class InteropTest extends AbstractTestCase
      */
     public function testP384Interop(GmpMathInterface $adapter)
     {
-        $nistFactory = EccFactory::getNistCurves($adapter);
+        $nistFactory = EccFactory::getNistCurves($adapter, true);
         $signer = new Signer($adapter);
 
         $p384Old = $nistFactory->generator384(null, false);
