@@ -35,7 +35,7 @@ class SecCurveTest extends AbstractTestCase
      */
     public function testCurveGeneration(GmpMathInterface $math, string $function, string $a, string $b, string $prime)
     {
-        $factory = EccFactory::getSecgCurves($math);
+        $factory = EccFactory::getSecgCurves($math, true);
         /** @var CurveFpInterface $curve */
         $curve = $factory->{$function}();
 
@@ -64,7 +64,7 @@ class SecCurveTest extends AbstractTestCase
      */
     public function testGeneratorGeneration(GmpMathInterface $math, string $function, string $order, string $prime)
     {
-        $factory = EccFactory::getSecgCurves($math);
+        $factory = EccFactory::getSecgCurves($math, true);
         /** @var GeneratorPoint $generator */
         $generator = $factory->{$function}();
 
@@ -79,8 +79,8 @@ class SecCurveTest extends AbstractTestCase
      */
     public function testSecp256r1EquivalenceToNistP256(GmpMathInterface $adapter)
     {
-        $secpFactory = EccFactory::getSecgCurves($adapter);
-        $nistFactory = EccFactory::getNistCurves($adapter);
+        $secpFactory = EccFactory::getSecgCurves($adapter, true);
+        $nistFactory = EccFactory::getNistCurves($adapter, true);
 
         $signer = new Signer($adapter);
 
@@ -108,8 +108,8 @@ class SecCurveTest extends AbstractTestCase
      */
     public function testSecp384r1EquivalenceToNistP384(GmpMathInterface $adapter)
     {
-        $secpFactory = EccFactory::getSecgCurves($adapter);
-        $nistFactory = EccFactory::getNistCurves($adapter);
+        $secpFactory = EccFactory::getSecgCurves($adapter, true);
+        $nistFactory = EccFactory::getNistCurves($adapter, true);
 
         $signer = new Signer($adapter);
 

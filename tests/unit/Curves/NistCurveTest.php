@@ -18,7 +18,7 @@ class NistCurveTest extends AbstractTestCase
      */
     public function testP192CurveAnsiX962ValidityTest(GmpMathInterface $math)
     {
-        $generator = EccFactory::getNistCurves($math)->generator192();
+        $generator = EccFactory::getNistCurves($math, true)->generator192();
 
         $d = gmp_init('651056770906015076056810763456358567190100156695615665659', 10);
         $Q = $generator->mul($d);
@@ -27,7 +27,7 @@ class NistCurveTest extends AbstractTestCase
 
         $k = gmp_init('6140507067065001063065065565667405560006161556565665656654', 10);
         $R = $generator->mul($k);
-        $expected = EccFactory::getNistCurves($math)->curve192()->getPoint(
+        $expected = EccFactory::getNistCurves($math, true)->curve192()->getPoint(
             gmp_init('0x885052380FF147B734C330C43D39B2C4A89F29B0F749FEAD', 16),
             gmp_init('0x9CF9FA1CBEFEFB917747A3BB29C072B9289C2547884FD835', 16)
         );
@@ -86,7 +86,7 @@ class NistCurveTest extends AbstractTestCase
         $x = gmp_init($x, 16);
         $y = gmp_init($y, 16);
 
-        $generator = EccFactory::getNistCurves($math)->generator192();
+        $generator = EccFactory::getNistCurves($math, true)->generator192();
 
         $this->assertEquals($expected, $generator->isValid($x, $y));
     }
@@ -201,7 +201,7 @@ class NistCurveTest extends AbstractTestCase
         $R = gmp_init($R, 16);
         $S = gmp_init($S, 16);
 
-        $generator = EccFactory::getNistCurves($math)->generator192();
+        $generator = EccFactory::getNistCurves($math, true)->generator192();
 
         $publicKey = $generator->getPublicKeyFrom($Qx, $Qy);
         $signer = new Signer($math);
@@ -231,7 +231,7 @@ class NistCurveTest extends AbstractTestCase
      */
     public function testSignatureValidityWithCorrectHash(GmpMathInterface $math, array $values)
     {
-        $generator = EccFactory::getNistCurves($math)->generator192();
+        $generator = EccFactory::getNistCurves($math, true)->generator192();
 
         $privateKey = $generator->getPrivateKeyFrom(gmp_init($values['d'], 10));
         $publicKey = $privateKey->getPublicKey();
@@ -251,7 +251,7 @@ class NistCurveTest extends AbstractTestCase
      */
     public function testSignatureValidityWithForgedHash(GmpMathInterface $math, array $values)
     {
-        $generator = EccFactory::getNistCurves($math)->generator192();
+        $generator = EccFactory::getNistCurves($math, true)->generator192();
 
         $privateKey = $generator->getPrivateKeyFrom(gmp_init($values['d'], 10));
         $publicKey = $privateKey->getPublicKey();
@@ -279,7 +279,7 @@ class NistCurveTest extends AbstractTestCase
      */
     public function testSignatureValidityWithGeneratedKeys(GmpMathInterface $math, RandomNumberGeneratorInterface $rng)
     {
-        $generator = EccFactory::getNistCurves($math)->generator192();
+        $generator = EccFactory::getNistCurves($math, true)->generator192();
 
         $signer = new Signer($math);
 
@@ -300,7 +300,7 @@ class NistCurveTest extends AbstractTestCase
      */
     public function testDiffieHellman(GmpMathInterface $math, RandomNumberGeneratorInterface $rng)
     {
-        $generator = EccFactory::getNistCurves($math)->generator192($rng);
+        $generator = EccFactory::getNistCurves($math, true)->generator192($rng);
         $alicePrivKey = $generator->createPrivateKey();
         $bobPrivKey = $generator->createPrivateKey();
 

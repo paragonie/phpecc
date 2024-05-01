@@ -15,7 +15,7 @@ class Secp112r1EcdsaTest extends AbstractTestCase
         $expectedS = '1960761230049936699759766101723490';
 
         $adapter = \Mdanter\Ecc\EccFactory::getAdapter();
-        $g = \Mdanter\Ecc\EccFactory::getSecgCurves()->generator112r1();
+        $g = \Mdanter\Ecc\EccFactory::getSecgCurves($adapter, true)->generator112r1();
 
         $key = gmp_init('deadbeef', 16);
         $priv = $g->getPrivateKeyFrom($key);

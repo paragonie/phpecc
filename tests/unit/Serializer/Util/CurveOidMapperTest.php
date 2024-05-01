@@ -23,8 +23,8 @@ class CurveOidMapperTest extends AbstractTestCase
 
     public function testValidValues()
     {
-        $nistCurve = EccFactory::getNistCurves()->curve521();
-        $G = EccFactory::getNistCurves()->generator521();
+        $nistCurve = EccFactory::getNistCurves(null, true)->curve521();
+        $G = EccFactory::getNistCurves(null, true)->generator521();
         $nistp521oid = CurveOidMapper::getCurveOid($nistCurve);
         $this->assertEquals(66, CurveOidMapper::getByteSize($nistCurve));
         $this->assertInstanceOf(ObjectIdentifier::class, $nistp521oid);

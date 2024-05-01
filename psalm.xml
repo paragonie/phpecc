@@ -16,6 +16,7 @@
     </projectFiles>
     <issueHandlers>
         <InvalidAttribute errorLevel="info" />
+        <UndefinedAttributeClass errorLevel="info" />
         <UnnecessaryVarAnnotation errorLevel="info" />
         <UnusedClass errorLevel="info" />
         <UnusedProperty errorLevel="info" />

@@ -29,7 +29,7 @@ class DerPrivateKeySerializerTest extends AbstractTestCase
     public function testConsistent()
     {
         $adapter = EccFactory::getAdapter();
-        $G = EccFactory::getNistCurves($adapter)->generator192();
+        $G = EccFactory::getNistCurves($adapter, true)->generator192();
         $key = $G->createPrivateKey();
 
         $derPrivSerializer = new DerPrivateKeySerializer($adapter, new DerPublicKeySerializer());
@@ -44,7 +44,7 @@ class DerPrivateKeySerializerTest extends AbstractTestCase
         $this->expectExceptionMessage('Invalid data: only version 1 (RFC5915) keys are supported.');
 
         $adapter = EccFactory::getAdapter();
-        $G = EccFactory::getNistCurves($adapter)->generator192();
+        $G = EccFactory::getNistCurves($adapter, true)->generator192();
         $key = $G->createPrivateKey();
 
         $derPubSerializer = new DerPublicKeySerializer();

@@ -16,7 +16,7 @@ class HmacRandomNumberGeneratorTest extends AbstractTestCase
         $this->expectExceptionMessage('Unsupported hashing algorithm');
 
         $math = EccFactory::getAdapter();
-        $g = EccFactory::getNistCurves()->generator192();
+        $g = EccFactory::getNistCurves($math, true)->generator192();
         $privateKey  = new PrivateKey($math, $g, gmp_init(1, 10));
         $hash = gmp_init(hash('sha256', 'message', false), 16);
 

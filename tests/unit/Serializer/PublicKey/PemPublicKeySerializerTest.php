@@ -24,7 +24,7 @@ class PemPublicKeySerializerTest extends AbstractTestCase
     public function testConsistent()
     {
         $adapter = EccFactory::getAdapter();
-        $G = EccFactory::getNistCurves($adapter)->generator192();
+        $G = EccFactory::getNistCurves($adapter, true)->generator192();
         $pubkey = $G->createPrivateKey()->getPublicKey();
 
         $serializer = new PemPublicKeySerializer(new DerPublicKeySerializer($adapter));

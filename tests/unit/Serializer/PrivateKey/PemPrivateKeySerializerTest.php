@@ -24,7 +24,7 @@ class PemPrivateKeySerializerTest extends AbstractTestCase
     public function testConsistent()
     {
         $adapter = EccFactory::getAdapter();
-        $G = EccFactory::getNistCurves($adapter)->generator192();
+        $G = EccFactory::getNistCurves($adapter, true)->generator192();
         $key = $G->createPrivateKey();
 
         $derPrivSerializer = new DerPrivateKeySerializer($adapter);

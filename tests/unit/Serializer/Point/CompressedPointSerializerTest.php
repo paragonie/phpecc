@@ -17,7 +17,7 @@ class CompressedPointSerializerTest extends AbstractTestCase
         $this->expectExceptionMessage('Invalid data: only compressed keys are supported.');
         $data = '01aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa';
         $serializer = new CompressedPointSerializer(EccFactory::getAdapter());
-        $serializer->unserialize(EccFactory::getNistCurves()->curve192(), $data);
+        $serializer->unserialize(EccFactory::getNistCurves(null, true)->curve192(), $data);
         $this->assertInstanceOf(NumberTheory::class, $serializer->getNumberTheory());
     }
 
@@ -34,7 +34,7 @@ class CompressedPointSerializerTest extends AbstractTestCase
 
         // Uncompress the point
         $recovered = $serializer->unserialize(
-            EccFactory::getNistCurves()->curve384(),
+            EccFactory::getNistCurves($adapter, true)->curve384(),
             $compressed
         );
 

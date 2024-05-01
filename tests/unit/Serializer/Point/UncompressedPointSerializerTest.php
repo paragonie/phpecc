@@ -15,6 +15,6 @@ class UncompressedPointSerializerTest extends AbstractTestCase
         $this->expectExceptionMessage('Invalid data: only uncompressed keys are supported.');
         $data = '01aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa';
         $serializer = new UncompressedPointSerializer();
-        $serializer->unserialize(EccFactory::getNistCurves()->curve192(), $data);
+        $serializer->unserialize(EccFactory::getNistCurves(null, true)->curve192(), $data);
     }
 }

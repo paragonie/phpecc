@@ -19,7 +19,7 @@ class PublicKeyTest extends AbstractTestCase
         $this->expectExceptionMessage('Point has x and y out of range');
 
         $adapter = EccFactory::getAdapter();
-        $generator192 = EccFactory::getNistCurves($adapter)->generator192();
+        $generator192 = EccFactory::getNistCurves($adapter, true)->generator192();
         $generator384 = EccFactory::getNistCurves($adapter)->generator384();
 
         $tooLarge = $generator384->createPrivateKey()->getPublicKey()->getPoint();
@@ -40,7 +40,7 @@ class PublicKeyTest extends AbstractTestCase
         $adapter = EccFactory::getAdapter();
         $generator384 = EccFactory::getNistCurves($adapter)->generator384();
 
-        $generator192 = EccFactory::getNistCurves($adapter)->generator192();
+        $generator192 = EccFactory::getNistCurves($adapter, true)->generator192();
         $mismatchPoint = $generator192->createPrivateKey()->getPublicKey()->getPoint();
 
         try {
@@ -55,7 +55,7 @@ class PublicKeyTest extends AbstractTestCase
     public function testInstance()
     {
         $adapter = EccFactory::getAdapter();
-        $generator = EccFactory::getNistCurves($adapter)->generator192();
+        $generator = EccFactory::getNistCurves($adapter, true)->generator192();
         $curve = $generator->getCurve();
         $point = $generator->createPrivateKey()->getPublicKey()->getPoint();
         $key = new PublicKey($adapter, $generator, $point);

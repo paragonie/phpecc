@@ -165,11 +165,11 @@ class SecgCurve
 
     /**
      * @param ?RandomNumberGeneratorInterface $randomGenerator
+     * @param bool $optimized
      * @return GeneratorPoint
      */
     public function generator256k1(?RandomNumberGeneratorInterface $randomGenerator = null, bool $optimized = false): GeneratorPoint
     {
-
         if ($optimized) {
             $curve = $this->optimizedCurve256k1();
         } else {
@@ -205,10 +205,14 @@ class SecgCurve
 
     /**
      * @param ?RandomNumberGeneratorInterface $randomGenerator
+     * @param bool $optimized
      * @return GeneratorPoint
      */
-    public function generator256r1(?RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint
+    public function generator256r1(?RandomNumberGeneratorInterface $randomGenerator = null, bool $optimized = false): GeneratorPoint
     {
+        if ($optimized) {
+           return (new NistCurve($this->adapter))->generator256($randomGenerator, true);
+        }
         $curve = $this->curve256r1();
 
         /** @var GMP $order */
@@ -240,10 +244,14 @@ class SecgCurve
 
     /**
      * @param ?RandomNumberGeneratorInterface $randomGenerator
+     * @param bool $optimized
      * @return GeneratorPoint
      */
-    public function generator384r1(?RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint
+    public function generator384r1(?RandomNumberGeneratorInterface $randomGenerator = null, bool $optimized = false): GeneratorPoint
     {
+        if ($optimized) {
+            return (new NistCurve($this->adapter))->generator256($randomGenerator, true);
+        }
         $curve = $this->curve384r1();
 
         /** @var GMP $order */
