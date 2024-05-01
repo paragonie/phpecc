@@ -46,10 +46,7 @@ This library is a rewrite/update of Matyas Danter's ECC library. All credit goes
 
 The library supports the following curves:
 
- - secp112r1
  - secp256k1
- - nistp192
- - nistp224
  - nistp256 / secp256r1
  - nistp384 / secp384r1
  - nistp521
@@ -57,10 +54,22 @@ The library supports the following curves:
  - brainpoolp384r1
  - brainpoolp512r1
 
+Additionally, the following curves are also provided if, and only if, you
+[enable insecure curves](#insecure-curves):
+
+- secp112r1
+- nistp192
+- nistp224
+
 During ECDSA, a random value `k` is required. It is acceptable to use a true RNG to generate this value, but 
-should the same `k` value ever be repeatedly used for a key, an attacker can recover that signing key. 
-The HMAC random generator can derive a deterministic k value from the message hash and private key, voiding
-this concern.
+should the same `k` value ever be repeatedly used for a key, an attacker can recover that signing key.
+
+However, it's actually even worse than a simple "reuse" concern. Even if you never reuse a `k` value, 
+if you have [any bias in the distribution of bits in `k`](https://crypto.stackexchange.com/a/48379), 
+an attacker that observes sufficient signatures can use Lattice Reduction to recover your key.
+
+The HMAC random generator can derive a deterministic k value from the message hash and private key.
+This provides an unbiased distribution of bits, and is therefore suitable for addressing this concern.
 
 The library uses a non-branching Montgomery ladder for scalar multiplication, as it's constant time and avoids secret 
 dependant branches. 
@@ -97,3 +106,29 @@ Examples:
  * [ECDH exchange](./examples/ecdh_exchange.php)
  * [Signature creation](./examples/creating_signature.php)
  * [Signature verification](./examples/verify_signature.php)
+
+### Insecure Curves
+
+The `EccFactory` class will, by default, only allow you to instantiate secure elliptic curves.
+An elliptic curve is considered secure if one or more of the following is true:
+
+1. If we can depend on OpenSSL to provide its implementation, we will. This is considered secure.
+2. If we have an optimized constant-time implementation, it is secure.
+3. If the elliptic curve discrete logarithm problem (ECDLP) for the curve has a security level in
+   equivalent to at least 120 bits, it is considered secure.
+4. Otherwise, it is considered insecure. **EccFactory will not allow them by default.** 
+
+To bypass this guard-rail, simply pass `true` to the second argument, like so:
+
+```php
+<?php
+use Mdanter\Ecc\EccFactory;
+use Mdanter\Ecc\Math\GmpMath;
+
+$adapter = new GmpMath();
+// This will throw an InsecureCurveException:
+// $p192 = EccFactory::getNistCurves($adapter)->generator192();
+
+// This will succeed:
+$p192 = EccFactory::getNistCurves($adapter, true)->generator192();
+```
