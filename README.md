@@ -15,14 +15,24 @@
 
 This library is a fork from `phpecc/phpecc`, which is itself a fork of `mdanter/ecc`. 
 It should serve as a drop-in replacement for any applications that previously depended
-on either method. 
+on either method.
 
-However, Paragon Initiative Enterprises **CANNOT** guarantee the security of this library
-until we have fully audited its code. This notice will be removed when we believe it to
-be secure.
+### Security Information
 
-In the meantime, **DO NOT** submit bug bounty reports to us for this code. They will be
-closed as out of scope. File an Issue here instead!
+By default, this library will attempt to use OpenSSL's implementation first. This requires 
+PHP 8.1+ and OpenSSL 3.0+ to work. OpenSSL's implementation should be constant-time.
+
+When OpenSSL is not available, this library will back to a Pure PHP implementation. There
+are actually two implementations:
+
+1. An optimized constant-time implementation of each elliptic curve.
+2. A generic elliptic curve algorithm that was shipped with the original PHP ECC library.
+
+We have taken every effort to harden our fork of this library against side-channel attacks
+in the "optimized" code.
+
+We cannot guarantee that the generic elliptic curve code is constant-time. We instead
+urge users to use either OpenSSL's implementation or our constant-time implementation.
 
 ### This Library Implements Low-Level Elliptic Curve Cryptography
 
@@ -30,11 +40,9 @@ If you just need Diffie-Hellman or ECDSA, you should install [EasyECC](https://g
 instead of working with this library directly. EasyECC was designed to use PHPECC 
 in a secure-by-default manner.
 
-### Information
+### Historical Information
 
 This library is a rewrite/update of Matyas Danter's ECC library. All credit goes to him.
-
-For more information on Elliptic Curve Cryptography please read [this fine article](http://www.matyasdanter.com/2010/12/elliptic-curve-php-oop-dsa-and-diffie-hellman/).
 
 The library supports the following curves:
 
@@ -45,6 +53,9 @@ The library supports the following curves:
  - nistp256 / secp256r1
  - nistp384 / secp384r1
  - nistp521
+ - brainpoolp256r1
+ - brainpoolp384r1
+ - brainpoolp512r1
 
 During ECDSA, a random value `k` is required. It is acceptable to use a true RNG to generate this value, but 
 should the same `k` value ever be repeatedly used for a key, an attacker can recover that signing key. 
