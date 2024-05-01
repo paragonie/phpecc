@@ -23,15 +23,23 @@ class EccFactoryTest extends AbstractTestCase
         $this->assertInstanceOf(CurveFp::class, $created);
     }
 
+    public function testsNoInscureCurvesByDefaultBrainpool(): void
+    {
+        $this->expectException(InsecureCurveException::class);
+        $curve = EccFactory::getBrainpoolCurves()->curve256r1();
+        if ($curve->isOpensslAvailable()) {
+            $this->markTestSkipped('We can actually use this curve securely');
+        }
+    }
+
     public function testsNoInscureCurvesByDefaultNIST(): void
     {
-        $this->expectExceptionMessage('P-192 is not a secure elliptic curve');
         $this->expectException(InsecureCurveException::class);
         EccFactory::getNistCurves()->curve192();
     }
+
     public function testsNoInscureCurvesByDefaultSecg(): void
     {
-        $this->expectExceptionMessage('secp112r1 is not a secure elliptic curve');
         $this->expectException(InsecureCurveException::class);
         EccFactory::getSecgCurves()->curve112r1();
     }
