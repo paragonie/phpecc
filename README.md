@@ -72,7 +72,10 @@ The HMAC random generator can derive a deterministic k value from the message ha
 This provides an unbiased distribution of bits, and is therefore suitable for addressing this concern.
 
 The library uses a non-branching Montgomery ladder for scalar multiplication, as it's constant time and avoids secret 
-dependant branches. 
+dependant branches.
+
+The "optimized" constant-time code uses [Complete addition formulas for prime order elliptic curves](https://eprint.iacr.org/2015/1060)
+to avoid side-channels with point addition and point doubling.
  
 ### License
 
@@ -115,7 +118,8 @@ An elliptic curve is considered secure if one or more of the following is true:
 1. If we can depend on OpenSSL to provide its implementation, we will. This is considered secure.
 2. If we have an optimized constant-time implementation, it is secure.
 3. If the elliptic curve discrete logarithm problem (ECDLP) for the curve has a security level in
-   equivalent to at least 120 bits, it is considered secure.
+   equivalent to less than 120 bits, it is considered **insecure**. (We do not provide constant-time
+   implementations for these curves, so step 2 should already fail these curves.)
 4. Otherwise, it is considered insecure. **EccFactory will not allow them by default.** 
 
 To bypass this guard-rail, simply pass `true` to the second argument, like so:
@@ -131,4 +135,7 @@ $adapter = new GmpMath();
 
 // This will succeed:
 $p192 = EccFactory::getNistCurves($adapter, true)->generator192();
+
+// This will also succeed, without any special considerations:
+$p256 = EccFactory::getNistCurves()->generator256();
 ```
