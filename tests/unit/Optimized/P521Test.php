@@ -20,6 +20,9 @@ class P521Test extends AbstractTestCase
     /** @var GMP $prime */
     private $prime;
 
+    /** @var GMP $order */
+    private $order;
+
     public function setUp(): void
     {
         parent::setUp();
@@ -83,9 +86,6 @@ class P521Test extends AbstractTestCase
     {
         $a1 = $this->p521->jacobiToAffine($p1);
         $a2 = $this->p521->jacobiToAffine($p2);
-        if (gmp_cmp($a1->x, $a2->x) !== 0) {
-            var_dump($p1, $p2, $a1, $a2);
-        }
         $this->assertGMPSame($a1->x, $a2->x, $comment . ' - X coordinate');
         $this->assertGMPSame($a1->y, $a2->y, $comment . ' - Y coordinate');
     }

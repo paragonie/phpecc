@@ -20,6 +20,9 @@ class P256Test extends AbstractTestCase
     /** @var GMP $prime */
     private $prime;
 
+    /** @var GMP $order */
+    private $order;
+
     public function setUp(): void
     {
         parent::setUp();

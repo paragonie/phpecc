@@ -19,6 +19,9 @@ class Brainpool256Test extends AbstractTestCase
     /** @var GMP $prime */
     private $prime;
 
+    /** @var GMP $order */
+    private $order;
+
     public function setUp(): void
     {
         parent::setUp();
@@ -237,8 +240,8 @@ class Brainpool256Test extends AbstractTestCase
                 gmp_init('a8' . bin2hex(random_bytes(31)), 16)
             ],
             [
-                gmp_init(bin2hex(random_bytes(32)), 16),
-                gmp_init(bin2hex(random_bytes(32)), 16)
+                gmp_mod(gmp_init(bin2hex(random_bytes(32)), 16), $this->prime),
+                gmp_mod(gmp_init(bin2hex(random_bytes(32)), 16), $this->prime)
             ],
         ];
     }
