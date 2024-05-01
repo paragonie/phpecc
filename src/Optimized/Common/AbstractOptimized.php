@@ -3,6 +3,7 @@ declare(strict_types=1);
 namespace Mdanter\Ecc\Optimized\Common;
 
 use GMP;
+use Mdanter\Ecc\Exception\NumberTheoryException;
 use Mdanter\Ecc\Math\ConstantTimeMath;
 use Mdanter\Ecc\Primitives\CurveFpInterface;
 use Mdanter\Ecc\Primitives\Point;

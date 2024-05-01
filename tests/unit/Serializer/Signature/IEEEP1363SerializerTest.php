@@ -31,7 +31,6 @@ class IEEEP1363SerializerTest extends AbstractTestCase
         $serializer = new IEEEP1363Serializer();
         $r = gmp_init('1932963615327194226947803865417518951831126771529414298593380679901691417964');
         $s = gmp_init('1932963615327194226947803865417518951831126771529414298593380679901691417964');
-        var_dump(gmp_strval($r, 16), gmp_strval($s, 16));
 
         $signature = new Signature($r, $s);
 

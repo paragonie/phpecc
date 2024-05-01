@@ -144,6 +144,8 @@ class EcDH implements EcDHInterface
                     try {
                         $point = $curve->computeSharedSecret($this->senderKey, $this->recipientKey);
                     } catch (OpensslException $ex) {
+                        // If we cannot use OpenSSL here, let's disable it for future executions.
+                        $this->disableOpenssl = true;
                     }
                 }
                 if (empty($point) && $curve instanceof OptimizedCurveInterface) {

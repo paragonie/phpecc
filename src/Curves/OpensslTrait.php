@@ -78,6 +78,16 @@ trait OpensslTrait
             case 'prime256v1':
                 $names = ['nistp256', 'secp256r1', 'prime256v1'];
                 break;
+            case 'nistp384':
+            case 'secp384r1':
+            case 'prime384v1':
+                $names = ['nistp384', 'secp384r1', 'prime384v1'];
+                break;
+            case 'nistp521':
+            case 'secp521r1':
+            case 'prime521v1':
+                $names = ['nistp521', 'secp521r1', 'prime521v1'];
+                break;
             default:
                 $names = [strtolower($this->name)];
         }

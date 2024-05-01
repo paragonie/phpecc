@@ -1,21 +1,20 @@
 <?php
 declare(strict_types=1);
-
 namespace Mdanter\Ecc\Tests\Optimized;
 
 use GMP;
+use Mdanter\Ecc\Curves\BrainpoolCurve;
 use Mdanter\Ecc\Curves\CurveFactory;
-use Mdanter\Ecc\Curves\NistCurve;
 use Mdanter\Ecc\Math\ConstantTimeMath;
 use Mdanter\Ecc\Optimized\Common\JacobiPoint;
-use Mdanter\Ecc\Optimized\P256;
+use Mdanter\Ecc\Optimized\BP256;
 use Mdanter\Ecc\Primitives\Point;
 use Mdanter\Ecc\Tests\AbstractTestCase;
 
-class P256Test extends AbstractTestCase
+class Brainpool256Test extends AbstractTestCase
 {
-    /** @var P256 $p256 */
-    private $p256;
+    /** @var BP256 $bp256 */
+    private $bp256;
 
     /** @var GMP $prime */
     private $prime;
@@ -26,9 +25,9 @@ class P256Test extends AbstractTestCase
     public function setUp(): void
     {
         parent::setUp();
-        $this->p256 = new P256();
-        $this->prime = gmp_init('0xffffffff00000001000000000000000000000000ffffffffffffffffffffffff', 16);
-        $this->order = gmp_init('0xffffffff00000000ffffffffffffffffbce6faada7179e84f3b9cac2fc632551', 16);
+        $this->bp256 = new BP256();
+        $this->prime = gmp_init('0xA9FB57DBA1EEA9BC3E660A909D838D726E3BF623D52620282013481D1F6E5377', 16);
+        $this->order = gmp_init('0xA9FB57DBA1EEA9BC3E660A909D838D718C397AA3B561A6F7901E0E82974856A7', 16);
     }
 
     public function testAddPoint(): void
@@ -38,11 +37,11 @@ class P256Test extends AbstractTestCase
         $p2->x = gmp_init('0x7cf27b188d034f7e8a52380304b51ac3c08969e277f21b35a60b48fc47669978', 16);
         $p2->y = gmp_init('0x7775510db8ed040293d9ac69f7430dbba7dade63ce982299e04b79d227873d1', 16);;
         $p2->z = gmp_init(1);
-        $added = $this->p256->addInternal($p1, $p2);
-        $affine = $this->p256->jacobiToAffine($added);
+        $added = $this->bp256->addInternal($p1, $p2);
+        $affine = $this->bp256->jacobiToAffine($added);
 
-        $expectX = gmp_init('0x5ecbe4d1a6330a44c8f7ef951d4bf165e6c6b721efada985fb41661bc6e7fd6c', 16);
-        $expectY = gmp_init('0x8734640c4998ff7e374b06ce1a64a2ecd82ab036384fb83d9a79b127a27d5032', 16);
+        $expectX = gmp_init('0x62dbfa5b119c6c94d034c8f514977457e29e4ea6e3298932a66c81950bce1374', 16);
+        $expectY = gmp_init('0x5e8b4b4165e0e1f06c21b71c14fd18bdb9352254239f5a420ffdb72100c5a409', 16);
 
         $this->assertGMPSame($expectX, $affine->x, 'x differs');
         $this->assertGMPSame($expectY, $affine->y, 'y differs');
@@ -52,9 +51,9 @@ class P256Test extends AbstractTestCase
     {
         $p = new JacobiPoint();
         /** @var GMP $x */
-        $x = gmp_init('0x6b17d1f2e12c4247f8bce6e563a440f277037d812deb33a0f4a13945d898c296', 16);
+        $x = gmp_init('0x8BD2AEB9CB7E57CB2C4B482FFC81B7AFB9DE27E1E3BD23C23A4453BD9ACE3262', 16);
         /** @var GMP $y */
-        $y = gmp_init('0x4fe342e2fe1a7f9b8ee7eb4a7c0f9e162bce33576b315ececbb6406837bf51f5', 16);
+        $y = gmp_init('0x547EF835C3DAC4FD97F8461A14611DC9C27745132DED8E545C1D54C72F046997', 16);
         /** @var GMP $z */
         $z = gmp_init(1);
 
@@ -63,32 +62,6 @@ class P256Test extends AbstractTestCase
         $p->z = $z;
         return $p;
     }
-
-    public function testDoublePoint(): void
-    {
-        $g = $this->getGenerator();
-        $g2 = $this->p256->addInternal(clone $g, clone $g);
-        $dbl = $this->p256->doubleInternal($g);
-
-        $this->assertGMPSame($g2->x, $dbl->x, 'x differs (g+g vs 2g)');
-        $this->assertGMPSame($g2->y, $dbl->y, 'y differs (g+g vs 2g)');
-        $this->assertGMPSame($g2->z, $dbl->z, 'z differs (g+g vs 2g)');
-
-        $g2 = $this->p256->jacobiToAffine($g2);
-        $dbl = $this->p256->jacobiToAffine($dbl);
-
-        $this->assertGMPSame($g2->x, $dbl->x, 'x differs (g+g vs 2g)');
-        $this->assertGMPSame($g2->y, $dbl->y, 'y differs (g+g vs 2g)');
-
-        $affine = $dbl;
-
-        $expectX = gmp_init('0x7cf27b188d034f7e8a52380304b51ac3c08969e277f21b35a60b48fc47669978', 16);
-        $expectY = gmp_init('0x07775510db8ed040293d9ac69f7430dbba7dade63ce982299e04b79d227873d1', 16);
-
-        $this->assertGMPSame($expectX, $affine->x, 'x differs');
-        $this->assertGMPSame($expectY, $affine->y, 'y differs');
-    }
-
 
     /**
      * @dataProvider jacobiToAffineProvider
@@ -106,7 +79,7 @@ class P256Test extends AbstractTestCase
         $in->y = clone $inY;
         $in->z = clone $inZ;
 
-        $affine = $this->p256->jacobiToAffine($in);
+        $affine = $this->bp256->jacobiToAffine($in);
         $this->assertGMPSame($expectX, $affine->x, 'x differs');
         $this->assertGMPSame($expectY, $affine->y, 'y differs');
     }
@@ -116,7 +89,7 @@ class P256Test extends AbstractTestCase
      */
     public function testScalarMultBase(GMP $scalar, GMP $expectX, GMP $expectY): void
     {
-        $point = $this->p256->scalarMultBase($scalar);
+        $point = $this->bp256->scalarMultBase($scalar);
 
         $this->assertGMPSame($expectX, $point->getX());
         $this->assertGMPSame($expectY, $point->getY());
@@ -127,7 +100,7 @@ class P256Test extends AbstractTestCase
      */
     public function testScalarMult(GMP $k, GMP $xIn, GMP $yIn, GMP $xOut, GMP $yOut): void
     {
-        $curve = CurveFactory::getCurveByName(NistCurve::NAME_P256);
+        $curve = CurveFactory::getCurveByName(BrainpoolCurve::NAME_P256R1);
         $point = new Point(
             new ConstantTimeMath(),
             $curve,
@@ -136,7 +109,7 @@ class P256Test extends AbstractTestCase
             clone $this->order
         );
 
-        $out = $this->p256->scalarMult($k, $point);
+        $out = $this->bp256->scalarMult($k, $point);
         $this->assertGMPSame($xOut, $out->getX());
         $this->assertGMPSame($yOut, $out->getY());
     }
@@ -147,7 +120,7 @@ class P256Test extends AbstractTestCase
     public function testAddElements(GMP $e, GMP $f): void
     {
         $x1 = gmp_mod(gmp_add($e, $f), $this->prime);
-        $x2 = $this->p256->addElements($e, $f, true);
+        $x2 = $this->bp256->addElements($e, $f, true);
 
         // Ensure we get what we expect:
         $this->assertGMPSame($x1, $x2);
@@ -159,7 +132,7 @@ class P256Test extends AbstractTestCase
     public function testMulElements(GMP $a, GMP $b): void
     {
         $c = gmp_mod($a * $b, $this->prime);
-        $d = $this->p256->mulElements($a, $b);
+        $d = $this->bp256->mulElements($a, $b);
         $this->assertGMPSame($c, $d);
     }
 
@@ -170,8 +143,8 @@ class P256Test extends AbstractTestCase
     {
         $x1 = gmp_mod(gmp_sub($e, $f), $this->prime);
         $y1 = gmp_mod(gmp_sub($f, $e), $this->prime);
-        $x2 = $this->p256->subElements($e, $f);
-        $y2 = $this->p256->subElements($f, $e);
+        $x2 = $this->bp256->subElements($e, $f);
+        $y2 = $this->bp256->subElements($f, $e);
 
         // Ensure we get what we expect:
         $this->assertGMPSame($x1, $x2);
@@ -263,12 +236,12 @@ class P256Test extends AbstractTestCase
                 gmp_init(bin2hex(random_bytes(15)), 16)
             ],
             [
-                gmp_init('fe' . bin2hex(random_bytes(15)), 16),
-                gmp_init('fe' . bin2hex(random_bytes(15)), 16)
+                gmp_init('a8' . bin2hex(random_bytes(31)), 16),
+                gmp_init('a8' . bin2hex(random_bytes(31)), 16)
             ],
             [
-                gmp_init(bin2hex(random_bytes(16)), 16),
-                gmp_init(bin2hex(random_bytes(16)), 16)
+                gmp_mod(gmp_init(bin2hex(random_bytes(32)), 16), $this->prime),
+                gmp_mod(gmp_init(bin2hex(random_bytes(32)), 16), $this->prime)
             ],
         ];
     }
@@ -278,28 +251,38 @@ class P256Test extends AbstractTestCase
         return [
             [
                 gmp_init(1),
-                gmp_init('0x6b17d1f2e12c4247f8bce6e563a440f277037d812deb33a0f4a13945d898c296', 16),
-                gmp_init('0x4fe342e2fe1a7f9b8ee7eb4a7c0f9e162bce33576b315ececbb6406837bf51f5', 16)
+                gmp_init('0x8BD2AEB9CB7E57CB2C4B482FFC81B7AFB9DE27E1E3BD23C23A4453BD9ACE3262', 16),
+                gmp_init('0x547EF835C3DAC4FD97F8461A14611DC9C27745132DED8E545C1D54C72F046997', 16)
             ],
             [
                 gmp_init(2),
-                gmp_init('0x7cf27b188d034f7e8a52380304b51ac3c08969e277f21b35a60b48fc47669978', 16),
-                gmp_init('0x07775510db8ed040293d9ac69f7430dbba7dade63ce982299e04b79d227873d1', 16)
+                gmp_init('0x743cf1b8b5cd4f2eb55f8aa369593ac436ef044166699e37d51a14c2ce13ea0e', 16),
+                gmp_init('0x36ed163337deba9c946fe0bb776529da38df059f69249406892ada097eeb7cd4', 16)
             ],
             [
                 gmp_init(3),
-                gmp_init('0x5ecbe4d1a6330a44c8f7ef951d4bf165e6c6b721efada985fb41661bc6e7fd6c', 16),
-                gmp_init('0x8734640c4998ff7e374b06ce1a64a2ecd82ab036384fb83d9a79b127a27d5032', 16)
+                gmp_init('0xa8f217b77338f1d4d6624c3ab4f6cc16d2aa843d0c0fca016b91e2ad25cae39d', 16),
+                gmp_init('0x4b49cafc7dac26bb0aa2a6850a1b40f5fac10e4589348fb77e65cc5602b74f9d', 16)
             ],
             [
                 gmp_init(4),
-                gmp_init('0xe2534a3532d08fbba02dde659ee62bd0031fe2db785596ef509302446b030852', 16),
-                gmp_init('0xe0f1575a4c633cc719dfee5fda862d764efc96c3f30ee0055c42c23f184ed8c6', 16)
+                gmp_init('0x3672030bace787aa319e21d40645b2999006beec437fd084dd3fc592f5fcd77c', 16),
+                gmp_init('0x335b226ce5fac0c36a18ce42e95f43c9eed3e256bdd0c98e55a069595515d15b', 16)
             ],
             [
-                gmp_init(1000000),
-                gmp_init('0xc5b222271bc42f0bcfadfe338b7f38062022f3ee82f2d0aa3726cbbd30aedc6c', 16),
-                gmp_init('0x942aef454829994b6c5ee673f19803d289d898107edbce02b65886dd1094dc47', 16)
+                gmp_init(10),
+                gmp_init('0xa4348db079f7ffbcfb3dfc35bd8ac67c22a85a50025cb1f37a22ba81728b1caf', 16),
+                gmp_init('0x2444fa0f5b79be1a2bd1d073c38fd136c77977f417b550d954e46dc4c8b737c1', 16)
+            ],
+            [
+                gmp_init(100),
+                gmp_init('0x09a8755eac4fd597412605ed57c5130463ea74444843cce26de6c131827a0ebf', 16),
+                gmp_init('0x7fba8949f72fd5aba616c78eac619fc11099eabe1ac89f5f6225a293a3916f72', 16)
+            ],
+            [
+                gmp_init('112233445566778899'),
+                gmp_init('0x691024597ea13dc03314771dd794e6d2f50aeb49335d3b03e21b5923c29b9d5c', 16),
+                gmp_init('0x3d313de6241323a266524fcbff2658ff2495f46017fcc84f8c9d4c14d8d27917', 16)
             ]
         ];
     }
@@ -307,19 +290,20 @@ class P256Test extends AbstractTestCase
     public function scalarMultProvider(): array
     {
         return [
+            /* RFC 6932 */
             [
-                gmp_init("2a265f8bcbdcaf94d58519141e578124cb40d64a501fba9c11847b28965bc737", 16),
-                gmp_init("023819813ac969847059028ea88a1f30dfbcde03fc791d3a252c6b41211882ea", 16),
-                gmp_init("f93e4ae433cc12cf2a43fc0ef26400c0e125508224cdb649380f25479148a4ad", 16),
-                gmp_init("4d4de80f1534850d261075997e3049321a0864082d24a917863366c0724f5ae3", 16),
-                gmp_init("a22d2b7f7818a3563e0f7a76c9bf0921ac55e06e2e4d11795b233824b1db8cc0", 16)
+                gmp_init("0x041EB8B1E2BC681BCE8E39963B2E9FC415B05283313DD1A8BCC055F11AE49699", 16),
+                gmp_init("0x8E07E219BA588916C5B06AA30A2F464C2F2ACFC1610A3BE2FB240B635341F0DB", 16),
+                gmp_init("0x148EA1D7D1E7E54B9555B6C9AC90629C18B63BEE5D7AA6949EBBF47B24FDE40D", 16),
+                gmp_init('0x05E940915549E9F6A4A75693716E37466ABA79B4BF2919877A16DD2CC2E23708', 16),
+                gmp_init('0x6BC23B6702BC5A019438CEEA107DAAD8B94232FFBBC350F3B137628FE6FD134C', 16)
             ],
             [
-                gmp_init("313f72ff9fe811bf573176231b286a3bdb6f1b14e05c40146590727a71c3bccd", 16),
-                gmp_init("cc11887b2d66cbae8f4d306627192522932146b42f01d3c6f92bd5c8ba739b06", 16),
-                gmp_init("a2f08a029cd06b46183085bae9248b0ed15b70280c7ef13a457f5af382426031", 16),
-                gmp_init("831c3f6b5f762d2f461901577af41354ac5f228c2591f84f8a6e51e2e3f17991", 16),
-                gmp_init("93f90934cd0ef2c698cc471c60a93524e87ab31ca2412252337f364513e43684", 16)
+                gmp_init("0x06F5240EACDB9837BC96D48274C8AA834B6C87BA9CC3EEDD81F99A16B8D804D3", 16),
+                gmp_init("0x78028496B5ECAAB3C8B6C12E45DB1E02C9E4D26B4113BC4F015F60C5CCC0D206", 16),
+                gmp_init("0xA2AE1762A3831C1D20F03F8D1E3C0C39AFE6F09B4D44BBE80CD100987B05F92B", 16),
+                gmp_init('0x05E940915549E9F6A4A75693716E37466ABA79B4BF2919877A16DD2CC2E23708', 16),
+                gmp_init('0x6BC23B6702BC5A019438CEEA107DAAD8B94232FFBBC350F3B137628FE6FD134C', 16)
             ]
         ];
     }
@@ -331,8 +315,8 @@ class P256Test extends AbstractTestCase
                 gmp_init("69923961955967387994258645329874512676251231789611885617885350872868369909519"),
                 gmp_init("29468416531536242154810423193772930342200868632530199947817229236472112149969"),
                 gmp_init("72268501913499591597170255839175763913222213345970030143754396507136828810218"),
-                gmp_init('f90eae1c994bded3dc74b5d97fab8ea4784259406f318145f226e3f8db256494', 16),
-                gmp_init('cec9c0d93c1e33ab310781e25dc7d7a53cdc3091a4ee524b901a857be8eba80f', 16)
+                gmp_init('a97011f03eb79df378aaf02208c0195631fda724e0fdbe68d9d7801b16411897', 16),
+                gmp_init('6d694445f1eaff30c6d0053c72f424d3550e344c9fd160bfd32dcbe35179d752', 16)
             ]
         ];
     }

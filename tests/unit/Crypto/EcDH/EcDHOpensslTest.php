@@ -1,8 +1,9 @@
 <?php
 declare(strict_types=1);
-namespace Crypto\EcDH;
+namespace Mdanter\Ecc\Tests\Crypto\EcDH;
 
 use Mdanter\Ecc\Crypto\EcDH\EcDH;
+use Mdanter\Ecc\Curves\BrainpoolCurve;
 use Mdanter\Ecc\Curves\CurveFactory;
 use Mdanter\Ecc\Curves\NamedCurveFp;
 use Mdanter\Ecc\Curves\NistCurve;
@@ -24,6 +25,9 @@ class EcDHOpensslTest extends AbstractTestCase
     public function curveProvider(): array
     {
         return [
+            [CurveFactory::getCurveByName(BrainpoolCurve::NAME_P256R1)],
+            [CurveFactory::getCurveByName(BrainpoolCurve::NAME_P384R1)],
+            [CurveFactory::getCurveByName(BrainpoolCurve::NAME_P512R1)],
             [CurveFactory::getCurveByName(SecgCurve::NAME_SECP_256K1)],
             [CurveFactory::getCurveByName(NistCurve::NAME_P256)],
             [CurveFactory::getCurveByName(NistCurve::NAME_P384)],
