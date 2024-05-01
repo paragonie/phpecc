@@ -17,9 +17,9 @@ class CurveFactory
     public static function getCurveByName(string $name): NamedCurveFp
     {
         $adapter = MathAdapterFactory::getAdapter();
-        $nistFactory = self::getNistFactory($adapter);
-        $brainpoolFactory = self::getBrainpoolFactory($adapter);
-        $secpFactory = self::getSecpFactory($adapter);
+        $nistFactory = static::getNistFactory($adapter);
+        $brainpoolFactory = static::getBrainpoolFactory($adapter);
+        $secpFactory = static::getSecpFactory($adapter);
 
         switch ($name) {
             case NistCurve::NAME_P192:
@@ -62,9 +62,9 @@ class CurveFactory
     public static function getGeneratorByName(string $name): GeneratorPoint
     {
         $adapter = MathAdapterFactory::getAdapter();
-        $nistFactory = self::getNistFactory($adapter);
-        $brainpoolFactory = self::getBrainpoolFactory($adapter);
-        $secpFactory = self::getSecpFactory($adapter);
+        $nistFactory = static::getNistFactory($adapter);
+        $brainpoolFactory = static::getBrainpoolFactory($adapter);
+        $secpFactory = static::getSecpFactory($adapter);
 
         switch ($name) {
             case NistCurve::NAME_P192:
@@ -104,7 +104,7 @@ class CurveFactory
      * @param GmpMathInterface $math
      * @return NistCurve
      */
-    private static function getNistFactory(GmpMathInterface $math): NistCurve
+    protected static function getNistFactory(GmpMathInterface $math): NistCurve
     {
         return new NistCurve($math);
     }
@@ -113,7 +113,7 @@ class CurveFactory
      * @param GmpMathInterface $math
      * @return BrainpoolCurve
      */
-    private static function getBrainpoolFactory(GmpMathInterface $math): BrainpoolCurve
+    protected static function getBrainpoolFactory(GmpMathInterface $math): BrainpoolCurve
     {
         return new BrainpoolCurve($math);
     }
@@ -122,7 +122,7 @@ class CurveFactory
      * @param GmpMathInterface $math
      * @return SecgCurve
      */
-    private static function getSecpFactory(GmpMathInterface $math): SecgCurve
+    protected static function getSecpFactory(GmpMathInterface $math): SecgCurve
     {
         return new SecgCurve($math);
     }

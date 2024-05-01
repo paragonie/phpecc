@@ -38,7 +38,7 @@ class SecureSecgCurve extends SecgCurve
     {
         $curve = parent::curve256r1();
         if (!$curve->isOpensslAvailable()) {
-            throw new InsecureCurveException('Cannot securely use non-optimized secp256k1 without OpenSSL support');
+            throw new InsecureCurveException('Cannot securely use non-optimized secp256r1 without OpenSSL support');
         }
         return $curve;
     }
@@ -50,7 +50,7 @@ class SecureSecgCurve extends SecgCurve
     {
         $curve = parent::curve384r1();
         if (!$curve->isOpensslAvailable()) {
-            throw new InsecureCurveException('Cannot securely use non-optimized secp256k1 without OpenSSL support');
+            throw new InsecureCurveException('Cannot securely use non-optimized secp384r1 without OpenSSL support');
         }
         return $curve;
     }
