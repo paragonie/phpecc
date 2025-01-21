@@ -5,8 +5,10 @@ declare(strict_types=1);
 namespace Mdanter\Ecc\Crypto\Signature;
 
 use Exception;
+use InvalidArgumentException;
 use Mdanter\Ecc\Curves\CurveFactory;
 use Mdanter\Ecc\Curves\SecgCurve;
+use Mdanter\Ecc\Curves\SecureCurveFactory;
 use Mdanter\Ecc\Math\ConstantTimeMath;
 use Mdanter\Ecc\Primitives\JacobianPoint;
 use Mdanter\Ecc\Primitives\PointInterface;
@@ -32,14 +34,14 @@ class SchnorrSignature
         $constantTime = new ConstantTimeMath();
         // private key must be a hex string
         if (ctype_xdigit($privateKey) === false) {
-            throw new \InvalidArgumentException('Private key must be a hex string');
+            throw new InvalidArgumentException('Private key must be a hex string');
         }
 
         // hash the message
         $hash = ctype_xdigit($message) === true ? $message : hash('sha256', $message);
 
         // create a secp256k1 curve
-        $generator = CurveFactory::getGeneratorByName(SecgCurve::NAME_SECP_256K1);
+        $generator = SecureCurveFactory::getGeneratorByName(SecgCurve::NAME_SECP_256K1);
 
         // initialize order (Curve.N)
         $n = gmp_init(JacobianPoint::CurveN, 16);
@@ -49,11 +51,11 @@ class SchnorrSignature
 
         if ($randomK === null) {
             // initialize randomness
-            $randomK = bin2hex(random_bytes(32));
+            $randomK = sodium_bin2hex(random_bytes(32));
         }
 
         if (ctype_xdigit($randomK) === false) {
-            throw new \InvalidArgumentException('Randomness must be a hex string');
+            throw new InvalidArgumentException('Randomness must be a hex string');
         }
 
         // calculate multiplied point
@@ -127,7 +129,13 @@ class SchnorrSignature
         $finalChallengeNumber = gmp_init($finalChallenge, 16);
 
         $k0PointX = $this->gmp_hexval($k0Point->getX());
-        $finalVal = gmp_mod(gmp_add($k0Scalar, gmp_mul($finalChallengeNumber, $scalar)), $n);
+        $finalVal = $constantTime->mod(
+            $constantTime->add(
+                $k0Scalar,
+                $constantTime->mul($finalChallengeNumber, $scalar)
+            ),
+            $n
+        );
 
         $signature = $k0PointX . $this->gmp_hexval($finalVal);
 
@@ -148,7 +156,7 @@ class SchnorrSignature
     {
         // public key must be a hex string
         if (ctype_xdigit($publicKey) === false) {
-            throw new \InvalidArgumentException('Public key must be a hex string');
+            throw new InvalidArgumentException('Public key must be a hex string');
         }
 
         ['r' => $r, 's' => $s, 'm' => $m, 'P' => $P] = $this->initSchnorrVerify($signature, $message, $publicKey);
