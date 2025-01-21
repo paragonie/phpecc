@@ -78,8 +78,8 @@ class SchnorrSignature
         $scalarSub = gmp_sub($n, $scalar);
         $scalar = $constantTime->select(
             $isEvenY,
+            $scalar,
             $scalarSub,
-            $scalar
         );
         // This is equivalent to the commented out code above.
 
@@ -124,8 +124,8 @@ class SchnorrSignature
         $isEvenYKPoint = $k0Point->getY() & 1;
         $k0Scalar = $constantTime->select(
             $isEvenYKPoint,
+            $k0Scalar,
             gmp_sub($n, $k0Scalar),
-            $k0Scalar
         );
 
         // Schnorr Challenge
