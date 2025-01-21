@@ -59,29 +59,18 @@ class SchnorrSignature
         // calculate multiplied point
         $point = $generator->mul($d);
 
-        // is the Y coordinate even?
-        /*
-        $isEvenY = gmp_cmp(gmp_mod($point->getY(), 2), 0) === 0;
-        */
-
         // scalar is private key if Y is even, otherwise it's order - scalar
         $scalar = $d;
 
-        /*
-        if ($isEvenY === false) {
-            $scalar = gmp_sub($n, $scalar);
-        }
-        */
-
-        // Let's do this without timing leaks:
+        // First, get the lowest bit of Y.
         $isEvenY = (int) ($point->getY() & 1);
-        $scalarSub = gmp_sub($n, $scalar);
+        // You can always read these select() calls as a ternary
+        // $result = ($cond ? $valueIfTrue : $valueIfFalse);
         $scalar = $constantTime->select(
             $isEvenY,
-            $scalarSub,
+            gmp_sub($n, $scalar),
             $scalar
         );
-        // This is equivalent to the commented out code above.
 
         $auxSingle = hash('sha256', self::AUX);
         $tagAux    = $auxSingle . $auxSingle;
@@ -106,14 +95,8 @@ class SchnorrSignature
         $k0      = gmp_mod($nonceNumber, $n);
         $k0Point = $generator->mul($k0);
 
-        // is the Y coordinate even?
-        /*
-        $isEvenYKPoint = gmp_cmp(gmp_mod($k0Point->getY(), 2), 0) === 0;
-        */
-
         // k0Scalar is k0 if Y is even, otherwise it's order - k0Scalar
         $k0Scalar = $k0;
-
         /*
         if ($isEvenYKPoint === false) {
             $k0Scalar = gmp_sub($n, $k0Scalar);
@@ -122,6 +105,8 @@ class SchnorrSignature
 
         // Once again, branch-less:
         $isEvenYKPoint = (int) ($k0Point->getY() & 1);
+        // Branch-less, constant-time equivalent of:
+        // $k0Scalar = $isEvenYKPoint ? gmp_sub(($n, $k0Scalar) : $k0Scalar;
         $k0Scalar = $constantTime->select(
             $isEvenYKPoint,
             gmp_sub($n, $k0Scalar),
