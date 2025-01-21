@@ -85,6 +85,11 @@ class Point implements PointInterface
     private $infinity = false;
 
     /**
+     * @var int
+     */
+    private $windowSize;
+
+    /**
      * Initialize a new instance
      *
      * @param GmpMathInterface     $adapter
@@ -125,6 +130,18 @@ class Point implements PointInterface
                 throw new PointException("SELF * ORDER MUST EQUAL INFINITY. (" . (string)$mul . " found instead)");
             }
         }
+    }
+
+    public function setWindowSize(int $n): PointInterface
+    {
+        $this->windowSize = $n;
+
+        return $this;
+    }
+
+    public function getWindowSize(): int
+    {
+        return $this->windowSize ?? 0;
     }
 
     /**

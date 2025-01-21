@@ -645,8 +645,10 @@ class JacobianPoint
      * Naive way as opposed to Strauss-Shamir's trick:
      *     Perform two multiplications of aP and bQ, then add them together,
      * (Unsafe based on exposed Private Key).
+     *
+     * @return bool|JacobianPoint
      */
-    public function multiplyAndAddUnsafe(Point $Q, \GMP $a, \GMP $b): bool | JacobianPoint
+    public function multiplyAndAddUnsafe(Point $Q, \GMP $a, \GMP $b)
     {
         $P = $this->getBase();
 
