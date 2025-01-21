@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Mdanter\Ecc\Crypto\Signature;
 
+use Exception;
 use Mdanter\Ecc\Curves\CurveFactory;
 use Mdanter\Ecc\Curves\SecgCurve;
 use Mdanter\Ecc\Primitives\JacobianPoint;
@@ -15,6 +16,16 @@ class SchnorrSignature
     public const AUX       = 'BIP0340/aux';
     public const NONCE     = 'BIP0340/nonce';
 
+    /**
+     * Create a Schnorr Signature.
+     *
+     * @param string $privateKey - Must be a hexadecimal string
+     * @param string $message - The message being signed
+     * @param string|null $randomK - Random k-value; must be a hex-encoded string if present
+     * @return array
+     *
+     * @throws Exception
+     */
     public function sign(string $privateKey, string $message, ?string $randomK = null): array
     {
         // private key must be a hex string
