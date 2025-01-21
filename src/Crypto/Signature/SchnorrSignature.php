@@ -118,9 +118,10 @@ class SchnorrSignature
         $tagChallengeSingle = hash('sha256', self::CHALLENGE);
         $tagChallenge       = $tagChallengeSingle . $tagChallengeSingle;
         $paddedR            = str_pad(gmp_strval($r, 16), 64, '0', STR_PAD_LEFT);
+        $paddedX = str_pad(gmp_strval($P->getX(), 16), 64, '0', STR_PAD_LEFT);
 
         // convert the hex to binary so it is NOT hashed as a simple string
-        $concatToHash = hex2bin($tagChallenge . $paddedR . gmp_strval($P->getX(), 16) . $m);
+        $concatToHash = hex2bin($tagChallenge . $paddedR . $paddedX . $m);
         $schnorrVal   = hash('sha256', $concatToHash);
 
         $e = gmp_mod(gmp_init($schnorrVal, 16), gmp_init(JacobianPoint::CurveN, 16));
