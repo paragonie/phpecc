@@ -74,12 +74,12 @@ class SchnorrSignature
         */
 
         // Let's do this without timing leaks:
-        $isEvenY = $point->getY() & 1;
+        $isEvenY = (int) ($point->getY() & 1);
         $scalarSub = gmp_sub($n, $scalar);
         $scalar = $constantTime->select(
             $isEvenY,
-            $scalar,
             $scalarSub,
+            $scalar
         );
         // This is equivalent to the commented out code above.
 
@@ -121,11 +121,11 @@ class SchnorrSignature
         */
 
         // Once again, branch-less:
-        $isEvenYKPoint = $k0Point->getY() & 1;
+        $isEvenYKPoint = (int) ($k0Point->getY() & 1);
         $k0Scalar = $constantTime->select(
             $isEvenYKPoint,
-            $k0Scalar,
             gmp_sub($n, $k0Scalar),
+            $k0Scalar
         );
 
         // Schnorr Challenge
