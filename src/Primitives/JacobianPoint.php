@@ -274,8 +274,11 @@ class JacobianPoint
 
     /**
      * Bitwise Right Shift.
+     *
+     * @param \GMP|int $x
+     * @param \GMP|int $n
      */
-    public function gmp_shiftr(\GMP | int $x, \GMP | int $n): \GMP
+    public function gmp_shiftr($x, $n): \GMP
     {
         return gmp_div($x, gmp_pow(2, $n));
     }
