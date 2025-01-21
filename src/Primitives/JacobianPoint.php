@@ -524,7 +524,6 @@ class JacobianPoint
         $points  = [];
 
         $p    = $this;
-        $base = $p;
 
         for ($window = 0; $window < $windows; ++$window) {
             $base     = $p;
