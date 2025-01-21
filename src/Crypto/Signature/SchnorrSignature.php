@@ -7,6 +7,7 @@ namespace Mdanter\Ecc\Crypto\Signature;
 use Exception;
 use Mdanter\Ecc\Curves\CurveFactory;
 use Mdanter\Ecc\Curves\SecgCurve;
+use Mdanter\Ecc\Math\ConstantTimeMath;
 use Mdanter\Ecc\Primitives\JacobianPoint;
 use Mdanter\Ecc\Primitives\PointInterface;
 
@@ -28,6 +29,7 @@ class SchnorrSignature
      */
     public function sign(string $privateKey, string $message, ?string $randomK = null): array
     {
+        $constantTime = new ConstantTimeMath();
         // private key must be a hex string
         if (ctype_xdigit($privateKey) === false) {
             throw new \InvalidArgumentException('Private key must be a hex string');
@@ -58,14 +60,28 @@ class SchnorrSignature
         $point = $generator->mul($d);
 
         // is the Y coordinate even?
+        /*
         $isEvenY = gmp_cmp(gmp_mod($point->getY(), 2), 0) === 0;
+        */
 
         // scalar is private key if Y is even, otherwise it's order - scalar
         $scalar = $d;
 
+        /*
         if ($isEvenY === false) {
             $scalar = gmp_sub($n, $scalar);
         }
+        */
+
+        // Let's do this without timing leaks:
+        $isEvenY = $point->getY() & 1;
+        $scalarSub = gmp_sub($n, $scalar);
+        $scalar = $constantTime->select(
+            $isEvenY,
+            $scalarSub,
+            $scalar
+        );
+        // This is equivalent to the commented out code above.
 
         $auxSingle = hash('sha256', self::AUX);
         $tagAux    = $auxSingle . $auxSingle;
@@ -81,28 +97,48 @@ class SchnorrSignature
         $tagNonce       = $tagNonceSingle . $tagNonceSingle;
 
         // concatenate the tag and the nonce and hash it
-        $nonceHash   = hash('sha256', hex2bin($tagNonce . $this->gmp_hexval($nonce) . $this->gmp_hexval($point->getX()) . $hash));
+        $nonceHash   = hash(
+            'sha256',
+            sodium_hex2bin($tagNonce . $this->gmp_hexval($nonce) . $this->gmp_hexval($point->getX()) . $hash)
+        );
         $nonceNumber = gmp_init($nonceHash, 16);
 
         $k0      = gmp_mod($nonceNumber, $n);
         $k0Point = $generator->mul($k0);
 
         // is the Y coordinate even?
+        /*
         $isEvenYKPoint = gmp_cmp(gmp_mod($k0Point->getY(), 2), 0) === 0;
+        */
 
         // k0Scalar is k0 if Y is even, otherwise it's order - k0Scalar
         $k0Scalar = $k0;
 
+        /*
         if ($isEvenYKPoint === false) {
             $k0Scalar = gmp_sub($n, $k0Scalar);
         }
+        */
+
+        // Once again, branch-less:
+        $isEvenYKPoint = $k0Point->getY() & 1;
+        $k0Scalar = $constantTime->select(
+            $isEvenYKPoint,
+            gmp_sub($n, $k0Scalar),
+            $k0Scalar
+        );
 
         // Schnorr Challenge
         $tagChallengeSingle = hash('sha256', self::CHALLENGE);
         $tagChallenge       = $tagChallengeSingle . $tagChallengeSingle;
 
-        // convert the hex to binary so it is NOT hashed as a simple string
-        $finalChallenge       = hash('sha256', hex2bin($tagChallenge . $this->gmp_hexval($k0Point->getX()) . $this->gmp_hexval($point->getX()) . $hash));
+        // convert the hex to binary, so it is NOT hashed as a simple string
+        $finalChallenge     = hash(
+            'sha256',
+            sodium_hex2bin(
+                $tagChallenge . $this->gmp_hexval($k0Point->getX()) . $this->gmp_hexval($point->getX()) . $hash
+            )
+        );
         $finalChallengeNumber = gmp_init($finalChallenge, 16);
 
         $k0PointX = $this->gmp_hexval($k0Point->getX());
@@ -117,6 +153,12 @@ class SchnorrSignature
         ];
     }
 
+    /**
+     * @param string $publicKey Must be a hexadecimal string
+     * @param string $signature
+     * @param string $message
+     * @return bool
+     */
     public function verify(string $publicKey, string $signature, string $message): bool
     {
         // public key must be a hex string
@@ -140,6 +182,10 @@ class SchnorrSignature
         return $this->finalizeSchnorrVerify($r, $P, $s, $e);
     }
 
+    /**
+     * @param \GMP $gmp
+     * @return string
+     */
     private function gmp_hexval(\GMP $gmp): string
     {
         // gmp_strval does not properly pad hexadecimal values
