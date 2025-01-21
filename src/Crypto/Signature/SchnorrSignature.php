@@ -15,7 +15,7 @@ class SchnorrSignature
     public const AUX       = 'BIP0340/aux';
     public const NONCE     = 'BIP0340/nonce';
 
-    public function sign(string $privateKey, string $message, string $randomK = null): array
+    public function sign(string $privateKey, string $message, ?string $randomK = null): array
     {
         // private key must be a hex string
         if (ctype_xdigit($privateKey) === false) {
@@ -165,9 +165,10 @@ class SchnorrSignature
 
         $secp256k1Curve = CurveFactory::getCurveByName(SecgCurve::NAME_SECP_256K1);
 
-        $yCoordinate = $secp256k1Curve->recoverYfromX(false, gmp_init($publicKey, 16));
-
-        $P = $secp256k1Curve->getPoint(gmp_init($publicKey, 16), $yCoordinate);
+        $P = $secp256k1Curve->getPoint(
+            gmp_init($publicKey, 16),
+            $secp256k1Curve->recoverYfromX(false, gmp_init($publicKey, 16))
+        );
 
         return [
             'r' => $r,

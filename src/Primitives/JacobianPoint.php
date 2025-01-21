@@ -110,7 +110,7 @@ class JacobianPoint
      * @param \GMP $y
      * @param \GMP $z
      */
-    public function __construct(\GMP $x = null, \GMP $y = null, \GMP $z = null)
+    public function __construct(?\GMP $x = null, ?\GMP $y = null, ?\GMP $z = null)
     {
         $this->x = $x;
         $this->y = $y;
@@ -202,7 +202,7 @@ class JacobianPoint
     /**
      * Convert an Affine Point to a Jacobian Point.
      */
-    public function fromAffine(Point $point): self
+    public function fromAffine(PointInterface $point): self
     {
         $x = $point->getX();
         $y = $point->getY();
@@ -252,7 +252,7 @@ class JacobianPoint
     /**
      * Calculates A modulo B.
      */
-    public function mod(\GMP $a, \GMP $b = null): \GMP
+    public function mod(\GMP $a, ?\GMP $b = null): \GMP
     {
         if ($b === null) {
             // Curve.P
@@ -607,7 +607,7 @@ class JacobianPoint
      *
      * @return self
      */
-    public function mul(\GMP $n, self $affinePoint = null)
+    public function mul(\GMP $n, ?self $affinePoint = null)
     {
         if ($affinePoint === null) {
             $affinePoint = $this->getBasePoint();
@@ -648,7 +648,7 @@ class JacobianPoint
      *
      * @return bool|JacobianPoint
      */
-    public function multiplyAndAddUnsafe(Point $Q, \GMP $a, \GMP $b)
+    public function multiplyAndAddUnsafe(PointInterface $Q, \GMP $a, \GMP $b)
     {
         $P = $this->getBase();
 
