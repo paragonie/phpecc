@@ -37,10 +37,10 @@ class BinaryString
      * @return string
      */
     public static function substring(
-	    #[\SensitiveParameter]
+        #[\SensitiveParameter]
         string $str,
-	    int $start = 0,
-	    ?int $length = null
+        int $start = 0,
+        ?int $length = null
     ): string {
         // Premature optimization: cache the function_exists() result
         static $exists = null;
