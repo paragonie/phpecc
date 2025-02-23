@@ -30,7 +30,7 @@
         }
     ],
     "require": {
-        "php": "^7.1||^8.0",
+        "php": "^7.1||^8.0||8.4.*",
         "paragonie/sodium_compat": "^1|^2",
         "ext-gmp": "*",
         "genkgo/php-asn1": "^2"

@@ -69,7 +69,7 @@ class BrainpoolCurve
      * @param bool $optimized
      * @return GeneratorPoint
      */
-    public function generator256r1(RandomNumberGeneratorInterface $randomGenerator = null, bool $optimized = false): GeneratorPoint
+    public function generator256r1(?RandomNumberGeneratorInterface $randomGenerator = null, bool $optimized = false): GeneratorPoint
     {
         if ($optimized) {
             $curve = $this->optimizedCurve256r1();
@@ -124,7 +124,7 @@ class BrainpoolCurve
      * @param bool $optimized
      * @return GeneratorPoint
      */
-    public function generator384r1(RandomNumberGeneratorInterface $randomGenerator = null, bool $optimized = false): GeneratorPoint
+    public function generator384r1(?RandomNumberGeneratorInterface $randomGenerator = null, bool $optimized = false): GeneratorPoint
     {
         if ($optimized) {
             $curve = $this->optimizedCurve384r1();
@@ -179,7 +179,7 @@ class BrainpoolCurve
      * @param  bool $optimized
      * @return GeneratorPoint
      */
-    public function generator512r1(RandomNumberGeneratorInterface $randomGenerator = null, bool $optimized = false): GeneratorPoint
+    public function generator512r1(?RandomNumberGeneratorInterface $randomGenerator = null, bool $optimized = false): GeneratorPoint
     {
         if ($optimized) {
             $curve = $this->optimizedCurve512r1();

@@ -36,10 +36,10 @@ abstract class AbstractTestCase extends TestCase
     }
 
     /**
-     * @param array $extra
+     * @param array|null $extra
      * @return array
      */
-    protected function _getAdapters(array $extra = null)
+    protected function _getAdapters(?array $extra = null)
     {
         if (! defined('PHPUNIT_DEBUG')) {
             define('PHPUNIT_DEBUG', false);
