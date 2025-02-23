@@ -38,7 +38,7 @@ class SecureBrainpoolCurve extends BrainpoolCurve
     /**
      * @inheritDoc
      */
-    public function generator256r1(RandomNumberGeneratorInterface $randomGenerator = null, bool $optimized = true): GeneratorPoint
+    public function generator256r1(?RandomNumberGeneratorInterface $randomGenerator = null, bool $optimized = true): GeneratorPoint
     {
         return parent::generator256r1($randomGenerator, $optimized);
     }
@@ -46,7 +46,7 @@ class SecureBrainpoolCurve extends BrainpoolCurve
     /**
      * @inheritDoc
      */
-    public function generator384r1(RandomNumberGeneratorInterface $randomGenerator = null, bool $optimized = true): GeneratorPoint
+    public function generator384r1(?RandomNumberGeneratorInterface $randomGenerator = null, bool $optimized = true): GeneratorPoint
     {
         return parent::generator384r1($randomGenerator, $optimized);
     }
@@ -54,7 +54,7 @@ class SecureBrainpoolCurve extends BrainpoolCurve
     /**
      * @inheritDoc
      */
-    public function generator512r1(RandomNumberGeneratorInterface $randomGenerator = null, bool $optimized = true): GeneratorPoint
+    public function generator512r1(?RandomNumberGeneratorInterface $randomGenerator = null, bool $optimized = true): GeneratorPoint
     {
         return parent::generator512r1($randomGenerator, $optimized);
     }

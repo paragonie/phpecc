@@ -33,7 +33,7 @@ class Parser
      * @param GmpMathInterface $adapter
      * @param PointSerializerInterface|null $pointSerializer
      */
-    public function __construct(GmpMathInterface $adapter, PointSerializerInterface $pointSerializer = null)
+    public function __construct(GmpMathInterface $adapter, ?PointSerializerInterface $pointSerializer = null)
     {
         $this->adapter = $adapter;
         $this->pointSerializer = $pointSerializer ?: new UncompressedPointSerializer();
