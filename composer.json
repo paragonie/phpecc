@@ -1,5 +1,5 @@
 {
-    "name": "paragonie/ecc",
+    "name": "mdanter/ecc",
     "description": "PHP Elliptic Curve Cryptography library",
     "type": "library",
     "homepage": "https://github.com/phpecc/phpecc",
