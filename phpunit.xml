@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit bootstrap="tests/bootstrap.php" colors="true"
-  convertErrorsToExceptions="true" convertNoticesToExceptions="true"
-  convertWarningsToExceptions="true" processIsolation="false"
-  stopOnFailure="false">
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.6/phpunit.xsd"
+         bootstrap="tests/bootstrap.php"
+         colors="true"
+>
   <php>
     <const name="PHPUNIT_DEBUG" value="false" />
     <const name="PHPECC_COVERAGE" value="true" />
@@ -11,20 +12,12 @@
   </php>
   <testsuites>
     <testsuite name="All">
-      <directory suffix="Test.php">./tests/unit</directory>
+      <directory>./tests/unit</directory>
     </testsuite>
   </testsuites>
-  <!--
-  <logging>
-    <log type="coverage-html" target="./tests/output/Coverage/"
-      charset="UTF-8" yui="true" highlight="true" />
-    <log type="junit" target="./tests/output/Results/Results.xml"
-      logIncompleteSkipped="true" />
-  </logging>
-  <filter>
-    <whitelist addUncoveredFilesFromWhitelist="true">
-      <directory suffix=".php">src/</directory>
-    </whitelist>
-  </filter>
-  -->
+  <coverage>
+    <include>
+      <directory>./src</directory>
+    </include>
+  </coverage>
 </phpunit>
