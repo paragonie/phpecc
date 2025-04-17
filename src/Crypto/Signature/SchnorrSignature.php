@@ -38,7 +38,7 @@ class SchnorrSignature
         }
 
         // hash the message
-        $hash = ctype_xdigit($message) === true ? $message : hash('sha256', $message);
+        $hash = empty($message) || ctype_xdigit($message) === true ? $message : hash('sha256', $message);
 
         // create a secp256k1 curve
         $generator = SecureCurveFactory::getGeneratorByName(SecgCurve::NAME_SECP_256K1);
@@ -212,7 +212,7 @@ class SchnorrSignature
     {
         $r = gmp_init(mb_substr($signature, 0, 64), 16);
         $s = gmp_init(mb_substr($signature, 64, 64), 16);
-        $m = ctype_xdigit($message) === true ? $message : hash('sha256', $message);
+        $m = empty($message) || ctype_xdigit($message) === true ? $message : hash('sha256', $message);
 
         $secp256k1Curve = CurveFactory::getCurveByName(SecgCurve::NAME_SECP_256K1);
 

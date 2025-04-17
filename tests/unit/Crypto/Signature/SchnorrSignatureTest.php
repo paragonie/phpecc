@@ -14,84 +14,68 @@ use Mdanter\Ecc\Tests\AbstractTestCase;
  */
 final class SchnorrSignatureTest extends AbstractTestCase
 {
-    public function bipVectorInformation()
+    public static function bipVectorProvider(): array
     {
-        $fileVectors = TEST_DATA_DIR . '/bip-schnorr-test-vectors.json';
-        $vectors     = json_decode(file_get_contents($fileVectors), true);
+        $f = fopen('vendor/bitcoin/bips/bip-0340/test-vectors.csv', 'r');
+        $header = fgetcsv($f, null, ',', '"', '\\');
 
-        $items = [];
+        $vectors = [];
+        while (false !== $row = fgetcsv($f, null, ',', '"', '\\')) {
+            $row = array_combine($header, $row);
 
-        // get all information into a single array
-        foreach ($vectors as $vector) {
-            $items[] = [
-                [
-                    'privateKey' => empty($vector['d']) ? null : $vector['d'],
-                    'publicKey'  => $vector['pk'],
-                    'message'    => $vector['m'],
-                    'signature'  => $vector['sig'],
-                    'result'     => $vector['result'],
-                    'aux'        => $vector['aux'],
-                ],
+            $description = "Test #{$row['index']}";
+            if (!empty($row['comment'])) {
+                $description .= ': ' . $row['comment'];
+            }
+
+            $vectors[$description] = [
+                $row['secret key'],
+                $row['public key'],
+                $row['aux_rand'],
+                $row['message'],
+                $row['signature'],
+                'TRUE' === $row['verification result'],
             ];
         }
 
-        return $items;
+        fclose($f);
+        return $vectors;
     }
 
     /**
-     * @dataProvider bipVectorInformation
-     *
-     * @param array $vector
+     * @dataProvider bipVectorProvider
      */
-    public function testSchnorrVerification($vector): void
+    public function testSchnorrVerificationAndSigning(
+        string $privateKey,
+        string $publicKey,
+        string $auxRand,
+        string $message,
+        string $signature,
+        bool $expectedResult
+    ): void
     {
-        // get information
-        $publicKey = $vector['publicKey'];
-        $message   = $vector['message'];
-        $signature = $vector['signature'];
-        $result    = $vector['result'];
-
-        // verify signature
+        // signature verification test
         try {
-            $testResult = (new SchnorrSignature())->verify($publicKey, $signature, $message);
+            $verifyResult = (new SchnorrSignature())->verify($publicKey, $signature, $message);
         } catch (\Exception $e) {
-            $testResult = false;
+            self::assertFalse($expectedResult, 'verify() can fail, but in that case the expected result must be false');
+            $verifyResult = false;
         }
 
-        // make assertion
-        static::assertSame($result, $testResult);
-    }
+        self::assertSame($expectedResult, $verifyResult);
 
-    /**
-     * @dataProvider bipVectorInformation
-     *
-     * @param array $vector
-     */
-    public function testSchnorrSigning($vector): void
-    {
-        // cannot sign without private key
-        if ($vector['privateKey'] === null) {
-            static::assertNull($vector['privateKey']);
-
+        // cannot proceed without a private key
+        if (empty($privateKey)) {
             return;
         }
 
-        // get information
-        $privateKey = $vector['privateKey'];
-        $auxRand    = $vector['aux'];
-        $message    = $vector['message'];
-        $signature  = $vector['signature'];
-
-        // sign
+        // signature creation test
         try {
-            $testResult = (new SchnorrSignature())->sign($privateKey, $message, $auxRand);
+            $signResult = (new SchnorrSignature())->sign($privateKey, $message, $auxRand);
         } catch (\Exception $e) {
-            $testResult = false;
+            self::fail('sign() must never fail');
         }
 
-        $finalResult = $testResult === false ? false : strtoupper($testResult['signature']);
-
-        // make assertion
-        static::assertSame($signature, $finalResult);
+        self::assertSame(strtolower($signature), $signResult['signature']);
     }
 }
