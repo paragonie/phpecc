@@ -90,9 +90,9 @@ abstract class AbstractTestCase extends TestCase
 
     public function importFile(string $name): string
     {
-        $contents = file_get_contents("tests/{$name}");
+        $contents = file_get_contents("vendor/c2sp/{$name}");
         if (!$contents) {
-            throw new \InvalidArgumentException("Failed to read test fixture file tests/$name");
+            throw new \InvalidArgumentException("Failed to read test fixture file vendor/c2sp/$name");
         }
         return $contents;
     }

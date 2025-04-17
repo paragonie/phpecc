@@ -40,7 +40,7 @@ class EcdhTest extends AbstractTestCase
 
     public function getEcDHFixtures(): array
     {
-        $fixtures = json_decode($this->importFile("import/wycheproof/testvectors/ecdh_test.json"), true);
+        $fixtures = json_decode($this->importFile("wycheproof/testvectors/ecdh_test.json"), true);
         return $this->filterFixtures($fixtures, $this->getCurvesList());
     }
 
@@ -117,7 +117,7 @@ class EcdhTest extends AbstractTestCase
 
     public function getSpecificFixtures(string $curve): array
     {
-        $fixtures = json_decode($this->importFile("import/wycheproof/testvectors/ecdh_{$curve}_test.json"), true);
+        $fixtures = json_decode($this->importFile("wycheproof/testvectors/ecdh_{$curve}_test.json"), true);
         $filtered =  $this->filterFixtures($fixtures);
 
         return $filtered;

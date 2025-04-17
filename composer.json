@@ -31,16 +31,18 @@
     ],
     "require": {
         "php": "^7.1||^8.0",
-        "paragonie/sodium_compat": "^1|^2",
         "ext-gmp": "*",
-        "genkgo/php-asn1": "^2"
+        "genkgo/php-asn1": "^2",
+        "paragonie/sodium_compat": "^1|^2"
     },
     "require-dev": {
+        "ext-json": "*",
+        "bitcoin/bips": "dev-master",
+        "c2sp/wycheproof": "dev-master",
         "phpunit/phpunit": "^6|^7|^8|^9",
         "squizlabs/php_codesniffer": "^2|^3",
         "symfony/yaml": "^2.6|^3.0|^4",
-        "vimeo/psalm": "^2|^3|^4|^5",
-        "ext-json": "*"
+        "vimeo/psalm": "^2|^3|^4|^5"
     },
     "autoload": {
         "psr-4": {
@@ -55,5 +57,31 @@
             "Mdanter\\Ecc\\Tests\\": "tests/unit",
             "Mdanter\\Ecc\\WycheProof\\": "tests/wycheproof"
         }
-    }
+    },
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "bitcoin/bips",
+                "version": "dev-master",
+                "source": {
+                    "url": "https://github.com/bitcoin/bips",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "c2sp/wycheproof",
+                "version": "dev-master",
+                "source": {
+                    "url": "https://github.com/C2SP/wycheproof",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+        }
+    ]
 }
