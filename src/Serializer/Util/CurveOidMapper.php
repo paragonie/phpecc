@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Mdanter\Ecc\Serializer\Util;
 
+use Exception;
 use FG\ASN1\Universal\ObjectIdentifier;
 use Mdanter\Ecc\Curves\BrainpoolCurve;
 use Mdanter\Ecc\Curves\NamedCurveFp;
@@ -105,6 +106,7 @@ class CurveOidMapper
     /**
      * @param NamedCurveFp $curve
      * @return ObjectIdentifier
+     * @throws Exception
      */
     public static function getCurveOid(NamedCurveFp $curve): ObjectIdentifier
     {

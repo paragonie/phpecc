@@ -8,6 +8,9 @@ use Mdanter\Ecc\Random\RandomNumberGeneratorInterface;
 
 class SecureBrainpoolCurve extends BrainpoolCurve
 {
+    /**
+     * @throws InsecureCurveException
+     */
     public function curve256r1(): NamedCurveFp
     {
         $curve = parent::curve256r1();
@@ -17,6 +20,9 @@ class SecureBrainpoolCurve extends BrainpoolCurve
         return $curve;
     }
 
+    /**
+     * @throws InsecureCurveException
+     */
     public function curve384r1(): NamedCurveFp
     {
         $curve = parent::curve384r1();
@@ -26,6 +32,9 @@ class SecureBrainpoolCurve extends BrainpoolCurve
         return $curve;
     }
 
+    /**
+     * @throws InsecureCurveException
+     */
     public function curve512r1(): NamedCurveFp
     {
         $curve = parent::curve512r1();

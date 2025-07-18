@@ -110,6 +110,10 @@ trait OpensslTrait
         if (!$this->isOpensslAvailable()) {
             throw new OpensslException('OpenSSL is not supported');
         }
+        // PHPStorm inspections want this explicitly included.
+        if (PHP_VERSION_ID < 70300) {
+            throw new OpensslException('PHP 7.3 or newer required');
+        }
         $private = $this->convertPrivateKeyToOpensslFormat($sk);
         $public = $this->convertPublicKeyToOpensslFormat($pk);
 

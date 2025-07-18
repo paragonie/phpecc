@@ -16,6 +16,8 @@ class SecureCurveFactory extends CurveFactory
     /**
      * @param string $name
      * @return NamedCurveFp
+     *
+     * @throws InsecureCurveException
      */
     public static function getCurveByName(string $name): NamedCurveFp
     {

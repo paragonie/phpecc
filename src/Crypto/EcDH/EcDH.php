@@ -86,7 +86,7 @@ class EcDH implements EcDHInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Crypto\EcDH\EcDHInterface::calculateSharedKey()
+     * @see EcDHInterface::calculateSharedKey
      */
     public function calculateSharedKey(): \GMP
     {
@@ -97,7 +97,7 @@ class EcDH implements EcDHInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Crypto\EcDH\EcDHInterface::createMultiPartyKey()
+     * @see EcDHInterface::createMultiPartyKey
      */
     public function createMultiPartyKey(): PublicKeyInterface
     {
@@ -108,7 +108,7 @@ class EcDH implements EcDHInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Crypto\EcDH\EcDHInterface::setRecipientKey()
+     * @see EcDHInterface::setRecipientKey
      */
     public function setRecipientKey(?PublicKeyInterface $key = null)
     {
@@ -118,12 +118,12 @@ class EcDH implements EcDHInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Crypto\EcDH\EcDHInterface::setSenderKey()
+     * @see EcDHInterface::setSenderKey
      */
     public function setSenderKey(
         #[\SensitiveParameter]
         PrivateKeyInterface $key
-    ) {
+    ): EcDHInterface {
         $this->senderKey = $key;
         return $this;
     }

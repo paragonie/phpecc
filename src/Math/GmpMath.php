@@ -279,9 +279,16 @@ class GmpMath implements GmpMathInterface
         $binary = '';
         for ($i = $byteSize - 1; $i >= 0; $i--) {
             $mask = gmp_div($mask, $maskShift);
-            $binary .= pack('C', gmp_strval(gmp_div(gmp_and($x, $mask), $two ** ($i * 8)), 10));
+            $binary .= pack(
+                'C',
+                gmp_strval(
+                    gmp_div(
+                        gmp_and($x, $mask),
+                        $two ** ($i * 8)
+                    )
+                )
+            );
         }
-
         return $binary;
     }
 

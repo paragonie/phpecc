@@ -27,7 +27,7 @@ class PemPublicKeySerializer implements PublicKeySerializerInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Serializer\PublicKey\PublicKeySerializerInterface::serialize()
+     * @see PublicKeySerializerInterface::serialize
      */
     public function serialize(PublicKeyInterface $key): string
     {
@@ -42,7 +42,7 @@ class PemPublicKeySerializer implements PublicKeySerializerInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Serializer\PublicKey\PublicKeySerializerInterface::parse()
+     * @see PublicKeySerializerInterface::parse
      */
     public function parse(string $formattedKey): PublicKeyInterface
     {

@@ -74,7 +74,7 @@ class PrivateKey implements PrivateKeyInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Crypto\Key\PrivateKeyInterface::getPublicKey()
+     * @see PrivateKeyInterface::getPublicKey
      */
     public function getPublicKey(): PublicKeyInterface
     {
@@ -88,7 +88,7 @@ class PrivateKey implements PrivateKeyInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Crypto\Key\PrivateKeyInterface::getPoint()
+     * @see PrivateKeyInterface::getPoint
      */
     public function getPoint(): GeneratorPoint
     {
@@ -97,7 +97,7 @@ class PrivateKey implements PrivateKeyInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Crypto\Key\PrivateKeyInterface::getCurve()
+     * @see PrivateKeyInterface::getCurve
      */
     public function getCurve(): CurveFpInterface
     {
@@ -106,7 +106,7 @@ class PrivateKey implements PrivateKeyInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Crypto\Key\PrivateKeyInterface::getSecret()
+     * @see PrivateKeyInterface::getSecret
      */
     public function getSecret(): GMP
     {
@@ -115,7 +115,7 @@ class PrivateKey implements PrivateKeyInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Crypto\Key\PrivateKeyInterface::createExchange()
+     * @see PrivateKeyInterface::createExchange
      */
     public function createExchange(?PublicKeyInterface $recipient = null): EcDHInterface
     {

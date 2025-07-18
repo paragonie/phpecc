@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Mdanter\Ecc\Serializer\PublicKey;
 
+use FG\ASN1\Exception\ParserException;
 use Mdanter\Ecc\Crypto\Key\PublicKeyInterface;
 use Mdanter\Ecc\Math\GmpMathInterface;
 use Mdanter\Ecc\Math\MathAdapterFactory;
@@ -74,7 +75,8 @@ class DerPublicKeySerializer implements PublicKeySerializerInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Serializer\PublicKey\PublicKeySerializerInterface::parse()
+     * @throws ParserException
+     * @see PublicKeySerializerInterface::parse
      */
     public function parse(string $formattedKey): PublicKeyInterface
     {

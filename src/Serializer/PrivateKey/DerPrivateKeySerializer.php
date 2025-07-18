@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Mdanter\Ecc\Serializer\PrivateKey;
 
+use Exception;
 use GMP;
 use FG\ASN1\ASNObject;
 use FG\ASN1\Universal\Sequence;
@@ -52,7 +53,9 @@ class DerPrivateKeySerializer implements PrivateKeySerializerInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Serializer\PrivateKey\PrivateKeySerializerInterface::serialize()
+     * @see PrivateKeySerializerInterface::serialize
+     *
+     * @throws Exception
      */
     public function serialize(
         #[\SensitiveParameter]
@@ -75,6 +78,8 @@ class DerPrivateKeySerializer implements PrivateKeySerializerInterface
     /**
      * @param PrivateKeyInterface $key
      * @return BitString
+     *
+     * @throws Exception
      */
     private function encodePubKey(
         #[\SensitiveParameter]
@@ -98,8 +103,8 @@ class DerPrivateKeySerializer implements PrivateKeySerializerInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Serializer\PrivateKey\PrivateKeySerializerInterface::parse()
      * @throws \FG\ASN1\Exception\ParserException
+     *@see PrivateKeySerializerInterface::parse
      */
     public function parse(
         #[\SensitiveParameter]

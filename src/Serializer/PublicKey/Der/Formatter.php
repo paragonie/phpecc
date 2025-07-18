@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Mdanter\Ecc\Serializer\PublicKey\Der;
 
+use Exception;
 use FG\ASN1\Universal\Sequence;
 use FG\ASN1\Universal\ObjectIdentifier;
 use FG\ASN1\Universal\BitString;
@@ -33,6 +34,7 @@ class Formatter
     /**
      * @param PublicKeyInterface $key
      * @return string
+     * @throws Exception
      */
     public function format(PublicKeyInterface $key): string
     {

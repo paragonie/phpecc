@@ -73,7 +73,7 @@ class CurveFp implements CurveFpInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Primitives\CurveFpInterface::getModAdapter()
+     * @see CurveFpInterface::getModAdapter
      */
     public function getModAdapter(): ModularArithmetic
     {
@@ -82,7 +82,7 @@ class CurveFp implements CurveFpInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Primitives\CurveFpInterface::getPoint()
+     * @see CurveFpInterface::getPoint
      */
     public function getPoint(GMP $x, GMP $y, ?GMP $order = null): PointInterface
     {
@@ -91,7 +91,7 @@ class CurveFp implements CurveFpInterface
     
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Primitives\CurveFpInterface::getInfinity()
+     * @see CurveFpInterface::getInfinity
      */
     public function getInfinity(): PointInterface
     {
@@ -102,7 +102,7 @@ class CurveFp implements CurveFpInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Primitives\CurveFpInterface::getGenerator()
+     * @see CurveFpInterface::getGenerator
      */
     public function getGenerator(GMP $x, GMP $y, GMP $order, ?RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint
     {
@@ -148,7 +148,7 @@ class CurveFp implements CurveFpInterface
     }
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Primitives\CurveFpInterface::contains()
+     * @see CurveFpInterface::contains
      */
     public function contains(GMP $x, GMP $y): bool
     {
@@ -173,7 +173,7 @@ class CurveFp implements CurveFpInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Primitives\CurveFpInterface::getA()
+     * @see CurveFpInterface::getA
      */
     public function getA(): GMP
     {
@@ -182,7 +182,7 @@ class CurveFp implements CurveFpInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Primitives\CurveFpInterface::getB()
+     * @see CurveFpInterface::getB
      */
     public function getB(): GMP
     {
@@ -191,7 +191,7 @@ class CurveFp implements CurveFpInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Primitives\CurveFpInterface::getPrime()
+     * @see CurveFpInterface::getPrime
      */
     public function getPrime(): GMP
     {
@@ -208,7 +208,7 @@ class CurveFp implements CurveFpInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Primitives\CurveFpInterface::cmp()
+     * @see CurveFpInterface::cmp
      */
     public function cmp(CurveFpInterface $other): int
     {
@@ -223,7 +223,7 @@ class CurveFp implements CurveFpInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Primitives\CurveFpInterface::equals()
+     * @see CurveFpInterface::equals
      */
     public function equals(CurveFpInterface $other): bool
     {
@@ -232,7 +232,7 @@ class CurveFp implements CurveFpInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Primitives\CurveFpInterface::__toString()
+     * @see CurveFpInterface::__toString
      */
     public function __toString(): string
     {

@@ -9,11 +9,17 @@ use Mdanter\Ecc\Random\RandomNumberGeneratorInterface;
 class SecureSecgCurve extends SecgCurve
 {
 
+    /**
+     * @throws InsecureCurveException
+     */
     public function curve112r1(): NamedCurveFp
     {
         throw new InsecureCurveException('secp112r1 is not a secure elliptic curve');
     }
 
+    /**
+     * @throws InsecureCurveException
+     */
     public function curve192k1(): NamedCurveFp
     {
         throw new InsecureCurveException('secp192r1 is not a secure elliptic curve');
@@ -21,6 +27,7 @@ class SecureSecgCurve extends SecgCurve
 
     /**
      * @inheritDoc
+     * @throws InsecureCurveException
      */
     public function curve256k1(): NamedCurveFp
     {
@@ -33,6 +40,7 @@ class SecureSecgCurve extends SecgCurve
 
     /**
      * @inheritDoc
+     * @throws InsecureCurveException
      */
     public function curve256r1(): NamedCurveFp
     {
@@ -45,6 +53,7 @@ class SecureSecgCurve extends SecgCurve
 
     /**
      * @inheritDoc
+     * @throws InsecureCurveException
      */
     public function curve384r1(): NamedCurveFp
     {

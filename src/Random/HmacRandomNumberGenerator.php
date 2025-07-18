@@ -89,7 +89,7 @@ class HmacRandomNumberGenerator implements RandomNumberGeneratorInterface
      */
     public function int2octets(GMP $int, GMP $rlen): string
     {
-        $out = pack("H*", $this->math->decHex(gmp_strval($int, 10)));
+        $out = pack("H*", $this->math->decHex(gmp_strval($int)));
         /** @var GMP $length */
         $length = gmp_init(BinaryString::length($out), 10);
         if ($this->math->cmp($length, $rlen) < 0) {
@@ -149,7 +149,7 @@ class HmacRandomNumberGenerator implements RandomNumberGeneratorInterface
 
                 /** @var GMP $sub */
                 $sub = gmp_sub($rlen, $toff);
-                $cc = min(BinaryString::length($v), (int) gmp_strval($sub, 10));
+                $cc = min(BinaryString::length($v), (int) gmp_strval($sub));
                 $t .= BinaryString::substring($v, 0, $cc);
                 /** @var GMP $toff */
                 $toff = gmp_add($toff, $cc);

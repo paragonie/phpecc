@@ -99,9 +99,6 @@ class PublicKey implements PublicKeyInterface
         }
     }
 
-    /**
-     * @return GmpMathInterface
-     */
     public function getAdapter(): GmpMathInterface
     {
         return $this->adapter;
@@ -109,7 +106,7 @@ class PublicKey implements PublicKeyInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Crypto\Key\PublicKeyInterface::getCurve()
+     * @see PublicKeyInterface::getCurve
      */
     public function getCurve(): CurveFpInterface
     {
@@ -118,7 +115,7 @@ class PublicKey implements PublicKeyInterface
 
     /**
      * {$inheritDoc}
-     * @see \Mdanter\Ecc\Crypto\Key\PublicKeyInterface::getGenerator()
+     * @see PublicKeyInterface::getGenerator
      */
     public function getGenerator(): GeneratorPoint
     {
@@ -127,7 +124,7 @@ class PublicKey implements PublicKeyInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Crypto\Key\PublicKeyInterface::getPoint()
+     * @see PublicKeyInterface::getPoint
      */
     public function getPoint(): PointInterface
     {

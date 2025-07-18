@@ -120,7 +120,7 @@ class JacobianPoint
     }
 
     /**
-     * @see \Mdanter\Ecc\Primitives\PointInterface::getX()
+     * @see PointInterface::getX
      */
     public function getX(): GMP
     {
@@ -128,7 +128,7 @@ class JacobianPoint
     }
 
     /**
-     * @see \Mdanter\Ecc\Primitives\PointInterface::getY()
+     * @see PointInterface::getY
      */
     public function getY(): GMP
     {
@@ -136,7 +136,7 @@ class JacobianPoint
     }
 
     /**
-     * @see \Mdanter\Ecc\Primitives\PointInterface::getZ()
+     * @see PointInterface::getZ
      */
     public function getZ(): GMP
     {
@@ -182,7 +182,7 @@ class JacobianPoint
      *
      * @return self
      */
-    public function getBase()
+    public function getBase(): self
     {
         $Gx = gmp_init(self::G_X, 16);
         $Gy = gmp_init(self::G_Y, 16);
@@ -194,7 +194,7 @@ class JacobianPoint
      *
      * @return self
      */
-    public function getZero()
+    public function getZero(): self
     {
         return new self(gmp_init(0, 10), gmp_init(1, 10), gmp_init(0, 10));
     }
@@ -502,7 +502,7 @@ class JacobianPoint
                     $pr = $pr->negate();
                 }
 
-                $f = $f->add($pr, true);
+                $f = $f->add($pr);
             } else {
                 $cached = $precomputes[$offset + gmp_intval(gmp_abs($wbits)) - 1];
 
@@ -707,7 +707,7 @@ class JacobianPoint
     }
 
     /**
-     * @see \Mdanter\Ecc\Primitives\PointInterface::__toString()
+     * @see PointInterface::__toString
      */
     public function __toString(): string
     {

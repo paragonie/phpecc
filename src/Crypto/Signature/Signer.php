@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Mdanter\Ecc\Crypto\Signature;
 
+use FG\ASN1\Exception\ParserException;
 use GMP;
 use Mdanter\Ecc\Curves\CurveFactory;
 use Mdanter\Ecc\Curves\NamedCurveFp;
@@ -81,6 +82,7 @@ class Signer
      * @param string|null $hashAlgo
      *
      * @return SignatureInterface
+     * @throws ParserException
      */
     public function signMessage(
         #[\SensitiveParameter]
