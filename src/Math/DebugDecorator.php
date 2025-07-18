@@ -1,4 +1,7 @@
-<?php
+<?php /** @noinspection PhpMissingParamTypeInspection */
+/** @noinspection PhpMissingParamTypeInspection */
+
+/** @noinspection PhpMissingParamTypeInspection */
 
 namespace Mdanter\Ecc\Math;
 
@@ -80,7 +83,7 @@ class DebugDecorator implements GmpMathInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Math\GmpMathInterface::cmp()
+     * @see GmpMathInterface::cmp
      */
     public function cmp(\GMP $first, \GMP $other): int
     {
@@ -100,7 +103,7 @@ class DebugDecorator implements GmpMathInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Math\GmpMathInterface::cmp()
+     * @see GmpMathInterface::cmp
      */
     public function equals(\GMP $first, \GMP $other): bool
     {
@@ -119,7 +122,7 @@ class DebugDecorator implements GmpMathInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Math\GmpMathInterface::mod()
+     * @see GmpMathInterface::mod
      */
     public function mod(\GMP $number, \GMP $modulus): \GMP
     {
@@ -138,7 +141,7 @@ class DebugDecorator implements GmpMathInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Math\GmpMathInterface::add()
+     * @see GmpMathInterface::add
      */
     public function add(\GMP $augend, \GMP $addend): \GMP
     {
@@ -157,7 +160,7 @@ class DebugDecorator implements GmpMathInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Math\GmpMathInterface::sub()
+     * @see GmpMathInterface::sub
      */
     public function sub(\GMP $minuend, \GMP $subtrahend): \GMP
     {
@@ -176,7 +179,7 @@ class DebugDecorator implements GmpMathInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Math\GmpMathInterface::mul()
+     * @see GmpMathInterface::mul
      */
     public function mul(\GMP $multiplier, \GMP $multiplicand): \GMP
     {
@@ -195,7 +198,7 @@ class DebugDecorator implements GmpMathInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Math\GmpMathInterface::div()
+     * @see GmpMathInterface::div
      */
     public function div(\GMP $dividend, \GMP $divisor): \GMP
     {
@@ -214,7 +217,7 @@ class DebugDecorator implements GmpMathInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Math\GmpMathInterface::pow()
+     * @see GmpMathInterface::pow
      */
     public function pow(\GMP $base, int $exponent): \GMP
     {
@@ -233,7 +236,7 @@ class DebugDecorator implements GmpMathInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Math\GmpMathInterface::bitwiseAnd()
+     * @see GmpMathInterface::bitwiseAnd
      */
     public function bitwiseAnd(\GMP $first, \GMP $other): \GMP
     {
@@ -261,7 +264,7 @@ class DebugDecorator implements GmpMathInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Math\GmpMathInterface::hexDec()
+     * @see GmpMathInterface::hexDec
      */
     public function hexDec(string $hexString): string
     {
@@ -280,7 +283,7 @@ class DebugDecorator implements GmpMathInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Math\GmpMathInterface::decHex()
+     * @see GmpMathInterface::decHex
      */
     public function decHex(string $decString): string
     {
@@ -299,7 +302,7 @@ class DebugDecorator implements GmpMathInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Math\GmpMathInterface::powmod()
+     * @see GmpMathInterface::powmod
      */
     public function powmod(\GMP $base, \GMP $exponent, \GMP $modulus): \GMP
     {
@@ -318,7 +321,7 @@ class DebugDecorator implements GmpMathInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Math\GmpMathInterface::isPrime()
+     * @see GmpMathInterface::isPrime
      */
     public function isPrime(\GMP $n): bool
     {
@@ -337,7 +340,7 @@ class DebugDecorator implements GmpMathInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Math\GmpMathInterface::nextPrime()
+     * @see GmpMathInterface::nextPrime
      */
     public function nextPrime(\GMP $currentPrime): \GMP
     {
@@ -356,7 +359,7 @@ class DebugDecorator implements GmpMathInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Math\GmpMathInterface::inverseMod()
+     * @see GmpMathInterface::inverseMod
      */
     public function inverseMod(\GMP $a, \GMP $m): \GMP
     {
@@ -375,7 +378,7 @@ class DebugDecorator implements GmpMathInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Math\GmpMathInterface::jacobi()
+     * @see GmpMathInterface::jacobi
      */
     public function jacobi(\GMP $a, \GMP $p): int
     {
@@ -394,7 +397,7 @@ class DebugDecorator implements GmpMathInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Math\GmpMathInterface::intToString()
+     * @see GmpMathInterface::intToString
      */
     public function intToFixedSizeString(\GMP $x, int $byteSize): string
     {
@@ -413,7 +416,7 @@ class DebugDecorator implements GmpMathInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Math\GmpMathInterface::intToString()
+     * @see GmpMathInterface::intToString
      */
     public function intToString(\GMP $x): string
     {
@@ -432,7 +435,7 @@ class DebugDecorator implements GmpMathInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Math\GmpMathInterface::stringToInt()
+     * @see GmpMathInterface::stringToInt
      */
     public function stringToInt(string $s): \GMP
     {
@@ -451,7 +454,7 @@ class DebugDecorator implements GmpMathInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Math\GmpMathInterface::digestInteger()
+     * @see GmpMathInterface::digestInteger
      */
     public function digestInteger(\GMP $m): \GMP
     {
@@ -470,7 +473,7 @@ class DebugDecorator implements GmpMathInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Math\GmpMathInterface::gcd2()
+     * @see GmpMathInterface::gcd2
      */
     public function gcd2(\GMP $a, \GMP $m): \GMP
     {
@@ -489,7 +492,7 @@ class DebugDecorator implements GmpMathInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Math\GmpMathInterface::rightShift()
+     * @see GmpMathInterface::rightShift
      */
     public function rightShift(\GMP $number, int $positions): \GMP
     {
@@ -508,7 +511,7 @@ class DebugDecorator implements GmpMathInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Math\GmpMathInterface::leftShift()
+     * @see GmpMathInterface::leftShift
      */
     public function leftShift(\GMP $number, int $positions): \GMP
     {
@@ -527,7 +530,7 @@ class DebugDecorator implements GmpMathInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Math\GmpMathInterface::bitwiseXor()
+     * @see GmpMathInterface::bitwiseXor
      */
     public function bitwiseXor(\GMP $first, \GMP $other): \GMP
     {
@@ -546,7 +549,7 @@ class DebugDecorator implements GmpMathInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Math\GmpMathInterface::baseConvert()
+     * @see GmpMathInterface::baseConvert
      */
     public function baseConvert(string $value, int $fromBase, int $toBase): string
     {
@@ -564,8 +567,7 @@ class DebugDecorator implements GmpMathInterface
     }
 
     /**
-     * {@inheritDoc}
-     * @see \Mdanter\Ecc\Math\GmpMathInterface::getEcMath()
+     * @see GmpMathInterface::getEcMath
      */
     public function getEcMath(GeneratorPoint $generatorPoint, $input)
     {
@@ -584,7 +586,7 @@ class DebugDecorator implements GmpMathInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Math\GmpMathInterface::getModularArithmetic()
+     * @see GmpMathInterface::getModularArithmetic
      */
     public function getModularArithmetic(\GMP $modulus): ModularArithmetic
     {
@@ -603,7 +605,7 @@ class DebugDecorator implements GmpMathInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Math\GmpMathInterface::getNumberTheory()
+     * @see GmpMathInterface::getNumberTheory
      */
     public function getNumberTheory(): NumberTheory
     {

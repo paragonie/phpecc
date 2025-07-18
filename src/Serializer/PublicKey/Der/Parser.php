@@ -1,4 +1,5 @@
 <?php
+/** @noinspection PhpPossiblePolymorphicInvocationInspection */
 declare(strict_types=1);
 
 namespace Mdanter\Ecc\Serializer\PublicKey\Der;
@@ -69,7 +70,7 @@ class Parser
             throw new \RuntimeException('Invalid data.');
         }
 
-        if (count($children[0]->getChildren()) != 2) {
+        if (count($children[0]->getChildren()) !== 2) {
             throw new \RuntimeException('Invalid data.');
         }
 

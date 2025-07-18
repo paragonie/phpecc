@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 namespace Mdanter\Ecc\Crypto\Signature;
 
+use Exception;
+use FG\ASN1\Exception\ParserException;
 use GMP;
-use Mdanter\Ecc\Curves\CurveFactory;
 use Mdanter\Ecc\Curves\NamedCurveFp;
 use Mdanter\Ecc\Curves\NistCurve;
 use Mdanter\Ecc\Curves\SecgCurve;
@@ -15,12 +16,11 @@ use Mdanter\Ecc\Crypto\Key\PrivateKeyInterface;
 use Mdanter\Ecc\Crypto\Key\PublicKeyInterface;
 use Mdanter\Ecc\OpensslFallbackTrait;
 use Mdanter\Ecc\Primitives\CurveFpInterface;
-use Mdanter\Ecc\Primitives\GeneratorPoint;
 use Mdanter\Ecc\Primitives\OptimizedCurveInterface;
 use Mdanter\Ecc\Random\RandomGeneratorFactory;
 use Mdanter\Ecc\Serializer\Signature\DerSignatureSerializer;
 use Mdanter\Ecc\Util\BinaryString;
-use TypeError;
+use SodiumException;
 
 class Signer
 {
@@ -81,6 +81,8 @@ class Signer
      * @param string|null $hashAlgo
      *
      * @return SignatureInterface
+     * @throws ParserException
+     * @throws SodiumException
      */
     public function signMessage(
         #[\SensitiveParameter]
@@ -169,6 +171,9 @@ class Signer
      * @param string $message
      * @param string|null $hashAlgo
      * @return bool
+     *
+     * @throws SodiumException
+     * @throws Exception
      */
     public function verifyMessage(
         PublicKeyInterface $key,

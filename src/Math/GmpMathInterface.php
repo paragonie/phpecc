@@ -119,7 +119,7 @@ interface GmpMathInterface
     public function toString(GMP $value): string;
 
     /**
-     * Converts an hexadecimal string to decimal.
+     * Converts a hexadecimal string to decimal.
      *
      * @param  string $hexString
      * @return int|string

@@ -26,11 +26,13 @@ namespace Mdanter\Ecc\Crypto\EcDH;
  * OTHER DEALINGS IN THE SOFTWARE.
  * ***********************************************************************
  */
+
+use GMP;
 use Mdanter\Ecc\Crypto\Key\PublicKeyInterface;
 use Mdanter\Ecc\Crypto\Key\PrivateKeyInterface;
 
 /**
- * This is the contract for implementing EcDH (EC Diffie Hellman).
+ * This is the contract for implementing EcDH (EC Diffie-Hellman).
  */
 interface EcDHInterface
 {
@@ -38,9 +40,9 @@ interface EcDHInterface
     /**
      * Calculates and returns the shared key for the exchange.
      *
-     * @return \GMP
+     * @return GMP
      */
-    public function calculateSharedKey(): \GMP;
+    public function calculateSharedKey(): GMP;
 
     /**
      * @return PublicKeyInterface
@@ -56,7 +58,7 @@ interface EcDHInterface
     public function setSenderKey(
         #[\SensitiveParameter]
         PrivateKeyInterface $key
-    );
+    ): EcDHInterface;
 
     /**
      * Sets the recipient key.
@@ -65,5 +67,5 @@ interface EcDHInterface
      * @return self
      * @psalm-suppress PossiblyUnusedReturnValue
      */
-    public function setRecipientKey(PublicKeyInterface $key);
+    public function setRecipientKey(PublicKeyInterface $key): EcDHInterface;
 }

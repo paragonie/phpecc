@@ -2,7 +2,6 @@
 declare(strict_types=1);
 namespace Mdanter\Ecc\Optimized\Common;
 
-use GMP;
 use Mdanter\Ecc\Math\ConstantTimeMath;
 
 /**

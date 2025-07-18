@@ -4,7 +4,6 @@ declare(strict_types=1);
 namespace Mdanter\Ecc\Primitives;
 
 use GMP;
-use Mdanter\Ecc\Curves\OptimizedCurveFp;
 use Mdanter\Ecc\Exception\PointException;
 use Mdanter\Ecc\Exception\PointNotOnCurveException;
 use Mdanter\Ecc\Math\ConstantTimeMath;
@@ -82,7 +81,7 @@ class Point implements PointInterface
     /**
      * @var bool
      */
-    private $infinity = false;
+    private $infinity;
 
     /**
      * @var int
@@ -158,7 +157,7 @@ class Point implements PointInterface
      */
     public function isInfinity(): bool
     {
-        return (bool) $this->infinity;
+        return $this->infinity;
     }
 
     /**
@@ -360,9 +359,9 @@ class Point implements PointInterface
      * @param int $cond
      * @param int $maskBitSize
      */
-    public function cswapValue(& $a, & $b, int $cond, int $maskBitSize)
+    public function cswapValue(&$a, &$b, int $cond, int $maskBitSize): void
     {
-        $isGMP = is_object($a) && $a instanceof GMP;
+        $isGMP =  $a instanceof GMP;
 
         $sa = $isGMP ? $a : gmp_init(intval($a), 10);
         $sb = $isGMP ? $b : gmp_init(intval($b), 10);
@@ -381,8 +380,8 @@ class Point implements PointInterface
         /** @var GMP $sa */
         $sa = $this->adapter->bitwiseXor($this->adapter->bitwiseXor($sa, $sb), $taB);
 
-        $a = $isGMP ? $sa : (bool) gmp_strval($sa, 10);
-        $b = $isGMP ? $sb : (bool) gmp_strval($sb, 10);
+        $a = $isGMP ? $sa : (bool) gmp_strval($sa);
+        $b = $isGMP ? $sb : (bool) gmp_strval($sb);
     }
 
     /**
@@ -397,8 +396,8 @@ class Point implements PointInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Primitives\PointInterface::getDouble()
      * @return self
+     * @see PointInterface::getDouble
      */
     public function getDouble(): PointInterface
     {
@@ -437,7 +436,7 @@ class Point implements PointInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Primitives\PointInterface::__toString()
+     * @see PointInterface::__toString
      */
     public function __toString(): string
     {

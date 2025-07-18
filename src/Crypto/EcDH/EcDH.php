@@ -42,7 +42,7 @@ use Mdanter\Ecc\Primitives\OptimizedCurveInterface;
  * that a key is transported securely between two parties.
  * The key then can be hashed and used as a basis in
  * a dual encryption scheme, along with AES for faster
- * two- way encryption.
+ * two-way encryption.
  */
 class EcDH implements EcDHInterface
 {
@@ -86,7 +86,7 @@ class EcDH implements EcDHInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Crypto\EcDH\EcDHInterface::calculateSharedKey()
+     * @see EcDHInterface::calculateSharedKey
      */
     public function calculateSharedKey(): \GMP
     {
@@ -97,7 +97,7 @@ class EcDH implements EcDHInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Crypto\EcDH\EcDHInterface::createMultiPartyKey()
+     * @see EcDHInterface::createMultiPartyKey
      */
     public function createMultiPartyKey(): PublicKeyInterface
     {
@@ -108,9 +108,9 @@ class EcDH implements EcDHInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Crypto\EcDH\EcDHInterface::setRecipientKey()
+     * @see EcDHInterface::setRecipientKey
      */
-    public function setRecipientKey(?PublicKeyInterface $key = null)
+    public function setRecipientKey(?PublicKeyInterface $key = null): EcDHInterface
     {
         $this->recipientKey = $key;
         return $this;
@@ -118,12 +118,12 @@ class EcDH implements EcDHInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Crypto\EcDH\EcDHInterface::setSenderKey()
+     * @see EcDHInterface::setSenderKey
      */
     public function setSenderKey(
         #[\SensitiveParameter]
         PrivateKeyInterface $key
-    ) {
+    ): EcDHInterface {
         $this->senderKey = $key;
         return $this;
     }

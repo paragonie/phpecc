@@ -39,7 +39,7 @@ use Mdanter\Ecc\Exception\PointException;
  * This class incorporates work from Mdanter's ECC Primitive Point class and Paul Miller's Noble-Secp256k1 Library.
  * The original works are licensed under the MIT License.
  *
- * This JacobianPoint class contains all of the important methods to handle JacobianPoint Manipulation as to
+ * This JacobianPoint class contains all the important methods to handle JacobianPoint Manipulation as to
  * verify and sign Schnorr signatures.
  */
 class JacobianPoint
@@ -120,7 +120,7 @@ class JacobianPoint
     }
 
     /**
-     * @see \Mdanter\Ecc\Primitives\PointInterface::getX()
+     * @see PointInterface::getX
      */
     public function getX(): GMP
     {
@@ -128,7 +128,7 @@ class JacobianPoint
     }
 
     /**
-     * @see \Mdanter\Ecc\Primitives\PointInterface::getY()
+     * @see PointInterface::getY
      */
     public function getY(): GMP
     {
@@ -136,7 +136,7 @@ class JacobianPoint
     }
 
     /**
-     * @see \Mdanter\Ecc\Primitives\PointInterface::getZ()
+     * @see PointInterface::getZ
      */
     public function getZ(): GMP
     {
@@ -182,7 +182,7 @@ class JacobianPoint
      *
      * @return self
      */
-    public function getBase()
+    public function getBase(): self
     {
         $Gx = gmp_init(self::G_X, 16);
         $Gy = gmp_init(self::G_Y, 16);
@@ -194,7 +194,7 @@ class JacobianPoint
      *
      * @return self
      */
-    public function getZero()
+    public function getZero(): self
     {
         return new self(gmp_init(0, 10), gmp_init(1, 10), gmp_init(0, 10));
     }
@@ -502,7 +502,7 @@ class JacobianPoint
                     $pr = $pr->negate();
                 }
 
-                $f = $f->add($pr, true);
+                $f = $f->add($pr);
             } else {
                 $cached = $precomputes[$offset + gmp_intval(gmp_abs($wbits)) - 1];
 
@@ -611,9 +611,11 @@ class JacobianPoint
     /**
      * Multiply two points together.
      *
+     * @param GMP $n
+     * @param ?JacobianPoint $affinePoint
      * @return self
      */
-    public function mul(GMP $n, ?self $affinePoint = null)
+    public function mul(GMP $n, ?self $affinePoint = null): self
     {
         if ($affinePoint === null) {
             $affinePoint = $this->getBasePoint();
@@ -707,7 +709,7 @@ class JacobianPoint
     }
 
     /**
-     * @see \Mdanter\Ecc\Primitives\PointInterface::__toString()
+     * @see PointInterface::__toString
      */
     public function __toString(): string
     {
