@@ -519,7 +519,7 @@ class JacobianPoint
      * Creates a wNAF precomputation window used for caching, (Default window size is 8).
      * This will cache 65,536 points: 256 points for every bit from 0 to 256.
      *
-     * @param int $w
+     * @param int $W
      */
     public function precomputeWindow(int $W): array
     {
