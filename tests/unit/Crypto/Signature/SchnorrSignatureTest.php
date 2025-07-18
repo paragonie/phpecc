@@ -94,4 +94,32 @@ final class SchnorrSignatureTest extends AbstractTestCase
         // make assertion
         static::assertSame($signature, $finalResult);
     }
+
+    /**
+     * Test that signatures are always 128 characters (64 hex chars each for r and s)
+     */
+    public function testSignatureLengthConsistency(): void
+    {
+        // Test with various private keys that might produce short hex values
+        $testCases = [
+            ['privateKey' => '0000000000000000000000000000000000000000000000000000000000000001', 'message' => 'test'],
+            ['privateKey' => '0000000000000000000000000000000000000000000000000000000000000123', 'message' => 'test'],
+            ['privateKey' => '000000000000000000000000000000000000000000000000000000000000abcd', 'message' => 'test'],
+        ];
+
+        foreach ($testCases as $case) {
+            $schnorr = new SchnorrSignature();
+            $result = $schnorr->sign($case['privateKey'], $case['message'], 'a' . str_repeat('0', 63));
+
+            // Signature should always be exactly 128 characters
+            static::assertSame(128, strlen($result['signature']),
+                sprintf('Signature length should be 128, got %d for private key %s',
+                    strlen($result['signature']), $case['privateKey']));
+
+            // Public key should always be exactly 64 characters
+            static::assertSame(64, strlen($result['publicKey']),
+                sprintf('Public key length should be 64, got %d for private key %s',
+                    strlen($result['publicKey']), $case['privateKey']));
+        }
+    }
 }

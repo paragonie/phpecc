@@ -184,11 +184,8 @@ class SchnorrSignature
         // gmp_strval does not properly pad hexadecimal values
         $hex = gmp_strval($gmp, 16);
 
-        if (mb_strlen($hex) % 2 === 0) {
-            return $hex;
-        }
-
-        return '0' . $hex;
+        // Always ensure the result is exactly 64 characters, zero-padded from the left
+        return str_pad($hex, 64, '0', STR_PAD_LEFT);
     }
 
     private function finalizeSchnorrVerify(\GMP $r, PointInterface $P, \GMP $s, \GMP $e): bool
