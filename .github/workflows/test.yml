@@ -115,6 +115,3 @@ jobs:
 
     - name: Run tests
       run: make phpunit-ci
-
-    - name: Upload coverage to Scrutinizer
-      run: make scrutinizer
