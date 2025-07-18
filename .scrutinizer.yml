@@ -1,8 +1,5 @@
 build:
     nodes:
-        analysis:
-            resources:
-                cpus: 4
         php-scrutinizer-run:
             project_setup:
                 override: true
