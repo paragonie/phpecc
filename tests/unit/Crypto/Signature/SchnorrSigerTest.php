@@ -17,7 +17,7 @@ use Mdanter\Ecc\Tests\AbstractTestCase;
  *
  * @coversNothing
  */
-final class SchnorrSignatureTest extends AbstractTestCase
+final class SchnorrSigerTest extends AbstractTestCase
 {
     public static function bipVectorProvider(): array
     {
