@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace Mdanter\Ecc\Serializer\PrivateKey;
 
+use Exception;
+use FG\ASN1\Exception\ParserException;
 use Mdanter\Ecc\Crypto\Key\PrivateKeyInterface;
 
 /**
@@ -27,7 +29,8 @@ class PemPrivateKeySerializer implements PrivateKeySerializerInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Serializer\PrivateKey\PrivateKeySerializerInterface::serialize()
+     * @throws Exception
+     * @see PrivateKeySerializerInterface::serialize
      */
     public function serialize(
         #[\SensitiveParameter]
@@ -44,7 +47,8 @@ class PemPrivateKeySerializer implements PrivateKeySerializerInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Serializer\PrivateKey\PrivateKeySerializerInterface::parse()
+     * @throws ParserException
+     * @see PrivateKeySerializerInterface::parse
      */
     public function parse(
         #[\SensitiveParameter]

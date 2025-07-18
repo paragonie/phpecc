@@ -8,6 +8,7 @@ use Mdanter\Ecc\Math\GmpMathInterface;
 use Mdanter\Ecc\Primitives\GeneratorPoint;
 use Mdanter\Ecc\Util\BinaryString;
 use Mdanter\Ecc\Util\NumberSize;
+use SodiumException;
 
 class SignHasher implements HasherInterface
 {
@@ -69,7 +70,7 @@ class SignHasher implements HasherInterface
      */
     public function makeRawHash(string $data): string
     {
-        return hash($this->algorithm, $data, false);
+        return hash($this->algorithm, $data, true);
     }
 
     /**
@@ -97,6 +98,8 @@ class SignHasher implements HasherInterface
      * @param string $data
      * @param GeneratorPoint $G
      * @return GMP
+     *
+     * @throws SodiumException
      */
     public function makeHash(
         #[\SensitiveParameter]
@@ -105,7 +108,7 @@ class SignHasher implements HasherInterface
         GeneratorPoint $G
     ): GMP {
         /** @var GMP $hash */
-        $hash = gmp_init($this->makeRawHash($data), 16);
+        $hash = gmp_init(sodium_bin2hex($this->makeRawHash($data)), 16);
         return $this->truncateForECDSA($hash, $G);
     }
 }

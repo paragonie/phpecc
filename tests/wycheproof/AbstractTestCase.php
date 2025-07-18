@@ -36,10 +36,10 @@ abstract class AbstractTestCase extends TestCase
     }
 
     /**
-     * @param array $extra
+     * @param ?array $extra
      * @return array
      */
-    protected function _getAdapters(array $extra = null)
+    protected function internalGetAdapters(?array $extra = null): array
     {
         if (! defined('PHPUNIT_DEBUG')) {
             define('PHPUNIT_DEBUG', false);
@@ -57,7 +57,7 @@ abstract class AbstractTestCase extends TestCase
             );
         }
 
-        $adapters = $this->_getAdapters(null);
+        $adapters = $this->internalGetAdapters(null);
         $result = [];
 
         foreach ($adapters as $adapter) {
@@ -97,8 +97,12 @@ abstract class AbstractTestCase extends TestCase
         return $contents;
     }
 
-    public function getAdapters()
+    /**
+     * @param ?array $extra
+     * @return array
+     */
+    public function getAdapters(?array $extra = null): array
     {
-        return $this->_getAdapters();
+        return $this->internalGetAdapters($extra);
     }
 }

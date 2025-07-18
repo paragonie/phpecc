@@ -22,13 +22,13 @@ class UnsupportedCurveException extends \RuntimeException
         parent::__construct($message, $code, $previous);
     }
 
-    public function setCurveName(string $curveName)
+    public function setCurveName(string $curveName): static
     {
         $this->curveName = $curveName;
         return $this;
     }
 
-    public function setOid(string $oid)
+    public function setOid(string $oid):  static
     {
         $this->oid = $oid;
         return $this;

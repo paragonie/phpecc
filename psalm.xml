@@ -21,5 +21,8 @@
         <UnusedClass errorLevel="info" />
         <UnusedProperty errorLevel="info" />
         <PossiblyUnusedMethod errorLevel="info" />
+        <!-- New Psalm 6 checks: -->
+        <MissingOverrideAttribute errorLevel="info" />
+        <ClassMustBeFinal errorLevel="info" />
     </issueHandlers>
 </psalm>

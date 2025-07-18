@@ -11,11 +11,17 @@ use Mdanter\Ecc\Random\RandomNumberGeneratorInterface;
  */
 class SecureNistCurve extends NistCurve
 {
+    /**
+     * @throws InsecureCurveException
+     */
     public function curve192(): NamedCurveFp
     {
         throw new InsecureCurveException('P-192 is not a secure elliptic curve');
     }
 
+    /**
+     * @throws InsecureCurveException
+     */
     public function curve224(): NamedCurveFp
     {
         throw new InsecureCurveException('P-224 is not a secure elliptic curve');

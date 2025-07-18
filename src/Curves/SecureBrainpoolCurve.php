@@ -8,6 +8,9 @@ use Mdanter\Ecc\Random\RandomNumberGeneratorInterface;
 
 class SecureBrainpoolCurve extends BrainpoolCurve
 {
+    /**
+     * @throws InsecureCurveException
+     */
     public function curve256r1(): NamedCurveFp
     {
         $curve = parent::curve256r1();
@@ -17,6 +20,9 @@ class SecureBrainpoolCurve extends BrainpoolCurve
         return $curve;
     }
 
+    /**
+     * @throws InsecureCurveException
+     */
     public function curve384r1(): NamedCurveFp
     {
         $curve = parent::curve384r1();
@@ -26,6 +32,9 @@ class SecureBrainpoolCurve extends BrainpoolCurve
         return $curve;
     }
 
+    /**
+     * @throws InsecureCurveException
+     */
     public function curve512r1(): NamedCurveFp
     {
         $curve = parent::curve512r1();
@@ -38,24 +47,30 @@ class SecureBrainpoolCurve extends BrainpoolCurve
     /**
      * @inheritDoc
      */
-    public function generator256r1(RandomNumberGeneratorInterface $randomGenerator = null, bool $optimized = true): GeneratorPoint
-    {
+    public function generator256r1(
+        ?RandomNumberGeneratorInterface $randomGenerator = null,
+        bool $optimized = true
+    ): GeneratorPoint {
         return parent::generator256r1($randomGenerator, $optimized);
     }
 
     /**
      * @inheritDoc
      */
-    public function generator384r1(RandomNumberGeneratorInterface $randomGenerator = null, bool $optimized = true): GeneratorPoint
-    {
+    public function generator384r1(
+        ?RandomNumberGeneratorInterface $randomGenerator = null,
+        bool $optimized = true
+    ): GeneratorPoint {
         return parent::generator384r1($randomGenerator, $optimized);
     }
 
     /**
      * @inheritDoc
      */
-    public function generator512r1(RandomNumberGeneratorInterface $randomGenerator = null, bool $optimized = true): GeneratorPoint
-    {
+    public function generator512r1(
+        ?RandomNumberGeneratorInterface $randomGenerator = null,
+        bool $optimized = true
+    ): GeneratorPoint {
         return parent::generator512r1($randomGenerator, $optimized);
     }
 }

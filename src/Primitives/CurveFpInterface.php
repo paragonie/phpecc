@@ -88,7 +88,7 @@ interface CurveFpInterface
     public function contains(GMP $x, GMP $y): bool;
 
     /**
-     * Returns the a parameter of the curve.
+     * Returns the A parameter of the curve.
      *
      * @return GMP
      */
@@ -117,7 +117,7 @@ interface CurveFpInterface
      * Compares the curve to another.
      *
      * @param  CurveFpInterface $other
-     * @return int              < 0 if $this < $other, 0 if $other == $this, > 0 if $this > $other
+     * @return int              value: < 0 if $this < $other, 0 if $other == $this, > 0 if $this > $other
      */
     public function cmp(CurveFpInterface $other): int;
 

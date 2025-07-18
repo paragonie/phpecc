@@ -1,4 +1,5 @@
 <?php
+/** @noinspection PhpPossiblePolymorphicInvocationInspection */
 declare(strict_types=1);
 
 namespace Mdanter\Ecc\Serializer\PublicKey\Der;
@@ -33,7 +34,7 @@ class Parser
      * @param GmpMathInterface $adapter
      * @param PointSerializerInterface|null $pointSerializer
      */
-    public function __construct(GmpMathInterface $adapter, PointSerializerInterface $pointSerializer = null)
+    public function __construct(GmpMathInterface $adapter, ?PointSerializerInterface $pointSerializer = null)
     {
         $this->adapter = $adapter;
         $this->pointSerializer = $pointSerializer ?: new UncompressedPointSerializer();
@@ -69,7 +70,7 @@ class Parser
             throw new \RuntimeException('Invalid data.');
         }
 
-        if (count($children[0]->getChildren()) != 2) {
+        if (count($children[0]->getChildren()) !== 2) {
             throw new \RuntimeException('Invalid data.');
         }
 

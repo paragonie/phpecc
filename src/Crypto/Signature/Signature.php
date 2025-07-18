@@ -57,7 +57,7 @@ class Signature implements SignatureInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Crypto\Signature\SignatureInterface::getR()
+     * @see SignatureInterface::getR
      */
     public function getR(): \GMP
     {
@@ -66,7 +66,7 @@ class Signature implements SignatureInterface
 
     /**
      * {@inheritDoc}
-     * @see \Mdanter\Ecc\Crypto\Signature\SignatureInterface::getS()
+     * @see SignatureInterface::getS
      */
     public function getS(): \GMP
     {

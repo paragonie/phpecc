@@ -35,7 +35,7 @@ class DebugDecorator implements RandomNumberGeneratorInterface
 
         $result = $this->generator->generate($max);
 
-        echo gmp_strval($result, 10).PHP_EOL;
+        echo gmp_strval($result), PHP_EOL;
 
         return $result;
     }
