@@ -1,11 +1,11 @@
 <?php
-
 declare(strict_types=1);
-
 namespace Mdanter\Ecc\Primitives;
 
+use GMP;
 use Mdanter\Ecc\Curves\CurveFactory;
 use Mdanter\Ecc\Curves\SecgCurve;
+use Mdanter\Ecc\Exception\PointException;
 
 /**
  * *********************************************************************
@@ -38,7 +38,9 @@ use Mdanter\Ecc\Curves\SecgCurve;
 /**
  * This class incorporates work from Mdanter's ECC Primitive Point class and Paul Miller's Noble-Secp256k1 Library.
  * The original works are licensed under the MIT License.
- * This JacobianPoint class contains all of the important methods to handle JacobianPoint Manipulation as to verify and sign Schnorr signatures.
+ *
+ * This JacobianPoint class contains all of the important methods to handle JacobianPoint Manipulation as to
+ * verify and sign Schnorr signatures.
  */
 class JacobianPoint
 {
@@ -48,53 +50,53 @@ class JacobianPoint
     // Curve Formula: y² ≡ x³ + ax + b, where a = 0, b = 7
     // ==============================================================================
     // A, B = Curve Parameters
-    public const a = 0;
-    public const b = 7;
+    public const A = 0;
+    public const B = 7;
 
     // Base Point or Generator Point
     // x, y = (55066263022277343669578718895168534326250603453777594175500187360389116729240,
     //         32670510020758816978083085130507043184471273380659243275938904335757337482424)
-    public const Gx = '0x79BE667EF9DCBBAC55A06295CE870B07029BFCDB2DCE28D959F2815B16F81798';
-    public const Gy = '0x483ADA7726A3C4655DA4FBFC0E1108A8FD17B448A68554199C47D08FFB10D4B8';
+    public const G_X = '0x79BE667EF9DCBBAC55A06295CE870B07029BFCDB2DCE28D959F2815B16F81798';
+    public const G_Y = '0x483ADA7726A3C4655DA4FBFC0E1108A8FD17B448A68554199C47D08FFB10D4B8';
 
     // P = The field we are doing computations on:
     // Curve.P === (2n**256n - 2n**32n - 2n**9n - 2n**8n - 2n**7n - 2n**6n - 2n**4n - 1n))
     // 115792089237316195423570985008687907853269984665640564039457584007908834671663
-    public const CurveP = '0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFC2F';
+    public const CURVE_P = '0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFC2F';
 
     // Beta (Used for Endomorphism)
     // 55594575648329892869085402983802832744385952214688224221778511981742606582254
-    public const CurveBeta = '0x7ae96a2b657c07106e64479eac3434e99cf0497512f58995c1396c28719501ee';
+    public const CURVE_BETA = '0x7ae96a2b657c07106e64479eac3434e99cf0497512f58995c1396c28719501ee';
 
     // N (Curve order, total count of valid points in the field.)
     // CURVE.n === (2n**256n - 2**256n)
     // 115792089237316195423570985008687907852837564279074904382605163141518161494337
-    public const CurveN = '0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141';
+    public const CURVE_N = '0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141';
 
     // Hal-Finney's Optimized ECDSA Verify Parameters for splitting K into k1 and k2
     // 64502973549206556628585045361533709077
-    public const HFa1 = '0x3086d221a7d46bcde86c90e49284eb15';
+    public const HF_A1 = '0x3086d221a7d46bcde86c90e49284eb15';
     // 303414439467246543595250775667605759171
-    public const HFb1 = '0xe4437ed6010e88286f547fa90abfe4c3';
+    public const HF_B1 = '0xe4437ed6010e88286f547fa90abfe4c3';
     // 367917413016453100223835821029139468248
-    public const HFa2 = '0x114ca50f7a8e2f3f657c1108d9d44cfd8';
+    public const HF_A2 = '0x114ca50f7a8e2f3f657c1108d9d44cfd8';
     // 64502973549206556628585045361533709077
-    public const HFb2 = '0x3086d221a7d46bcde86c90e49284eb15';
+    public const HF_B2 = '0x3086d221a7d46bcde86c90e49284eb15';
     // 2**128
     public const HFPOW_2_128 = '0x100000000000000000000000000000000';
 
     /**
-     * @var \GMP
+     * @var GMP
      */
     private $x;
 
     /**
-     * @var \GMP
+     * @var GMP
      */
     private $y;
 
     /**
-     * @var \GMP
+     * @var GMP
      */
     private $z;
 
@@ -106,11 +108,11 @@ class JacobianPoint
     /**
      * Construct a new JacobianPoint, coordinates used to represent elliptic curve points on prime curves.
      *
-     * @param \GMP $x
-     * @param \GMP $y
-     * @param \GMP $z
+     * @param ?GMP $x
+     * @param ?GMP $y
+     * @param ?GMP $z
      */
-    public function __construct(?\GMP $x = null, ?\GMP $y = null, ?\GMP $z = null)
+    public function __construct(?GMP $x = null, ?GMP $y = null, ?GMP $z = null)
     {
         $this->x = $x;
         $this->y = $y;
@@ -120,7 +122,7 @@ class JacobianPoint
     /**
      * @see \Mdanter\Ecc\Primitives\PointInterface::getX()
      */
-    public function getX(): \GMP
+    public function getX(): GMP
     {
         return $this->x;
     }
@@ -128,7 +130,7 @@ class JacobianPoint
     /**
      * @see \Mdanter\Ecc\Primitives\PointInterface::getY()
      */
-    public function getY(): \GMP
+    public function getY(): GMP
     {
         return $this->y;
     }
@@ -136,7 +138,7 @@ class JacobianPoint
     /**
      * @see \Mdanter\Ecc\Primitives\PointInterface::getZ()
      */
-    public function getZ(): \GMP
+    public function getZ(): GMP
     {
         return $this->z;
     }
@@ -166,7 +168,7 @@ class JacobianPoint
      *
      * @return GeneratorPoint
      */
-    public function getBasePoint()
+    public function getBasePoint(): GeneratorPoint
     {
         $point = CurveFactory::getGeneratorByName(SecgCurve::NAME_SECP_256K1);
 
@@ -182,10 +184,8 @@ class JacobianPoint
      */
     public function getBase()
     {
-        $Gx = gmp_init(self::Gx, 16);
-
-        $Gy = gmp_init(self::Gy, 16);
-
+        $Gx = gmp_init(self::G_X, 16);
+        $Gy = gmp_init(self::G_Y, 16);
         return new self($Gx, $Gy, gmp_init(1, 10));
     }
 
@@ -213,6 +213,8 @@ class JacobianPoint
     /**
      * converts JacobianPoint to AffinePoint (x, y) coordinates
      * [(x, y, z) -> x = x/(z^2), y = y/(z^3)].
+     *
+     * @throws PointException
      */
     public function toAffine(): self
     {
@@ -221,10 +223,10 @@ class JacobianPoint
         $z = $this->getZ();
 
         // invert Z
-        $iz1 = gmp_invert($z, gmp_init(self::CurveP, 16));
+        $iz1 = gmp_invert($z, gmp_init(self::CURVE_P, 16));
 
         if ($iz1 === false) {
-            throw new \Exception('Could not invert Z');
+            throw new PointException('Could not invert Z');
         }
 
         // 1/(z^2)
@@ -243,7 +245,7 @@ class JacobianPoint
         $zz = $this->mod(gmp_mul($z, $iz1));
 
         if (gmp_intval($zz) !== 1) {
-            throw new \Exception('Invalid point');
+            throw new PointException('Invalid point');
         }
 
         return new self($ax, $ay, gmp_init(1, 10));
@@ -252,11 +254,11 @@ class JacobianPoint
     /**
      * Calculates A modulo B.
      */
-    public function mod(\GMP $a, ?\GMP $b = null): \GMP
+    public function mod(GMP $a, ?GMP $b = null): GMP
     {
         if ($b === null) {
             // Curve.P
-            $b = gmp_init(self::CurveP, 16);
+            $b = gmp_init(self::CURVE_P, 16);
         }
 
         $result = gmp_mod($a, $b);
@@ -275,10 +277,10 @@ class JacobianPoint
     /**
      * Bitwise Right Shift.
      *
-     * @param \GMP|int $x
-     * @param \GMP|int $n
+     * @param GMP|int $x
+     * @param GMP|int $n
      */
-    public function gmp_shiftr($x, $n): \GMP
+    public function shiftRight($x, $n): GMP
     {
         return gmp_div($x, gmp_pow(2, $n));
     }
@@ -325,7 +327,7 @@ class JacobianPoint
      * Found here: https://bitcointalk.org/index.php?topic=3238.msg45565#msg45565
      * (Necessary factors in splitting k into k1 and k2).
      */
-    public function divNearest(\GMP $a, \GMP $b): \GMP
+    public function divNearest(GMP $a, GMP $b): GMP
     {
         return gmp_div_q(gmp_add($a, gmp_div_q($b, 2)), $b);
     }
@@ -380,12 +382,12 @@ class JacobianPoint
         // (r * r) - HHH - (2 * V)
         $x3 = $this->mod(
             gmp_sub(
-            gmp_sub(
-                gmp_mul($r, $r),
-                $HHH
-            ),
-            gmp_mul(2, $V)
-        )
+                gmp_sub(
+                    gmp_mul($r, $r),
+                    $HHH
+                ),
+                gmp_mul(2, $V)
+            )
         );
 
         // r * (V - x3) - (s1 * HHH)
@@ -404,13 +406,13 @@ class JacobianPoint
      * Split 256-bit K into 2 128-bit (k1, k2) integers for which k1 + k2 * lambda = K.
      * Split Scalar Endomorphism.
      */
-    public function splitScalarEndo(\GMP $verifyModNumber): array
+    public function splitScalarEndo(GMP $verifyModNumber): array
     {
-        $curveN    = gmp_init(self::CurveN, 16);
-        $a1        = gmp_init(self::HFa1, 16);
-        $b1        = gmp_neg(gmp_init(self::HFb1, 16));
-        $a2        = gmp_init(self::HFa2, 16);
-        $b2        = gmp_init(self::HFb2, 16);
+        $curveN    = gmp_init(self::CURVE_N, 16);
+        $a1        = gmp_init(self::HF_A1, 16);
+        $b1        = gmp_neg(gmp_init(self::HF_B1, 16));
+        $a2        = gmp_init(self::HF_A2, 16);
+        $b2        = gmp_init(self::HF_B2, 16);
         $POW_2_128 = gmp_init(self::HFPOW_2_128, 16);
 
         $c1 = $this->divNearest(gmp_mul($b2, $verifyModNumber), $curveN);
@@ -449,17 +451,20 @@ class JacobianPoint
 
     /**
      * Implement w-ary non-adjacent form (wNAF) for calculating elliptic curve multiplication.
+     *
+     * @param GMP $n
+     * @param Point $affinePoint
+     * @return array
      */
-    public function wNAF(\GMP $n, Point $affinePoint): array
+    public function wNAF(GMP $n, Point $affinePoint): array
     {
         if ($affinePoint === null && $this->equals($this->getBase())) {
             $affinePoint = $this->getBasePoint();
         }
 
-        $W = ($affinePoint && $affinePoint->getWindowSize()) ? $affinePoint->getWindowSize() : 1;
-
+        $W = $affinePoint->getWindowSize() ?? 1;
         if (256 % $W !== 0) {
-            throw new \Exception('Window size must divide 256');
+            throw new PointException('Window size must divide 256');
         }
 
         $precomputes = $this->precomputeWindow($affinePoint->getWindowSize());
@@ -483,7 +488,7 @@ class JacobianPoint
             $offset = $window * $windowSize;
             $wbits  = gmp_and($n, $mask);
 
-            $n = $this->gmp_shiftr($n, $shiftBy);
+            $n = $this->shiftRight($n, $shiftBy);
 
             if (gmp_cmp($wbits, $windowSize) > 0) {
                 $wbits = gmp_sub($wbits, $maxNumber);
@@ -520,6 +525,7 @@ class JacobianPoint
      * This will cache 65,536 points: 256 points for every bit from 0 to 256.
      *
      * @param int $W
+     * @return array
      */
     public function precomputeWindow(int $W): array
     {
@@ -547,7 +553,7 @@ class JacobianPoint
      * Uses Double-and-Add algorithm for Multiplication,
      * Unsafe because of exposed private key.
      */
-    public function multiplyUnsafe(\GMP $scalar): self
+    public function multiplyUnsafe(GMP $scalar): self
     {
         $n = $scalar;
 
@@ -579,8 +585,8 @@ class JacobianPoint
 
             $d = $d->double();
 
-            $endo['k1'] = $this->gmp_shiftr($endo['k1'], 1);
-            $endo['k2'] = $this->gmp_shiftr($endo['k2'], 1);
+            $endo['k1'] = $this->shiftRight($endo['k1'], 1);
+            $endo['k2'] = $this->shiftRight($endo['k2'], 1);
         }
 
         if ($endo['k1Neg']) {
@@ -593,7 +599,7 @@ class JacobianPoint
 
         $k2p = new self(
             $this->mod(
-                gmp_mul($k2p->getX(), gmp_init(self::CurveBeta, 16))
+                gmp_mul($k2p->getX(), gmp_init(self::CURVE_BETA, 16))
             ),
             $k2p->getY(),
             $k2p->getZ()
@@ -607,7 +613,7 @@ class JacobianPoint
      *
      * @return self
      */
-    public function mul(\GMP $n, ?self $affinePoint = null)
+    public function mul(GMP $n, ?self $affinePoint = null)
     {
         if ($affinePoint === null) {
             $affinePoint = $this->getBasePoint();
@@ -627,7 +633,7 @@ class JacobianPoint
         }
 
         $k2p = new self(
-            $this->mod(gmp_mul($k2p->getX(), gmp_init(self::CurveBeta, 16))),
+            $this->mod(gmp_mul($k2p->getX(), gmp_init(self::CURVE_BETA, 16))),
             $k2p->getY(),
             $k2p->getZ()
         );
@@ -648,7 +654,7 @@ class JacobianPoint
      *
      * @return bool|JacobianPoint
      */
-    public function multiplyAndAddUnsafe(PointInterface $Q, \GMP $a, \GMP $b)
+    public function multiplyAndAddUnsafe(PointInterface $Q, GMP $a, GMP $b)
     {
         $P = $this->getBase();
 
