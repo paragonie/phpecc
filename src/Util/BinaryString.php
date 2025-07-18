@@ -40,7 +40,7 @@ class BinaryString
         #[\SensitiveParameter]
         string $str,
         int $start = 0,
-        int $length = null
+        ?int $length = null
     ): string {
         // Premature optimization: cache the function_exists() result
         static $exists = null;
@@ -52,9 +52,9 @@ class BinaryString
         if ($exists) {
             return mb_substr($str, $start, $length, '8bit');
         } elseif ($length !== null) {
-            return substr($str, $start, $length);
+            return (string) substr($str, $start, $length);
         }
-        return substr($str, $start);
+        return (string) substr($str, $start);
     }
     
     /**

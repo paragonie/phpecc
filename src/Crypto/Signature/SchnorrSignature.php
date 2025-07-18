@@ -1,10 +1,10 @@
 <?php
-
 declare(strict_types=1);
 
 namespace Mdanter\Ecc\Crypto\Signature;
 
 use Exception;
+use GMP;
 use InvalidArgumentException;
 use Mdanter\Ecc\Curves\CurveFactory;
 use Mdanter\Ecc\Curves\SecgCurve;
@@ -44,7 +44,7 @@ class SchnorrSignature
         $generator = SecureCurveFactory::getGeneratorByName(SecgCurve::NAME_SECP_256K1);
 
         // initialize order (Curve.N)
-        $n = gmp_init(JacobianPoint::CurveN, 16);
+        $n = gmp_init(JacobianPoint::CURVE_N, 16);
 
         // initialize private key
         $d = gmp_init($privateKey, 16);
@@ -90,7 +90,7 @@ class SchnorrSignature
         // concatenate the tag and the nonce and hash it
         $nonceHash   = hash(
             'sha256',
-            sodium_hex2bin($tagNonce . $this->gmp_hexval($nonce) . $this->gmp_hexval($point->getX()) . $hash)
+            sodium_hex2bin($tagNonce . $this->hexValue($nonce) . $this->hexValue($point->getX()) . $hash)
         );
         $nonceNumber = gmp_init($nonceHash, 16);
 
@@ -123,12 +123,12 @@ class SchnorrSignature
         $finalChallenge     = hash(
             'sha256',
             sodium_hex2bin(
-                $tagChallenge . $this->gmp_hexval($k0Point->getX()) . $this->gmp_hexval($point->getX()) . $hash
+                $tagChallenge . $this->hexValue($k0Point->getX()) . $this->hexValue($point->getX()) . $hash
             )
         );
         $finalChallengeNumber = gmp_init($finalChallenge, 16);
 
-        $k0PointX = $this->gmp_hexval($k0Point->getX());
+        $k0PointX = $this->hexValue($k0Point->getX());
         $finalVal = $constantTime->mod(
             $constantTime->add(
                 $k0Scalar,
@@ -137,12 +137,12 @@ class SchnorrSignature
             $n
         );
 
-        $signature = $k0PointX . $this->gmp_hexval($finalVal);
+        $signature = $k0PointX . $this->hexValue($finalVal);
 
         return [
             'signature' => $signature,
             'message'   => $message,
-            'publicKey' => $this->gmp_hexval($point->getX()),
+            'publicKey' => $this->hexValue($point->getX()),
         ];
     }
 
@@ -170,16 +170,16 @@ class SchnorrSignature
         $concatToHash = hex2bin($tagChallenge . $paddedR . $paddedX . $m);
         $schnorrVal   = hash('sha256', $concatToHash);
 
-        $e = gmp_mod(gmp_init($schnorrVal, 16), gmp_init(JacobianPoint::CurveN, 16));
+        $e = gmp_mod(gmp_init($schnorrVal, 16), gmp_init(JacobianPoint::CURVE_N, 16));
 
         return $this->finalizeSchnorrVerify($r, $P, $s, $e);
     }
 
     /**
-     * @param \GMP $gmp
+     * @param GMP $gmp
      * @return string
      */
-    private function gmp_hexval(\GMP $gmp): string
+    private function hexValue(GMP $gmp): string
     {
         // gmp_strval does not properly pad hexadecimal values
         $hex = gmp_strval($gmp, 16);
@@ -188,14 +188,21 @@ class SchnorrSignature
         return str_pad($hex, 64, '0', STR_PAD_LEFT);
     }
 
-    private function finalizeSchnorrVerify(\GMP $r, PointInterface $P, \GMP $s, \GMP $e): bool
+    /**
+     * @param GMP $r
+     * @param PointInterface $P
+     * @param GMP $s
+     * @param GMP $e
+     * @return bool
+     */
+    private function finalizeSchnorrVerify(GMP $r, PointInterface $P, GMP $s, GMP $e): bool
     {
         $pointBase = (new JacobianPoint())->getBase();
 
         $R = $pointBase->multiplyAndAddUnsafe(
             $P,
             $s,
-            $pointBase->mod(gmp_neg($e), gmp_init(JacobianPoint::CurveN, 16))
+            $pointBase->mod(gmp_neg($e), gmp_init(JacobianPoint::CURVE_N, 16))
         );
 
         if (!$R || !$R->hasEvenY() || gmp_cmp($R->getX(), $r) !== 0) {
@@ -205,6 +212,12 @@ class SchnorrSignature
         return true;
     }
 
+    /**
+     * @param string $signature
+     * @param string $message
+     * @param string $publicKey
+     * @return array
+     */
     private function initSchnorrVerify(string $signature, string $message, string $publicKey): array
     {
         $r = gmp_init(mb_substr($signature, 0, 64), 16);

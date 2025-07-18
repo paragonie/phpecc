@@ -3,9 +3,6 @@
 [![Build Status](https://github.com/paragonie/phpecc/actions/workflows/test.yml/badge.svg)](https://github.com/paragonie/phpecc/actions)
 [![Type Safety](https://github.com/paragonie/phpecc/actions/workflows/psalm.yml/badge.svg)](https://github.com/paragonie/phpecc/actions)
 
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/paragonie/phpecc/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/paragonie/phpecc?branch=master)
-[![Code Coverage](https://scrutinizer-ci.com/g/paragonie/phpecc/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/phpecc/phpecc/?branch=master)
-
 [![Latest Stable Version](https://poser.pugx.org/paragonie/ecc/v/stable)](https://packagist.org/packages/paragonie/ecc)
 [![Total Downloads](https://poser.pugx.org/paragonie/ecc/downloads)](https://packagist.org/packages/paragonie/ecc)
 [![Latest Unstable Version](https://poser.pugx.org/paragonie/ecc/v/unstable)](https://packagist.org/packages/paragonie/ecc)
