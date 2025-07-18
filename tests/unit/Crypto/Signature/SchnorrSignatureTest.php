@@ -6,7 +6,7 @@ namespace Mdanter\Ecc\Tests\Crypto\Signature;
 
 use Exception;
 use Mdanter\Ecc\Crypto\Key\PrivateKey;
-use Mdanter\Ecc\Crypto\Signature\SchnorrSignature;
+use Mdanter\Ecc\Crypto\Signature\SchnorrSigner;
 use Mdanter\Ecc\Curves\SecureCurveFactory;
 use Mdanter\Ecc\Exception\InsecureCurveException;
 use Mdanter\Ecc\Math\ConstantTimeMath;
@@ -62,7 +62,7 @@ final class SchnorrSignatureTest extends AbstractTestCase
     ): void {
         // signature verification test
         try {
-            $verifyResult = (new SchnorrSignature())->verify($publicKey, $signature, $message);
+            $verifyResult = (new SchnorrSigner())->verify($publicKey, $signature, $message);
         } catch (Exception $e) {
             self::assertFalse($expectedResult, 'verify() can fail, but in that case the expected result must be false');
             $verifyResult = false;
@@ -77,7 +77,7 @@ final class SchnorrSignatureTest extends AbstractTestCase
 
         // signature creation test
         try {
-            $signResult = (new SchnorrSignature())->sign($privateKey, $message, $auxRand);
+            $signResult = (new SchnorrSigner())->sign($privateKey, $message, $auxRand);
         } catch (Exception $e) {
             self::fail('sign() must never fail');
         }
@@ -92,8 +92,8 @@ final class SchnorrSignatureTest extends AbstractTestCase
         $pkObject = $skObject->getPublicKey();
 
         // Ensure the same Schnorr signature is created:
-        $signResult2 = (new SchnorrSignature())->signWithKey($skObject, $message, $auxRand);
-        $verifyResult2 = (new SchnorrSignature())->verifyWithKey($pkObject, $signResult2, $message);
+        $signResult2 = (new SchnorrSigner())->signWithKey($skObject, $message, $auxRand);
+        $verifyResult2 = (new SchnorrSigner())->verifyWithKey($pkObject, $signResult2, $message);
         self::assertSame($expectedResult, $verifyResult2);
 
         // self::assertSame(strtolower($signature), $signResult2['signature']);
@@ -113,7 +113,7 @@ final class SchnorrSignatureTest extends AbstractTestCase
         ];
 
         foreach ($testCases as $case) {
-            $schnorr = new SchnorrSignature();
+            $schnorr = new SchnorrSigner();
             $result = $schnorr->sign($case['privateKey'], $case['message'], 'a' . str_repeat('0', 63));
 
             // Signature should always be exactly 128 characters
