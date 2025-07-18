@@ -1,5 +1,8 @@
 build:
     nodes:
+        analysis:
+            resources:
+                cpus: 4
         php-scrutinizer-run:
             project_setup:
                 override: true
@@ -11,7 +14,7 @@ build:
         redis: false
         postgresql: false
         php:
-           version: 7.2
+           version: 8.4
            ini:
                'zend.assertions': '1'
                'assert.exception': '1'
