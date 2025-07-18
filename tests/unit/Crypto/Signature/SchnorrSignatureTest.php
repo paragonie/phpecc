@@ -86,18 +86,19 @@ final class SchnorrSignatureTest extends AbstractTestCase
 
         // -- // New in v2.5.0 // -- //
 
+        $signer = (new SchnorrSigner());
         // Create objects for the same key pair:
         $generator = SecureCurveFactory::getGeneratorByName('secp256k1');
         $skObject = new PrivateKey(new ConstantTimeMath(), $generator, gmp_init($privateKey, 16));
         $pkObject = $skObject->getPublicKey();
 
         // Ensure the same Schnorr signature is created:
-        $signResult2 = (new SchnorrSigner())->signWithKey($skObject, $message, $auxRand);
-        $verifyResult2 = (new SchnorrSigner())->verifyWithKey($pkObject, $signResult2, $message);
+        $signResult2 = $signer->signWithKey($skObject, $message, $auxRand);
+        $verifyResult2 = $signer->verifyWithKey($pkObject, $signResult2, $message);
         self::assertSame($expectedResult, $verifyResult2);
 
-        // self::assertSame(strtolower($signature), $signResult2['signature']);
         // Ensure the same verification result occurs:
+        self::assertSame($signer->formatSignature($pkObject, $signResult2), $signResult['signature']);
     }
 
     /**

@@ -65,18 +65,26 @@ class SchnorrSigner
     ): bool {
         $ptX = gmp_strval($key->getPoint()->getX(), 16);
         $x = str_pad($ptX, 64, '0', STR_PAD_LEFT);
+        $serialized = $this->formatSignature($key, $signature);
+        return $this->verify($x, $serialized, $message);
+    }
 
+    /**
+     * Format a Signature object as expected by verify()
+     *
+     * @param PublicKeyInterface $publicKey
+     * @param SignatureInterface $signature
+     * @return string
+     */
+    public function formatSignature(PublicKeyInterface $publicKey, SignatureInterface $signature): string
+    {
         // Bit-size >> 2 == number of hex characters
-        $l = $key->getCurve()->getSize() >> 2;
+        $l = $publicKey->getCurve()->getSize() >> 2;
 
         // Encode as R || S, as hex strings:
         $r = str_pad(gmp_strval($signature->getR(), 16), $l, '0', STR_PAD_LEFT);
         $s = str_pad(gmp_strval($signature->getS(), 16), $l, '0', STR_PAD_LEFT);
-        $serialized = $r . $s;
-
-        // var_dump($l, $serialized, $r, $s); exit;
-
-        return $this->verify($x, $serialized, $message);
+        return $r . $s;
     }
 
     /**
