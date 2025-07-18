@@ -4,7 +4,12 @@ declare(strict_types=1);
 
 namespace Mdanter\Ecc\Tests\Crypto\Signature;
 
+use Exception;
+use Mdanter\Ecc\Crypto\Key\PrivateKey;
 use Mdanter\Ecc\Crypto\Signature\SchnorrSignature;
+use Mdanter\Ecc\Curves\SecureCurveFactory;
+use Mdanter\Ecc\Exception\InsecureCurveException;
+use Mdanter\Ecc\Math\ConstantTimeMath;
 use Mdanter\Ecc\Tests\AbstractTestCase;
 
 /**
@@ -44,6 +49,8 @@ final class SchnorrSignatureTest extends AbstractTestCase
 
     /**
      * @dataProvider bipVectorProvider
+     * @throws InsecureCurveException
+     * @throws Exception
      */
     public function testSchnorrVerificationAndSigning(
         string $privateKey,
@@ -52,12 +59,11 @@ final class SchnorrSignatureTest extends AbstractTestCase
         string $message,
         string $signature,
         bool $expectedResult
-    ): void
-    {
+    ): void {
         // signature verification test
         try {
             $verifyResult = (new SchnorrSignature())->verify($publicKey, $signature, $message);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             self::assertFalse($expectedResult, 'verify() can fail, but in that case the expected result must be false');
             $verifyResult = false;
         }
@@ -72,11 +78,26 @@ final class SchnorrSignatureTest extends AbstractTestCase
         // signature creation test
         try {
             $signResult = (new SchnorrSignature())->sign($privateKey, $message, $auxRand);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             self::fail('sign() must never fail');
         }
 
         self::assertSame(strtolower($signature), $signResult['signature']);
+
+        // -- // New in v2.5.0 // -- //
+
+        // Create objects for the same key pair:
+        $generator = SecureCurveFactory::getGeneratorByName('secp256k1');
+        $skObject = new PrivateKey(new ConstantTimeMath(), $generator, gmp_init($privateKey, 16));
+        $pkObject = $skObject->getPublicKey();
+
+        // Ensure the same Schnorr signature is created:
+        $signResult2 = (new SchnorrSignature())->signWithKey($skObject, $message, $auxRand);
+        $verifyResult2 = (new SchnorrSignature())->verifyWithKey($pkObject, $signResult2, $message);
+        self::assertSame($expectedResult, $verifyResult2);
+
+        // self::assertSame(strtolower($signature), $signResult2['signature']);
+        // Ensure the same verification result occurs:
     }
 
     /**

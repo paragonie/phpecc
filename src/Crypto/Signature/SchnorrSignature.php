@@ -6,6 +6,11 @@ namespace Mdanter\Ecc\Crypto\Signature;
 use Exception;
 use GMP;
 use InvalidArgumentException;
+use Mdanter\Ecc\Util\BinaryString;
+use Mdanter\Ecc\Crypto\Key\{
+    PrivateKeyInterface,
+    PublicKeyInterface
+};
 use Mdanter\Ecc\Curves\CurveFactory;
 use Mdanter\Ecc\Curves\SecgCurve;
 use Mdanter\Ecc\Curves\SecureCurveFactory;
@@ -20,6 +25,61 @@ class SchnorrSignature
     public const NONCE     = 'BIP0340/nonce';
 
     /**
+     * @param PrivateKeyInterface $key
+     * @param string $message
+     * @param string|null $randomK
+     * @return Signature
+     *
+     * @throws Exception
+     */
+    public function signWithKey(
+        #[\SensitiveParameter]
+        PrivateKeyInterface $key,
+        #[\SensitiveParameter]
+        string $message,
+        #[\SensitiveParameter]
+        ?string $randomK = null
+    ): Signature {
+        $secret = gmp_strval($key->getSecret(), 16);
+        $results = $this->sign($secret, $message, $randomK);
+
+        // Bit-size >> 2 == number of hex characters
+        $l = $key->getCurve()->getSize() >> 2;
+
+        // Deconstruct as a Signature object:
+        $r = gmp_init(BinaryString::substring($results['signature'], 0, $l), 16);
+        $s = gmp_init(BinaryString::substring($results['signature'], $l), 16);
+        return new Signature($r, $s);
+    }
+
+    /**
+     * @param PublicKeyInterface $key
+     * @param Signature $signature
+     * @param string $message
+     * @return bool
+     */
+    public function verifyWithKey(
+        PublicKeyInterface $key,
+        Signature $signature,
+        string $message
+    ): bool {
+        $ptX = gmp_strval($key->getPoint()->getX(), 16);
+        $x = str_pad($ptX, 64, '0', STR_PAD_LEFT);
+
+        // Bit-size >> 2 == number of hex characters
+        $l = $key->getCurve()->getSize() >> 2;
+
+        // Encode as R || S, as hex strings:
+        $r = str_pad(gmp_strval($signature->getR(), 16), $l, '0', STR_PAD_LEFT);
+        $s = str_pad(gmp_strval($signature->getS(), 16), $l, '0', STR_PAD_LEFT);
+        $serialized = $r . $s;
+
+        // var_dump($l, $serialized, $r, $s); exit;
+
+        return $this->verify($x, $serialized, $message);
+    }
+
+    /**
      * Create a Schnorr Signature.
      *
      * @param string $privateKey - Must be a hexadecimal string
@@ -29,8 +89,14 @@ class SchnorrSignature
      *
      * @throws Exception
      */
-    public function sign(string $privateKey, string $message, ?string $randomK = null): array
-    {
+    public function sign(
+        #[\SensitiveParameter]
+        string $privateKey,
+        #[\SensitiveParameter]
+        string $message,
+        #[\SensitiveParameter]
+        ?string $randomK = null
+    ): array {
         $constantTime = new ConstantTimeMath();
         // private key must be a hex string
         if (ctype_xdigit($privateKey) === false) {
