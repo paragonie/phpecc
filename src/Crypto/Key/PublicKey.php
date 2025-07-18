@@ -35,7 +35,7 @@ use Mdanter\Ecc\Primitives\GeneratorPoint;
 use Mdanter\Ecc\Primitives\PointInterface;
 
 /**
- * This class serves as public- private key exchange for signature verification
+ * This class serves as public-private key exchange for signature verification
  */
 class PublicKey implements PublicKeyInterface
 {
@@ -91,7 +91,7 @@ class PublicKey implements PublicKeyInterface
             throw new PublicKeyException($generator, $point, "Point has x and y out of range.");
         }
 
-        // Sanity check. Point (x,y) values are qualified against it's
+        // Sanity check. Point (x,y) values are qualified against its
         // generator and curve. Here we ensure the Point and Generator
         // are the same.
         if (!$generator->getCurve()->equals($point->getCurve())) {

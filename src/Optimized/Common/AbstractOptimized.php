@@ -3,7 +3,6 @@ declare(strict_types=1);
 namespace Mdanter\Ecc\Optimized\Common;
 
 use GMP;
-use Mdanter\Ecc\Exception\NumberTheoryException;
 use Mdanter\Ecc\Math\ConstantTimeMath;
 use Mdanter\Ecc\Primitives\CurveFpInterface;
 use Mdanter\Ecc\Primitives\Point;
@@ -175,7 +174,7 @@ abstract class AbstractOptimized
     }
 
     /**
-     * Calculate (a x b) mod p, using Barrett Reduction
+     * Calculate (A x B) mod p, using Barrett Reduction
      *
      * @param GMP $a
      * @param GMP $b

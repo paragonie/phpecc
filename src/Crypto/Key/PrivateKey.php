@@ -34,7 +34,6 @@ use Mdanter\Ecc\Math\GmpMathInterface;
 use Mdanter\Ecc\Primitives\CurveFpInterface;
 use Mdanter\Ecc\Primitives\GeneratorPoint;
 use Mdanter\Ecc\Primitives\OptimizedCurveInterface;
-use Mdanter\Ecc\Primitives\PointInterface;
 
 /**
  * This class serves as public - private key exchange for signature verification.
@@ -96,7 +95,6 @@ class PrivateKey implements PrivateKeyInterface
     }
 
     /**
-     * {@inheritDoc}
      * @see PrivateKeyInterface::getCurve
      */
     public function getCurve(): CurveFpInterface

@@ -35,14 +35,15 @@ namespace Mdanter\Ecc\Primitives;
  * be checked against (and properly handled) when receiving a PointInterface as an argument or when a method indicates it can
  * return infinity.
  *
- * @todo Fix LSP break (possibly derive an extra interface, FinitePointInterface from current one, and move
- * coordinate-related ops to sub-interface).
+ * @todo Fix LSP break
+ * (possibly derive an extra interface, FinitePointInterface from current one, and move coordinate-related
+ * ops to sub-interface).
  */
 interface PointInterface
 {
 
     /**
-     * Returns true if instance is an non-finite point.
+     * Returns true if instance is a non-finite point.
      */
     public function isInfinity(): bool;
 
@@ -58,7 +59,7 @@ interface PointInterface
      * Compares the current instance to another point.
      *
      * @param  PointInterface $other
-     * @return int            A number different than 0 when current instance is less than the given point, 0 when they are equal.
+     * @return int            A nonzero number when current instance is less than the given point, 0 when they are equal.
      */
     public function cmp(PointInterface $other): int;
 

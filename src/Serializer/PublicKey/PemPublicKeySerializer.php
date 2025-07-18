@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace Mdanter\Ecc\Serializer\PublicKey;
 
+use Exception;
+use FG\ASN1\Exception\ParserException;
 use Mdanter\Ecc\Crypto\Key\PublicKeyInterface;
 
 /**
@@ -27,6 +29,7 @@ class PemPublicKeySerializer implements PublicKeySerializerInterface
 
     /**
      * {@inheritDoc}
+     * @throws Exception
      * @see PublicKeySerializerInterface::serialize
      */
     public function serialize(PublicKeyInterface $key): string
@@ -42,6 +45,7 @@ class PemPublicKeySerializer implements PublicKeySerializerInterface
 
     /**
      * {@inheritDoc}
+     * @throws ParserException
      * @see PublicKeySerializerInterface::parse
      */
     public function parse(string $formattedKey): PublicKeyInterface

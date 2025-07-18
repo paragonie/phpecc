@@ -32,7 +32,7 @@ use Mdanter\Ecc\Crypto\Key\PublicKeyInterface;
 use Mdanter\Ecc\Crypto\Key\PrivateKeyInterface;
 
 /**
- * This is the contract for implementing EcDH (EC Diffie Hellman).
+ * This is the contract for implementing EcDH (EC Diffie-Hellman).
  */
 interface EcDHInterface
 {
@@ -67,5 +67,5 @@ interface EcDHInterface
      * @return self
      * @psalm-suppress PossiblyUnusedReturnValue
      */
-    public function setRecipientKey(PublicKeyInterface $key);
+    public function setRecipientKey(PublicKeyInterface $key): EcDHInterface;
 }

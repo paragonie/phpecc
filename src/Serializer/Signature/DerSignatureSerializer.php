@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace Mdanter\Ecc\Serializer\Signature;
 
+use Exception;
+use FG\ASN1\Exception\ParserException;
 use Mdanter\Ecc\Crypto\Signature\SignatureInterface;
 
 class DerSignatureSerializer implements DerSignatureSerializerInterface
@@ -26,6 +28,7 @@ class DerSignatureSerializer implements DerSignatureSerializerInterface
     /**
      * @param SignatureInterface $signature
      * @return string
+     * @throws Exception
      */
     public function serialize(SignatureInterface $signature): string
     {
@@ -35,7 +38,7 @@ class DerSignatureSerializer implements DerSignatureSerializerInterface
     /**
      * @param string $binary
      * @return SignatureInterface
-     * @throws \FG\ASN1\Exception\ParserException
+     * @throws ParserException
      */
     public function parse(string $binary): SignatureInterface
     {

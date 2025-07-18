@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Mdanter\Ecc\Serializer\PublicKey;
 
+use Exception;
 use FG\ASN1\Exception\ParserException;
 use Mdanter\Ecc\Crypto\Key\PublicKeyInterface;
 use Mdanter\Ecc\Math\GmpMathInterface;
@@ -55,9 +56,9 @@ class DerPublicKeySerializer implements PublicKeySerializerInterface
     }
 
     /**
-     *
      * @param  PublicKeyInterface $key
      * @return string
+     * @throws Exception
      */
     public function serialize(PublicKeyInterface $key): string
     {

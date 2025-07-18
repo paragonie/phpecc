@@ -60,6 +60,7 @@ class SecureCurveFactory extends CurveFactory
     /**
      * @param string $name
      * @return GeneratorPoint
+     * @throws InsecureCurveException
      */
     public static function getGeneratorByName(string $name): GeneratorPoint
     {

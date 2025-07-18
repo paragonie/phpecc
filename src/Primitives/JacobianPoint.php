@@ -39,7 +39,7 @@ use Mdanter\Ecc\Exception\PointException;
  * This class incorporates work from Mdanter's ECC Primitive Point class and Paul Miller's Noble-Secp256k1 Library.
  * The original works are licensed under the MIT License.
  *
- * This JacobianPoint class contains all of the important methods to handle JacobianPoint Manipulation as to
+ * This JacobianPoint class contains all the important methods to handle JacobianPoint Manipulation as to
  * verify and sign Schnorr signatures.
  */
 class JacobianPoint
@@ -611,9 +611,11 @@ class JacobianPoint
     /**
      * Multiply two points together.
      *
+     * @param GMP $n
+     * @param ?JacobianPoint $affinePoint
      * @return self
      */
-    public function mul(GMP $n, ?self $affinePoint = null)
+    public function mul(GMP $n, ?self $affinePoint = null): self
     {
         if ($affinePoint === null) {
             $affinePoint = $this->getBasePoint();

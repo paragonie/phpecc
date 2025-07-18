@@ -1,4 +1,7 @@
-<?php
+<?php /** @noinspection PhpMissingParamTypeInspection */
+/** @noinspection PhpMissingParamTypeInspection */
+
+/** @noinspection PhpMissingParamTypeInspection */
 
 namespace Mdanter\Ecc\Math;
 
@@ -564,7 +567,6 @@ class DebugDecorator implements GmpMathInterface
     }
 
     /**
-     * {@inheritDoc}
      * @see GmpMathInterface::getEcMath
      */
     public function getEcMath(GeneratorPoint $generatorPoint, $input)

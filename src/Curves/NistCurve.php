@@ -183,6 +183,7 @@ class NistCurve
      * Returns an NIST P-256 generator.
      *
      * @param  ?RandomNumberGeneratorInterface $randomGenerator
+     * @param  bool $optimized
      * @return GeneratorPoint
      */
     public function generator256(?RandomNumberGeneratorInterface $randomGenerator = null, bool $optimized = false): GeneratorPoint

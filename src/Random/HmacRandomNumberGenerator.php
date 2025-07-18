@@ -156,7 +156,6 @@ class HmacRandomNumberGenerator implements RandomNumberGeneratorInterface
             }
 
             // This annotation is for Scrutinizer, which gets confused with ext-gmp:
-            /** @var GMP $k */
             $k = $this->bits2int($t, $qlen);
             if ($this->math->cmp($k, $zero) > 0 && $this->math->cmp($k, $max) < 0) {
                 return $k;

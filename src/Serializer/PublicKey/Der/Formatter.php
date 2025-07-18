@@ -38,14 +38,15 @@ class Formatter
      */
     public function format(PublicKeyInterface $key): string
     {
-        if (! ($key->getCurve() instanceof NamedCurveFp)) {
+        $curve = $key->getCurve();
+        if (!($curve instanceof NamedCurveFp)) {
             throw new \RuntimeException('Not implemented for unnamed curves');
         }
 
         $sequence = new Sequence(
             new Sequence(
                 new ObjectIdentifier(DerPublicKeySerializer::X509_ECDSA_OID),
-                CurveOidMapper::getCurveOid($key->getCurve())
+                CurveOidMapper::getCurveOid($curve)
             ),
             new BitString($this->encodePoint($key->getPoint()))
         );

@@ -2,6 +2,7 @@
 declare(strict_types=1);
 namespace Mdanter\Ecc\Curves;
 
+use Exception;
 use FG\ASN1\Exception\ParserException;
 use GMP;
 use Mdanter\Ecc\OpensslFallbackTrait;
@@ -101,6 +102,7 @@ trait OpensslTrait
      * @return PointInterface
      *
      * @throws OpensslException
+     * @throws Exception
      */
     public function computeSharedSecret(
         #[\SensitiveParameter]
@@ -145,6 +147,7 @@ trait OpensslTrait
      *
      * @throws OpensslException
      * @throws ParserException
+     * @throws Exception
      */
     public function signMessage(
         #[\SensitiveParameter]
@@ -230,6 +233,7 @@ trait OpensslTrait
      *
      * @since php 8.1
      * @requires ext-openssl
+     * @throws Exception
      */
     private function convertPublicKeyToOpensslFormat(PublicKeyInterface $pk): string
     {
@@ -238,20 +242,33 @@ trait OpensslTrait
     }
 
     /**
-     *
+     * @return \OpenSSLAsymmetricKey|resource
+     * @throws Exception
      * @since php 8.1
      * @requires ext-openssl
-     * @return \OpenSSLAsymmetricKey|resource
      */
     private function convertPrivateKeyToOpensslFormat(
         #[\SensitiveParameter]
         PrivateKeyInterface $sk
     ) {
+        if (!extension_loaded('openssl')) {
+            throw new OpensslException('OpenSSL not loaded');
+        }
         $serializer = new PemPrivateKeySerializer(new DerPrivateKeySerializer());
         $serialized = $serializer->serialize($sk);
         $return = openssl_get_privatekey($serialized);
         if (is_bool($return)) {
             throw new OpensslException('Could not serialize private key');
+        }
+
+        if (PHP_VERSION_ID >= 80100) {
+            if (!($return instanceof \OpenSSLAsymmetricKey)) {
+                throw new OpensslException('Did not return an OpenSSL Asymmetric Key');
+            }
+        } else {
+            if (!is_resource($return)) {
+                throw new OpensslException('Did not return a resource');
+            }
         }
         return $return;
     }
