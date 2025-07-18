@@ -4,7 +4,12 @@ declare(strict_types=1);
 
 namespace Mdanter\Ecc\Tests\Crypto\Signature;
 
-use Mdanter\Ecc\Crypto\Signature\SchnorrSignature;
+use Exception;
+use Mdanter\Ecc\Crypto\Key\PrivateKey;
+use Mdanter\Ecc\Crypto\Signature\SchnorrSigner;
+use Mdanter\Ecc\Curves\SecureCurveFactory;
+use Mdanter\Ecc\Exception\InsecureCurveException;
+use Mdanter\Ecc\Math\ConstantTimeMath;
 use Mdanter\Ecc\Tests\AbstractTestCase;
 
 /**
@@ -12,7 +17,7 @@ use Mdanter\Ecc\Tests\AbstractTestCase;
  *
  * @coversNothing
  */
-final class SchnorrSignatureTest extends AbstractTestCase
+final class SchnorrSignerTest extends AbstractTestCase
 {
     public static function bipVectorProvider(): array
     {
@@ -44,6 +49,8 @@ final class SchnorrSignatureTest extends AbstractTestCase
 
     /**
      * @dataProvider bipVectorProvider
+     * @throws InsecureCurveException
+     * @throws Exception
      */
     public function testSchnorrVerificationAndSigning(
         string $privateKey,
@@ -52,12 +59,11 @@ final class SchnorrSignatureTest extends AbstractTestCase
         string $message,
         string $signature,
         bool $expectedResult
-    ): void
-    {
+    ): void {
         // signature verification test
         try {
-            $verifyResult = (new SchnorrSignature())->verify($publicKey, $signature, $message);
-        } catch (\Exception $e) {
+            $verifyResult = (new SchnorrSigner())->verify($publicKey, $signature, $message);
+        } catch (Exception $e) {
             self::assertFalse($expectedResult, 'verify() can fail, but in that case the expected result must be false');
             $verifyResult = false;
         }
@@ -71,12 +77,28 @@ final class SchnorrSignatureTest extends AbstractTestCase
 
         // signature creation test
         try {
-            $signResult = (new SchnorrSignature())->sign($privateKey, $message, $auxRand);
-        } catch (\Exception $e) {
+            $signResult = (new SchnorrSigner())->sign($privateKey, $message, $auxRand);
+        } catch (Exception $e) {
             self::fail('sign() must never fail');
         }
 
         self::assertSame(strtolower($signature), $signResult['signature']);
+
+        // -- // New in v2.5.0 // -- //
+
+        $signer = (new SchnorrSigner());
+        // Create objects for the same key pair:
+        $generator = SecureCurveFactory::getGeneratorByName('secp256k1');
+        $skObject = new PrivateKey(new ConstantTimeMath(), $generator, gmp_init($privateKey, 16));
+        $pkObject = $skObject->getPublicKey();
+
+        // Ensure the same Schnorr signature is created:
+        $signResult2 = $signer->signWithKey($skObject, $message, $auxRand);
+        $verifyResult2 = $signer->verifyWithKey($pkObject, $signResult2, $message);
+        self::assertSame($expectedResult, $verifyResult2);
+
+        // Ensure the same verification result occurs:
+        self::assertSame($signer->formatSignature($pkObject, $signResult2), $signResult['signature']);
     }
 
     /**
@@ -92,7 +114,7 @@ final class SchnorrSignatureTest extends AbstractTestCase
         ];
 
         foreach ($testCases as $case) {
-            $schnorr = new SchnorrSignature();
+            $schnorr = new SchnorrSigner();
             $result = $schnorr->sign($case['privateKey'], $case['message'], 'a' . str_repeat('0', 63));
 
             // Signature should always be exactly 128 characters
