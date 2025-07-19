@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace Mdanter\Ecc\Crypto\Signature;
 
+use GMP;
+
 /**
  * *********************************************************************
  * Copyright (C) 2012 Matyas Danter
@@ -32,34 +34,45 @@ namespace Mdanter\Ecc\Crypto\Signature;
  */
 class Signature implements SignatureInterface
 {
+    const TYPE_ECDSA = 'ecdsa';
+
+    const TYPE_SCHNORR = 'schnorr';
+
     /**
-     * @var \GMP
+     * @var GMP
      */
     private $r;
 
     /**
      *
-     * @var \GMP
+     * @var GMP
      */
     private $s;
 
     /**
+     * @var string $sigType
+     */
+    private $sigType;
+
+    /**
      * Initialize a new instance with values
      *
-     * @param \GMP $r
-     * @param \GMP $s
+     * @param GMP $r
+     * @param GMP $s
+     * @param string $signatureType "ecdsa" or "schnorr"
      */
-    public function __construct(\GMP $r, \GMP $s)
+    public function __construct(GMP $r, GMP $s, string $signatureType = self::TYPE_ECDSA)
     {
         $this->r = $r;
         $this->s = $s;
+        $this->sigType = $signatureType;
     }
 
     /**
      * {@inheritDoc}
      * @see SignatureInterface::getR
      */
-    public function getR(): \GMP
+    public function getR(): GMP
     {
         return $this->r;
     }
@@ -68,8 +81,16 @@ class Signature implements SignatureInterface
      * {@inheritDoc}
      * @see SignatureInterface::getS
      */
-    public function getS(): \GMP
+    public function getS(): GMP
     {
         return $this->s;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSignatureType(): string
+    {
+        return $this->sigType;
     }
 }
