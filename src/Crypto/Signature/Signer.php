@@ -10,6 +10,7 @@ use GMP;
 use Mdanter\Ecc\Curves\NamedCurveFp;
 use Mdanter\Ecc\Curves\NistCurve;
 use Mdanter\Ecc\Curves\SecgCurve;
+use Mdanter\Ecc\Exception\IncorrectAlgorithmException;
 use Mdanter\Ecc\Math\ConstantTimeMath;
 use Mdanter\Ecc\Math\GmpMathInterface;
 use Mdanter\Ecc\Crypto\Key\PrivateKeyInterface;
@@ -210,6 +211,11 @@ class Signer
         $n = $generator->getOrder();
         $r = $signature->getR();
         $s = $signature->getS();
+
+        // Make sure this isn't a Schnorr signature:
+        if (!(hash_equals(Signature::TYPE_ECDSA, $signature->getSignatureType()))) {
+            throw new IncorrectAlgorithmException('This is not an ECDSA signature');
+        }
 
         $math = $this->adapter;
         /** @var GMP $one */

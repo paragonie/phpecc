@@ -15,5 +15,6 @@ class SignatureTest extends AbstractTestCase
         $signature = new Signature($r, $s);
         $this->assertSame($r, $signature->getR());
         $this->assertSame($s, $signature->getS());
+        $this->assertSame(Signature::TYPE_ECDSA, $signature->getSignatureType());
     }
 }

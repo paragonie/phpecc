@@ -7,9 +7,14 @@ namespace Mdanter\Ecc\Tests\Crypto\Signature;
 use Exception;
 use Mdanter\Ecc\Crypto\Key\PrivateKey;
 use Mdanter\Ecc\Crypto\Signature\SchnorrSigner;
+use Mdanter\Ecc\Crypto\Signature\Signature;
+use Mdanter\Ecc\Crypto\Signature\Signer;
+use Mdanter\Ecc\Crypto\Signature\SignHasher;
 use Mdanter\Ecc\Curves\SecureCurveFactory;
+use Mdanter\Ecc\Exception\IncorrectAlgorithmException;
 use Mdanter\Ecc\Exception\InsecureCurveException;
 use Mdanter\Ecc\Math\ConstantTimeMath;
+use Mdanter\Ecc\Math\GmpMath;
 use Mdanter\Ecc\Tests\AbstractTestCase;
 
 /**
@@ -99,6 +104,30 @@ final class SchnorrSignerTest extends AbstractTestCase
 
         // Ensure the same verification result occurs:
         self::assertSame($signer->formatSignature($pkObject, $signResult2), $signResult['signature']);
+
+        // First, we make a fake "ECDSA" signature out of this Schnorr signature and ensure it's not accepted:
+        $ecdsaSig = new Signature($signResult2->getR(), $signResult2->getS());
+
+        $thrown = false;
+        try {
+            $signer->verifyWithKey($pkObject, $ecdsaSig, $message);
+        } catch (IncorrectAlgorithmException $ex) {
+            $thrown = true;
+        }
+        self::assertTrue($thrown, 'ECDSA / Schnorr signatures can be swapped');
+
+        // Next, we try the inverse attack: Feeding a Schnorr sig into the ECDSA class:
+        $math = new GmpMath();
+        $ecdsaSigner = new Signer($math, true);
+        $hash = (new SignHasher('sha256', $math))->makeHash($message, $generator);
+
+        $thrown = false;
+        try {
+            $ecdsaSigner->verify($pkObject, $signResult2, $hash);
+        } catch (IncorrectAlgorithmException $ex) {
+            $thrown = true;
+        }
+        self::assertTrue($thrown, 'ECDSA / Schnorr signatures can be swapped');
     }
 
     /**

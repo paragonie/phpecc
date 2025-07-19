@@ -6,6 +6,7 @@ namespace Mdanter\Ecc\Crypto\Signature;
 use Exception;
 use GMP;
 use InvalidArgumentException;
+use Mdanter\Ecc\Exception\IncorrectAlgorithmException;
 use Mdanter\Ecc\Util\BinaryString;
 use Mdanter\Ecc\Crypto\Key\{
     PrivateKeyInterface,
@@ -49,7 +50,7 @@ class SchnorrSigner
         // Deconstruct as a Signature object:
         $r = gmp_init(BinaryString::substring($results['signature'], 0, $l), 16);
         $s = gmp_init(BinaryString::substring($results['signature'], $l), 16);
-        return new Signature($r, $s);
+        return new Signature($r, $s, Signature::TYPE_SCHNORR);
     }
 
     /**
@@ -63,6 +64,9 @@ class SchnorrSigner
         Signature $signature,
         string $message
     ): bool {
+        if (!(hash_equals(Signature::TYPE_SCHNORR, $signature->getSignatureType()))) {
+            throw new IncorrectAlgorithmException('This is not a Schnorr signature');
+        }
         $ptX = gmp_strval($key->getPoint()->getX(), 16);
         $x = str_pad($ptX, 64, '0', STR_PAD_LEFT);
         $serialized = $this->formatSignature($key, $signature);
