@@ -28,6 +28,7 @@ namespace Mdanter\Ecc\Crypto\Key;
  */
 
 use GMP;
+use InvalidArgumentException;
 use Mdanter\Ecc\Crypto\EcDH\EcDH;
 use Mdanter\Ecc\Crypto\EcDH\EcDHInterface;
 use Mdanter\Ecc\Math\GmpMathInterface;
@@ -66,6 +67,12 @@ class PrivateKey implements PrivateKeyInterface
         #[\SensitiveParameter]
         GMP $secretMultiplier
     ) {
+        $one = gmp_init(1, 10);
+        if ($adapter->cmp($secretMultiplier, $one) < 0
+            || $adapter->cmp($secretMultiplier, $generator->getOrder()) >= 0
+        ) {
+            throw new InvalidArgumentException('Private scalar must be in the range [1, n - 1]');
+        }
         $this->adapter = $adapter;
         $this->generator = $generator;
         $this->secretMultiplier = $secretMultiplier;

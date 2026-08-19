@@ -85,8 +85,10 @@ class PublicKey implements PublicKeyInterface
         $zero = gmp_init(0, 10);
 
         // step 2 full & partial public key validation routine
-        if ($adapter->cmp($point->getX(), $zero) < 0 || $adapter->cmp($this->curve->getPrime(), $point->getX()) < 0
-            || $adapter->cmp($point->getY(), $zero) < 0 || $adapter->cmp($this->curve->getPrime(), $point->getY()) < 0
+        if ($adapter->cmp($point->getX(), $zero) < 0
+            || $adapter->cmp($this->curve->getPrime(), $point->getX()) <= 0
+            || $adapter->cmp($point->getY(), $zero) < 0
+            || $adapter->cmp($this->curve->getPrime(), $point->getY()) <= 0
         ) {
             throw new PublicKeyException($generator, $point, "Point has x and y out of range.");
         }

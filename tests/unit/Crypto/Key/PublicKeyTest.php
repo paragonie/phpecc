@@ -4,7 +4,10 @@ declare(strict_types=1);
 namespace Mdanter\Ecc\Tests\Crypto\Key;
 
 use Mdanter\Ecc\Crypto\Key\PublicKey;
+use Mdanter\Ecc\Curves\NistCurve;
+use Mdanter\Ecc\Curves\SecureCurveFactory;
 use Mdanter\Ecc\EccFactory;
+use Mdanter\Ecc\Exception\InsecureCurveException;
 use Mdanter\Ecc\Exception\PublicKeyException;
 use Mdanter\Ecc\Primitives\CurveFp;
 use Mdanter\Ecc\Primitives\GeneratorPoint;
@@ -15,7 +18,7 @@ class PublicKeyTest extends AbstractTestCase
 {
     public function testBadPointForGenerator()
     {
-        $this->expectException(\Mdanter\Ecc\Exception\PublicKeyException::class);
+        $this->expectException(PublicKeyException::class);
         $this->expectExceptionMessage('Point has x and y out of range');
 
         $adapter = EccFactory::getAdapter();
@@ -66,5 +69,18 @@ class PublicKeyTest extends AbstractTestCase
         $this->assertSame($generator, $key->getGenerator());
         $this->assertInstanceOf(Point::class, $key->getPoint());
         $this->assertSame($point, $key->getPoint());
+    }
+
+    /**
+     * @throws InsecureCurveException
+     */
+    public function testRejectsCoordinateEqualToPrime(): void
+    {
+        $generator = SecureCurveFactory::getGeneratorByName(NistCurve::NAME_P256);
+        $p = $generator->getCurve()->getPrime();
+        $y = $generator->getCurve()->recoverYfromX(false, $p);
+
+        $this->expectException(PublicKeyException::class);
+        $generator->getPublicKeyFrom($p, $y);
     }
 }

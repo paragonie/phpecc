@@ -20,7 +20,7 @@ class EcdsaTest extends AbstractTestCase
     {
         $results = [];
         foreach ($fixtures['testGroups'] as $group) {
-            $curve = $group['key']['curve'];
+            $curve = $group['publicKey']['curve'];
             if (array_key_exists($curve, $this->curveAltName)) {
                 $curve = $this->curveAltName[$curve];
             }
@@ -32,7 +32,10 @@ class EcdsaTest extends AbstractTestCase
             }
 
             $generator = CurveFactory::getGeneratorByName($curve);
-            $publicKey = $generator->getPublicKeyFrom(gmp_init($group['key']['wx'], 16), gmp_init($group['key']['wy'], 16));
+            $publicKey = $generator->getPublicKeyFrom(
+                gmp_init($group['publicKey']['wx'], 16),
+                gmp_init($group['publicKey']['wy'], 16)
+            );
             $hasher = $this->getHasher($group['sha']);
 
             if (!array_key_exists('tests', $group)) {
@@ -66,26 +69,10 @@ class EcdsaTest extends AbstractTestCase
 
     private function readSpecificSet(string $curveName, string $hasherName): array
     {
-        $fixtures = json_decode($this->importFile("vendor/c2sp/wycheproof/testvectors/ecdsa_{$curveName}_{$hasherName}_test.json"), true);
+        $fixtures = json_decode($this->importFile("vendor/c2sp/wycheproof/testvectors_v1/ecdsa_{$curveName}_{$hasherName}_test.json"), true);
         $disabledFlags = ["MissingZero"];
         return $this->filterSet($fixtures, $this->getCurvesList(), $disabledFlags);
     }
-
-    public function getEcdsaTestVectors(): array
-    {
-        $fixtures = json_decode($this->importFile("vendor/c2sp/wycheproof/testvectors/ecdsa_test.json"), true);
-        $disabledFlags = ["MissingZero", "BER"];
-        return $this->filterSet($fixtures, $this->getCurvesList(), $disabledFlags);
-    }
-
-    /**
-     * @dataProvider getEcdsaTestVectors
-     */
-    public function testEcdsa(GeneratorPoint $generator, PublicKey $publicKey, HasherInterface $hasher, string $message, string $sigHex, string $result, array $flags, string $tcId, string $comment)
-    {
-        $this->doTest($generator, $publicKey, $hasher, $message, $sigHex, $result, $flags, $tcId, $comment);
-    }
-
     public function getEcdsaSecp224r1Sha224TestVectors(): array
     {
         return $this->readSpecificSet("secp224r1", "sha224");

@@ -7,17 +7,20 @@ use Exception;
 use GMP;
 use InvalidArgumentException;
 use Mdanter\Ecc\Exception\IncorrectAlgorithmException;
+use Mdanter\Ecc\Primitives\CurveFpInterface;
 use Mdanter\Ecc\Util\BinaryString;
 use Mdanter\Ecc\Crypto\Key\{
     PrivateKeyInterface,
     PublicKeyInterface
 };
 use Mdanter\Ecc\Curves\CurveFactory;
+use Mdanter\Ecc\Curves\NamedCurveFp;
 use Mdanter\Ecc\Curves\SecgCurve;
 use Mdanter\Ecc\Curves\SecureCurveFactory;
 use Mdanter\Ecc\Math\ConstantTimeMath;
 use Mdanter\Ecc\Primitives\JacobianPoint;
 use Mdanter\Ecc\Primitives\PointInterface;
+use RuntimeException;
 
 class SchnorrSigner
 {
@@ -41,7 +44,8 @@ class SchnorrSigner
         #[\SensitiveParameter]
         ?string $randomK = null
     ): Signature {
-        $secret = gmp_strval($key->getSecret(), 16);
+        $this->assertSecp256k1($key->getCurve());
+        $secret = str_pad(gmp_strval($key->getSecret(), 16), 64, '0', STR_PAD_LEFT);
         $results = $this->sign($secret, $message, $randomK);
 
         // Bit-size >> 2 == number of hex characters
@@ -67,6 +71,7 @@ class SchnorrSigner
         if (!(hash_equals(Signature::TYPE_SCHNORR, $signature->getSignatureType()))) {
             throw new IncorrectAlgorithmException('This is not a Schnorr signature');
         }
+        $this->assertSecp256k1($key->getCurve());
         $ptX = gmp_strval($key->getPoint()->getX(), 16);
         $x = str_pad($ptX, 64, '0', STR_PAD_LEFT);
         $serialized = $this->formatSignature($key, $signature);
@@ -95,7 +100,7 @@ class SchnorrSigner
      * Create a Schnorr Signature.
      *
      * @param string $privateKey - Must be a hexadecimal string
-     * @param string $message - The message being signed
+     * @param string $message - The hex-encoded message being signed
      * @param string|null $randomK - Random k-value; must be a hex-encoded string if present
      * @return array
      *
@@ -111,12 +116,11 @@ class SchnorrSigner
     ): array {
         $constantTime = new ConstantTimeMath();
         // private key must be a hex string
-        if (ctype_xdigit($privateKey) === false) {
-            throw new InvalidArgumentException('Private key must be a hex string');
+        if (strlen($privateKey) !== 64 || ctype_xdigit($privateKey) === false) {
+            throw new InvalidArgumentException('Private key must be a 32-byte hex string');
         }
 
-        // hash the message
-        $hash = empty($message) || ctype_xdigit($message) === true ? $message : hash('sha256', $message);
+        $hash = $this->normalizeMessage($message);
 
         // create a secp256k1 curve
         $generator = SecureCurveFactory::getGeneratorByName(SecgCurve::NAME_SECP_256K1);
@@ -126,14 +130,17 @@ class SchnorrSigner
 
         // initialize private key
         $d = gmp_init($privateKey, 16);
+        if (gmp_cmp($d, 0) <= 0 || gmp_cmp($d, $n) >= 0) {
+            throw new InvalidArgumentException('Private key must be in the range [1, n - 1]');
+        }
 
         if ($randomK === null) {
             // initialize randomness
             $randomK = sodium_bin2hex(random_bytes(32));
         }
 
-        if (ctype_xdigit($randomK) === false) {
-            throw new InvalidArgumentException('Randomness must be a hex string');
+        if (strlen($randomK) !== 64 || ctype_xdigit($randomK) === false) {
+            throw new InvalidArgumentException('Randomness must be a 32-byte hex string');
         }
 
         // calculate multiplied point
@@ -173,6 +180,9 @@ class SchnorrSigner
         $nonceNumber = gmp_init($nonceHash, 16);
 
         $k0      = gmp_mod($nonceNumber, $n);
+        if (gmp_cmp($k0, 0) === 0) {
+            throw new RuntimeException('Failure. This happens only with negligible probability.');
+        }
         $k0Point = $generator->mul($k0);
 
         // k0Scalar is k0 if Y is even, otherwise it's order - k0Scalar
@@ -233,11 +243,24 @@ class SchnorrSigner
     public function verify(string $publicKey, string $signature, string $message): bool
     {
         // public key must be a hex string
-        if (ctype_xdigit($publicKey) === false) {
-            throw new InvalidArgumentException('Public key must be a hex string');
+        if (strlen($publicKey) !== 64 || ctype_xdigit($publicKey) === false) {
+            throw new InvalidArgumentException('Public key must be a 32-byte hex string');
+        }
+        if (strlen($signature) !== 128 || ctype_xdigit($signature) === false) {
+            return false;
         }
 
-        ['r' => $r, 's' => $s, 'm' => $m, 'P' => $P] = $this->initSchnorrVerify($signature, $message, $publicKey);
+        $m = $this->normalizeMessage($message);
+        $r = gmp_init(BinaryString::substring($signature, 0, 64), 16);
+        $s = gmp_init(BinaryString::substring($signature, 64, 64), 16);
+        $curve = CurveFactory::getCurveByName(SecgCurve::NAME_SECP_256K1);
+        if (gmp_cmp($r, $curve->getPrime()) >= 0
+            || gmp_cmp($s, gmp_init(JacobianPoint::CURVE_N, 16)) >= 0
+            || gmp_cmp(gmp_init($publicKey, 16), $curve->getPrime()) >= 0
+        ) {
+            return false;
+        }
+        $P = $this->initSchnorrVerify($publicKey);
 
         $tagChallengeSingle = hash('sha256', self::CHALLENGE);
         $tagChallenge       = $tagChallengeSingle . $tagChallengeSingle;
@@ -291,29 +314,31 @@ class SchnorrSigner
     }
 
     /**
-     * @param string $signature
-     * @param string $message
      * @param string $publicKey
-     * @return array
+     * @return PointInterface
      */
-    private function initSchnorrVerify(string $signature, string $message, string $publicKey): array
+    private function initSchnorrVerify(string $publicKey): PointInterface
     {
-        $r = gmp_init(mb_substr($signature, 0, 64), 16);
-        $s = gmp_init(mb_substr($signature, 64, 64), 16);
-        $m = empty($message) || ctype_xdigit($message) === true ? $message : hash('sha256', $message);
-
         $secp256k1Curve = CurveFactory::getCurveByName(SecgCurve::NAME_SECP_256K1);
 
-        $P = $secp256k1Curve->getPoint(
+        return $secp256k1Curve->getPoint(
             gmp_init($publicKey, 16),
             $secp256k1Curve->recoverYfromX(false, gmp_init($publicKey, 16))
         );
+    }
 
-        return [
-            'r' => $r,
-            's' => $s,
-            'm' => $m,
-            'P' => $P,
-        ];
+    private function normalizeMessage(string $message): string
+    {
+        if ($message !== '' && (strlen($message) % 2 !== 0 || ctype_xdigit($message) === false)) {
+            throw new InvalidArgumentException('Message must be an even-length hexadecimal string');
+        }
+        return strtolower($message);
+    }
+
+    private function assertSecp256k1(CurveFpInterface $curve): void
+    {
+        if (!($curve instanceof NamedCurveFp) || $curve->getName() !== SecgCurve::NAME_SECP_256K1) {
+            throw new InvalidArgumentException('BIP-340 signatures require secp256k1 keys');
+        }
     }
 }

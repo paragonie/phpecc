@@ -3,8 +3,11 @@ declare(strict_types=1);
 
 namespace Mdanter\Ecc\Tests\Crypto\Key;
 
+use InvalidArgumentException;
 use Mdanter\Ecc\Crypto\EcDH\EcDH;
 use Mdanter\Ecc\Crypto\Key\PublicKey;
+use Mdanter\Ecc\Curves\NistCurve;
+use Mdanter\Ecc\Curves\SecureCurveFactory;
 use Mdanter\Ecc\EccFactory;
 use Mdanter\Ecc\Primitives\CurveFp;
 use Mdanter\Ecc\Primitives\GeneratorPoint;
@@ -27,5 +30,13 @@ class PrivateKeyTest extends AbstractTestCase
         $this->assertSame($curve, $key->getCurve());
         $this->assertInstanceOf(\GMP::class, $key->getSecret());
         $this->assertInstanceOf(EcDH::class, $key->createExchange());
+    }
+
+    public function testRejectsOutOfRangeSecret(): void
+    {
+        $generator = SecureCurveFactory::getGeneratorByName(NistCurve::NAME_P256);
+
+        $this->expectException(InvalidArgumentException::class);
+        $generator->getPrivateKeyFrom($generator->getOrder());
     }
 }

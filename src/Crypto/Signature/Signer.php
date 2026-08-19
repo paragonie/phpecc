@@ -61,7 +61,7 @@ class Signer
                 case SecgCurve::NAME_SECP_256K1:
                     return 'sha256';
                 case NistCurve::NAME_P384:
-                    return 'sha394';
+                    return 'sha384';
                 case NistCurve::NAME_P521:
                     return 'sha512';
             }
@@ -97,7 +97,9 @@ class Signer
         if (is_null($hashAlgo)) {
             $hashAlgo = $this->getDefaultHashAlgorithm($curve);
         }
-        if ($curve instanceof NamedCurveFp && $curve->shouldUseOpenssl()&& !$this->disableOpenssl) {
+        if ($curve instanceof NamedCurveFp && $curve->shouldUseOpenssl()
+            && !$this->disableOpenssl && !$this->disallowMalleableSig
+        ) {
             /* Note: OpenSSL disregards $randomK. */
             return $curve->signMessage($key, $message, $hashAlgo);
         }
@@ -128,22 +130,26 @@ class Signer
         $math = new ConstantTimeMath();
         $generator = $key->getPoint();
         $curve = $generator->getCurve();
-        $modMath = $math->getModularArithmetic($generator->getOrder());
+        $n = $generator->getOrder();
+        $modMath = $math->getModularArithmetic($n);
 
-        $k = $math->mod($randomK, $generator->getOrder());
+        if ($math->cmp($randomK, gmp_init(1, 10)) < 0 || $math->cmp($randomK, $n) >= 0) {
+            throw new \InvalidArgumentException('Random scalar must be in the range [1, n - 1]');
+        }
+        $k = $randomK;
         if ($curve instanceof OptimizedCurveInterface) {
             $optimized = $curve->getOptimizedCurveOps();
             $p1 = $optimized->scalarMultBase($k);
         } else {
             $p1 = $generator->mul($k);
         }
-        $r = $p1->getX();
+        $r = $math->mod($p1->getX(), $n);
         /** @var GMP $zero */
         $zero = gmp_init(0, 10);
         if ($math->equals($r, $zero)) {
             throw new \RuntimeException("Error: random number R = 0");
         }
-        $kInv = $math->inverseMod($k, $generator->getOrder());
+        $kInv = $math->inverseMod($k, $n);
 
         // S = (d*R + h) / k (mod P) = (d*R + h) * k^-1 (mod P)
         $s = $modMath->mul(
@@ -188,7 +194,9 @@ class Signer
         if (is_null($hashAlgo)) {
             $hashAlgo = $this->getDefaultHashAlgorithm($curve);
         }
-        if ($curve instanceof NamedCurveFp && $curve->shouldUseOpenssl()) {
+        if ($curve instanceof NamedCurveFp && $curve->shouldUseOpenssl()
+            && !$this->disableOpenssl && !$this->disallowMalleableSig
+        ) {
             /* Note: OpenSSL disregards $randomK. */
             $encoder = new DerSignatureSerializer();
             $encodedSig = $encoder->serialize($sig);

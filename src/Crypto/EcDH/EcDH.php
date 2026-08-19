@@ -148,15 +148,15 @@ class EcDH implements EcDHInterface
                         $this->disableOpenssl = true;
                     }
                 }
-                if (empty($point) && $curve instanceof OptimizedCurveInterface) {
-                    // Use an optimized implementation if one exists:
-                    $optimized = $curve->getOptimizedCurveOps();
-                    $point = $optimized->scalarMult(
-                        $this->senderKey->getSecret(),
-                        $this->recipientKey->getPoint()
-                    );
-                } else {
-                    $point = $this->recipientKey->getPoint()->mul($this->senderKey->getSecret());
+                if (empty($point)) {
+                    if ($curve instanceof OptimizedCurveInterface) {
+                        $point = $curve->getOptimizedCurveOps()->scalarMult(
+                            $this->senderKey->getSecret(),
+                            $this->recipientKey->getPoint()
+                        );
+                    } else {
+                        $point = $this->recipientKey->getPoint()->mul($this->senderKey->getSecret());
+                    }
                 }
 
                 // Ensure we completed a valid exchange, ensure we can create a
