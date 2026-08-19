@@ -8,7 +8,6 @@ use Mdanter\Ecc\Crypto\Key\PrivateKeyInterface;
 use Mdanter\Ecc\Math\GmpMathInterface;
 use Mdanter\Ecc\Util\BinaryString;
 use Mdanter\Ecc\Util\NumberSize;
-use SodiumException;
 
 class HmacRandomNumberGenerator implements RandomNumberGeneratorInterface
 {
@@ -112,10 +111,23 @@ class HmacRandomNumberGenerator implements RandomNumberGeneratorInterface
         return $this->algSize[$algorithm];
     }
 
+    private function bits2octets(GMP $max, GMP $qlen, GMP $rlen): string
+    {
+        $z = $this->messageHash;
+        $hashBits = NumberSize::bnNumBits($this->math, $z);
+        $qBits = (int) $this->math->toString($qlen);
+        if ($hashBits > $qBits) {
+            $z = $this->math->rightShift($z, $hashBits - $qBits);
+        }
+        if ($this->math->cmp($z, $max) >= 0) {
+            $z = $this->math->sub($z, $max);
+        }
+        return $this->int2octets($z, $rlen);
+    }
+
     /**
      * @param GMP $max
      * @return GMP
-     * @throws SodiumException
      */
     public function generate(GMP $max): GMP
     {
@@ -129,7 +141,8 @@ class HmacRandomNumberGenerator implements RandomNumberGeneratorInterface
 
         $rlen = $this->math->rightShift($this->math->add($qlen, $seven), 3);
         $hlen = $this->getHashLength($this->algorithm);
-        $bx = $this->int2octets($this->privateKey->getSecret(), $rlen) . $this->int2octets($this->messageHash, $rlen);
+        $bx = $this->int2octets($this->privateKey->getSecret(), $rlen)
+            . $this->bits2octets($max, $qlen, $rlen);
 
         $v = str_pad('', $hlen >> 3, "\x01", STR_PAD_LEFT);
         $k = str_pad('', $hlen >> 3, "\x00", STR_PAD_LEFT);
@@ -140,8 +153,8 @@ class HmacRandomNumberGenerator implements RandomNumberGeneratorInterface
         $k = hash_hmac($this->algorithm, $v . "\x01" . $bx, $k, true);
         $v = hash_hmac($this->algorithm, $v, $k, true);
 
-        $t = '';
         while (true) {
+            $t = '';
             /** @var GMP $toff */
             $toff = gmp_init(0, 10);
             while ($this->math->cmp($toff, $rlen) < 0) {
@@ -156,13 +169,12 @@ class HmacRandomNumberGenerator implements RandomNumberGeneratorInterface
             }
 
             // This annotation is for Scrutinizer, which gets confused with ext-gmp:
-            $k = $this->bits2int($t, $qlen);
-            if ($this->math->cmp($k, $zero) > 0 && $this->math->cmp($k, $max) < 0) {
-                return $k;
+            $candidate = $this->bits2int($t, $qlen);
+            if ($this->math->cmp($candidate, $zero) > 0 && $this->math->cmp($candidate, $max) < 0) {
+                return $candidate;
             }
 
-            $_k = sodium_hex2bin(gmp_strval($k, 16));
-            $k = hash_hmac($this->algorithm, $v . "\x00", $_k, true);
+            $k = hash_hmac($this->algorithm, $v . "\x00", $k, true);
             $v = hash_hmac($this->algorithm, $v, $k, true);
         }
     }

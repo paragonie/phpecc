@@ -5,17 +5,21 @@ declare(strict_types=1);
 namespace Mdanter\Ecc\Tests\Crypto\Signature;
 
 use Exception;
+use InvalidArgumentException;
 use Mdanter\Ecc\Crypto\Key\PrivateKey;
 use Mdanter\Ecc\Crypto\Signature\SchnorrSigner;
 use Mdanter\Ecc\Crypto\Signature\Signature;
 use Mdanter\Ecc\Crypto\Signature\Signer;
 use Mdanter\Ecc\Crypto\Signature\SignHasher;
+use Mdanter\Ecc\Curves\NistCurve;
+use Mdanter\Ecc\Curves\SecgCurve;
 use Mdanter\Ecc\Curves\SecureCurveFactory;
 use Mdanter\Ecc\Exception\IncorrectAlgorithmException;
 use Mdanter\Ecc\Exception\InsecureCurveException;
 use Mdanter\Ecc\Math\ConstantTimeMath;
 use Mdanter\Ecc\Math\GmpMath;
 use Mdanter\Ecc\Tests\AbstractTestCase;
+use SodiumException;
 
 /**
  * @internal
@@ -56,6 +60,7 @@ final class SchnorrSignerTest extends AbstractTestCase
      * @dataProvider bipVectorProvider
      * @throws InsecureCurveException
      * @throws Exception
+     * @throws SodiumException
      */
     public function testSchnorrVerificationAndSigning(
         string $privateKey,
@@ -132,14 +137,16 @@ final class SchnorrSignerTest extends AbstractTestCase
 
     /**
      * Test that signatures are always 128 characters (64 hex chars each for r and s)
+     *
+     * @throws Exception
      */
     public function testSignatureLengthConsistency(): void
     {
         // Test with various private keys that might produce short hex values
         $testCases = [
-            ['privateKey' => '0000000000000000000000000000000000000000000000000000000000000001', 'message' => 'test'],
-            ['privateKey' => '0000000000000000000000000000000000000000000000000000000000000123', 'message' => 'test'],
-            ['privateKey' => '000000000000000000000000000000000000000000000000000000000000abcd', 'message' => 'test'],
+            ['privateKey' => '0000000000000000000000000000000000000000000000000000000000000001', 'message' => '74657374'],
+            ['privateKey' => '0000000000000000000000000000000000000000000000000000000000000123', 'message' => '74657374'],
+            ['privateKey' => '000000000000000000000000000000000000000000000000000000000000abcd', 'message' => '74657374'],
         ];
 
         foreach ($testCases as $case) {
@@ -147,14 +154,73 @@ final class SchnorrSignerTest extends AbstractTestCase
             $result = $schnorr->sign($case['privateKey'], $case['message'], 'a' . str_repeat('0', 63));
 
             // Signature should always be exactly 128 characters
-            static::assertSame(128, strlen($result['signature']),
-                sprintf('Signature length should be 128, got %d for private key %s',
-                    strlen($result['signature']), $case['privateKey']));
+            static::assertSame(
+                128,
+                strlen($result['signature']),
+                sprintf(
+                    'Signature length should be 128, got %d for private key %s',
+                    strlen($result['signature']),
+                    $case['privateKey']
+                )
+            );
 
             // Public key should always be exactly 64 characters
-            static::assertSame(64, strlen($result['publicKey']),
-                sprintf('Public key length should be 64, got %d for private key %s',
-                    strlen($result['publicKey']), $case['privateKey']));
+            static::assertSame(
+                64,
+                strlen($result['publicKey']),
+                sprintf(
+                    'Public key length should be 64, got %d for private key %s',
+                    strlen($result['publicKey']),
+                    $case['privateKey']
+                )
+            );
         }
+    }
+
+    /**
+     * @throws Exception
+     */
+    public function testRequiresHexEncodedMessages(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        (new SchnorrSigner())->sign(
+            str_pad('1', 64, '0', STR_PAD_LEFT),
+            'authorize transfer',
+            str_repeat('0', 64)
+        );
+    }
+
+    /**
+     * @throws InsecureCurveException
+     */
+    public function testVerifyWithKeyRequiresSecp256k1(): void
+    {
+        $math = new ConstantTimeMath();
+        $secp = SecureCurveFactory::getGeneratorByName(SecgCurve::NAME_SECP_256K1);
+        $private = new PrivateKey($math, $secp, gmp_init(2, 10));
+        $signature = (new SchnorrSigner())->signWithKey($private, '00', str_repeat('0', 64));
+
+        $x = $private->getPublicKey()->getPoint()->getX();
+        $p256 = SecureCurveFactory::getGeneratorByName(NistCurve::NAME_P256);
+        $y = $p256->getCurve()->recoverYfromX(false, $x);
+        $wrongCurveKey = $p256->getPublicKeyFrom($x, $y);
+
+        $this->expectException(InvalidArgumentException::class);
+        (new SchnorrSigner())->verifyWithKey($wrongCurveKey, $signature, '00');
+    }
+
+    /**
+     * @throws Exception
+     */
+    public function testRejectsSignaturesWithTrailingBytes(): void
+    {
+        $signer = new SchnorrSigner();
+        $signed = $signer->sign(
+            str_pad('1', 64, '0', STR_PAD_LEFT),
+            '00',
+            str_repeat('0', 64)
+        );
+
+        self::assertFalse($signer->verify($signed['publicKey'], $signed['signature'] . 'deadbeef', '00'));
     }
 }

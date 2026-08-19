@@ -46,6 +46,12 @@ class Parser
         /** @var GMP $s */
         $s = gmp_init($asnObject[1]->getContent(), 10);
 
-        return new Signature($r, $s);
+        $signature = new Signature($r, $s);
+
+        if ((new Formatter())->serialize($signature) !== $binary) {
+            throw new SignatureDecodeException('Invalid data.');
+        }
+
+        return $signature;
     }
 }

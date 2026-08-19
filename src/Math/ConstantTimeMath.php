@@ -5,6 +5,7 @@ namespace Mdanter\Ecc\Math;
 
 use GMP;
 use Mdanter\Ecc\Exception\NumberTheoryException;
+use Mdanter\Ecc\Random\RandomNumberGenerator;
 use Mdanter\Ecc\Util\BinaryString;
 use function gmp_init;
 use function gmp_sign;
@@ -12,8 +13,8 @@ use function gmp_sign;
 /**
  * Class ConstantTimeMath
  *
- * This class extends GmpMath to replace some GMP functions with algorithms
- * guaranteed to be constant-time.
+ * This class extends GmpMath with hardened arithmetic intended to reduce
+ * secret-dependent timing. PHP and GMP cannot provide strict timing guarantees.
  *
  * @package Mdanter\Ecc\Math
  */
@@ -120,14 +121,30 @@ class ConstantTimeMath extends GmpMath
         #[\SensitiveParameter]
         GMP $m
     ): GMP {
-        list($x, $y) = $this->binaryGcd($a, $m);
         /** @var GMP $one */
         $one = gmp_init(1, 10);
+        $blind = $this->generateBlindingFactor($m);
+        list($x, $y) = $this->binaryGcd(
+            $this->mod(
+                $this->mul($a, $blind),
+                $m
+            ),
+            $m
+        );
         if (!$this->equals($y, $one)) {
             throw new NumberTheoryException('No inverse exists for these two numbers');
         }
 
-        return $x;
+        return $this->mod($this->mul($x, $blind), $m);
+    }
+
+    protected function generateBlindingFactor(GMP $m): GMP
+    {
+        $rng = new RandomNumberGenerator($this);
+        do {
+            $blind = $rng->generate($m);
+        } while (gmp_cmp(gmp_gcd($blind, $m), 1) !== 0);
+        return $blind;
     }
 
     /**

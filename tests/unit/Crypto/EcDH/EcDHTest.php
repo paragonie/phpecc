@@ -3,10 +3,17 @@ declare(strict_types=1);
 
 namespace Mdanter\Ecc\Tests\Crypto\EcDH;
 
+use GMP;
 use Mdanter\Ecc\Crypto\EcDH\EcDH;
+use Mdanter\Ecc\Crypto\Key\PublicKey;
+use Mdanter\Ecc\Curves\NistCurve;
+use Mdanter\Ecc\Curves\SecureCurveFactory;
 use Mdanter\Ecc\EccFactory;
 use Mdanter\Ecc\Exception\ExchangeException;
-use Mdanter\Ecc\Optimized\P256;
+use Mdanter\Ecc\Exception\InsecureCurveException;
+use Mdanter\Ecc\Math\ConstantTimeMath;
+use Mdanter\Ecc\Primitives\Point;
+use Mdanter\Ecc\Primitives\PointInterface;
 use Mdanter\Ecc\Serializer\Point\UncompressedPointSerializer;
 use Mdanter\Ecc\Tests\AbstractTestCase;
 
@@ -14,7 +21,7 @@ class EcDHTest extends AbstractTestCase
 {
     public function testExceptionOnInvalidState()
     {
-        $this->expectException(\Mdanter\Ecc\Exception\ExchangeException::class);
+        $this->expectException(ExchangeException::class);
         $this->expectExceptionMessage('Sender key not set');
         $adapter = EccFactory::getAdapter();
         $ecdh = new EcDH($adapter);
@@ -23,7 +30,7 @@ class EcDHTest extends AbstractTestCase
 
     public function testExceptionOnInvalidState1()
     {
-        $this->expectException(\Mdanter\Ecc\Exception\ExchangeException::class);
+        $this->expectException(ExchangeException::class);
         $this->expectExceptionMessage('Recipient key not set');
         $G = EccFactory::getNistCurves()->generator521();
         $adapter = EccFactory::getAdapter();
@@ -48,7 +55,8 @@ class EcDHTest extends AbstractTestCase
     public function testHappyPath()
     {
         $adapter = EccFactory::getAdapter();
-        $nistFactory = EccFactory::getNistCurves($adapter);;
+        $nistFactory = EccFactory::getNistCurves($adapter);
+        ;
         $p256New = $nistFactory->generator256(null, true);
 
         // Generate some keys:
@@ -84,5 +92,34 @@ class EcDHTest extends AbstractTestCase
             ->createExchange($pubkey)
             ->calculateSharedKey()
         ;
+    }
+
+    /**
+     * @throws InsecureCurveException
+     */
+    public function testUsesOpensslForSharedSecret(): void
+    {
+        $math = new ConstantTimeMath();
+        $generator = SecureCurveFactory::getGeneratorByName(NistCurve::NAME_P256);
+        if (!$generator->getCurve()->shouldUseOpenssl()) {
+            self::markTestSkipped('OpenSSL ECDH is unavailable');
+        }
+
+        $alice = $generator->getPrivateKeyFrom(gmp_init(11, 10));
+        $bobPoint = $generator->getPrivateKeyFrom(gmp_init(19, 10))->getPublicKey()->getPoint();
+        $tracking = new class($math, $generator->getCurve(), $bobPoint->getX(), $bobPoint->getY()) extends Point {
+            /** @var int */
+            public $mulCalls = 0;
+
+            public function mul(GMP $multiplier): PointInterface
+            {
+                ++$this->mulCalls;
+                return parent::mul($multiplier);
+            }
+        };
+        $recipient = new PublicKey($math, $generator, $tracking);
+
+        (new EcDH($math))->setSenderKey($alice)->setRecipientKey($recipient)->calculateSharedKey();
+        self::assertSame(0, $tracking->mulCalls);
     }
 }

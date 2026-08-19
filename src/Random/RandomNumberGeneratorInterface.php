@@ -2,13 +2,14 @@
 declare(strict_types=1);
 
 namespace Mdanter\Ecc\Random;
+use GMP;
 
 interface RandomNumberGeneratorInterface
 {
     /**
-     * Generate a random number between 0 and the specified upper boundary.
-     * @param \GMP $max - Upper boundary, inclusive
-     * @return \GMP
+     * Generate a random number in [1, max - 1].
+     * @param GMP $max - Exclusive upper boundary
+     * @return GMP
      */
-    public function generate(\GMP $max): \GMP;
+    public function generate(GMP $max): GMP;
 }

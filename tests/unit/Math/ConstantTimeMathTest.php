@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Mdanter\Ecc\Tests\Math;
 
+use GMP;
 use Mdanter\Ecc\Math\ConstantTimeMath;
 
 class ConstantTimeMathTest extends MathTestBase
@@ -149,5 +150,34 @@ class ConstantTimeMathTest extends MathTestBase
             $right,
             $math->select(0, $left, $right)
         );
+    }
+
+    public function testInverseModBlindsBinaryGcdInput(): void
+    {
+        $math = new class extends ConstantTimeMath {
+            /** @var GMP[] */
+            public $inputs = [];
+
+            /** @var int */
+            private $factor = 1;
+
+            protected function generateBlindingFactor(GMP $m): GMP
+            {
+                return gmp_init(++$this->factor, 10);
+            }
+
+            public function binaryGcd(GMP $X, GMP $Y): array
+            {
+                $this->inputs[] = $X;
+                return parent::binaryGcd($X, $Y);
+            }
+        };
+        $a = gmp_init(37, 10);
+        $m = gmp_init(101, 10);
+
+        self::assertSame('71', gmp_strval($math->inverseMod($a, $m)));
+        self::assertSame('71', gmp_strval($math->inverseMod($a, $m)));
+        self::assertNotSame(gmp_strval($a), gmp_strval($math->inputs[0]));
+        self::assertNotSame(gmp_strval($math->inputs[0]), gmp_strval($math->inputs[1]));
     }
 }

@@ -38,12 +38,6 @@ class EcdhTest extends AbstractTestCase
     ];
 
 
-    public function getEcDHFixtures(): array
-    {
-        $fixtures = json_decode($this->importFile("vendor/c2sp/wycheproof/testvectors/ecdh_test.json"), true);
-        return $this->filterFixtures($fixtures, $this->getCurvesList());
-    }
-
     private function filterFixtures(array $fixtures, array $curveList = []): array
     {
         $results = [];
@@ -117,20 +111,11 @@ class EcdhTest extends AbstractTestCase
 
     public function getSpecificFixtures(string $curve): array
     {
-        $fixtures = json_decode($this->importFile("vendor/c2sp/wycheproof/testvectors/ecdh_{$curve}_test.json"), true);
+        $fixtures = json_decode($this->importFile("vendor/c2sp/wycheproof/testvectors_v1/ecdh_{$curve}_test.json"), true);
         $filtered =  $this->filterFixtures($fixtures);
 
         return $filtered;
     }
-
-    /**
-     * @dataProvider getEcDHFixtures
-     */
-    public function testEcdh(string $curveName, string $public, string $private, string $shared, array $flags, string $result, string $comment, int $tcId)
-    {
-        $this->doTest($curveName, $public, $private, $shared, $flags, $result, $comment, $tcId);
-    }
-
     public function getSecp224r1Fixtures()
     {
         return $this->getSpecificFixtures("secp224r1");

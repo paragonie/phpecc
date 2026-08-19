@@ -22,14 +22,14 @@ PHP 8.1+ and OpenSSL 3.0+ to work. OpenSSL's implementation should be constant-t
 When OpenSSL is not available, this library will back to a Pure PHP implementation. There
 are actually two implementations:
 
-1. An optimized constant-time implementation of each elliptic curve.
+1. An optimized, side-channel-hardened implementation of each elliptic curve.
 2. A generic elliptic curve algorithm that was shipped with the original PHP ECC library.
 
 We have taken every effort to harden our fork of this library against side-channel attacks
 in the "optimized" code.
 
-We cannot guarantee that the generic elliptic curve code is constant-time. We instead
-urge users to use either OpenSSL's implementation or our constant-time implementation.
+Pure PHP and GMP cannot provide strict constant-time guarantees. We urge users to use
+OpenSSL whenever possible; the optimized PHP implementation applies timing mitigations.
 
 ### This Library Implements Low-Level Elliptic Curve Cryptography
 
@@ -68,10 +68,9 @@ an attacker that observes sufficient signatures can use Lattice Reduction to rec
 The HMAC random generator can derive a deterministic k value from the message hash and private key.
 This provides an unbiased distribution of bits, and is therefore suitable for addressing this concern.
 
-The library uses a non-branching Montgomery ladder for scalar multiplication, as it's constant time and avoids secret 
-dependant branches.
+The library uses a non-branching Montgomery ladder for scalar multiplication to avoid secret-dependent branches.
 
-The "optimized" constant-time code uses [Complete addition formulas for prime order elliptic curves](https://eprint.iacr.org/2015/1060)
+The optimized code uses [Complete addition formulas for prime order elliptic curves](https://eprint.iacr.org/2015/1060)
 to avoid side-channels with point addition and point doubling.
  
 ### License
@@ -113,9 +112,9 @@ The `EccFactory` class will, by default, only allow you to instantiate secure el
 An elliptic curve is considered secure if one or more of the following is true:
 
 1. If we can depend on OpenSSL to provide its implementation, we will. This is considered secure.
-2. If we have an optimized constant-time implementation, it is secure.
+2. If we have an optimized, side-channel-hardened implementation, it is allowed by default.
 3. If the elliptic curve discrete logarithm problem (ECDLP) for the curve has a security level in
-   equivalent to less than 120 bits, it is considered **insecure**. (We do not provide constant-time
+   equivalent to less than 120 bits, it is considered **insecure**. (We do not provide optimized
    implementations for these curves, so step 2 should already fail these curves.)
 4. Otherwise, it is considered insecure. **EccFactory will not allow them by default.** 
 

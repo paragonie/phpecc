@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Mdanter\Ecc\Tests\Crypto\Signature;
 
+use FG\ASN1\Exception\ParserException;
 use GMP;
 use Mdanter\Ecc\Crypto\Key\PrivateKeyInterface;
 use Mdanter\Ecc\Crypto\Key\PublicKeyInterface;
@@ -10,11 +11,15 @@ use Mdanter\Ecc\Crypto\Signature\Signature;
 use Mdanter\Ecc\Crypto\Signature\Signer;
 use Mdanter\Ecc\Crypto\Signature\SignHasher;
 use Mdanter\Ecc\Curves\CurveFactory;
+use Mdanter\Ecc\Curves\NistCurve;
+use Mdanter\Ecc\Curves\SecureCurveFactory;
 use Mdanter\Ecc\EccFactory;
+use Mdanter\Ecc\Exception\InsecureCurveException;
 use Mdanter\Ecc\Math\ConstantTimeMath;
 use Mdanter\Ecc\Math\GmpMathInterface;
 use Mdanter\Ecc\Random\RandomGeneratorFactory;
 use Mdanter\Ecc\Tests\AbstractTestCase;
+use SodiumException;
 
 class SignerTest extends AbstractTestCase
 {
@@ -72,7 +77,6 @@ class SignerTest extends AbstractTestCase
 
         $signer->enableOpenssl();
         $this->assertTrue($signer->verifyMessage($pk, $signature2, $message, 'sha256'));
-
     }
 
     public function testMalleableSignatures()
@@ -110,5 +114,39 @@ class SignerTest extends AbstractTestCase
         }
         $this->assertFalse($nonMalleableSigner->verify($publicKey, $sig1, $hash));
         $this->assertTrue($signer->verify($publicKey, $sig1, $hash));
+    }
+
+    /**
+     * @throws InsecureCurveException
+     * @throws ParserException
+     * @throws SodiumException
+     */
+    public function testVerifyMessageRejectsHighS(): void
+    {
+        $math = new ConstantTimeMath();
+        $generator = SecureCurveFactory::getGeneratorByName(NistCurve::NAME_P256);
+        $private = $generator->getPrivateKeyFrom(gmp_init(7, 10));
+        $signer = new Signer($math, true);
+        $signer->disableOpenssl();
+        $low = $signer->signMessage($private, 'policy test', 'sha256');
+        $high = new Signature($low->getR(), gmp_sub($generator->getOrder(), $low->getS()));
+
+        self::assertFalse($signer->verifyMessage($private->getPublicKey(), $high, 'policy test', 'sha256'));
+    }
+
+    /**
+     * @throws InsecureCurveException
+     * @throws ParserException
+     * @throws SodiumException
+     */
+    public function testP384UsesSha384ByDefault(): void
+    {
+        $generator = SecureCurveFactory::getGeneratorByName(NistCurve::NAME_P384);
+        $private = $generator->getPrivateKeyFrom(gmp_init(5, 10));
+        $signer = new Signer(new ConstantTimeMath());
+        $signer->disableOpenssl();
+
+        $signature = $signer->signMessage($private, 'p384 default');
+        self::assertTrue($signer->verifyMessage($private->getPublicKey(), $signature, 'p384 default'));
     }
 }
