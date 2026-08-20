@@ -45,11 +45,4 @@ interface SignatureInterface
      * @return \GMP
      */
     public function getS(): \GMP;
-
-    /**
-     * Returns "ecdsa" or "schnorr" depending on the signature type.
-     *
-     * @return string
-     */
-    public function getSignatureType(): string;
 }

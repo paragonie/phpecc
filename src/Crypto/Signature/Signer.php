@@ -220,8 +220,10 @@ class Signer
         $r = $signature->getR();
         $s = $signature->getS();
 
-        // Make sure this isn't a Schnorr signature:
-        if (!(hash_equals(Signature::TYPE_ECDSA, $signature->getSignatureType()))) {
+        // Make sure a signature created by this library isn't a Schnorr signature.
+        if ($signature instanceof Signature
+            && !(hash_equals(Signature::TYPE_ECDSA, $signature->getSignatureType()))
+        ) {
             throw new IncorrectAlgorithmException('This is not an ECDSA signature');
         }
 

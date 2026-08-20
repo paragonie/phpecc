@@ -8,6 +8,7 @@ use GMP;
 use Mdanter\Ecc\Crypto\Key\PrivateKeyInterface;
 use Mdanter\Ecc\Crypto\Key\PublicKeyInterface;
 use Mdanter\Ecc\Crypto\Signature\Signature;
+use Mdanter\Ecc\Crypto\Signature\SignatureInterface;
 use Mdanter\Ecc\Crypto\Signature\Signer;
 use Mdanter\Ecc\Crypto\Signature\SignHasher;
 use Mdanter\Ecc\Curves\CurveFactory;
@@ -55,6 +56,45 @@ class SignerTest extends AbstractTestCase
         $signature = $signer->signMessage($sk, $message, 'sha256');
         $this->assertInstanceOf(Signature::class, $signature);
         $this->assertTrue($signer->verifyMessage($pk, $signature, $message, 'sha256'));
+    }
+
+    /**
+     * @dataProvider basicSignerProvider
+     */
+    public function testAcceptsLegacySignatureInterfaceImplementations(
+        GmpMathInterface $math,
+        PrivateKeyInterface $sk,
+        PublicKeyInterface $pk,
+        Signer $signer
+    ): void {
+        $message = 'Third-party signature compatibility';
+        $signer->disableOpenssl();
+        $signature = $signer->signMessage($sk, $message, 'sha256');
+        $legacySignature = new class($signature->getR(), $signature->getS()) implements SignatureInterface {
+            /** @var GMP */
+            private $r;
+
+            /** @var GMP */
+            private $s;
+
+            public function __construct(GMP $r, GMP $s)
+            {
+                $this->r = $r;
+                $this->s = $s;
+            }
+
+            public function getR(): GMP
+            {
+                return $this->r;
+            }
+
+            public function getS(): GMP
+            {
+                return $this->s;
+            }
+        };
+
+        $this->assertTrue($signer->verifyMessage($pk, $legacySignature, $message, 'sha256'));
     }
 
     /**
