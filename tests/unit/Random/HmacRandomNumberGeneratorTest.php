@@ -9,6 +9,7 @@ use Mdanter\Ecc\Crypto\Key\PrivateKey;
 use Mdanter\Ecc\Curves\NistCurve;
 use Mdanter\Ecc\Curves\SecureCurveFactory;
 use Mdanter\Ecc\Math\ConstantTimeMath;
+use Mdanter\Ecc\Math\GmpMath;
 use Mdanter\Ecc\Random\HmacRandomNumberGenerator;
 use Mdanter\Ecc\Tests\AbstractTestCase;
 
@@ -80,5 +81,18 @@ class HmacRandomNumberGeneratorTest extends AbstractTestCase
             'a6e3c57dd01abe90086538398355dd4c3b17aa873382b0f24d6129493d8aad60',
             gmp_strval($nonce, 16)
         );
+    }
+
+    public function testDistinctFullDigestsDoNotReuseNonce(): void
+    {
+        $math = new GmpMath();
+        $g = EccFactory::getNistCurves($math)->generator256();
+        $key = $g->getPrivateKeyFrom(gmp_init(12345));
+        $h = gmp_init(bin2hex("\x55" . str_repeat("\xa7", 63)), 16);
+        $k0 = (new HmacRandomNumberGenerator($math, $key, $h, 'sha512', true))
+            ->generate($g->getOrder());
+        $k1 = (new HmacRandomNumberGenerator($math, $key, gmp_mul($h, 2), 'sha512', true))
+            ->generate($g->getOrder());
+        self::assertNotSame(gmp_strval($k0), gmp_strval($k1));
     }
 }

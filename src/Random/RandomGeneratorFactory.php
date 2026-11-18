@@ -28,16 +28,23 @@ class RandomGeneratorFactory
      * @param \GMP                $messageHash
      * @param string              $algorithm
      * @param bool                $debug
+     * @param bool                $fullDigest
      * @return DebugDecorator|RandomNumberGeneratorInterface
      */
-    public static function getHmacRandomGenerator(PrivateKeyInterface $privateKey, \GMP $messageHash, string $algorithm, bool $debug = false): RandomNumberGeneratorInterface
-    {
+    public static function getHmacRandomGenerator(
+        PrivateKeyInterface $privateKey,
+        \GMP $messageHash,
+        string $algorithm,
+        bool $debug = false,
+        bool $fullDigest = false
+    ): RandomNumberGeneratorInterface {
         return self::wrapAdapter(
             new HmacRandomNumberGenerator(
                 MathAdapterFactory::getAdapter($debug),
                 $privateKey,
                 $messageHash,
-                $algorithm
+                $algorithm,
+                $fullDigest
             ),
             'rfc6979',
             $debug
