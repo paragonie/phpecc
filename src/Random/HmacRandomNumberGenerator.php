@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace Mdanter\Ecc\Random;
 
 use GMP;
+use InvalidArgumentException;
 use Mdanter\Ecc\Crypto\Key\PrivateKeyInterface;
 use Mdanter\Ecc\Math\GmpMathInterface;
 use Mdanter\Ecc\Util\BinaryString;
@@ -32,6 +33,11 @@ class HmacRandomNumberGenerator implements RandomNumberGeneratorInterface
     private $messageHash;
 
     /**
+     * @var bool
+     */
+    private $fullDigest;
+
+    /**
      * @var array
      */
     private $algSize = array(
@@ -46,19 +52,26 @@ class HmacRandomNumberGenerator implements RandomNumberGeneratorInterface
      * Hmac constructor.
      * @param GmpMathInterface $math
      * @param PrivateKeyInterface $privateKey
-     * @param GMP $messageHash - decimal hash of the message (*may* be truncated)
+     * @param GMP $messageHash - nonnegative ECDSA-truncated hash, or full hash in full-digest mode
      * @param string $algorithm - hashing algorithm
+     * @param bool $fullDigest - interpret the hash at the algorithm's fixed digest width
      */
-    public function __construct(GmpMathInterface $math, PrivateKeyInterface $privateKey, GMP $messageHash, string $algorithm)
-    {
+    public function __construct(
+        GmpMathInterface $math,
+        PrivateKeyInterface $privateKey,
+        GMP $messageHash,
+        string $algorithm,
+        bool $fullDigest = false
+    ) {
         if (!isset($this->algSize[$algorithm])) {
-            throw new \InvalidArgumentException('Unsupported hashing algorithm');
+            throw new InvalidArgumentException('Unsupported hashing algorithm');
         }
 
         $this->math = $math;
         $this->algorithm = $algorithm;
         $this->privateKey = $privateKey;
         $this->messageHash = $messageHash;
+        $this->fullDigest = $fullDigest;
     }
 
     /**
@@ -116,6 +129,18 @@ class HmacRandomNumberGenerator implements RandomNumberGeneratorInterface
         $z = $this->messageHash;
         $hashBits = NumberSize::bnNumBits($this->math, $z);
         $qBits = (int) $this->math->toString($qlen);
+        if (gmp_cmp($z, 0) < 0) {
+            throw new InvalidArgumentException('Hash must be non-negative');
+        }
+        if ($this->fullDigest) {
+            $digestBits = $this->getHashLength($this->algorithm);
+            if ($hashBits > $digestBits) {
+                throw new InvalidArgumentException('Hash exceeds the algorithm digest width');
+            }
+            $hashBits = $digestBits;
+        } elseif ($hashBits > $qBits) {
+            throw new InvalidArgumentException('Hash must be ECDSA-truncated; opt into full-digest mode for full hashes');
+        }
         if ($hashBits > $qBits) {
             $z = $this->math->rightShift($z, $hashBits - $qBits);
         }

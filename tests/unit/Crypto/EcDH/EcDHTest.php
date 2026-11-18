@@ -12,6 +12,7 @@ use Mdanter\Ecc\EccFactory;
 use Mdanter\Ecc\Exception\ExchangeException;
 use Mdanter\Ecc\Exception\InsecureCurveException;
 use Mdanter\Ecc\Math\ConstantTimeMath;
+use Mdanter\Ecc\Math\GmpMath;
 use Mdanter\Ecc\Primitives\Point;
 use Mdanter\Ecc\Primitives\PointInterface;
 use Mdanter\Ecc\Serializer\Point\UncompressedPointSerializer;
@@ -121,5 +122,20 @@ class EcDHTest extends AbstractTestCase
 
         (new EcDH($math))->setSenderKey($alice)->setRecipientKey($recipient)->calculateSharedKey();
         self::assertSame(0, $tracking->mulCalls);
+    }
+
+    public function testNewRecipientReceivesNewSecret(): void
+    {
+        $math = new GmpMath();
+        $g = EccFactory::getNistCurves($math)->generator256();
+        $alice = $g->getPrivateKeyFrom(gmp_init(11));
+        $bob = $g->getPrivateKeyFrom(gmp_init(19))->getPublicKey();
+        $carol = $g->getPrivateKeyFrom(gmp_init(23))->getPublicKey();
+        $exchange = (new EcDH($math))->disableOpenssl()->setSenderKey($alice)->setRecipientKey($bob);
+        $exchange->calculateSharedKey();
+        $exchange->setRecipientKey($carol);
+        $expected = (new EcDH($math))->disableOpenssl()->setSenderKey($alice)
+            ->setRecipientKey($carol)->calculateSharedKey();
+        self::assertSame(gmp_strval($expected), gmp_strval($exchange->calculateSharedKey()));
     }
 }
